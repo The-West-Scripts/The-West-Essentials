@@ -1,5 +1,5 @@
 ## Install URL
-[Click here to install](https://the-west-scripts.github.io/The-West-LeoTools/script.user.js)
+[Click here to install](https://the-west-scripts.github.io/The-West-Essentials/script.user.js)
 
 ## Description & Screenshots
 This is an updated version of this script: [TWLeoTools](https://userscripts-mirror.org/scripts/show/169774) made by [Leotas](https://forum.the-west.de/index.php?members/25046).  
@@ -205,6 +205,6 @@ Now install the user script.
 * Create a new bookmark in your mobile browser
 * Edit the bookmark and copy this to its address field:
 
-`javascript:document.body.appendChild(document.createElement('script')).src='https://the-west-scripts.github.io/The-West-LeoTools/script.user.js'`
+`javascript:document.body.appendChild(document.createElement('script')).src='https://the-west-scripts.github.io/The-West-Essentials/script.user.js'`
 
 * Now open the game and click the bookmark to start the script
