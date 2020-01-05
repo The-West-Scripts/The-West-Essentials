@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name The West - Essentials
 // @namespace https://the-west-scripts.github.io/The-West-Essentials/
-// @author Tom Robert (Leotas/Falc0n.RG/Rask Hund/Dun/Esperiano)
+// @author Tom Robert (Leotas/Falc0n.RG/neversleep1911/Rask Hund/Dun/Esperiano)
 // @description The West 3.0
 // @include https://*.the-west.*/game.php*
 // @include https://*.the-west.*/index.php?page=logout
@@ -9,12 +9,12 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.46.1
+// @version 1.46.2
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
 // ==/UserScript==
-// translation:Tom Robert(German&English),Darius II/Wojcieszy/TeeNOmore127(Polish),pepe100(Spanish),ruud99(Dutch),Creature/krcsirke(Hungarian),Timemod Herkumo(Greek),Elly Siranno/Raymond Reddington/jccwest(Portuguese),Billy-AR(Italian),Tom Robert/Falc0n.RG/Dun(French),Did97(Russian),OguzhanCekic(Turkish),Jamza(Czech&Slovak)
+// translation:Tom Robert(German&English),Darius II/Wojcieszy/TeeNOmore127/pantomas(Polish),pepe100/HALCON DE ORO(Spanish),ruud99(Dutch),Creature/krcsirke(Hungarian),Timemod Herkumo(Greek),Elly Siranno/Raymond Reddington/jccwest/gamer(Portuguese),Billy-AR/tw81(Italian),Tom Robert/Falc0n.RG/Dun(French),Jamza/Surge(Czech&Slovak),Did97(Russian),OguzhanCekic(Turkish)
 (function (fn) {
   var script = document.createElement('script');
   script.setAttribute('type', 'application/javascript');
@@ -26,7 +26,7 @@
     location.href = '/';
   } else {
     TWXstart = {
-      version: '1.46.1',
+      version: '1.46.2',
       langs: {
         en: {
           language: 'English',
@@ -187,6 +187,28 @@
             ColorSaveEmpty: '[empty]',
             CustomReady: 'Valid Code',
             CustomNotReady: 'Invalid Code',
+          },
+          QIS: {
+            adventure: '*Adventures',
+            work: '*Work',
+            duel: '*Duels',
+            energy: '*Energy',
+            skill: '*Skill points',
+            fk: '*Fort battles',
+            speed: '*Speed',
+            lp: '*Health points',
+            luckNmoney: '*Luck & money',
+            motivation: '*Motivation',
+            experience: '*Experience',
+            special: '*Premium/special',
+            events: '*Events',
+            chests: '*Open & unpack',
+            equipment: '-Equipment',
+            products: '-Products',
+            questitems: '-Quest items',
+            craftitems: '-Craft items',
+            recipes: '-Recipes',
+            nothingFound: 'No items of this type found!',
           },
         },
         de: {
@@ -349,6 +371,28 @@
             CustomReady: 'Code ok',
             CustomNotReady: 'Ungültig',
           },
+          QIS: {
+            adventure: '*Abenteuer',
+            work: '*Arbeit (AP)',
+            duel: '*Duell',
+            energy: '*Erholung (EP)',
+            skill: '*Fertigkeiten (FP)',
+            fk: '*Fortkampf (FK)',
+            speed: '*Geschwindigkeit',
+            lp: '*Lebenspunkte (LP)',
+            luckNmoney: '*Glück & Geld',
+            motivation: '*Motivation',
+            experience: '*Erfahrung (XP)',
+            special: '*Premium/Special',
+            events: '*Events',
+            chests: '*Öffnen & Auspacken',
+            equipment: '-Ausrüstung',
+            products: '-Arbeitsprodukte',
+            questitems: '-Questprodukte',
+            craftitems: '-Handwerk',
+            recipes: '-Rezepte',
+            nothingFound: 'Keine Gegenstände dieser Art gefunden!',
+          },
         },
         pl: {
           language: 'Polish (polski)',
@@ -510,6 +554,28 @@
             CustomReady: 'Prawidłowy Kod',
             CustomNotReady: 'Zły Kod',
           },
+          QIS: {
+            adventure: '*Przygody',
+            work: '*Prace',
+            duel: '*Pojedynki',
+            energy: '*Energia',
+            skill: '*Umiejętności',
+            fk: '*Bitwy fortowe',
+            speed: '*Prędkość',
+            lp: '*HP',
+            luckNmoney: '*Luck & money',
+            motivation: '*Motivation',
+            experience: '*Experience',
+            special: '*Premia/specjalny',
+            events: '*Eventy',
+            chests: '*Przedmioty - Skrzynie',
+            equipment: '-Ekwipunek',
+            products: '-Produkty',
+            questitems: '-Przedmiot zlecenia',
+            craftitems: '-Rzemiosło',
+            recipes: '-Przepisy',
+            nothingFound: 'Nie posiadasz żadnych przedmiotów tego typu!',
+          },
         },
         es: {
           language: 'Spanish (español)',
@@ -669,6 +735,28 @@
             ColorSaveEmpty: '[vacío]',
             CustomReady: 'Código válido',
             CustomNotReady: 'No válido',
+          },
+          QIS: {
+            adventure: '*Buffs de Aventuras',
+            work: '*Buffs de Trabajo',
+            duel: '*Buffs de Duelo',
+            energy: '*Buffs Energía',
+            skill: '*Buffs de Habilidades',
+            fk: '*Buffs de Batalla',
+            speed: '*Buffs de Velocidad',
+            lp: '*Buffs de Salud',
+            luckNmoney: '*Suerte y Dinero',
+            motivation: '*Motivación',
+            experience: '*Experiencia',
+            special: '*Premio/especial',
+            events: '*Eventos',
+            chests: '*Cajas y cofres',
+            equipment: '-Equipo',
+            products: '-Productos',
+            questitems: '-Objetos de búsqueda',
+            craftitems: '-Artesano',
+            recipes: '-Recetas',
+            nothingFound: 'No tienes de este tipo!',
           },
         },
         nl: {
@@ -831,6 +919,28 @@
             CustomReady: 'Valid Code',
             CustomNotReady: 'Invalid Code',
           },
+          QIS: {
+            adventure: '*Avontuur',
+            work: '*Werkzaamheid',
+            duel: '*Duels',
+            energy: '*Actiepunten',
+            skill: '*Vaardigheden',
+            fk: '*Fort gevechten',
+            speed: '*Snelheid',
+            lp: '*Levenspunten',
+            luckNmoney: '*Luck & money',
+            motivation: '*Motivation',
+            experience: '*Experience',
+            special: '*Premium/speciaal',
+            events: '*Events',
+            chests: '*Openen',
+            equipment: '-Uitrusting',
+            products: '-Producten',
+            questitems: '-Opdracht gerelateerde voowerpen',
+            craftitems: '-Handwerk',
+            recipes: '-Recepten',
+            nothingFound: 'Er kon geen voorwerp van dit type worden!',
+          },
         },
         hu: {
           language: 'Hungarian (Magyar)',
@@ -991,6 +1101,28 @@
             ColorSaveEmpty: '[empty]',
             CustomReady: 'Valid Code',
             CustomNotReady: 'Invalid Code',
+          },
+          QIS: {
+            adventure: '*Adventures',
+            work: '*Work',
+            duel: '*Duels',
+            energy: '*Energy',
+            skill: '*Skill points',
+            fk: '*Fort battles',
+            speed: '*Speed',
+            lp: '*Health points',
+            luckNmoney: '*Luck & money',
+            motivation: '*Motivation',
+            experience: '*Experience',
+            special: '*Premium/special',
+            events: '*Events',
+            chests: '*Open & unpack',
+            equipment: '-Equipment',
+            products: '-Products',
+            questitems: '-Quest items',
+            craftitems: '-Craft items',
+            recipes: '-Recipes',
+            nothingFound: 'No items of this type found!',
           },
         },
         el: {
@@ -1153,6 +1285,28 @@
             CustomReady: 'Έγκυρος κωδικός',
             CustomNotReady: 'Μη έγκυρος κωδικός',
           },
+          QIS: {
+            adventure: '*Περιπέτειες',
+            work: '*Εργασίες',
+            duel: '*Μονομαχίες',
+            energy: '*Ενέργεια',
+            skill: '*Πόντοι ικανοτήτων',
+            fk: '*Μάχες οχυρών',
+            speed: '*Ταχύτητα',
+            lp: '*Πόντοι υγείας',
+            luckNmoney: '*Τύχη & Χρήματα',
+            motivation: '*Κίνητρο',
+            experience: '*Εμπειρία',
+            special: '*Premium/special',
+            events: '*Εκδηλώσεις',
+            chests: '*Θήκες & Κάτι για να ανοίξεις',
+            equipment: '-Εξοπλισμός',
+            products: '-Προϊόντα',
+            questitems: '-Αντικείμενα αποστολών',
+            craftitems: '-Αντικείμενα επαγγελμάτων',
+            recipes: '-Συνταγές',
+            nothingFound: 'Δεν βρέθηκαν αντικείμενα αυτού του τύπου!',
+          },
         },
         pt: {
           language: 'Portuguese (português)',
@@ -1313,6 +1467,28 @@
             ColorSaveEmpty: '[vazio]',
             CustomReady: 'Código válido',
             CustomNotReady: 'Inválido',
+          },
+          QIS: {
+            adventure: '*Aventuras',
+            work: '*Buffs Trabalho',
+            duel: '*Buffs Duelo',
+            energy: '*Buffs Energia',
+            skill: '*Buffs Habilidade',
+            fk: '*Buffs Batalha',
+            speed: '*Buffs Velocidade',
+            lp: '*Buffs Saúde',
+            luckNmoney: '*Sorte & Dinheiro',
+            motivation: '*Motivação',
+            experience: '*Experiência',
+            special: '*Prêmio/especial',
+            events: '*Eventos',
+            chests: '*Abrir e desempacotar',
+            equipment: '-Equipamento',
+            products: '-Produtos',
+            questitems: '-Items de aventura',
+            craftitems: '-Ofício',
+            recipes: '-Receitas',
+            nothingFound: 'Nenhum item deste tipo encontrado!',
           },
         },
         it: {
@@ -1475,6 +1651,28 @@
             CustomReady: 'Valid Code',
             CustomNotReady: 'Invalid Code',
           },
+          QIS: {
+            adventure: '*Avventure',
+            work: '*Bonus Lavoro',
+            duel: '*Bonus Duello',
+            energy: '*Bonus Energia',
+            skill: '*Bonus Abilità',
+            fk: '*Bonus Forte',
+            speed: '*Bonus Velocità',
+            lp: '*Bonus Punti Vita',
+            luckNmoney: '*Luck & money',
+            motivation: '*Motivation',
+            experience: '*Experience',
+            special: '*Premio/speciale',
+            events: '*Eventi',
+            chests: '*Aprire e decomprimere',
+            equipment: '-Attrezzatura',
+            products: '-Prodotti',
+            questitems: '-Oggetti missione',
+            craftitems: '-Produci',
+            recipes: '-Ricette',
+            nothingFound: 'Non è stato trovato nulla!',
+          },
         },
         fr: {
           language: 'French (français)',
@@ -1636,6 +1834,394 @@
             CustomReady: 'Code valide',
             CustomNotReady: 'Non valide',
           },
+          QIS: {
+            adventure: '*Aventures',
+            work: '*Travail',
+            duel: '*Duels',
+            energy: '*Bonus de repos',
+            skill: '*Aptitudes',
+            fk: '*Fort bataille',
+            speed: '*Vitesse',
+            lp: '*Points de vie bonus',
+            luckNmoney: '*Luck & money',
+            motivation: '*Motivation',
+            experience: '*Experience',
+            special: '*Prime/spéciale',
+            events: '*Événements',
+            chests: '*Ouvrir et déballer',
+            equipment: '-Équipement',
+            products: '-Produits',
+            questitems: '-Objets de quête',
+            craftitems: '-Artisanat',
+            recipes: '-Recettes',
+            nothingFound: 'Pas d\'objets de cette sorte trouvé!',
+          },
+        },
+        cs: {
+          language: 'English',
+          ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
+          ApiGui2: 'Open script page',
+          FeatLogout: 'Add a logout button on the right side',
+          FeatStatusbar: 'Remove the taskbar',
+          FeatShowAP: 'Show your actual skill points in job windows',
+          FeatChangeCity: 'Switch title and player name in the town hall',
+          FeatDuellMap: 'Add Duelmap tab in duel window',
+          FeatMarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
+          FeatMarketTown: 'Show town name in market window',
+          FeatMarketMessage: 'Get a message when there are items or money to pick up on actual market',
+          FeatAchievHide: 'Hide completed achievements in achievements window',
+          FeatRecipeMarket: 'Improve the purchase of recipes on market',
+          FeatMoveJobs: 'Move the queued jobs a bit to the left',
+          FeatBlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
+          FeatFortTracker: 'Turn off fort battle reminder',
+          FeatFriendsPop: 'Hide "Friend online" pop-ups',
+          FeatInstantQuest: 'Complete the quest instantly if all requirements are done',
+          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
+          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
+          FeatQuestBookSearch: 'Search for solved quests in the quest book',
+          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
+          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
+          FeatShortPopups: 'Make the item pop-ups shorter',
+          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
+          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+          FeatMapDistance: ' Show the number of miles next to the travel time',
+          FeatTraderSell: 'Sell multiple items at once to the trader',
+          FeatTouchControl: 'Enable touch control on your mobile browser',
+          settings1: 'Open settings',
+          settings2: 'Open settings and information window',
+          ghosttown1: 'Go to ghost town ',
+          ghosttown2: 'Open ghost town',
+          ghosttown3: 'Open ghost town and center it on map',
+          indiantown1: 'Go to Indian village ',
+          indiantown2: 'Open Indian village',
+          indiantown3: 'Open Indian village and center it on map',
+          openmarket: 'Open market',
+          forum: 'Open town forum',
+          newsets: 'New sets are added to the script',
+          chooseItems: 'Choose the items',
+          remindHover: 'You get a notification when an item can be used again. Here you can choose these items.',
+          remindReady: 'Ready to collect',
+          skipHover: 'Skip the confirmation and result messages when you open some bags. Here you can choose these bags',
+          skipDone: 'You get',
+          info: 'Info',
+          contact: 'Contact',
+          chooseLang: 'Choose language',
+          features: 'Features',
+          name: 'Name',
+          save: 'Save',
+          saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
+          setbonus2: 'Informations about the set bonuses',
+          frame2: 'Helpful web pages',
+          choose: 'Click on the hat to get started',
+          items: 'items',
+          parts: 'parts',
+          showItems: 'Show the set items in your Bag',
+          noItems: 'No items in your inventory found. Click again with CTRL to show it on TW-Calc.',
+          ownSets: 'Only own sets',
+          switchWeapon: 'Switch between firearm and melee weapon',
+          selectBonus: 'Select bonuses',
+          resetB: 'Reset',
+          body: 'Clothing',
+          right_arm: 'Weapons',
+          animal: 'Horse & Yield',
+          rest: 'Other',
+          buff: 'Buffs',
+          refresh: 'Refresh',
+          noFriends: 'No Friends',
+          reward: 'Reward',
+          allprofessions: 'All Professions',
+          market1: 'Items on market',
+          market2: 'There are items/money on this market. What do you want to pick up?',
+          all: 'All',
+          onlyBids: 'Only bids',
+          nothing: 'Nothing',
+          worldwide: 'Worldwide',
+          alliance: 'Alliance',
+          town: 'Town',
+          level: 'Level',
+          duelLevel: 'Duelling level',
+          exp: 'Exp',
+          distance: 'Distance',
+          startduel: 'Start Duel',
+          centerMap: 'Center map',
+          popup: 'The opponent\'s skill bonus',
+          damage: 'Damage',
+          duelmap: 'Duelmap',
+          duelradius: 'Duel radius',
+          minutes: 'minutes',
+          hour: '1 hour',
+          hours: 'hours',
+          searchOpp: 'Search for opponents',
+          amount: 'Dead',
+          not_dead_amount: 'Alive',
+          duellevel: 'Lvl',
+          status: 'Status',
+          sortBy: 'Sort by',
+          tooLow: 'Too low duelling level of opponent',
+          tooHigh: 'Too high duelling level of opponent',
+          ownTown: 'Member of your town',
+          attackable: 'Show only attackable players',
+          logout: 'Logout',
+          accNfin: 'Accept & complete quest',
+          onWiki: 'Show the quest on the wiki',
+          longerName: 'Name must be longer than 2 characters',
+          loading: 'Loading...',
+          rename: 'Rename',
+          newName: 'Choose a new set name',
+          used: 'Used',
+          renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
+          sellItems: 'Sell items to the trader?',
+          removeWorkNotis: 'Hide all job notifications',
+          compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
+          loginAll1: 'Login all worlds',
+          loginAll2: 'Load all your active worlds with one click',
+          custom1: 'Custom',
+          custom2: 'Your custom login list',
+          edit: 'Edit',
+          saveMessage: 'Saved successfully',
+          CT: {
+            ColorWindowTitle: 'Color tchat setting',
+            ColorWindowPreviewTxt: '*Click on the letters to change color',
+            ColorWindowOkBtn: 'Apply',
+            ColorWindowToDefaultBtn: 'Set to default',
+            ColorWindowThisTchatBtn: 'Set to this',
+            ColorWindowDefaultText: 'Select the tchat for reset to default: ',
+            ColorWindowBold: 'Bold',
+            ColorWindowCaps: 'Capitalized',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'No color',
+              'Enter a color code',
+              'red',
+              'brown',
+              'purple',
+              'blue',
+              'green',
+              'pink',
+              'magenta',
+              'violet gradient',
+              'degraded dark blue',
+              'green gradient',
+              'degraded red',
+              'blue gradient light',
+              'degraded pink',
+              'light green gradient',
+              'degraded pink',
+              'red gradient light'
+            ],
+            ColorLoadTitle: 'Click to load another color code<br>The current color code is: ',
+            ColorSaveEmpty: '[empty]',
+            CustomReady: 'Valid Code',
+            CustomNotReady: 'Invalid Code',
+          },
+          QIS: {
+            adventure: '*Dobrodružství',
+            work: '*Pracovní body',
+            duel: '*Duely',
+            energy: '*Energie',
+            skill: '*Body schopností',
+            fk: '*Bitvy',
+            speed: '*Rychlost',
+            lp: '*Body zdraví',
+            luckNmoney: '*Štěstí & zárobek',
+            motivation: '*Motivace',
+            experience: '*Zkušenosti',
+            special: '*Prémium/špeciální',
+            events: '*Eventy',
+            chests: '*Něco k otevření',
+            equipment: '-Vybavení',
+            products: '-Produkty',
+            questitems: '-Předměty k úkolu',
+            craftitems: '-Předměty z remesel',
+            recipes: '-Recepty',
+            nothingFound: 'Nebyly nalezeny žádné položky tohoto typu!',
+          },
+        },
+        sk: {
+          language: 'English',
+          ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
+          ApiGui2: 'Open script page',
+          FeatLogout: 'Add a logout button on the right side',
+          FeatStatusbar: 'Remove the taskbar',
+          FeatShowAP: 'Show your actual skill points in job windows',
+          FeatChangeCity: 'Switch title and player name in the town hall',
+          FeatDuellMap: 'Add Duelmap tab in duel window',
+          FeatMarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
+          FeatMarketTown: 'Show town name in market window',
+          FeatMarketMessage: 'Get a message when there are items or money to pick up on actual market',
+          FeatAchievHide: 'Hide completed achievements in achievements window',
+          FeatRecipeMarket: 'Improve the purchase of recipes on market',
+          FeatMoveJobs: 'Move the queued jobs a bit to the left',
+          FeatBlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
+          FeatFortTracker: 'Turn off fort battle reminder',
+          FeatFriendsPop: 'Hide "Friend online" pop-ups',
+          FeatInstantQuest: 'Complete the quest instantly if all requirements are done',
+          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
+          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
+          FeatQuestBookSearch: 'Search for solved quests in the quest book',
+          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
+          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
+          FeatShortPopups: 'Make the item pop-ups shorter',
+          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
+          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+          FeatMapDistance: ' Show the number of miles next to the travel time',
+          FeatTraderSell: 'Sell multiple items at once to the trader',
+          FeatTouchControl: 'Enable touch control on your mobile browser',
+          settings1: 'Open settings',
+          settings2: 'Open settings and information window',
+          ghosttown1: 'Go to ghost town ',
+          ghosttown2: 'Open ghost town',
+          ghosttown3: 'Open ghost town and center it on map',
+          indiantown1: 'Go to Indian village ',
+          indiantown2: 'Open Indian village',
+          indiantown3: 'Open Indian village and center it on map',
+          openmarket: 'Open market',
+          forum: 'Open town forum',
+          newsets: 'New sets are added to the script',
+          chooseItems: 'Choose the items',
+          remindHover: 'You get a notification when an item can be used again. Here you can choose these items.',
+          remindReady: 'Ready to collect',
+          skipHover: 'Skip the confirmation and result messages when you open some bags. Here you can choose these bags',
+          skipDone: 'You get',
+          info: 'Info',
+          contact: 'Contact',
+          chooseLang: 'Choose language',
+          features: 'Features',
+          name: 'Name',
+          save: 'Save',
+          saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
+          setbonus2: 'Informations about the set bonuses',
+          frame2: 'Helpful web pages',
+          choose: 'Click on the hat to get started',
+          items: 'items',
+          parts: 'parts',
+          showItems: 'Show the set items in your Bag',
+          noItems: 'No items in your inventory found. Click again with CTRL to show it on TW-Calc.',
+          ownSets: 'Only own sets',
+          switchWeapon: 'Switch between firearm and melee weapon',
+          selectBonus: 'Select bonuses',
+          resetB: 'Reset',
+          body: 'Clothing',
+          right_arm: 'Weapons',
+          animal: 'Horse & Yield',
+          rest: 'Other',
+          buff: 'Buffs',
+          refresh: 'Refresh',
+          noFriends: 'No Friends',
+          reward: 'Reward',
+          allprofessions: 'All Professions',
+          market1: 'Items on market',
+          market2: 'There are items/money on this market. What do you want to pick up?',
+          all: 'All',
+          onlyBids: 'Only bids',
+          nothing: 'Nothing',
+          worldwide: 'Worldwide',
+          alliance: 'Alliance',
+          town: 'Town',
+          level: 'Level',
+          duelLevel: 'Duelling level',
+          exp: 'Exp',
+          distance: 'Distance',
+          startduel: 'Start Duel',
+          centerMap: 'Center map',
+          popup: 'The opponent\'s skill bonus',
+          damage: 'Damage',
+          duelmap: 'Duelmap',
+          duelradius: 'Duel radius',
+          minutes: 'minutes',
+          hour: '1 hour',
+          hours: 'hours',
+          searchOpp: 'Search for opponents',
+          amount: 'Dead',
+          not_dead_amount: 'Alive',
+          duellevel: 'Lvl',
+          status: 'Status',
+          sortBy: 'Sort by',
+          tooLow: 'Too low duelling level of opponent',
+          tooHigh: 'Too high duelling level of opponent',
+          ownTown: 'Member of your town',
+          attackable: 'Show only attackable players',
+          logout: 'Logout',
+          accNfin: 'Accept & complete quest',
+          onWiki: 'Show the quest on the wiki',
+          longerName: 'Name must be longer than 2 characters',
+          loading: 'Loading...',
+          rename: 'Rename',
+          newName: 'Choose a new set name',
+          used: 'Used',
+          renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
+          sellItems: 'Sell items to the trader?',
+          removeWorkNotis: 'Hide all job notifications',
+          compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
+          loginAll1: 'Login all worlds',
+          loginAll2: 'Load all your active worlds with one click',
+          custom1: 'Custom',
+          custom2: 'Your custom login list',
+          edit: 'Edit',
+          saveMessage: 'Saved successfully',
+          CT: {
+            ColorWindowTitle: 'Color tchat setting',
+            ColorWindowPreviewTxt: '*Click on the letters to change color',
+            ColorWindowOkBtn: 'Apply',
+            ColorWindowToDefaultBtn: 'Set to default',
+            ColorWindowThisTchatBtn: 'Set to this',
+            ColorWindowDefaultText: 'Select the tchat for reset to default: ',
+            ColorWindowBold: 'Bold',
+            ColorWindowCaps: 'Capitalized',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'No color',
+              'Enter a color code',
+              'red',
+              'brown',
+              'purple',
+              'blue',
+              'green',
+              'pink',
+              'magenta',
+              'violet gradient',
+              'degraded dark blue',
+              'green gradient',
+              'degraded red',
+              'blue gradient light',
+              'degraded pink',
+              'light green gradient',
+              'degraded pink',
+              'red gradient light'
+            ],
+            ColorLoadTitle: 'Click to load another color code<br>The current color code is: ',
+            ColorSaveEmpty: '[empty]',
+            CustomReady: 'Valid Code',
+            CustomNotReady: 'Invalid Code',
+          },
+          QIS: {
+            adventure: '*Dobrodružstvá',
+            work: '*Práca',
+            duel: '*Duely',
+            energy: '*Energia',
+            skill: '*Schopnosti',
+            fk: '*Boje',
+            speed: '*Rýchlosť',
+            lp: '*Zdravie',
+            luckNmoney: '*Šťastie & zárobok',
+            motivation: '*Motivácia',
+            experience: '*Skúsenosti',
+            special: '*Prémium/špeciálne',
+            events: '*Eventy',
+            chests: '*Tašky a truhly',
+            equipment: '-Výbava',
+            products: '-Produkty',
+            questitems: '-Predmety na úlohy',
+            craftitems: '-Predmety z remesiel',
+            recipes: '-Recepty',
+            nothingFound: 'Neboli nájdené žiadne položky tohto typu!',
+          },
         },
       },
       url: 'https://tomrobert.safe-ws.de/',
@@ -1694,8 +2280,10 @@
           TraderSell: true,
           TouchControl: true,
           ColorTchat: true,
+          QuickItemsSearch: true,
         },
         CT: {},
+        QIS: {},
         cooldown: {
           2482: 1,
           2484: 1,
@@ -1753,7 +2341,7 @@
           return add + '/<br>I will get an e-mail when you sent me the message <img src="images/chat/emoticons/smile.png"></li></ul>';
         },
         init: function () {
-          TheWestApi.register('TWX', TWX.name, TWX.minGame, TWX.maxGame, TWX.author, TWX.website).setGui('<h1>' + TWXlang.info + '</h1><i>Language: </i>' + TWSlang.language + '<br><br>' + TWXlang.ApiGui1 + ': <a href="javascript:TWX.GUI.open(\'openFeatures\');TWX.GUI.makeList();">' + TWXlang.ApiGui2 + '</a><br><br><i>' + TWX.name + ' v' + TWXstart.version + '</i><br><br>' + this.fmfb());
+          TheWestApi.register('TWX', TWX.name, TWX.minGame, TWX.maxGame, TWX.author, TWX.website).setGui('<h1>' + TWXlang.info + '</h1><i>Language: </i>' + TWXlang.language + '<br><br>' + TWXlang.ApiGui1 + ': <a href="javascript:TWX.GUI.open(\'openFeatures\');TWX.GUI.makeList();">' + TWXlang.ApiGui2 + '</a><br><br><i>' + TWX.name + ' v' + TWXstart.version + '</i><br><br>' + this.fmfb());
           var menuContainer = $('<div id="TWX-menu" class="menulink" onclick="TWX.GUI.openSelectbox();" title="' + TWX.name + '" />').css('background-image', 'url(' + TWXstart.Images('LT_settings') + ')').css('background-position', '0px 0px').mouseenter(function () {
               $(this).css('background-position', '-25px 0px');
             }).mouseleave(function () {
@@ -1796,7 +2384,10 @@
         };
       };
       var EvName = Object.keys(Game.sesData)[0],
-      set1 = west.storage.ItemSetManager._setList;
+      set1 = west.storage.ItemSetManager._setList,
+      replUml = function (str) {
+        return str.toUpperCase().replace(/"/g, '').replace(/Á/g, 'A').replace(/É/g, 'E').replace(/Ő/g, 'O').replace(/Ú|Ü|Ű/g, 'U').replace(/Ś/g, 'S');
+      };
       if (EvName)
         var sendGift = Game.sesData[EvName].friendsbar;
       TWX.GUI = {
@@ -2028,9 +2619,6 @@
                   };
                 }
               }
-              var replUml = function (str) {
-                return str.toUpperCase().replace(/"/g, '').replace(/Á/g, 'A').replace(/É/g, 'E').replace(/Ő/g, 'O').replace(/Ú|Ü|Ű/g, 'U').replace(/Ś/g, 'S');
-              };
               TWX.list.sort(function (a, b) {
                 var a1 = replUml(a.name),
                 b1 = replUml(b.name);
@@ -4592,6 +5180,99 @@
             }, 500);
         }
       };
+      TWX.QuickItemsSearch = {
+        init: function () {
+          TWX.QIS.equImg = 2188;
+          TWX.QIS.MenuButton = function (image, title, onclick) {
+            var self = this;
+            this.isHovered = false;
+            this.onClick = onclick;
+            var clicked = function (e) {
+              if (self.onClick) {
+                self.onClick(self, e);
+              }
+            };
+            var repaint = function () {
+              var x = !self.isHovered ? 0 : -25;
+              self.obj.css('background-position', x + 'px 0px');
+            };
+            var mouseIn = function () {
+              self.isHovered = true;
+              repaint();
+            };
+            var mouseOut = function () {
+              self.isHovered = false;
+              repaint();
+            };
+            this.obj = $('<div class=\'menulink\' title=\'' + title + '\' />').css('background-image', 'url(' + image + ')');
+            this.obj.hover(mouseIn, mouseOut);
+            this.obj.click(clicked);
+            $('div#ui_menubar').append($('<div class=\'ui_menucontainer\' />').append(this.obj).append('<div class=\'menucontainer_bottom\' />'));
+          };
+          TWX.QIS.popup = function (button, e) {
+            if (!TWX.QIS.popupMenu) {
+              TWX.QIS.popupMenu = new west.gui.Selectbox().setWidth(250);
+              TWX.QIS.popupMenu.addListener(TWX.QIS.findSet);
+              $.getScript(TWXstart.url + 'QIS_sets.js', function () {
+                var qs = TWX.QIS.sets,
+                i = qs.length,
+                wSets = west.storage.ItemSetManager._setList;
+                while (i--) {
+                  var si = qs[i],
+                  sn = wSets[si.name],
+                  ln = TWXlang.QIS[si.name];
+                  if (ln)
+                    si.name = ln;
+                  else if (!sn)
+                    qs.splice(i, 1);
+                  else if (sn.name)
+                    si.name = sn.name;
+                }
+                qs.sort(function (a, b) {
+                  var a1 = replUml(a.name),
+                  b1 = replUml(b.name);
+                  return (a1 == b1) ? 0 : (a1 > b1) ? 1 :  - 1;
+                });
+                for (var j = 0; j < qs.length; j++) {
+                  var itemimg = qs[j].img || qs[j].itemsk[0],
+                  NAME = qs[j].name;
+                  TWX.QIS.popupMenu.addItem(j, '<img src="' + ItemManager.getByBaseId(itemimg).image + '" height="20" width="20">' + '<div style="padding-right: 20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;">' + NAME + '</div>', NAME);
+                }
+                TWX.QIS.popupMenu.show(e);
+              });
+            } else
+              TWX.QIS.popupMenu.show(e);
+          };
+          TWX.QIS.findSet = function (id) {
+            var items = [],
+            seti = TWX.QIS.sets[id];
+            base = seti.items,
+            upgrade = seti.itemsk,
+            custom = false;
+            if (base)
+              for (var f = 0; f < base.length; f++)
+                items.push(base[f] * 1000);
+            else {
+              for (var g = 0; g < upgrade.length; g++)
+                for (var h = 0; h <= 5; h++)
+                  items.push(upgrade[g] * 1000 + h);
+              custom = true;
+            }
+            var invItems = Bag.getItemsByItemIds(items);
+            if (invItems.length > 0) {
+              if (!wman.getById(Inventory.uid))
+                Inventory.open();
+              Wear.open();
+              if (custom && seti.img != TWX.QIS.equImg)
+                Inventory.showCustomItems(invItems);
+              else
+                Inventory.showSearchResult(invItems);
+            } else
+              new UserMessage(TWXlang.QIS.nothingFound, 'hint').show();
+          };
+          new TWX.QIS.MenuButton('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QoTBiYArTu6FwAADftJREFUWMMl1tmz3mdBwPHv8zy/fXm3s+ecLE3aLG0a0sWQ2jKlRaotSFspm7JUOoIMoxfi6IXjyI0jN3ojDDoOiozgKFzIoBSxA21ppaG1LU1CkyY5Jyc9+3nPu/7e9/2tz+MF/8N3PvMVf/7Jd5jNjTat2Tu49PY1zHBE7Efk3piwivFrKZNS0IiaDLOMbr+HX5UMbE0TC0pDPWyw0xuxut2hnadgKaajGtUkY6Hhc+pEi82NlOn5BVbe3iAfj6g1WiSJJmpqLB906tGIA8ZjTdLro52UshBoryIqLJwgZK/dZ7s3ZG9cIF1JpFwsUzFTcxF/8cQd5thtd/AnX/o6m5VGlIAlKbVBGRtjbLRIsUxFhcRIg6MVuZC4JiBXPSQKoyu0kfiWR1FO2FeDP/3jp9h59XmUF3Dw5nt4/RcX2MkSjICqzHFFDAxIUwvb9am8hDKTWEZQWhlu1kR7FVQJwki0llRU2LaNEjkNN+bOk7ex8uqLqCMLtS/+4H9eZrmb4UUOYeDjC0kQGBpugOdMaNZdahhCz2I6dgktie0J/KDEd2zqUYAQFZawURIsDKPUUOY5jz14kpcvrPK9Z88xkjnKtzCuwDEaR1lkIseyNTXHIa9GxErSqnkYAZ4E6Wp8LwQDRTZBCg+MTZ5VpGnJ7nbCe371MBIE7dGAylF4BkJZYBmNU4FQGcpIhNHowMVyAkxlQCosNI4l8E2JzEZUhSY0HsiKWhNqLZtXLl7g0thBNVsk0md+qk7W7VFsj8iSlEk2phhmKK3Yau9ha49eb8jb631GewU7/Q79vTH5sKC3vctkXNKIHSQJJxo2TTvjyuY6V7ImljN/hMu9qyxNhQzHfea8GBMrkuEA2xGkRU7dCUiSCUrlYLlYjg1jg6DC2DYUJYdmY5Q0GBHj5wJNxXpbsLm5zqFDh3julRXSSY4bBmSjMcNhRZ63QTmE4xThSDoDg+/HoGFmtkWWZqTjEd2kj3F8lJJcX1vHtm0uTyqklsy26txYvoI1teRhWxrbzpgNQzoTTTUcUWs0GQwGuEHEBBs8SV6VuK7AkprpxXmMKVhZvUHoR2hhs9FuM11rMRVltIcps7OzeHsbdCcZnhagBbZUaMtldraO0QJMRX+Q4DgOtThkd2cX18DapW2EkQT1mIYfMkxHZFlGM46wLAdZGexcManeYjY+gjW4eJlpx2Y+CijKMfPhPK4STMqc/TMxWZpitKAWzTHJU8oqQ5QWppgQ1z3cmw4h8hzplHiySSAllRzSasAoLXngnad45uUrSCtj0tlEG0nsB3RurFGWBWWZE4VNkn6H2cZJWlHMJBmyuDgPlaG1sER7ZwvfCUiTCdlwgoo0kZchexkTE3B0/51YgSmIlUKVOc2gREYuZaFJB30ix4ayy77Dd9Hr9jhx8jRL+5dYW7lK9/qb5EUfY9eYCxRJmWHVQ2ZkhrJn2O2M0F6DnWyDRjMkSRXhQkit1sDxXHRZ0eu0aUwtYguboDnF+uoyp+6+h+mZfeysXWHjxjL5cAfyEfOLB9lMV2nONxmnJbbIqTU8KG12t7aR8dwchSyIQw/hxsg0Ya7pc+LgEi4ZtWaLrLfL0ZsP8vDD7+f880/z+Ec+jtagcLGlS6U0eqKRxgZHMh4WNFoN5uIBna3D9EwToSd4VUIkUqrhDna2x0zNwxMa24bJ1hUWZ6c4ecdZfv6//83Zh56gzDLyQZfAViSdbeLQxybDFTmRBVbLA9tQoLGqoIWxbYRMCdw66XjC6tXzRNNNfD9ACEGR9lm+9CrbW9cI6j5lMaaoUgLPRecdHGeWYNqhm45xvSnqQcowTRkNUrqjn9NaPIAdVsTzR0iLjBRFOxkTuyUtP6Y/nDAaCyJGfOebXyN0XbK8Iik1yjioSuMAeZ7iuR6ZNqRFDSlsdNaGPEdWOiWyFaFjY3CIp2NaczVCJ8BgoWyFHVo4ro0uBY9/6g95+ttfZVR0cAIDBhp1TaPmU+UV9bikFtr0Ol06vQEHDt1Of3ePfCwQSRunGBGTUlMFShu6uz30eISrC0SWIdOE93309/nhN/6WWE/wTIZlIBmMMHnBZDDEKsYInTFOurS3t3GEQt17vPHFV99sU1MWylOUuqQqBdpYjNMJRkiKQnPy7gf5yO99gfmlQxw8epqiKLi+eh2DoTU9TW84wPVDZmemyMocx6/j+SGnbznFTmfCC68s03IlpVYkmWZra8BwUJDlkExKhknBrfe8h0ef+iNas0ss3vIOVq6vs725w14nQUuXXmfEJKvYafdAObi+YengYY7fegtWM4wZjDN2xoKy02Xf4hyVMRTFiEZzlrvvu5/3PPIE2sDe1gZvnX+dpcOH+dCTX+Dh33qKZ773bVYvX6A7+iXL19f71KNfvtlOdwNHdjnWcNBSsbtXUe0OKYXGcx1CN0ZbLr/ywAO897EPIqVid2uDS6+9wfzBg3zs83/GaDDg+ae/y9rKdcZhn16nTVFp9joVtajB5iCjMymwxp0hRSWxLQ8TuKxvDzh95zu5/+EPcPy22xkOevzXt/+d18+/xs6NZXSZU2/EzC4scfrMu3j3Ix+i9tuf4covzvPSc8+wevkiw/Uu7f4my9sdHlw9yvrGMsZUZE6A7/uUacZ9D/06x+64k6MnT9Jr73Lu+Z9w7oUXaG9tkhUZQlfcftcZDt5ylPsf/TB+GPDGy+d47aWX2FhdpdPpsN41XLh6mamFGcST9x4w3zy3xpljC5w5825+47EPMj07x9sry3z9K19mc2sNoSEZJFiORFmSqspBC6JajDGS47ef4olP/i4Li/vZ293hG1/+G1575Rw7yYSHb7+V0B/wDz9Z5/4z+zl1+j7e+8hjtKZnePv6NX789H9wffkK7b094shDGIHj+pRVSTIaY9uKwPO55fgpPvDhTzK3b4mtjXW+952vc/Hcz7h0rcOvPXgb6tH33f7FH//fKo8/8pt84jOfY293h7//67/iP//1n/EjDykMji2YX5rHthWeY9GoRcSNBp5rE0U23d1dnnv6u2xurHP3Pffy+MefRCjFCz99kfe/7xgLJ2/mB89d4oMPP87vPPV5Ntc2+dbffZVv/dPXcK0QXSpmG3VsBJblY0sPo11mp+epByGy0vS6Pc49+ywr11Y4e9/9PPL4R8lHAy5evMDZu+7CCsIG026N+ZlpLAWtZsyTn/0cSIOUivEwYXphHlMZ8jwHNLbtIZVCCKjyFNuLkBKKosBSAozhwOIcC0HMgTmXt9cmzDQcjh/fhyUrDhyY4xOf/TSf+uynUcoiyyY0GlMUeY6UEm0qLNtFCIGuKoo8I4hqGGOoqhLXFkgBtxy9mUhJFuaaWKsXVzm8z+P8z76P6K0xsWr4oUUIDLWNKAYopw7KEApNv1REnqTEJStSKHImwqXpC2wnpKoyWnWfl376LMlgwOvLuww3JhzeP8ObL/6Y4fYORkOt0cQA2hgG/QGW62OqEtfzSDJNHLhoXWF0hWVZFNg4SmBZCiUlvu9y7eUfkltDLiy/hhXUbDbaA1JpuHHt+7SrkNmWR5UkdEpFy9UkKbhRiFdO6FYWdatA2w18XyLTEQPjMNfw6XQS6rWAxWlFXrm0pmJ6/YKbDh3ma8/8CDkwyDfWsLyAyHNIiwqlFIKSqszR0iL2XKQjybKKqiiotMZ1XGxXURQaYUAbTRxHHJyNmGtMMWz3sY7MN3AKw0yzydKhKdyNMTNzNUQrJBpWTLUcylJQGUXoaBqJpl53sKwYKEh6gsC4zM1PsTA/w2TUZzjcY3bhZk6eOMW01Wc6NtwUKo7cFmLLiNJk+I5LVmRIqQABxgEqhBRICWUlsJRPWVa4jk1VGSqtf5m0kdhOhdeAs7ceI4ok1nrmEdQjpoKYoB7S6t2gqQT9wjAV2sS2g2uV9EcJoRXjRaAoCZwJvcGEZuhSZBPUuI9lKTrdPlvtPqPJDqN0wqGlKVa6NlagiMKIQTejORVSFiVaFyglEMbguA4IxXCYIKXEdVzGyRCjBI5js7m1i3J8pNBEoc/Vt66zOd3EzQYsLTaxfvTiZa7sdFgbjJhrxaTdPmEtYjROcR2b4SBhaqpFb5DQiMfs7G4TRDGWkKAkCkGv3ycIA3zPQ4qK/TP7eHPlKlprDDsos8mV9pjshRWGgwTLslBKghSURcEkzXGUhefZOGGIrAzjfILQBikUveFbOI5Llmv80KVKMx46eYLO1hbnt9vsjA3Wo+86RL+7y/peCjqj2bLRpDRigRAlketRypTplkLrIQsLMVIYqAq0MhgtWAhCMBXaTJiZmsNYPpO0ZPGAz01Ls9x/4jS5eY3n37xB7EegK0pdkGclldYoaeH7DsnQMN7dxXUs8rzEIBFCYIzE1yVlaRjnI6SUxNMzvHL1DY7ddDOOZxD/9gf3mF1T50v/8kPaY5vDUwFDnVPzPIpBgfZhMhGEVolUkGcGjUQrBzvP0AL8WkBSTNBVRnugqRWaQ4dDHnjobpKLr3L2zAm0d4qv/OM3uZEZ6o6H6w/wdIjOM2yvSZHusZkZFmOP4ajARHWivAQnZ9DW2FMxjbrNymqbum24vJdx6uwiT56aY319FfGXHztjalJyeXubzaRkcX6OzjBjszsiGY0gH9GcmcYXmhoQ2eC4ilrgEjQVngOj1OC35hi3O7QHQ7TZ4733HcGperx+vUmRWNQtuN4ruLG7xb59i4xyw/pOh35Rkg06tDwfuxnRSgRzdYuRmrAQ+lihotZQCMAA0lqi117F3ulz0701qmiK1Rtr/D8jNuvkHjCe6wAAAABJRU5ErkJggg==', 'Quick items search', TWX.QIS.popup);
+        },
+      };
       TWX.CalcTwdb = {
         show: function (e) {
           if (!e.ctrlKey && !e.altKey)
@@ -4715,7 +5396,7 @@
       })();
       TWX.Skript.init();
     } else if (location.href.includes('?strana=invent&x=')) {
-      var lg = TWXstart.langs,
+      let lg = TWXstart.langs,
       lang = /lang=([a-z]+)/.exec(document.cookie),
       TWXlang = lang && lg.hasOwnProperty(lang[1]) ? lg[lang[1]] : lg.en,
       done = false,
@@ -4788,7 +5469,7 @@
       $('.inputV2').after('<img src="https://westzz.innogamescdn.com/images/items/yield/pick.png" width="25" style="position:absolute;right:0px;cursor:pointer;" onclick="TWXstart.compInv();"/>');
     } else {
       window.onload = function () {
-        var lg = TWXstart.langs,
+        let lg = TWXstart.langs,
         TWXlang = lg.hasOwnProperty(location.href.substr(21, 2)) ? lg[location.href.substr(21, 2)] : lg.en;
         Worlds.show = (function () {
           Worlds.twlt_show = Worlds.show;
