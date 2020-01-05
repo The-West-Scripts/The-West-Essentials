@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.46
+// @version 1.46.1
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -26,7 +26,7 @@
     location.href = '/';
   } else {
     TWXstart = {
-      version: '1.46',
+      version: '1.46.1',
       langs: {
         en: {
           language: 'English',
@@ -152,6 +152,42 @@
           custom2: 'Your custom login list',
           edit: 'Edit',
           saveMessage2: 'Saved successfully',
+          CT: {
+            ColorWindowTitle: 'Color tchat setting',
+            ColorWindowPreviewTxt: '*Click on the letters to change color',
+            ColorWindowOkBtn: 'Apply',
+            ColorWindowToDefaultBtn: 'Set to default',
+            ColorWindowThisTchatBtn: 'Set to this',
+            ColorWindowDefaultText: 'Select the tchat for reset to default: ',
+            ColorWindowBold: 'Bold',
+            ColorWindowCaps: 'Capitalized',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'No color',
+              'Enter a color code',
+              'red',
+              'brown',
+              'purple',
+              'blue',
+              'green',
+              'pink',
+              'magenta',
+              'violet gradient',
+              'degraded dark blue',
+              'green gradient',
+              'degraded red',
+              'blue gradient light',
+              'degraded pink',
+              'light green gradient',
+              'degraded pink',
+              'red gradient light'
+            ],
+            ColorLoadTitle: 'Click to load another color code<br>The current color code is: ',
+            ColorSaveEmpty: '[empty]',
+            CustomReady: 'Valid Code',
+            CustomNotReady: 'Invalid Code',
+          },
         },
         de: {
           language: 'German (Deutsch)',
@@ -277,6 +313,42 @@
           custom2: 'Deine eigene Login-Liste',
           edit: 'Bearbeiten',
           saveMessage2: 'Speichern erfolgreich',
+          CT: {
+            ColorWindowTitle: 'Color tchat Einstellung',
+            ColorWindowPreviewTxt: '*Klicke auf diese Buchstaben um die aktuell im oberen Feld gewählte Farbe reinzumischen',
+            ColorWindowOkBtn: 'Übernehmen',
+            ColorWindowToDefaultBtn: 'Zurücksetzen',
+            ColorWindowThisTchatBtn: 'Einstellung speichern',
+            ColorWindowDefaultText: 'Chaträume auf Standard setzen:',
+            ColorWindowBold: 'Fett',
+            ColorWindowCaps: 'CAPS LOCK',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'Keine Farbe',
+              'Eigener Farbcode',
+              'rot',
+              'braun',
+              'violett',
+              'blau',
+              'grün',
+              'pink',
+              'magenta',
+              'violett wechselnd',
+              'blau wechselnd',
+              'grün wechselnd',
+              'rot wechselnd',
+              'hellblau wechselnd',
+              'pink wechselnd',
+              'hellgrün wechselnd',
+              'pink wechselnd',
+              'hellrot wechselnd'
+            ],
+            ColorLoadTitle: 'Klicke um weitere Farben auszuwählen<br>Aktueller Farbcode: ',
+            ColorSaveEmpty: '[leer]',
+            CustomReady: 'Code ok',
+            CustomNotReady: 'Ungültig',
+          },
         },
         pl: {
           language: 'Polish (polski)',
@@ -402,6 +474,42 @@
           custom2: 'Your custom login list',
           edit: 'Edit',
           saveMessage2: 'Saved successfully',
+          CT: {
+            ColorWindowTitle: 'Ustawienia Koloru Tchat',
+            ColorWindowPreviewTxt: '*Kliknij na literę, aby zmienić kolor',
+            ColorWindowOkBtn: 'Zastosuj',
+            ColorWindowToDefaultBtn: 'Ustaw na domyślny',
+            ColorWindowThisTchatBtn: 'Ustaw na ten',
+            ColorWindowDefaultText: 'Wybierz tchat, który ma być domyślny: ',
+            ColorWindowBold: 'Grubość',
+            ColorWindowCaps: 'Wielkie litery',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'Bez koloru',
+              'Wprowadź kod koloru',
+              'Czerwony',
+              'Brązowy',
+              'Fioletowy',
+              'Niebieski',
+              'Zielony',
+              'Różowy',
+              'Purpurowy',
+              'Fioletowo gradientowy',
+              'Zwietrzały ciemny niebieski',
+              'Zielony gradient',
+              'Zwietrzały czerwony',
+              'Jasnoniebieski gradient',
+              'Zwietrzały ciemny różowy',
+              'Jasnozielony gradient',
+              'Zwietrzały różowy',
+              'Jasnoczerwony gradient'
+            ],
+            ColorLoadTitle: 'Kliknij tutaj, aby załadować inny kod koloru<br>Twój obecny kod koloru jest: ',
+            ColorSaveEmpty: '[pusty]',
+            CustomReady: 'Prawidłowy Kod',
+            CustomNotReady: 'Zły Kod',
+          },
         },
         es: {
           language: 'Spanish (español)',
@@ -526,6 +634,42 @@
           custom2: 'Tu lista de conexión personalizada',
           edit: 'Editar',
           saveMessage2: 'Grabado con éxito',
+          CT: {
+            ColorWindowTitle: 'Configurar Color tchat',
+            ColorWindowPreviewTxt: '*Haga clic en la carta de un cambio de color',
+            ColorWindowOkBtn: 'Aplicar',
+            ColorWindowToDefaultBtn: 'Color por defecto',
+            ColorWindowThisTchatBtn: 'Elegir este color',
+            ColorWindowDefaultText: 'Seleccione la tchat para restablecer a los valores predeterminados',
+            ColorWindowBold: 'En negrita',
+            ColorWindowCaps: 'Capitalizado',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'No hay color',
+              'Introduzca un código de color',
+              'rojo',
+              'marrón',
+              'morado',
+              'azul',
+              'verde',
+              'rosa',
+              'magenta',
+              'gradiente violeta',
+              'degradado rosa',
+              'degradado azul marino',
+              'gradient',
+              'rojo degradado',
+              'luz azul degradado',
+              'gradiente de luz verde',
+              'rosa degradado',
+              'luz pendiente roja'
+            ],
+            ColorLoadTitle: 'Haga clic para cargar otro código de colores<br>El código de color actual es: ',
+            ColorSaveEmpty: '[vacío]',
+            CustomReady: 'Código válido',
+            CustomNotReady: 'No válido',
+          },
         },
         nl: {
           language: 'Dutch (Nederlands)',
@@ -901,6 +1045,42 @@
           custom2: 'Η προσαρμοσμένη λίστα σας σύνδεσης',
           edit: 'Επεξεργασία',
           saveMessage2: 'Αποθηκεύτηκε με επιτυχία',
+          CT: {
+            ColorWindowTitle: 'Ρυθμίσεις',
+            ColorWindowPreviewTxt: '*Κάντε κλικ στα γράμματα για να αλλάξετε χρώμα',
+            ColorWindowOkBtn: 'Εφαρμογή',
+            ColorWindowToDefaultBtn: 'Προεπιλογή',
+            ColorWindowThisTchatBtn: 'Ορίστε σε αυτό',
+            ColorWindowDefaultText: 'Select the tchat for reset to default: ',
+            ColorWindowBold: 'Έντονα',
+            ColorWindowCaps: 'Κεφαλαία',
+            ColorWindowFlip: 'Ανάποδα',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'Χωρίς χρώμα',
+              'Καταχωρίστε έναν κωδικό χρώματος',
+              'Κόκκινο',
+              'Καφέ',
+              'Μωβ',
+              'Μπλε',
+              'Πράσινο',
+              'Ροζ',
+              'Σκούρο μωβ',
+              'Βιολετί',
+              'Ξεθωριασμένο σκούρο μπλε',
+              'Ανοιχτό πράσινο',
+              'Υποβαθμισμένο κόκκινο',
+              'Γαλάζιο',
+              'Ξεθωριασμένο σκούρο ροζ',
+              'Λαχανί',
+              'Ξεθωριασμένο ροζ',
+              'Φωτεινό κόκκινο'
+            ],
+            ColorLoadTitle: 'Κάντε κλικ για να τοποθετήσετε έναν άλλο κωδικό χρώματος<br>Ο τρέχων κωδικός χρώματος είναι: ',
+            ColorSaveEmpty: '[Άδειο]',
+            CustomReady: 'Έγκυρος κωδικός',
+            CustomNotReady: 'Μη έγκυρος κωδικός',
+          },
         },
         pt: {
           language: 'Portuguese (português)',
@@ -1026,6 +1206,42 @@
           custom2: 'Sua lista de login persnalizada',
           edit: 'Editar',
           saveMessage2: 'Salvo com sucesso!',
+          CT: {
+            ColorWindowTitle: 'Set Color tchat',
+            ColorWindowPreviewTxt: '*Clique na letra de uma mudança de cor',
+            ColorWindowOkBtn: 'Aplicar',
+            ColorWindowToDefaultBtn: 'Definido como padrão',
+            ColorWindowThisTchatBtn: 'Definido para este',
+            ColorWindowDefaultText: 'Selecione o tchat para repor as predefinições: ',
+            ColorWindowBold: 'Em negrito',
+            ColorWindowCaps: 'Capitalizados',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'Incolor',
+              'Insira um código de cor',
+              'vermelho',
+              'marrom',
+              'roxo',
+              'azul',
+              'verde',
+              'cor de rosa',
+              'magenta',
+              'gradiente violeta',
+              'gradiente azul escuro',
+              'gradiente verde',
+              'gradiente vermelho',
+              'gradiente de luz azul',
+              'Pink Gradient',
+              'gradiente luz verde',
+              'rosa Gradiente',
+              'gradiente claro vermelho'
+            ],
+            ColorLoadTitle: 'Clique para carregar outro código de cor<br>O código de cores atual é: ',
+            ColorSaveEmpty: '[vazio]',
+            CustomReady: 'Código válido',
+            CustomNotReady: 'Inválido',
+          },
         },
         it: {
           language: 'Italian (italiano)',
@@ -1152,18 +1368,180 @@
           edit: 'Modifica',
           saveMessage2: 'Salvato con successo',
         },
+        fr: {
+          language: 'French (français)',
+          ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
+          ApiGui2: 'Open script page',
+          FeatLogout: 'Add a logout button on the right side',
+          FeatStatusbar: 'Remove the taskbar',
+          FeatShowAP: 'Show your actual skill points in job windows',
+          FeatChangeCity: 'Switch title and player name in the town hall',
+          FeatDuellMap: 'Add Duelmap tab in duel window',
+          FeatMarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
+          FeatMarketTown: 'Show town name in market window',
+          FeatMarketMessage: 'Get a message when there are items or money to pick up on actual market',
+          FeatAchievHide: 'Hide completed achievements in achievements window',
+          FeatRecipeMarket: 'Improve the purchase of recipes on market',
+          FeatMoveJobs: 'Move the queued jobs a bit to the left',
+          FeatBlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
+          FeatFortTracker: 'Turn off fort battle reminder',
+          FeatFriendsPop: 'Hide "Friend online" pop-ups',
+          FeatInstantQuest: 'Complete the quest instantly if all requirements are done',
+          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
+          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
+          FeatQuestBookSearch: 'Search for solved quests in the quest book',
+          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
+          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
+          FeatShortPopups: 'Make the item pop-ups shorter',
+          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
+          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+          FeatMapDistance: ' Show the number of miles next to the travel time',
+          FeatTraderSell: 'Sell multiple items at once to the trader',
+          FeatTouchControl: 'Enable touch control on your mobile browser',
+          settings1: 'Open settings',
+          settings2: 'Open settings and information window',
+          ghosttown1: 'Go to ghost town ',
+          ghosttown2: 'Open ghost town',
+          ghosttown3: 'Open ghost town and center it on map',
+          indiantown1: 'Go to Indian village ',
+          indiantown2: 'Open Indian village',
+          indiantown3: 'Open Indian village and center it on map',
+          openmarket: 'Open market',
+          forum: 'Open town forum',
+          newsets: 'New sets are added to the script',
+          chooseItems: 'Choose the items',
+          remindHover: 'You get a notification when an item can be used again. Here you can choose these items.',
+          remindReady: 'Ready to collect',
+          skipHover: 'Skip the confirmation and result messages when you open some bags. Here you can choose these bags',
+          skipDone: 'You get',
+          info: 'Info',
+          contact: 'Contact',
+          chooseLang: 'Choose language',
+          features: 'Features',
+          name: 'Name',
+          save: 'Save',
+          saveMessage: 'Settings saved. Some changes need a refresh of the game window.',
+          setbonus2: 'Informations about the set bonuses',
+          frame2: 'Helpful web pages',
+          choose: 'Click on the hat to get started',
+          items: 'items',
+          parts: 'parts',
+          showItems: 'Show the set items in your Bag',
+          noItems: 'No items in your inventory found. Click again with CTRL to show it on TW-Calc.',
+          ownSets: 'Only own sets',
+          switchWeapon: 'Switch between firearm and melee weapon',
+          selectBonus: 'Select bonuses',
+          resetB: 'Reset',
+          body: 'Clothing',
+          right_arm: 'Weapons',
+          animal: 'Horse & Yield',
+          rest: 'Other',
+          buff: 'Buffs',
+          refresh: 'Refresh',
+          noFriends: 'No Friends',
+          reward: 'Reward',
+          allprofessions: 'All Professions',
+          market1: 'Items on market',
+          market2: 'There are items/money on this market. What do you want to pick up?',
+          all: 'All',
+          onlyBids: 'Only bids',
+          nothing: 'Nothing',
+          worldwide: 'Worldwide',
+          alliance: 'Alliance',
+          town: 'Town',
+          level: 'Level',
+          duelLevel: 'Duelling level',
+          exp: 'Exp',
+          distance: 'Distance',
+          startduel: 'Start Duel',
+          centerMap: 'Center map',
+          popup: 'The opponent\'s skill bonus',
+          damage: 'Damage',
+          duelmap: 'Duelmap',
+          duelradius: 'Duel radius',
+          minutes: 'minutes',
+          hour: '1 hour',
+          hours: 'hours',
+          searchOpp: 'Search for opponents',
+          amount: 'Dead',
+          not_dead_amount: 'Alive',
+          duellevel: 'Lvl',
+          status: 'Status',
+          sortBy: 'Sort by',
+          tooLow: 'Too low duelling level of opponent',
+          tooHigh: 'Too high duelling level of opponent',
+          ownTown: 'Member of your town',
+          attackable: 'Show only attackable players',
+          logout: 'Logout',
+          accNfin: 'Accept & complete quest',
+          onWiki: 'Show the quest on the wiki',
+          longerName: 'Name must be longer than 2 characters',
+          loading: 'Loading...',
+          rename: 'Rename',
+          newName: 'Choose a new set name',
+          used: 'Used',
+          renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
+          sellItems: 'Sell items to the trader?',
+          removeWorkNotis: 'Hide all job notifications',
+          compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
+          loginAll1: 'Login all worlds',
+          loginAll2: 'Load all your active worlds with one click',
+          custom1: 'Custom',
+          custom2: 'Your custom login list',
+          edit: 'Edit',
+          saveMessage2: 'Saved successfully',
+          CT: {
+            ColorWindowTitle: 'Configurer Color tchat',
+            ColorWindowPreviewTxt: '*Clickez sur la lettre à changer de couleur',
+            ColorWindowOkBtn: 'Appliquer',
+            ColorWindowToDefaultBtn: 'Par défaut',
+            ColorWindowThisTchatBtn: 'Pour se tchat',
+            ColorWindowDefaultText: 'Sélectionnez les tchat à Remettre par défaut:',
+            ColorWindowBold: 'En gras',
+            ColorWindowCaps: 'En majuscule',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'Sans couleur',
+              'Entrer des couleurs',
+              'rouge',
+              'marron',
+              'violet',
+              'bleu',
+              'vert',
+              'rose',
+              'magenta',
+              'dégradé violet',
+              'dégradé bleu foncé',
+              'dégradé vert',
+              'dégradé rouge',
+              'dégradé bleu clair',
+              'dégradé rose',
+              'dégradé vert clair',
+              'dégradé rose clair',
+              'dégradé rouge clair'
+            ],
+            ColorLoadTitle: 'Clickez pour charger un autre code couleur<br>Le code couleur actuel est: ',
+            ColorSaveEmpty: '[vide]',
+            CustomReady: 'Code valide',
+            CustomNotReady: 'Non valide',
+          },
+        },
       },
+      url: 'https://tomrobert.safe-ws.de/',
       Images: function (img, file) {
-        return 'https://tomrobert.safe-ws.de/' + img + (file ? '.jpg' : '.png');
+        return this.url + img + (file ? '.jpg' : '.png');
       },
     };
     if (location.href.includes('game.php')) {
       TWX = {
         name: 'TW Essentials',
         author: 'Leotas (updated by Tom Robert)',
-        minGame: '2.04',
+        minGame: '2.0',
         maxGame: Game.version.toString(),
-        updateUrl: 'https://tomrobert.safe-ws.de/sUp.js',
+        updateUrl: TWXstart.url + 'sUp.js',
         SPEC: [
           'speed', 'luck', 'dollar', 'experience', 'regen', 'drop',
         ],
@@ -1207,7 +1585,9 @@
           MapDistance: true,
           TraderSell: true,
           TouchControl: true,
+          ColorTchat: true,
         },
+        CT: {},
         cooldown: {
           2482: 1,
           2484: 1,
@@ -1496,7 +1876,7 @@
         },
         makeList: function () {
           if (!TWX.list)
-            $.getScript('https://tomrobert.safe-ws.de/forbidN.js').done(function () {
+            $.getScript(TWXstart.url + 'forbidN.js', function () {
               TWX.list = west.storage.ItemSetManager._setArray.slice(0);
               TWX.setListAll = {};
               TWX.setListOwn = {};
@@ -2616,7 +2996,7 @@
       };
       TWX.QuestWiki = {
         init: function () {
-          $.getScript('https://tomrobert.safe-ws.de/repGroups.js').done(function () {
+          $.getScript(TWXstart.url + 'repGroups.js', function () {
             QuestLog.solvedGroups = {};
             Ajax.remoteCallMode('building_quest', 'get_solved_groups', {}, function (json) {
               for (var sg in json.solved)
@@ -3457,6 +3837,651 @@
             clearTimeout(timer);
             clearTimeout(timer2);
           });
+        }
+      };
+      TWX.ColorTchat = {
+        init: function () {
+          TWX.CT.DATA = new function () {
+            this.Setting = {
+              saves: {
+                'save 1': '999',
+                'save 2': '999',
+                'save 3': '999',
+                'save 4': '999',
+                'save 5': '999'
+              },
+              Default: {
+                Format: '%c',
+                colorTag: '999'
+              },
+            };
+            this.Load = function () {
+              this.Setting = JSON.parse(localStorage.getItem('CT_save')) || this.Setting;
+            };
+            this.Load();
+            this.Save = function () {
+              localStorage.setItem('CT_save', JSON.stringify(this.Setting));
+            };
+          };
+          TWX.CT.Tools = new function () {
+            this.colorTagInv = function (e) {
+              if (e == null || e == undefined)
+                return '';
+              if (e.length == 3)
+                return '';
+              var t = '';
+              for (var n = 1; n < e.length / 3 - 1; n++) {
+                t = e.substring(n * 3, n * 3 + 3) + t;
+              }
+              return t;
+            };
+            this.Degrader = function (e) {
+              var t;
+              if (e.length == 3)
+                t = '#' + this.colorrgb(e);
+              else {
+                t = 'linear-gradient(to right, ';
+                for (var n = 0; n < e.length / 3; n++) {
+                  t += '#' + this.colorrgb(e.substring(n * 3, n * 3 + 3));
+                  if (n !== e.length / 3 - 1)
+                    t += ',';
+                }
+                t += ')';
+              }
+              return t;
+            };
+            this.colorrgb = function (e) {
+              result = '';
+              TransCode = {
+                0: '0',
+                1: '1',
+                2: '3',
+                3: '5',
+                4: '6',
+                5: '8',
+                6: 'a',
+                7: 'b',
+                8: 'd',
+                9: 'f'
+              };
+              for (var t = 0; t < e.length; t++) {
+                result += TransCode[e.substring(t, t + 1)];
+              }
+              return result;
+            };
+            this.GuiSelectbox = west.gui.Selectbox;
+            this.Guicheckbox = west.gui.Checkbox;
+            this.Guitextfield = west.gui.Textfield;
+            this.Guibutton = west.gui.Button;
+            this.Guidialog = west.gui.Dialog;
+          };
+          TWX.CT.Chat = new function () {
+            this.init = function () {
+              if (!$('div.chat_room').length)
+                return;
+              clearInterval(TWX.CT.initInterval);
+              this.Draw();
+              TWX.CT.initInterval = setInterval(function () {
+                  TWX.CT.Chat.OnChanelChange();
+                }, 500);
+            };
+            this.Draw = function () {
+              if (isDefined(this.btncolor))
+                return;
+              var e;
+              $('#colorTxtStyle').append('div.btnColor{cursor: pointer;position: absolute;right: 0px; width: 25px;height: 25px;}\n');
+              $('#colorTxtStyle').append('div.btnColorBG{background-image: url(data:image/png;base64,' + border + ');background-position: 0px 3px;background-repeat: no-repeat;}\n.btnColorBG:hover{background-position: -25px 3px;}\n');
+              $('#colorTxtStyle').append('div.btnColorImg{width: 11px; height: 11px; margin: 8px 0px 0px 5px; position: absolute; border-radius: 5px; background-image: url(data:image/png;base64,' + color + ');}\n');
+              $('#colorTxtStyle').append('div.btnColorSmiley{border-top-right-radius: 10px;border-top-left-radius: 10px;border: 1px solid #646464;box-shadow: 0px 0px 1px 1px black;background-image: url(images/interface/wood_texture_dark.jpg);width: 425px;bottom: 18px;left: -400px;height: 208px;\tmargin: 0px 0px 6px 0px; position: absolute;}\n');
+              $('#colorTxtStyle').append('div.btnColorOneSmiley{display: inline-block; cursor: pointer; width: 17px; height: 13px; padding: 1px; text-align: center; vertical-align: middle;}\n');
+              this.btncolor = $('<div class="btnColor btnColorBG"/>').append($('<div class="btnColorImg btnColorImgTag"/>').click(function () {
+                    TWX.CT.Window.show();
+                  })).append(e = $('<div class="btnColorSmiley"/>').hide()).mouseout(function () {
+                  $('div.btnColorSmiley:last-child', this).hide();
+                }).mouseover(function () {
+                  $('div.btnColorSmiley:last-child', this).show();
+                });
+              for (var t in sm) {
+                if (sm[t] !== '') {
+                  e.append($('<div class="btnColorOneSmiley"/>').data('Tag', t).click(this.addSmToTxt).append(sm[t]));
+                }
+              }
+            };
+            this.addSmToTxt = function (e) {
+              var inp = $(e.target).parentsUntil($('div.chat_main')).find('input');
+              var n = $(e.currentTarget).data('Tag');
+              var r = inp[0].selectionStart;
+              var i = inp[0].selectionEnd;
+              var s = inp.val();
+              if (n == '[player][/player]') {
+                s = s.substring(0, r) + '[player]' + s.substring(r, i) + '[/player]' + s.substring(i);
+              } else if (n == '[item=]') {
+                s = s.substring(0, r) + '[item=' + s.substring(r, i) + ']' + s.substring(i);
+              } else {
+                s = s.substring(0, r) + ' ' + n + s.substring(r);
+              }
+              inp.val(s);
+            };
+            this.appliquer_couleur = function (e, t) {
+              if (e == '')
+                return '';
+              if (t == '999' && !TWX.CT.DATA.Setting.Default.Format.startsWith('/111* '))
+                return e;
+              if (e.toLowerCase().indexOf('[player]') == 0 && e.toLowerCase().indexOf('[/player]') !== -1)
+                return e.substring(0, e.toLowerCase().indexOf('[/player]') + 10) + ' ' + this.appliquer_couleur(e.substring(e.toLowerCase().indexOf('[/player]') + 10), t);
+              if (e.toLowerCase().indexOf('[report=') == 0 && e.toLowerCase().indexOf('[/report]') !== -1)
+                return e.substring(0, e.toLowerCase().indexOf('[/report]') + 10) + ' ' + this.appliquer_couleur(e.substring(e.toLowerCase().indexOf('[/report]') + 10), t);
+              if (e.toLowerCase().indexOf('http') == 0)
+                if (e.indexOf(' ') !== -1)
+                  return e.substring(0, e.indexOf(' ') + 1) + ' ' + this.appliquer_couleur(e.substring(e.indexOf(' ') + 1), t);
+                else
+                  return e;
+              if (e.toLowerCase().indexOf('[item=') == 0 && e.indexOf(']') !== -1)
+                return e.substring(0, e.indexOf(']') + 1) + ' ' + this.appliquer_couleur(e.substring(e.indexOf(']') + 1), t);
+              if (e.toLowerCase().indexOf('[marker') == 0 && e.indexOf(']') !== -1)
+                return e.substring(0, e.indexOf(']') + 1) + ' ' + this.appliquer_couleur(e.substring(e.indexOf(']') + 1), t);
+              for (var n in sm) {
+                if (e.indexOf(n) == 0)
+                  return e.substring(0, n.length) + ' ' + this.appliquer_couleur(e.substring(n.length), t);
+              }
+              if (t.length == 3)
+                return '/' + t + e;
+              if (e.charAt(0) == ' ')
+                return e.charAt(0) + this.appliquer_couleur(e.substring(1), t.substring(3) + t.substring(0, 3));
+              return '/' + t.substring(0, 3) + e.charAt(0) + ' ' + this.appliquer_couleur(e.substring(1), t.substring(3) + t.substring(0, 3));
+            };
+            this.fCharAt = function (str, idx) {
+              str += '';
+              var ret = '',
+              end = str.length,
+              surrogatePairs = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
+              while ((surrogatePairs.exec(str)) != null) {
+                var li = surrogatePairs.lastIndex;
+                if (li - 2 < idx)
+                  idx++;
+                else
+                  break;
+              }
+              if (idx >= end || idx < 0)
+                return '';
+              ret += str.charAt(idx);
+              if (/[\uD800-\uDBFF]/.test(ret) && /[\uDC00-\uDFFF]/.test(str.charAt(idx + 1)))
+                ret += str.charAt(idx + 1);
+              return ret;
+            };
+            this.flipString = function (e) {
+              if (e.length === 0)
+                return '';
+              var eO = this.fCharAt(e, 0);
+              for (var p in fl)
+                if (p == eO)
+                  return this.flipString(e.substring(eO.length)) + fl[p];
+                else if (fl[p] == eO)
+                  return this.flipString(e.substring(eO.length)) + p;
+              return this.flipString(e.substring(eO.length)) + eO;
+            };
+            this.OnPressKeyEnter = function (e) {
+              var obj = $.extend({}, $(e.target).data('ColorTchat'));
+              var n = $(e.target).val();
+              if (n.charAt(0) == '/') {
+                if (n.substring(0, 6) == '/tell ') {
+                  if (n.indexOf(':') !== -1) {
+                    var r = n.substring(6, n.indexOf(':') + 1);
+                    n = n.substring(n.indexOf(':') + 1);
+                  }
+                } else {
+                  var i = [
+                    '/topic',
+                    '/clear',
+                    '/logout',
+                    '/ignorelist',
+                    '/ignore',
+                    '/unignore',
+                    '/rights',
+                    '/color',
+                    '/me',
+                    '/help',
+                    '/?',
+                    '/join',
+                    '/items',
+                    '/items.s',
+                    '/items.add',
+                  ];
+                  for (var s = 0; s < i.length; s++) {
+                    if (n.substring(0, i[s].length) == i[s]) {
+                      return;
+                    }
+                  }
+                }
+              }
+              if (/\/flip /.test(n.substring(0, 6))) {
+                obj.Format = '%f';
+                n = n.substring(6);
+              }
+              if (/\/[0-9]{3}/.test(n.substring(0, 5))) {
+                obj.Format = '%n';
+              }
+              if (typeof r !== 'undefined')
+                obj.Format = '/tell %t:' + obj.Format;
+              var cT = function () {
+                var te = '',
+                co = obj.colorTag;
+                if (!co || co.length % 3 !== 0)
+                  return '999';
+                if (co.length !== 3) {
+                  for (var n = 1; n < co.length / 3 - 1; n++)
+                    te = co.substring(n * 3, n * 3 + 3) + te;
+                  return co + te;
+                } else
+                  return co;
+              }
+              (),
+              code = /%[C-n]/.exec(obj.Format)[0],
+              newN;
+              switch (code) {
+              case '%c':
+                newN = this.appliquer_couleur(n, cT);
+                break;
+              case '%C':
+                newN = this.appliquer_couleur(n, cT).toUpperCase();
+                break;
+              case '%f':
+                var u = this.flipString(n);
+                newN = this.appliquer_couleur(u, cT);
+                break;
+              case '%F':
+                var f = this.flipString(n.toUpperCase());
+                newN = this.appliquer_couleur(f, cT);
+                break;
+              default: //%n
+                newN = n;
+                break;
+              }
+              $(e.target).val(obj.Format.replace(code, newN));
+            };
+            this.OnChanelChange = function () {
+              if (!$('div.chat_room').length)
+                return;
+              clearInterval(TWX.CT.initInterval);
+              $('div.chat_room').find('.chat_input').each(function (e) {
+                if (!$(this).children().is('.btnColor')) {
+                  $(this).append(TWX.CT.Chat.btncolor.clone(true));
+                  $(this).find('input.message').keypress(function (e) {
+                    if (e.keyCode == 13) {
+                      TWX.CT.Chat.OnPressKeyEnter(e);
+                      document.focusing = undefined;
+                    }
+                  }).data('ColorTchat', TWX.CT.DATA.Setting.Default);
+                  TWX.CT.Chat.Change = true;
+                }
+              });
+              this.ChangeColor();
+              TWX.CT.initInterval = setInterval(function () {
+                  TWX.CT.Chat.OnChanelChange();
+                }, 500);
+            };
+            this.ChangeColor = function () {
+              if (this.Change === false)
+                return;
+              this.Change = false;
+              var e = TWX.CT.DATA.Setting.Default.colorTag;
+              if (pos[e])
+                $('#colorTxtStyleTmp').text('div.btnColorImgTag{background-position: ' + pos[e] + '; z-index: 6}\n');
+              else
+                $('#colorTxtStyleTmp').text('div.btnColorImgTag{background: ' + TWX.CT.Tools.Degrader(e) + '}\n');
+              $('div.chat_room').each(function (e) {
+                $(this).find('input.message').data('ColorTchat', TWX.CT.DATA.Setting.Default);
+              });
+            };
+            var fl = {
+              a: 'ɐ',
+              A: 'Ɐ',
+              b: 'q',
+              B: '𐐒',
+              c: 'ɔ',
+              C: 'Ɔ',
+              d: 'p',
+              D: 'ᗡ',
+              e: 'ǝ',
+              E: 'Ǝ',
+              f: 'ɟ',
+              F: 'Ⅎ',
+              g: 'ƃ',
+              G: '⅁',
+              h: 'ɥ',
+              i: 'ᴉ',
+              j: 'ɾ',
+              J: 'ſ',
+              k: 'ʞ',
+              K: 'ʞ',
+              l: 'ן',
+              L: '⅂',
+              m: 'ɯ',
+              M: 'W',
+              n: 'u',
+              N: 'N',
+              P: 'Ԁ',
+              Q: 'Ὁ',
+              r: 'ɹ',
+              R: 'ᴚ',
+              t: 'ʇ',
+              T: '⊥',
+              U: '∩',
+              v: 'ʌ',
+              V: 'Ʌ',
+              w: 'ʍ',
+              y: 'ʎ',
+              Y: '⅄',
+              1: 'ɩ',
+              2: 'ζ',
+              3: 'Ɛ',
+              4: 'ᔭ',
+              5: 'ﻛ',
+              6: '9',
+              7: 'ㄥ',
+              '.': '˙',
+              '[': ']',
+              '(': ')',
+              '{': '}',
+              '?': '¿',
+              '!': '¡',
+              '\'': ',',
+              '<': '>',
+              '_': '‾',
+              ';': '؛',
+              '&': '⅋',
+              '"': '„',
+              '‿': '⁀',
+              '⁅': '⁆',
+              '∴': '∵',
+            },
+            sm = {
+              ':-)': '',
+              ':)': '<img src ="images/chat/emoticons/smile.png">',
+              ':-D': '',
+              ':D': '<img src ="images/chat/emoticons/grin.png">',
+              ':-(': '',
+              ':(': '<img src ="images/chat/emoticons/frown.png">',
+              ';-)': '',
+              ';)': '<img src ="images/chat/emoticons/smirk.png">',
+              ':-p': '',
+              ':p': '',
+              ':-P': '',
+              ':P': '<img src ="images/chat/emoticons/tongue.png">',
+              '-.-': '<img src ="images/chat/emoticons/nc.png">',
+              '^_^': '',
+              '^^': '<img src ="images/chat/emoticons/happy.png">',
+              'O.o': '',
+              'o.O': '',
+              'O_o': '',
+              'o_O': '<img src ="images/chat/emoticons/oo.png">',
+              ':-/': '',
+              ':/': '<img src="images/chat/emoticons/sore.png">',
+              '=:)': '<img src="images/chat/emoticons/invader.png">',
+              '>:(': '<img src="images/chat/emoticons/angry.png">',
+              'T_T': '',
+              'T.T': '',
+              ':\'(': '<img src="images/chat/emoticons/cry.png">',
+              ':-o': '',
+              ':o': '',
+              ':-O': '',
+              ':O': '<img src="images/chat/emoticons/ohmy.png">',
+              ':-x': '',
+              ':x': '',
+              ':-X': '',
+              ':X': '<img src="images/chat/emoticons/muted.png">',
+              ':-|': '',
+              ':|': '<img src="images/chat/emoticons/silent.png">',
+              '>_<': '',
+              '>.<': '<img src="images/chat/emoticons/palm.png">',
+              'X_X': '',
+              'x_x': '',
+              'X.X': '',
+              'x.x': '<img src="images/chat/emoticons/xx.png">',
+              'el pollo diablo!': '<img src ="images/chat/emoticons/elpollodiablo.png">',
+              '!el pollo diablo': '<img src ="images/chat/emoticons/elpollodiablo_mirror.png">',
+              'el pollo diablo?!': '<img src ="images/chat/emoticons/elpollodiablo_front.png">',
+              'addme!': '<img src="images/chat/emoticons/sheep_rainbow.gif">',
+              'addme': '<img src="images/chat/emoticons/sheep.gif">',
+              '[player][/player]': '<div style="background-image: url(images/tw2gui/tw2gui_bbcodes.png); background-position:-88px 20px; width: 21px; height: 20px">',
+              '[item=]': '<img src="images/forum/icon/cowboy_boots.png" style="background: url(images/tw2gui/tw2gui_bbcodes.png); background-position:-22px 20px; width: 21px; height: 20px">',
+            },
+            em = [
+              '😄', '😃', '😀', '😊', '😉', '😍', '😘', '😚', '😗', '😙', '😜', '😝', '😛', '😳', '😁', '😔', '😌', '😒', '😞', '😣', '😢', '😂', '😭', '😪', '😥', '😰', '😅', '😓', '😩', '😫', '😨', '😱', '😠', '😡', '😤', '😖', '😆', '😋', '😷', '😎', '😴', '😵', '😲', '😟', '😦', '😧', '😈', '😮', '😬', '😐', '😕', '😯', '😶', '😇', '😏', '😑', '🙈', '🙉', '🙊', '💀', '👽', '💩', '🔥', '🌟', '💫', '💦', '💧', '💤', '💨', '👍', '👎', '👌', '👊', '✌️', '👋', '👉', '👈', '🙌', '🙏', '👏', '💪', '🎩', '👑', '👒', '💼', '👜', '👓', '🌂', '💛', '💙', '💜', '💚', '❤️', '💔', '💗', '💓', '💕', '💘', '💌', '💋', '💍', '💎', '💬', '💭', '🐶', '🐺', '🐱', '🐭', '🐹', '🐰', '🐸', '🐯', '🐨', '🐻', '🐷', '🐮', '🐗', '🐵', '🐒', '🐴', '🐑', '🐘', '🐼', '🐧', '🐦', '🐤', '🐔', '🐍', '🐢', '🐛', '🐝', '🐜', '🐞', '🐌', '🐙', '🐚', '🐠', '🐟', '🐬', '🐳', '🐋', '🐄', '🐏', '🐀', '🐃', '🐅', '🐇', '🐉', '🐎', '🐐', '🐓', '🐕', '🐖', '🐁', '🐂', '🐡', '🐊', '🐫', '🐪', '🐆', '🐈', '🐩', '☀️', '⛅️', '☁️', '⚡️', '☔️', '❄️', '⛄️', '🌁', '🌈', '🌊', '🎓', '🎃', '🎅', '🎄', '🎁', '🎉', '🎊', '🎈', '📱', '📞', '⏰', '🔒', '🚿', '🚽', '🚬', '💣', '🔫', '🔪', '💰', '✂️', '🎤', '🎧', '🎶', '🎻', '🎺', '🎷', '🎸', '🎮', '🏈', '🏀', '⚽️', '⚾️', '🎾', '🎳', '⛳️', '🏁', '🏆', '🎿', '🏂', '🏊', '🏄', '☕️', '🍸', '🍹', '🍷', '🍴', '🍕', '🍔', '🍟', '🍳', '🍩', '🍦', '🍨', '🍪', '🍫', '🍬', '🍭', '🍎', '🍇', '🍓', '🍌', '🍍', '🍅',
+            ],
+            EvName = Object.keys(Game.sesData)[0];
+            for (var j of em)
+              sm[j] = j;
+            if (EvName == 'Easter')
+              sm['easter!'] = '<div style="background-image: url(images/window/events/easter/easter_sprite.png); background-position:-20px 0px; width: 17px; height: 20px">';
+            else if (EvName)
+              sm[EvName.toLowerCase() + '!'] = '<img src="images/icons/' + EvName + '.png">';
+            var color = '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',
+            border = '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',
+            pos = {
+              999: '0px 0px',
+              308318328338348: '-24px -0px',
+              106117128139: '-36px -0px',
+              120130140150: '-48px -0px',
+              400500600700800: '-60px -0px',
+              199299399499599699: '-72px -0px',
+              505606607709809: '-84px -0px'
+            };
+          };
+          TWX.CT.Window = new function () {
+            var saveB = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAANCAIAAAAv2XlzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAH6SURBVHjaVM89a1RRFIXhtffZ9zOYTBKJYaKOiumiqdKKgmBhqUL+hI2VIFjYCZaChb9ABAtJIQbFIoJoQNSMEKLkC+IEZhLnzuTM3DP3nm2hhLjq9RYPRceOn5qeDUWcyw0jjUNjDBsTiEnikADbd13rbF7sbKwetLZkdPLs5Ru34cvv9ZXauNy6OlOrnZ6aOmmC+FN9KxQzd+HMs8Wv71caG6ufl54/EvW+28nyfr/V2hvh4KCb9W2XfP5rN3vwZCGJ5en9+Z7tZu3faZKaIBIiEKlhiqMgikMjwswKAJAgEBEAhskwoCVUBQBUiSGBRGEYCweGhPnE2PD8tdk4DCrDQ1nH2l6/KEsQBABB1StIfu5kr5c3zzcHE9udykhl5txEIPxicfnd8mpeStFzBAgBWcfud2xBYUH8diV7862tWldVKBQgIE3jsdGKVw9AitLvtTvMdGVuulYdJyLVvwQAIBAzrW3ufllrDJxT9VKW5X67e/3SxYd3bjKKvu2B6DCAahSFecn3Hi+8fLWuqjIoCmt7IsxMe812s9li5sO/934oTSar1TQJDqxVVfFenXO+LAGEYZikydFAVeM4BtHADVzuVFWIWFkUVBYuTZMwjvD/xLBqCZCyAZHkWUMa9Q9L7m573Xs9Kv7nJmLmj/XtQeuHd70/AwDj7v01yw6ZhAAAAABJRU5ErkJggg==',
+            setB = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTM0A1t6AAACoUlEQVQ4T42Uy2sTURTGk1Zbq+ILUdyKG5uZSerQkPbeyYAYCZhlggurFUJN5xGUgiBushdBsQguFMGFC7EqLiyiCwWh0IL/QH3tFJcu1CKlft+duTqJieTA4Z7cOfeX755zZlLaarXaYBx2i9OMW63WQDI2ZDBniOCrKcMHo66/nfvKXNfdgkUlMo4Ppsrl8rCGYx2ybXtzZsIbN47W91vCuwLQhimDDQuekeFl5rUpKBQKIxpAMHwTY8IIN4QfmtL/Dv+WhKnY8S/qfGVJGA8nYXTDCU+YIvhhykbVFCHWBEwGz+1jtZ3MV0Y1vZTRGY8V64eh7BGgP+GPTeG/UjARvCkcr+5hjjKCkjXrBssVZ8YB+wJl96BmwZL+EtY1NOWZJb0VpLBkaX1WWS9lCib8j1knzANyC824b4jwIbr7EvFrQ/rXkJauVqsjXHnmv8rQiPem9GzsDVYqla2A3oayu1C8AOgTvY/0CMYNehz/C3P8IoC7jzinDtju3F7Aliw5exqTONABS2uOInfCTOF9yIjwBlT8QrzOeqEJKxFMWToJ45TEcReY9FbNyWAe11vnaKBmi+jmsiUaZ5CiAEkY66cbq14hvgGMc7Ixqq4JZX9hwSKV5SIYrSes7cqEYhyuA3S1TZkMlk1nZjrO6wnjlGCJVLLDrju9C4ffWSK4iQ6ucTQi2CxhtJ6w5FtGY7eGALgEwLw1ee4krngHvpp1GmfjnL5gek9d2RK+BPATavbWEmF9ojS1L37WF4yzrPdVMUulqW3o7sFD5eYwD6kHfcKSbxktnZUNAWUv8vnmjhjWt7IOmHrOL+9T1AxfDu+82o4BXOkEaBgByWtqGKdE76cwtBfgn61ic4y/4yTC9GwlYwXmH/ypWdRYPEulfgMLajrH8hIjewAAAABJRU5ErkJggg==',
+            cList = [
+              '999',
+              'custom',
+              '700',
+              '321',
+              '409',
+              '007',
+              '031',
+              '704',
+              '608',
+              '308318328338348',
+              '106117128139',
+              '120130140150',
+              '400500600700800',
+              '199299399499599699',
+              '505606607709809',
+              '696595494393292',
+              '959949839829819',
+              '900911922933944'
+            ];
+            this.showOn = function () {
+              var e,
+              i,
+              format = TWX.CT.DATA.Setting.Default.Format;
+              $((this.w = wman.open('Colorsettings').setTitle(TWXlang.CT.ColorWindowTitle).setMiniTitle(TWX.CT.name).setSize(350, 400)).getContentPane()).css('text-align', 'center').append(i = $('<input type=hidden class="color" id="colorinput" value="66ff00"/>'));
+              (this.ColorPicker = new jscolor.color(i[0], {
+                    pickerOnfocus: false
+                  })).showPicker();
+              this.tab1 = $('<div style="display:inline-block;width:290px;height:275px;position:relative;padding:4px12px4px4px;text-align:left"/>').appendTo(this.w.getContentPane()).append($(jscolor.picker.boxB).css({
+                    position: 'relative',
+                    display: 'inline-block',
+                    'background-color': ''
+                  })).append($('<div id="colorPanelDIV" style="display:inline-block;width:auto;height:123px;position:relative;margin-left:7px;border:' + this.ColorPicker.pickerBorder + 'px solid;border-color:' + this.ColorPicker.pickerBorderColor + '"/>').append($('<div id="colorWSetbtn" style="width:20px;height:20px;background-image:url(' + setB + ');margin:10px;cursor:pointer;"/>').click(function (e) {
+                      TWX.CT.Window.SetPreviewColor(0);
+                    })).append($('<div id="colorWLoadbtn" style="width:20px;height:20px;margin:10px;cursor:pointer;"/>').click(function (e) {
+                      TWX.CT.Window.selectLoad.show(e);
+                    })).append($('<div id="colorWSavebtnBg" style="width:20px;height:20px;background-image:url(' + saveB + ');background-size:100%100%;margin:10px;cursor:pointer;"/>').click(function (e) {
+                      TWX.CT.Window.selectSave.show(e);
+                    }))).append(e = $('<div id="PreviewDIV" class="chatwindow_background" style="display:inline-block;width:287px;height:60px;position:relative;zIndex:5;margin-top:5px;border:' + this.ColorPicker.pickerInset + 'px solid;border-color:' + this.ColorPicker.pickerInsetColor + ';color:white;background:#1D1C1C;opacity:' + $('.tw2gui_window_inset', '.chat').css('opacity') + '"/>')).append($('<div style="display:inline-block;position:relative;padding:4px;width:45%"/>').append((this.Bold = new TWX.CT.Tools.Guicheckbox(TWXlang.CT.ColorWindowBold).setSelected(/\*.*\*/.test(format))).getMainDiv().click(function () {
+                      TWX.CT.Window.updateFormat();
+                      TWX.CT.Window.updatePreview();
+                    }))).append($('<div style="display:inline-block;position:relative;padding:4px;width:auto"/>').append((this.Caps = new TWX.CT.Tools.Guicheckbox(TWXlang.CT.ColorWindowCaps).setSelected(/%C|%F/.test(format))).getMainDiv().click(function () {
+                      TWX.CT.Window.updateFormat();
+                      TWX.CT.Window.updatePreview();
+                    }))).append($('<div style="display:inline-block;position:relative;padding:4px;width:45%"/>').append((this.Flip = new TWX.CT.Tools.Guicheckbox(TWXlang.CT.ColorWindowFlip).setSelected(/%f|%F/.test(format))).getMainDiv().click(function () {
+                      TWX.CT.Window.updateFormat();
+                      TWX.CT.Window.updatePreview();
+                    }))).append((this.inputFormat = new TWX.CT.Tools.Guitextfield('bdfFormat').setValue(format).setSize(14).setReadonly(true)).getMainDiv());
+              $((this.selectLoad = (new TWX.CT.Tools.GuiSelectbox('topleft-left')).setPosition(42, 10).addListener(function (e) {
+                    TWX.CT.Window.LoadColor(e);
+                    setTimeout(function () {
+                      TWX.CT.Window.selectLoad.hide();
+                    }, 0);
+                  }).setWidth(200).setHeight(300)).elContent).css({
+                'overflow-y': 'auto'
+              });
+              this.selectSave = (new TWX.CT.Tools.GuiSelectbox('topleft-left')).setPosition(42).addListener(function (e) {
+                TWX.CT.Window.SaveColor(e);
+                setTimeout(function () {
+                  TWX.CT.Window.selectSave.hide();
+                }, 0);
+              }).setWidth(200);
+              for (var s = 0; s < cList.length; s++)
+                this.selectLoad.addItem(cList[s], $('<div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">').append($('<span style="display:inline-block;width:19px;height:19px;"/>').css('background', TWX.CT.Tools.Degrader(cList[s]))).append(TWXlang.CT.ColorLoadListName[s]), TWXlang.CT.ColorLoadListName[s]);
+              for (s in TWX.CT.DATA.Setting.saves)
+                this.selectLoad.addItem(s, $('<div>').append($('<span style="display:inline-block;width:19px;height:19px;"/>').css('background', TWX.CT.Tools.Degrader(TWX.CT.DATA.Setting.saves[s]))).append(s + (TWX.CT.DATA.Setting.saves[s] == cList[0] ? ' ' + TWXlang.CT.ColorSaveEmpty : '')));
+              for (s in TWX.CT.DATA.Setting.saves)
+                this.selectSave.addItem(s, $('<div>').append($('<span style="display:inline-block;width:19px;height:19px;"/>').css('background', TWX.CT.Tools.Degrader(TWX.CT.DATA.Setting.saves[s]))).append(s + (TWX.CT.DATA.Setting.saves[s] == cList[0] ? ' ' + TWXlang.CT.ColorSaveEmpty : '')));
+              for (s = 1; s < TWXlang.CT.ColorWindowPreviewTxt.length; s++)
+                $('<div id="idColorPreview_' + s + '"style="display:inline-block;cursor:pointer" onclick="javascript:TWX.CT.Window.SetPreviewColor(\'' + s + '\');"/>').appendTo(e);
+              this.customTF = (new TWX.CT.Tools.Guitextfield).setSize(30);
+              this.test = function () {
+                TWX.CT.Window.customTest.html(TWXlang.CT.CustomNotReady).css('color', 'red');
+                v = TWX.CT.Window.customTF.getValue();
+                if (v.length % 3 == 0 && /[0-9]+/.exec(v) == v) {
+                  TWX.CT.Window.customTest.html(TWXlang.CT.CustomReady).css('color', 'green');
+                  TWX.CT.Window.customPrev.css('background', TWX.CT.Tools.Degrader(v));
+                }
+              };
+              this.customTF.getField()[0].addEventListener('keyup', this.test);
+              this.customPrev = $('<div style="float:left;margin-top:5px;width:19px;height:19px;"/>');
+              this.customTest = $('<div style="height:12px;width:120px;"/>');
+              this.customTF.divMain.append(this.customPrev, this.customTest);
+              this.DefaultButton = (new TWX.CT.Tools.Guibutton(TWXlang.CT.ColorWindowToDefaultBtn, function () {
+                  TWX.CT.Window.DefaultClick();
+                })).appendTo(this.w.getContentPane());
+              this.OkButton = (new TWX.CT.Tools.Guibutton(TWXlang.CT.ColorWindowThisTchatBtn, function () {
+                  TWX.CT.Window.OkClick();
+                })).appendTo(this.w.getContentPane());
+              this.LoadColor(TWX.CT.DATA.Setting.Default.colorTag);
+            };
+            this.show = function () {
+              if (window.jscolor)
+                return TWX.CT.Window.showOn();
+              $.getScript(TWXstart.url + 'jscolor.js', function () {
+                TWX.CT.Window.showOn();
+              });
+            };
+            this.OkClick = function () {
+              TWX.CT.DATA.Setting.Default = {
+                Format: $('#bdfFormat').val(),
+                colorTag: this.ColorTag
+              };
+              TWX.CT.DATA.Save();
+              TWX.CT.Chat.Change = true;
+              TWX.CT.Chat.ChangeColor();
+              new UserMessage(TWXlang.CT.saveMessage, 'success').show();
+            };
+            this.DefaultClick = function () {
+              TWX.CT.DATA.Setting.Default = {
+                Format: '%c',
+                colorTag: cList[0]
+              };
+              TWX.CT.DATA.Save();
+              TWX.CT.Chat.Change = true;
+              TWX.CT.Chat.ChangeColor();
+              this.show();
+            };
+            this.SetPreviewColor = function (e) {
+              if (e == 0) {
+                this.ColorTag = this.colorwest(this.ColorPicker.toString());
+              } else {
+                e--;
+                if (e > this.ColorTag.length / 3) {
+                  this.ColorTag += this.colorwest(this.ColorPicker.toString());
+                } else {
+                  this.ColorTag = this.ColorTag.substring(0, e * 3) + this.colorwest(this.ColorPicker.toString()) + this.ColorTag.substring(e * 3 + 3);
+                }
+              }
+              this.updatePreview();
+            };
+            this.updateFormat = function () {
+              var e = this.Flip.isSelected() ? '%f' : '%c';
+              if (this.Caps.isSelected())
+                e = e.toUpperCase();
+              if (this.Bold.isSelected())
+                e = '/111* ' + e + ' /111*';
+              $('#bdfFormat').val(e);
+            };
+            this.updatePreview = function () {
+              var flip = this.Flip.isSelected();
+              var e = flip ? '%f' : '%c';
+              if (this.Bold.isSelected())
+                e = e.bold();
+              if (this.Caps.isSelected())
+                e = e.toUpperCase();
+              var n = this.ColorTag + TWX.CT.Tools.colorTagInv(this.ColorTag);
+              var leng = TWXlang.CT.ColorWindowPreviewTxt.length;
+              for (var r = 1; r < leng; r++) {
+                var i = document.getElementById('idColorPreview_' + r);
+                i.style.color = '#' + TWX.CT.Tools.colorrgb(n.substring(0, 3));
+                var g = flip ? leng - r : r;
+                var s = TWXlang.CT.ColorWindowPreviewTxt.charAt(g);
+                if (s == ' ')
+                  i.innerHTML = '&nbsp';
+                else
+                  i.innerHTML = e.replace('%c', s).replace('%C', s.toUpperCase()).replace('%f', TWX.CT.Chat.flipString(s)).replace('%F', TWX.CT.Chat.flipString(s.toUpperCase()));
+                n = n.substring(3) + n.substring(0, 3);
+              }
+              $('#colorWLoadbtn').css('background', TWX.CT.Tools.Degrader(this.ColorTag));
+              $('#colorWLoadbtn').attr('title', TWXlang.CT.ColorLoadTitle + this.ColorTag);
+            };
+            this.SaveColor = function (e) {
+              TWX.CT.DATA.Setting.saves[e] = this.ColorTag;
+              for (var i in this.selectLoad.items) {
+                if (this.selectLoad.items[i].value == e) {
+                  $(this.selectLoad.items[i].node[0].firstChild).css('background', TWX.CT.Tools.Degrader(TWX.CT.DATA.Setting.saves[e]));
+                  this.selectLoad.items[i].node[0].lastChild.textContent = e + (TWX.CT.DATA.Setting.saves[e] == cList[0] ? ' ' + TWXlang.CT.ColorSaveEmpty : '');
+                }
+                if (typeof this.selectSave.items[i] !== 'undefined')
+                  if (this.selectSave.items[i].value == e) {
+                    $(this.selectSave.items[i].node[0].firstChild).css('background', TWX.CT.Tools.Degrader(TWX.CT.DATA.Setting.saves[e]));
+                    this.selectSave.items[i].node[0].lastChild.textContent = e + (TWX.CT.DATA.Setting.saves[e] == cList[0] ? ' ' + TWXlang.CT.ColorSaveEmpty : '');
+                  }
+              }
+              this.updateFormat();
+              TWX.CT.DATA.Save();
+            };
+            this.LoadColor = function (e) {
+              if (/save/.test(e)) {
+                e = TWX.CT.DATA.Setting.saves[e];
+              }
+              if (e == 'custom') {
+                this.customTF.setValue(this.ColorTag);
+                this.test();
+                (new TWX.CT.Tools.Guidialog(TWXlang.CT.ColorLoadListName[1], this.customTF.getMainDiv(), 'question')).addButton(TWXlang.CT.ColorWindowOkBtn, function () {
+                  var e = TWX.CT.Window.customTF.getValue();
+                  if (e.length % 3 == 0 && /[0-9]+/.exec(e) == e)
+                    TWX.CT.Window.LoadColor(e);
+                }).addButton('cancel').show();
+                return;
+              }
+              this.ColorPicker.fromString('#' + TWX.CT.Tools.colorrgb(e.substring(0, 3)));
+              this.ColorTag = e;
+              this.updateFormat();
+              this.updatePreview();
+            };
+            this.colorwest = function (e) {
+              Wr = (parseInt(e.substring(0, 2), 16) / 255 * 9).toFixed();
+              Wg = (parseInt(e.substring(2, 4), 16) / 255 * 9).toFixed();
+              Wb = (parseInt(e.substring(4), 16) / 255 * 9).toFixed();
+              return Wr + Wg + Wb;
+            };
+          };
+          $('head').append($('<style id=\'colorTxtStyle\' />'));
+          $('head').append($('<style id=\'colorTxtStyleTmp\' />'));
+          $('#colorTxtStyle').append('div.tw2gui_window.chat div.chat_room div.chat_input div.cbg {right: 65px}\n');
+          $('#colorTxtStyle').append('div.tw2gui_window.chat div.chat_room div.chat_input a.speak {right: 25px}\n');
+          TWX.CT.initInterval = setInterval(function () {
+              TWX.CT.Chat.init();
+            }, 500);
         }
       };
       TWX.CalcTwdb = {
