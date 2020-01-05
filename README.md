@@ -1,5 +1,6 @@
 ## Install URL
-[Click here to install](https://the-west-scripts.github.io/The-West-Essentials/script.user.js)
+Comin soon
+<!-- [Click here to install](https://the-west-scripts.github.io/The-West-Essentials/script.user.js) -->
 
 ## Description & Screenshots
 This is an updated version of this script: [TWLeoTools](https://userscripts-mirror.org/scripts/show/169774) made by [Leotas](https://forum.the-west.de/index.php?members/25046).  
