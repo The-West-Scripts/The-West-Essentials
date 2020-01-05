@@ -82,7 +82,7 @@
           features: 'Features',
           name: 'Name',
           save: 'Save',
-          saveMessage: 'Settings saved. Some changes need a refresh of the game window.',
+          saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
           frame2: 'Helpful web pages',
           choose: 'Click on the hat to get started',
@@ -151,7 +151,7 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage2: 'Saved successfully',
+          saveMessage: 'Saved successfully',
           CT: {
             ColorWindowTitle: 'Color tchat setting',
             ColorWindowPreviewTxt: '*Click on the letters to change color',
@@ -243,7 +243,7 @@
           features: 'Features',
           name: 'Name',
           save: 'Speichern',
-          saveMessage: 'Einstellungen gespeichert. Manche Änderungen werden erst nach Neuladen des Spiels sichtbar.',
+          saveMessage2: 'Einstellungen gespeichert. Manche Änderungen werden erst nach Neuladen des Spiels sichtbar.',
           setbonus2: 'Lass dir die Boni aller Sets anzeigen',
           frame2: 'Hilfreiche Webseiten',
           choose: 'Klicke auf den Hut und wähle aus',
@@ -312,7 +312,7 @@
           custom1: 'Eigene',
           custom2: 'Deine eigene Login-Liste',
           edit: 'Bearbeiten',
-          saveMessage2: 'Speichern erfolgreich',
+          saveMessage: 'Speichern erfolgreich',
           CT: {
             ColorWindowTitle: 'Color tchat Einstellung',
             ColorWindowPreviewTxt: '*Klicke auf diese Buchstaben um die aktuell im oberen Feld gewählte Farbe reinzumischen',
@@ -404,7 +404,7 @@
           features: 'Ustawienia',
           name: 'Nazwa',
           save: 'Zapisz',
-          saveMessage: 'Ustawienia zapisane. Niektóre zmiany potrzebują odświeżenia okna gry.',
+          saveMessage2: 'Ustawienia zapisane. Niektóre zmiany potrzebują odświeżenia okna gry.',
           setbonus2: 'Informacje o ustawionych premie',
           frame2: 'Pomocna stron internetowych',
           choose: 'Kliknij na kapelusz i wybierz',
@@ -473,7 +473,7 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage2: 'Saved successfully',
+          saveMessage: 'Saved successfully',
           CT: {
             ColorWindowTitle: 'Ustawienia Koloru Tchat',
             ColorWindowPreviewTxt: '*Kliknij na literę, aby zmienić kolor',
@@ -565,7 +565,7 @@
           features: 'Funciones',
           name: 'Nombre',
           save: 'Guardar',
-          saveMessage: 'Ajustes guardados. Algunos cambios necesitan una actualización de la ventana de juego.',
+          saveMessage2: 'Ajustes guardados. Algunos cambios necesitan una actualización de la ventana de juego.',
           setbonus2: 'Información acerca de los bonus de conjunto',
           frame2: 'Páginas web votos',
           choose: 'Haga clic en el sombrero y elegir',
@@ -633,7 +633,7 @@
           custom1: 'Personalizar',
           custom2: 'Tu lista de conexión personalizada',
           edit: 'Editar',
-          saveMessage2: 'Grabado con éxito',
+          saveMessage: 'Grabado con éxito',
           CT: {
             ColorWindowTitle: 'Configurar Color tchat',
             ColorWindowPreviewTxt: '*Haga clic en la carta de un cambio de color',
@@ -725,7 +725,7 @@
           features: 'Features',
           name: 'Naam',
           save: 'Opslaan',
-          saveMessage: 'Instellingen toegevoegd. Sommige veranderingen hebben behoefte aan een refresh van het spel venster.',
+          saveMessage2: 'Instellingen toegevoegd. Sommige veranderingen hebben behoefte aan een refresh van het spel venster.',
           setbonus2: 'Informatie over de set bonusen',
           frame2: 'Nuttige websites',
           choose: 'Klik op de hoed en kies',
@@ -794,7 +794,43 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage2: 'Saved successfully',
+          saveMessage: 'Saved successfully',
+          CT: {
+            ColorWindowTitle: 'Color tchat setting',
+            ColorWindowPreviewTxt: '*Click on the letters to change color',
+            ColorWindowOkBtn: 'Apply',
+            ColorWindowToDefaultBtn: 'Set to default',
+            ColorWindowThisTchatBtn: 'Set to this',
+            ColorWindowDefaultText: 'Select the tchat for reset to default: ',
+            ColorWindowBold: 'Bold',
+            ColorWindowCaps: 'Capitalized',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'No color',
+              'Enter a color code',
+              'red',
+              'brown',
+              'purple',
+              'blue',
+              'green',
+              'pink',
+              'magenta',
+              'violet gradient',
+              'degraded dark blue',
+              'green gradient',
+              'degraded red',
+              'blue gradient light',
+              'degraded pink',
+              'light green gradient',
+              'degraded pink',
+              'red gradient light'
+            ],
+            ColorLoadTitle: 'Click to load another color code<br>The current color code is: ',
+            ColorSaveEmpty: '[empty]',
+            CustomReady: 'Valid Code',
+            CustomNotReady: 'Invalid Code',
+          },
         },
         hu: {
           language: 'Hungarian (Magyar)',
@@ -850,7 +886,7 @@
           features: 'Funkciók',
           name: 'Név',
           save: 'Mentés',
-          saveMessage: 'Beállítások elmentve. Néhány változás életbe lépéséhez frissítse a játék ablakát.',
+          saveMessage2: 'Beállítások elmentve. Néhány változás életbe lépéséhez frissítse a játék ablakát.',
           setbonus2: 'Információk a szettbónuszokról',
           frame2: 'Hasznos weboldalak',
           choose: 'Kattints a kalapra a kezdéshez, választáshoz',
@@ -919,7 +955,43 @@
           custom1: 'Egyedi',
           custom2: 'Egyedi bejelentkezési listád',
           edit: 'Szerkesztés',
-          saveMessage2: 'Sikeres mentés',
+          saveMessage: 'Sikeres mentés',
+          CT: {
+            ColorWindowTitle: 'Color tchat setting',
+            ColorWindowPreviewTxt: '*Click on the letters to change color',
+            ColorWindowOkBtn: 'Apply',
+            ColorWindowToDefaultBtn: 'Set to default',
+            ColorWindowThisTchatBtn: 'Set to this',
+            ColorWindowDefaultText: 'Select the tchat for reset to default: ',
+            ColorWindowBold: 'Bold',
+            ColorWindowCaps: 'Capitalized',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'No color',
+              'Enter a color code',
+              'red',
+              'brown',
+              'purple',
+              'blue',
+              'green',
+              'pink',
+              'magenta',
+              'violet gradient',
+              'degraded dark blue',
+              'green gradient',
+              'degraded red',
+              'blue gradient light',
+              'degraded pink',
+              'light green gradient',
+              'degraded pink',
+              'red gradient light'
+            ],
+            ColorLoadTitle: 'Click to load another color code<br>The current color code is: ',
+            ColorSaveEmpty: '[empty]',
+            CustomReady: 'Valid Code',
+            CustomNotReady: 'Invalid Code',
+          },
         },
         el: {
           language: 'Greek (ελληνικά)',
@@ -975,7 +1047,7 @@
           features: 'Χαρακτηριστικά',
           name: ' Όνομα παίκτη',
           save: 'Αποθήκευση',
-          saveMessage: 'Οι ρυθμίσεις αποθηκεύτηκαν. Ορισμένες αλλαγές χρειάζονται μια ανανέωση του παραθύρου του παιχνιδιού.',
+          saveMessage2: 'Οι ρυθμίσεις αποθηκεύτηκαν. Ορισμένες αλλαγές χρειάζονται μια ανανέωση του παραθύρου του παιχνιδιού.',
           setbonus2: 'Πληροφορίες σχετικά με τα μπόνους των Σετ',
           frame2: 'Χρήσιμες ιστοσελίδες',
           choose: 'Κάντε κλικ στο καπέλο για να ξεκινήσετε',
@@ -1044,7 +1116,7 @@
           custom1: 'Προσαρμοσμένο',
           custom2: 'Η προσαρμοσμένη λίστα σας σύνδεσης',
           edit: 'Επεξεργασία',
-          saveMessage2: 'Αποθηκεύτηκε με επιτυχία',
+          saveMessage: 'Αποθηκεύτηκε με επιτυχία',
           CT: {
             ColorWindowTitle: 'Ρυθμίσεις',
             ColorWindowPreviewTxt: '*Κάντε κλικ στα γράμματα για να αλλάξετε χρώμα',
@@ -1136,7 +1208,7 @@
           features: 'Características',
           name: 'Nome',
           save: 'Salvar',
-          saveMessage: 'Configurações salvas. Algumas mudanças só apareceram quando atualizar a janela.',
+          saveMessage2: 'Configurações salvas. Algumas mudanças só apareceram quando atualizar a janela.',
           setbonus2: 'Informações sobre o bônus do set',
           frame2: 'Páginas da Web Úteis',
           choose: 'Clique no Chapéu para começar.',
@@ -1205,7 +1277,7 @@
           custom1: 'Personalizado',
           custom2: 'Sua lista de login persnalizada',
           edit: 'Editar',
-          saveMessage2: 'Salvo com sucesso!',
+          saveMessage: 'Salvo com sucesso!',
           CT: {
             ColorWindowTitle: 'Set Color tchat',
             ColorWindowPreviewTxt: '*Clique na letra de uma mudança de cor',
@@ -1297,7 +1369,7 @@
           features: 'Caratteristiche',
           name: 'Nome',
           save: 'Salva',
-          saveMessage: 'Impostazioni salvate. Aggiorna la pagina per renderle effettive.',
+          saveMessage2: 'Impostazioni salvate. Aggiorna la pagina per renderle effettive.',
           setbonus2: 'Informazioni sui bonus set',
           frame2: 'Pagine internet di aiuto',
           choose: 'Clicca sul cappello per iniziare',
@@ -1366,7 +1438,43 @@
           custom1: 'Personalizza',
           custom2: 'La tua lista login personalizzata',
           edit: 'Modifica',
-          saveMessage2: 'Salvato con successo',
+          saveMessage: 'Salvato con successo',
+          CT: {
+            ColorWindowTitle: 'Color tchat setting',
+            ColorWindowPreviewTxt: '*Click on the letters to change color',
+            ColorWindowOkBtn: 'Apply',
+            ColorWindowToDefaultBtn: 'Set to default',
+            ColorWindowThisTchatBtn: 'Set to this',
+            ColorWindowDefaultText: 'Select the tchat for reset to default: ',
+            ColorWindowBold: 'Bold',
+            ColorWindowCaps: 'Capitalized',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'No color',
+              'Enter a color code',
+              'red',
+              'brown',
+              'purple',
+              'blue',
+              'green',
+              'pink',
+              'magenta',
+              'violet gradient',
+              'degraded dark blue',
+              'green gradient',
+              'degraded red',
+              'blue gradient light',
+              'degraded pink',
+              'light green gradient',
+              'degraded pink',
+              'red gradient light'
+            ],
+            ColorLoadTitle: 'Click to load another color code<br>The current color code is: ',
+            ColorSaveEmpty: '[empty]',
+            CustomReady: 'Valid Code',
+            CustomNotReady: 'Invalid Code',
+          },
         },
         fr: {
           language: 'French (français)',
@@ -1422,7 +1530,7 @@
           features: 'Features',
           name: 'Name',
           save: 'Save',
-          saveMessage: 'Settings saved. Some changes need a refresh of the game window.',
+          saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
           frame2: 'Helpful web pages',
           choose: 'Click on the hat to get started',
@@ -1491,7 +1599,7 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage2: 'Saved successfully',
+          saveMessage: 'Saved successfully',
           CT: {
             ColorWindowTitle: 'Configurer Color tchat',
             ColorWindowPreviewTxt: '*Clickez sur la lettre à changer de couleur',
@@ -1870,7 +1978,7 @@
               TWX.Data.skipOpen = TWX.skipTemp;
               localStorage.setItem('TWLT', JSON.stringify(TWX.Data));
               TWX.Skript.updateFeat();
-              new UserMessage(TWXlang.saveMessage, 'success').show();
+              new UserMessage(TWXlang.saveMessage2, 'success').show();
             });
           $(TWX.GUI.window.getContentPane()).append(featScroll.getMainDiv()).append(button.getMainDiv());
         },
@@ -3378,7 +3486,7 @@
             var ws = Wear.slots;
             if (slot == ws.length) {
               $('#equip_manager_list').html(EquipManager.buildEquipList());
-              new UserMessage(TWXlang.saveMessage2, 'success').show();
+              new UserMessage(TWXlang.saveMessage, 'success').show();
             } else if (current[ws[slot]])
               Ajax.remoteCall('inventory', 'carry', {
                 item_id: current[ws[slot]].obj.item_id,
@@ -4377,7 +4485,7 @@
               TWX.CT.DATA.Save();
               TWX.CT.Chat.Change = true;
               TWX.CT.Chat.ChangeColor();
-              new UserMessage(TWXlang.CT.saveMessage, 'success').show();
+              new UserMessage(TWXlang.saveMessage, 'success').show();
             };
             this.DefaultClick = function () {
               TWX.CT.DATA.Setting.Default = {
@@ -4774,7 +4882,7 @@
                     checkD[l] = checkB[l].isSelected();
                     localStorage.setItem('TWLTcustom1', JSON.stringify(checkD));
                   }
-                  new UserMessage(TWXlang.saveMessage2, 'success').show();
+                  new UserMessage(TWXlang.saveMessage, 'success').show();
                 });
               butB.appendTo($('#allWorlds'));
             });
