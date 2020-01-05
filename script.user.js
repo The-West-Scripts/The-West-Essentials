@@ -1,18 +1,20 @@
 // ==UserScript==
-// @name TWLeoTools
-// @namespace TomRobert
-// @author Leotas (updated by Tom Robert)
-// @description Useful tools for The West!
+// @name The West - Essentials
+// @namespace https://the-west-scripts.github.io/The-West-Essentials/
+// @author Tom Robert (Leotas/Falc0n.RG/Rask Hund/Dun/Esperiano)
+// @description The West 3.0
 // @include https://*.the-west.*/game.php*
 // @include https://*.the-west.*/index.php?page=logout
 // @include https://www.the-west.*
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.45.5
+// @version 1.46
+// @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
+// @icon https://the-west.net/favicon.ico
 // @grant none
 // ==/UserScript==
-// translation:Tom Robert(German&English),Darius II/Wojcieszy(Polish),pepe100(Spanish),ruud99(Dutch),Creature/krcsirke(Hungarian),Timemod Herkumo(Greek),Elly Siranno/Raymond Reddington(Portuguese),Billy-AR(Italian)
+// translation:Tom Robert(German&English),Darius II/Wojcieszy/TeeNOmore127(Polish),pepe100(Spanish),ruud99(Dutch),Creature/krcsirke(Hungarian),Timemod Herkumo(Greek),Elly Siranno/Raymond Reddington/jccwest(Portuguese),Billy-AR(Italian),Tom Robert/Falc0n.RG/Dun(French),Did97(Russian),OguzhanCekic(Turkish),Jamza(Czech&Slovak)
 (function (fn) {
   var script = document.createElement('script');
   script.setAttribute('type', 'application/javascript');
@@ -23,12 +25,12 @@
   if (location.href.includes('index.php?page=logout')) {
     location.href = '/';
   } else {
-    LTstart = {
-      version: '1.45.5',
+    TWXstart = {
+      version: '1.46',
       langs: {
         en: {
           language: 'English',
-          ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br><br>More Informations: ',
+          ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           FeatLogout: 'Add a logout button on the right side',
           FeatStatusbar: 'Remove the taskbar',
@@ -79,11 +81,6 @@
           chooseLang: 'Choose language',
           features: 'Features',
           name: 'Name',
-          author: 'Author',
-          version: 'Version',
-          gameversion: 'Gameversions',
-          website: 'Website',
-          weblink: 'Weblink',
           save: 'Save',
           saveMessage: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
@@ -158,7 +155,7 @@
         },
         de: {
           language: 'German (Deutsch)',
-          ApiGui1: 'Das Script beinhaltet verschiedene Funktionen um den Alltag bei The West zu vereinfachen.<br><br>Weitere Informationen: ',
+          ApiGui1: 'Das Script beinhaltet verschiedene Funktionen um den Alltag bei The West zu vereinfachen.<br>Weitere Informationen',
           ApiGui2: 'Skriptfenster öffnen',
           FeatLogout: 'Erstellt einen Logout-Button rechts in der Menüleiste',
           FeatStatusbar: 'Entfernt die Fensterleiste mit den verschiedenen Tabs im unteren Teil',
@@ -209,11 +206,6 @@
           chooseLang: 'Sprache auswählen',
           features: 'Features',
           name: 'Name',
-          author: 'Autor',
-          version: 'Version',
-          gameversion: 'Gameversionen',
-          website: 'Webseite',
-          weblink: 'Link',
           save: 'Speichern',
           saveMessage: 'Einstellungen gespeichert. Manche Änderungen werden erst nach Neuladen des Spiels sichtbar.',
           setbonus2: 'Lass dir die Boni aller Sets anzeigen',
@@ -288,7 +280,7 @@
         },
         pl: {
           language: 'Polish (polski)',
-          ApiGui1: 'Skrypt ten zawiera wiele funkcji, aby uprościć codzienne życie na Zachodzie.<br><br>Więcej informacji: ',
+          ApiGui1: 'Skrypt ten zawiera wiele funkcji, aby uprościć codzienne życie na Zachodzie.<br>Więcej informacji',
           ApiGui2: 'Otwórz w nowej karcie',
           FeatLogout: 'Dodanie przycisku po prawej stronie, wyloguj się.',
           FeatStatusbar: 'Usuwa pasek z oknami w dolnej części gry.',
@@ -339,11 +331,6 @@
           chooseLang: 'Wybierz język',
           features: 'Ustawienia',
           name: 'Nazwa',
-          author: 'Autor',
-          version: 'Wersja',
-          gameversion: 'Wersja gry',
-          website: 'Strona',
-          weblink: 'Dyskusja',
           save: 'Zapisz',
           saveMessage: 'Ustawienia zapisane. Niektóre zmiany potrzebują odświeżenia okna gry.',
           setbonus2: 'Informacje o ustawionych premie',
@@ -418,7 +405,7 @@
         },
         es: {
           language: 'Spanish (español)',
-          ApiGui1: 'El script incluye varias funciones que simplifican la vida cotidiana en The West.<br><br>Más información: ',
+          ApiGui1: 'El script incluye varias funciones que simplifican la vida cotidiana en The West.<br>Más información',
           ApiGui2: 'Abrir ventana del script',
           FeatLogout: 'Crea un botón de cierre de sesión a la derecha en la barra de menús',
           FeatStatusbar: 'Oculta la barra inferior de las ventanas',
@@ -469,11 +456,6 @@
           chooseLang: 'Elige idioma',
           features: 'Funciones',
           name: 'Nombre',
-          author: 'Autor',
-          version: 'Versión',
-          gameversion: 'Versión Juego',
-          website: 'Web',
-          weblink: 'Weblink',
           save: 'Guardar',
           saveMessage: 'Ajustes guardados. Algunos cambios necesitan una actualización de la ventana de juego.',
           setbonus2: 'Información acerca de los bonus de conjunto',
@@ -547,7 +529,7 @@
         },
         nl: {
           language: 'Dutch (Nederlands)',
-          ApiGui1: 'Dit script bevat veel mogelijkheden om het dagelijks leven in The West te vergemakkelijken.<br><br>Voor meer informatie: ',
+          ApiGui1: 'Dit script bevat veel mogelijkheden om het dagelijks leven in The West te vergemakkelijken.<br>Voor meer informatie',
           ApiGui2: 'Open script pagina',
           FeatLogout: 'Voeg een afmeldknop toe aan de rechterzijde van het scherm',
           FeatStatusbar: 'Verwijder het dagelijkse taken icoon',
@@ -598,11 +580,6 @@
           chooseLang: 'Kies een taal',
           features: 'Features',
           name: 'Naam',
-          author: 'Auteur',
-          version: 'Versie',
-          gameversion: 'Spelversies',
-          website: 'Website',
-          weblink: 'Link',
           save: 'Opslaan',
           saveMessage: 'Instellingen toegevoegd. Sommige veranderingen hebben behoefte aan een refresh van het spel venster.',
           setbonus2: 'Informatie over de set bonusen',
@@ -677,7 +654,7 @@
         },
         hu: {
           language: 'Hungarian (Magyar)',
-          ApiGui1: 'Ez a szkript több olyan funkciót tartalmaz ami megkönnyíti a mindennapjaidat a vadnyugaton.<br><br>Több információ: ',
+          ApiGui1: 'Ez a szkript több olyan funkciót tartalmaz ami megkönnyíti a mindennapjaidat a vadnyugaton.<br>Több információ',
           ApiGui2: 'Szkript oldalának megnyitása',
           FeatLogout: 'Kilépés gomb a jobb oldalra',
           FeatStatusbar: 'Tálca eltüntetése',
@@ -728,11 +705,6 @@
           chooseLang: 'Válasszon nyelvet',
           features: 'Funkciók',
           name: 'Név',
-          author: 'Szerző',
-          version: 'Verzió',
-          gameversion: 'Játékverzió',
-          website: 'Weboldal',
-          weblink: 'Webcím',
           save: 'Mentés',
           saveMessage: 'Beállítások elmentve. Néhány változás életbe lépéséhez frissítse a játék ablakát.',
           setbonus2: 'Információk a szettbónuszokról',
@@ -807,7 +779,7 @@
         },
         el: {
           language: 'Greek (ελληνικά)',
-          ApiGui1: 'Αυτό το script περιέχει πολλά χαρακτηριστικά για να απλοποιήσετε την ζωή σας στο The West.<br><br>Περισσότερες πληροφορίες: ',
+          ApiGui1: 'Αυτό το script περιέχει πολλά χαρακτηριστικά για να απλοποιήσετε την ζωή σας στο The West.<br>Περισσότερες πληροφορίες',
           ApiGui2: 'Ρυθμίσεις του script',
           FeatLogout: 'Προσθέστε ένα κουμπί αποσύνδεσης στη δεξιά πλευρά',
           FeatStatusbar: 'Αφαιρέστε τη γραμμή εργασιών',
@@ -858,11 +830,6 @@
           chooseLang: 'Επιλογή γλώσσας',
           features: 'Χαρακτηριστικά',
           name: ' Όνομα παίκτη',
-          author: 'Συντάκτης',
-          version: 'Έκδοση',
-          gameversion: 'Έκδοση παιχνιδιού',
-          website: 'Ιστοσελίδα',
-          weblink: 'Σύνδεσμος',
           save: 'Αποθήκευση',
           saveMessage: 'Οι ρυθμίσεις αποθηκεύτηκαν. Ορισμένες αλλαγές χρειάζονται μια ανανέωση του παραθύρου του παιχνιδιού.',
           setbonus2: 'Πληροφορίες σχετικά με τα μπόνους των Σετ',
@@ -937,7 +904,7 @@
         },
         pt: {
           language: 'Portuguese (português)',
-          ApiGui1: 'Esse script foi feito para facilitar sua vida no Velho Oeste: ',
+          ApiGui1: 'Esse script foi feito para facilitar sua vida no Velho Oeste',
           ApiGui2: 'Abrir página do Script',
           FeatLogout: 'Adicionar botão de sair no fim dos scripts',
           FeatStatusbar: 'Remover a barra de tarefas',
@@ -988,11 +955,6 @@
           chooseLang: 'Escolher Idioma',
           features: 'Características',
           name: 'Nome',
-          author: 'Autor',
-          version: 'Versão',
-          gameversion: 'Versão do Game',
-          website: 'Website',
-          weblink: 'Weblink',
           save: 'Salvar',
           saveMessage: 'Configurações salvas. Algumas mudanças só apareceram quando atualizar a janela.',
           setbonus2: 'Informações sobre o bônus do set',
@@ -1067,7 +1029,7 @@
         },
         it: {
           language: 'Italian (italiano)',
-          ApiGui1: 'Questo script raccoglie molte funzionalità utili a semplificarti la vita in The West.<br><br>Ulteriori informazioni: ',
+          ApiGui1: 'Questo script raccoglie molte funzionalità utili a semplificarti la vita in The West.<br>Ulteriori informazioni',
           ApiGui2: 'Apri la pagina dello script',
           FeatLogout: 'Aggiungi sul lato destro dello schermo un pulsante disconnetti',
           FeatStatusbar: 'Nascondi la barra degli incarichi',
@@ -1118,11 +1080,6 @@
           chooseLang: 'Scegli lingua',
           features: 'Caratteristiche',
           name: 'Nome',
-          author: 'Autore',
-          version: 'Versione',
-          gameversion: 'Versione di gioco',
-          website: 'Sito internet',
-          weblink: 'Link al sito',
           save: 'Salva',
           saveMessage: 'Impostazioni salvate. Aggiorna la pagina per renderle effettive.',
           setbonus2: 'Informazioni sui bonus set',
@@ -1201,14 +1158,12 @@
       },
     };
     if (location.href.includes('game.php')) {
-      LT = {
-        name: 'TWLeoTools',
+      TWX = {
+        name: 'TW Essentials',
         author: 'Leotas (updated by Tom Robert)',
         minGame: '2.04',
         maxGame: Game.version.toString(),
-        website: 'https://greasyfork.org/scripts/7238',
         updateUrl: 'https://tomrobert.safe-ws.de/sUp.js',
-        updateAd: 'http://adf.ly/1OMM8P',
         SPEC: [
           'speed', 'luck', 'dollar', 'experience', 'regen', 'drop',
         ],
@@ -1268,17 +1223,17 @@
         },
         cooldownTimer: {},
         cooldownSetTime: function (y, res, sec) {
-          LT.cooldownTimer[y] = setTimeout(function () {
+          TWX.cooldownTimer[y] = setTimeout(function () {
               var imgs = $('<span></span>');
               for (var z = 0; z < res.length; z++) {
                 var itemDiv = new tw2widget.JobItem(res[z].obj).getMainDiv();
                 imgs.append(itemDiv);
               }
-              var cooldownMsg = new west.gui.Dialog(LTlang.remindReady, imgs, 'ok').addButton('ok', function () {
+              var cooldownMsg = new west.gui.Dialog(TWXlang.remindReady, imgs, 'ok').addButton('ok', function () {
                   Wear.open();
                   Inventory.showSearchResult(res);
                   cooldownMsg.hide();
-                  LT.cooldownTimer[y] = 0;
+                  TWX.cooldownTimer[y] = 0;
                 }).addButton('cancel').show();
             }, sec);
         },
@@ -1295,39 +1250,46 @@
           document.body.appendChild(style);
         },
         updateLang: function () {
-          var lg = LTstart.langs;
-          LT.lang = lg[localStorage.getItem('scriptsLang')] ? localStorage.getItem('scriptsLang') : lg[Game.locale.substr(0, 2)] ? Game.locale.substr(0, 2) : 'en';
-          LTlang = lg[LT.lang];
+          var lg = TWXstart.langs;
+          TWX.lang = lg[localStorage.getItem('scriptsLang')] ? localStorage.getItem('scriptsLang') : lg[Game.locale.substr(0, 2)] ? Game.locale.substr(0, 2) : 'en';
+          TWXlang = lg[TWX.lang];
         },
       };
-      LT.updateLang();
-      LT.Skript = {
+      TWX.updateLang();
+      TWX.Skript = {
+        fmfb: function () {
+          var fms = [['de', 'deutsches Forum'], ['net', 'English forum'], ['pl', 'forum polski'], ['es', 'foro español'], ['ru', 'Русский форум'], ['fr', 'forum français'], ['it', 'forum italiano'], ['net', 'beta forum', 'beta.']],
+          add = '<h1>' + TWXlang.contact + '</h1><ul style="margin-left:15px;line-height:18px;"><li>Send a message to <a target=\'_blank\' href="https://www.the-west.de/?ref=west_invite_linkrl&player_id=647936&world_id=13&hash=7dda">Tom Robert on German world Arizona</a></li><li>Contact me on <a target=\'_blank\' href="https://greasyfork.org/forum/messages/add/Tom Robert">Greasy Fork</a></li><li>Message me on one of these The West Forum:<br>';
+          for (var l of fms)
+            add += '/ <a target=\'_blank\' href="https://forum.' + (l[2] || '') + 'the-west.' + l[0] + '/index.php?conversations/add&to=Tom Robert">' + l[1] + '</a> ' + (l[0] == 'es' ? '<br>' : '');
+          return add + '/<br>I will get an e-mail when you sent me the message <img src="images/chat/emoticons/smile.png"></li></ul>';
+        },
         init: function () {
-          TheWestApi.register('LeoTools', LT.name, LT.minGame, LT.maxGame, LT.author, LT.website).setGui('<br>' + LTlang.ApiGui1 + '<a href="javascript:LT.GUI.open(\'openKontakt\');LT.GUI.makeList();" title="' + LTlang.ApiGui2 + '">' + LTlang.ApiGui2 + '</a><br><br><i>' + LT.name + ' v' + LTstart.version + '</i>');
-          var menuContainer = $('<div id="LT-menu" class="menulink" onclick="LT.GUI.openSelectbox();" title="' + LT.name + '" />').css('background-image', 'url(' + LTstart.Images('LT_settings') + ')').css('background-position', '0px 0px').mouseenter(function () {
+          TheWestApi.register('TWX', TWX.name, TWX.minGame, TWX.maxGame, TWX.author, TWX.website).setGui('<h1>' + TWXlang.info + '</h1><i>Language: </i>' + TWSlang.language + '<br><br>' + TWXlang.ApiGui1 + ': <a href="javascript:TWX.GUI.open(\'openFeatures\');TWX.GUI.makeList();">' + TWXlang.ApiGui2 + '</a><br><br><i>' + TWX.name + ' v' + TWXstart.version + '</i><br><br>' + this.fmfb());
+          var menuContainer = $('<div id="TWX-menu" class="menulink" onclick="TWX.GUI.openSelectbox();" title="' + TWX.name + '" />').css('background-image', 'url(' + TWXstart.Images('LT_settings') + ')').css('background-position', '0px 0px').mouseenter(function () {
               $(this).css('background-position', '-25px 0px');
             }).mouseleave(function () {
               $(this).css('background-position', '0px 0px');
             });
           $('#ui_menubar').append($('<div class="ui_menucontainer" />').append(menuContainer).append('<div class="menucontainer_bottom" />'));
-          LT.Skript.updateFeat();
-          LT.SkipOpen();
+          TWX.Skript.updateFeat();
+          TWX.SkipOpen();
         },
         updateFeat: function () {
           var saved = localStorage.getItem('TWLT');
-          LT.Data = saved && saved.indexOf('{') === 0 && JSON.parse(saved) || {};
-          for (var k in LT.Features) {
-            if (LT.Skript.getFeature(k) && !LT.loaded.includes(k)) {
+          TWX.Data = saved && saved.indexOf('{') === 0 && JSON.parse(saved) || {};
+          for (var k in TWX.Features) {
+            if (TWX.Skript.getFeature(k) && !TWX.loaded.includes(k)) {
               try {
-                LT.loaded.push(k);
-                LT[k].init();
+                TWX.loaded.push(k);
+                TWX[k].init();
               } catch (e) {}
             }
           }
-          LT.CollectReminder();
+          TWX.CollectReminder();
         },
         getFeature: function (name) {
-          return (LT.Data[name] !== undefined) ? LT.Data[name] : LT.Features[name];
+          return (TWX.Data[name] !== undefined) ? TWX.Data[name] : TWX.Features[name];
         },
       };
       Map.getLastQueuePosition = function () {
@@ -1349,45 +1311,45 @@
       set1 = west.storage.ItemSetManager._setList;
       if (EvName)
         var sendGift = Game.sesData[EvName].friendsbar;
-      LT.GUI = {
+      TWX.GUI = {
         openSelectbox: function () {
-          LT.GUI.makeList();
+          TWX.GUI.makeList();
           var selectbox = new west.gui.Selectbox();
-          $(selectbox.getMainDiv()).append('<div class="LTselbox"/>');
-          selectbox.setHeader(LT.name);
+          $(selectbox.getMainDiv()).append('<div class="TWXselbox"/>');
+          selectbox.setHeader(TWX.name);
           selectbox.setWidth(300);
-          selectbox.addItem(0, LTlang.settings1, LTlang.settings2);
-          selectbox.addItem(1, 'SetBonus', LTlang.setbonus2);
-          selectbox.addItem(2, 'BonusSearch', LTlang.setbonus2);
-          selectbox.addItem(3, 'WebCenter', LTlang.frame2);
-          selectbox.addItem(4, LTlang.ghosttown1 + Map.calcWayTime(Map.getLastQueuePosition(), {
+          selectbox.addItem(0, TWXlang.settings1, TWXlang.settings2);
+          selectbox.addItem(1, 'SetBonus', TWXlang.setbonus2);
+          selectbox.addItem(2, 'BonusSearch', TWXlang.setbonus2);
+          selectbox.addItem(3, 'WebCenter', TWXlang.frame2);
+          selectbox.addItem(4, TWXlang.ghosttown1 + Map.calcWayTime(Map.getLastQueuePosition(), {
               x: 1728,
               y: 2081
-            }).formatDuration(), LTlang.ghosttown1);
-          selectbox.addItem(5, LTlang.ghosttown2, LTlang.ghosttown3);
-          selectbox.addItem(6, LTlang.indiantown1 + Map.calcWayTime(Map.getLastQueuePosition(), {
+            }).formatDuration(), TWXlang.ghosttown1);
+          selectbox.addItem(5, TWXlang.ghosttown2, TWXlang.ghosttown3);
+          selectbox.addItem(6, TWXlang.indiantown1 + Map.calcWayTime(Map.getLastQueuePosition(), {
               x: 28002,
               y: 16658
-            }).formatDuration(), LTlang.indiantown1);
-          selectbox.addItem(7, LTlang.indiantown2, LTlang.indiantown3);
-          selectbox.addItem(8, LTlang.openmarket, LTlang.openmarket);
-          selectbox.addItem(9, LTlang.forum, LTlang.forum);
+            }).formatDuration(), TWXlang.indiantown1);
+          selectbox.addItem(7, TWXlang.indiantown2, TWXlang.indiantown3);
+          selectbox.addItem(8, TWXlang.openmarket, TWXlang.openmarket);
+          selectbox.addItem(9, TWXlang.forum, TWXlang.forum);
           if (EvName) {
             selectbox.addItem(10, '<div style="text-overflow:ellipsis; white-space:nowrap; overflow:hidden;"><b>' + sendGift.label + '</b></div>', sendGift.label);
           }
           selectbox.addListener(function (e) {
             switch (e) {
             case 0:
-              LT.GUI.open('openFeatures');
+              TWX.GUI.open('openFeatures');
               break;
             case 1:
-              LT.GUI.open('openSetsWindow', 0, 'SetBonus');
+              TWX.GUI.open('openSetsWindow', 0, 'SetBonus');
               break;
             case 2:
-              LT.GUI.open('openSetsWindow', 0, 'BonusSearch');
+              TWX.GUI.open('openSetsWindow', 0, 'BonusSearch');
               break;
             case 3:
-              LT.GUI.open('openFrame');
+              TWX.GUI.open('openFrame');
               break;
             case 4:
               QuestEmployerWindow.startWalk({
@@ -1418,11 +1380,11 @@
               ForumWindow.open();
               break;
             case 10:
-              LT.GUI.open('openSender');
+              TWX.GUI.open('openSender');
               break;
             }
           });
-          var pos = $('div#LT-menu').offset();
+          var pos = $('div#TWX-menu').offset();
           pos = {
             clientX: pos.left,
             clientY: pos.top
@@ -1432,101 +1394,86 @@
         window: {},
         checkbox: {},
         open: function (tab, data, id) {
-          LT.GUI.window = wman.open('LT', 'TheWest - LeoTools', 'noreload').setMiniTitle(LT.name).setMaxSize(1268, 838).addTab(LTlang.info + ' & ' + LTlang.contact, 'LTContact', LT.GUI.openKontakt).addTab(LTlang.features, 'LTFeatures', LT.GUI.openFeatures).addTab('SetBonus', 'SetBonus', LT.GUI.openSetsWindow).addTab('BonusSearch', 'BonusSearch', LT.GUI.openSetsWindow).addTab('WebCenter', 'LTFrame', LT.GUI.openFrame);
+          TWX.GUI.window = wman.open('TWX', TWX.name, 'noreload').setMiniTitle(TWX.name).setMaxSize(1268, 838).addTab(TWXlang.features, 'TWXFeatures', TWX.GUI.openFeatures).addTab('SetBonus', 'SetBonus', TWX.GUI.openSetsWindow).addTab('BonusSearch', 'BonusSearch', TWX.GUI.openSetsWindow).addTab('WebCenter', 'TWXFrame', TWX.GUI.openFrame);
           if (EvName)
-            LT.GUI.window.addTab('Event', 'LTSender', LT.GUI.openSender);
-          LT.GUI[tab](data, id);
-          $('.tw2gui_window_inset', LT.GUI.window.getMainDiv()).css('background-image', 'url(' + LTstart.Images('LT_backGr', 1) + ')');
+            TWX.GUI.window.addTab('Event', 'TWXSender', TWX.GUI.openSender);
+          TWX.GUI[tab](data, id);
+          $('.tw2gui_window_inset', TWX.GUI.window.getMainDiv()).css('background-image', 'url(' + TWXstart.Images('LT_backGr', 1) + ')');
         },
         getDefault: function (tab) {
-          LT.GUI.window.setResizeable(false).setSize(748, 471).clearContentPane().removeClass('nocloseall').setTitle('TheWest - LeoTools');
-          LT.GUI.window.dontCloseAll = false;
-          $(LT.GUI.window.getContentPane()).css('margin-top', '0px');
-          var wnd = LT.GUI.window.getMainDiv();
+          TWX.GUI.window.setResizeable(false).setSize(748, 471).clearContentPane().removeClass('nocloseall').setTitle('The West - Essentials');
+          TWX.GUI.window.dontCloseAll = false;
+          $(TWX.GUI.window.getContentPane()).css('margin-top', '0px');
+          var wnd = TWX.GUI.window.getMainDiv();
           $('.textart_title', wnd).css('display', '');
-          LT.GUI.window.activateTab(tab);
-        },
-        openKontakt: function () {
-          LT.GUI.getDefault('LTContact');
-          var fmfb = function (l) {
-            return 'https://forum.the-west.' + l + '/index.php?conversations/add&to=Tom Robert';
-          },
-          content = $('<br><h1>' + LTlang.info + '</h1><ul style="list-style-type:none;line-height:18px;margin-left:5px;"><li><b>' + LTlang.name + ': </b>' + LT.name + '</li><li><b>' + LTlang.author + ': </b>' + LT.author + '</li><li><b>' + LTlang.version + ': </b>' + LTstart.version + '</li><li><b>' + LTlang.gameversion + ': </b>' + LT.minGame + ' - ' + LT.maxGame + '</li><li><b>' + LTlang.website + ': </b>' + '<a href="' + LT.website + '" target="_blank">' + LTlang.weblink + '</a></li></ul>' +
-              '<br><h1>' + LTlang.contact + '</h1><ul style="margin-left:15px;line-height:18px;"><li>Send a message to <a target=\'_blanck\' href="http://om.the-west.de/west/de/player/?ref=west_invite_linkrl&player_id=647936&world_id=13&hash=7dda">Tom Robert on German world Arizona</a></li>' +
-              '<li>Contact me on <a target=\'_blanck\' href="https://greasyfork.org/forum/messages/add/Tom Robert">Greasy Fork</a></li>' +
-              '<li>Message me on one of these The West Forum:<br>/ <a target=\'_blanck\' href="' + fmfb('de') + '">deutsches Forum</a> / ' +
-              '<a target=\'_blanck\' href="' + fmfb('net') + '">English forum</a> / <a target=\'_blanck\' href="' + fmfb('pl') + '">forum polski</a> / ' +
-              '<a target=\'_blanck\' href="' + fmfb('es') + '">foro español</a> /<br>/ <a target=\'_blanck\' href="' + fmfb('ru') + '">Русский форум</a> / ' +
-              '<a target=\'_blanck\' href="' + fmfb('fr') + '">forum français</a> / <a target=\'_blanck\' href="' + fmfb('it') + '">forum italiano</a> / ' +
-              '<a target=\'_blanck\' href="https://forum.beta.the-west.net/index.php?conversations/add&to=Tom Robert">beta forum</a> /<br>I will get an e-mail when you sent me the message <img src="images/chat/emoticons/smile.png"></li></ul>');
-          LT.GUI.window.appendToContentPane(content);
+          TWX.GUI.window.activateTab(tab);
         },
         openFeatures: function () {
-          LT.GUI.getDefault('LTFeatures');
-          var featScroll = new west.gui.Scrollpane().appendContent('<h2>' + LTlang.chooseLang + '</h2>'),
+          TWX.GUI.getDefault('TWXFeatures');
+          var featScroll = new west.gui.Scrollpane().appendContent('<h2>' + TWXlang.chooseLang + '</h2>'),
           langBox = new west.gui.Combobox().appendTo(featScroll.getContentPane());
-          for (var j in LTstart.langs)
-            langBox.addItem(j, LTstart.langs[j].language);
-          langBox.select(LT.lang);
-          LT.cdTemp = LT.Data.cooldown ? $.extend({}, LT.Data.cooldown) : $.extend({}, LT.cooldown);
-          $('<span title="' + LTlang.remindHover + '" style="background-image: url(images/items/yield/low_heart_container.png); cursor: pointer; position: absolute; height: 73px; width: 73px; right: 0px; top: 0px;"/>').appendTo(featScroll.getContentPane()).click(function () {
+          for (var j in TWXstart.langs)
+            langBox.addItem(j, TWXstart.langs[j].language);
+          langBox.select(TWX.lang);
+          TWX.cdTemp = TWX.Data.cooldown ? $.extend({}, TWX.Data.cooldown) : $.extend({}, TWX.cooldown);
+          $('<span title="' + TWXlang.remindHover + '" style="background-image: url(images/items/yield/low_heart_container.png); cursor: pointer; position: absolute; height: 73px; width: 73px; right: 0px; top: 0px;"/>').appendTo(featScroll.getContentPane()).click(function () {
             var cont = $('<span>');
-            for (var x in LT.cooldown) {
+            for (var x in TWX.cooldown) {
               var productDiv = new tw2widget.JobItem(ItemManager.getByBaseId(x)).getMainDiv();
-              $(productDiv).css('opacity', LT.cdTemp[x] || LT.cooldown[x]).attr('onclick', 'LT.cdTemp[' + x + ']=$(this).css("opacity")==1?0.5:1;$(this).css("opacity",LT.cdTemp[' + x + ']);');
+              $(productDiv).css('opacity', TWX.cdTemp[x] || TWX.cooldown[x]).attr('onclick', 'TWX.cdTemp[' + x + ']=$(this).css("opacity")==1?0.5:1;$(this).css("opacity",TWX.cdTemp[' + x + ']);');
               cont.append(productDiv);
             }
-            new west.gui.Dialog(LTlang.chooseItems, cont).addButton('ok').show();
+            new west.gui.Dialog(TWXlang.chooseItems, cont).addButton('ok').show();
           });
-          LT.skipTemp = LT.Data.skipOpen ? $.extend({}, LT.Data.skipOpen) : $.extend({}, LT.skipOpen);
+          TWX.skipTemp = TWX.Data.skipOpen ? $.extend({}, TWX.Data.skipOpen) : $.extend({}, TWX.skipOpen);
           var openSkipList = function () {
             var cont2 = $('<span></span>');
-            for (var x in LT.skipTemp) {
+            for (var x in TWX.skipTemp) {
               var productDiv2 = new tw2widget.JobItem(ItemManager.getByBaseId(x)).getMainDiv(),
               productDel = new west.gui.Icon('abort ' + x).getMainDiv().click(function (e) {
                   e.stopPropagation();
                   e.target.parentElement.remove();
-                  delete LT.skipTemp[e.target.classList[2]];
+                  delete TWX.skipTemp[e.target.classList[2]];
                 });
               $(productDel).css({
                 'display': 'inline-block',
                 'position': 'absolute',
                 'right': '0px'
               });
-              $(productDiv2).css('opacity', LT.skipTemp[x]).attr('onclick', 'LT.skipTemp[' + x + ']=$(this).css("opacity")==1?0.5:1;$(this).css("opacity",LT.skipTemp[' + x + ']);').append(productDel);
+              $(productDiv2).css('opacity', TWX.skipTemp[x]).attr('onclick', 'TWX.skipTemp[' + x + ']=$(this).css("opacity")==1?0.5:1;$(this).css("opacity",TWX.skipTemp[' + x + ']);').append(productDel);
               cont2.append(productDiv2);
             }
-            var itemPrew = $('<div id="LT_add_chest_prew" style="height:73px;width:73px;border:1px solid;border-radius:10px;float:left"/><br>');
+            var itemPrew = $('<div id="TWX_add_chest_prew" style="height:73px;width:73px;border:1px solid;border-radius:10px;float:left"/><br>');
             var textFP = new west.gui.Textfield('add_skipOpen_chest').maxlength(6).setPlaceholder('item_base_id').addKeyUpListener(function (e) {
-                $('#LT_add_chest_prew').empty();
+                $('#TWX_add_chest_prew').empty();
                 iconP.disable();
                 var val = e.target.value;
                 if (!isNaN(val) && val < forbid.maxID) {
                   var item = ItemManager.getByBaseId(val);
                   if (item) {
-                    $('#LT_add_chest_prew').append(new tw2widget.JobItem(item).getMainDiv());
-                    if (item.usebonus && item.usebonus.length == 1 && item.action.split(',')[2] == "'yield');" && !LT.skipTemp[val])
+                    $('#TWX_add_chest_prew').append(new tw2widget.JobItem(item).getMainDiv());
+                    if (item.usebonus && item.usebonus.length == 1 && item.action.split(',')[2] == "'yield');" && !TWX.skipTemp[val])
                       iconP.enable();
                   }
                 }
               }),
             iconP = new west.gui.Iconbutton(new west.gui.Icon('plus'), function () {
-                LT.skipTemp[textFP.getValue()] = 1;
+                TWX.skipTemp[textFP.getValue()] = 1;
                 skipList.hide();
                 openSkipList();
               }).disable(),
             iconA = new west.gui.Icon('abort').getMainDiv().click(function () {
                 textFP.setValue('');
-                $('#LT_add_chest_prew').empty();
+                $('#TWX_add_chest_prew').empty();
                 iconP.disable();
               });
             cont2.append(itemPrew, textFP.getMainDiv(), iconP.getMainDiv(), iconA);
-            var skipList = new west.gui.Dialog(LTlang.chooseItems, cont2).setBlockGame(false).setDraggable(true).addButton('ok').show();
+            var skipList = new west.gui.Dialog(TWXlang.chooseItems, cont2).setBlockGame(false).setDraggable(true).addButton('ok').show();
           };
-          $('<span title="' + LTlang.skipHover + '" style="background-image: url(images/items/yield/productchest_1.png); cursor: pointer; position: absolute; height: 73px; width: 73px; right: 0px; top: 73px;"/>').appendTo(featScroll.getContentPane()).click(openSkipList);
-          featScroll.appendContent('<br><br><h2>' + LTlang.features + '</h2>');
-          for (var k in LT.Features) {
-            LT.GUI.checkbox[k] = new west.gui.Checkbox().setLabel(LTlang['Feat' + k]).setSelected(LT.Skript.getFeature(k)).appendTo(featScroll.getContentPane());
+          $('<span title="' + TWXlang.skipHover + '" style="background-image: url(images/items/yield/productchest_1.png); cursor: pointer; position: absolute; height: 73px; width: 73px; right: 0px; top: 73px;"/>').appendTo(featScroll.getContentPane()).click(openSkipList);
+          featScroll.appendContent('<br><br><h2>' + TWXlang.features + '</h2>');
+          for (var k in TWX.Features) {
+            TWX.GUI.checkbox[k] = new west.gui.Checkbox().setLabel(TWXlang['Feat' + k]).setSelected(TWX.Skript.getFeature(k)).appendTo(featScroll.getContentPane());
             featScroll.appendContent('<br><div style="height:5px;" />');
           }
           featScroll.appendContent('<br>');
@@ -1534,43 +1481,43 @@
             'height': '330px',
             'margin-top': '10px'
           });
-          var button = new west.gui.Button(LTlang.save, function () {
+          var button = new west.gui.Button(TWXlang.save, function () {
               localStorage.setItem('scriptsLang', langBox.getValue());
-              LT.updateLang();
-              for (var k in LT.GUI.checkbox)
-                LT.Data[k] = LT.GUI.checkbox[k].isSelected();
-              LT.Data.cooldown = LT.cdTemp;
-              LT.Data.skipOpen = LT.skipTemp;
-              localStorage.setItem('TWLT', JSON.stringify(LT.Data));
-              LT.Skript.updateFeat();
-              new UserMessage(LTlang.saveMessage, 'success').show();
+              TWX.updateLang();
+              for (var k in TWX.GUI.checkbox)
+                TWX.Data[k] = TWX.GUI.checkbox[k].isSelected();
+              TWX.Data.cooldown = TWX.cdTemp;
+              TWX.Data.skipOpen = TWX.skipTemp;
+              localStorage.setItem('TWLT', JSON.stringify(TWX.Data));
+              TWX.Skript.updateFeat();
+              new UserMessage(TWXlang.saveMessage, 'success').show();
             });
-          $(LT.GUI.window.getContentPane()).append(featScroll.getMainDiv()).append(button.getMainDiv());
+          $(TWX.GUI.window.getContentPane()).append(featScroll.getMainDiv()).append(button.getMainDiv());
         },
         makeList: function () {
-          if (!LT.list)
+          if (!TWX.list)
             $.getScript('https://tomrobert.safe-ws.de/forbidN.js').done(function () {
-              LT.list = west.storage.ItemSetManager._setArray.slice(0);
-              LT.setListAll = {};
-              LT.setListOwn = {};
-              LT.itemListAll = {};
-              LT.itemListOwn = {};
+              TWX.list = west.storage.ItemSetManager._setArray.slice(0);
+              TWX.setListAll = {};
+              TWX.setListOwn = {};
+              TWX.itemListAll = {};
+              TWX.itemListOwn = {};
               var slot = {
                 2: ['animal', 'yield'],
                 3: ['right_arm', 'left_arm'],
                 6: ['body', 'pants', 'neck', 'head', 'foot', 'belt']
               };
-              var i = LT.list.length;
+              var i = TWX.list.length;
               while (i--) {
-                var si = LT.list[i];
+                var si = TWX.list[i];
                 if (!forbid.sets.includes(si.key) && si.items[0] && !ItemManager.getByBaseId(si.items[0]).short.includes('friendset_') && !si.key.includes('friendship_set_'))
-                  LT.setListAll[si.key] = si;
+                  TWX.setListAll[si.key] = si;
                 else
-                  LT.list.splice(i, 1);
+                  TWX.list.splice(i, 1);
               }
-              LT.setLength = Object.keys(LT.setListAll).length;
-              for (var j in LT.setListAll) {
-                var sa = LT.setListAll[j];
+              TWX.setLength = Object.keys(TWX.setListAll).length;
+              for (var j in TWX.setListAll) {
+                var sa = TWX.setListAll[j];
                 //sa.items.sort((a, b) => a - b);
                 var sil = sa.items.length;
                 sa.slots = slot[sil] && slot[sil].includes(ItemManager.getByBaseId(sa.items[1]).type) ? slot[sil][0] : 'rest';
@@ -1585,7 +1532,7 @@
                       bon[o + 1] = sa.bonus[o + 1];
                     oneType.push(igt.type);
                   }
-                  LT.setListOwn[j] = {
+                  TWX.setListOwn[j] = {
                     items: items.reverse(),
                     bonus: bon,
                     name: sa.name,
@@ -1596,7 +1543,7 @@
               var replUml = function (str) {
                 return str.toUpperCase().replace(/"/g, '').replace(/Á/g, 'A').replace(/É/g, 'E').replace(/Ő/g, 'O').replace(/Ú|Ü|Ű/g, 'U').replace(/Ś/g, 'S');
               };
-              LT.list.sort(function (a, b) {
+              TWX.list.sort(function (a, b) {
                 var a1 = replUml(a.name),
                 b1 = replUml(b.name);
                 return (a1 == b1) ? 0 : (a1 > b1) ? 1 : -1;
@@ -1659,7 +1606,7 @@
                       }
                     }
                   }
-                LT['itemList' + state][obj.item_base_id] = {
+                TWX['itemList' + state][obj.item_base_id] = {
                   bonus: boni,
                   name: obj.name,
                   slots: slot,
@@ -1669,7 +1616,7 @@
               };
               var allItems = ItemManager.getAll();
               for (var k in allItems)
-                if (k > 9 && k < forbid.maxID && !forbid.IDs.includes(k) && !(allItems[k].set && !LT.setListAll[allItems[k].set]))
+                if (k > 9 && k < forbid.maxID && !forbid.IDs.includes(k) && !(allItems[k].set && !TWX.setListAll[allItems[k].set]))
                   addItems(allItems[k], 'All');
               for (var l in Bag.items_by_id)
                 if (!forbid.IDs.includes(k))
@@ -1683,7 +1630,7 @@
               delChar = function (list) {
                 return list.desc.replace(/[0-9]|\+|\.|\%/g, '').substring(1);
               };
-              LT.searchObj = {
+              TWX.searchObj = {
                 offense: [delChar(collect[5]), 'fort/battle/button_attack'],
                 offensetrue: [delChar(lee[4]), 'fort/battle/help01'],
                 defense: [delChar(hero[13]), 'fort/battle/button_defend'],
@@ -1704,23 +1651,23 @@
               for (var ca = 0; ca < CharacterSkills.allSkillKeys.length; ca++) {
                 if (ca % 5 === 0) {
                   var attr = CharacterSkills.allAttrKeys[ca / 5];
-                  LT.searchObj[attr] = [CharacterSkills.keyNames[attr], 'window/skills/circle_' + attr, ca % 10 === 0 ? '<br>' : ''];
+                  TWX.searchObj[attr] = [CharacterSkills.keyNames[attr], 'window/skills/circle_' + attr, ca % 10 === 0 ? '<br>' : ''];
                 }
                 var skill = CharacterSkills.allSkillKeys[ca];
-                LT.searchObj[skill] = [CharacterSkills.keyNames[skill], 'window/skills/skillicon_' + skill];
+                TWX.searchObj[skill] = [CharacterSkills.keyNames[skill], 'window/skills/skillicon_' + skill];
               }
               if (!localStorage.getItem('TWLTdate') || Date.parse(forbid.date) > Date.parse(localStorage.getItem('TWLTdate'))) {
                 var setNames = '',
                 nSets = forbid.unlock;
                 for (var h of nSets)
-                  setNames += LT.GUI.getSetOrItem(h, set1[h]) + '<br>';
-                new west.gui.Dialog(LT.name, '<span><b>' + forbid.date.toDateString() + '</b><br>' + LTlang.newsets + ':<br><br>' + setNames + '</span>', west.gui.Dialog.SYS_OK).setBlockGame(false).setDraggable(true).addButton('ok').show();
+                  setNames += TWX.GUI.getSetOrItem(h, set1[h]) + '<br>';
+                new west.gui.Dialog(TWX.name, '<span><b>' + forbid.date.toDateString() + '</b><br>' + TWXlang.newsets + ':<br><br>' + setNames + '</span>', west.gui.Dialog.SYS_OK).setBlockGame(false).setDraggable(true).addButton('ok').show();
                 localStorage.setItem('TWLTdate', forbid.date);
               }
             });
         },
         itemsInInv: function (id) {
-          var upgrade = isNaN(id) ? LT.currList[id].items : [id],
+          var upgrade = isNaN(id) ? TWX.currList[id].items : [id],
           items = [];
           for (var g of upgrade) {
             for (var h = 0; h <= 5; h++) {
@@ -1732,33 +1679,33 @@
             Wear.open();
             Inventory.showCustomItems(invItems);
           } else
-            new UserMessage(LTlang.noItems, 'hint').show();
+            new UserMessage(TWXlang.noItems, 'hint').show();
         },
         getSetOrItem: function (id, obj, nolink) {
           if (!obj)
             return id;
           var isItem = !isNaN(id),
-          nNew = window.forbid && (isItem && id >= forbid.unlockID || !isItem && forbid.unlock.includes(id)) ? '<img src="' + LTstart.Images('new') + '">' : '',
+          nNew = window.forbid && (isItem && id >= forbid.unlockID || !isItem && forbid.unlock.includes(id)) ? '<img src="' + TWXstart.Images('new') + '">' : '',
           nLvl = obj.item_level ? '<img src="images/items/item_level.png"><span style="font-size: 11px;color:#ffffff;text-shadow:black -1px 0 1px,black 0 1px 1px,black 1px 0 1px,black 0 -1px 1px;">' + obj.item_level + '</span>' : '',
           options = {
             show_alreadyown: true
           };
-          if (LT.lvlToggle)
+          if (TWX.lvlToggle)
             options.character = {
-              level: LT.lvlToggle
+              level: TWX.lvlToggle
             };
           var nPopup = 'data-setkey="' + id + '"',
-          click = 'onclick="LT.GUI.itemsInInv(\'' + id + '\')"',
+          click = 'onclick="TWX.GUI.itemsInInv(\'' + id + '\')"',
           img = '';
           if (isItem) {
             var itemId = id + '00' + obj.item_level,
             item = ItemManager.get(itemId);
             nPopup = 'data-itemid="' + itemId + '" title="' + (new ItemPopup(item, options).getXHTML().escapeHTML()) + '"';
             img = '<img src="' + item.image + '" width="25">';
-          } else if (LT.GUI.window.currentActiveTabId == 'SetBonus')
-            nPopup += 'title="' + LTlang.showItems + '" style="color:#FFE7B1;"';
+          } else if (TWX.GUI.window.currentActiveTabId == 'SetBonus')
+            nPopup += 'title="' + TWXlang.showItems + '" style="color:#FFE7B1;"';
           else
-            click = 'onclick="LT.GUI.open(\'openSetsWindow\',\'' + id + '\',\'SetBonus\')"';
+            click = 'onclick="TWX.GUI.open(\'openSetsWindow\',\'' + id + '\',\'SetBonus\')"';
           if (nolink)
             click = '';
           return '<b><span class="linklike" ' + nPopup + click + '>' + nNew + img + nLvl + obj.name + '</span></b>';
@@ -1766,14 +1713,14 @@
         newState: '',
         html: {},
         openSetsWindow: function (st, tab) {
-          LT.GUI.getDefault(tab);
-          LT.GUI.window.setTitle(tab);
+          TWX.GUI.getDefault(tab);
+          TWX.GUI.window.setTitle(tab);
           var newSet = false;
           if (typeof st === 'string') {
             newSet = true;
-            LT['curr' + tab] = st;
+            TWX['curr' + tab] = st;
           }
-          var scrollpane = new west.gui.Scrollpane('LTSetsWindow');
+          var scrollpane = new west.gui.Scrollpane('TWXSetsWindow');
           $(scrollpane.getMainDiv()).css({
             'margin-left': '120px',
             'margin-top': '10px',
@@ -1785,7 +1732,7 @@
           },
           charLvl = Character.level,
           getBonImg = function (n, w) {
-            var son = LT.searchObj[n] || JobList.getJobById(n.slice(3));
+            var son = TWX.searchObj[n] || JobList.getJobById(n.slice(3));
             return '<img src="images/' + (son[1] || 'jobs/' + son.shortname) + '.png" width="' + w + '" title="' + (son[0] || son.name) + '">';
           },
           types = {},
@@ -1800,7 +1747,7 @@
                   if (id[NAM]) {
                     if (!types[i]) {
                       types[i] = {
-                        desc: (LT.SPEC.includes(NAM) ? '% ' : ' ') + (ID.key && !LT.lvlToggle ? perL : ''),
+                        desc: (TWX.SPEC.includes(NAM) ? '% ' : ' ') + (ID.key && !TWX.lvlToggle ? perL : ''),
                         value: {},
                         values: {},
                         compVal: {
@@ -1815,8 +1762,8 @@
                     if (!types[i].value[NAM])
                       types[i].value[NAM] = 0;
                     types[i].value[NAM] += ib.value;
-                    var NUM = types[i].value[NAM] * (LT.SPEC.includes(NAM) && types[i].slots != 'buff' ? 100 : 1);
-                    var VAL = LT.lvlToggle && ID.key ? Math.ceil(NUM * LT.lvlToggle) : NUM;
+                    var NUM = types[i].value[NAM] * (TWX.SPEC.includes(NAM) && types[i].slots != 'buff' ? 100 : 1);
+                    var VAL = TWX.lvlToggle && ID.key ? Math.ceil(NUM * TWX.lvlToggle) : NUM;
                     var lvl = ib.leveled ? 0 : si.item_level;
                     var LVL = lvlUp(lvl, VAL) * id[NAM];
                     if (!types[i].values[k])
@@ -1824,7 +1771,7 @@
                           sum: 0
                         }, types[i].values[k - 1]);
                     types[i].values[k][NAM] = Math.round(LVL * 1000) / 1000;
-                    types[i].compVal[NAM] = !LT.lvlToggle && ID.key ? lvlUp(lvl, Math.ceil(NUM * Character.level)) * id[NAM] : LVL;
+                    types[i].compVal[NAM] = !TWX.lvlToggle && ID.key ? lvlUp(lvl, Math.ceil(NUM * Character.level)) * id[NAM] : LVL;
                     types[i].parts = k;
                   }
                 }
@@ -1845,21 +1792,21 @@
           reloadLvl = 0,
           showbonus = {
             'SetBonus': function (id) {
-              LT.currSetBonus = id;
+              TWX.currSetBonus = id;
               scrollpane.contentPane.empty();
               var types = {},
-              sets = LT.currList[id];
+              sets = TWX.currList[id];
               if (!sets)
                 return;
-              LT.GUI.window.setTitle(LT.GUI.getSetOrItem(id, sets));
+              TWX.GUI.window.setTitle(TWX.GUI.getSetOrItem(id, sets));
               var spCont = '<span style="width:60%;position:absolute;">';
               for (var k in sets.bonus) {
-                spCont += '<b>' + k + ' ' + LTlang.items + ':</b><br>';
+                spCont += '<b>' + k + ' ' + TWXlang.items + ':</b><br>';
                 for (var ID of sets.bonus[k]) {
                   var ib = ID.bonus || ID;
                   var NAM = (ib.name || ib.type) + (ib.job || ib.isSector || '');
                   if (!types[NAM]) {
-                    var DESC = ID.desc && (LT.lvlToggle && ID.key && ID.desc.replace(/[0-9]|\+|\.|\([^)]+\)$/g, '') || ID.desc.replace(/[0-9]|\+|\./g, '')) || CharacterSkills.keyNames[NAM];
+                    var DESC = ID.desc && (TWX.lvlToggle && ID.key && ID.desc.replace(/[0-9]|\+|\.|\([^)]+\)$/g, '') || ID.desc.replace(/[0-9]|\+|\./g, '')) || CharacterSkills.keyNames[NAM];
                     types[NAM] = {
                       key: (ID.key || 0),
                       desc: DESC,
@@ -1870,25 +1817,25 @@
                 }
                 for (var m in types) {
                   var n = types[m];
-                  var NUM = n.value * (LT.SPEC.includes(m) ? 100 : 1);
-                  var VAL = LT.lvlToggle && n.key ? Math.ceil(NUM * LT.lvlToggle) : Math.round(NUM * 100) / 100;
+                  var NUM = n.value * (TWX.SPEC.includes(m) ? 100 : 1);
+                  var VAL = TWX.lvlToggle && n.key ? Math.ceil(NUM * TWX.lvlToggle) : Math.round(NUM * 100) / 100;
                   spCont += getBonImg(m, 23) + ' + ' + VAL + ' ' + n.desc + '<br>';
                 }
               }
               spCont += '</span><span style="width:40%;left:60%;position:absolute;">';
-              for (var o of LT.currList[id].items)
-                spCont += LT.GUI.getSetOrItem(o, LT['itemList' + LT.currState][o]) + '<br>';
+              for (var o of TWX.currList[id].items)
+                spCont += TWX.GUI.getSetOrItem(o, TWX['itemList' + TWX.currState][o]) + '<br>';
               scrollpane.appendContent(spCont);
               setTimeout(function () {
-                var cont = $('div.LTSetsWindow div.tw2gui_scrollpane_clipper_contentpane > span');
+                var cont = $('div.TWXSetsWindow div.tw2gui_scrollpane_clipper_contentpane > span');
                 cont.parent().height(cont.height() + 10);
               }, 100);
             },
             'BonusSearch': function (idString) {
               var id = JSON.parse(idString);
-              if (Object.keys(id).length > 2 && !LT.lvlToggle) {
-                if (!LT.currBonusSearch) {
-                  LT.currBonusSearch = idString;
+              if (Object.keys(id).length > 2 && !TWX.lvlToggle) {
+                if (!TWX.currBonusSearch) {
+                  TWX.currBonusSearch = idString;
                   reloadLvl = 1;
                 }
                 return lvlBox.select(charLvl);
@@ -1896,22 +1843,22 @@
               scrollpane.contentPane.empty();
               types = {};
               var title = '';
-              for (var oi in LT.searchObj)
+              for (var oi in TWX.searchObj)
                 if (id[oi])
                   title += getBonImg(oi, 35) + ' ';
-              LT.GUI.window.setTitle(title);
-              var ns = '' + LT.lvlToggle + LT.onlyOwnSets;
-              if (idString != LT.currBonusSearch || ns != LT.GUI.newState || reloadLvl) {
-                LT.currBonusSearch = idString;
-                LT.GUI.newState = ns;
+              TWX.GUI.window.setTitle(title);
+              var ns = '' + TWX.lvlToggle + TWX.onlyOwnSets;
+              if (idString != TWX.currBonusSearch || ns != TWX.GUI.newState || reloadLvl) {
+                TWX.currBonusSearch = idString;
+                TWX.GUI.newState = ns;
                 reloadLvl = 0;
-                compare(LT['itemList' + LT.currState], id);
-                compare(LT.currList, id);
+                compare(TWX['itemList' + TWX.currState], id);
+                compare(TWX.currList, id);
                 var types2 = Object.keys(types).sort(function (a, b) {
                     return types[b].compVal.sum / types[b].parts - types[a].compVal.sum / types[a].parts;
                   }),
                 ic = 0;
-                LT.GUI.html = {
+                TWX.GUI.html = {
                   body: '',
                   right_arm: '',
                   animal: '',
@@ -1925,12 +1872,12 @@
                   if (nsi && ic++ > 200)
                     continue;
                   var setval = 0;
-                  LT.GUI.html[n.slots] += '<br>' + LT.GUI.getSetOrItem(type, n) + '<br>';
+                  TWX.GUI.html[n.slots] += '<br>' + TWX.GUI.getSetOrItem(type, n) + '<br>';
                   for (var o in n.values) {
                     if (o == 'sum')
                       continue;
-                    var pre = (nsi ? '' : o + ' ' + LTlang.parts + ':');
-                    LT.GUI.html[n.slots] += pre + ' +' + n.values[o].sum + n.desc + '<br>';
+                    var pre = (nsi ? '' : o + ' ' + TWXlang.parts + ':');
+                    TWX.GUI.html[n.slots] += pre + ' +' + n.values[o].sum + n.desc + '<br>';
                     setval = n.values[o].sum;
                   }
                   if (n.items) {
@@ -1938,54 +1885,54 @@
                     for (var ib of n.items)
                       if (ItemManager.getByBaseId(ib).sub_type != id.subWeapon)
                         ibs += types[ib] ? types[ib].values[1].sum : 0;
-                    LT.GUI.html[n.slots] += '& ' + LTlang.items + ': +' + (ibs + setval) + '<br>';
+                    TWX.GUI.html[n.slots] += '& ' + TWXlang.items + ': +' + (ibs + setval) + '<br>';
                   }
                 }
               }
-              scrollpane.appendContent('<span class="LTBonusS body" style="width:16%;position:absolute;"><h4>' + LTlang.body + '</h4></span><span class="LTBonusS right_arm" style="width:16%;left:17%;position:absolute;"><h4>' + LTlang.right_arm + '</h4></span><span class="LTBonusS animal" style="width:16%;left:34%;position:absolute;"><h4>' + LTlang.animal + '</h4></span><span class="LTBonusS rest" style="width:16%;left:51%;position:absolute;"><h4>' + LTlang.rest + '</h4></span><span class="LTBonusS item" style="width:16%;left:68%;position:absolute;"><h4>' + LTlang.items + '</h4></span><span class="LTBonusS buff" style="width:16%;right:0;position:absolute;"><h4>' + LTlang.buff + '</h4></span>');
-              for (var hs in LT.GUI.html)
-                $('.LTBonusS.' + hs).append(LT.GUI.html[hs]);
+              scrollpane.appendContent('<span class="TWXBonusS body" style="width:16%;position:absolute;"><h4>' + TWXlang.body + '</h4></span><span class="TWXBonusS right_arm" style="width:16%;left:17%;position:absolute;"><h4>' + TWXlang.right_arm + '</h4></span><span class="TWXBonusS animal" style="width:16%;left:34%;position:absolute;"><h4>' + TWXlang.animal + '</h4></span><span class="TWXBonusS rest" style="width:16%;left:51%;position:absolute;"><h4>' + TWXlang.rest + '</h4></span><span class="TWXBonusS item" style="width:16%;left:68%;position:absolute;"><h4>' + TWXlang.items + '</h4></span><span class="TWXBonusS buff" style="width:16%;right:0;position:absolute;"><h4>' + TWXlang.buff + '</h4></span>');
+              for (var hs in TWX.GUI.html)
+                $('.TWXBonusS.' + hs).append(TWX.GUI.html[hs]);
               setTimeout(function () {
                 var maxHeight = 0;
-                for (var h of $('div.LTSetsWindow span.LTBonusS'))
+                for (var h of $('div.TWXSetsWindow span.TWXBonusS'))
                   if (h.clientHeight > maxHeight)
                     maxHeight = h.clientHeight;
-                $('div.LTSetsWindow div.tw2gui_scrollpane_clipper_contentpane').height(maxHeight + 10);
+                $('div.TWXSetsWindow div.tw2gui_scrollpane_clipper_contentpane').height(maxHeight + 10);
               }, 200);
             },
           },
           loadResult = function () {
-            if (LT.setLength <= forbid.max || LT.onlyOwnSets || newSet) {
-              if (LT['curr' + tab])
-                showbonus[tab](LT['curr' + tab]);
+            if (TWX.setLength <= forbid.max || TWX.onlyOwnSets || newSet) {
+              if (TWX['curr' + tab])
+                showbonus[tab](TWX['curr' + tab]);
               newSet = false;
             }
           },
           selbox,
           loadSelbox = function () {
-            LT.currState = LT.onlyOwnSets ? 'Own' : 'All';
-            LT.currList = LT['setList' + LT.currState];
+            TWX.currState = TWX.onlyOwnSets ? 'Own' : 'All';
+            TWX.currList = TWX['setList' + TWX.currState];
             selbox = new west.gui.Selectbox().setWidth(250);
-            LT.GUI.window.setTitle(tab);
+            TWX.GUI.window.setTitle(tab);
             scrollpane.contentPane.empty();
-            if (LT.setLength <= forbid.max || LT.onlyOwnSets) {
+            if (TWX.setLength <= forbid.max || TWX.onlyOwnSets) {
               if (tab == 'SetBonus') {
                 selbox.addListener(showbonus.SetBonus);
                 var sbaI = function (j) {
-                  var sj = LT.currList[j];
-                  selbox.addItem(j, '<img src=' + (forbid.unlock.includes(j) ? LTstart.Images('new') : ItemManager.getByBaseId(sj.items[0]).image) + ' height="20" width="20">' + '<div style="padding-right: 20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;">' + sj.name + '</div>', sj.name);
+                  var sj = TWX.currList[j];
+                  selbox.addItem(j, '<img src=' + (forbid.unlock.includes(j) ? TWXstart.Images('new') : ItemManager.getByBaseId(sj.items[0]).image) + ' height="20" width="20">' + '<div style="padding-right: 20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;">' + sj.name + '</div>', sj.name);
                 };
-                if (LT.setAbc) {
-                  for (var h of LT.list)
-                    if (LT.currList[h.key])
+                if (TWX.setAbc) {
+                  for (var h of TWX.list)
+                    if (TWX.currList[h.key])
                       sbaI(h.key);
                 } else
-                  for (var i in LT.currList)
+                  for (var i in TWX.currList)
                     sbaI(i);
               }
-              scrollpane.appendContent('<h1>' + LTlang.choose + '!</h1>');
+              scrollpane.appendContent('<h1>' + TWXlang.choose + '!</h1>');
             } else
-              scrollpane.appendContent('<p style="color: #a31919;">ERROR: There are new sets added to the game.<br>Please <a href="javascript:LT.GUI.open(\'openKontakt\');" title="Open contact tab">contact me</a> so I can add the sets to the script.</p>');
+              scrollpane.appendContent('<p style="color: #a31919;">ERROR: There are new sets added to the game.<br>Please <a href="javascript:TWX.GUI.open(\'openKontakt\');" title="Open contact tab">contact me</a> so I can add the sets to the script.</p>');
           },
           img = {
             SetBonus: 'dayofthedead_2014_hat3',
@@ -2008,61 +1955,61 @@
             butObj.current_value += val;
             if (CharacterSkills.skills[id]) {
               var attr = CharacterSkills.skills[id].attr_key;
-              if (!LT.chooseBonus[attr])
-                LT.chooseBonus[attr] = 0;
-              LT.chooseBonus[attr] += val;
-              $('.chooseBonus #' + attr + ' span.displayValue').text(LT.chooseBonus[attr]);
-              if (LT.chooseBonus[attr] === 0)
-                delete LT.chooseBonus[attr];
+              if (!TWX.chooseBonus[attr])
+                TWX.chooseBonus[attr] = 0;
+              TWX.chooseBonus[attr] += val;
+              $('.chooseBonus #' + attr + ' span.displayValue').text(TWX.chooseBonus[attr]);
+              if (TWX.chooseBonus[attr] === 0)
+                delete TWX.chooseBonus[attr];
             }
             if (butObj.current_value === 0)
-              delete LT.chooseBonus[id];
+              delete TWX.chooseBonus[id];
             else
-              LT.chooseBonus[id] = butObj.current_value;
+              TWX.chooseBonus[id] = butObj.current_value;
             $('.chooseBonus #' + id + ' span.displayValue').text(butObj.current_value);
             return true;
           },
           cont,
           getCB = function (id) {
-            if (LT.searchObj[id][2])
-              cont.append(LT.searchObj[id][2]);
+            if (TWX.searchObj[id][2])
+              cont.append(TWX.searchObj[id][2]);
             var div = $('<div class="chooseBonus" style="display:inline-block;">' + getBonImg(id, 45)).appendTo(cont);
-            new west.gui.Plusminusfield(id, LT.chooseBonus[id] || 0, -100, 100, 0, buttonLogic, buttonLogic, buttonLogic).setWidth(45).appendTo(div);
+            new west.gui.Plusminusfield(id, TWX.chooseBonus[id] || 0, -100, 100, 0, buttonLogic, buttonLogic, buttonLogic).setWidth(45).appendTo(div);
           },
           chooseWindow = function () {
             cont = $('<span>').append('<div style="width:92px;display:inline-block;vertical-align:top;background-color:#A47F5B;border-radius:5px;">' +
-                '<img id="switchWeapon" style="cursor:pointer;" src="https://wiki.the-west.de/images/1/1a/Switch_weapons_icon.png" title="' + LTlang.switchWeapon + '" width="45">' +
-                '<img id="subWeapon" src="images/items/right_arm/' + img[LT.chooseBonus.subWeapon] + '.png" width="45"></div>');
-            for (var so in LT.searchObj) {
+                '<img id="switchWeapon" style="cursor:pointer;" src="https://wiki.the-west.de/images/1/1a/Switch_weapons_icon.png" title="' + TWXlang.switchWeapon + '" width="45">' +
+                '<img id="subWeapon" src="images/items/right_arm/' + img[TWX.chooseBonus.subWeapon] + '.png" width="45"></div>');
+            for (var so in TWX.searchObj) {
               getCB(so);
             }
-            new west.gui.Dialog(LTlang.selectBonus, cont).setBlockGame(false).setDraggable(true).addButton('ok', function () {
-              if (Object.keys(LT.chooseBonus).length > 1)
-                showbonus.BonusSearch(JSON.stringify(LT.chooseBonus));
+            new west.gui.Dialog(TWXlang.selectBonus, cont).setBlockGame(false).setDraggable(true).addButton('ok', function () {
+              if (Object.keys(TWX.chooseBonus).length > 1)
+                showbonus.BonusSearch(JSON.stringify(TWX.chooseBonus));
               else {
-                LT.currBonusSearch = '';
+                TWX.currBonusSearch = '';
                 loadSelbox();
               }
-            }).addButton(LTlang.resetB, function () {
-              LT.chooseBonus = {
+            }).addButton(TWXlang.resetB, function () {
+              TWX.chooseBonus = {
                 subWeapon: 'hand'
               };
               chooseWindow();
             }).addButton('cancel').show();
             $('#switchWeapon').click(function () {
-              LT.chooseBonus.subWeapon = LT.chooseBonus.subWeapon == 'shot' ? 'hand' : 'shot';
-              $("#subWeapon").attr('src', 'images/items/right_arm/' + img[LT.chooseBonus.subWeapon] + '.png');
+              TWX.chooseBonus.subWeapon = TWX.chooseBonus.subWeapon == 'shot' ? 'hand' : 'shot';
+              $("#subWeapon").attr('src', 'images/items/right_arm/' + img[TWX.chooseBonus.subWeapon] + '.png');
             });
             $('div.chooseBonus .tw2gui_plusminus').width('auto');
             $('div.chooseBonus').css('margin-left', '2px');
           };
-          setbutton = $('<span title="' + LTlang.choose + '" style="background-image:url(images/items/head/' + img[tab] + '.png); cursor:pointer;  position:absolute; height:73px; width:73px; margin:4px;" />');
+          setbutton = $('<span title="' + TWXlang.choose + '" style="background-image:url(images/items/head/' + img[tab] + '.png); cursor:pointer;  position:absolute; height:73px; width:73px; margin:4px;" />');
           setbutton.click(function () {
             if (tab == 'SetBonus') {
               var pos = $(setbutton).offset();
               selbox.setPosition(pos.left + 35, pos.top + 50);
               selbox.show();
-            } else if (tab == 'BonusSearch' && (LT.setLength <= forbid.max || LT.onlyOwnSets))
+            } else if (tab == 'BonusSearch' && (TWX.setLength <= forbid.max || TWX.onlyOwnSets))
               chooseWindow();
           });
           var content = $('<div>');
@@ -2071,57 +2018,57 @@
             'width': '110px',
             'position': 'absolute',
           });
-          $(LT.GUI.window.getContentPane()).append(setbutton, content, scrollpane.getMainDiv());
+          $(TWX.GUI.window.getContentPane()).append(setbutton, content, scrollpane.getMainDiv());
           var maxLvl = 150,
           setsSort = tab == 'SetBonus' ? new west.gui.Checkbox('ABC', null, function (state) {
-              LT.setAbc = state;
+              TWX.setAbc = state;
               loadSelbox();
-            }).setSelected(LT.setAbc, true).getMainDiv() : '',
+            }).setSelected(TWX.setAbc, true).getMainDiv() : '',
           lvlBox = new west.gui.Combobox().setWidth(77).addItem(0, '0').addItem(charLvl, '' + charLvl),
-          onlyOwn = new west.gui.Checkbox(LTlang.ownSets, null, function (state) {
-              LT.onlyOwnSets = state;
+          onlyOwn = new west.gui.Checkbox(TWXlang.ownSets, null, function (state) {
+              TWX.onlyOwnSets = state;
               loadSelbox();
               loadResult();
-            }).setSelected(LT.onlyOwnSets);
+            }).setSelected(TWX.onlyOwnSets);
           if (charLvl != maxLvl)
             lvlBox.addItem(maxLvl, '' + maxLvl);
-          lvlBox.select(LT.lvlToggle).addListener(function (lvl) {
-            LT.lvlToggle = lvl;
+          lvlBox.select(TWX.lvlToggle).addListener(function (lvl) {
+            TWX.lvlToggle = lvl;
             loadResult();
           });
-          content.append(setsSort, '<br><br><b>' + LTlang.level + ':</b>', lvlBox.getMainDiv(), onlyOwn.getMainDiv());
-          $('div.tw2gui_window.LT.active_tab_id_BonusSearch').width(1060);
-          $('div.tw2gui_window.LT.active_tab_id_BonusSearch div.tw2gui_scrollpane.LTSetsWindow').width(900);
+          content.append(setsSort, '<br><br><b>' + TWXlang.level + ':</b>', lvlBox.getMainDiv(), onlyOwn.getMainDiv());
+          $('div.tw2gui_window.TWX.active_tab_id_BonusSearch').width(1060);
+          $('div.tw2gui_window.TWX.active_tab_id_BonusSearch div.tw2gui_scrollpane.TWXSetsWindow').width(900);
         },
         openFrame: function (iframe, size) {
-          LT.GUI.window.setResizeable(true).addClass('nocloseall').clearContentPane().activateTab('LTFrame');
-          LT.GUI.window.dontCloseAll = true;
+          TWX.GUI.window.setResizeable(true).addClass('nocloseall').clearContentPane().activateTab('TWXFrame');
+          TWX.GUI.window.dontCloseAll = true;
           if (Array.isArray(size))
-            LT.GUI.window.setSize(size[0], size[1]);
-          var wnd = LT.GUI.window.getMainDiv();
-          $('.tw2gui_window_inset', wnd).css('background-image', 'url(' + LTstart.Images('LT_backGr', 1) + ')');
+            TWX.GUI.window.setSize(size[0], size[1]);
+          var wnd = TWX.GUI.window.getMainDiv();
+          $('.tw2gui_window_inset', wnd).css('background-image', 'url(' + TWXstart.Images('LT_backGr', 1) + ')');
           $('.textart_title', wnd).css('display', 'none');
-          var contPan = $(LT.GUI.window.getContentPane());
+          var contPan = $(TWX.GUI.window.getContentPane());
           contPan.css('margin-top', '-30px');
           new west.gui.Button('QuakeNet Webchat').appendTo(contPan).click(function () {
             var iframe = 'https://webchat.quakenet.org';
-            LT.GUI.openFrame(iframe);
+            TWX.GUI.openFrame(iframe);
           });
           new west.gui.Button('Wiki The-West').appendTo(contPan).click(function () {
             var iframe = Game.helpURL.replace('http:', 'https:');
-            LT.GUI.openFrame(iframe);
+            TWX.GUI.openFrame(iframe);
           });
           new west.gui.Button('TW-DB.info').appendTo(contPan).click(function () {
             var iframe = 'https://tw-db.info';
-            LT.GUI.openFrame(iframe);
+            TWX.GUI.openFrame(iframe);
           });
           if (typeof iframe === 'string')
             contPan.append($('<iframe src="' + iframe + '" style="width:100%; height:94%; border:0; margin-bottom:1px; ">'));
         },
         openSender: function () {
-          LT.GUI.getDefault('LTSender');
+          TWX.GUI.getDefault('TWXSender');
           var EvImg = EvName == 'Octoberfest' ? 'window/events/octoberfest/pretzels_icon' : 'interface/friendsbar/events/' + EvName;
-          LT.GUI.window.setTitle(sendGift.label + '    <img src="images/' + EvImg + '.png">');
+          TWX.GUI.window.setTitle(sendGift.label + '    <img src="images/' + EvImg + '.png">');
           if (!isDefined(WestUi.FriendsBar.friendsBarUi)) {
             WestUi.FriendsBar.toggle();
           }
@@ -2175,7 +2122,7 @@
               });
               scrollpane.appendContent(i);
               if (t.length === 0)
-                scrollpane.appendContent('<h2 style="text-align: center; color: #a31919; margin-top: 50px;">' + LTlang.noFriends + '</h2>');
+                scrollpane.appendContent('<h2 style="text-align: center; color: #a31919; margin-top: 50px;">' + TWXlang.noFriends + '</h2>');
               var scrollP = new west.gui.Scrollpane();
               $(scrollP.getMainDiv()).css({
                 'margin-top': '10px',
@@ -2197,7 +2144,7 @@
                   div.append('<img src="images/' + EvImg + '.png">  <b>' + r + '</b><br>' + rew[r].desc + '<br>');
                   var id = rew[r].id;
                   if (isNaN(id)) {
-                    div.append('<i>' + LTlang.reward + ': ' + id + '</i><br><br>');
+                    div.append('<i>' + TWXlang.reward + ': ' + id + '</i><br><br>');
                   } else {
                     var invItem = new tw2widget.JobItem(ItemManager.get(id));
                     div.append(invItem.getMainDiv()).append('<br><br><br><br><br>');
@@ -2205,16 +2152,16 @@
                   scrollP.appendContent(div);
                 }
               }
-              $(LT.GUI.window.getContentPane()).append(scrollpane.getMainDiv()).append(scrollP.getMainDiv());
+              $(TWX.GUI.window.getContentPane()).append(scrollpane.getMainDiv()).append(scrollP.getMainDiv());
             }), 500);
         },
       };
-      LT.RecipeMarket = {
+      TWX.RecipeMarket = {
         init: function () {
           var inject = function (category, data) {
-            $('.LTFind').remove();
+            $('.TWXFind').remove();
             var gLS4P = Game.InfoHandler.getLocalString4ProfessionId;
-            var buttons_recipe = $('<div class="LTFind"><a href=\'javascript:LT.RecipeMarket.filterRecipe(0);\'><img title="' + LTlang.allprofessions + '" alt="allprofessions" src="' + LTstart.Images('LT_recipes') + '" /></a><a href=\'javascript:LT.RecipeMarket.filterRecipe(1);\'><img title="' + gLS4P(1) + '" alt="fieldcook" style="width: 30px;" src="images/items/recipe/recipe_cook.png" /></a><a href=\'javascript:LT.RecipeMarket.filterRecipe(2);\'><img title="' + gLS4P(2) + '" alt="tonicpeddler" style="width: 30px;" src="images/items/recipe/recipe_quack.png" /></a><a href=\'javascript:LT.RecipeMarket.filterRecipe(3);\'><img title="' + gLS4P(3) + '" alt="blacksmith" style="width: 30px;" src="images/items/recipe/recipe_smith.png" /></a><a href=\'javascript:LT.RecipeMarket.filterRecipe(4);\'><img title="' + gLS4P(4) + '" alt="mastersaddler" style="width: 30px;" src="images/items/recipe/recipe_sattle.png" /></a></div>');
+            var buttons_recipe = $('<div class="TWXFind"><a href=\'javascript:TWX.RecipeMarket.filterRecipe(0);\'><img title="' + TWXlang.allprofessions + '" alt="allprofessions" src="' + TWXstart.Images('LT_recipes') + '" /></a><a href=\'javascript:TWX.RecipeMarket.filterRecipe(1);\'><img title="' + gLS4P(1) + '" alt="fieldcook" style="width: 30px;" src="images/items/recipe/recipe_cook.png" /></a><a href=\'javascript:TWX.RecipeMarket.filterRecipe(2);\'><img title="' + gLS4P(2) + '" alt="tonicpeddler" style="width: 30px;" src="images/items/recipe/recipe_quack.png" /></a><a href=\'javascript:TWX.RecipeMarket.filterRecipe(3);\'><img title="' + gLS4P(3) + '" alt="blacksmith" style="width: 30px;" src="images/items/recipe/recipe_smith.png" /></a><a href=\'javascript:TWX.RecipeMarket.filterRecipe(4);\'><img title="' + gLS4P(4) + '" alt="mastersaddler" style="width: 30px;" src="images/items/recipe/recipe_sattle.png" /></a></div>');
             if (category == 'recipe') {
               $('.searchbox').before(buttons_recipe);
               $('.searchbox').css('margin-bottom', '0');
@@ -2224,7 +2171,7 @@
               items.sort(function (a, b) {
                 return a.min_level - b.min_level;
               });
-              LT.RecipeMarket.Recipe = items;
+              TWX.RecipeMarket.Recipe = items;
               for (var h = 0; h < items.length; h++)
                 data[h] = items[h].item_id;
               return data;
@@ -2250,12 +2197,12 @@
           data.show();
           if (profession_id === 0)
             return;
-          for (var i = 0; i < LT.RecipeMarket.Recipe.length; i++)
-            if (profession_id != LT.RecipeMarket.Recipe[i].profession_id)
+          for (var i = 0; i < TWX.RecipeMarket.Recipe.length; i++)
+            if (profession_id != TWX.RecipeMarket.Recipe[i].profession_id)
               $(data[i]).hide();
         }
       };
-      LT.AchievHide = {
+      TWX.AchievHide = {
         init: function () {
           var hideUnErfolge = function () {
             $('.playerachievement-' + Character.playerId + ' .achievement').hide();
@@ -2270,20 +2217,20 @@
           };
         }
       };
-      LT.MarketMessage = {
+      TWX.MarketMessage = {
         Towns: {},
         init: function () {
           Ajax.get('map', 'get_minimap', {}, function (json) {
             if (json.error)
               return new UserMessage(json.msg).show();
-            LT.MarketMessage.Towns = json.towns;
+            TWX.MarketMessage.Towns = json.towns;
             EventHandler.listen('position_change', function () {
-              LT.MarketMessage.check();
+              TWX.MarketMessage.check();
             });
             var setVal2 = setInterval(function () {
                 if (Character.position.x) {
                   clearInterval(setVal2);
-                  LT.MarketMessage.check();
+                  TWX.MarketMessage.check();
                 }
               }, 1000);
           });
@@ -2308,11 +2255,11 @@
             EventHandler.signal('inventory_changed');
           };
           var showDialog = function () {
-            new west.gui.Dialog(LTlang.market1, LTlang.market2, west.gui.Dialog.SYS_QUESTION).addButton(LTlang.all, function () {
+            new west.gui.Dialog(TWXlang.market1, TWXlang.market2, west.gui.Dialog.SYS_QUESTION).addButton(TWXlang.all, function () {
               fetchAll(1);
-            }).addButton(LTlang.onlyBids, function () {
+            }).addButton(TWXlang.onlyBids, function () {
               fetchAll(0);
-            }).addButton(LTlang.nothing).show();
+            }).addButton(TWXlang.nothing).show();
           };
           var checkItems = function () {
             for (var g = 0; g < bids.length; g++) {
@@ -2344,7 +2291,7 @@
               get_offers();
             });
           };
-          var towns = LT.MarketMessage.Towns;
+          var towns = TWX.MarketMessage.Towns;
           for (var k in towns)
             if (towns[k].x == Character.position.x && towns[k].y == Character.position.y) {
               town_id = towns[k].town_id;
@@ -2355,23 +2302,23 @@
             }
         }
       };
-      LT.MarketTown = {
+      TWX.MarketTown = {
         init: function () {
-          if (!LT.Skript.getFeature('MarketMessage'))
+          if (!TWX.Skript.getFeature('MarketMessage'))
             Ajax.get('map', 'get_minimap', {}, function (json) {
               if (json.error)
                 return new UserMessage(json.msg).show();
-              LT.MarketMessage.Towns = json.towns;
+              TWX.MarketMessage.Towns = json.towns;
             });
           MarketWindow.twlt_showTab = MarketWindow.showTab;
           MarketWindow.showTab = function () {
             MarketWindow.twlt_showTab.apply(this, arguments);
             if (MarketWindow.townId > -1)
-              MarketWindow.window.setTitle(MarketWindow.window.titler.text + " - " + LT.MarketMessage.Towns[MarketWindow.townId].name);
+              MarketWindow.window.setTitle(MarketWindow.window.titler.text + " - " + TWX.MarketMessage.Towns[MarketWindow.townId].name);
           };
         }
       };
-      LT.MarkDaily = {
+      TWX.MarkDaily = {
         init: function () {
           var addBorder = function () {
             var rows = $('.reward-row');
@@ -2388,13 +2335,13 @@
           };
         }
       };
-      LT.DuellMap = {
+      TWX.DuellMap = {
         init: function () {
           var generateNpcPopup = function (data) {
             var weapon = ItemManager.get(data.weaponId),
             damage = weapon.getDamage(data),
             npcData = data.bonus;
-            return '<table class="dln_npcskill_popup"><tr><td colspan="5" class="text_bold">' + LTlang.popup + '<br>&nbsp;</td></tr><tr><td><img src="/images/window/duels/npcskill_shot.jpg" /></td><td><img src="/images/window/duels/npcskill_punch.jpg" /></td><td><img src="/images/window/duels/npcskill_aim.jpg" /></td><td><img src="/images/window/duels/npcskill_appearance.jpg" /></td><td></td></tr><tr><td class="text_bold">' + (npcData.shot || 0) + '</td><td class="text_bold">' + (npcData.punch || 0) + '</td>' + '<td class="text_bold">' + (npcData.aim || 0) + '</td><td class="text_bold">' + (npcData.appearance || 0) + '</td><td></td></tr>' + '<tr><td><img src="/images/window/duels/npcskill_tactic.jpg" /></td><td><img src="/images/window/duels/npcskill_reflex.jpg" /></td><td><img src="/images/window/duels/npcskill_dodge.jpg" /></td><td><img src="/images/window/duels/npcskill_tough.jpg" /></td><td><img src="/images/window/duels/npcskill_health.jpg" /></td></tr><tr><td class="text_bold">' + (npcData.tactic || 0) + '</td><td class="text_bold">' + (npcData.reflex || 0) + '</td><td class="text_bold">' + (npcData.dodge || 0) + '</td><td class="text_bold">' + (npcData.tough || 0) + '</td><td class="text_bold">' + (npcData.health || 0) + '</td></tr><tr><td colspan="2" class="text_bold"><img src="' + weapon.image + '" /></td><td colspan="3" class="text_bold"><br>' + weapon.name + '<br>(' + LTlang.damage + ': ' + damage.min + ' - ' + damage.max + ')</td></tr></table>';
+            return '<table class="dln_npcskill_popup"><tr><td colspan="5" class="text_bold">' + TWXlang.popup + '<br>&nbsp;</td></tr><tr><td><img src="/images/window/duels/npcskill_shot.jpg" /></td><td><img src="/images/window/duels/npcskill_punch.jpg" /></td><td><img src="/images/window/duels/npcskill_aim.jpg" /></td><td><img src="/images/window/duels/npcskill_appearance.jpg" /></td><td></td></tr><tr><td class="text_bold">' + (npcData.shot || 0) + '</td><td class="text_bold">' + (npcData.punch || 0) + '</td>' + '<td class="text_bold">' + (npcData.aim || 0) + '</td><td class="text_bold">' + (npcData.appearance || 0) + '</td><td></td></tr>' + '<tr><td><img src="/images/window/duels/npcskill_tactic.jpg" /></td><td><img src="/images/window/duels/npcskill_reflex.jpg" /></td><td><img src="/images/window/duels/npcskill_dodge.jpg" /></td><td><img src="/images/window/duels/npcskill_tough.jpg" /></td><td><img src="/images/window/duels/npcskill_health.jpg" /></td></tr><tr><td class="text_bold">' + (npcData.tactic || 0) + '</td><td class="text_bold">' + (npcData.reflex || 0) + '</td><td class="text_bold">' + (npcData.dodge || 0) + '</td><td class="text_bold">' + (npcData.tough || 0) + '</td><td class="text_bold">' + (npcData.health || 0) + '</td></tr><tr><td colspan="2" class="text_bold"><img src="' + weapon.image + '" /></td><td colspan="3" class="text_bold"><br>' + weapon.name + '<br>(' + TWXlang.damage + ': ' + damage.min + ' - ' + damage.max + ')</td></tr></table>';
           };
           Ajax.remoteCallMode('character', 'get_info', {}, function (resp) {
             Character.setDuelLevel(resp.duelLevel);
@@ -2403,11 +2350,11 @@
           progB.setTextOnly(true);
           $(progB.getMainDiv()).css('width', '772px');
           var fillPage = function () {
-            $('#LTDuellMapTable').empty();
-            $('#LTDuellMapPlayers').empty();
-            $('#LTDuellMapTable').append('<tr><th>' + LTlang.name + '</th><th>' + LTlang.town + '</th><th>' + LTlang.level + '</th><th>' + LTlang.duelLevel + '</th><th>' + LTlang.exp + '</th><th>' + LTlang.distance + '</th><th>' + LTlang.startduel + '</th><th>' + LTlang.centerMap + '</th></tr>');
-            for (var k in LT.DuellMap.Player) {
-              var data = LT.DuellMap.Player[k];
+            $('#TWXDuellMapTable').empty();
+            $('#TWXDuellMapPlayers').empty();
+            $('#TWXDuellMapTable').append('<tr><th>' + TWXlang.name + '</th><th>' + TWXlang.town + '</th><th>' + TWXlang.level + '</th><th>' + TWXlang.duelLevel + '</th><th>' + TWXlang.exp + '</th><th>' + TWXlang.distance + '</th><th>' + TWXlang.startduel + '</th><th>' + TWXlang.centerMap + '</th></tr>');
+            for (var k in TWX.DuellMap.Player) {
+              var data = TWX.DuellMap.Player[k];
               var content = $('<tr></tr>');
               content.append('<td><a href="javascript:void(PlayerProfileWindow.open(' + data.player_id + '));" title="' + (Character.charClass == 'duelist' ? generateNpcPopup(data).escapeHTML() : '') + '">' + data.player_name + '</a></td>',
                 '<td><a href="javascript:void(TownWindow.open(' + data.town_x + ',' + data.town_y + '));">' + data.town_name + '</a></td>',
@@ -2418,23 +2365,23 @@
                   x: data.character_x,
                   y: data.character_y
                 }).formatDuration() + '</td>',
-                '<td><a href="#" onclick="SaloonWindow.startDuel(' + data.player_id + ', ' + data.alliance_id + ', false, DuelsWindow);">' + LTlang.startduel + '</a></td>',
-                '<td><a href="#" onclick="Map.center(' + data.character_x + ', ' + data.character_y + ');">' + LTlang.centerMap + '</a></td>');
-              $('#LTDuellMapTable').append(content);
+                '<td><a href="#" onclick="SaloonWindow.startDuel(' + data.player_id + ', ' + data.alliance_id + ', false, DuelsWindow);">' + TWXlang.startduel + '</a></td>',
+                '<td><a href="#" onclick="Map.center(' + data.character_x + ', ' + data.character_y + ');">' + TWXlang.centerMap + '</a></td>');
+              $('#TWXDuellMapTable').append(content);
               content = $('<div style="position:absolute;border:1px solid black;background:#FF0000;width:4px;height:4px;left:' + (data.character_x / 46592 * 770 - 2) + 'px;top:' + (data.character_y / 20480 * 338 - 2) + 'px;" />');
               eval('content.click(function () { SaloonWindow.startDuel(' + data.player_id + ', ' + data.alliance_id + ', false, DuelsWindow); });');
               content.addMousePopup('<b>' + data.player_name + '</b> ' + window.Map.calcWayTime(Map.getLastQueuePosition(), {
                   x: data.character_x,
                   y: data.character_y
                 }).formatDuration());
-              $('#LTDuellMapPlayers').append(content);
+              $('#TWXDuellMapPlayers').append(content);
             }
-            $('<div style="position:absolute;border:1px solid black;background:#00CCFF;width:4px;height:4px;left:' + (Character.position.x / 46592 * 770 - 2) + 'px;top:' + (Character.position.y / 20480 * 338 - 2) + 'px;" />').addMousePopup('Deine Position').appendTo('#LTDuellMapPlayers');
+            $('<div style="position:absolute;border:1px solid black;background:#00CCFF;width:4px;height:4px;left:' + (Character.position.x / 46592 * 770 - 2) + 'px;top:' + (Character.position.y / 20480 * 338 - 2) + 'px;" />').addMousePopup('Deine Position').appendTo('#TWXDuellMapPlayers');
           };
           var getPlayer = function (i, distance) {
             if (i == -1) {
               progB.setValue(0);
-              LT.DuellMap.Player = {};
+              TWX.DuellMap.Player = {};
               i++;
             }
             Ajax.remoteCall('duel', 'search_op', {
@@ -2447,8 +2394,8 @@
               var l = json.oplist.pclist.length;
               for (var j = 0; j < l; j++) {
                 var plyr = json.oplist.pclist[j].player_name;
-                if (!LT.DuellMap.Player[plyr]) {
-                  LT.DuellMap.Player[plyr] = json.oplist.pclist[j];
+                if (!TWX.DuellMap.Player[plyr]) {
+                  TWX.DuellMap.Player[plyr] = json.oplist.pclist[j];
                   progB.increase(1);
                 }
               }
@@ -2456,7 +2403,7 @@
                 getPlayer(++i, distance);
                 return;
               }
-              LT.DuellMap.progBVal = progB.getValue();
+              TWX.DuellMap.progBVal = progB.getValue();
               fillPage();
             });
           };
@@ -2471,17 +2418,17 @@
                 $(e).hide();
               }
             });
-            DuelsWindow.window.setTitle(LTlang.duelmap);
-            if (Object.keys(LT.DuellMap.Player).length === 0) {
-              LT.DuellMap.progBVal = 0;
+            DuelsWindow.window.setTitle(TWXlang.duelmap);
+            if (Object.keys(TWX.DuellMap.Player).length === 0) {
+              TWX.DuellMap.progBVal = 0;
               getPlayer(-1, 15);
             } else
-              progB.setValue(LT.DuellMap.progBVal);
+              progB.setValue(TWX.DuellMap.progBVal);
           };
           var initDuellmap = function () {
-            DuelsWindow.window.addTab(LTlang.duelmap, 'LTDuellmap', showTab);
-            LT.DuellMap.Player = {};
-            var area = $('<div class="duels-LTDuellmap" style="display:none;"></div>').appendTo(DuelsWindow.window.getContentPane()),
+            DuelsWindow.window.addTab(TWXlang.duelmap, 'TWXDuellmap', showTab);
+            TWX.DuellMap.Player = {};
+            var area = $('<div class="duels-TWXDuellmap" style="display:none;"></div>').appendTo(DuelsWindow.window.getContentPane()),
             content = $('<div style="height:350px;top:10px;position:relative"></div>'),
             left = 0,
             top = 0;
@@ -2507,17 +2454,17 @@
               }
               content.append(img);
             }
-            content.append('<div id="LTDuellMapPlayers"></div>');
+            content.append('<div id="TWXDuellMapPlayers"></div>');
             content.appendTo(area);
             area.append(progB.getMainDiv());
             var scrollpane = new west.gui.Scrollpane().appendTo(area);
             $(scrollpane.getMainDiv()).css('height', '185px');
-            scrollpane.appendContent(LTlang.duelradius + '    ');
-            var combobox = new west.gui.Combobox().setWidth(120).addItem('15', '15 ' + LTlang.minutes).addItem('30', '30 ' + LTlang.minutes).addItem('60', LTlang.hour).addItem('120', '2 ' + LTlang.hours).addItem('240', '4 ' + LTlang.hours).addItem('360', '6 ' + LTlang.hours).select('15').appendTo(scrollpane.getContentPane());
-            new west.gui.Button(LTlang.searchOpp).appendTo(scrollpane.getContentPane()).click(function () {
+            scrollpane.appendContent(TWXlang.duelradius + '    ');
+            var combobox = new west.gui.Combobox().setWidth(120).addItem('15', '15 ' + TWXlang.minutes).addItem('30', '30 ' + TWXlang.minutes).addItem('60', TWXlang.hour).addItem('120', '2 ' + TWXlang.hours).addItem('240', '4 ' + TWXlang.hours).addItem('360', '6 ' + TWXlang.hours).select('15').appendTo(scrollpane.getContentPane());
+            new west.gui.Button(TWXlang.searchOpp).appendTo(scrollpane.getContentPane()).click(function () {
               getPlayer(-1, combobox.getValue());
             });
-            scrollpane.appendContent('<table border="1" id="LTDuellMapTable"></table>');
+            scrollpane.appendContent('<table border="1" id="TWXDuellMapTable"></table>');
           };
           DuelsWindow.twlt_open = DuelsWindow.open;
           DuelsWindow.open = function () {
@@ -2535,7 +2482,7 @@
           };
         }
       };
-      LT.ChangeCity = {
+      TWX.ChangeCity = {
         init: function () {
           var swap = function (that) {
             var rows = $('.' + that.window.id + ' .row .cell.cell_2.name,.' + that.window.id + ' .row .cell.cell_2.name_foreign');
@@ -2554,7 +2501,7 @@
           };
         }
       };
-      LT.ShowAP = {
+      TWX.ShowAP = {
         init: function () {
           var addAP = function (that) {
             var job = that.job;
@@ -2580,26 +2527,26 @@
           };
         }
       };
-      LT.Statusbar = {
+      TWX.Statusbar = {
         init: function () {
           $('div#ui_windowbar').hide();
           $('div#ui_windowbar_state').hide();
         }
       };
-      LT.Logout = {
+      TWX.Logout = {
         init: function () {
-          var menu = $('<div class="menulink" onclick="LT.Logout.logout();" title="' + LTlang.logout + '" />').css('background-image', 'url(' + LTstart.Images('logout') + ')').css('background-position', '0px 0px').mouseenter(function () {
+          var menu = $('<div class="menulink" onclick="TWX.Logout.logout();" title="' + TWXlang.logout + '" />').css('background-image', 'url(' + TWXstart.Images('logout') + ')').css('background-position', '0px 0px').mouseenter(function () {
               $(this).css('background-position', '-25px 0px');
             }).mouseleave(function () {
               $(this).css('background-position', '0px 0px');
             });
-          $('#LT-menu').after(menu);
+          $('#TWX-menu').after(menu);
         },
         logout: function () {
           location.href = 'game.php?window=logout&action=logout&h=' + Player.h;
         },
       };
-      LT.MoveJobs = {
+      TWX.MoveJobs = {
         init: function () {
           var st = $('.menulink.lscript')[0].title;
           $('div#ui_bottomright').css('right', '35px');
@@ -2616,28 +2563,28 @@
           };
         }
       };
-      LT.BlinkEvents = {
+      TWX.BlinkEvents = {
         init: function () {
           var setVal7 = setInterval(function () {
               if ($('.border.highlight').length) {
                 clearInterval(setVal7);
                 $('.border.highlight').remove();
-                LT.addStyle('.border.highlight {display:none;}');
+                TWX.addStyle('.border.highlight {display:none;}');
               }
             }, 3000);
         }
       };
-      LT.FortTracker = {
+      TWX.FortTracker = {
         init: function () {
-          LT.addStyle('.fort_battle_notification {display:none!important;}');
+          TWX.addStyle('.fort_battle_notification {display:none!important;}');
         }
       };
-      LT.FriendsPop = {
+      TWX.FriendsPop = {
         init: function () {
           west.notification.ToastOnlineNotification.prototype.show = function () {};
         }
       };
-      LT.InstantQuest = {
+      TWX.InstantQuest = {
         init: function () {
           var setVal1 = setInterval(function () {
               if (QuestEmployerView.showQuest) {
@@ -2652,7 +2599,7 @@
                       if (req[f].solved === true)
                         solvCnt += 1;
                     if (req.length == solvCnt)
-                      $('div.quest_button_area_' + e.id + '').empty().append(new west.gui.Button(LTlang.accNfin, function () {
+                      $('div.quest_button_area_' + e.id + '').empty().append(new west.gui.Button(TWXlang.accNfin, function () {
                           QuestWindow.acceptQuest(e.id);
                           var siVal = setInterval(function () {
                               if (QuestLog.quests[e.id]) {
@@ -2667,7 +2614,7 @@
             }, 2000);
         }
       };
-      LT.QuestWiki = {
+      TWX.QuestWiki = {
         init: function () {
           $.getScript('https://tomrobert.safe-ws.de/repGroups.js').done(function () {
             QuestLog.solvedGroups = {};
@@ -2691,17 +2638,17 @@
               Quest.render = function () {
                 Quest.twlt_render.apply(this, arguments);
                 var wiki = 'https://wiki.the' + Game.masterURL.match(/the(.*)/)[1] + '/wiki/',
-                gid = LT.repGroups[this.id],
+                gid = TWX.repGroups[this.id],
                 qGroup = QuestLog.solvedGroups[gid] || lang == 'de' && isNaN(gid) && gid,
                 groupName = [69, 34].includes(this.group) && qGroup ? qGroup + repText[lang] || '' : this.groupTitle,
                 questName = encodeURIComponent((lang == 'pl' ? 'Zadania: ' : '') + groupName + '#' + (lang == 'de' ? this.id : this.soloTitle));
-                this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + LTlang.onWiki + '" href="' + wiki + questName + '" target="_blank"><img src="' + LTstart.Images('wiki') + '"/></a>');
+                this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + wiki + questName + '" target="_blank"><img src="' + TWXstart.Images('wiki') + '"/></a>');
               };
             });
           });
         }
       };
-      LT.CityTravel = {
+      TWX.CityTravel = {
         init: function () {
           var setVal3 = setInterval(function () {
               if (west.window.Blackboard.cities.show) {
@@ -2722,7 +2669,7 @@
             }, 2000);
         }
       };
-      LT.BetterSheriff = {
+      TWX.BetterSheriff = {
         onlyAttackable: false,
         init: function () {
           var columns = [
@@ -2744,11 +2691,11 @@
           counter,
           maxCount,
           updateTable = function (data) {
-            LT.BetterSheriff.table.clearBody();
+            TWX.BetterSheriff.table.clearBody();
             var tmpCells = {};
             for (var i = 0; i < data.length; i++) {
               var rd = data[i];
-              if (LT.BetterSheriff.onlyAttackable && !rd.status.includes('.startDuel'))
+              if (TWX.BetterSheriff.onlyAttackable && !rd.status.includes('.startDuel'))
                 continue;
               tmpCells[columns[0]] = '<a title="' + SheriffWindow.createWantedTooltip(rd).escapeHTML() + '" href="javascript:void(PlayerProfileWindow.open(' + rd.player_id + '));"> ' + rd.name + '</a>';
               tmpCells[columns[1]] = rd.distance.formatDuration();
@@ -2756,7 +2703,7 @@
               tmpCells[columns[3]] = format_number(rd.not_dead_amount);
               tmpCells[columns[4]] = rd.duellevel;
               tmpCells[columns[5]] = '<span title=\'' + rd.status + '\'>' + rd.status + '</span>';
-              LT.BetterSheriff.table.buildRow('" style="padding-left:5px;', tmpCells);
+              TWX.BetterSheriff.table.buildRow('" style="padding-left:5px;', tmpCells);
             }
           },
           startSortDispatcher = function (ev) {
@@ -2792,11 +2739,11 @@
               players.push(player);
             }
             counter++;
-            LT.BetterSheriff.progB.increase(1);
+            TWX.BetterSheriff.progB.increase(1);
             if (counter == maxCount) {
               startSortDispatcher();
-              $('div.sheriff-LTSheriff .fancytable .row_head').css('cursor', 'pointer').click(startSortDispatcher);
-              $('div.sheriff-LTSheriff', SheriffWindow.DOM).append(LT.BetterSheriff.checkB.getMainDiv());
+              $('div.sheriff-TWXSheriff .fancytable .row_head').css('cursor', 'pointer').click(startSortDispatcher);
+              $('div.sheriff-TWXSheriff', SheriffWindow.DOM).append(TWX.BetterSheriff.checkB.getMainDiv());
             }
           },
           loadPlayer = function (arr) {
@@ -2812,7 +2759,7 @@
                   setStatus(arr, resp.status);
                 else if (resp.town) {
                   if (resp.town.town_id == Character.homeTown.town_id)
-                    setStatus(arr, LTlang.ownTown);
+                    setStatus(arr, TWXlang.ownTown);
                   else
                     Ajax.remoteCallMode('building_saloon', 'get_data', {
                       town_id: resp.town.town_id
@@ -2861,7 +2808,7 @@
               }
               if (pg === 0) {
                 maxCount = json.count * 10;
-                LT.BetterSheriff.progB.setMaxValue(maxCount);
+                TWX.BetterSheriff.progB.setMaxValue(maxCount);
               }
               for (var j = 0; j < 10; j++) {
                 if (json.result[j]) {
@@ -2872,9 +2819,9 @@
                     });
                   res.not_dead_amount = res.not_dead_amount || 0;
                   if (lvl.min > res.duellevel)
-                    setStatus(res, LTlang.tooLow);
+                    setStatus(res, TWXlang.tooLow);
                   else if (lvl.max < res.duellevel)
-                    setStatus(res, LTlang.tooHigh);
+                    setStatus(res, TWXlang.tooHigh);
                   else
                     loadPlayer(res);
                 } else {
@@ -2897,9 +2844,9 @@
                 $(e).hide();
               }
             });
-            if (LT.loadedSheriff)
+            if (TWX.loadedSheriff)
               return;
-            LT.loadedSheriff = true;
+            TWX.loadedSheriff = true;
             myPos = Map.getLastQueuePosition();
             lvl = {
               min: Math.ceil(Character.duelLevel / 1.4),
@@ -2912,24 +2859,24 @@
             initData(0);
           },
           initBetterSheriff = function () {
-            LT.loadedSheriff = false;
-            SheriffWindow.window.addTab('BetterSheriff', 'LTSheriff', tabclick).appendToContentPane($('<div class="sheriff-LTSheriff" style="display:none;width:590px;position:relative;left:50px;"/>'));
-            LT.BetterSheriff.table = new west.gui.Table().removeFooter();
+            TWX.loadedSheriff = false;
+            SheriffWindow.window.addTab('BetterSheriff', 'TWXSheriff', tabclick).appendToContentPane($('<div class="sheriff-TWXSheriff" style="display:none;width:590px;position:relative;left:50px;"/>'));
+            TWX.BetterSheriff.table = new west.gui.Table().removeFooter();
             for (var k = 0; k < columns.length; k++)
-              LT.BetterSheriff.table.addColumn(columns[k]).appendToThCell('head', columns[k], LTlang.sortBy + ' ' + LTlang[columns[k].split('"')[0]], LTlang[columns[k].split('"')[0]]);
-            LT.BetterSheriff.progB = new west.gui.Progressbar(0, null);
-            $(LT.BetterSheriff.progB.getMainDiv()).css('width', '587px');
-            LT.BetterSheriff.checkB = new west.gui.Checkbox().setLabel('<img src="/images/window/dailyactivity/tasks_icon.png">').setTooltip(LTlang.attackable).setCallback(function (state) {
-                LT.BetterSheriff.onlyAttackable = state;
+              TWX.BetterSheriff.table.addColumn(columns[k]).appendToThCell('head', columns[k], TWXlang.sortBy + ' ' + TWXlang[columns[k].split('"')[0]], TWXlang[columns[k].split('"')[0]]);
+            TWX.BetterSheriff.progB = new west.gui.Progressbar(0, null);
+            $(TWX.BetterSheriff.progB.getMainDiv()).css('width', '587px');
+            TWX.BetterSheriff.checkB = new west.gui.Checkbox().setLabel('<img src="/images/window/dailyactivity/tasks_icon.png">').setTooltip(TWXlang.attackable).setCallback(function (state) {
+                TWX.BetterSheriff.onlyAttackable = state;
                 updateTable(players);
-              }).setSelected(LT.BetterSheriff.onlyAttackable, true);
-            $(LT.BetterSheriff.checkB.getMainDiv()).css({
+              }).setSelected(TWX.BetterSheriff.onlyAttackable, true);
+            $(TWX.BetterSheriff.checkB.getMainDiv()).css({
               'position': 'absolute',
               'top': '35px',
               'right': '-65px'
             });
-            $('div.sheriff-LTSheriff', SheriffWindow.DOM).empty().append(LT.BetterSheriff.table.getMainDiv()).append(LT.BetterSheriff.progB.getMainDiv());
-            $('div.sheriff-LTSheriff .fancytable .tw2gui_scrollpane').css('height', '293px');
+            $('div.sheriff-TWXSheriff', SheriffWindow.DOM).empty().append(TWX.BetterSheriff.table.getMainDiv()).append(TWX.BetterSheriff.progB.getMainDiv());
+            $('div.sheriff-TWXSheriff .fancytable .tw2gui_scrollpane').css('height', '293px');
             Ajax.remoteCallMode('building_saloon', 'get_data', {
               town_id: Character.homeTown.town_id
             }, function (data) {
@@ -2947,7 +2894,7 @@
           };
         }
       };
-      LT.ChatProfessions = {
+      TWX.ChatProfessions = {
         init: function () {
           Chat.Formatter.twlt_formatContactClient = Chat.Formatter.formatContactClient;
           Chat.Formatter.formatContactClient = function (client, room) {
@@ -2958,7 +2905,7 @@
           };
         }
       };
-      LT.QuestBookSearch = {
+      TWX.QuestBookSearch = {
         init: function () {
           QuestWindowView.clearSearch = function () {
             $('.window-quest_solved .employer_description .questlog_entrie').show();
@@ -3008,17 +2955,17 @@
           };
         }
       };
-      LT.MarketRights = {
+      TWX.MarketRights = {
         init: function () {
           MarketWindow.sellRights = [{
               i: 'town_new',
-              t: LTlang.town
+              t: TWXlang.town
             }, {
               i: 'friends',
-              t: LTlang.alliance
+              t: TWXlang.alliance
             }, {
               i: 'welt',
-              t: LTlang.worldwide
+              t: TWXlang.worldwide
             }
           ];
           MarketWindow.Sell.twlt_updateTable = MarketWindow.Sell.updateTable;
@@ -3044,14 +2991,14 @@
           };
         }
       };
-      LT.EquipManagerPlus = {
+      TWX.EquipManagerPlus = {
         init: function () {
           var current = {};
           var changeSlot = function (slot) {
             var ws = Wear.slots;
             if (slot == ws.length) {
               $('#equip_manager_list').html(EquipManager.buildEquipList());
-              new UserMessage(LTlang.saveMessage2, 'success').show();
+              new UserMessage(TWXlang.saveMessage2, 'success').show();
             } else if (current[ws[slot]])
               Ajax.remoteCall('inventory', 'carry', {
                 item_id: current[ws[slot]].obj.item_id,
@@ -3069,8 +3016,8 @@
           };
           var rename = function (equipId, nr, name) {
             if (name.length < 3)
-              return new UserMessage(LTlang.longerName).show();
-            new UserMessage(LTlang.loading, 'hint').show();
+              return new UserMessage(TWXlang.longerName).show();
+            new UserMessage(TWXlang.loading, 'hint').show();
             current = $.extend({}, Wear.wear);
             Ajax.remoteCall('inventory', 'switch_equip', {
               id: equipId,
@@ -3095,8 +3042,8 @@
           EquipManager.renameEquip = function (equipId, nr) {
             var cont = $('<span>');
             var textF = new west.gui.Textfield('equip_rename').maxlength(25).setValue(EquipManager.list[nr].name).getMainDiv();
-            cont.append(LTlang.newName + ': ', textF, '<p style="margin-top:10px;color:red;">' + LTlang.renameWarning + '</p>');
-            new west.gui.Dialog(LTlang.rename + ': ' + EquipManager.list[nr].name, cont).addButton('ok', function () {
+            cont.append(TWXlang.newName + ': ', textF, '<p style="margin-top:10px;color:red;">' + TWXlang.renameWarning + '</p>');
+            new west.gui.Dialog(TWXlang.rename + ': ' + EquipManager.list[nr].name, cont).addButton('ok', function () {
               rename(equipId, nr, $('#equip_rename').val());
             }).addButton('cancel').show();
           };
@@ -3104,7 +3051,7 @@
           EquipManager.showPopup = function () {
             EquipManager.twlt_showPopup.apply(this, arguments);
             setTimeout(function () {
-              $('#max_equip_count').append(' | ' + LTlang.used + ': <span id="equip_used">' + EquipManager.list.length);
+              $('#max_equip_count').append(' | ' + TWXlang.used + ': <span id="equip_used">' + EquipManager.list.length);
             }, 100);
           };
           EquipManager.twlt_buildEquipList = EquipManager.buildEquipList;
@@ -3119,13 +3066,13 @@
             var html = EquipManager.twlt_buildEquipList().replace(/60%/g, '40%').replace(/20%/g, '15%');
             for (var i = 0; EquipManager.list.length > i; i++) {
               var id = EquipManager.list[i].equip_manager_id;
-              html = html.replace('deleteEquip(' + id, 'renameEquip(' + id + ',' + i + ');\'>' + LTlang.rename + '&emsp;</a></td><td width=\'15%\'><a href=\'javascript:EquipManager.deleteEquip(' + id);
+              html = html.replace('deleteEquip(' + id, 'renameEquip(' + id + ',' + i + ');\'>' + TWXlang.rename + '&emsp;</a></td><td width=\'15%\'><a href=\'javascript:EquipManager.deleteEquip(' + id);
             }
             return html;
           };
         }
       };
-      LT.ShortPopups = {
+      TWX.ShortPopups = {
         init: function () {
           ItemPopup.twlt_getXHTML = ItemPopup.twlt_getXHTML || ItemPopup.getXHTML;
           ItemPopup.getXHTML = function () {
@@ -3140,14 +3087,14 @@
           };
         }
       };
-      LT.HideNotis = {
+      TWX.HideNotis = {
         init: function () {
           var setVal5 = setInterval(function () {
               var WNw = WestUi.NotiBar.work;
               if (WNw) {
                 clearInterval(setVal5);
                 WNw.setMaxSize(999);
-                $('<div class="tw2gui_window_buttons_close" style="position:absolute;left:40px;z-index:2;" title="' + LTlang.removeWorkNotis + '" />').prependTo(WNw.element).click(function () {
+                $('<div class="tw2gui_window_buttons_close" style="position:absolute;left:40px;z-index:2;" title="' + TWXlang.removeWorkNotis + '" />').prependTo(WNw.element).click(function () {
                   var l = WNw.list.length;
                   while (l--)
                     if (WNw.list[l].tooltip.includes('job/danger.png'))
@@ -3157,7 +3104,7 @@
             }, 1000);
         }
       };
-      LT.JobProducts = {
+      TWX.JobProducts = {
         init: function () {
           Map.PopupHandler.twlt_getJobPopup = Map.PopupHandler.twlt_getJobPopup || Map.PopupHandler.getJobPopup;
           Map.PopupHandler.getJobPopup = function (d) {
@@ -3170,9 +3117,9 @@
           };
         }
       };
-      LT.MapDistance = {
+      TWX.MapDistance = {
         init: function () {
-          LT.addStyle('div.job_way {left:61px;width:170px;}\n .mpb_distance, .wih_distance, .mpo_distance, .mpw_distance, .mps_distance {width:45px;}\n div.tw2gui_window.marketplace div.fancytable .row > div {text-overflow:unset;}');
+          TWX.addStyle('div.job_way {left:61px;width:170px;}\n .mpb_distance, .wih_distance, .mpo_distance, .mpw_distance, .mps_distance {width:45px;}\n div.tw2gui_window.marketplace div.fancytable .row > div {text-overflow:unset;}');
           Map.twlt_calcWayTime = Map.twlt_calcWayTime || Map.calcWayTime;
           Map.calcWayTime = function () {
             var time = Map.twlt_calcWayTime.apply(this, arguments);
@@ -3192,13 +3139,13 @@
           };
         }
       };
-      LT.TraderSell = {
+      TWX.TraderSell = {
         init: function () {
           var setVal8 = setInterval(function () {
               var wws = west.window.shop;
               if (wws) {
                 clearInterval(setVal8);
-                LT.addStyle('.focused_new_item_shop .sellIt, .focused_marketplace .auctIt {filter: grayscale(90%)}\n .focused_tailor .not_sellable::after, .focused_gunsmith .not_sellable::after, .focused_general .not_sellable::after, .focused_marketplace .not_auctionable::after {content:"";position:absolute;width:28px;height:28px;right:0;background:url("images/window/shop/shop_icons_sprite.png")no-repeat -167px 0;} .focused_tailor .not_sellable, .focused_gunsmith .not_sellable, .focused_general .not_sellable, .focused_marketplace .not_auctionable {opacity:0.5}');
+                TWX.addStyle('.focused_new_item_shop .sellIt, .focused_marketplace .auctIt {filter: grayscale(90%)}\n .focused_tailor .not_sellable::after, .focused_gunsmith .not_sellable::after, .focused_general .not_sellable::after, .focused_marketplace .not_auctionable::after {content:"";position:absolute;width:28px;height:28px;right:0;background:url("images/window/shop/shop_icons_sprite.png")no-repeat -167px 0;} .focused_tailor .not_sellable, .focused_gunsmith .not_sellable, .focused_general .not_sellable, .focused_marketplace .not_auctionable {opacity:0.5}');
                 var mt = -1,
                 itemsToSell = [null, null],
                 attr = ['sellable', 'auctionable'],
@@ -3272,11 +3219,11 @@
                           return delete itemsToSell[mt][invId];
                         var bgo = Bag.getItemByItemId(bgbi).obj,
                         bi = bgo.item_base_id;
-                        cont += count + 'x ' + LT.GUI.getSetOrItem(bi, bgo, true) + (repItems.includes(bi) ? ' (repeatable quest!)' : '') + '<br>';
+                        cont += count + 'x ' + TWX.GUI.getSetOrItem(bi, bgo, true) + (repItems.includes(bi) ? ' (repeatable quest!)' : '') + '<br>';
                         money += bgo.sell_price * count;
                       });
                       cont += '<br><span class="invPopup_sellicon"/> $' + money + '</span></div>';
-                      new west.gui.Dialog(LTlang.sellItems, cont).setDraggable(true).addButton('yes', function () {
+                      new west.gui.Dialog(TWXlang.sellItems, cont).setDraggable(true).addButton('yes', function () {
                         $.each(itemsToSell[mt], function (inv_id, amount) {
                           if (mt) {
                             var item = Bag.getItemByInvId(inv_id).obj;
@@ -3309,8 +3256,8 @@
                 icon = ['dollar', 'box'],
                 addMtButton = function (winmt) {
                   mt = winmt;
-                  if (!$('.LT_' + attr[mt] + '_button').length) {
-                    sellButton[mt] = new west.gui.Iconbutton(new west.gui.Icon(icon[mt]), initSell).addClass('LT_' + attr[mt] + '_button').getMainDiv();
+                  if (!$('.TWX_' + attr[mt] + '_button').length) {
+                    sellButton[mt] = new west.gui.Iconbutton(new west.gui.Icon(icon[mt]), initSell).addClass('TWX_' + attr[mt] + '_button').getMainDiv();
                     $(sellButton[mt]).css({
                       'position': 'absolute',
                       'left': 0,
@@ -3366,7 +3313,7 @@
             }, 1000);
         }
       };
-      LT.TouchControl = {
+      TWX.TouchControl = {
         init: function () {
           var fingers = 0,
           wgSbp = west.gui.Scrollbar.prototype;
@@ -3494,7 +3441,7 @@
               fingers = 0;
             });
           };
-          LT.addStyle('img {-webkit-touch-callout:none;}');
+          TWX.addStyle('img {-webkit-touch-callout:none;}');
           var timer,
           timer2,
           wph = west.popup.handler;
@@ -3504,7 +3451,7 @@
               }, 500);
             timer2 = setTimeout(function () {
                 e.ctrlKey = 1;
-                LT.CalcTwdb.show(e);
+                TWX.CalcTwdb.show(e);
               }, 2000);
           }).on('touchend', function (e) {
             clearTimeout(timer);
@@ -3512,7 +3459,7 @@
           });
         }
       };
-      LT.CalcTwdb = {
+      TWX.CalcTwdb = {
         show: function (e) {
           if (!e.ctrlKey && !e.altKey)
             return;
@@ -3523,8 +3470,8 @@
           var add;
           if (e.altKey) {
             add = isNaN(tdi) ? 'supravy&set=' : 'item&id=';
-            LT.GUI.open('openFrame', 'https://tw-db.info/?strana=' + add + tdi, [1000, 630]);
-            LT.GUI.makeList();
+            TWX.GUI.open('openFrame', 'https://tw-db.info/?strana=' + add + tdi, [1000, 630]);
+            TWX.GUI.makeList();
           } else {
             add = isNaN(tdi) ? 'sets/' : 'item/';
             window.open('https://tw-calc.net/' + add + tdi);
@@ -3532,7 +3479,7 @@
         },
         init: function () {
           $(document).click(function (e) {
-            LT.CalcTwdb.show(e);
+            TWX.CalcTwdb.show(e);
           });
           Inventory.clickHandler = function (item_id, e) {
             var item = Bag.getItemByItemId(item_id);
@@ -3553,36 +3500,36 @@
         }
         (),
       };
-      LT.CollectReminder = function () {
+      TWX.CollectReminder = function () {
         var setVal4 = setInterval(function () {
             if (window.Bag && Bag.loaded) {
               clearInterval(setVal4);
               var nulls = [];
-              for (var y in LT.cooldown) {
-                var cdwn = LT.Data.cooldown && LT.Data.cooldown[y] || LT.cooldown[y];
+              for (var y in TWX.cooldown) {
+                var cdwn = TWX.Data.cooldown && TWX.Data.cooldown[y] || TWX.cooldown[y];
                 var item = Bag.getItemsByBaseItemId(y)[0];
                 if (cdwn == 1 && item) {
                   var coold = BuffList.cooldowns[item.obj.item_id] && BuffList.cooldowns[item.obj.item_id].time || item.cooldown;
                   var sec = coold * 1000 - new ServerDate().getTime();
                   if (!(sec > 0))
                     nulls.push(item);
-                  else if (!LT.cooldownTimer[y])
-                    LT.cooldownSetTime(y, [item], sec);
-                } else if (cdwn == 0.5 && LT.cooldownTimer[y]) {
-                  clearTimeout(LT.cooldownTimer[y]);
-                  LT.cooldownTimer[y] = 0;
+                  else if (!TWX.cooldownTimer[y])
+                    TWX.cooldownSetTime(y, [item], sec);
+                } else if (cdwn == 0.5 && TWX.cooldownTimer[y]) {
+                  clearTimeout(TWX.cooldownTimer[y]);
+                  TWX.cooldownTimer[y] = 0;
                 }
               }
               if (nulls.length)
-                LT.cooldownSetTime(0, nulls, 0);
+                TWX.cooldownSetTime(0, nulls, 0);
             }
           }, 2000);
       };
-      LT.SkipOpen = function () {
+      TWX.SkipOpen = function () {
         ItemUse.twlt_use = ItemUse.use;
         ItemUse.use = function (itemId) {
           var baseId = itemId / 1000,
-          skips = LT.Data.skipOpen && LT.Data.skipOpen[baseId] || LT.skipOpen[baseId];
+          skips = TWX.Data.skipOpen && TWX.Data.skipOpen[baseId] || TWX.skipOpen[baseId];
           if (skips == 1)
             Ajax.remoteCall('itemuse', 'use_item', {
               item_id: itemId,
@@ -3612,7 +3559,7 @@
                 widget = ' <img src="images/icons/' + m.event + '.png" title="' + m.name.escapeHTML() + '" /> ' + m.amount;
                 break;
               }
-              var mess = $('<div>' + LTlang.skipDone + ':<br></div>').append(widget);
+              var mess = $('<div>' + TWXlang.skipDone + ':<br></div>').append(widget);
               new UserMessage(mess, 'success').show();
               Bag.updateChanges(res.msg.changes);
               EventHandler.signal('item_used', [itemId]);
@@ -3621,23 +3568,23 @@
             ItemUse.twlt_use.apply(this, arguments);
         };
       };
-      (LT.Updater = function () {
+      (TWX.Updater = function () {
         if (!window.scriptRequest) {
           scriptRequest = true;
-          $.getScript(LT.updateUrl);
+          $.getScript(TWX.updateUrl);
         }
         var intVal = setInterval(function () {
             if (window.scriptUp) {
-              scriptUp.c('LT', LTstart.version, LT.name, LT.updateAd, LT.website, LT.lang);
+              scriptUp.c('TWX', TWXstart.version, TWX.name, TWX.lang);
               clearInterval(intVal);
             }
           }, 2000);
       })();
-      LT.Skript.init();
+      TWX.Skript.init();
     } else if (location.href.includes('?strana=invent&x=')) {
-      var lg = LTstart.langs,
+      var lg = TWXstart.langs,
       lang = /lang=([a-z]+)/.exec(document.cookie),
-      LTlang = lang && lg.hasOwnProperty(lang[1]) ? lg[lang[1]] : lg.en,
+      TWXlang = lang && lg.hasOwnProperty(lang[1]) ? lg[lang[1]] : lg.en,
       done = false,
       i = document.getElementsByClassName('bag_empty'),
       wrld = document.getElementById('char_server').textContent,
@@ -3665,7 +3612,7 @@
         }
         $('.inputV2')[0].style.display = 'none';
       };
-      LTstart.compInv = function () {
+      TWXstart.compInv = function () {
         if (done) {
           done = false;
           for (var h of i) {
@@ -3676,7 +3623,7 @@
           $('.inputV2')[0].style.display = 'inline-block';
         } else {
           done = true;
-          var url = prompt(LTlang.compInv + ': ');
+          var url = prompt(TWXlang.compInv + ': ');
           if (url && url.includes('?strana=invent&x='))
             $.ajax({
               url: url
@@ -3705,11 +3652,11 @@
           }
         }
       };
-      $('.inputV2').after('<img src="https://westzz.innogamescdn.com/images/items/yield/pick.png" width="25" style="position:absolute;right:0px;cursor:pointer;" onclick="LTstart.compInv();"/>');
+      $('.inputV2').after('<img src="https://westzz.innogamescdn.com/images/items/yield/pick.png" width="25" style="position:absolute;right:0px;cursor:pointer;" onclick="TWXstart.compInv();"/>');
     } else {
       window.onload = function () {
-        var lg = LTstart.langs,
-        LTlang = lg.hasOwnProperty(location.href.substr(21, 2)) ? lg[location.href.substr(21, 2)] : lg.en;
+        var lg = TWXstart.langs,
+        TWXlang = lg.hasOwnProperty(location.href.substr(21, 2)) ? lg[location.href.substr(21, 2)] : lg.en;
         Worlds.show = (function () {
           Worlds.twlt_show = Worlds.show;
           return function () {
@@ -3738,10 +3685,10 @@
               }
             };
             $('#worldsWrapper').append('<div id="loginMore" />');
-            $('#loginMore').append('<a id="loginAll" title="' + LTlang.loginAll2 + '" href="#" >' + LTlang.loginAll1 + '</a>').append('<a id="custom" title="' + LTlang.custom2 + '" href="#" >' + LTlang.custom1 + '</a>').append('<img id="cust1" title="' + LTlang.edit + '" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAAFOSURBVDhPY6A6KKnL4j60a2Xf1jWz/6PjQ5unbIUqww3WLpr0Hx0/vXXq/9e39/5fPL4VzAdZAlVOGFw6s9t49sQGsAF/f30GGwLiQ6UJA5Dio7tW/X/z6AIYgwxaNKPr7/1rh6ShSnADkJ/banPB/r9z+QDYIBAfRE9oKf7f2Vz8BKoUE+ydEfj/5Orm/88vb/1fVxwHdjZI88p5zc0gevemRWBxqHJUANP86+Wu/9f3TPu/Y1Yh2NbCskQWkPyiOTmiIM0gw8AakAFI88FFVWCbQYasn5iBVeG0SWWeUCYCLKl1B9sG0gwyZFl73P+99d79UGn8AKQZZBtIM8iQ2XXh2J2IDYA0g2x7cGwZ2JDJpf7E2zwnwwxsG0gzyJCuXC/iNYMAsubGFDvSNIMAyEaQFxoiDf93Vgb3QIWJBwtb3NJANoNoqBAJgIEBAEbiFXTTZGcSAAAAAElFTkSuQmCC"/>');
+            $('#loginMore').append('<a id="loginAll" title="' + TWXlang.loginAll2 + '" href="#" >' + TWXlang.loginAll1 + '</a>').append('<a id="custom" title="' + TWXlang.custom2 + '" href="#" >' + TWXlang.custom1 + '</a>').append('<img id="cust1" title="' + TWXlang.edit + '" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAAFOSURBVDhPY6A6KKnL4j60a2Xf1jWz/6PjQ5unbIUqww3WLpr0Hx0/vXXq/9e39/5fPL4VzAdZAlVOGFw6s9t49sQGsAF/f30GGwLiQ6UJA5Dio7tW/X/z6AIYgwxaNKPr7/1rh6ShSnADkJ/banPB/r9z+QDYIBAfRE9oKf7f2Vz8BKoUE+ydEfj/5Orm/88vb/1fVxwHdjZI88p5zc0gevemRWBxqHJUANP86+Wu/9f3TPu/Y1Yh2NbCskQWkPyiOTmiIM0gw8AakAFI88FFVWCbQYasn5iBVeG0SWWeUCYCLKl1B9sG0gwyZFl73P+99d79UGn8AKQZZBtIM8iQ2XXh2J2IDYA0g2x7cGwZ2JDJpf7E2zwnwwxsG0gzyJCuXC/iNYMAsubGFDvSNIMAyEaQFxoiDf93Vgb3QIWJBwtb3NJANoNoqBAJgIEBAEbiFXTTZGcSAAAAAElFTkSuQmCC"/>');
             $('#selectWorldText').css('margin-bottom', '20px');
             $('#loginAll').css({
-              'background-image': 'url("' + LTstart.Images('LT_login') + '")',
+              'background-image': 'url("' + TWXstart.Images('LT_login') + '")',
               'height': '45px',
               'width': '180px',
               'line-height': '40px',
@@ -3760,7 +3707,7 @@
               loginNow(t1);
             });
             $('#custom').css({
-              'background-image': 'url("' + LTstart.Images('LT_loginC') + '")',
+              'background-image': 'url("' + TWXstart.Images('LT_loginC') + '")',
               'background-repeat': 'no-repeat',
               'height': '36px',
               'width': '144px',
@@ -3797,12 +3744,12 @@
                 checkB[t1[k]] = new west.gui.Checkbox().setLabel(Worlds.data[t1[k]].name).setSelected(state[t1[k]]).appendTo($('#allWorlds'));
                 $('#allWorlds').append('<br><div style="height:5px;" />');
               }
-              var butB = new west.gui.Button(LTlang.save, function () {
+              var butB = new west.gui.Button(TWXlang.save, function () {
                   for (var l in checkB) {
                     checkD[l] = checkB[l].isSelected();
                     localStorage.setItem('TWLTcustom1', JSON.stringify(checkD));
                   }
-                  new UserMessage(LTlang.saveMessage2, 'success').show();
+                  new UserMessage(TWXlang.saveMessage2, 'success').show();
                 });
               butB.appendTo($('#allWorlds'));
             });
