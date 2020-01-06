@@ -1,5 +1,7 @@
+# The-West-Essentials
+
 ## Install URL
-Comin soon
+Coming soon
 <!-- [Click here to install](https://the-west-scripts.github.io/The-West-Essentials/script.user.js) -->
 
 ## Description & Screenshots
