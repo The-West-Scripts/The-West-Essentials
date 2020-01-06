@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.46.2
+// @version 1.46.3
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -26,7 +26,7 @@
     location.href = '/';
   } else {
     TWXstart = {
-      version: '1.46.2',
+      version: '1.46.3',
       langs: {
         en: {
           language: 'English',
@@ -209,6 +209,14 @@
             craftitems: '-Craft items',
             recipes: '-Recipes',
             nothingFound: 'No items of this type found!',
+          },
+          NPC: {
+            loading: 'Loading current quest givers',
+            title: 'Quest giver locator',
+            chooseNpc: 'Select employer',
+            yourposition: 'Your position',
+            questgiver: 'Quest giver',
+            reload: 'Reload all quest givers',
           },
         },
         de: {
@@ -393,6 +401,14 @@
             recipes: '-Rezepte',
             nothingFound: 'Keine Gegenstände dieser Art gefunden!',
           },
+          NPC: {
+            loading: 'Aktuelle Questgeber werden geladen',
+            title: 'Questgebersuche',
+            chooseNpc: 'Wähle den Questgeber',
+            yourposition: 'Eigene Position',
+            questgiver: 'Questgeber',
+            reload: 'Questgeber neu laden',
+          },
         },
         pl: {
           language: 'Polish (polski)',
@@ -576,6 +592,14 @@
             recipes: '-Przepisy',
             nothingFound: 'Nie posiadasz żadnych przedmiotów tego typu!',
           },
+          NPC: {
+            loading: 'Loading current quest givers',
+            title: 'Gdzie jest zleceniodawca?',
+            chooseNpc: 'Wybierz zleceniodawcę',
+            yourposition: 'Twoja pozycja',
+            questgiver: 'Zleceniodawca',
+            reload: 'Reload all quest givers',
+          },
         },
         es: {
           language: 'Spanish (español)',
@@ -758,6 +782,14 @@
             recipes: '-Recetas',
             nothingFound: 'No tienes de este tipo!',
           },
+          NPC: {
+            loading: 'Loading current quest givers',
+            title: 'Dador de búsqueda',
+            chooseNpc: 'Seleccionar empleador',
+            yourposition: 'Tu posición',
+            questgiver: 'Dador de búsqueda',
+            reload: 'Reload all quest givers',
+          },
         },
         nl: {
           language: 'Dutch (Nederlands)',
@@ -882,7 +914,7 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage: 'Saved successfully',
+          saveMessage: 'Sparen succes',
           CT: {
             ColorWindowTitle: 'Color tchat setting',
             ColorWindowPreviewTxt: '*Click on the letters to change color',
@@ -940,6 +972,14 @@
             craftitems: '-Handwerk',
             recipes: '-Recepten',
             nothingFound: 'Er kon geen voorwerp van dit type worden!',
+          },
+          NPC: {
+            loading: 'Loading current quest givers',
+            title: 'Quest giver locator',
+            chooseNpc: 'Select employer',
+            yourposition: 'Your position',
+            questgiver: 'Quest giver',
+            reload: 'Reload all quest givers',
           },
         },
         hu: {
@@ -1124,6 +1164,14 @@
             recipes: '-Recipes',
             nothingFound: 'No items of this type found!',
           },
+          NPC: {
+            loading: 'Loading current quest givers',
+            title: 'Quest giver locator',
+            chooseNpc: 'Select employer',
+            yourposition: 'Your position',
+            questgiver: 'Quest giver',
+            reload: 'Reload all quest givers',
+          },
         },
         el: {
           language: 'Greek (ελληνικά)',
@@ -1306,6 +1354,14 @@
             craftitems: '-Αντικείμενα επαγγελμάτων',
             recipes: '-Συνταγές',
             nothingFound: 'Δεν βρέθηκαν αντικείμενα αυτού του τύπου!',
+          },
+          NPC: {
+            loading: 'Φόρτωση των τρέχοντων δοτών αποστολής',
+            title: 'Τοποθεσία δότη αποστολής',
+            chooseNpc: 'Επιλέξτε εργοδότη',
+            yourposition: 'Η θέση σου',
+            questgiver: 'Δότης αποστολής',
+            reload: 'Ανανέωση όλων των δοτών αποστολής',
           },
         },
         pt: {
@@ -1490,6 +1546,14 @@
             recipes: '-Receitas',
             nothingFound: 'Nenhum item deste tipo encontrado!',
           },
+          NPC: {
+            loading: 'Atualizar empregadores atuais',
+            title: 'Localizador de empregadores',
+            chooseNpc: 'Selecionar empregador',
+            yourposition: 'Minha posição',
+            questgiver: 'Empregador',
+            reload: 'Atualizar todos os empregadores',
+          },
         },
         it: {
           language: 'Italian (italiano)',
@@ -1673,6 +1737,14 @@
             recipes: '-Ricette',
             nothingFound: 'Non è stato trovato nulla!',
           },
+          NPC: {
+            loading: 'Caricando gli attuali mandanti',
+            title: 'Posizione dei mandanti missione',
+            chooseNpc: 'Scegli mandante',
+            yourposition: 'La tua posizione',
+            questgiver: 'Mandante',
+            reload: 'Ricarica tutti i mandanti missione',
+          },
         },
         fr: {
           language: 'French (français)',
@@ -1724,10 +1796,10 @@
           skipDone: 'You get',
           info: 'Info',
           contact: 'Contact',
-          chooseLang: 'Choose language',
+          chooseLang: 'Choisissez la langue',
           features: 'Features',
           name: 'Name',
-          save: 'Save',
+          save: 'Sauvegarder',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
           frame2: 'Helpful web pages',
@@ -1797,7 +1869,7 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage: 'Saved successfully',
+          saveMessage: 'Enregistrer avec succès',
           CT: {
             ColorWindowTitle: 'Configurer Color tchat',
             ColorWindowPreviewTxt: '*Clickez sur la lettre à changer de couleur',
@@ -1856,9 +1928,17 @@
             recipes: '-Recettes',
             nothingFound: 'Pas d\'objets de cette sorte trouvé!',
           },
+          NPC: {
+            loading: 'Loading current quest givers',
+            title: 'Quest giver locator',
+            chooseNpc: 'Select employer',
+            yourposition: 'Your position',
+            questgiver: 'Quest giver',
+            reload: 'Reload all quest givers',
+          },
         },
         cs: {
-          language: 'English',
+          language: 'Czech (čeština)',
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           FeatLogout: 'Add a logout button on the right side',
@@ -1906,11 +1986,11 @@
           skipHover: 'Skip the confirmation and result messages when you open some bags. Here you can choose these bags',
           skipDone: 'You get',
           info: 'Info',
-          contact: 'Contact',
-          chooseLang: 'Choose language',
+          contact: 'Kontakt',
+          chooseLang: 'Vyber jazyk',
           features: 'Features',
           name: 'Name',
-          save: 'Save',
+          save: 'Uložit',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
           frame2: 'Helpful web pages',
@@ -1980,7 +2060,7 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage: 'Saved successfully',
+          saveMessage: 'Úspěšně uloženo',
           CT: {
             ColorWindowTitle: 'Color tchat setting',
             ColorWindowPreviewTxt: '*Click on the letters to change color',
@@ -2039,9 +2119,17 @@
             recipes: '-Recepty',
             nothingFound: 'Nebyly nalezeny žádné položky tohoto typu!',
           },
+          NPC: {
+            loading: 'Loading current quest givers',
+            title: 'Quest giver locator',
+            chooseNpc: 'Select employer',
+            yourposition: 'Your position',
+            questgiver: 'Quest giver',
+            reload: 'Reload all quest givers',
+          },
         },
         sk: {
-          language: 'English',
+          language: 'Slovak (slovenčina)',
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           FeatLogout: 'Add a logout button on the right side',
@@ -2089,11 +2177,11 @@
           skipHover: 'Skip the confirmation and result messages when you open some bags. Here you can choose these bags',
           skipDone: 'You get',
           info: 'Info',
-          contact: 'Contact',
-          chooseLang: 'Choose language',
+          contact: 'Kontakt',
+          chooseLang: 'Vyber jazyk',
           features: 'Features',
           name: 'Name',
-          save: 'Save',
+          save: 'Uložiť',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
           frame2: 'Helpful web pages',
@@ -2163,7 +2251,7 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage: 'Saved successfully',
+          saveMessage: 'Úspešne uložené',
           CT: {
             ColorWindowTitle: 'Color tchat setting',
             ColorWindowPreviewTxt: '*Click on the letters to change color',
@@ -2222,9 +2310,400 @@
             recipes: '-Recepty',
             nothingFound: 'Neboli nájdené žiadne položky tohto typu!',
           },
+          NPC: {
+            loading: 'Loading current quest givers',
+            title: 'Quest giver locator',
+            chooseNpc: 'Select employer',
+            yourposition: 'Your position',
+            questgiver: 'Quest giver',
+            reload: 'Reload all quest givers',
+          },
+        },
+        ru: {
+          language: 'Russian (русский)',
+          ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
+          ApiGui2: 'Open script page',
+          FeatLogout: 'Add a logout button on the right side',
+          FeatStatusbar: 'Remove the taskbar',
+          FeatShowAP: 'Show your actual skill points in job windows',
+          FeatChangeCity: 'Switch title and player name in the town hall',
+          FeatDuellMap: 'Add Duelmap tab in duel window',
+          FeatMarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
+          FeatMarketTown: 'Show town name in market window',
+          FeatMarketMessage: 'Get a message when there are items or money to pick up on actual market',
+          FeatAchievHide: 'Hide completed achievements in achievements window',
+          FeatRecipeMarket: 'Improve the purchase of recipes on market',
+          FeatMoveJobs: 'Move the queued jobs a bit to the left',
+          FeatBlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
+          FeatFortTracker: 'Turn off fort battle reminder',
+          FeatFriendsPop: 'Hide "Friend online" pop-ups',
+          FeatInstantQuest: 'Complete the quest instantly if all requirements are done',
+          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
+          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
+          FeatQuestBookSearch: 'Search for solved quests in the quest book',
+          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
+          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
+          FeatShortPopups: 'Make the item pop-ups shorter',
+          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
+          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+          FeatMapDistance: ' Show the number of miles next to the travel time',
+          FeatTraderSell: 'Sell multiple items at once to the trader',
+          FeatTouchControl: 'Enable touch control on your mobile browser',
+          settings1: 'Open settings',
+          settings2: 'Open settings and information window',
+          ghosttown1: 'Go to ghost town ',
+          ghosttown2: 'Open ghost town',
+          ghosttown3: 'Open ghost town and center it on map',
+          indiantown1: 'Go to Indian village ',
+          indiantown2: 'Open Indian village',
+          indiantown3: 'Open Indian village and center it on map',
+          openmarket: 'Open market',
+          forum: 'Open town forum',
+          newsets: 'New sets are added to the script',
+          chooseItems: 'Choose the items',
+          remindHover: 'You get a notification when an item can be used again. Here you can choose these items.',
+          remindReady: 'Ready to collect',
+          skipHover: 'Skip the confirmation and result messages when you open some bags. Here you can choose these bags',
+          skipDone: 'You get',
+          info: 'Info',
+          contact: 'Контакты',
+          chooseLang: 'Сменить язык',
+          features: 'Features',
+          name: 'Name',
+          save: 'Экономить',
+          saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
+          setbonus2: 'Informations about the set bonuses',
+          frame2: 'Helpful web pages',
+          choose: 'Click on the hat to get started',
+          items: 'items',
+          parts: 'parts',
+          showItems: 'Show the set items in your Bag',
+          noItems: 'No items in your inventory found. Click again with CTRL to show it on TW-Calc.',
+          ownSets: 'Only own sets',
+          switchWeapon: 'Switch between firearm and melee weapon',
+          selectBonus: 'Select bonuses',
+          resetB: 'Reset',
+          body: 'Clothing',
+          right_arm: 'Weapons',
+          animal: 'Horse & Yield',
+          rest: 'Other',
+          buff: 'Buffs',
+          refresh: 'Refresh',
+          noFriends: 'No Friends',
+          reward: 'Reward',
+          allprofessions: 'All Professions',
+          market1: 'Items on market',
+          market2: 'There are items/money on this market. What do you want to pick up?',
+          all: 'All',
+          onlyBids: 'Only bids',
+          nothing: 'Nothing',
+          worldwide: 'Worldwide',
+          alliance: 'Alliance',
+          town: 'Town',
+          level: 'Level',
+          duelLevel: 'Duelling level',
+          exp: 'Exp',
+          distance: 'Distance',
+          startduel: 'Start Duel',
+          centerMap: 'Center map',
+          popup: 'The opponent\'s skill bonus',
+          damage: 'Damage',
+          duelmap: 'Duelmap',
+          duelradius: 'Duel radius',
+          minutes: 'minutes',
+          hour: '1 hour',
+          hours: 'hours',
+          searchOpp: 'Search for opponents',
+          amount: 'Dead',
+          not_dead_amount: 'Alive',
+          duellevel: 'Lvl',
+          status: 'Status',
+          sortBy: 'Sort by',
+          tooLow: 'Too low duelling level of opponent',
+          tooHigh: 'Too high duelling level of opponent',
+          ownTown: 'Member of your town',
+          attackable: 'Show only attackable players',
+          logout: 'Logout',
+          accNfin: 'Accept & complete quest',
+          onWiki: 'Show the quest on the wiki',
+          longerName: 'Name must be longer than 2 characters',
+          loading: 'Loading...',
+          rename: 'Rename',
+          newName: 'Choose a new set name',
+          used: 'Used',
+          renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
+          sellItems: 'Sell items to the trader?',
+          removeWorkNotis: 'Hide all job notifications',
+          compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
+          loginAll1: 'Login all worlds',
+          loginAll2: 'Load all your active worlds with one click',
+          custom1: 'Custom',
+          custom2: 'Your custom login list',
+          edit: 'Edit',
+          saveMessage: 'Сохранить успешно',
+          CT: {
+            ColorWindowTitle: 'Color tchat setting',
+            ColorWindowPreviewTxt: '*Click on the letters to change color',
+            ColorWindowOkBtn: 'Apply',
+            ColorWindowToDefaultBtn: 'Set to default',
+            ColorWindowThisTchatBtn: 'Set to this',
+            ColorWindowDefaultText: 'Select the tchat for reset to default: ',
+            ColorWindowBold: 'Bold',
+            ColorWindowCaps: 'Capitalized',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'No color',
+              'Enter a color code',
+              'red',
+              'brown',
+              'purple',
+              'blue',
+              'green',
+              'pink',
+              'magenta',
+              'violet gradient',
+              'degraded dark blue',
+              'green gradient',
+              'degraded red',
+              'blue gradient light',
+              'degraded pink',
+              'light green gradient',
+              'degraded pink',
+              'red gradient light'
+            ],
+            ColorLoadTitle: 'Click to load another color code<br>The current color code is: ',
+            ColorSaveEmpty: '[empty]',
+            CustomReady: 'Valid Code',
+            CustomNotReady: 'Invalid Code',
+          },
+          QIS: {
+            adventure: '*Adventures',
+            work: '*Work',
+            duel: '*Duels',
+            energy: '*Energy',
+            skill: '*Skill points',
+            fk: '*Fort battles',
+            speed: '*Speed',
+            lp: '*Health points',
+            luckNmoney: '*Luck & money',
+            motivation: '*Motivation',
+            experience: '*Experience',
+            special: '*Premium/special',
+            events: '*Events',
+            chests: '*Open & unpack',
+            equipment: '-Equipment',
+            products: '-Products',
+            questitems: '-Quest items',
+            craftitems: '-Craft items',
+            recipes: '-Recipes',
+            nothingFound: 'No items of this type found!',
+          },
+          NPC: {
+            loading: 'Loading current quest givers',
+            title: 'Расположение работодателя',
+            chooseNpc: 'Выбор работодателя',
+            yourposition: 'Твоё местоположение',
+            questgiver: 'Квестодатель',
+            reload: 'Reload all quest givers',
+          },
+        },
+        tr: {
+          language: 'Turkish (Türkçe)',
+          ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
+          ApiGui2: 'Open script page',
+          FeatLogout: 'Add a logout button on the right side',
+          FeatStatusbar: 'Remove the taskbar',
+          FeatShowAP: 'Show your actual skill points in job windows',
+          FeatChangeCity: 'Switch title and player name in the town hall',
+          FeatDuellMap: 'Add Duelmap tab in duel window',
+          FeatMarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
+          FeatMarketTown: 'Show town name in market window',
+          FeatMarketMessage: 'Get a message when there are items or money to pick up on actual market',
+          FeatAchievHide: 'Hide completed achievements in achievements window',
+          FeatRecipeMarket: 'Improve the purchase of recipes on market',
+          FeatMoveJobs: 'Move the queued jobs a bit to the left',
+          FeatBlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
+          FeatFortTracker: 'Turn off fort battle reminder',
+          FeatFriendsPop: 'Hide "Friend online" pop-ups',
+          FeatInstantQuest: 'Complete the quest instantly if all requirements are done',
+          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
+          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
+          FeatQuestBookSearch: 'Search for solved quests in the quest book',
+          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
+          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
+          FeatShortPopups: 'Make the item pop-ups shorter',
+          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
+          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+          FeatMapDistance: ' Show the number of miles next to the travel time',
+          FeatTraderSell: 'Sell multiple items at once to the trader',
+          FeatTouchControl: 'Enable touch control on your mobile browser',
+          settings1: 'Open settings',
+          settings2: 'Open settings and information window',
+          ghosttown1: 'Go to ghost town ',
+          ghosttown2: 'Open ghost town',
+          ghosttown3: 'Open ghost town and center it on map',
+          indiantown1: 'Go to Indian village ',
+          indiantown2: 'Open Indian village',
+          indiantown3: 'Open Indian village and center it on map',
+          openmarket: 'Open market',
+          forum: 'Open town forum',
+          newsets: 'New sets are added to the script',
+          chooseItems: 'Choose the items',
+          remindHover: 'You get a notification when an item can be used again. Here you can choose these items.',
+          remindReady: 'Ready to collect',
+          skipHover: 'Skip the confirmation and result messages when you open some bags. Here you can choose these bags',
+          skipDone: 'You get',
+          info: 'Info',
+          contact: 'Iletişim',
+          chooseLang: 'Dili değiştir',
+          features: 'Features',
+          name: 'Name',
+          save: 'Kurtarmak',
+          saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
+          setbonus2: 'Informations about the set bonuses',
+          frame2: 'Helpful web pages',
+          choose: 'Click on the hat to get started',
+          items: 'items',
+          parts: 'parts',
+          showItems: 'Show the set items in your Bag',
+          noItems: 'No items in your inventory found. Click again with CTRL to show it on TW-Calc.',
+          ownSets: 'Only own sets',
+          switchWeapon: 'Switch between firearm and melee weapon',
+          selectBonus: 'Select bonuses',
+          resetB: 'Reset',
+          body: 'Clothing',
+          right_arm: 'Weapons',
+          animal: 'Horse & Yield',
+          rest: 'Other',
+          buff: 'Buffs',
+          refresh: 'Refresh',
+          noFriends: 'No Friends',
+          reward: 'Reward',
+          allprofessions: 'All Professions',
+          market1: 'Items on market',
+          market2: 'There are items/money on this market. What do you want to pick up?',
+          all: 'All',
+          onlyBids: 'Only bids',
+          nothing: 'Nothing',
+          worldwide: 'Worldwide',
+          alliance: 'Alliance',
+          town: 'Town',
+          level: 'Level',
+          duelLevel: 'Duelling level',
+          exp: 'Exp',
+          distance: 'Distance',
+          startduel: 'Start Duel',
+          centerMap: 'Center map',
+          popup: 'The opponent\'s skill bonus',
+          damage: 'Damage',
+          duelmap: 'Duelmap',
+          duelradius: 'Duel radius',
+          minutes: 'minutes',
+          hour: '1 hour',
+          hours: 'hours',
+          searchOpp: 'Search for opponents',
+          amount: 'Dead',
+          not_dead_amount: 'Alive',
+          duellevel: 'Lvl',
+          status: 'Status',
+          sortBy: 'Sort by',
+          tooLow: 'Too low duelling level of opponent',
+          tooHigh: 'Too high duelling level of opponent',
+          ownTown: 'Member of your town',
+          attackable: 'Show only attackable players',
+          logout: 'Logout',
+          accNfin: 'Accept & complete quest',
+          onWiki: 'Show the quest on the wiki',
+          longerName: 'Name must be longer than 2 characters',
+          loading: 'Loading...',
+          rename: 'Rename',
+          newName: 'Choose a new set name',
+          used: 'Used',
+          renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
+          sellItems: 'Sell items to the trader?',
+          removeWorkNotis: 'Hide all job notifications',
+          compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
+          loginAll1: 'Login all worlds',
+          loginAll2: 'Load all your active worlds with one click',
+          custom1: 'Custom',
+          custom2: 'Your custom login list',
+          edit: 'Edit',
+          saveMessage: 'Başarıyla kaydet',
+          CT: {
+            ColorWindowTitle: 'Color tchat setting',
+            ColorWindowPreviewTxt: '*Click on the letters to change color',
+            ColorWindowOkBtn: 'Apply',
+            ColorWindowToDefaultBtn: 'Set to default',
+            ColorWindowThisTchatBtn: 'Set to this',
+            ColorWindowDefaultText: 'Select the tchat for reset to default: ',
+            ColorWindowBold: 'Bold',
+            ColorWindowCaps: 'Capitalized',
+            ColorWindowFlip: 'Flip',
+            ColorBtnTitle: '',
+            ColorLoadListName: [
+              'No color',
+              'Enter a color code',
+              'red',
+              'brown',
+              'purple',
+              'blue',
+              'green',
+              'pink',
+              'magenta',
+              'violet gradient',
+              'degraded dark blue',
+              'green gradient',
+              'degraded red',
+              'blue gradient light',
+              'degraded pink',
+              'light green gradient',
+              'degraded pink',
+              'red gradient light'
+            ],
+            ColorLoadTitle: 'Click to load another color code<br>The current color code is: ',
+            ColorSaveEmpty: '[empty]',
+            CustomReady: 'Valid Code',
+            CustomNotReady: 'Invalid Code',
+          },
+          QIS: {
+            adventure: '*Adventures',
+            work: '*Work',
+            duel: '*Duels',
+            energy: '*Energy',
+            skill: '*Skill points',
+            fk: '*Fort battles',
+            speed: '*Speed',
+            lp: '*Health points',
+            luckNmoney: '*Luck & money',
+            motivation: '*Motivation',
+            experience: '*Experience',
+            special: '*Premium/special',
+            events: '*Events',
+            chests: '*Open & unpack',
+            equipment: '-Equipment',
+            products: '-Products',
+            questitems: '-Quest items',
+            craftitems: '-Craft items',
+            recipes: '-Recipes',
+            nothingFound: 'No items of this type found!',
+          },
+          NPC: {
+            loading: 'Geçerli görev vericiler Yükleniyor',
+            title: 'Görev verici haritası',
+            chooseNpc: 'İşverenin seçimi',
+            yourposition: 'Bulunduğunuz yer',
+            questgiver: 'Görevin bulunduğu yer',
+            reload: 'Tüm görev vericileri güncelle',
+          },
         },
       },
       url: 'https://tomrobert.safe-ws.de/',
+      url2: 'https://the-west-scripts.github.io/The-West-Essentials/files/',
       Images: function (img, file) {
         return this.url + img + (file ? '.jpg' : '.png');
       },
@@ -2281,9 +2760,11 @@
           TouchControl: true,
           ColorTchat: true,
           QuickItemsSearch: true,
+          NPClocator: true,
         },
         CT: {},
         QIS: {},
+        NPC: {},
         cooldown: {
           2482: 1,
           2484: 1,
@@ -2575,7 +3056,7 @@
         },
         makeList: function () {
           if (!TWX.list)
-            $.getScript(TWXstart.url + 'forbidN.js', function () {
+            $.getScript(TWXstart.url2 + 'newSets.js', function () {
               TWX.list = west.storage.ItemSetManager._setArray.slice(0);
               TWX.setListAll = {};
               TWX.setListOwn = {};
@@ -3008,7 +3489,7 @@
               }
               scrollpane.appendContent('<h1>' + TWXlang.choose + '!</h1>');
             } else
-              scrollpane.appendContent('<p style="color: #a31919;">ERROR: There are new sets added to the game.<br>Please <a href="javascript:TWX.GUI.open(\'openKontakt\');" title="Open contact tab">contact me</a> so I can add the sets to the script.</p>');
+              scrollpane.appendContent('<p style="color: #a31919;">ERROR: There are new sets added to the game.<br>Please contact me so I can add the sets to the script:</p>' + TWX.Skript.fmfb());
           },
           img = {
             SetBonus: 'dayofthedead_2014_hat3',
@@ -3417,7 +3898,7 @@
             var weapon = ItemManager.get(data.weaponId),
             damage = weapon.getDamage(data),
             npcData = data.bonus;
-            return '<table class="dln_npcskill_popup"><tr><td colspan="5" class="text_bold">' + TWXlang.popup + '<br>&nbsp;</td></tr><tr><td><img src="/images/window/duels/npcskill_shot.jpg" /></td><td><img src="/images/window/duels/npcskill_punch.jpg" /></td><td><img src="/images/window/duels/npcskill_aim.jpg" /></td><td><img src="/images/window/duels/npcskill_appearance.jpg" /></td><td></td></tr><tr><td class="text_bold">' + (npcData.shot || 0) + '</td><td class="text_bold">' + (npcData.punch || 0) + '</td>' + '<td class="text_bold">' + (npcData.aim || 0) + '</td><td class="text_bold">' + (npcData.appearance || 0) + '</td><td></td></tr>' + '<tr><td><img src="/images/window/duels/npcskill_tactic.jpg" /></td><td><img src="/images/window/duels/npcskill_reflex.jpg" /></td><td><img src="/images/window/duels/npcskill_dodge.jpg" /></td><td><img src="/images/window/duels/npcskill_tough.jpg" /></td><td><img src="/images/window/duels/npcskill_health.jpg" /></td></tr><tr><td class="text_bold">' + (npcData.tactic || 0) + '</td><td class="text_bold">' + (npcData.reflex || 0) + '</td><td class="text_bold">' + (npcData.dodge || 0) + '</td><td class="text_bold">' + (npcData.tough || 0) + '</td><td class="text_bold">' + (npcData.health || 0) + '</td></tr><tr><td colspan="2" class="text_bold"><img src="' + weapon.image + '" /></td><td colspan="3" class="text_bold"><br>' + weapon.name + '<br>(' + TWXlang.damage + ': ' + damage.min + ' - ' + damage.max + ')</td></tr></table>';
+            return '<table class="dln_npcskill_popup"><tr><td colspan="5" class="text_bold">' + TWXlang.popup + '<br>&nbsp;</td></tr><tr><td><img src="images/window/duels/npcskill_shot.jpg" /></td><td><img src="images/window/duels/npcskill_punch.jpg" /></td><td><img src="images/window/duels/npcskill_aim.jpg" /></td><td><img src="images/window/duels/npcskill_appearance.jpg" /></td><td></td></tr><tr><td class="text_bold">' + (npcData.shot || 0) + '</td><td class="text_bold">' + (npcData.punch || 0) + '</td>' + '<td class="text_bold">' + (npcData.aim || 0) + '</td><td class="text_bold">' + (npcData.appearance || 0) + '</td><td></td></tr>' + '<tr><td><img src="images/window/duels/npcskill_tactic.jpg" /></td><td><img src="images/window/duels/npcskill_reflex.jpg" /></td><td><img src="images/window/duels/npcskill_dodge.jpg" /></td><td><img src="images/window/duels/npcskill_tough.jpg" /></td><td><img src="images/window/duels/npcskill_health.jpg" /></td></tr><tr><td class="text_bold">' + (npcData.tactic || 0) + '</td><td class="text_bold">' + (npcData.reflex || 0) + '</td><td class="text_bold">' + (npcData.dodge || 0) + '</td><td class="text_bold">' + (npcData.tough || 0) + '</td><td class="text_bold">' + (npcData.health || 0) + '</td></tr><tr><td colspan="2" class="text_bold"><img src="' + weapon.image + '" /></td><td colspan="3" class="text_bold"><br>' + weapon.name + '<br>(' + TWXlang.damage + ': ' + damage.min + ' - ' + damage.max + ')</td></tr></table>';
           };
           Ajax.remoteCallMode('character', 'get_info', {}, function (resp) {
             Character.setDuelLevel(resp.duelLevel);
@@ -3692,7 +4173,7 @@
       };
       TWX.QuestWiki = {
         init: function () {
-          $.getScript(TWXstart.url + 'repGroups.js', function () {
+          $.getScript(TWXstart.url2 + 'repGroups.js', function () {
             QuestLog.solvedGroups = {};
             Ajax.remoteCallMode('building_quest', 'get_solved_groups', {}, function (json) {
               for (var sg in json.solved)
@@ -3942,7 +4423,7 @@
               TWX.BetterSheriff.table.addColumn(columns[k]).appendToThCell('head', columns[k], TWXlang.sortBy + ' ' + TWXlang[columns[k].split('"')[0]], TWXlang[columns[k].split('"')[0]]);
             TWX.BetterSheriff.progB = new west.gui.Progressbar(0, null);
             $(TWX.BetterSheriff.progB.getMainDiv()).css('width', '587px');
-            TWX.BetterSheriff.checkB = new west.gui.Checkbox().setLabel('<img src="/images/window/dailyactivity/tasks_icon.png">').setTooltip(TWXlang.attackable).setCallback(function (state) {
+            TWX.BetterSheriff.checkB = new west.gui.Checkbox().setLabel('<img src="images/window/dailyactivity/tasks_icon.png">').setTooltip(TWXlang.attackable).setCallback(function (state) {
                 TWX.BetterSheriff.onlyAttackable = state;
                 updateTable(players);
               }).setSelected(TWX.BetterSheriff.onlyAttackable, true);
@@ -4187,7 +4668,7 @@
             var html = Map.PopupHandler.twlt_getJobPopup.apply(this, arguments);
             for (var i in d.yields) {
               var m = ItemManager.get(i);
-              html = html.replace('<img src="' + Game.cdnURL + '/images/items/yield/' + m['short'] + '.', '<div class="item"><span class="count" style="display:block;top:29px;left:0px">' + Bag.getItemCount(i) + '</span></div>$&');
+              html = html.replace('<img src="/images/items/yield/' + m['short'] + '.', '<div class="item"><span class="count" style="display:block;top:29px;left:0px">' + Bag.getItemCount(i) + '</span></div>$&');
             }
             return html;
           };
@@ -5061,7 +5542,7 @@
             this.show = function () {
               if (window.jscolor)
                 return TWX.CT.Window.showOn();
-              $.getScript(TWXstart.url + 'jscolor.js', function () {
+              $.getScript(TWXstart.url2 + 'jscolor.js', function () {
                 TWX.CT.Window.showOn();
               });
             };
@@ -5182,95 +5663,233 @@
       };
       TWX.QuickItemsSearch = {
         init: function () {
-          TWX.QIS.equImg = 2188;
-          TWX.QIS.MenuButton = function (image, title, onclick) {
-            var self = this;
-            this.isHovered = false;
-            this.onClick = onclick;
-            var clicked = function (e) {
-              if (self.onClick) {
-                self.onClick(self, e);
-              }
-            };
-            var repaint = function () {
-              var x = !self.isHovered ? 0 : -25;
-              self.obj.css('background-position', x + 'px 0px');
-            };
-            var mouseIn = function () {
-              self.isHovered = true;
-              repaint();
-            };
-            var mouseOut = function () {
-              self.isHovered = false;
-              repaint();
-            };
-            this.obj = $('<div class=\'menulink\' title=\'' + title + '\' />').css('background-image', 'url(' + image + ')');
-            this.obj.hover(mouseIn, mouseOut);
-            this.obj.click(clicked);
-            $('div#ui_menubar').append($('<div class=\'ui_menucontainer\' />').append(this.obj).append('<div class=\'menucontainer_bottom\' />'));
-          };
-          TWX.QIS.popup = function (button, e) {
-            if (!TWX.QIS.popupMenu) {
-              TWX.QIS.popupMenu = new west.gui.Selectbox().setWidth(250);
-              TWX.QIS.popupMenu.addListener(TWX.QIS.findSet);
-              $.getScript(TWXstart.url + 'QIS_sets.js', function () {
-                var qs = TWX.QIS.sets,
-                i = qs.length,
-                wSets = west.storage.ItemSetManager._setList;
-                while (i--) {
-                  var si = qs[i],
-                  sn = wSets[si.name],
-                  ln = TWXlang.QIS[si.name];
-                  if (ln)
-                    si.name = ln;
-                  else if (!sn)
-                    qs.splice(i, 1);
-                  else if (sn.name)
-                    si.name = sn.name;
+          TWX.QIS = {
+            equImg: 2188,
+            MenuButton: function (image, title, onclick) {
+              var self = this;
+              this.isHovered = false;
+              this.onClick = onclick;
+              var clicked = function (e) {
+                if (self.onClick) {
+                  self.onClick(self, e);
                 }
-                qs.sort(function (a, b) {
-                  var a1 = replUml(a.name),
-                  b1 = replUml(b.name);
-                  return (a1 == b1) ? 0 : (a1 > b1) ? 1 :  - 1;
+              };
+              var repaint = function () {
+                var x = !self.isHovered ? 0 : -25;
+                self.obj.css('background-position', x + 'px 0px');
+              };
+              var mouseIn = function () {
+                self.isHovered = true;
+                repaint();
+              };
+              var mouseOut = function () {
+                self.isHovered = false;
+                repaint();
+              };
+              this.obj = $('<div class=\'menulink\' title=\'' + title + '\' />').css('background-image', 'url(' + image + ')');
+              this.obj.hover(mouseIn, mouseOut);
+              this.obj.click(clicked);
+              $('div#ui_menubar').append($('<div class=\'ui_menucontainer\' />').append(this.obj).append('<div class=\'menucontainer_bottom\' />'));
+            },
+            popup: function (button, e) {
+              if (!TWX.QIS.popupMenu) {
+                TWX.QIS.popupMenu = new west.gui.Selectbox().setWidth(250);
+                TWX.QIS.popupMenu.addListener(TWX.QIS.findSet);
+                $.getScript(TWXstart.url2 + 'QIS_sets.js', function () {
+                  var qs = TWX.QIS.sets,
+                  i = qs.length,
+                  wSets = west.storage.ItemSetManager._setList;
+                  while (i--) {
+                    var si = qs[i],
+                    sn = wSets[si.name],
+                    ln = TWXlang.QIS[si.name];
+                    if (ln)
+                      si.name = ln;
+                    else if (!sn)
+                      qs.splice(i, 1);
+                    else if (sn.name)
+                      si.name = sn.name;
+                  }
+                  qs.sort(function (a, b) {
+                    var a1 = replUml(a.name),
+                    b1 = replUml(b.name);
+                    return (a1 == b1) ? 0 : (a1 > b1) ? 1 :  - 1;
+                  });
+                  for (var j = 0; j < qs.length; j++) {
+                    var itemimg = qs[j].img || qs[j].itemsk[0],
+                    NAME = qs[j].name;
+                    TWX.QIS.popupMenu.addItem(j, '<img src="' + ItemManager.getByBaseId(itemimg).image + '" height="20" width="20">' + '<div style="padding-right: 20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;">' + NAME + '</div>', NAME);
+                  }
+                  TWX.QIS.popupMenu.show(e);
                 });
-                for (var j = 0; j < qs.length; j++) {
-                  var itemimg = qs[j].img || qs[j].itemsk[0],
-                  NAME = qs[j].name;
-                  TWX.QIS.popupMenu.addItem(j, '<img src="' + ItemManager.getByBaseId(itemimg).image + '" height="20" width="20">' + '<div style="padding-right: 20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;">' + NAME + '</div>', NAME);
-                }
+              } else
                 TWX.QIS.popupMenu.show(e);
-              });
-            } else
-              TWX.QIS.popupMenu.show(e);
-          };
-          TWX.QIS.findSet = function (id) {
-            var items = [],
-            seti = TWX.QIS.sets[id];
-            base = seti.items,
-            upgrade = seti.itemsk,
-            custom = false;
-            if (base)
-              for (var f = 0; f < base.length; f++)
-                items.push(base[f] * 1000);
-            else {
-              for (var g = 0; g < upgrade.length; g++)
-                for (var h = 0; h <= 5; h++)
-                  items.push(upgrade[g] * 1000 + h);
-              custom = true;
-            }
-            var invItems = Bag.getItemsByItemIds(items);
-            if (invItems.length > 0) {
-              if (!wman.getById(Inventory.uid))
-                Inventory.open();
-              Wear.open();
-              if (custom && seti.img != TWX.QIS.equImg)
-                Inventory.showCustomItems(invItems);
-              else
-                Inventory.showSearchResult(invItems);
-            } else
-              new UserMessage(TWXlang.QIS.nothingFound, 'hint').show();
+            },
+            findSet: function (id) {
+              var items = [],
+              seti = TWX.QIS.sets[id],
+              base = seti.items,
+              upgrade = seti.itemsk,
+              custom = false;
+              if (base)
+                for (var f = 0; f < base.length; f++)
+                  items.push(base[f] * 1000);
+              else {
+                for (var g = 0; g < upgrade.length; g++)
+                  for (var h = 0; h <= 5; h++)
+                    items.push(upgrade[g] * 1000 + h);
+                custom = true;
+              }
+              var invItems = Bag.getItemsByItemIds(items);
+              if (invItems.length > 0) {
+                if (!wman.getById(Inventory.uid))
+                  Inventory.open();
+                Wear.open();
+                if (custom && seti.img != TWX.QIS.equImg)
+                  Inventory.showCustomItems(invItems);
+                else
+                  Inventory.showSearchResult(invItems);
+              } else
+                new UserMessage(TWXlang.QIS.nothingFound, 'hint').show();
+            },
           };
           new TWX.QIS.MenuButton('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAZCAYAAABzVH1EAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QoTBiYArTu6FwAADftJREFUWMMl1tmz3mdBwPHv8zy/fXm3s+ecLE3aLG0a0sWQ2jKlRaotSFspm7JUOoIMoxfi6IXjyI0jN3ojDDoOiozgKFzIoBSxA21ppaG1LU1CkyY5Jyc9+3nPu/7e9/2tz+MF/8N3PvMVf/7Jd5jNjTat2Tu49PY1zHBE7Efk3piwivFrKZNS0IiaDLOMbr+HX5UMbE0TC0pDPWyw0xuxut2hnadgKaajGtUkY6Hhc+pEi82NlOn5BVbe3iAfj6g1WiSJJmpqLB906tGIA8ZjTdLro52UshBoryIqLJwgZK/dZ7s3ZG9cIF1JpFwsUzFTcxF/8cQd5thtd/AnX/o6m5VGlIAlKbVBGRtjbLRIsUxFhcRIg6MVuZC4JiBXPSQKoyu0kfiWR1FO2FeDP/3jp9h59XmUF3Dw5nt4/RcX2MkSjICqzHFFDAxIUwvb9am8hDKTWEZQWhlu1kR7FVQJwki0llRU2LaNEjkNN+bOk7ex8uqLqCMLtS/+4H9eZrmb4UUOYeDjC0kQGBpugOdMaNZdahhCz2I6dgktie0J/KDEd2zqUYAQFZawURIsDKPUUOY5jz14kpcvrPK9Z88xkjnKtzCuwDEaR1lkIseyNTXHIa9GxErSqnkYAZ4E6Wp8LwQDRTZBCg+MTZ5VpGnJ7nbCe371MBIE7dGAylF4BkJZYBmNU4FQGcpIhNHowMVyAkxlQCosNI4l8E2JzEZUhSY0HsiKWhNqLZtXLl7g0thBNVsk0md+qk7W7VFsj8iSlEk2phhmKK3Yau9ha49eb8jb631GewU7/Q79vTH5sKC3vctkXNKIHSQJJxo2TTvjyuY6V7ImljN/hMu9qyxNhQzHfea8GBMrkuEA2xGkRU7dCUiSCUrlYLlYjg1jg6DC2DYUJYdmY5Q0GBHj5wJNxXpbsLm5zqFDh3julRXSSY4bBmSjMcNhRZ63QTmE4xThSDoDg+/HoGFmtkWWZqTjEd2kj3F8lJJcX1vHtm0uTyqklsy26txYvoI1teRhWxrbzpgNQzoTTTUcUWs0GQwGuEHEBBs8SV6VuK7AkprpxXmMKVhZvUHoR2hhs9FuM11rMRVltIcps7OzeHsbdCcZnhagBbZUaMtldraO0QJMRX+Q4DgOtThkd2cX18DapW2EkQT1mIYfMkxHZFlGM46wLAdZGexcManeYjY+gjW4eJlpx2Y+CijKMfPhPK4STMqc/TMxWZpitKAWzTHJU8oqQ5QWppgQ1z3cmw4h8hzplHiySSAllRzSasAoLXngnad45uUrSCtj0tlEG0nsB3RurFGWBWWZE4VNkn6H2cZJWlHMJBmyuDgPlaG1sER7ZwvfCUiTCdlwgoo0kZchexkTE3B0/51YgSmIlUKVOc2gREYuZaFJB30ix4ayy77Dd9Hr9jhx8jRL+5dYW7lK9/qb5EUfY9eYCxRJmWHVQ2ZkhrJn2O2M0F6DnWyDRjMkSRXhQkit1sDxXHRZ0eu0aUwtYguboDnF+uoyp+6+h+mZfeysXWHjxjL5cAfyEfOLB9lMV2nONxmnJbbIqTU8KG12t7aR8dwchSyIQw/hxsg0Ya7pc+LgEi4ZtWaLrLfL0ZsP8vDD7+f880/z+Ec+jtagcLGlS6U0eqKRxgZHMh4WNFoN5uIBna3D9EwToSd4VUIkUqrhDna2x0zNwxMa24bJ1hUWZ6c4ecdZfv6//83Zh56gzDLyQZfAViSdbeLQxybDFTmRBVbLA9tQoLGqoIWxbYRMCdw66XjC6tXzRNNNfD9ACEGR9lm+9CrbW9cI6j5lMaaoUgLPRecdHGeWYNqhm45xvSnqQcowTRkNUrqjn9NaPIAdVsTzR0iLjBRFOxkTuyUtP6Y/nDAaCyJGfOebXyN0XbK8Iik1yjioSuMAeZ7iuR6ZNqRFDSlsdNaGPEdWOiWyFaFjY3CIp2NaczVCJ8BgoWyFHVo4ro0uBY9/6g95+ttfZVR0cAIDBhp1TaPmU+UV9bikFtr0Ol06vQEHDt1Of3ePfCwQSRunGBGTUlMFShu6uz30eISrC0SWIdOE93309/nhN/6WWE/wTIZlIBmMMHnBZDDEKsYInTFOurS3t3GEQt17vPHFV99sU1MWylOUuqQqBdpYjNMJRkiKQnPy7gf5yO99gfmlQxw8epqiKLi+eh2DoTU9TW84wPVDZmemyMocx6/j+SGnbznFTmfCC68s03IlpVYkmWZra8BwUJDlkExKhknBrfe8h0ef+iNas0ss3vIOVq6vs725w14nQUuXXmfEJKvYafdAObi+YengYY7fegtWM4wZjDN2xoKy02Xf4hyVMRTFiEZzlrvvu5/3PPIE2sDe1gZvnX+dpcOH+dCTX+Dh33qKZ773bVYvX6A7+iXL19f71KNfvtlOdwNHdjnWcNBSsbtXUe0OKYXGcx1CN0ZbLr/ywAO897EPIqVid2uDS6+9wfzBg3zs83/GaDDg+ae/y9rKdcZhn16nTVFp9joVtajB5iCjMymwxp0hRSWxLQ8TuKxvDzh95zu5/+EPcPy22xkOevzXt/+d18+/xs6NZXSZU2/EzC4scfrMu3j3Ix+i9tuf4covzvPSc8+wevkiw/Uu7f4my9sdHlw9yvrGMsZUZE6A7/uUacZ9D/06x+64k6MnT9Jr73Lu+Z9w7oUXaG9tkhUZQlfcftcZDt5ylPsf/TB+GPDGy+d47aWX2FhdpdPpsN41XLh6mamFGcST9x4w3zy3xpljC5w5825+47EPMj07x9sry3z9K19mc2sNoSEZJFiORFmSqspBC6JajDGS47ef4olP/i4Li/vZ293hG1/+G1575Rw7yYSHb7+V0B/wDz9Z5/4z+zl1+j7e+8hjtKZnePv6NX789H9wffkK7b094shDGIHj+pRVSTIaY9uKwPO55fgpPvDhTzK3b4mtjXW+952vc/Hcz7h0rcOvPXgb6tH33f7FH//fKo8/8pt84jOfY293h7//67/iP//1n/EjDykMji2YX5rHthWeY9GoRcSNBp5rE0U23d1dnnv6u2xurHP3Pffy+MefRCjFCz99kfe/7xgLJ2/mB89d4oMPP87vPPV5Ntc2+dbffZVv/dPXcK0QXSpmG3VsBJblY0sPo11mp+epByGy0vS6Pc49+ywr11Y4e9/9PPL4R8lHAy5evMDZu+7CCsIG026N+ZlpLAWtZsyTn/0cSIOUivEwYXphHlMZ8jwHNLbtIZVCCKjyFNuLkBKKosBSAozhwOIcC0HMgTmXt9cmzDQcjh/fhyUrDhyY4xOf/TSf+uynUcoiyyY0GlMUeY6UEm0qLNtFCIGuKoo8I4hqGGOoqhLXFkgBtxy9mUhJFuaaWKsXVzm8z+P8z76P6K0xsWr4oUUIDLWNKAYopw7KEApNv1REnqTEJStSKHImwqXpC2wnpKoyWnWfl376LMlgwOvLuww3JhzeP8ObL/6Y4fYORkOt0cQA2hgG/QGW62OqEtfzSDJNHLhoXWF0hWVZFNg4SmBZCiUlvu9y7eUfkltDLiy/hhXUbDbaA1JpuHHt+7SrkNmWR5UkdEpFy9UkKbhRiFdO6FYWdatA2w18XyLTEQPjMNfw6XQS6rWAxWlFXrm0pmJ6/YKbDh3ma8/8CDkwyDfWsLyAyHNIiwqlFIKSqszR0iL2XKQjybKKqiiotMZ1XGxXURQaYUAbTRxHHJyNmGtMMWz3sY7MN3AKw0yzydKhKdyNMTNzNUQrJBpWTLUcylJQGUXoaBqJpl53sKwYKEh6gsC4zM1PsTA/w2TUZzjcY3bhZk6eOMW01Wc6NtwUKo7cFmLLiNJk+I5LVmRIqQABxgEqhBRICWUlsJRPWVa4jk1VGSqtf5m0kdhOhdeAs7ceI4ok1nrmEdQjpoKYoB7S6t2gqQT9wjAV2sS2g2uV9EcJoRXjRaAoCZwJvcGEZuhSZBPUuI9lKTrdPlvtPqPJDqN0wqGlKVa6NlagiMKIQTejORVSFiVaFyglEMbguA4IxXCYIKXEdVzGyRCjBI5js7m1i3J8pNBEoc/Vt66zOd3EzQYsLTaxfvTiZa7sdFgbjJhrxaTdPmEtYjROcR2b4SBhaqpFb5DQiMfs7G4TRDGWkKAkCkGv3ycIA3zPQ4qK/TP7eHPlKlprDDsos8mV9pjshRWGgwTLslBKghSURcEkzXGUhefZOGGIrAzjfILQBikUveFbOI5Llmv80KVKMx46eYLO1hbnt9vsjA3Wo+86RL+7y/peCjqj2bLRpDRigRAlketRypTplkLrIQsLMVIYqAq0MhgtWAhCMBXaTJiZmsNYPpO0ZPGAz01Ls9x/4jS5eY3n37xB7EegK0pdkGclldYoaeH7DsnQMN7dxXUs8rzEIBFCYIzE1yVlaRjnI6SUxNMzvHL1DY7ddDOOZxD/9gf3mF1T50v/8kPaY5vDUwFDnVPzPIpBgfZhMhGEVolUkGcGjUQrBzvP0AL8WkBSTNBVRnugqRWaQ4dDHnjobpKLr3L2zAm0d4qv/OM3uZEZ6o6H6w/wdIjOM2yvSZHusZkZFmOP4ajARHWivAQnZ9DW2FMxjbrNymqbum24vJdx6uwiT56aY319FfGXHztjalJyeXubzaRkcX6OzjBjszsiGY0gH9GcmcYXmhoQ2eC4ilrgEjQVngOj1OC35hi3O7QHQ7TZ4733HcGperx+vUmRWNQtuN4ruLG7xb59i4xyw/pOh35Rkg06tDwfuxnRSgRzdYuRmrAQ+lihotZQCMAA0lqi117F3ulz0701qmiK1Rtr/D8jNuvkHjCe6wAAAABJRU5ErkJggg==', 'Quick items search', TWX.QIS.popup);
+        },
+      };
+
+      TWX.NPClocator = {
+        init: function () {
+          TWX.NPC = {
+            name: 'Minimap NPC locator',
+            loading: false,
+            inner: '',
+            Images: {
+              reload: 'data:image/png;base64,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',
+              menu: 'data:image/png;base64,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',
+            },
+            start: function () {
+              if (window.document.getElementById('ui_menubar')) {
+                try {
+                  this.addButton();
+                } catch (e) {}
+              } else {
+                setTimeout(function () {
+                  TWX.NPC.start();
+                }, 1000);
+              }
+            },
+            addButton: function () {
+              var t = $('<div title="' + TWX.NPC.name + '" class="menulink" />').css('background-image', 'url(' + TWX.NPC.Images.menu + ')').css('background-position', '0px 0px').mouseenter(function () {
+                  $(this).css('background-position', '-25px 0px');
+                }).mouseleave(function () {
+                  $(this).css('background-position', '0px 0px');
+                }).click(function () {
+                  if (!TWX.NPC.employers)
+                    TWX.NPC.load();
+                  else if (TWX.NPC.loading === false)
+                    TWX.NPC.open();
+                });
+              $('#ui_menubar').append($('<div class="ui_menucontainer" />').append(t).append('<div class="menucontainer_bottom" />'));
+            },
+            load: function () {
+              if (TWX.NPC.loading === false) {
+                TWX.NPC.loading = true;
+                new UserMessage(TWXlang.NPC.loading, 'hint').show();
+                Ajax.get('map', 'get_minimap', {}, function (json) {
+                  if (json.error)
+                    return new UserMessage(json.msg).show();
+                  var locs = [
+                  ];
+                  var ql = json.quest_locations;
+                  for (var loc in ql)
+                    if (ql.hasOwnProperty(loc))
+                      locs.push([parseInt(ql[loc][0][0] / Map.tileSize),
+                          parseInt(ql[loc][0][1] / Map.tileSize)]);
+                  Ajax.get('map', 'get_complete_data', {
+                    tiles: JSON.stringify(locs)
+                  }).done(function (res) {
+                    var ne = TWX.NPC.employers = {};
+                    var rq = res.quests;
+                    for (var g = 0; g < locs.length; g++) {
+                      var em = rq[locs[g][0]][locs[g][1]][0][1];
+                      for (var h = 0; h < em.employer.length; h++)
+                        if (!ne[em.employer[h].name])
+                          ne[em.employer[h].name] = em.x + ';' + em.y;
+                        else
+                          ne[em.employer[h].name] += '|' + em.x + ';' + em.y;
+                    }
+                    var ne2 = Object.keys(ne).sort(function (a, b) {
+                        a = a.toLowerCase().replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ł/g, 'l').replace(/ś/g, 's');
+                        b = b.toLowerCase().replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ł/g, 'l').replace(/ś/g, 's');
+                        return (a > b) ? 1 :  - 1;
+                      });
+                    for (var j = 0; j < ne2.length; j++)
+                      TWX.NPC.inner += '<option value="' + ne[ne2[j]] + '">' + ne2[j] + '</option>';
+                    TWX.NPC.open();
+                    TWX.NPC.loading = false;
+                  });
+                });
+              }
+            },
+            open: function () {
+              var mm = wman.open('npc_minimap', null).setMiniTitle(TWX.NPC.name).setTitle(TWXlang.NPC.title);
+              $('.npc_minimap').css('width', '560px').css('height', '352px');
+              var mm_mapdiv = $('<div id="njk_minimap_map" />'),
+              CharX = Character.position.x,
+              CharY = Character.position.y,
+              x = 685 * CharX / 182 / 256 - 6,
+              y = 302 * CharY / 80 / 256 - 6;
+              x = x * 0.727;
+              y = y * 0.727;
+              TWX.NPC.charPoint = '<span title="' + TWXlang.NPC.yourposition + '" class="char_pointer" onClick="Map.center(' + CharX + ',' + CharY + ')" style="left:' + x + 'px; top:' + y + 'px;">';
+              mm_mapdiv.append(TWX.NPC.charPoint);
+              mm.appendToContentPane($('<div id="njk_minimap"/>').append(mm_mapdiv));
+              TWX.NPC.drawSelect();
+            },
+            drawSelect: function () {
+              var selectDiv = window.document.createElement('div');
+              selectDiv.style.cssText = 'color: #fff; font-size: 11px;';
+              selectDiv.style.height = '38px';
+              selectDiv.style.marginTop = '0px';
+              selectDiv.style.marginRight = '5px';
+              selectDiv.style.textAlign = 'right';
+              selectDiv.innerHTML = '<img src="' + TWX.NPC.Images.reload + '" onclick="TWX.NPC.load()" id="NPC_reload" title="' + TWXlang.NPC.reload + '"><select style="background-color: #e8dab3; font-size: 14px; width: 200px; cursor:pointer;" onchange="TWX.NPC.questPoint(this);" id="NPC_dropdown" size="1">' +
+                '<option selected disabled>-' + TWXlang.NPC.chooseNpc + '</option>' + TWX.NPC.inner +
+                '</select><div id="NPC_helpers"><span class="charHelper">' + TWXlang.NPC.yourposition + '</span><span class="advHelper">' + TWXlang.NPC.questgiver + '</span></div>';
+              var mm2 = document.getElementById('njk_minimap');
+              mm2.insertBefore(selectDiv, mm2.firstChild);
+            },
+            questPoint: function (place) {
+              var dp = $('#njk_minimap_map');
+              dp.find('.adv_pointer').remove();
+              var positions = place.value;
+              var arrPos = positions.split('|');
+              for (var i = 0; i < arrPos.length; i++) {
+                var xy = arrPos[i].split(';'),
+                x = 685 * xy[0] / 182 / 256 - 6,
+                y = 302 * xy[1] / 80 / 256 - 6;
+                x = x * 0.727;
+                y = y * 0.727;
+                dp.append('<span class="adv_pointer" onClick="Map.center(' + xy[0] + ',' + xy[1] + ')" id="mapPos' + i + '" px="' + xy[0] + '" py="' + xy[1] + '" style="left:' + x + 'px; top:' + y + 'px;">');
+              }
+            },
+          };
+          var style = document.createElement('style');
+          var css = '#njk_minimap_map {position:relative;width:500px;height:220px;background-repeat:no-repeat;background-image:url("images/map/minimap/worldmap_500.jpg"); margin-left: 4px;}' +
+            '#njk_minimap_map span.adv_pointer {position:absolute;height:16px;width:16px;cursor:pointer;background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_quests.png");}' +
+            '#njk_minimap_map span.char_pointer {position:absolute;height:16px;width:16px;cursor:pointer;background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_pos.png");}' +
+            '#njk_minimap #NPC_helpers {float:left;height:20px;width:150px;padding-left:5px;text-align:left;color:black;}' +
+            '#njk_minimap span.advHelper {display:block;text-indent:20px;line-height:16px; background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_quests.png");}' +
+            '#njk_minimap span.charHelper {display:block;text-indent:20px;line-height:16px; background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_pos.png");}' +
+            '#njk_minimap #NPC_reload {margin:-7px 3px 0 0;cursor:pointer;}';
+          style.setAttribute('type', 'text/css');
+          if (style.styleSheet) {
+            style.styleSheet.cssText = css;
+          } else {
+            style.appendChild(document.createTextNode(css));
+          }
+          document.getElementsByTagName('head')[0].appendChild(style);
+          TWX.NPC.start();
         },
       };
       TWX.CalcTwdb = {
