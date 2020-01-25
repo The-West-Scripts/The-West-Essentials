@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.46.4
+// @version 1.46.5
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -26,7 +26,7 @@
     location.href = '/';
   } else {
     TWXstart = {
-      version: '1.46.4',
+      version: '1.46.5',
       langs: {
         en: {
           language: 'English',
@@ -217,6 +217,52 @@
             yourposition: 'Your position',
             questgiver: 'Quest giver',
             reload: 'Reload all quest givers',
+          },
+          BS: {
+            hero: 'HERO',
+            heroT: 'Number of shots (taken & dodged) per 1000 HPs',
+            rate: 'Rate',
+            hitsTaken: 'Hits taken',
+            dodgedShots: 'Dodged shots',
+            startHP: 'Start HP',
+            survivor: 'SURVIVOR',
+            survivorT: 'Survivor with the fewest HPs at the end of the fort battle',
+            endHP: 'End HP',
+            sniper: 'SNIPER',
+            sniperT: 'Number of successful hits (percentage) in relation to all shots fired',
+            rateP: 'Rate(%)',
+            hitCount: 'Hit count',
+            missedShots: 'Missed shots',
+            matrix: 'MATRIX',
+            matrixT: 'Number of doged shots (percentage) in relation to all shots (taken & dodged)',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Number of KOs (percentage) in relation to the successful hits',
+            KOs: 'KOs',
+            ranking: 'Ranking',
+            statsTitle: 'Fort battle statistics',
+            designation: 'Designation',
+            attack: 'Attack',
+            defense: 'Defense',
+            difference: 'Difference',
+            statistics: 'Statistics',
+            code: 'Code',
+            goBack: 'Go back',
+            starsTitle: 'The stars of the battle',
+            title: 'Title',
+            name: 'Name',
+            details: 'Details',
+            start: ' HP - Start: ',
+            end: ' - End: ',
+            damageTaken: ' - Damage taken: ',
+            avgHP: ' - HP per fighter: ',
+            total: 'Total ',
+            average: 'Average ',
+            HP: 'HP',
+            damage: 'Damage',
+            avgDamage: 'Average damage',
+            avgDamageMax: 'Average max damage',
+            avgWeaponDamage: 'Average weapon damage',
+            avgWeaponDamageMax: 'Weapon damage max',
           },
         },
         de: {
@@ -410,6 +456,52 @@
             questgiver: 'Questgeber',
             reload: 'Questgeber neu laden',
           },
+          BS: {
+            hero: 'HERO',
+            heroT: 'Anzahl Schüsse (eingesteckt & ausgewichen) pro 1000 LPs',
+            rate: 'Quote',
+            hitsTaken: 'Eingesteckte Treffer',
+            dodgedShots: 'Schüssen ausgewichen',
+            startHP: 'Anfangs-LP',
+            survivor: 'SURVIVOR',
+            survivorT: 'Überlebender mit den wenigsten LPs am Ende des Fortkampfes',
+            endHP: 'LPs am Ende',
+            sniper: 'SNIPER',
+            sniperT: 'Anzahl erfolgreicher Treffer (in Prozent) im Verhältnis zu allen abgegebenen Schüssen',
+            rateP: 'Quote(%)',
+            hitCount: 'Trefferanzahl',
+            missedShots: 'Fehlschüsse',
+            matrix: 'MATRIX',
+            matrixT: 'Anzahl Ausweicher (in Prozent) im Verhältnis zu allen Schüssen (eingesteckt & ausgewichen)',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Anzahl erzielter KOs (in Prozent) im Verhältnis zu den erfolgreichen Treffern',
+            KOs: 'KOs',
+            ranking: 'Rangliste',
+            statsTitle: 'Fortkampfstatistik',
+            designation: 'Bezeichnung',
+            attack: 'Angriff',
+            defense: 'Verteidigung',
+            difference: 'Differenz',
+            statistics: 'Statistik',
+            code: 'Code',
+            goBack: 'Zurück',
+            starsTitle: 'Die Stars des Kampfes',
+            title: 'Titel',
+            name: 'Name',
+            details: 'Details',
+            start: ' LP - Start: ',
+            end: ' - Ende: ',
+            damageTaken: ' - Unterschied: ',
+            avgHP: ' - LP pro Mann: ',
+            total: 'Total ',
+            average: 'Durchschn. ',
+            HP: 'LP',
+            damage: 'Schaden',
+            avgDamage: 'Durchschn. Schaden',
+            avgDamageMax: 'Max Schaden',
+            avgWeaponDamage: 'Durchschn Waffenschaden',
+            avgWeaponDamageMax: 'Max Schaden der Waffe',
+          },
         },
         pl: {
           language: 'Polish (polski)',
@@ -601,6 +693,52 @@
             questgiver: 'Zleceniodawca',
             reload: 'Reload all quest givers',
           },
+          BS: {
+            hero: 'HERO',
+            heroT: 'Liczba strzałów (przyjętych i unikniętych) na 1000HP',
+            rate: 'Średnia',
+            hitsTaken: 'Otrzymane ciosy',
+            dodgedShots: 'Zadane ciosy',
+            startHP: 'Start HP',
+            survivor: 'SURVIVOR',
+            survivorT: 'Osoba z największą ilością HP pod koniec bitwy',
+            endHP: 'Końcowe HP',
+            sniper: 'SNIPER',
+            sniperT: 'Liczba celnych trafień (w procentach) w porównaniu do wszystkich',
+            rateP: 'Średnia(%)',
+            hitCount: 'Trafione strzały',
+            missedShots: 'Chybione strzały',
+            matrix: 'MATRIX',
+            matrixT: 'Liczba uników (w procentach) w porównaniu do wszystkich otrzymanych strzałów',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Liczba omdleń (w procentach) w porównaniu do trafionych strzałów',
+            KOs: 'KOs',
+            ranking: 'Ranking',
+            statsTitle: 'Statystyki bitwy',
+            designation: 'Nazwa',
+            attack: 'Atak',
+            defense: 'Obrona',
+            difference: 'Różnica',
+            statistics: 'Statystyki',
+            code: 'Kod',
+            goBack: 'Wróć',
+            starsTitle: 'Gwiazdy podczas bitwy',
+            title: 'Tytuł',
+            name: 'Nick',
+            details: 'Sczegóły',
+            start: ' HP - Start: ',
+            end: ' - Końcowe: ',
+            damageTaken: ' - Obrażenia zadane: ',
+            avgHP: ' - Średnie zadane obrażenia: ',
+            total: 'Całkowity ',
+            average: 'Średni ',
+            HP: 'HP',
+            damage: 'Obrażenia',
+            avgDamage: 'Średnie obrażenia',
+            avgDamageMax: 'Największe obrażenia',
+            avgWeaponDamage: 'Średnia obrażeń broni',
+            avgWeaponDamageMax: 'Największe obrażenia broni',
+          },
         },
         es: {
           language: 'Spanish (español)',
@@ -790,6 +928,52 @@
             yourposition: 'Tu posición',
             questgiver: 'Dador de búsqueda',
             reload: 'Reload all quest givers',
+          },
+          BS: {
+            hero: 'HÉROE',
+            heroT: 'Tasa de tiros absorbidos (recibidos + eludidos) sobre los PV inicial',
+            rate: 'Tasa',
+            hitsTaken: 'Nº Aciertos recibidos',
+            dodgedShots: 'Nº Eludidos',
+            startHP: 'Vida Inicial',
+            survivor: 'SUPERVIVIENTE',
+            survivorT: 'El que termina con menos puntos de vida final',
+            endHP: 'Vida Final',
+            sniper: 'FRANCOTIRADOR',
+            sniperT: 'Porcentaje de aciertos realizados sobre el total de tiros realizados (aciertos + fallos)',
+            rateP: 'Tasa(%)',
+            hitCount: 'Nº Aciertos',
+            missedShots: 'Nº Fallos',
+            matrix: 'MATRIX',
+            matrixT: 'Porcentaje de tiros eludidos sobre el total de tiros recibidos',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Porcentaje de Kos conseguidos sobre aciertos realizados',
+            KOs: 'Kos efectuados',
+            ranking: 'Classement',
+            statsTitle: 'Estadísticas de la Batalla',
+            designation: 'Estadística',
+            attack: 'Ataque',
+            defense: 'Defensa',
+            difference: 'Diferencia',
+            statistics: 'Estadística',
+            code: 'Formato Foro',
+            goBack: 'Volver',
+            starsTitle: 'Las Estrellas de la Batalla',
+            title: 'Titre',
+            name: 'Nombre',
+            details: 'Detalles',
+            start: ' PV - Inicial: ',
+            end: ' - Final: ',
+            damageTaken: ' - Daño recibido: ',
+            avgHP: ' - PV por luchador: ',
+            total: 'Total ',
+            average: 'Promedio ',
+            HP: 'PV',
+            damage: 'daño',
+            avgDamage: 'Daño medio',
+            avgDamageMax: 'Daño max. medio',
+            avgWeaponDamage: 'Daño por arma medio',
+            avgWeaponDamageMax: 'Daño por arma max. medio',
           },
         },
         nl: {
@@ -982,6 +1166,52 @@
             questgiver: 'Quest giver',
             reload: 'Reload all quest givers',
           },
+          BS: {
+            hero: 'HERO',
+            heroT: 'Number of shots (taken & dodged) per 1000 HPs',
+            rate: 'Rate',
+            hitsTaken: 'Hits taken',
+            dodgedShots: 'Dodged shots',
+            startHP: 'Start HP',
+            survivor: 'SURVIVOR',
+            survivorT: 'Survivor with the fewest HPs at the end of the fort battle',
+            endHP: 'End HP',
+            sniper: 'SNIPER',
+            sniperT: 'Number of successful hits (percentage) in relation to all shots fired',
+            rateP: 'Rate(%)',
+            hitCount: 'Hit count',
+            missedShots: 'Missed shots',
+            matrix: 'MATRIX',
+            matrixT: 'Number of doged shots (percentage) in relation to all shots (taken & dodged)',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Number of KOs (percentage) in relation to the successful hits',
+            KOs: 'KOs',
+            ranking: 'Ranking',
+            statsTitle: 'Fort battle statistics',
+            designation: 'Designation',
+            attack: 'Attack',
+            defense: 'Defense',
+            difference: 'Difference',
+            statistics: 'Statistics',
+            code: 'Code',
+            goBack: 'Go back',
+            starsTitle: 'The stars of the battle',
+            title: 'Title',
+            name: 'Name',
+            details: 'Details',
+            start: ' HP - Start: ',
+            end: ' - End: ',
+            damageTaken: ' - Damage taken: ',
+            avgHP: ' - HP per fighter: ',
+            total: 'Total ',
+            average: 'Average ',
+            HP: 'HP',
+            damage: 'Damage',
+            avgDamage: 'Average damage',
+            avgDamageMax: 'Average max damage',
+            avgWeaponDamage: 'Average weapon damage',
+            avgWeaponDamageMax: 'Weapon damage max',
+          },
         },
         hu: {
           language: 'Hungarian (Magyar)',
@@ -1172,6 +1402,52 @@
             yourposition: 'Your position',
             questgiver: 'Quest giver',
             reload: 'Reload all quest givers',
+          },
+          BS: {
+            hero: 'HERO',
+            heroT: 'Number of shots (taken & dodged) per 1000 HPs',
+            rate: 'Rate',
+            hitsTaken: 'Hits taken',
+            dodgedShots: 'Dodged shots',
+            startHP: 'Start HP',
+            survivor: 'SURVIVOR',
+            survivorT: 'Survivor with the fewest HPs at the end of the fort battle',
+            endHP: 'End HP',
+            sniper: 'SNIPER',
+            sniperT: 'Number of successful hits (percentage) in relation to all shots fired',
+            rateP: 'Rate(%)',
+            hitCount: 'Hit count',
+            missedShots: 'Missed shots',
+            matrix: 'MATRIX',
+            matrixT: 'Number of doged shots (percentage) in relation to all shots (taken & dodged)',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Number of KOs (percentage) in relation to the successful hits',
+            KOs: 'KOs',
+            ranking: 'Ranking',
+            statsTitle: 'Fort battle statistics',
+            designation: 'Designation',
+            attack: 'Attack',
+            defense: 'Defense',
+            difference: 'Difference',
+            statistics: 'Statistics',
+            code: 'Code',
+            goBack: 'Go back',
+            starsTitle: 'The stars of the battle',
+            title: 'Title',
+            name: 'Name',
+            details: 'Details',
+            start: ' HP - Start: ',
+            end: ' - End: ',
+            damageTaken: ' - Damage taken: ',
+            avgHP: ' - HP per fighter: ',
+            total: 'Total ',
+            average: 'Average ',
+            HP: 'HP',
+            damage: 'Damage',
+            avgDamage: 'Average damage',
+            avgDamageMax: 'Average max damage',
+            avgWeaponDamage: 'Average weapon damage',
+            avgWeaponDamageMax: 'Weapon damage max',
           },
         },
         el: {
@@ -1364,6 +1640,52 @@
             questgiver: 'Δότης αποστολής',
             reload: 'Ανανέωση όλων των δοτών αποστολής',
           },
+          BS: {
+            hero: 'HERO',
+            heroT: 'Αριθμός βολών (ληφθείσες & αποφεύχθηκαν) ανά 1000 Ζωή',
+            rate: 'Ποσοστό',
+            hitsTaken: 'Λαμβανόμενα χτυπήματα',
+            dodgedShots: 'Αποφυγή βολών',
+            startHP: 'Αρχική ζωή',
+            survivor: 'SURVIVOR',
+            survivorT: 'Επιζών με την λιγότερη ζωή στο τέλος της μάχης του οχυρού',
+            endHP: 'Ζωή στο τέλος της μάχης',
+            sniper: 'SNIPER',
+            sniperT: 'Αριθμός επιτυχημένων βολών (ποσοστό) σε σχέση με όλες τις βολές',
+            rateP: 'Ποσοστό(%)',
+            hitCount: 'Αριθμός χτυπημάτων',
+            missedShots: 'Άστοχες βολές',
+            matrix: 'MATRIX',
+            matrixT: 'Αριθμός βολών (ποσοστό) σε σχέση με όλες τις βολές (ληφθείσες & αποφεύχθηκαν)',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Αριθμός K.O. (ποσοστό) σε σχέση με τις επιτυχημένες βολές',
+            KOs: 'K.O.',
+            ranking: 'Κατάταξη',
+            statsTitle: 'Στατιστικά μάχης οχυρού',
+            designation: 'Περιγραφή',
+            attack: 'Επίθεση',
+            defense: 'Άμυνα',
+            difference: 'Διαφορά',
+            statistics: 'Στατιστικές',
+            code: 'Κώδικας',
+            goBack: 'Πίσω',
+            starsTitle: 'Τα αστέρια της μάχης',
+            title: 'Τίτλος',
+            name: 'Όνομα παίκτη',
+            details: 'Λεπτομέρειες',
+            start: ' Ζωή - Αρχή: ',
+            end: ' - Τέλος: ',
+            damageTaken: ' - Λαμβάνουσα ζημιά: ',
+            avgHP: ' - Ζωή ανά Παίκτη: ',
+            total: 'Σύνολο ',
+            average: 'Μέσος όρος ',
+            HP: 'Ζωή',
+            damage: 'Ζημιά',
+            avgDamage: 'Μέση ζημιά',
+            avgDamageMax: 'Μέση μέγιστη ζημία',
+            avgWeaponDamage: 'Μέση ζημιά από όπλα',
+            avgWeaponDamageMax: 'Μέγιστη ζημιά όπλου',
+          },
         },
         pt: {
           language: 'Portuguese (português)',
@@ -1554,6 +1876,52 @@
             yourposition: 'Minha posição',
             questgiver: 'Empregador',
             reload: 'Atualizar todos os empregadores',
+          },
+          BS: {
+            hero: 'HERO',
+            heroT: 'Number of shots (taken & dodged) per 1000 HPs',
+            rate: 'Rate',
+            hitsTaken: 'Hits taken',
+            dodgedShots: 'Dodged shots',
+            startHP: 'Start HP',
+            survivor: 'SURVIVOR',
+            survivorT: 'Survivor with the fewest HPs at the end of the fort battle',
+            endHP: 'End HP',
+            sniper: 'SNIPER',
+            sniperT: 'Number of successful hits (percentage) in relation to all shots fired',
+            rateP: 'Rate(%)',
+            hitCount: 'Hit count',
+            missedShots: 'Missed shots',
+            matrix: 'MATRIX',
+            matrixT: 'Number of doged shots (percentage) in relation to all shots (taken & dodged)',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Number of KOs (percentage) in relation to the successful hits',
+            KOs: 'KOs',
+            ranking: 'Ranking',
+            statsTitle: 'Fort battle statistics',
+            designation: 'Designation',
+            attack: 'Attack',
+            defense: 'Defense',
+            difference: 'Difference',
+            statistics: 'Statistics',
+            code: 'Code',
+            goBack: 'Go back',
+            starsTitle: 'The stars of the battle',
+            title: 'Title',
+            name: 'Name',
+            details: 'Details',
+            start: ' HP - Start: ',
+            end: ' - End: ',
+            damageTaken: ' - Damage taken: ',
+            avgHP: ' - HP per fighter: ',
+            total: 'Total ',
+            average: 'Average ',
+            HP: 'HP',
+            damage: 'Damage',
+            avgDamage: 'Average damage',
+            avgDamageMax: 'Average max damage',
+            avgWeaponDamage: 'Average weapon damage',
+            avgWeaponDamageMax: 'Weapon damage max',
           },
         },
         it: {
@@ -1746,6 +2114,52 @@
             questgiver: 'Mandante',
             reload: 'Ricarica tutti i mandanti missione',
           },
+          BS: {
+            hero: 'HERO',
+            heroT: 'Number of shots (taken & dodged) per 1000 HPs',
+            rate: 'Rate',
+            hitsTaken: 'Hits taken',
+            dodgedShots: 'Dodged shots',
+            startHP: 'Start HP',
+            survivor: 'SURVIVOR',
+            survivorT: 'Survivor with the fewest HPs at the end of the fort battle',
+            endHP: 'End HP',
+            sniper: 'SNIPER',
+            sniperT: 'Number of successful hits (percentage) in relation to all shots fired',
+            rateP: 'Rate(%)',
+            hitCount: 'Hit count',
+            missedShots: 'Missed shots',
+            matrix: 'MATRIX',
+            matrixT: 'Number of doged shots (percentage) in relation to all shots (taken & dodged)',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Number of KOs (percentage) in relation to the successful hits',
+            KOs: 'KOs',
+            ranking: 'Ranking',
+            statsTitle: 'Fort battle statistics',
+            designation: 'Designation',
+            attack: 'Attack',
+            defense: 'Defense',
+            difference: 'Difference',
+            statistics: 'Statistics',
+            code: 'Code',
+            goBack: 'Go back',
+            starsTitle: 'The stars of the battle',
+            title: 'Title',
+            name: 'Name',
+            details: 'Details',
+            start: ' HP - Start: ',
+            end: ' - End: ',
+            damageTaken: ' - Damage taken: ',
+            avgHP: ' - HP per fighter: ',
+            total: 'Total ',
+            average: 'Average ',
+            HP: 'HP',
+            damage: 'Damage',
+            avgDamage: 'Average damage',
+            avgDamageMax: 'Average max damage',
+            avgWeaponDamage: 'Average weapon damage',
+            avgWeaponDamageMax: 'Weapon damage max',
+          },
         },
         fr: {
           language: 'French (français)',
@@ -1936,6 +2350,52 @@
             yourposition: 'Your position',
             questgiver: 'Quest giver',
             reload: 'Reload all quest givers',
+          },
+          BS: {
+            hero: 'HÉROS',
+            heroT: 'Taux du nombre de tirs ciblés (évités + reçus) par rapport aux PV de départ',
+            rate: 'Taux',
+            hitsTaken: 'Coups réçus',
+            dodgedShots: 'Tirs esquivés',
+            startHP: 'PV Début',
+            survivor: 'SURVIVANT',
+            survivorT: 'Celui qui finit avec le moins de pv',
+            endHP: 'PV Fin',
+            sniper: 'TIREUR D\'ÉLITE',
+            sniperT: 'Pourcentage de tirs réussis par rapport aux total de tirs effectués',
+            rateP: 'Taux(%)',
+            hitCount: 'Coups réussis',
+            missedShots: 'Tirs ratés',
+            matrix: 'MATRIX',
+            matrixT: 'Pourcentage de tirs évités par rapport aux total de tirs ciblés',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Pourcentage du nombre de ko par rapport aux total des tirs touchés',
+            KOs: 'Ko effectués',
+            ranking: 'Classement',
+            statsTitle: 'Statistiques de la bataille',
+            designation: 'Désignation',
+            attack: 'Attaque',
+            defense: 'Défense',
+            difference: 'Différence',
+            statistics: 'Statistique',
+            code: 'Code',
+            goBack: 'Retour',
+            starsTitle: 'Les Stars de la bataille',
+            title: 'Titre',
+            name: 'Nom',
+            details: 'Détails',
+            start: ' PV - Début: ',
+            end: ' - Fin: ',
+            damageTaken: ' - Dégâts reçus: ',
+            avgHP: ' - Moy PV: ',
+            total: 'Total ',
+            average: 'Moyenne ',
+            HP: 'PV',
+            damage: 'Dégats',
+            avgDamage: 'Dommages moyen',
+            avgDamageMax: 'Dommages max moyen',
+            avgWeaponDamage: 'Dommages arme moyen',
+            avgWeaponDamageMax: 'Dommages arme max',
           },
         },
         cs: {
@@ -2128,6 +2588,52 @@
             questgiver: 'Quest giver',
             reload: 'Reload all quest givers',
           },
+          BS: {
+            hero: 'HRDINA',
+            heroT: 'Počet zásahů (obdržené & vyhnuté) na každých 1000 HP',
+            rate: 'Rate',
+            hitsTaken: 'Obdržené zásahy',
+            dodgedShots: 'Vyhnuto zásahům',
+            startHP: 'Zdraví na začátku',
+            survivor: 'PŘEŽIVŠÍ',
+            survivorT: 'Přežívší s nejnižším HP na konci bitvy',
+            endHP: 'Zdraví na konci',
+            sniper: 'SNIPER',
+            sniperT: 'Počet úspěšných zásahů (v procentách) v porovnání ke všem výstřelům',
+            rateP: 'Rate(%)',
+            hitCount: 'Úspěšné zásahy',
+            missedShots: 'Neúspěšné zásahy',
+            matrix: 'MATRIX',
+            matrixT: 'Počet vyhnutých zásahů (v procentách) v porovnání ku všem zásahům (obdrženým & vyhnutým)',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Počet KO (v procentách) v porovnaní ke všem úspěšným zásahům',
+            KOs: 'KO',
+            ranking: 'Žebríček',
+            statsTitle: 'Bitevní štatistiky',
+            designation: 'Designace',
+            attack: 'Útok',
+            defense: 'Obrana',
+            difference: 'Rozdíl',
+            statistics: 'Štatistiky',
+            code: 'Kód',
+            goBack: 'Jdi spět',
+            starsTitle: 'Hvězdy téhle bitvy',
+            title: 'Název',
+            name: 'Jméno',
+            details: 'Detaily',
+            start: ' HP - Začátek: ',
+            end: ' - Konec: ',
+            damageTaken: ' - Obdržené poškození: ',
+            avgHP: ' - HP na jednoho útočníka: ',
+            total: 'Celkově ',
+            average: 'Průměr ',
+            HP: 'HP',
+            damage: 'Poškození',
+            avgDamage: 'Průměrné poškození',
+            avgDamageMax: 'Průměrné max poškození',
+            avgWeaponDamage: 'Průměrné poškození zbraně',
+            avgWeaponDamageMax: 'Max poškození zbraně',
+          },
         },
         sk: {
           language: 'Slovak (slovenčina)',
@@ -2318,6 +2824,52 @@
             yourposition: 'Your position',
             questgiver: 'Quest giver',
             reload: 'Reload all quest givers',
+          },
+          BS: {
+            hero: 'HRDINA',
+            heroT: 'Počet zásahov (obdržané a vyhnuté) na každých 1000 HP',
+            rate: 'Rate',
+            hitsTaken: 'Obdržané zásahy',
+            dodgedShots: 'Vyhnuté zásahy',
+            startHP: 'Zdravie na začiatku',
+            survivor: 'PREŽIVŠÍ',
+            survivorT: 'Preživší s najnižším hp na konci boja',
+            endHP: 'Zdravie na konci',
+            sniper: 'SNIPER',
+            sniperT: 'Počet úspešných zásahov (v percentách) v porovnaní ku všetkým výstrelom',
+            rateP: 'Rate(%)',
+            hitCount: 'Úspešné zásahy',
+            missedShots: 'Neúspešné zásahy',
+            matrix: 'MATRIX',
+            matrixT: 'Počet vyhnutých zásahov (v percentách) v porovnaní ku všetkým zásahom (obrdžaným & vyhnutým)',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Počet KO (v percentách) v porovnaní ku všetkým úspešným hitom',
+            KOs: 'KO',
+            ranking: 'Rebríček',
+            statsTitle: 'Štatistiky tohto boja',
+            designation: 'Designácia',
+            attack: 'Útok',
+            defense: 'Obrana',
+            difference: 'Rozdiel',
+            statistics: 'Štatistiky',
+            code: 'Kód',
+            goBack: 'Choď späť',
+            starsTitle: 'Hviezdy tohto boja',
+            title: 'Názov',
+            name: 'Meno',
+            details: 'Detaily',
+            start: ' HP - Začiatok: ',
+            end: ' - Konec: ',
+            damageTaken: ' - Obdržané poškodenie: ',
+            avgHP: ' - HP na jedného útočníka: ',
+            total: 'Celkové ',
+            average: 'Priemer ',
+            HP: 'HP',
+            damage: 'Poškodenie',
+            avgDamage: 'Priemerné poškodenie',
+            avgDamageMax: 'Priemerné max poškodenie',
+            avgWeaponDamage: 'Priemerné poškodenie zbrane',
+            avgWeaponDamageMax: 'Max poškodenie zbrane',
           },
         },
         ru: {
@@ -2510,6 +3062,52 @@
             questgiver: 'Квестодатель',
             reload: 'Reload all quest givers',
           },
+          BS: {
+            hero: 'HERO',
+            heroT: 'Number of shots (taken & dodged) per 1000 HPs',
+            rate: 'Rate',
+            hitsTaken: 'Hits taken',
+            dodgedShots: 'Dodged shots',
+            startHP: 'Start HP',
+            survivor: 'SURVIVOR',
+            survivorT: 'Survivor with the fewest HPs at the end of the fort battle',
+            endHP: 'End HP',
+            sniper: 'SNIPER',
+            sniperT: 'Number of successful hits (percentage) in relation to all shots fired',
+            rateP: 'Rate(%)',
+            hitCount: 'Hit count',
+            missedShots: 'Missed shots',
+            matrix: 'MATRIX',
+            matrixT: 'Number of doged shots (percentage) in relation to all shots (taken & dodged)',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Number of KOs (percentage) in relation to the successful hits',
+            KOs: 'KOs',
+            ranking: 'Ranking',
+            statsTitle: 'Fort battle statistics',
+            designation: 'Designation',
+            attack: 'Attack',
+            defense: 'Defense',
+            difference: 'Difference',
+            statistics: 'Statistics',
+            code: 'Code',
+            goBack: 'Go back',
+            starsTitle: 'The stars of the battle',
+            title: 'Title',
+            name: 'Name',
+            details: 'Details',
+            start: ' HP - Start: ',
+            end: ' - End: ',
+            damageTaken: ' - Damage taken: ',
+            avgHP: ' - HP per fighter: ',
+            total: 'Total ',
+            average: 'Average ',
+            HP: 'HP',
+            damage: 'Damage',
+            avgDamage: 'Average damage',
+            avgDamageMax: 'Average max damage',
+            avgWeaponDamage: 'Average weapon damage',
+            avgWeaponDamageMax: 'Weapon damage max',
+          },
         },
         tr: {
           language: 'Turkish (Türkçe)',
@@ -2701,6 +3299,52 @@
             questgiver: 'Görevin bulunduğu yer',
             reload: 'Tüm görev vericileri güncelle',
           },
+          BS: {
+            hero: 'HERO',
+            heroT: 'Number of shots (taken & dodged) per 1000 HPs',
+            rate: 'Rate',
+            hitsTaken: 'Hits taken',
+            dodgedShots: 'Dodged shots',
+            startHP: 'Start HP',
+            survivor: 'SURVIVOR',
+            survivorT: 'Survivor with the fewest HPs at the end of the fort battle',
+            endHP: 'End HP',
+            sniper: 'SNIPER',
+            sniperT: 'Number of successful hits (percentage) in relation to all shots fired',
+            rateP: 'Rate(%)',
+            hitCount: 'Hit count',
+            missedShots: 'Missed shots',
+            matrix: 'MATRIX',
+            matrixT: 'Number of doged shots (percentage) in relation to all shots (taken & dodged)',
+            terminator: 'TERMINATOR',
+            terminatorT: 'Number of KOs (percentage) in relation to the successful hits',
+            KOs: 'KOs',
+            ranking: 'Ranking',
+            statsTitle: 'Fort battle statistics',
+            designation: 'Designation',
+            attack: 'Attack',
+            defense: 'Defense',
+            difference: 'Difference',
+            statistics: 'Statistics',
+            code: 'Code',
+            goBack: 'Go back',
+            starsTitle: 'The stars of the battle',
+            title: 'Title',
+            name: 'Name',
+            details: 'Details',
+            start: ' HP - Start: ',
+            end: ' - End: ',
+            damageTaken: ' - Damage taken: ',
+            avgHP: ' - HP per fighter: ',
+            total: 'Total ',
+            average: 'Average ',
+            HP: 'HP',
+            damage: 'Damage',
+            avgDamage: 'Average damage',
+            avgDamageMax: 'Average max damage',
+            avgWeaponDamage: 'Average weapon damage',
+            avgWeaponDamageMax: 'Weapon damage max',
+          },
         },
       },
       url: 'https://tomrobert.safe-ws.de/',
@@ -2763,11 +3407,13 @@
           QuickItemsSearch: true,
           NPClocator: true,
           MarketBestBids: true,
+          BattleStars: true,
         },
         CT: {},
         QIS: {},
         NPC: {},
         MMB: {},
+        BS: {},
         cooldown: {
           2482: 1,
           2484: 1,
@@ -5970,6 +6616,591 @@
               }
             });
           };
+        },
+      };
+      TWX.BattleStars = {
+        init: function () {
+          TWX.BS = {
+            stars: [],
+            attaquants: {},
+            defenseurs: {},
+            withMod: function (calc, val) {
+              return function (row) {
+                var wdth = Math.round((74) / (calc.header.length));
+                $.each(calc.header, function (ind, td) {
+                  $('.battle_cls' + ind, row).css('width', wdth + '%');
+                });
+                row.attr('title', val.townname + ' - ' + val.weaponname + ' (' + val.weaponmindmg + '-' + val.weaponmaxdmg + ')');
+                return row;
+              };
+            },
+            modifStarsRow: function (val) {
+              return function (row) {
+                $('.battle_tow', row).css('cursor', 'pointer').attr('title', TWX.BS.getFormule(val.type).help);
+                $('.battle_nam', row).attr('title', val.obj.townname + ' - ' + val.obj.weaponname + ' (' + val.obj.weaponmindmg + '-' + val.obj.weaponmaxdmg + ')');
+                $('.stat_dtl', row).attr('title', cellules.stat_dtl).css({
+                  'width': '62%',
+                  'text-align': 'left'
+                });
+                return row;
+              };
+            },
+            initFormule: function () {
+              try {
+                this.formules = [];
+                this.formules.push(new calcul('heros', TWXlang.BS.hero, TWXlang.BS.heroT, '(((val.takenhits + val.dodgecount) *1000) / (val.starthp))', [
+                      TWXlang.BS.rate,
+                      TWXlang.BS.hitsTaken,
+                      TWXlang.BS.dodgedShots,
+                      TWXlang.BS.startHP
+                    ], [
+                      'heros',
+                      'takenhits',
+                      'dodgecount',
+                      'starthp'
+                    ], '$.isNumeric( val.starthp) && ( val.starthp) > 0', '0', '>', false, false, false, true));
+                /*this.formules.push(new calcul('roger', 'Roger
+                Rabbit', 'val.takenhits + val.dodgecount', [ 'Tirs',
+                'Tirs reçus', 'Tir évité' ], [
+                'roger','takenhits','dodgecount' ], ' val.takenhits +
+                val.dodgecount > 0', '0', '>', false, false, false,
+                true));*/
+                this.formules.push(new calcul('survivant', TWXlang.BS.survivor, TWXlang.BS.survivorT, 'val.finishedhp', [
+                      TWXlang.BS.endHP
+                    ], [
+                      'finishedhp'
+                    ], '  val.finishedhp  > 0', '0', '<', true, true, false, false));
+                this.formules.push(new calcul('sniper', TWXlang.BS.sniper, TWXlang.BS.sniperT, '(val.hitcount / (val.hitcount + val.misscount))*100', [
+                      TWXlang.BS.rateP,
+                      TWXlang.BS.hitCount,
+                      TWXlang.BS.missedShots
+                    ], [
+                      'sniper',
+                      'hitcount',
+                      'misscount'
+                    ], '$.isNumeric(val.hitcount + val.misscount) && (val.hitcount + val.misscount) > 0', '0', '>', false, false, false, true));
+                this.formules.push(new calcul('matrix', TWXlang.BS.matrix, TWXlang.BS.matrixT, 'parseFloat((( val.dodgecount / (val.takenhits + val.dodgecount))*100))', [
+                      TWXlang.BS.rateP,
+                      TWXlang.BS.dodgedShots,
+                      TWXlang.BS.hitsTaken
+                    ], [
+                      'matrix',
+                      'dodgecount',
+                      'takenhits'
+                    ], '$.isNumeric(val.dodgecount + val.takenhits) &&  (val.takenhits + val.dodgecount) > 0 &&   val.dodgecount  > 0', '0', '>', false, false, false, true));
+                this.formules.push(new calcul('headshot', TWXlang.BS.terminator, TWXlang.BS.terminatorT, '(val.ko_shots.length / val.hitcount)*100', [
+                      TWXlang.BS.rateP,
+                      TWXlang.BS.KOs,
+                      TWXlang.BS.hitCount
+                    ], [
+                      'headshot',
+                      'ko_shots.length',
+                      'hitcount'
+                    ], '$.isNumeric(val.hitcount) && val.hitcount > 0', '0', '>', false, false, false, true));
+              } catch (e) {
+                console.log(e);
+              }
+            },
+            getFormule: function (type) {
+              for (var s = 0; s < this.formules.length; s++) {
+                calc = this.formules[s];
+                if (type == calc.type) {
+                  return calc;
+                }
+              }
+              throw ('Aucune formule correspondante à ' + type);
+            },
+            getAll: function (type) {
+              var ligTot = '';
+              $('#route', CemeteryWindow.DOM).text('details');
+              var calc = this.getFormule(type);
+              $('.info', CemeteryWindow.DOM).text('');
+              $('.info', CemeteryWindow.DOM).append('<span>' + TWXlang.BS.ranking + ' ' + calc.libelle + '</span><span style="font-size:12px;"><BR/><i>' + calc.help + '</i></span>');
+              this.stars = calc.sortArray(CemeteryWindow.currentStats);
+              var header = calc.getHeader(),
+              shunt = 0;
+              $.each(this.stars, function (ind, stat) {
+                if (calc.shouldBePos && stat[type] <= 0) {
+                  shunt++;
+                }
+                stat.ind = (ind + 1) - shunt;
+                calc.getLigne(stat);
+              });
+            },
+            getStatByPerso: function (name) {
+              for (var s = 0; s < this.stars.length; s++) {
+                val = this.stars[s];
+                if (name == val.name) {
+                  return val;
+                }
+              }
+            },
+            getLigne: function (stat, index) {
+              if (!isDefined(stat)) {
+                return '';
+              }
+              var type = stat.type,
+              nom = stat.name,
+              val = stat.obj,
+              calc = this.getFormule(type),
+              css = 'tw_blue';
+              if (val.battle_type == 'attacker') {
+                css = 'tw_red';
+              }
+              cellules = {};
+              cellules.battle_tow = '<span onclick="javascript:TWX.BS.getAll(\'' + type + '\')">' + calc.libelle + '</span>';
+              cellules.battle_nam = nom;
+              cellules.stat_dtl = calc.getShortLigne(val);
+              this.table.buildRow('battlestat ' + css, cellules, this.modifStarsRow(stat));
+            },
+            openWindow: function (original) {
+              var statWindow = wman.open('window_Stats', TWXlang.BS.statsTitle).setSize(700, 400);
+              $('.window_Stats').css('left', '10px').css('top', '25px');
+              var table_window = new west.gui.Table();
+              table_window.appendTo($('<div class="window_inside"></div>').appendTo(statWindow.getContentPane())).addColumns(['cell_stat',
+                  'cell_att',
+                  'cell_def',
+                  'cell_dif']).appendToCell('head', 'cell_stat', TWXlang.BS.designation).appendToCell('head', 'cell_att', TWXlang.BS.attack).appendToCell('head', 'cell_def', TWXlang.BS.defense).appendToCell('head', 'cell_dif', TWXlang.BS.difference).appendRow();
+              var verif = '<form><textarea style=\'height: 250px;width: 650px;\'>[code]' + TWXlang.BS.statistics + '\t\t\t' + TWXlang.BS.attack + '\t\t' + TWXlang.BS.defense + '\t\t' + TWXlang.BS.difference + '\n--------------------------------------------------------------------------\n';
+              $.each(this.results, function (ind, val) {
+                try {
+                  var cssStr = '',
+                  dif = 0,
+                  att = parseFloat(val.attack),
+                  def = parseFloat(val.defend);
+                  if (att > val.defend) {
+                    cssStr = '#8A0000';
+                    dif = (att - def).toFixed(2);
+                  } else {
+                    cssStr = '#00008A';
+                    dif = (def - att).toFixed(2);
+                  }
+                  verif += val.titre + att + '\t\t' + def + '\t\t' + dif + '\n';
+                  table_window.appendToCell( - 1, 'cell_stat', val.titre.trim()).appendToCell( - 1, 'cell_att', '<div>' + att + '</div>').appendToCell( - 1, 'cell_def', '<div>' + def + '</div>').appendToCell( - 1, 'cell_dif', '<div style="color:' + cssStr + ';">' + dif + '</div>').appendRow();
+                } catch (e) {
+                  console.log(val, e);
+                }
+              });
+              verif += '[/code]</textarea></form>';
+              var affButton = new west.gui.Button(TWXlang.BS.code, function () {
+                  var cur = $('.window_inside').html();
+                  if (cur.indexOf('[code]') >  - 1) {
+                    this.openWindow();
+                  } else {
+                    $('.window_inside').html(verif);
+                    this.current = cur;
+                    affButton.setCaption(TWXlang.BS.goBack);
+                  }
+                });
+              $('<div class="window_footer"></div>').appendTo(statWindow.getContentPane()).append(affButton.getMainDiv());
+              //$('.window_footer').css('text-align:right;')
+              //statWindow.getContentPane().append(table_window.getMainDiv());
+            },
+            createStarsTable: function () {
+              $('.info', CemeteryWindow.DOM).text(TWXlang.BS.starsTitle);
+              this.table = new west.gui.Table(false).setId('battle_stat');
+              this.table.createEmptyMessage('BattleStars').addColumn('battle_tow', {
+                sortBy: 'name'
+              }).addColumn('battle_nam', {
+                sortBy: 'name'
+              }).addColumn('stat_dtl', {
+                sortBy: 'starthp'
+              }).appendToThCell('head', 'battle_tow', TWXlang.BS.title, TWXlang.BS.title).appendToThCell('head', 'battle_nam', TWXlang.BS.name, TWXlang.BS.name).appendToThCell('head', 'stat_dtl', TWXlang.BS.details, TWXlang.BS.details);
+              this.table.getCell('head', 'stat_dtl').css({
+                'width': '62%',
+                'text-align': 'left'
+              });
+              $('#route', CemeteryWindow.DOM).remove();
+              $('.cemetery-content', CemeteryWindow.DOM).append('<div id="route" style="display:none">global</div>').append(this.table.getMainDiv());
+              $('.footer', CemeteryWindow.DOM).empty();
+              var bo = this.original;
+              var titleAtt = TWXlang.BS.attack + TWXlang.BS.start +
+                bo.startAttPV +
+                TWXlang.BS.end +
+                bo.finishedAttPV +
+                TWXlang.BS.damageTaken +
+                (bo.startAttPV - bo.finishedAttPV) + TWXlang.BS.avgHP + bo.moyatt.toFixed(2);
+              var titleDef = TWXlang.BS.defense + TWXlang.BS.start +
+                bo.startDefPV +
+                TWXlang.BS.end +
+                bo.finishedDefPV +
+                TWXlang.BS.damageTaken +
+                (bo.startDefPV - bo.finishedDefPV) + TWXlang.BS.avgHP + bo.moydef.toFixed(2);
+              $('.footer', CemeteryWindow.DOM).append('<span title="' + titleAtt + '" class="tw_red text_bold">' + titleAtt + '</span>');
+              $('.footer', CemeteryWindow.DOM).append('<br><span title="' + titleDef + '" class="tw_blue text_bold">' + titleDef + '</span>');
+              $('.footer', CemeteryWindow.DOM).addClass('zone');
+              $('.cemetery-content', CemeteryWindow.DOM).addClass('zone');
+            },
+            calculStars: function () {
+              this.results = [];
+              this.attaquants = {};
+              this.defenseurs = {};
+              var attaquer = {},
+              defenseurs = {},
+              bo = this.original = {
+                countAtt: 0,
+                countDef: 0,
+                startDefPV: 0,
+                finishedDefPV: 0,
+                startAttPV: 0,
+                finishedAttPV: 0,
+                degAtt: 0,
+                degDef: 0,
+                moyatt: 0,
+                moydef: 0,
+                att: {
+                  dodgecount: 0,
+                  hitcount: 0,
+                  maxdamage: 0,
+                  avg_damage: 0,
+                  misscount: 0,
+                  takenhits: 0,
+                  weaponmaxdmg: 0,
+                  weaponmindmg: 0,
+                },
+                def: {
+                  dodgecount: 0,
+                  hitcount: 0,
+                  maxdamage: 0,
+                  avg_damage: 0,
+                  misscount: 0,
+                  takenhits: 0,
+                  weaponmaxdmg: 0,
+                  weaponmindmg: 0,
+                },
+              };
+              $.each(CemeteryWindow.currentStats, function (ind, val) {
+                if (val.battle_type == 'attacker') {
+                  bo.startAttPV += val.starthp;
+                  bo.finishedAttPV += val.finishedhp;
+                  bo.degAtt += val.totalcauseddamage;
+                  bo.att.dodgecount += val.dodgecount;
+                  bo.att.hitcount += val.hitcount;
+                  bo.att.avg_damage += val.avg_damage;
+                  bo.att.maxdamage += val.maxdamage;
+                  bo.att.misscount += val.misscount;
+                  bo.att.takenhits += val.takenhits;
+                  bo.att.weaponmaxdmg += val.weaponmaxdmg;
+                  bo.att.weaponmindmg += val.weaponmindmg;
+                  bo.countAtt++;
+                } else {
+                  bo.startDefPV += val.starthp;
+                  bo.finishedDefPV += val.finishedhp;
+                  bo.degDef += val.totalcauseddamage;
+                  bo.countDef++;
+                  bo.def.dodgecount += val.dodgecount;
+                  bo.def.hitcount += val.hitcount;
+                  bo.def.avg_damage += val.avg_damage;
+                  bo.def.maxdamage += val.maxdamage;
+                  bo.def.misscount += val.misscount;
+                  bo.def.takenhits += val.takenhits;
+                  bo.def.weaponmaxdmg += val.weaponmaxdmg;
+                  bo.def.weaponmindmg += val.weaponmindmg;
+                }
+                $.each(TWX.BS.formules, function (indStac, calc) {
+                  val[calc.type] = calc.getTaux(val);
+                  if (!calc.shouldBePos || (calc.shouldBePos && val[calc.type] > 0)) {
+                    if (val.battle_type == 'attacker') {
+                      if (!isDefined(attaquer[calc.type])) {
+                        attaquer[calc.type] = calc.limite;
+                      }
+                      if (eval(val[calc.type] + calc.compare + attaquer[calc.type])) {
+                        attaquer[calc.type] = val[calc.type];
+                        TWX.BS.attaquants[calc.type] = {
+                          'type': calc.type,
+                          'name': val.name,
+                          'obj': val
+                        };
+                      }
+                    } else {
+                      if (!isDefined(defenseurs[calc.type])) {
+                        defenseurs[calc.type] = calc.limite;
+                      }
+                      if (eval(val[calc.type] + calc.compare + defenseurs[calc.type])) {
+                        defenseurs[calc.type] = val[calc.type];
+                        TWX.BS.defenseurs[calc.type] = {
+                          'type': calc.type,
+                          'name': val.name,
+                          'obj': val
+                        };
+                      }
+                    }
+                  }
+                });
+              });
+              bo.moyatt = bo.startAttPV / bo.countAtt;
+              bo.moydef = bo.startDefPV / bo.countDef;
+              bo.degAtt = bo.degAtt / bo.countAtt;
+              bo.degDef = bo.degDef / bo.countDef;
+              var fort = CemeteryWindow.fortId;
+              this.results.push({
+                titre: TWXlang.BS.total + TWXlang.BS.startHP + '\t\t\t',
+                attack: bo.startAttPV,
+                defend: bo.startDefPV
+              });
+              this.results.push({
+                titre: TWXlang.BS.total + TWXlang.BS.endHP + '\t\t\t',
+                attack: bo.finishedAttPV,
+                defend: bo.finishedDefPV
+              });
+              this.results.push({
+                titre: TWXlang.BS.HP + ' ' + TWXlang.BS.difference + '\t\t\t',
+                attack: (bo.startAttPV - bo.finishedAttPV),
+                defend: (bo.startDefPV - bo.finishedDefPV)
+              });
+              this.results.push({
+                titre: TWXlang.BS.average + TWXlang.BS.HP + '\t\t\t',
+                attack: bo.moyatt.toFixed(2),
+                defend: bo.moydef.toFixed(2)
+              });
+              this.results.push({
+                titre: TWXlang.BS.average + TWXlang.BS.damage + '\t\t\t',
+                attack: bo.degAtt.toFixed(2),
+                defend: bo.degDef.toFixed(2)
+              });
+              this.results.push({
+                titre: TWXlang.BS.average + TWXlang.BS.dodgedShots + '\t\t\t',
+                attack: (bo.att.dodgecount / bo.countAtt).toFixed(2),
+                defend: (bo.def.dodgecount / bo.countDef).toFixed(2)
+              });
+              this.results.push({
+                titre: TWXlang.BS.average + TWXlang.BS.hitCount + '\t\t\t',
+                attack: (bo.att.hitcount / bo.countAtt).toFixed(2),
+                defend: (bo.def.hitcount / bo.countDef).toFixed(2)
+              });
+              this.results.push({
+                titre: TWXlang.BS.average + TWXlang.BS.missedShots + '\t\t\t',
+                attack: (bo.att.misscount / bo.countAtt).toFixed(2),
+                defend: (bo.def.misscount / bo.countDef).toFixed(2)
+              });
+              this.results.push({
+                titre: TWXlang.BS.average + TWXlang.BS.hitsTaken + '\t\t\t',
+                attack: (bo.att.takenhits / bo.countAtt).toFixed(2),
+                defend: (bo.def.takenhits / bo.countDef).toFixed(2)
+              });
+              this.results.push({
+                titre: TWXlang.BS.avgDamage + '\t\t\t',
+                attack: (bo.att.avg_damage / bo.countAtt).toFixed(2),
+                defend: (bo.def.avg_damage / bo.countDef).toFixed(2)
+              });
+              this.results.push({
+                titre: TWXlang.BS.avgDamageMax + '\t\t\t',
+                attack: (bo.att.maxdamage / bo.countAtt).toFixed(2),
+                defend: (bo.def.maxdamage / bo.countDef).toFixed(2)
+              });
+              this.results.push({
+                titre: TWXlang.BS.avgWeaponDamage + '\t\t\t',
+                attack: ((bo.att.weaponmaxdmg + bo.att.weaponmindmg) / 2 / bo.countAtt).toFixed(2),
+                defend: ((bo.def.weaponmaxdmg + bo.def.weaponmindmg) / 2 / bo.countDef).toFixed(2)
+              });
+              this.results.push({
+                titre: TWXlang.BS.avgWeaponDamageMax + '\t\t\t',
+                attack: (bo.att.weaponmaxdmg / bo.countAtt).toFixed(2),
+                defend: (bo.def.weaponmaxdmg / bo.countDef).toFixed(2)
+              });
+            },
+            inject: function () {
+              this.initFormule();
+              CemeteryWindow.showStatInit = function (battle_id, data) {
+                var newfunction = CemeteryWindow.showStatInit;
+                return function (battle_id, data) {
+                  try {
+                    newfunction.bind(this)(battle_id, data);
+                    $(this.window.getMainDiv()).children().find('.TWTStatButton').remove();
+                    $(this.window.getMainDiv()).find('div.tw2gui_window_content_pane').append('<span title="Battle Stars" onclick=\'TWX.BS.vasy()\'  class="TWTStatButton"><img ' +'style="position:absolute;top:15px;left:672px;width:15px;height:15px;padding:0px;border:0px;margin:0px;cursor:pointer;"' +
+                      ' src="/images/icons/achv_points.png" /></span>');
+                  } catch (e) {
+                    console.log(e);
+                  }
+                };
+              }
+              ();
+            },
+            vasy: function () {
+              var route = $('#route', CemeteryWindow.DOM);
+              if (route.length === 0 || (route.text() != 'global')) {
+                if (route.length === 0) {
+                  this.original = {
+                    saveTitle: $('.info', CemeteryWindow.DOM).text(),
+                    saveFoot: $('.footer', CemeteryWindow.DOM).html(),
+                  };
+                  $('#battle_stat', CemeteryWindow.DOM).attr('id', 'battle_statOri');
+                  $('#battle_statOri', CemeteryWindow.DOM).css('display', 'none');
+                  this.calculStars();
+                  this.openWindow();
+                } else {
+                  if (route.text() == 'original') {
+                    $('#battle_stat', CemeteryWindow.DOM).attr('id', 'battle_statOri');
+                    $('#battle_statOri', CemeteryWindow.DOM).css('display', 'none');
+                    this.openWindow();
+                  } else {
+                    $('#battle_stat', CemeteryWindow.DOM).attr('id', 'battle_statDetail');
+                    $('#battle_statDetail', CemeteryWindow.DOM).remove();
+                  }
+                }
+                this.createStarsTable();
+                $.each(this.defenseurs, function (ind, star) {
+                  TWX.BS.getLigne(star, ind);
+                });
+                $.each(this.attaquants, function (ind, star) {
+                  TWX.BS.getLigne(star, ind);
+                });
+              } else {
+                route.text('original');
+                $('.info', CemeteryWindow.DOM).text(this.original.saveTitle);
+                $('.footer', CemeteryWindow.DOM).html(this.original.saveFoot);
+                $('#battle_stat', CemeteryWindow.DOM).attr('id', 'battle_statStats');
+                $('#battle_statStats', CemeteryWindow.DOM).remove();
+                $('#battle_statOri', CemeteryWindow.DOM).attr('id', 'battle_stat');
+                $('#battle_stat', CemeteryWindow.DOM).css('display', 'block');
+              }
+            },
+          };
+          function calcul(pType, pLibelle, pTexte, pForm, pHead, pVariables, pConstr, pTError, pCompare, pSort, pPos, pNull, pFloat) {
+            this.globalHeader = new Array('#', TWXlang.BS.name);
+            this.help = pTexte;
+            this.type = pType;
+            this.formule = pForm;
+            this.header = pHead;
+            this.libelle = pLibelle;
+            this.variables = pVariables;
+            this.sort = pSort;
+            this.compare = pCompare;
+            this.shouldBePos = pPos;
+            this.shouldBeNull = pNull;
+            this.contrainte = pConstr;
+            this.isFloating = pFloat;
+            this.testError = pTError;
+            if (this.compare.indexOf('>') >  - 1) {
+              this.limite = '0';
+            } else {
+              this.limite = '9999999999';
+            }
+          }
+          calcul.prototype.init = function () {
+            this.type = '';
+            this.help = '';
+            this.formule = '';
+            this.header = '';
+            this.libelle = '';
+            this.variables = {};
+            this.sort = true;
+            this.shouldBePos = false;
+            this.shouldBeNull = true;
+            this.contrainte = '';
+          };
+          calcul.prototype.getLigne = function (val) {
+            var cellules = {};
+            var css = 'tw_blue';
+            if (val.battle_type == 'attacker') {
+              css = 'tw_red';
+            }
+            if ((!this.shouldBePos) || (this.shouldBePos && val[this.type] > 0)) {
+              cellules.battle_num = val.ind;
+              cellules.battle_nam = val.name;
+              $.each(this.variables, function (ind, td) {
+                var det;
+                if (td.indexOf('.') > 0) {
+                  arTd = td.split('.');
+                  var cible = val;
+                  $.each(arTd, function (ind, value) {
+                    cible = cible[value];
+                  });
+                  det = cible;
+                } else
+                  det = val[td];
+                cellules['battle_cls' + ind] = det;
+              });
+              TWX.BS.tableClassement.buildRow('battlestat ' + css, cellules, TWX.BS.withMod(this, val));
+            }
+          };
+          calcul.prototype.getShortLigne = function (val) {
+            try {
+              var header = this.header;
+              var lig = '';
+              $.each(this.variables, function (ind, td) {
+                var det;
+                if (td.indexOf('.') > 0) {
+                  arTd = td.split('.');
+                  var cible = val;
+                  $.each(arTd, function (ind, value) {
+                    cible = cible[value];
+                  });
+                  det = cible; //val[arTd[0]][arTd[1]]
+                } else {
+                  det = val[td];
+                }
+                lig += header[ind] + ': ' + det + '|';
+              });
+              return lig;
+            } catch (execption) {
+              console.log(execption);
+              return '';
+            }
+          };
+          calcul.prototype.getHeader = function () {
+            var title = '',
+            header = this.globalHeader.concat(this.header),
+            wdth = Math.round((74) / (this.header.length));
+            $('#battle_stat', CemeteryWindow.DOM).attr('id', 'battle_statStar');
+            $('#battle_statStar', CemeteryWindow.DOM).remove();
+            $('#battle_stat', CemeteryWindow.DOM).text('details');
+            TWX.BS.tableClassement = new west.gui.Table(false).setId('battle_stat');
+            TWX.BS.tableClassement.createEmptyMessage('Battle Stars').addColumn('battle_num', {
+              sortBy: 'name'
+            }).addColumn('battle_nam', {
+              sortBy: 'name'
+            }).appendToThCell('head', 'battle_num', header[0], header[0]).appendToThCell('head', 'battle_nam', header[1], header[1]);
+            $.each(this.header, function (ind, th) {
+              TWX.BS.tableClassement.addColumn('battle_cls' + ind, {
+                sortBy: th
+              }).appendToThCell('head', 'battle_cls' + ind, th, th);
+              TWX.BS.tableClassement.getCell('head', 'battle_cls' + ind).css('width', wdth + '%');
+            });
+            $('div.cemetery-content', CemeteryWindow.DOM).append(TWX.BS.tableClassement.getMainDiv());
+            return title;
+          };
+          calcul.prototype.sortArray = function (arr) {
+            var type = this.type;
+            var sortable = this.sort;
+            arr.sort(function (a, b) {
+              var x = a[type];
+              var y = b[type];
+              if ($.isNumeric(x) && $.isNumeric(y)) {
+                if (sortable) {
+                  return ((x < y) ?  - 1 : ((x > y) ? 1 : 0));
+                } else {
+                  return ((x > y) ?  - 1 : ((x < y) ? 1 : 0));
+                }
+              } else {
+                throw ('Tri impossible sur du non numerique');
+              }
+            });
+            return arr;
+          };
+          calcul.prototype.getTaux = function (val) {
+            if (eval(this.contrainte)) {
+              taux = eval(this.formule);
+            } else {
+              taux = eval(this.testError);
+            }
+            if (this.isFloating) {
+              taux = parseFloat(taux.toFixed(2));
+            }
+            return taux; //.toFixed(2);
+          };
+          TWX.addStyle('.window_Stats .window_inside { width:630px;height:380 position:absolute; left:5px; top:2px;-webkit-user-select: text !important; -khtml-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important;height:270px; }' +
+            '.window_Stats .window_footer { text-align:right;} ' +
+            '.window_Stats .cell_stat { width:200px;font-weight:800;text-shadow:1px 0 0 white; } ' +
+            '.window_Stats .cell_att { width:120px; text-align:center;} ' +
+            '.window_Stats .cell_def { width:120px;text-align:center; } ' +
+            '.window_Stats .cell_dif { width:120px; text-align:center;} ' +
+            '.window_Stats .tbody .cell_stat { padding-left:6px; text-align:left;width:200px;font-weight:800;text-shadow:1px 0 0 white; } .window_Stats .tbody .row { left:0px; }' +
+            '.window_Stats .tbody .cell_att { text-align:center; color:#8A0000;width:120px;font-weight:800;text-shadow:1px 0 0 white; }' +
+            '.window_Stats .tbody .cell_def { text-align:center; color:#00008A;width:120px;font-weight:800;text-shadow:1px 0 0 white; }' +
+            '.window_Stats .tbody .cell_dif { text-align:center;width:120px;font-weight:800;text-shadow:1px 0 0 white; }' +
+            '.zone {-webkit-user-select: text !important; -khtml-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important;height:270px; }');
+          TWX.BS.inject();
         },
       };
       TWX.CalcTwdb = {
