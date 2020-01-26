@@ -6,7 +6,7 @@
  * @updated 2015-09-19
  * @link    http://jscolor.com
  */
-jscolor={dir:TWXstart.url,bindClass:'color',binding:true,preloading:true,install:function(){jscolor.addEvent(window,'load',jscolor.init);},init:function(){if(jscolor.binding){jscolor.bind();}
+jscolor={dir:TWX.url,bindClass:'color',binding:true,preloading:true,install:function(){jscolor.addEvent(window,'load',jscolor.init);},init:function(){if(jscolor.binding){jscolor.bind();}
 if(jscolor.preloading){jscolor.preload();}},getDir:function(){return jscolor.dir;},bind:function(){var matchClass=new RegExp('(^|\\s)('+jscolor.bindClass+')(\\s*(\\{[^}]*\\})|\\s|$)','i');var e=document.getElementsByTagName('input');for(var i=0;i<e.length;i+=1){if(jscolor.isColorAttrSupported&&e[i].type.toLowerCase()=='color'){continue;}
 var m;if(!e[i].color&&e[i].className&&(m=e[i].className.match(matchClass))){var prop={};if(m[4]){try{prop=(new Function('return ('+m[4]+')'))();}catch(eInvalidProp){}}
 e[i].color=new jscolor.color(e[i],prop);}}},preload:function(){for(var fn in jscolor.imgRequire){if(jscolor.imgRequire.hasOwnProperty(fn)){jscolor.loadImage(fn);}}},images:{pad:[181,101],sld:[16,101],cross:[15,15],arrow:[7,11]},imgRequire:{},imgLoaded:{},requireImage:function(filename){jscolor.imgRequire[filename]=true;},loadImage:function(filename){if(!jscolor.imgLoaded[filename]){jscolor.imgLoaded[filename]=new Image();jscolor.imgLoaded[filename].src=jscolor.getDir()+filename;}},fetchElement:function(mixed){return typeof mixed==='string'?document.getElementById(mixed):mixed;},addEvent:function(el,evnt,func){if(el.addEventListener){el.addEventListener(evnt,func,false);}else if(el.attachEvent){el.attachEvent('on'+evnt,func);}},fireEvent:function(el,evnt){if(!el){return;}
