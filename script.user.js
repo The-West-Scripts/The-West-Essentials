@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name The West - Essentials
 // @namespace https://the-west-scripts.github.io/The-West-Essentials/
-// @author Tom Robert (Leotas/Falc0n.RG/neversleep1911/Rask Hund/Dun/Esperiano)
+// @author Tom Robert (Leotas/Falc0n.RG/neversleep1911/Rask Hund/Esperiano/Dun/Macabre2077)
 // @description The West 3.0
 // @include https://*.the-west.*/game.php*
 // @include https://*.the-west.*/index.php?page=logout
@@ -9,12 +9,12 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.46.5
+// @version 1.46.6
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
 // ==/UserScript==
-// translation:Tom Robert(German&English),Darius II/Wojcieszy/TeeNOmore127/pantomas(Polish),pepe100/HALCON DE ORO(Spanish),ruud99(Dutch),Creature/krcsirke(Hungarian),Timemod Herkumo(Greek),Elly Siranno/Raymond Reddington/jccwest/gamer(Portuguese),Billy-AR/tw81(Italian),Tom Robert/Falc0n.RG/Dun(French),Jamza/Surge(Czech&Slovak),Did97(Russian),OguzhanCekic(Turkish)
+// translation:Tom Robert(German&English),Darius II/Wojcieszy/TeeNOmore127/pantomas(Polish),pepe100/HALCON DE ORO(Spanish),ruud99/Tanais(Dutch),Creature/krcsirke(Hungarian),Timemod Herkumo(Greek),Elly Siranno/Raymond Reddington/jccwest/gamer(Portuguese),Billy-AR/tw81(Italian),Tom Robert/Falc0n.RG/Dun(French),Jamza/Surge(Czech&Slovak),Did97/Macabre2077(Russian),OguzhanCekic(Turkish)
 (function (fn) {
   var script = document.createElement('script');
   script.setAttribute('type', 'application/javascript');
@@ -26,7 +26,7 @@
     location.href = '/';
   } else {
     TWXstart = {
-      version: '1.46.5',
+      version: '1.46.6',
       langs: {
         en: {
           language: 'English',
@@ -82,6 +82,7 @@
           features: 'Features',
           name: 'Name',
           save: 'Save',
+          saveMessage: 'Saved successfully',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
           frame2: 'Helpful web pages',
@@ -151,7 +152,6 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage: 'Saved successfully',
           CT: {
             ColorWindowTitle: 'Color tchat setting',
             ColorWindowPreviewTxt: '*Click on the letters to change color',
@@ -264,6 +264,65 @@
             avgWeaponDamage: 'Average weapon damage',
             avgWeaponDamageMax: 'Weapon damage max',
           },
+          KoM: {
+            success: 'Rank is given!',
+            error: 'An error has occured',
+            showPlayerOnMap: 'Show player on map',
+            showTown: 'Show town overview',
+            showAlly: 'Show alliance overview',
+            showFort: 'Show fort overview',
+            showBattle: 'Show battlefield',
+            atFort: 'At the fort',
+            nearFort: 'Nearby the fort',
+            notFort: 'Not at the fort',
+            evaluated: 'Number of evaluated players',
+            started: 'The battle is taking place right now',
+            remindAlly: 'Remind ally members, who haven\'t participated yet',
+            where: 'Where',
+            when: 'When',
+            att: 'Attackers',
+            def: 'Defenders',
+            nodata: 'Couldn\'t load rank information for the fort',
+            getData: 'Loading rank information',
+            errorTimeout: 'The loading took too much time',
+            ascaptain: 'Promote to captain',
+            assergeant: 'Appoint as sergeant',
+            asprivate: 'Appoint as private',
+            asrecruit: 'Appoint as recruit',
+            asreservist: 'Appoint as reservist',
+            astraitor: 'Mark as traitor',
+            youcant: 'You can\'t demote fighters of<br>the same or higher rank.',
+            position: 'Position',
+            pos_undefined: 'No starting position',
+            notown: 'No town',
+            noally: 'No alliance',
+            damage: 'Damage',
+            flag: 'Flag',
+            inside: 'Inside the fort',
+            sectors: {
+              undef: 'No starting position',
+              0: 'The upper-left sector',
+              1: 'The lower-left sector',
+              2: 'The central left sector',
+              3: 'The lower central sector',
+              4: 'The central right sector',
+              5: 'The lower-right sector',
+              6: 'The upper-right sector',
+              7: 'Adventurer\'s tower',
+              8: 'Dueller\'s tower',
+              9: 'Soldier\'s tower',
+              10: 'Worker\'s tower',
+              11: 'Barracks',
+              12: 'Resource stock',
+              13: 'Headquarters',
+              14: 'North wall',
+              15: 'South wall',
+              16: 'West wall',
+              17: 'East wall',
+              18: 'Gate',
+              19: 'Flag',
+            },
+          },
         },
         de: {
           language: 'German (Deutsch)',
@@ -320,6 +379,7 @@
           features: 'Features',
           name: 'Name',
           save: 'Speichern',
+          saveMessage: 'Speichern erfolgreich',
           saveMessage2: 'Einstellungen gespeichert. Manche Änderungen werden erst nach Neuladen des Spiels sichtbar.',
           setbonus2: 'Lass dir die Boni aller Sets anzeigen',
           frame2: 'Hilfreiche Webseiten',
@@ -389,7 +449,6 @@
           custom1: 'Eigene',
           custom2: 'Deine eigene Login-Liste',
           edit: 'Bearbeiten',
-          saveMessage: 'Speichern erfolgreich',
           CT: {
             ColorWindowTitle: 'Color tchat Einstellung',
             ColorWindowPreviewTxt: '*Klicke auf diese Buchstaben um die aktuell im oberen Feld gewählte Farbe reinzumischen',
@@ -502,6 +561,65 @@
             avgWeaponDamage: 'Durchschn Waffenschaden',
             avgWeaponDamageMax: 'Max Schaden der Waffe',
           },
+          KoM: {
+            success: 'Musterung erfolgreich!',
+            error: 'Ein Fehler ist aufgetreten',
+            showPlayerOnMap: 'Spieler auf Karte zeigen',
+            showTown: 'Stadtübersicht anzeigen',
+            showAlly: 'Bündnisübersicht anzeigen',
+            showFort: 'Fortübersicht anzeigen',
+            showBattle: 'Schlachtfeld öffnen',
+            atFort: 'Am Fort',
+            nearFort: 'In der Nähe des Forts',
+            notFort: 'Nicht am Fort',
+            evaluated: 'Anzahl gemusterte Spieler',
+            started: 'Die Schlacht ist in vollem Gange',
+            remindAlly: 'Informiere Allianzmitglieder, die noch nicht angemeldet sind',
+            where: 'Wo',
+            when: 'Wann',
+            att: 'Angreifer',
+            def: 'Verteidiger',
+            nodata: 'Rang-Informationen für das Fort konnten nicht geladen werden',
+            getData: 'Rang-Informationen werden geladen',
+            errorTimeout: 'Zeitüberschreitung',
+            ascaptain: 'Zum Captain befördern',
+            assergeant: 'Zum Sergeant ernennen',
+            asprivate: 'Zum Private ernennen',
+            asrecruit: 'Zum Rekruten ernennen',
+            asreservist: 'Zum Reservisten ernennen',
+            astraitor: 'Als Verräter markieren',
+            youcant: 'Du kannst Kämpfer von gleichem oder<br>höherem Rang nicht degradieren.',
+            position: 'Position',
+            pos_undefined: 'Keine Startposition',
+            notown: 'Stadtlos',
+            noally: 'Ohne Bündnis',
+            damage: 'Schaden',
+            flag: 'Flagge',
+            inside: 'Innerhalb des Forts',
+            sectors: {
+              undef: 'Keine Startposition',
+              0: 'Sektor oben-links',
+              1: 'Sektor unten-links',
+              2: 'Sektor mitte-links',
+              3: 'Sektor unten-mitte',
+              4: 'Sektor mitte-rechts',
+              5: 'Sektor unten-rechts',
+              6: 'Sektor oben-rechts',
+              7: 'Abenteurerturm',
+              8: 'Duellantentrum',
+              9: 'Soldatenturm',
+              10: 'Arbeiterturm',
+              11: 'Kaserne',
+              12: 'Rohstofflager',
+              13: 'Hauptgebäude',
+              14: 'Nordwall',
+              15: 'Südwall',
+              16: 'Westwall',
+              17: 'Ostwall',
+              18: 'Tor',
+              19: 'Flagge',
+            },
+          },
         },
         pl: {
           language: 'Polish (polski)',
@@ -557,6 +675,7 @@
           features: 'Ustawienia',
           name: 'Nazwa',
           save: 'Zapisz',
+          saveMessage: 'Saved successfully',
           saveMessage2: 'Ustawienia zapisane. Niektóre zmiany potrzebują odświeżenia okna gry.',
           setbonus2: 'Informacje o ustawionych premie',
           frame2: 'Pomocna stron internetowych',
@@ -626,7 +745,6 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage: 'Saved successfully',
           CT: {
             ColorWindowTitle: 'Ustawienia Koloru Tchat',
             ColorWindowPreviewTxt: '*Kliknij na literę, aby zmienić kolor',
@@ -739,6 +857,65 @@
             avgWeaponDamage: 'Średnia obrażeń broni',
             avgWeaponDamageMax: 'Największe obrażenia broni',
           },
+          KoM: {
+            success: 'Ranga została zmieniona!',
+            error: 'Wystąpił błąd',
+            showPlayerOnMap: 'Pokaż gracza na mapie',
+            showTown: 'Pokaż podgląd profilu',
+            showAlly: 'Pokaż podgląd sojuszu',
+            showFort: 'Pokaż podgląd fortu',
+            showBattle: 'Pokaż bitwy',
+            atFort: 'W forcie',
+            nearFort: 'W pobliżu fortu',
+            notFort: 'Nie w forcie',
+            evaluated: 'Ocena gracza',
+            started: 'Bitwa właśnie się odbywa',
+            remindAlly: 'Przypomnij członków sojuszu, którzy nie dotychczas ze',
+            where: 'Gdzie',
+            when: 'Gdy',
+            att: 'Napastnicy',
+            def: 'Obrońcy',
+            nodata: 'Nie można załadować danych fortu',
+            getData: 'Pobieranie danych o rangach',
+            errorTimeout: 'Zbyt długie ładowanie danych',
+            ascaptain: 'Awans na kapitana',
+            assergeant: 'Mianowanie na sierżanta',
+            asprivate: 'Mianowanie na szeregowca',
+            asrecruit: 'Mianowanie na rekruta',
+            asreservist: 'Mianowanie na rezerwistę',
+            astraitor: 'Oznacz jako zdrajcę',
+            youcant: 'Nie można zmienić ragi, posiadasz<br>niższą lub taką samą rangę.',
+            position: 'Pozycja',
+            pos_undefined: 'Źle ustawiony',
+            notown: 'No town',
+            noally: 'Bez sojuszu',
+            damage: 'Obrażenia',
+            flag: 'Flaga',
+            inside: 'W forcie',
+            sectors: {
+              undef: 'Źle ustawiony',
+              0: 'Lewy górny - 7',
+              1: 'Lewy dolny - 6',
+              2: 'Dolny lewy - 5',
+              3: 'Dolny środkowy - 4',
+              4: 'Dolny Prawy - 3',
+              5: 'Prawy dolny - 2',
+              6: 'Prawy górny - 1',
+              7: 'Baszta poszukiwaczy',
+              8: 'Baszta zawadiaków',
+              9: 'Baszta żołnierzy',
+              10: 'Baszta budowniczych',
+              11: 'Koszary',
+              12: 'Magazyn',
+              13: 'Budynek główny',
+              14: 'Górny mur',
+              15: 'Dolny mur',
+              16: 'Lewy mur',
+              17: 'Prawy mur',
+              18: 'Brama',
+              19: 'Flaga',
+            },
+          },
         },
         es: {
           language: 'Spanish (español)',
@@ -794,6 +971,7 @@
           features: 'Funciones',
           name: 'Nombre',
           save: 'Guardar',
+          saveMessage: 'Grabado con éxito',
           saveMessage2: 'Ajustes guardados. Algunos cambios necesitan una actualización de la ventana de juego.',
           setbonus2: 'Información acerca de los bonus de conjunto',
           frame2: 'Páginas web votos',
@@ -862,7 +1040,6 @@
           custom1: 'Personalizar',
           custom2: 'Tu lista de conexión personalizada',
           edit: 'Editar',
-          saveMessage: 'Grabado con éxito',
           CT: {
             ColorWindowTitle: 'Configurar Color tchat',
             ColorWindowPreviewTxt: '*Haga clic en la carta de un cambio de color',
@@ -975,6 +1152,65 @@
             avgWeaponDamage: 'Daño por arma medio',
             avgWeaponDamageMax: 'Daño por arma max. medio',
           },
+          KoM: {
+            success: 'Rango asignado!',
+            error: 'Un error ha ocurrido',
+            showPlayerOnMap: 'Mostrar jugador en el mapa',
+            showTown: 'Mostrar resumen de ciudad',
+            showAlly: 'Mostrar resumen de alianza',
+            showFort: 'Mostrar resumen del fuerte',
+            showBattle: 'Mostrar campo de batalla',
+            atFort: 'En el fuerte',
+            nearFort: 'Cerca del fuerte',
+            notFort: 'No en el fuerte',
+            evaluated: 'Evaluar jugador',
+            started: 'La batalla ya ha comenzado',
+            remindAlly: 'Recuerde a los miembros de la alianza, que todavía no han participado',
+            where: 'Dónde',
+            when: 'Cuando',
+            att: 'atacantes',
+            def: 'defensores',
+            nodata: 'No se puede cargar la información de rango para el fuerte',
+            getData: 'Información del rango cargada',
+            errorTimeout: 'La carga tomó demasiado tiempo',
+            ascaptain: 'Promocionar a capitán',
+            assergeant: 'Designado como sargento',
+            asprivate: 'Designar como soldado raso',
+            asrecruit: 'Designar como recluta',
+            asreservist: 'Designar reservista',
+            astraitor: 'Marcar como traidor',
+            youcant: 'No se pueden disminuir los combatientes<br>con igual o superior rango.',
+            position: 'Posición',
+            pos_undefined: 'Sin posición de partida',
+            notown: 'Sin ciudad',
+            noally: 'Sin alianza',
+            damage: 'Daño',
+            flag: 'Bandera',
+            inside: 'Dentro del fuerte',
+            sectors: {
+              undef: 'Sin posición de partida',
+              0: 'El sector superior izquierdo',
+              1: 'El sector central izquierdo',
+              2: 'El sector inferior izquierdo',
+              3: 'El sector central inferior',
+              4: 'El sector inferior derecho',
+              5: 'El sector central derecho',
+              6: 'El sector superior derecho',
+              7: 'Torre Aventureros',
+              8: 'Torre Duelistas',
+              9: 'Torre Soldados',
+              10: 'Torre Trabajadores',
+              11: 'Barracas',
+              12: 'Almacén de recursos',
+              13: 'Cuartel general',
+              14: 'Muralla Norte',
+              15: 'Muralla Sur',
+              16: 'Muralla Oeste',
+              17: 'Muralla Este',
+              18: 'Puerta',
+              19: 'Bandera',
+            },
+          },
         },
         nl: {
           language: 'Dutch (Nederlands)',
@@ -1030,6 +1266,7 @@
           features: 'Features',
           name: 'Naam',
           save: 'Opslaan',
+          saveMessage: 'Sparen succes',
           saveMessage2: 'Instellingen toegevoegd. Sommige veranderingen hebben behoefte aan een refresh van het spel venster.',
           setbonus2: 'Informatie over de set bonusen',
           frame2: 'Nuttige websites',
@@ -1099,7 +1336,6 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage: 'Sparen succes',
           CT: {
             ColorWindowTitle: 'Color tchat setting',
             ColorWindowPreviewTxt: '*Click on the letters to change color',
@@ -1212,6 +1448,65 @@
             avgWeaponDamage: 'Average weapon damage',
             avgWeaponDamageMax: 'Weapon damage max',
           },
+          KoM: {
+            success: 'Rang wordt gegeven!',
+            error: 'Er is een fout opgetreden',
+            showPlayerOnMap: 'Laat speler zien op de map',
+            showTown: 'Stadsoverzicht tonen',
+            showAlly: 'Alliantie overzicht tonen',
+            showFort: 'Fort overzicht tonen',
+            showBattle: 'Show slagveld',
+            atFort: 'Bij het fort',
+            nearFort: 'Dichtbij het fort',
+            notFort: 'Niet bij het fort',
+            evaluated: 'Evalueer speler',
+            started: 'Het gevecht is volop bezig',
+            remindAlly: 'Herinner alliantieleden, die nog niet hebben deelgenomen',
+            where: 'Waarin',
+            when: 'Wanneer',
+            att: 'Aanvallers',
+            def: 'Verdedigers',
+            nodata: 'Informatie over rangen is niet gegeven voor het fort!',
+            getData: 'Ranginformatie aan het laden',
+            errorTimeout: 'Het downloaden duurde te lang',
+            ascaptain: 'Tot kapitein bevorderen',
+            assergeant: 'Benoemen tot sergeant',
+            asprivate: 'Tot soldaat benoemen',
+            asrecruit: 'Tot rekruut benoemen',
+            asreservist: 'Tot reservist benoemen',
+            astraitor: 'Als verrader markeren',
+            youcant: 'Je kan geen spelers met dezelfde<br>of een hogere rang rekruteren.',
+            position: 'Positie',
+            pos_undefined: 'Geen startpositie',
+            notown: 'No town',
+            noally: 'Geen alliantie',
+            damage: 'Schade',
+            flag: 'Vlag',
+            inside: 'Binnen het fort',
+            sectors: {
+              undef: 'Geen startpositie',
+              0: 'De sector links boven',
+              1: 'De centraal linker sector',
+              2: 'De sector linksonder',
+              3: 'De sector midden onder',
+              4: 'De sector rechtsonder',
+              5: 'De centraal rechter sector',
+              6: 'De sector rechtsboven',
+              7: 'Avonturierstoren',
+              8: 'Duellantentoren',
+              9: 'Soldatentoren',
+              10: 'Arbeiderstoren',
+              11: 'Kazerne',
+              12: 'Opslagplaats',
+              13: 'Hoofdgebouw',
+              14: 'Bovenmuur',
+              15: 'Ondermuur',
+              16: 'Linkermuur',
+              17: 'Rechtermuur',
+              18: 'Poort',
+              19: 'Vlag',
+            },
+          },
         },
         hu: {
           language: 'Hungarian (Magyar)',
@@ -1267,6 +1562,7 @@
           features: 'Funkciók',
           name: 'Név',
           save: 'Mentés',
+          saveMessage: 'Sikeres mentés',
           saveMessage2: 'Beállítások elmentve. Néhány változás életbe lépéséhez frissítse a játék ablakát.',
           setbonus2: 'Információk a szettbónuszokról',
           frame2: 'Hasznos weboldalak',
@@ -1336,7 +1632,6 @@
           custom1: 'Egyedi',
           custom2: 'Egyedi bejelentkezési listád',
           edit: 'Szerkesztés',
-          saveMessage: 'Sikeres mentés',
           CT: {
             ColorWindowTitle: 'Color tchat setting',
             ColorWindowPreviewTxt: '*Click on the letters to change color',
@@ -1449,6 +1744,65 @@
             avgWeaponDamage: 'Average weapon damage',
             avgWeaponDamageMax: 'Weapon damage max',
           },
+          KoM: {
+            success: 'Rank is given!',
+            error: 'An error has occured',
+            showPlayerOnMap: 'Show player on map',
+            showTown: 'Show town overview',
+            showAlly: 'Show alliance overview',
+            showFort: 'Show fort overview',
+            showBattle: 'Show battlefield',
+            atFort: 'At the fort',
+            nearFort: 'Nearby the fort',
+            notFort: 'Not at the fort',
+            evaluated: 'Number of evaluated players',
+            started: 'The battle is taking place right now',
+            remindAlly: 'Remind ally members, who haven\'t participated yet',
+            where: 'Where',
+            when: 'When',
+            att: 'Attackers',
+            def: 'Defenders',
+            nodata: 'Couldn\'t load rank information for the fort',
+            getData: 'Loading rank information',
+            errorTimeout: 'The loading took too much time',
+            ascaptain: 'Promote to captain',
+            assergeant: 'Appoint as sergeant',
+            asprivate: 'Appoint as private',
+            asrecruit: 'Appoint as recruit',
+            asreservist: 'Appoint as reservist',
+            astraitor: 'Mark as traitor',
+            youcant: 'You can\'t demote fighters of<br>the same or higher rank.',
+            position: 'Position',
+            pos_undefined: 'No starting position',
+            notown: 'No town',
+            noally: 'No alliance',
+            damage: 'Damage',
+            flag: 'Flag',
+            inside: 'Inside the fort',
+            sectors: {
+              undef: 'No starting position',
+              0: 'The upper-left sector',
+              1: 'The lower-left sector',
+              2: 'The central left sector',
+              3: 'The lower central sector',
+              4: 'The central right sector',
+              5: 'The lower-right sector',
+              6: 'The upper-right sector',
+              7: 'Adventurer\'s tower',
+              8: 'Dueller\'s tower',
+              9: 'Soldier\'s tower',
+              10: 'Worker\'s tower',
+              11: 'Barracks',
+              12: 'Resource stock',
+              13: 'Headquarters',
+              14: 'North wall',
+              15: 'South wall',
+              16: 'West wall',
+              17: 'East wall',
+              18: 'Gate',
+              19: 'Flag',
+            },
+          },
         },
         el: {
           language: 'Greek (ελληνικά)',
@@ -1504,6 +1858,7 @@
           features: 'Χαρακτηριστικά',
           name: ' Όνομα παίκτη',
           save: 'Αποθήκευση',
+          saveMessage: 'Αποθηκεύτηκε με επιτυχία',
           saveMessage2: 'Οι ρυθμίσεις αποθηκεύτηκαν. Ορισμένες αλλαγές χρειάζονται μια ανανέωση του παραθύρου του παιχνιδιού.',
           setbonus2: 'Πληροφορίες σχετικά με τα μπόνους των Σετ',
           frame2: 'Χρήσιμες ιστοσελίδες',
@@ -1573,7 +1928,6 @@
           custom1: 'Προσαρμοσμένο',
           custom2: 'Η προσαρμοσμένη λίστα σας σύνδεσης',
           edit: 'Επεξεργασία',
-          saveMessage: 'Αποθηκεύτηκε με επιτυχία',
           CT: {
             ColorWindowTitle: 'Ρυθμίσεις',
             ColorWindowPreviewTxt: '*Κάντε κλικ στα γράμματα για να αλλάξετε χρώμα',
@@ -1686,6 +2040,65 @@
             avgWeaponDamage: 'Μέση ζημιά από όπλα',
             avgWeaponDamageMax: 'Μέγιστη ζημιά όπλου',
           },
+          KoM: {
+            success: 'Ο βαθμός άλλαξε με επιτυχία!',
+            error: 'Παρουσιάστηκε σφάλμα',
+            showPlayerOnMap: 'Κεντράρισμα παίχτη στον χάρτη',
+            showTown: 'Επισκόπηση Πόλης',
+            showAlly: 'Επισκόπηση Συμμαχίας',
+            showFort: 'Επισκόπηση Οχυρού',
+            showBattle: 'Επισκόπηση Μάχης Οχυρού',
+            atFort: 'Βρίσκεται στο Οχυρό',
+            nearFort: 'Βρίσκεται κοντά στο Οχυρό',
+            notFort: 'Βρίσκεται μακριά από το Οχυρό',
+            evaluated: 'Αριθμός αξιολογούμενων παικτών',
+            started: 'Η μάχη μόλις ξεκίνησε',
+            remindAlly: 'Στείλτε μύνημα στα μέλη της συμμαχίας,<br>που δεν έχουν ακόμη συμμετάσχει στην μάχη.',
+            where: 'Πάμε στο Οχυρό',
+            when: 'Ημέρα Μάχης',
+            att: 'Επιτιθέμενοι',
+            def: 'Αμυνόμενοι',
+            nodata: 'Δεν ήταν δυνατή η φόρτωση των πληροφοριών κατάταξης βαθμίδας για το οχυρό',
+            getData: 'Φόρτωση πληροφοριών κατάταξης βαθμίδας',
+            errorTimeout: 'Η φόρτωση χρειάστηκε πολύ χρόνο',
+            ascaptain: 'Προβιβασμός σε Καπετάνιο',
+            assergeant: 'Ορισμός ως Λοχίας',
+            asprivate: 'Διορισμός ως Στρατιώτης',
+            asrecruit: 'Ορισμός ως Αστρατολόγητος',
+            asreservist: 'Ορισμός ως Έφεδρος',
+            astraitor: 'Σήμανση ως Προδότης',
+            youcant: 'Δεν μπορείτε να υποβιβάσετε παίχτες<br>της ίδιας ή υψηλότερης βαθμίδας',
+            position: 'Θέση στο οχυρό',
+            pos_undefined: 'Χωρίς θέση ακόμη',
+            notown: 'Χωρίς πόλη',
+            noally: 'Χωρίς συμμαχία',
+            damage: 'Ζημιά',
+            flag: 'Σημαία',
+            inside: 'Μέσα στο Οχυρό',
+            sectors: {
+              undef: '❝Χωρίς θέση ακόμη❞',
+              0: '❝Αριστερός (πάνω) μεγάλος τομέας❞',
+              1: '❝Αριστερός (κάτω) μεγάλος τομέας❞',
+              2: '❝Κεντρικός (αριστερά) μεγάλος τομέας❞',
+              3: '❝Κεντρικός (μεσαίος) μεγάλος τομέας❞',
+              4: '❝Κεντρικός (δεξιά) μεγάλος τομέας❞',
+              5: '❝Δεξιός (κάτω) μεγάλος τομέας❞',
+              6: '❝Δεξιός (πάνω) μεγάλος τομέας❞',
+              7: '❝Πύργος Τυχοδιοκτών❞',
+              8: '❝Πύργος Μονομάχων❞',
+              9: '❝Πύργος Στρατιωτών❞',
+              10: '❝Πύργος Εργατών❞',
+              11: '❝Κάτω δεξιά Σπιτάκι❞',
+              12: '❝Πάνω δεξιά Σπιτάκι❞',
+              13: '❝Αριστερά Σπιτάκι❞',
+              14: '❝Πάνω τοίχος❞',
+              15: '❝Κάτω τοίχος❞',
+              16: '❝Αριστερό τοίχος❞',
+              17: '❝Δεξιό τοίχος❞',
+              18: '❝Πύλες❞',
+              19: '❝Σημαία❞',
+            },
+          },
         },
         pt: {
           language: 'Portuguese (português)',
@@ -1736,11 +2149,12 @@
           skipHover: 'Pular janelas de confirmação ao abrir algumas caixas e itens.',
           skipDone: 'Você ganhou:',
           info: 'Informação',
-          contact: 'Contato:',
-          chooseLang: 'Escolher Idioma',
+          contact: 'Contato',
+          chooseLang: 'Escolhe idioma',
           features: 'Características',
           name: 'Nome',
           save: 'Salvar',
+          saveMessage: 'Salvo com sucesso!',
           saveMessage2: 'Configurações salvas. Algumas mudanças só apareceram quando atualizar a janela.',
           setbonus2: 'Informações sobre o bônus do set',
           frame2: 'Páginas da Web Úteis',
@@ -1810,7 +2224,6 @@
           custom1: 'Personalizado',
           custom2: 'Sua lista de login persnalizada',
           edit: 'Editar',
-          saveMessage: 'Salvo com sucesso!',
           CT: {
             ColorWindowTitle: 'Set Color tchat',
             ColorWindowPreviewTxt: '*Clique na letra de uma mudança de cor',
@@ -1923,6 +2336,65 @@
             avgWeaponDamage: 'Average weapon damage',
             avgWeaponDamageMax: 'Weapon damage max',
           },
+          KoM: {
+            success: 'Classificação é dada!',
+            error: 'Ocorreu um erro',
+            showPlayerOnMap: 'Mostra jogador no mapa',
+            showTown: 'Mostrar visualização da cidade',
+            showAlly: 'Mostra alliança',
+            showFort: 'Mostrar vista geral do forte',
+            showBattle: 'Mostrar campo de batalha',
+            atFort: 'No forte',
+            nearFort: 'Perto do forte',
+            notFort: 'Não está no forte',
+            evaluated: 'Avaliar jogador',
+            started: 'A batalha está a decorrer agora',
+            remindAlly: 'Relembre os membros da aliança, que ainda não participaram',
+            where: 'Onde',
+            when: 'Quando',
+            att: 'Atacantes',
+            def: 'Defensores',
+            nodata: 'Não é possível carregar as informações para a classificar o forte',
+            getData: 'A carregar informações de classificação',
+            errorTimeout: 'O carregamento demorou demasiado tempo',
+            ascaptain: 'Promover a capitão',
+            assergeant: 'Nomear como sargento',
+            asprivate: 'Nomear para soldado raso',
+            asrecruit: 'Nomear para recruta',
+            asreservist: 'Nomear como reservista',
+            astraitor: 'Marcar como traidor',
+            youcant: 'Não é possível dar patente a jogadores<br>com patente igual ou superior.',
+            position: 'Posição',
+            pos_undefined: 'Nenhuma posição',
+            notown: 'No town',
+            noally: 'Nome da Aliança',
+            damage: 'Dano',
+            flag: 'Bandiera',
+            inside: 'Dentro da forte',
+            sectors: {
+              undef: 'Não há posição de partida',
+              0: 'sector superior esquerdo',
+              1: 'sector centro esquerda',
+              2: 'sector inferior esquerdo',
+              3: 'sector inferior central',
+              4: 'sector inferior direito',
+              5: 'sector centro direita',
+              6: 'sector superior direito',
+              7: 'torre dos Aventureiros',
+              8: 'torre dos Pistoleiros ',
+              9: 'torre dos soldados',
+              10: 'torre dos Trabalhadores',
+              11: 'Quartel ',
+              12: 'Armazém',
+              13: 'Quartel Geral ',
+              14: 'Muro norte',
+              15: 'Muro sul',
+              16: 'Muro esquerdo',
+              17: 'Muro direito',
+              18: 'Portão',
+              19: 'Bandeira',
+            },
+          },
         },
         it: {
           language: 'Italian (italiano)',
@@ -1978,6 +2450,7 @@
           features: 'Caratteristiche',
           name: 'Nome',
           save: 'Salva',
+          saveMessage: 'Salvato con successo',
           saveMessage2: 'Impostazioni salvate. Aggiorna la pagina per renderle effettive.',
           setbonus2: 'Informazioni sui bonus set',
           frame2: 'Pagine internet di aiuto',
@@ -2047,7 +2520,6 @@
           custom1: 'Personalizza',
           custom2: 'La tua lista login personalizzata',
           edit: 'Modifica',
-          saveMessage: 'Salvato con successo',
           CT: {
             ColorWindowTitle: 'Color tchat setting',
             ColorWindowPreviewTxt: '*Click on the letters to change color',
@@ -2160,6 +2632,65 @@
             avgWeaponDamage: 'Average weapon damage',
             avgWeaponDamageMax: 'Weapon damage max',
           },
+          KoM: {
+            success: 'Il rango è stato dato!',
+            error: 'Si e\' verificato un errore',
+            showPlayerOnMap: 'Centra nella mappa',
+            showTown: 'Mostra riepilogo città',
+            showAlly: 'Mostra alleanza',
+            showFort: 'Mostra panoramica forte',
+            showBattle: 'Spettacolo campo di battaglia',
+            atFort: 'Al forte',
+            nearFort: 'Vicino al forte',
+            notFort: 'Non al forte',
+            evaluated: 'Valuta giocatore',
+            started: 'La battaglia è in pieno svolgimento',
+            remindAlly: 'Ricordare i membri dell alleanza, che non hanno ancora partecipato',
+            where: 'Dove',
+            when: 'Quando',
+            att: 'Attaccanti',
+            def: 'Difensori',
+            nodata: 'Impossibile caricare le informazioni di rango per la fortezza',
+            getData: 'Caricamento Informazioni rango',
+            errorTimeout: 'Il caricamento ha richiesto troppo tempo',
+            ascaptain: 'Promuovi a capitano',
+            assergeant: 'Nomina sergente',
+            asprivate: 'Nomina soldato semplice',
+            asrecruit: 'Nomina recluta',
+            asreservist: 'Nomina riservista',
+            astraitor: 'Contrassegna come traditore',
+            youcant: 'Non è possibile il reclutamento di giocatori<br>con rango uguale o superiore.',
+            position: 'Posizione',
+            pos_undefined: 'Nessuna posizione di partenza',
+            notown: 'No town',
+            noally: 'Nessuna alleanza',
+            damage: 'Danno',
+            flag: 'Bandiera',
+            inside: 'All\'interno del forte',
+            sectors: {
+              undef: 'Nessuna posizione di partenza',
+              0: ' -O1- Il settore superiore sinistro',
+              1: ' -O2- Il settore centrale sinistro',
+              2: ' -S1- Il settore in basso a sinistra',
+              3: ' -S2- Il settore centrale',
+              4: ' -S3- Il settore in basso a destra',
+              5: ' -E2- Il settore centrale destro',
+              6: ' -E1- Il settore superiore destro',
+              7: 'Torre avventuriero',
+              8: 'Torre duellante',
+              9: 'Torre soldato',
+              10: 'Torre lavoratore',
+              11: 'Caserma',
+              12: 'Magazzino',
+              13: 'Quartier generale',
+              14: 'Muro nord',
+              15: 'Muro sud',
+              16: 'Muro ovest',
+              17: 'Muro est',
+              18: 'Cancello',
+              19: 'Bandiera',
+            },
+          },
         },
         fr: {
           language: 'French (français)',
@@ -2215,6 +2746,7 @@
           features: 'Features',
           name: 'Name',
           save: 'Sauvegarder',
+          saveMessage: 'Enregistrer avec succès',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
           frame2: 'Helpful web pages',
@@ -2284,7 +2816,6 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage: 'Enregistrer avec succès',
           CT: {
             ColorWindowTitle: 'Configurer Color tchat',
             ColorWindowPreviewTxt: '*Clickez sur la lettre à changer de couleur',
@@ -2397,6 +2928,65 @@
             avgWeaponDamage: 'Dommages arme moyen',
             avgWeaponDamageMax: 'Dommages arme max',
           },
+          KoM: {
+            success: 'Rank is given!',
+            error: 'An error has occured',
+            showPlayerOnMap: 'Show player on map',
+            showTown: 'Show town overview',
+            showAlly: 'Show alliance overview',
+            showFort: 'Show fort overview',
+            showBattle: 'Show battlefield',
+            atFort: 'At the fort',
+            nearFort: 'Nearby the fort',
+            notFort: 'Not at the fort',
+            evaluated: 'Number of evaluated players',
+            started: 'The battle is taking place right now',
+            remindAlly: 'Remind ally members, who haven\'t participated yet',
+            where: 'Where',
+            when: 'When',
+            att: 'Attackers',
+            def: 'Defenders',
+            nodata: 'Couldn\'t load rank information for the fort',
+            getData: 'Loading rank information',
+            errorTimeout: 'The loading took too much time',
+            ascaptain: 'Promote to captain',
+            assergeant: 'Appoint as sergeant',
+            asprivate: 'Appoint as private',
+            asrecruit: 'Appoint as recruit',
+            asreservist: 'Appoint as reservist',
+            astraitor: 'Mark as traitor',
+            youcant: 'You can\'t demote fighters of<br>the same or higher rank.',
+            position: 'Position',
+            pos_undefined: 'No starting position',
+            notown: 'No town',
+            noally: 'No alliance',
+            damage: 'Damage',
+            flag: 'Flag',
+            inside: 'Inside the fort',
+            sectors: {
+              undef: 'No starting position',
+              0: 'The upper-left sector',
+              1: 'The lower-left sector',
+              2: 'The central left sector',
+              3: 'The lower central sector',
+              4: 'The central right sector',
+              5: 'The lower-right sector',
+              6: 'The upper-right sector',
+              7: 'Adventurer\'s tower',
+              8: 'Dueller\'s tower',
+              9: 'Soldier\'s tower',
+              10: 'Worker\'s tower',
+              11: 'Barracks',
+              12: 'Resource stock',
+              13: 'Headquarters',
+              14: 'North wall',
+              15: 'South wall',
+              16: 'West wall',
+              17: 'East wall',
+              18: 'Gate',
+              19: 'Flag',
+            },
+          },
         },
         cs: {
           language: 'Czech (čeština)',
@@ -2452,6 +3042,7 @@
           features: 'Features',
           name: 'Name',
           save: 'Uložit',
+          saveMessage: 'Úspěšně uloženo',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
           frame2: 'Helpful web pages',
@@ -2521,7 +3112,6 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage: 'Úspěšně uloženo',
           CT: {
             ColorWindowTitle: 'Color tchat setting',
             ColorWindowPreviewTxt: '*Click on the letters to change color',
@@ -2634,6 +3224,65 @@
             avgWeaponDamage: 'Průměrné poškození zbraně',
             avgWeaponDamageMax: 'Max poškození zbraně',
           },
+          KoM: {
+            success: 'Rank is given!',
+            error: 'An error has occured',
+            showPlayerOnMap: 'Show player on map',
+            showTown: 'Show town overview',
+            showAlly: 'Show alliance overview',
+            showFort: 'Show fort overview',
+            showBattle: 'Show battlefield',
+            atFort: 'At the fort',
+            nearFort: 'Nearby the fort',
+            notFort: 'Not at the fort',
+            evaluated: 'Number of evaluated players',
+            started: 'The battle is taking place right now',
+            remindAlly: 'Remind ally members, who haven\'t participated yet',
+            where: 'Where',
+            when: 'When',
+            att: 'Attackers',
+            def: 'Defenders',
+            nodata: 'Couldn\'t load rank information for the fort',
+            getData: 'Loading rank information',
+            errorTimeout: 'The loading took too much time',
+            ascaptain: 'Promote to captain',
+            assergeant: 'Appoint as sergeant',
+            asprivate: 'Appoint as private',
+            asrecruit: 'Appoint as recruit',
+            asreservist: 'Appoint as reservist',
+            astraitor: 'Mark as traitor',
+            youcant: 'You can\'t demote fighters of<br>the same or higher rank.',
+            position: 'Position',
+            pos_undefined: 'No starting position',
+            notown: 'No town',
+            noally: 'No alliance',
+            damage: 'Damage',
+            flag: 'Flag',
+            inside: 'Inside the fort',
+            sectors: {
+              undef: 'No starting position',
+              0: 'The upper-left sector',
+              1: 'The lower-left sector',
+              2: 'The central left sector',
+              3: 'The lower central sector',
+              4: 'The central right sector',
+              5: 'The lower-right sector',
+              6: 'The upper-right sector',
+              7: 'Adventurer\'s tower',
+              8: 'Dueller\'s tower',
+              9: 'Soldier\'s tower',
+              10: 'Worker\'s tower',
+              11: 'Barracks',
+              12: 'Resource stock',
+              13: 'Headquarters',
+              14: 'North wall',
+              15: 'South wall',
+              16: 'West wall',
+              17: 'East wall',
+              18: 'Gate',
+              19: 'Flag',
+            },
+          },
         },
         sk: {
           language: 'Slovak (slovenčina)',
@@ -2689,6 +3338,7 @@
           features: 'Features',
           name: 'Name',
           save: 'Uložiť',
+          saveMessage: 'Úspešne uložené',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
           frame2: 'Helpful web pages',
@@ -2758,7 +3408,6 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage: 'Úspešne uložené',
           CT: {
             ColorWindowTitle: 'Color tchat setting',
             ColorWindowPreviewTxt: '*Click on the letters to change color',
@@ -2871,6 +3520,65 @@
             avgWeaponDamage: 'Priemerné poškodenie zbrane',
             avgWeaponDamageMax: 'Max poškodenie zbrane',
           },
+          KoM: {
+            success: 'Hodnosti boli udelené!',
+            error: 'Vyskytol sa problém',
+            showPlayerOnMap: 'Ukázať hráča na mape',
+            showTown: 'Ukázať náhl\'ad mesta',
+            showAlly: 'Ukázať náhl\'ad aliancia',
+            showFort: 'Ukázať náhl\'ad pevnosti',
+            showBattle: 'Zobraziť bojisko',
+            atFort: 'V pevnosti',
+            nearFort: 'V blízkosti pevnosti',
+            notFort: 'Mimo pevnosti',
+            evaluated: 'Posúdenie hráča',
+            started: 'Boj je v plnom prúde',
+            remindAlly: 'Pripomeňte členmi aliancie, ktorí sa doteraz podieľal',
+            where: 'Kde',
+            when: 'Kedy',
+            att: 'Útočníci',
+            def: 'Obrancovia',
+            nodata: 'Informácie pre pevnosť sa nedali načítať',
+            getData: 'Načítavanie informácií',
+            errorTimeout: 'Načítavanie trvalo príliš dlho',
+            ascaptain: 'Povýšiť na kapitána',
+            assergeant: 'Vymenovať za seržanta',
+            asprivate: 'Vymenovať za slobodníka',
+            asrecruit: 'Vymenovať za nováčika',
+            asreservist: 'Vymenovať za záložnika',
+            astraitor: 'Označiť ako zradcu',
+            youcant: 'Nemôžeš degradovať bojovníkov s rovnakou<br>alebo vyššou hodnosťou.',
+            position: 'Pozícia',
+            pos_undefined: 'nemá zadanú pozíciu',
+            notown: 'No town',
+            noally: 'Bez aliancie',
+            damage: 'Poškodenie',
+            flag: 'Vlajka',
+            inside: 'V pevnosti',
+            sectors: {
+              undef: 'Nemá zadanú pozíciu',
+              0: 'Horný ľavý sektor',
+              1: 'Stredný ľavý sektor',
+              2: 'Spodný ľavý sektor',
+              3: 'Spodný stredný sektor',
+              4: 'Spodný pravý sektor',
+              5: 'Stredný pravý sektor',
+              6: 'Horný pravý sektor',
+              7: 'Veža dobrodruhov',
+              8: 'Veža duelantov',
+              9: 'Veža vojakov',
+              10: 'Veža pracovníkov',
+              11: 'Kasárne',
+              12: 'Sklad',
+              13: 'Hlavná budova',
+              14: 'Severná hradba',
+              15: 'Južná hradba',
+              16: 'Západná hradba',
+              17: 'Východná hradba',
+              18: 'Brána',
+              19: 'Vlajka',
+            },
+          },
         },
         ru: {
           language: 'Russian (русский)',
@@ -2926,6 +3634,7 @@
           features: 'Features',
           name: 'Name',
           save: 'Экономить',
+          saveMessage: 'Сохранить успешно',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
           frame2: 'Helpful web pages',
@@ -2995,7 +3704,6 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage: 'Сохранить успешно',
           CT: {
             ColorWindowTitle: 'Color tchat setting',
             ColorWindowPreviewTxt: '*Click on the letters to change color',
@@ -3108,6 +3816,65 @@
             avgWeaponDamage: 'Average weapon damage',
             avgWeaponDamageMax: 'Weapon damage max',
           },
+          KoM: {
+            success: 'Лычка дана!',
+            error: 'Произошла ошибка',
+            showPlayerOnMap: 'Показать игрока на карте',
+            showTown: 'Посмотреть город',
+            showAlly: 'Открыть окно альянс',
+            showFort: 'Show fort overview',
+            showBattle: 'Show battlefield',
+            atFort: 'At the fort',
+            nearFort: 'Nearby the fort',
+            notFort: 'Not at the fort',
+            evaluated: 'Already evaluated',
+            started: 'The battle is taking place right now',
+            remindAlly: 'Remind ally members, which haven\'t participated yet',
+            where: 'Where',
+            when: 'When',
+            att: 'Attackers',
+            def: 'Defenders',
+            nodata: 'Информация о званиях не загружена для данного форта!',
+            getData: 'Пытаемся загрузить данные о званиях',
+            errorTimeout: 'Загрузка происходит слишком долго',
+            ascaptain: 'Произвести в капитаны',
+            assergeant: 'Назначить сержантом',
+            asprivate: 'Назначить рядовым',
+            asrecruit: 'Взять в рекруты',
+            asreservist: 'Записать в резерв',
+            astraitor: 'Обвинить в предательстве',
+            youcant: 'Ты не можешь понизить старшего<br>или равного по званию.',
+            position: 'Позиция',
+            pos_undefined: 'не установлена',
+            notown: 'Нет города',
+            noally: 'Без альянса',
+            damage: 'Урон',
+            flag: 'Флаг',
+            inside: 'Внутри форта',
+            sectors: {
+              undef: 'Не назначена',
+              0: 'Левый верхний сектор',
+              1: 'Левый нижний сектор',
+              2: 'Левый южный сектор',
+              3: 'Центральный южный сектор',
+              4: 'Правый южный сектор',
+              5: 'Правый нижний сектор',
+              6: 'Правый верхний сектор',
+              7: 'Башня авантов',
+              8: 'Башня дуэлянтов',
+              9: 'Башня солдат',
+              10: 'Башня трудяг',
+              11: 'Казарма',
+              12: 'Склад',
+              13: 'Штаб',
+              14: 'Северная стена',
+              15: 'Южная стена',
+              16: 'Западная стена',
+              17: 'Восточная стена',
+              18: 'Ворота',
+              19: 'Флаг',
+            },
+          },
         },
         tr: {
           language: 'Turkish (Türkçe)',
@@ -3163,6 +3930,7 @@
           features: 'Features',
           name: 'Name',
           save: 'Kurtarmak',
+          saveMessage: 'Başarıyla kaydet',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
           frame2: 'Helpful web pages',
@@ -3232,7 +4000,6 @@
           custom1: 'Custom',
           custom2: 'Your custom login list',
           edit: 'Edit',
-          saveMessage: 'Başarıyla kaydet',
           CT: {
             ColorWindowTitle: 'Color tchat setting',
             ColorWindowPreviewTxt: '*Click on the letters to change color',
@@ -3345,6 +4112,65 @@
             avgWeaponDamage: 'Average weapon damage',
             avgWeaponDamageMax: 'Weapon damage max',
           },
+          KoM: {
+            success: 'Rank is given!',
+            error: 'An error has occured',
+            showPlayerOnMap: 'Show player on map',
+            showTown: 'Show town overview',
+            showAlly: 'Show alliance overview',
+            showFort: 'Show fort overview',
+            showBattle: 'Show battlefield',
+            atFort: 'At the fort',
+            nearFort: 'Nearby the fort',
+            notFort: 'Not at the fort',
+            evaluated: 'Number of evaluated players',
+            started: 'The battle is taking place right now',
+            remindAlly: 'Remind ally members, who haven\'t participated yet',
+            where: 'Where',
+            when: 'When',
+            att: 'Attackers',
+            def: 'Defenders',
+            nodata: 'Couldn\'t load rank information for the fort',
+            getData: 'Loading rank information',
+            errorTimeout: 'The loading took too much time',
+            ascaptain: 'Promote to captain',
+            assergeant: 'Appoint as sergeant',
+            asprivate: 'Appoint as private',
+            asrecruit: 'Appoint as recruit',
+            asreservist: 'Appoint as reservist',
+            astraitor: 'Mark as traitor',
+            youcant: 'You can\'t demote fighters of<br>the same or higher rank.',
+            position: 'Position',
+            pos_undefined: 'No starting position',
+            notown: 'No town',
+            noally: 'No alliance',
+            damage: 'Damage',
+            flag: 'Flag',
+            inside: 'Inside the fort',
+            sectors: {
+              undef: 'No starting position',
+              0: 'The upper-left sector',
+              1: 'The lower-left sector',
+              2: 'The central left sector',
+              3: 'The lower central sector',
+              4: 'The central right sector',
+              5: 'The lower-right sector',
+              6: 'The upper-right sector',
+              7: 'Adventurer\'s tower',
+              8: 'Dueller\'s tower',
+              9: 'Soldier\'s tower',
+              10: 'Worker\'s tower',
+              11: 'Barracks',
+              12: 'Resource stock',
+              13: 'Headquarters',
+              14: 'North wall',
+              15: 'South wall',
+              16: 'West wall',
+              17: 'East wall',
+              18: 'Gate',
+              19: 'Flag',
+            },
+          },
         },
       },
       url: 'https://tomrobert.safe-ws.de/',
@@ -3408,12 +4234,14 @@
           NPClocator: true,
           MarketBestBids: true,
           BattleStars: true,
+          KickoMatic: true,
         },
         CT: {},
         QIS: {},
         NPC: {},
         MMB: {},
         BS: {},
+        KoM: {},
         cooldown: {
           2482: 1,
           2484: 1,
@@ -7007,7 +7835,7 @@
                   try {
                     newfunction.bind(this)(battle_id, data);
                     $(this.window.getMainDiv()).children().find('.TWTStatButton').remove();
-                    $(this.window.getMainDiv()).find('div.tw2gui_window_content_pane').append('<span title="Battle Stars" onclick=\'TWX.BS.vasy()\'  class="TWTStatButton"><img ' +'style="position:absolute;top:15px;left:672px;width:15px;height:15px;padding:0px;border:0px;margin:0px;cursor:pointer;"' +
+                    $(this.window.getMainDiv()).find('div.tw2gui_window_content_pane').append('<span title="Battle Stars" onclick=\'TWX.BS.vasy()\'  class="TWTStatButton"><img ' + 'style="position:absolute;top:15px;left:672px;width:15px;height:15px;padding:0px;border:0px;margin:0px;cursor:pointer;"' +
                       ' src="/images/icons/achv_points.png" /></span>');
                   } catch (e) {
                     console.log(e);
@@ -7201,6 +8029,548 @@
             '.window_Stats .tbody .cell_dif { text-align:center;width:120px;font-weight:800;text-shadow:1px 0 0 white; }' +
             '.zone {-webkit-user-select: text !important; -khtml-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important;height:270px; }');
           TWX.BS.inject();
+        },
+      };
+      TWX.KickoMatic = {
+        init: function () {
+          TWX.KoM = {
+            loading: false,
+            inProgress: {},
+            fortsCapacity: null,
+            weapons: [],
+            //coords[0-6]:attack,coords[7-19]:defense[small,medium,big]
+            coords: [[0, 1, 2, 34, 35, 36, 68, 69, 70, 102, 103, 104, 136, 137, 138, 170, 171, 172, 204, 205, 206, 238, 239, 240, 272, 273, 274, 306, 307, 308, 340, 341, 342], [374, 375, 376, 408, 409, 410, 442, 443, 444, 476, 477, 478, 510, 511, 512, 544, 545, 546, 578, 579, 580, 612, 613, 614, 646, 647, 648, 680, 681, 682], [714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792], [725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803], [736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815], [405, 406, 407, 439, 440, 441, 473, 474, 475, 507, 508, 509, 541, 542, 543, 575, 576, 577, 609, 610, 611, 643, 644, 645, 677, 678, 679, 711, 712, 713], [31, 32, 33, 65, 66, 67, 99, 100, 101, 133, 134, 135, 167, 168, 169, 201, 202, 203, 235, 236, 237, 269, 270, 271, 303, 304, 305, 337, 338, 339, 371, 372, 373], [[178, 179, 180, 212, 213, 214, 246, 247, 248], [143, 144, 145, 177, 178, 179, 211, 212, 213], [108, 109, 110, 142, 143, 144, 176, 177, 178]], [[193, 194, 195, 227, 228, 229, 261, 262, 263], [160, 161, 162, 194, 195, 196, 228, 229, 230], [127, 128, 129, 161, 162, 163, 195, 196, 197]], [[450, 451, 452, 484, 485, 486, 518, 519, 520], [483, 484, 485, 517, 518, 519, 551, 552, 553], [516, 517, 518, 550, 551, 552, 584, 585, 586]], [[465, 466, 467, 499, 500, 501, 533, 534, 535], [500, 501, 502, 534, 535, 536, 568, 569, 570], [535, 536, 537, 569, 570, 571, 603, 604, 605]], [[291, 292, 293, 325, 326, 327], [326, 327, 328, 360, 361, 362], [395, 396, 429, 430, 463, 464]], [[318, 319, 352, 353, 386, 387], [250, 251, 284, 285, 318, 319], [258, 259, 292, 293, 326, 327]], [[393, 394, 395, 427, 428, 429], [385, 386, 387, 419, 420, 421], [384, 385, 386, 418, 419, 420]], [[215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226], [180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193], [145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160]], [[487, 488, 489, 490, 491, 494, 495, 496, 497, 498], [520, 521, 522, 523, 524, 525, 528, 529, 530, 531, 532, 533], [553, 554, 555, 556, 557, 558, 559, 562, 563, 564, 565, 566, 567, 568]], [[281, 315, 349, 383, 417], [246, 280, 314, 348, 382, 416, 450], [211, 245, 279, 313, 347, 381, 415, 449, 483]], [[296, 330, 364, 398, 432], [263, 297, 331, 365, 399, 433, 467], [230, 264, 298, 332, 366, 400, 434, 468, 502]], [[492, 493], [526, 527], [560, 561]], [[287, 288, 289, 290, 321, 322, 323, 324, 355, 356, 357, 358, 389, 390, 391, 392], [287, 288, 289, 290, 321, 322, 323, 324, 355, 356, 357, 358, 389, 390, 391, 392], [287, 288, 289, 290, 321, 322, 323, 324, 355, 356, 357, 358, 389, 390, 391, 392]]],
+            highlightedFortCells: {},
+            currFortId: null,
+            currPlayerPos: null,
+            fort: {},
+            fortSizeLoading: {},
+            playersPosition: {},
+            playerRank: {},
+            playersData: {},
+            allies: {},
+            playersDataLoading: {},
+            highlightFortCell: function () {
+              var battle = $('#fort_battle_' + this.currFortId + '_battleground');
+              if (this.currPlayerPos == -1 || !battle.length)
+                return;
+              var pos = $('.cell-' + this.currPlayerPos).position();
+              $('.battleground_marker', battle).css(pos);
+              TWX.KoM.highlightedFortCells[this.currFortId] = 1;
+            },
+            unhighlightFortCell: function (fortId) {
+              $('.battleground_marker', $('#fort_battle_' + fortId + '_battleground')).css({
+                top: '',
+                left: ''
+              });
+              delete TWX.KoM.highlightedFortCells[fortId];
+            },
+            hidePopup: function () {
+              TWX.KoM.mb.hide();
+              for (var fortId in TWX.KoM.highlightedFortCells) {
+                TWX.KoM.unhighlightFortCell(fortId);
+              }
+            },
+            showPosition: function () {
+              FortBattleWindow.open(this.currFortId);
+              var setVal6 = setInterval(function () {
+                  if ($('#fort_battle_' + TWX.KoM.currFortId + '_battleground').length) {
+                    clearInterval(setVal6);
+                    TWX.KoM.highlightFortCell();
+                  }
+                }, 100);
+            },
+            getAlliance: function (player_Id) {
+              if (TWX.KoM.allies[player_Id])
+                return;
+              Ajax.remoteCallMode('profile', 'init', {
+                playerId: player_Id
+              }, function (resp) {
+                if (resp.town && resp.town.alliance_id)
+                  TWX.KoM.allies[resp.playerid] = [
+                    resp.town.alliance_id,
+                    resp.town.alliance_name
+                  ];
+                else
+                  TWX.KoM.allies[resp.playerid] = [
+                    null,
+                    TWXlang.KoM.noally
+                  ];
+              });
+            },
+            pushChatSystemMessage: function (str) {
+              Chat.pushSystemMessage(str);
+            },
+            updatePrivilege: function (fortId, westId, rank) {
+              var list = {};
+              list[westId] = rank;
+              var data = {
+                fort_id: fortId,
+                privileges: list
+              };
+              Ajax.remoteCall('fort_battlepage', 'updatePrivileges', data, function (response) {
+                if (response.hasOwnProperty('playerlist') && response.playerlist.length > 0) {
+                  new UserMessage(TWXlang.KoM.success, {
+                    type: 'success'
+                  }).show();
+                }
+                TWX.KoM.setPlayerRank(fortId, westId, rank);
+                TWX.KoM.hidePopup();
+              });
+            },
+            makeRankRow: function (rank, westId, fortId) {
+              var rankList = {
+                '-2': 'traitor',
+                '-1': 'reservist',
+                '0': 'recruit',
+                '1': 'private',
+                '2': 'sergeant',
+                '3': 'captain',
+                '4': 'general'
+              };
+              function rankLink(image, fortId, westId, rank) {
+                return $('<a/>').attr('onclick', 'TWX.KoM.updatePrivilege(' + fortId + ', ' + westId + ', ' + rank + ');').append(image, TWXlang.KoM['as' + rankList[rank]]);
+              }
+              function rankImage(rrank) {
+                return $('<img/>').attr('src', '/images/chat/servicegrade_' + rrank + '.png').attr('title', '<strong>' + Chat.rankTitles[rrank] + '</strong>');
+              }
+              return rankLink(rankImage(rankList[rank]), fortId, westId, rank);
+            },
+            makeRankUpdateHtml: function (myRank, playerRank, westId, fortId) {
+              var span = $('<span/>');
+              var div = $('<div/>');
+              function appendError(text) {
+                var d = $('<div/>').css({
+                    //'width': '200px',
+                    'padding': '4px',
+                    'text-align': 'center'
+                  }).html(text);
+                span.append(d);
+              }
+              if (myRank > 2)
+                if (playerRank < myRank) {
+                  var fromRank = myRank == 4 ? 3 : 2;
+                  for (var rank = fromRank; rank >=  - 2; rank--) {
+                    if (rank == playerRank)
+                      continue;
+                    var row = TWX.KoM.makeRankRow(rank, westId, fortId);
+                    div.append(row, $('<br>'));
+                  }
+                } else
+                  appendError('<br>' + TWXlang.KoM.youcant);
+              span.append(div);
+              return span;
+            },
+            getPlayerFortPosition: function (fortId, westId) {
+              return TWX.KoM.playersPosition.hasOwnProperty(fortId) && TWX.KoM.playersPosition[fortId].hasOwnProperty(westId) ? TWX.KoM.playersPosition[fortId][westId] : -1;
+            },
+            getPlayerClass: function (playerClass) {
+              return playerClass + '.png" title="' + Game.InfoHandler.getLocalString4Charclass(playerClass);
+            },
+            setPlayerFortPosition: function (fortId, westId, pos) {
+              if (!TWX.KoM.playersPosition.hasOwnProperty(fortId))
+                TWX.KoM.playersPosition[fortId] = {};
+              TWX.KoM.playersPosition[fortId][westId] = pos;
+            },
+            makeSmallTitle: function (playerName, westId, playerX, playerY) {
+              var span = $('<span/>').attr('onclick', 'PlayerProfileWindow.open(' + westId + ')').html(playerName).css('cursor', 'pointer');
+              var st = $('<a/>').attr('onclick', 'Map.center(' + playerX + ', ' + playerY + ')').attr('title', TWXlang.KoM.showPlayerOnMap).css({
+                  width: '15px',
+                  height: '15px',
+                  display: 'inline-block',
+                  background: 'url(/images/tw2gui/window/window2_title_divider.jpg) no-repeat'
+                });
+              span.append('&nbsp;', st);
+              return span;
+            },
+            getPlayerRank: function (fortId, westId) {
+              if (TWX.KoM.playerRank[fortId] && TWX.KoM.playerRank[fortId].hasOwnProperty(westId))
+                return TWX.KoM.playerRank[fortId][westId];
+              return null;
+            },
+            getFortRanks: function (fortId) {
+              return TWX.KoM.playerRank.hasOwnProperty(fortId) ? TWX.KoM.playerRank[fortId] : null;
+            },
+            setPlayerRank: function (fortId, westId, rank) {
+              if (!TWX.KoM.playerRank.hasOwnProperty(fortId))
+                TWX.KoM.playerRank[fortId] = {};
+              TWX.KoM.playerRank[fortId][westId] = rank;
+            },
+            smallPopUp: function (e) {
+              try {
+                if (TWX.KoM.loading)
+                  return;
+                TWX.KoM.loading = true;
+                var x = e.clientX || 500,
+                y = e.clientY || 500,
+                westId = TWX.KoM.westId,
+                rooms = Chat.Resource.Manager.getRooms();
+                for (var r in rooms) {
+                  var room = Chat.Resource.Manager.getRoom(r);
+                  if (!(room instanceof Chat.Resource.RoomFortBattle) || room.id != TWX.KoM.fortRoom)
+                    continue;
+                  var fortId = room.fortId;
+                  if (TWX.KoM.started(fortId /*, true, westId*/))
+                    continue;
+                  var playerRank = TWX.KoM.getPlayerRank(fortId, westId),
+                  myId = Chat.MyId.match(/[0-9]+/),
+                  myRank = TWX.KoM.getPlayerRank(fortId, myId),
+                  playerInfo = TWX.KoM.playersData[westId],
+                  playerName = playerInfo.name,
+                  playerXY = playerInfo.coords,
+                  title = TWX.KoM.makeSmallTitle(playerName, westId, playerXY.x, playerXY.y);
+                  TWX.KoM.mb = new west.gui.Dialog(title.outerHTML()).addButton('cancel').setId('KickoMaticPopUp').setModal(true, true).setText(TWX.KoM.makeRankUpdateHtml(myRank, playerRank, westId, fortId)).setX(x).setY(y - 50).show();
+                  break;
+                }
+                TWX.KoM.loading = false;
+              } catch (e) {
+                TWX.KoM.loading = false;
+                new UserMessage('<span>' + e + '</spawn>', 'error').show();
+                console.log(e);
+              }
+            },
+            makePopupHtml: function (fortId, fortX, fortY, distanceImage, playerPositionName, rankHtml, weaponName, weaponMinDamage, weaponMaxDamage, currentHp, maxHp, townName, townId, townRights, playerClass) {
+              var capacityDiv = TWX.KoM.makeCapacityDiv(fortId);
+              var fillPx = Math.floor(currentHp / maxHp * 194);
+              return '<div class="txcenter"><div style="background:url(https://tomrobert.safe-ws.de/healthbar.png) right top;width:210px;height:14px;display:inline-block;padding:2px;margin:0;font-size:8pt; text-align:left;"><div style="background: url(&quot;images/character_bars/filler.png&quot;) repeat scroll 0% 0% transparent; width:' +
+              fillPx + 'px; height: 14px; padding: 0pt; margin: 0pt; position: absolute;" id="recruit_healthbar"></div><div id="recruit_health" style="position:absolute;color:white;width:194px;text-align:center">' + currentHp + '/' + maxHp + '</div></div><br><div>' +
+              weaponName + ' (' + weaponMinDamage + '-' + weaponMaxDamage + ' ' + TWXlang.KoM.damage + ')</div><span style="font-size:16px;text-align:center;"><div style="display:inline-block;"><img src="../images/class_choose/class_' + playerClass +
+              '"><a style="display:inline;padding:0;" class="profile_link_town_overview" title="' + TWXlang.KoM.showTown + '" href="javascript:TownWindow.open(' + townId + ')"> ' + townName +
+              '</a>' + /*<br><a style="display:inline;padding:0;" class="open_alliance" title="' + TWXlang.KoM.showAlly + '" href="javascript:parent.AllianceWindow.open(' + ally[0] + ')"> ' + ally[1] +
+              '</a>*/
+              '</span><br><img src="../images/fort/battle/divider.png"></div><br>' + distanceImage.outerHTML() + '&nbsp;<a title="' + TWXlang.KoM.showFort + '" href="javascript:FortWindow.open(' + fortId + ')">' + TWX.KoM.fort[fortId].name +
+              '</a><p>' + capacityDiv + '</p><p><a title="' + TWXlang.KoM.showBattle + '" href="javascript:TWX.KoM.showPosition()">' +
+              TWXlang.KoM.position + ': ' + playerPositionName + '</a></p><img src="../images/fort/battle/divider.png"><br>' +
+              rankHtml.outerHTML() + '</div>';
+            },
+            getPosName: function () {
+              if (this.currPlayerPos == -1)
+                return TWXlang.KoM.sectors.undef;
+              var kfi = TWX.KoM.fort[this.currFortId];
+              if (kfi.defense) {
+                for (var i = 7; i <= 19; i++)
+                  if (TWX.KoM.coords[i][kfi.type].includes(this.currPlayerPos))
+                    return TWXlang.KoM.sectors[i];
+              } else
+                for (var j = 0; j <= 6; j++)
+                  if (TWX.KoM.coords[j].includes(this.currPlayerPos))
+                    return TWXlang.KoM.sectors[j];
+              return TWXlang.KoM.inside;
+            },
+            makeDistanceImage: function (fortX, fortY, playerX, playerY) {
+              var diffX = fortX - playerX,
+              diffY = fortY - playerY,
+              image = $('<img/>');
+              if (!diffX && !diffY)
+                image.attr('src', '/images/town/cityhall/green.png').attr('title', TWXlang.KoM.atFort);
+              else if (Math.abs(diffX) <= 500 && Math.abs(diffY) <= 500)
+                image.attr('src', '/images/town/cityhall/yellow.png').attr('title', TWXlang.KoM.nearFort);
+              else
+                image.attr('src', '/images/town/cityhall/red.png').attr('title', TWXlang.KoM.notFort);
+              return image;
+            },
+            popUp: function (e) {
+              try {
+                if (TWX.KoM.loading)
+                  return;
+                TWX.KoM.loading = true;
+                var x = e.clientX || 500,
+                y = e.clientY || 500,
+                westId = TWX.KoM.westId,
+                r,
+                rooms = Chat.Resource.Manager.getRooms();
+                for (r in rooms) {
+                  var room = Chat.Resource.Manager.getRoom(r);
+                  if (!(room instanceof Chat.Resource.RoomFortBattle) || room.id != TWX.KoM.fortRoom) {
+                    continue;
+                  }
+                  var fortId = TWX.KoM.currFortId = room.fortId;
+                  if (TWX.KoM.started(fortId /*, true, westId*/))
+                    continue;
+                  TWX.KoM.currPlayerPos = TWX.KoM.getPlayerFortPosition(fortId, westId);
+                  var fortCoords = TWX.KoM.fort[fortId],
+                  playerRank = TWX.KoM.getPlayerRank(fortId, westId),
+                  myId = Chat.MyId.match(/[0-9]+/),
+                  myRank = TWX.KoM.getPlayerRank(fortId, myId),
+                  playerInfo = TWX.KoM.playersData[westId],
+                  playerName = playerInfo.name,
+                  playerLevel = playerInfo.level,
+                  playerXY = playerInfo.coords,
+                  playerClass = TWX.KoM.getPlayerClass(playerInfo.class),
+                  currentHp = playerInfo.currhealth,
+                  maxHp = playerInfo.maxhealth;
+                  //var alliance = TWX.KoM.allies[westId];
+                  TWX.KoM.highlightFortCell();
+                  var positionName = TWX.KoM.getPosName();
+                  var weaponMinDamage = playerInfo.weapon_damage.min,
+                  weaponMaxDamage = playerInfo.weapon_damage.max,
+                  weaponName = playerInfo.weapon,
+                  //weaponImage = TWX.KoM.getWeaponImage(weaponName),
+                  townId = playerInfo.town_id,
+                  townRights,
+                  town = playerInfo.townname || TWXlang.KoM.notown;
+                  switch (playerInfo.town_rights) {
+                  case 1:
+                    townRights = 'norights';
+                    break;
+                  case 2:
+                    townRights = 'councillor';
+                    break;
+                  case 3:
+                    townRights = 'founder';
+                    break;
+                  default:
+                    townRights = 'norights';
+                    break;
+                  }
+                  var distanceImage = TWX.KoM.makeDistanceImage(fortCoords.x, fortCoords.y, playerXY.x, playerXY.y);
+                  var rankHtml = TWX.KoM.makeRankUpdateHtml(myRank, playerRank, westId, fortId);
+                  var text = TWX.KoM.makePopupHtml(fortId, fortCoords.x, fortCoords.y, distanceImage, positionName, rankHtml, weaponName, weaponMinDamage, weaponMaxDamage, currentHp, maxHp, town, townId, townRights, playerClass);
+                  var title = TWX.KoM.makeSmallTitle(playerName, westId, playerXY.x, playerXY.y);
+                  TWX.KoM.mb = new west.gui.Dialog(title.outerHTML(), text).addButton('cancel').setId('KickoMaticPopUp').setModal(true, true).setX(x).setY(y - 50).show();
+                  $('#KickoMaticPopUp').css('min-width', '0');
+                  $('#KickoMaticPopUp .messagedialog_content').css('padding-bottom', '5px');
+                  break;
+                }
+                TWX.KoM.loading = false;
+              } catch (e) {
+                console.log(e.stack);
+                TWX.KoM.loading = false;
+                new UserMessage('<span>' + e + '</spawn>', 'error').show();
+              }
+            },
+            getWeapons: function () {
+              if (TWX.KoM.weapons.length > 0)
+                return;
+              var itemId = 100,
+              result = {};
+              while (result) {
+                result = ItemManager.getByBaseId(itemId++);
+                TWX.KoM.weapons.push(result);
+              }
+            },
+            getWeaponImage: function (weaponName) {
+              TWX.KoM.getWeapons();
+              for (var itemId in TWX.KoM.weapons) {
+                var w = TWX.KoM.weapons[itemId];
+                if (weaponName == w.name) {
+                  return w.image;
+                }
+              }
+            },
+            getFortSize: function (room, xy) {
+              var di = xy.split('-');
+              Ajax.remoteCallMode('fort', 'display', {
+                x: di[0],
+                y: di[1]
+              }, function (data) {
+                var fD = TWX.KoM.fort[data.data.fortid] = data.data;
+                fD.defense = room.battleData.defense;
+                fD.capacity = TWX.KoM.fortsCapacity[fD.type][(fD.defense ? 1 : 0)];
+                fD.startTime = new Date(new Date().getTime() + fD.battle.fortBattleStart * 1000).toDateTimeStringNice();
+                TWX.KoM.fortSizeLoading[xy] = false;
+              });
+            },
+            obtainFortSize: function (room) {
+              var x = room.battleData.x,
+              y = room.battleData.y,
+              xy = x + '-' + y;
+              if (!x || !y)
+                return console.log('x or y is undefined');
+              if (TWX.KoM.fortSizeLoading[xy] === true)
+                return;
+              TWX.KoM.fortSizeLoading[xy] = true;
+              if (!TWX.KoM.fortsCapacity)
+                Ajax.remoteCallMode('serverinfo', 'get_worldsettings', {}, function (result) {
+                  var reg = result.worldsettings.replace(/\s|\n/g, '').match(/:(\d+)\/(\d+).+?:(\d+)\/(\d+).+?:(\d+)\/(\d+)/);
+                  if (!reg)
+                    return console.log('fortsCapacity is undefined');
+                  TWX.KoM.fortsCapacity = [[reg[1], reg[2]], [reg[3], reg[4]], [reg[5], reg[6]]];
+                  TWX.KoM.getFortSize(room, xy);
+                });
+              else
+                TWX.KoM.getFortSize(room, xy);
+            },
+            getFortCoordinates: function (fortId) {
+              return TWX.KoM.fortCoordinates[fortId] || null;
+            },
+            obtainPlayersData: function (fortId) {
+              if (TWX.KoM.playersDataLoading[fortId] === true)
+                return;
+              TWX.KoM.playersDataLoading[fortId] = true;
+              Ajax.remoteCall('fort_battlepage&fort_id=' + fortId, '', {}, function (data) {
+                if (data.inProgress === false) {
+                  var playerList = data.playerlist;
+                  for (var i in playerList) {
+                    if (playerList.hasOwnProperty(i)) {
+                      var id = playerList[i].player_id;
+                      //TWX.KoM.getAlliance(id);
+                      TWX.KoM.setPlayerRank(fortId, id, playerList[i].privilege);
+                      TWX.KoM.setPlayerFortPosition(fortId, id, playerList[i].idx);
+                      TWX.KoM.playersData[id] = playerList[i];
+                    }
+                  }
+                } else
+                  TWX.KoM.inProgress[fortId] = true;
+                TWX.KoM.playersDataLoading[fortId] = false;
+              });
+            },
+            started: function (fi, a, id) {
+              if (TWX.KoM.inProgress[fi]) {
+                new UserMessage(TWXlang.KoM.started, 'error').show();
+                return true;
+              } else if ($.isEmptyObject(TWX.KoM.playersData) || a && !TWX.KoM.allies[id]) {
+                new UserMessage(TWXlang.KoM.getData + '...', 'hint').show();
+                return true;
+              }
+            },
+            openMessage: function (fortId) {
+              if (TWX.KoM.started(fortId))
+                return;
+              Ajax.remoteCall('messages', 'insert_alliance_members', {
+                type: 'members'
+              }, function (json) {
+                if (json[0] === false)
+                  new UserMessage(json[1], 'error').show();
+                else {
+                  TWX.KoM.allyMembers = json[1].split(';');
+                  var done = 0;
+                  for (var a in TWX.KoM.playersData) {
+                    TWX.KoM.allyMembers[TWX.KoM.allyMembers.indexOf(TWX.KoM.playersData[a].name)] = null;
+                    done++;
+                    if (Object.keys(TWX.KoM.playersData).length == done) {
+                      MessagesWindow.open('telegram', {
+                        insert_to: TWX.KoM.allyMembers.toString().replace(/[,]+/g, ';')
+                      });
+                      var Kff = TWX.KoM.fort[fortId];
+                      var defAtt = Kff.defense ? TWXlang.KoM.def : TWXlang.KoM.att;
+                      setTimeout(function () {
+                        MessagesWindow.Telegram.subjectInput.setValue(Kff.name + ' ' + Kff.startTime);
+                        MessagesWindow.Telegram.masstelegramInput.setSelected(true);
+                        MessagesWindow.Telegram.telegramInput.setContent('[b]' + TWXlang.KoM.where + ':[/b] [fort]' + Kff.name + '[/fort]\n[b]' + TWXlang.KoM.when + ':[/b] ' + Kff.startTime + '\n[b]' + Kff.typename + ':[/b] ' + Kff.capacity + ' ' + defAtt);
+                      }, 1000);
+                    }
+                  }
+                }
+              });
+            },
+            interval: function () {
+              TWX.KoM.bindClickFunctions();
+              try {
+                var rooms = Chat.Resource.Manager.getRooms();
+                for (var r in rooms) {
+                  var room = Chat.Resource.Manager.getRoom(r);
+                  if (!room.hasOwnProperty('room') || room.room != 'fortbattle')
+                    continue;
+                  var fortId = room.fortId;
+                  if (!TWX.KoM.fort.hasOwnProperty(fortId))
+                    TWX.KoM.obtainFortSize(room);
+                  if ($('.battleMessage' + fortId).length === 0)
+                    $('#tab_title_' + r + ' .chat_icons').css('background-image', 'url("https://tomrobert.safe-ws.de/cicons.png")').append('<div class="battleMessage' + fortId + '"/>').attr('title', TWXlang.KoM.remindAlly).click(function () {
+                      TWX.KoM.openMessage(fortId);
+                    });
+                }
+              } catch (e) {
+                console.log(e.stack);
+              }
+            },
+            dataInterval: function () {
+              var rooms = Chat.Resource.Manager.getRooms();
+              for (var r in rooms) {
+                var room = Chat.Resource.Manager.getRoom(r);
+                if (!room.hasOwnProperty('room') || room.room != 'fortbattle')
+                  continue;
+                var fortId = room.fortId;
+                TWX.KoM.obtainPlayersData(fortId);
+              }
+            },
+            bindClickFunctions: function () {
+              var fContacts = function (e) {
+                TWX.KoM.westId = $(this).parent().attr('class').match(/[0-9]+/);
+                var lastElement = $(this);
+                for (var i = 0; i < 10; i++)
+                  lastElement = lastElement.parent();
+                var room = lastElement.attr('class').match(/(room_fortbattle_(att|def)_[0-9]+)/);
+                TWX.KoM.fortRoom = room[1];
+                if (e.ctrlKey)
+                  TWX.KoM.smallPopUp(e);
+                else
+                  TWX.KoM.popUp(e);
+              };
+              var fMessages = function (e) {
+                TWX.KoM.westId = $(this).parent().attr('class').match(/[0-9]+/);
+                var lastElement = $(this);
+                for (var i = 0; i < 12; i++)
+                  lastElement = lastElement.parent();
+                var room = lastElement.attr('class').match(/(room_fortbattle_(att|def)_[0-9]+)/);
+                TWX.KoM.fortRoom = room[1];
+                if (e.ctrlKey)
+                  TWX.KoM.smallPopUp(e);
+                else
+                  TWX.KoM.popUp(e);
+              };
+              var ranks = ['general', 'captain', 'sergeant', 'private', 'recruit', 'reservist', 'traitor'];
+              $.each(ranks, function (k, v) {
+                $('.chat_contacts .chat_servicegrade_' + v).off('click').on('click', fContacts);
+                $('.chat_messages .chat_servicegrade_' + v).off('click').on('click', fMessages);
+              });
+            },
+            makeCapacityDiv: function (fortId) {
+              var ranks = [1, 2, 3],
+              fortCapacity = TWX.KoM.fort[fortId].capacity,
+              count = TWX.KoM.countPlayersWithRanks(fortId, ranks),
+              color = count < fortCapacity ? 'green' : count == fortCapacity ? 'yellow' : 'red';
+              return '<span><span style="color:' + color + ';" id="fortCapacity' + fortId + '" title="' + TWXlang.KoM.evaluated + '">' + count + '/' + fortCapacity + '</span><p></p></span>';
+            },
+            countPlayersWithRanks: function (fortId, ranks) {
+              var result = 0,
+              fortRanks = TWX.KoM.getFortRanks(fortId);
+              for (var westId in fortRanks)
+                if (ranks.includes(fortRanks[westId]))
+                  result++;
+              return result;
+            },
+            thatWouldntHappendIfZetWasStillWorkingOnTheWest: function () {
+              Chat.Resource.RoomFactory = function (data) {
+                var room = null;
+                if (data instanceof Chat.Resource.Client) {
+                  room = new Chat.Resource.RoomClient(data);
+                } else {
+                  switch (data.room) {
+                  case 'town':
+                    room = new Chat.Resource.RoomTown(data.townid, data.x, data.y);
+                    break;
+                  case 'general':
+                    room = new Chat.Resource.RoomGeneral(data.general_id);
+                    break;
+                  case 'maneuver':
+                    room = new Chat.Resource.RoomManeuver(data.fortid, data.xy);
+                    break;
+                  case 'fortbattle':
+                    room = new Chat.Resource.RoomFortBattle(data.fortid);
+                    break;
+                  default:
+                    room = new Chat.Resource.Room();
+                  }
+                }
+                room.init();
+                return room;
+              };
+            },
+          };
+          ChatWindow.Client.onClickOrigin = ChatWindow.Client.onClick;
+          ChatWindow.Client.onClick = function (args, id) {
+            if (args[0].target.className.indexOf('chat_servicegrade') !== 0) {
+              ChatWindow.Client.onClickOrigin(args, id);
+            }
+          };
+          $.fn.outerHTML = function () {
+            return $('<div />').append(this.eq(0).clone()).html();
+          };
+          setInterval(TWX.KoM.interval, 1000);
+          TWX.KoM.dataInterval();
+          setInterval(TWX.KoM.dataInterval, 10000);
+          TWX.KoM.thatWouldntHappendIfZetWasStillWorkingOnTheWest();
         },
       };
       TWX.CalcTwdb = {
@@ -7429,7 +8799,7 @@
               }
             };
             $('#worldsWrapper').append('<div id="loginMore" />');
-            $('#loginMore').append('<a id="loginAll" title="' + TWXlang.loginAll2 + '" href="#" >' + TWXlang.loginAll1 + '</a>').append('<a id="custom" title="' + TWXlang.custom2 + '" href="#" >' + TWXlang.custom1 + '</a>').append('<img id="cust1" title="' + TWXlang.edit + '" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAAFOSURBVDhPY6A6KKnL4j60a2Xf1jWz/6PjQ5unbIUqww3WLpr0Hx0/vXXq/9e39/5fPL4VzAdZAlVOGFw6s9t49sQGsAF/f30GGwLiQ6UJA5Dio7tW/X/z6AIYgwxaNKPr7/1rh6ShSnADkJ/banPB/r9z+QDYIBAfRE9oKf7f2Vz8BKoUE+ydEfj/5Orm/88vb/1fVxwHdjZI88p5zc0gevemRWBxqHJUANP86+Wu/9f3TPu/Y1Yh2NbCskQWkPyiOTmiIM0gw8AakAFI88FFVWCbQYasn5iBVeG0SWWeUCYCLKl1B9sG0gwyZFl73P+99d79UGn8AKQZZBtIM8iQ2XXh2J2IDYA0g2x7cGwZ2JDJpf7E2zwnwwxsG0gzyJCuXC/iNYMAsubGFDvSNIMAyEaQFxoiDf93Vgb3QIWJBwtb3NJANoNoqBAJgIEBAEbiFXTTZGcSAAAAAElFTkSuQmCC"/>');
+            $('#loginMore').append('<a id="loginAll" title="' + TWXlang.loginAll2 + '" href="#">' + TWXlang.loginAll1 + '</a>').append('<a id="custom" title="' + TWXlang.custom2 + '" href="#">' + TWXlang.custom1 + '</a>').append('<img id="cust1" title="' + TWXlang.edit + '" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAAFOSURBVDhPY6A6KKnL4j60a2Xf1jWz/6PjQ5unbIUqww3WLpr0Hx0/vXXq/9e39/5fPL4VzAdZAlVOGFw6s9t49sQGsAF/f30GGwLiQ6UJA5Dio7tW/X/z6AIYgwxaNKPr7/1rh6ShSnADkJ/banPB/r9z+QDYIBAfRE9oKf7f2Vz8BKoUE+ydEfj/5Orm/88vb/1fVxwHdjZI88p5zc0gevemRWBxqHJUANP86+Wu/9f3TPu/Y1Yh2NbCskQWkPyiOTmiIM0gw8AakAFI88FFVWCbQYasn5iBVeG0SWWeUCYCLKl1B9sG0gwyZFl73P+99d79UGn8AKQZZBtIM8iQ2XXh2J2IDYA0g2x7cGwZ2JDJpf7E2zwnwwxsG0gzyJCuXC/iNYMAsubGFDvSNIMAyEaQFxoiDf93Vgb3QIWJBwtb3NJANoNoqBAJgIEBAEbiFXTTZGcSAAAAAElFTkSuQmCC"/>');
             $('#selectWorldText').css('margin-bottom', '20px');
             $('#loginAll').css({
               'background-image': 'url("' + TWXstart.Images('LT_login') + '")',
