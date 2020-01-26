@@ -9,12 +9,13 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.46.6
+// @version 1.46.7
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
 // ==/UserScript==
 // translation:Tom Robert(German&English),Darius II/Wojcieszy/TeeNOmore127/pantomas(Polish),pepe100/HALCON DE ORO(Spanish),ruud99/Tanais(Dutch),Creature/krcsirke(Hungarian),Timemod Herkumo(Greek),Elly Siranno/Raymond Reddington/jccwest/gamer(Portuguese),Billy-AR/tw81(Italian),Tom Robert/Falc0n.RG/Dun(French),Jamza/Surge(Czech&Slovak),Did97/Macabre2077(Russian),OguzhanCekic(Turkish)
+// jshint -W100
 (function (fn) {
   var script = document.createElement('script');
   script.setAttribute('type', 'application/javascript');
@@ -25,41 +26,48 @@
   if (location.href.includes('index.php?page=logout')) {
     location.href = '/';
   } else {
-    TWXstart = {
-      version: '1.46.6',
+    TWX = {
+      version: '1.46.7',
       langs: {
         en: {
           language: 'English',
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
-          FeatLogout: 'Add a logout button on the right side',
-          FeatStatusbar: 'Remove the taskbar',
-          FeatShowAP: 'Show your actual skill points in job windows',
-          FeatChangeCity: 'Switch title and player name in the town hall',
-          FeatDuellMap: 'Add Duelmap tab in duel window',
-          FeatMarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-          FeatMarketTown: 'Show town name in market window',
-          FeatMarketMessage: 'Get a message when there are items or money to pick up on actual market',
-          FeatAchievHide: 'Hide completed achievements in achievements window',
-          FeatRecipeMarket: 'Improve the purchase of recipes on market',
-          FeatMoveJobs: 'Move the queued jobs a bit to the left',
-          FeatBlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
-          FeatFortTracker: 'Turn off fort battle reminder',
-          FeatFriendsPop: 'Hide "Friend online" pop-ups',
-          FeatInstantQuest: 'Complete the quest instantly if all requirements are done',
-          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
-          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
-          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
-          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
-          FeatQuestBookSearch: 'Search for solved quests in the quest book',
-          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
-          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
-          FeatShortPopups: 'Make the item pop-ups shorter',
-          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
-          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
-          FeatMapDistance: ' Show the number of miles next to the travel time',
-          FeatTraderSell: 'Sell multiple items at once to the trader',
-          FeatTouchControl: 'Enable touch control on your mobile browser',
+          Feat: {
+            DuellMap: 'Add Duelmap tab in duel window',
+            MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
+            MarketTown: 'Show town name in market window',
+            MarketMessage: 'Get a message when there are items or money to pick up on actual market',
+            AchievHide: 'Hide completed achievements in achievements window',
+            RecipeMarket: 'Improve the purchase of recipes on market',
+            MoveJobs: 'Move the queued jobs a bit to the left',
+            InstantQuest: 'Complete the quest instantly if all requirements are done',
+            QuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+            CityTravel: 'Show the travel time to the towns in the blackboard',
+            BetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+            ChatProfessions: 'Show the crafting profession of the players in the chat list',
+            QuestBookSearch: 'Search for solved quests in the quest book',
+            MarketRights: 'Show if market offers are public or only for alliance/town members',
+            EquipManagerPlus: 'Improve the equipment manager in the inventory',
+            ShortPopups: 'Make the item pop-ups shorter',
+            HideNotis: 'Add a button to hide the job notifications on the left side',
+            JobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+            MapDistance: ' Show the number of miles next to the travel time',
+            TraderSell: 'Sell multiple items at once to the trader',
+            TouchControl: 'Enable touch control on your mobile browser',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Add a logout button on the right side',
+            Statusbar: 'Remove the taskbar',
+            ShowAP: 'Show your actual skill points in job windows',
+            ChangeCity: 'Switch title and player name in the town hall',
+            BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
+            FortTracker: 'Turn off fort battle reminder',
+            FriendsPop: 'Hide "Friend online" pop-ups',
+          },
           settings1: 'Open settings',
           settings2: 'Open settings and information window',
           ghosttown1: 'Go to ghost town ',
@@ -85,7 +93,9 @@
           saveMessage: 'Saved successfully',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Helpful web pages',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Click on the hat to get started',
           items: 'items',
           parts: 'parts',
@@ -328,35 +338,41 @@
           language: 'German (Deutsch)',
           ApiGui1: 'Das Script beinhaltet verschiedene Funktionen um den Alltag bei The West zu vereinfachen.<br>Weitere Informationen',
           ApiGui2: 'Skriptfenster öffnen',
-          FeatLogout: 'Erstellt einen Logout-Button rechts in der Menüleiste',
-          FeatStatusbar: 'Entfernt die Fensterleiste mit den verschiedenen Tabs im unteren Teil',
-          FeatShowAP: 'Zeige die Arbeitspunkte im Job-Fenster',
-          FeatChangeCity: 'Tausche Titel und Spielername in der Stadthalle',
-          FeatDuellMap: 'Füge im Duellfenster einen Tab hinzu, der eine Duellkarte zeigt',
-          FeatMarkDaily: 'Markiere Täglicher Loginbonus am Tag 5 besonders, um ihn nicht zu übersehen',
-          FeatMarketTown: 'Zeige im Marktfenster, zu welcher Stadt es gehört',
-          FeatMarketMessage: 'Wenn du an einem Markt stehst, wo etwas abgeholt werden kann, erscheint eine Meldung',
-          FeatAchievHide: 'Verstecke alle abgeschlossenen Erfolge im Erfolgsfenster für eine bessere Übersicht',
-          FeatRecipeMarket: 'Verbessert den Kauf von Rezepten im Markt',
-          FeatMoveJobs: 'Verschiebe eingestellte Arbeiten ein wenig nach links',
-          FeatBlinkEvents: 'Das Blinken der Event-, Wanderzirkus-Buttons usw. am linken Rand entfernen',
-          FeatFortTracker: 'Fortkampftracker abschalten',
-          FeatFriendsPop: '"Freund online" Pop-ups deaktivieren',
-          FeatInstantQuest: 'Schliesse die Quest sofort ab, wenn die Voraussetzungen bereits erfüllt sind',
-          FeatQuestWiki: 'Füge im Questfenster einen Link hinzu, der die Quest im Wiki zeigt',
-          FeatCityTravel: 'Zeige die Reisezeit zu den Städten im Blackboard-Fenster',
-          FeatBetterSheriff: 'Erweitere den Sheriff um einen Tab, welcher alle Kopfgelder auflistet',
-          FeatChatProfessions: 'Zeige den Handwerksberuf der Spieler in der Chatliste',
-          FeatQuestBookSearch: 'Suche im Questbuch nach abgeschlossenen Quests',
-          FeatMarketRights: 'Zeige ob Marktangebote öffenltich oder nur für Allianz-/Stadtmitglieder sind',
-          FeatEquipManagerPlus: 'Erweitere den Ausrüstungsmanager im Inventar',
-          FeatShortPopups: 'Mache die Item-Popups kompakter',
-          FeatHideNotis: 'Blende Arbeits-Benachrichtigungen am linken Rand mit einem Klick aus',
-          FeatJobProducts: 'Zeige bei den Arbeiten, wie viele Produkte du bereits besitzt',
-          FeatMapDistance: 'Zeige die Entfernung in Meilen neben der Reisezeit',
-          FeatTraderSell: 'Ermöglicht dem Fahrenden Händler mehrere Gegenstände auf einmal zu verkaufen',
-          FeatTouchControl: 'Aktiviere Touchsteuerung im mobilen Browser',
-          FeatMarketBestBids: 'text <img src=\'/images/admin/admin_help.png\' title=\'<span style="color:green;">Green</span> – Bid is lower than the purchase price.<br>Black -  Bid is equal to the purchase price.<br><span style="color:blue;">Blue</span> – Bid is between 100% and 200% of the purchase price.<br><span style="color:red;">Red</span> – Bid is more than 200% of the purchase price.<br><br>The sold item will always have the color of the lowest bid!\'>',
+          Feat: {
+            DuellMap: 'Füge im Duellfenster einen Tab hinzu, der eine Duellkarte zeigt',
+            MarkDaily: 'Markiere Täglicher Loginbonus am Tag 5 besonders, um ihn nicht zu übersehen',
+            MarketTown: 'Zeige im Marktfenster, zu welcher Stadt es gehört',
+            MarketMessage: 'Wenn du an einem Markt stehst, wo etwas abgeholt werden kann, erscheint eine Meldung',
+            AchievHide: 'Verstecke alle abgeschlossenen Erfolge im Erfolgsfenster für eine bessere Übersicht',
+            RecipeMarket: 'Verbessert den Kauf von Rezepten im Markt',
+            MoveJobs: 'Verschiebe eingestellte Arbeiten ein wenig nach links',
+            InstantQuest: 'Schliesse die Quest sofort ab, wenn die Voraussetzungen bereits erfüllt sind',
+            QuestWiki: 'Füge im Questfenster einen Link hinzu, der die Quest im Wiki zeigt',
+            CityTravel: 'Zeige die Reisezeit zu den Städten im Blackboard-Fenster',
+            BetterSheriff: 'Erweitere den Sheriff um einen Tab, welcher alle Kopfgelder auflistet',
+            ChatProfessions: 'Zeige den Handwerksberuf der Spieler in der Chatliste',
+            QuestBookSearch: 'Suche im Questbuch nach abgeschlossenen Quests',
+            MarketRights: 'Zeige ob Marktangebote öffenltich oder nur für Allianz-/Stadtmitglieder sind',
+            EquipManagerPlus: 'Erweitere den Ausrüstungsmanager im Inventar',
+            ShortPopups: 'Mache die Item-Popups kompakter',
+            HideNotis: 'Blende Arbeits-Benachrichtigungen am linken Rand mit einem Klick aus',
+            JobProducts: 'Zeige bei den Arbeiten, wie viele Produkte du bereits besitzt',
+            MapDistance: 'Zeige die Entfernung in Meilen neben der Reisezeit',
+            TraderSell: 'Ermöglicht dem Fahrenden Händler mehrere Gegenstände auf einmal zu verkaufen',
+            TouchControl: 'Aktiviere Touchsteuerung im mobilen Browser',
+            ColorTchat: '$0 Neue Funktionen für den Chat. Farbiger Text, Emojis 🐧🎉 usw.',
+            QuickItemsSearch: '$0 Suche nach Buff-Kategorien und Sets in deinem Inventar',
+            MarketBestBids: '$0 Färbt die Auktionen dem Preis entsprechend $1 Gebot ist tiefer als der VK (Verkaufspreis) $2 Gebot entspricht dem VK $3 Gebot ist zwischen 100% and 200% des VK $4 Gebot ist höher als 200% des VK">',
+            BattleStars: '$0 Zusätzliche Statistiken im Fortkampfbericht',
+            KickoMatic: '$0 Vereinfacht die Musterung vor einem Fortkampf',
+            Logout: 'Erstellt einen Logout-Button rechts in der Menüleiste',
+            Statusbar: 'Entfernt die Fensterleiste mit den verschiedenen Tabs im unteren Teil',
+            ShowAP: 'Zeige die Arbeitspunkte im Job-Fenster',
+            ChangeCity: 'Tausche Titel und Spielername in der Stadthalle',
+            BlinkEvents: 'Das Blinken der Event-, Wanderzirkus-Buttons usw. am linken Rand entfernen',
+            FortTracker: 'Fortkampftracker abschalten',
+            FriendsPop: '"Freund online" Pop-ups deaktivieren',
+          },
           settings1: 'Einstellungen öffnen',
           settings2: 'Öffnet das Informations- und Einstellungsfenster',
           ghosttown1: 'Gehe zur Geisterstadt ',
@@ -382,7 +398,9 @@
           saveMessage: 'Speichern erfolgreich',
           saveMessage2: 'Einstellungen gespeichert. Manche Änderungen werden erst nach Neuladen des Spiels sichtbar.',
           setbonus2: 'Lass dir die Boni aller Sets anzeigen',
+          bonussearch2: 'Finde Items mit bestimmten Boni',
           frame2: 'Hilfreiche Webseiten',
+          npclocator2: 'Finde die Questgeber auf der Karte',
           choose: 'Klicke auf den Hut und wähle aus',
           items: 'Gegenstände',
           parts: 'Teile',
@@ -625,34 +643,41 @@
           language: 'Polish (polski)',
           ApiGui1: 'Skrypt ten zawiera wiele funkcji, aby uprościć codzienne życie na Zachodzie.<br>Więcej informacji',
           ApiGui2: 'Otwórz w nowej karcie',
-          FeatLogout: 'Dodanie przycisku po prawej stronie, wyloguj się.',
-          FeatStatusbar: 'Usuwa pasek z oknami w dolnej części gry.',
-          FeatShowAP: 'Pokazuje Punkty Pracy (PP) w oknie danej pracy.',
-          FeatChangeCity: 'Zamienia tytuł gracza na początku, w karcie graczy w ratuszu.',
-          FeatDuellMap: 'Dodaje dodatkową zakładkę pojedynków, w pojedynkach.',
-          FeatMarkDaily: 'Oznacza dodatkową ramką 5 dzień logowania.',
-          FeatMarketTown: 'Dodaje nazwę miasta w karcie targu.',
-          FeatMarketMessage: 'Jeżeli znajdujesz się w mieście gdzie coś jest do odebrania. Pojawia się komunikat.',
-          FeatAchievHide: 'Ukrywa zaliczone osiągnięcia.',
-          FeatRecipeMarket: 'Dodaje dodatkowe przyciski z receptami w karcie targ.',
-          FeatMoveJobs: 'Przenieś zadania w kolejce trochę na lewo',
-          FeatBlinkEvents: 'Zatrzymaj pulsowanie przycisków (zdarzenie, pomoce, ostrzeżenia itp) po lewej stronie',
-          FeatFortTracker: 'Wyłącz przypomnienie o bitwie',
-          FeatFriendsPop: 'Ukryj "Przyjaciel on-line" pop-ups',
-          FeatInstantQuest: 'Wykonaj zadanie natychmiast, gdyby wszystkie wymagania zostały wykonane',
-          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
-          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
-          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
-          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
-          FeatQuestBookSearch: 'Search for solved quests in the quest book',
-          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
-          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
-          FeatShortPopups: 'Make the item pop-ups shorter',
-          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
-          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
-          FeatMapDistance: ' Show the number of miles next to the travel time',
-          FeatTraderSell: 'Sell multiple items at once to the trader',
-          FeatTouchControl: 'Enable touch control for map and scrollbar on your mobile',
+          Feat: {
+            DuellMap: 'Dodaje dodatkową zakładkę pojedynków, w pojedynkach.',
+            MarkDaily: 'Oznacza dodatkową ramką 5 dzień logowania.',
+            MarketTown: 'Dodaje nazwę miasta w karcie targu.',
+            MarketMessage: 'Jeżeli znajdujesz się w mieście gdzie coś jest do odebrania. Pojawia się komunikat.',
+            AchievHide: 'Ukrywa zaliczone osiągnięcia.',
+            RecipeMarket: 'Dodaje dodatkowe przyciski z receptami w karcie targ.',
+            MoveJobs: 'Przenieś zadania w kolejce trochę na lewo',
+            InstantQuest: 'Wykonaj zadanie natychmiast, gdyby wszystkie wymagania zostały wykonane',
+            QuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+            CityTravel: 'Show the travel time to the towns in the blackboard',
+            BetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+            ChatProfessions: 'Show the crafting profession of the players in the chat list',
+            QuestBookSearch: 'Search for solved quests in the quest book',
+            MarketRights: 'Show if market offers are public or only for alliance/town members',
+            EquipManagerPlus: 'Improve the equipment manager in the inventory',
+            ShortPopups: 'Make the item pop-ups shorter',
+            HideNotis: 'Add a button to hide the job notifications on the left side',
+            JobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+            MapDistance: ' Show the number of miles next to the travel time',
+            TraderSell: 'Sell multiple items at once to the trader',
+            TouchControl: 'Enable touch control for map and scrollbar on your mobile',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Dodanie przycisku po prawej stronie, wyloguj się.',
+            Statusbar: 'Usuwa pasek z oknami w dolnej części gry.',
+            ShowAP: 'Pokazuje Punkty Pracy (PP) w oknie danej pracy.',
+            ChangeCity: 'Zamienia tytuł gracza na początku, w karcie graczy w ratuszu.',
+            BlinkEvents: 'Zatrzymaj pulsowanie przycisków (zdarzenie, pomoce, ostrzeżenia itp) po lewej stronie',
+            FortTracker: 'Wyłącz przypomnienie o bitwie',
+            FriendsPop: 'Ukryj "Przyjaciel on-line" pop-ups',
+          },
           settings1: 'Otwórz ustawienia',
           settings2: 'Otwiera okno ustawień oraz informacji o skrypcie.',
           ghosttown1: 'Idź do Miasta Widmo, dojście ',
@@ -678,7 +703,9 @@
           saveMessage: 'Saved successfully',
           saveMessage2: 'Ustawienia zapisane. Niektóre zmiany potrzebują odświeżenia okna gry.',
           setbonus2: 'Informacje o ustawionych premie',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Pomocna stron internetowych',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Kliknij na kapelusz i wybierz',
           items: 'przedmioty',
           parts: 'parts',
@@ -921,34 +948,41 @@
           language: 'Spanish (español)',
           ApiGui1: 'El script incluye varias funciones que simplifican la vida cotidiana en The West.<br>Más información',
           ApiGui2: 'Abrir ventana del script',
-          FeatLogout: 'Crea un botón de cierre de sesión a la derecha en la barra de menús',
-          FeatStatusbar: 'Oculta la barra inferior de las ventanas',
-          FeatShowAP: 'Ver los puntos de trabajo en la ventana de trabajo',
-          FeatChangeCity: 'Cambiar título y nombre del jugador en el ayuntamiento',
-          FeatDuellMap: 'Completar la ventana de duelos con una pestaña que muestra el mapa de duelos',
-          FeatMarkDaily: 'Marcar el Bonus-Conexión-5 Días especialmente para que no te lo pierdas',
-          FeatMarketTown: 'Mostrar en la ventana de mercado, la ciudad al que pertenece',
-          FeatMarketMessage: 'Si llegas a un mercado donde tienes algo que puede ser recogido, aparece un mensaj',
-          FeatAchievHide: 'Ocultar logros completados en la ventana de logros para una mejor visión',
-          FeatRecipeMarket: 'Mejorar la compra de recetas en el mercado',
-          FeatMoveJobs: 'Mover los trabajos en cola un poco a la izquierda',
-          FeatBlinkEvents: 'Detener el parpadeo de los botones de Evento y Feria de Condado en el lado izquierdo',
-          FeatFortTracker: 'Apagar el recordatorio de Batalla de fuerte',
-          FeatFriendsPop: 'Esconder ventana emergente de "Amigo conectado"',
-          FeatInstantQuest: 'Completar la misión al instante si se cumplen todos los requisitos',
-          FeatQuestWiki: 'Agregar un enlace en la ventana de búsqueda para mostrar la búsqueda en la Wiki',
-          FeatCityTravel: 'Mostrar el tiempo de viaje a las ciudades en la pizarra',
-          FeatBetterSheriff: 'Añadir una nueva pestaña en la ventana del sheriff para ver todas las recompensas posibles',
-          FeatChatProfessions: 'Mostrar el oficio de los jugadores en la lista del chat',
-          FeatQuestBookSearch: 'Buscar misiones terminadas en libro de misiones',
-          FeatMarketRights: 'Mostrar si las ofertas de mercado son públicas o solo para los miembros de la Alianza/Ciudad',
-          FeatEquipManagerPlus: 'Mejorar el administrador de equipos en el inventario',
-          FeatShortPopups: 'Hacer los pop-ups de articulos más cortos',
-          FeatHideNotis: 'Agregar un botón para ocultar las notificaciones de trabajo en el lado izquierdo',
-          FeatJobProducts: 'Mostrar en la ventana emergente de trabajo cuántos productos tienes en tu inventario',
-          FeatMapDistance: 'Mostrar la cantidad de millas al lado del tiempo de viaje',
-          FeatTraderSell: 'Vender varios artículos a la vez al comerciante',
-          FeatTouchControl: 'Habilitar el control táctil para el mapa y la barra de desplazamiento en su dispositivo móvil',
+          Feat: {
+            DuellMap: 'Completar la ventana de duelos con una pestaña que muestra el mapa de duelos',
+            MarkDaily: 'Marcar el Bonus-Conexión-5 Días especialmente para que no te lo pierdas',
+            MarketTown: 'Mostrar en la ventana de mercado, la ciudad al que pertenece',
+            MarketMessage: 'Si llegas a un mercado donde tienes algo que puede ser recogido, aparece un mensaj',
+            AchievHide: 'Ocultar logros completados en la ventana de logros para una mejor visión',
+            RecipeMarket: 'Mejorar la compra de recetas en el mercado',
+            MoveJobs: 'Mover los trabajos en cola un poco a la izquierda',
+            InstantQuest: 'Completar la misión al instante si se cumplen todos los requisitos',
+            QuestWiki: 'Agregar un enlace en la ventana de búsqueda para mostrar la búsqueda en la Wiki',
+            CityTravel: 'Mostrar el tiempo de viaje a las ciudades en la pizarra',
+            BetterSheriff: 'Añadir una nueva pestaña en la ventana del sheriff para ver todas las recompensas posibles',
+            ChatProfessions: 'Mostrar el oficio de los jugadores en la lista del chat',
+            QuestBookSearch: 'Buscar misiones terminadas en libro de misiones',
+            MarketRights: 'Mostrar si las ofertas de mercado son públicas o solo para los miembros de la Alianza/Ciudad',
+            EquipManagerPlus: 'Mejorar el administrador de equipos en el inventario',
+            ShortPopups: 'Hacer los pop-ups de articulos más cortos',
+            HideNotis: 'Agregar un botón para ocultar las notificaciones de trabajo en el lado izquierdo',
+            JobProducts: 'Mostrar en la ventana emergente de trabajo cuántos productos tienes en tu inventario',
+            MapDistance: 'Mostrar la cantidad de millas al lado del tiempo de viaje',
+            TraderSell: 'Vender varios artículos a la vez al comerciante',
+            TouchControl: 'Habilitar el control táctil para el mapa y la barra de desplazamiento en su dispositivo móvil',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Crea un botón de cierre de sesión a la derecha en la barra de menús',
+            Statusbar: 'Oculta la barra inferior de las ventanas',
+            ShowAP: 'Ver los puntos de trabajo en la ventana de trabajo',
+            ChangeCity: 'Cambiar título y nombre del jugador en el ayuntamiento',
+            BlinkEvents: 'Detener el parpadeo de los botones de Evento y Feria de Condado en el lado izquierdo',
+            FortTracker: 'Apagar el recordatorio de Batalla de fuerte',
+            FriendsPop: 'Esconder ventana emergente de "Amigo conectado"',
+          },
           settings1: 'Abrir preferencias',
           settings2: 'Abrir la ventana de información y ajustes',
           ghosttown1: 'Ir a la Ciudad Fantasma ',
@@ -974,7 +1008,9 @@
           saveMessage: 'Grabado con éxito',
           saveMessage2: 'Ajustes guardados. Algunos cambios necesitan una actualización de la ventana de juego.',
           setbonus2: 'Información acerca de los bonus de conjunto',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Páginas web votos',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Haga clic en el sombrero y elegir',
           items: 'artículos',
           parts: 'partes',
@@ -1216,34 +1252,41 @@
           language: 'Dutch (Nederlands)',
           ApiGui1: 'Dit script bevat veel mogelijkheden om het dagelijks leven in The West te vergemakkelijken.<br>Voor meer informatie',
           ApiGui2: 'Open script pagina',
-          FeatLogout: 'Voeg een afmeldknop toe aan de rechterzijde van het scherm',
-          FeatStatusbar: 'Verwijder het dagelijkse taken icoon',
-          FeatShowAP: 'Toon je vaardigheidspunten in werkzaamheidsscherm windows',
-          FeatChangeCity: 'Verwissel de titel en de spelersnaam in het  stadhuis',
-          FeatDuellMap: 'Voeg een duelkaart toe aan de duel tab',
-          FeatMarkDaily: 'Markeer de dagelijkse inlogbonus op de 5e dag zodat je hem niet mist',
-          FeatMarketTown: 'Toon stadsnaam in marktscherm',
-          FeatMarketMessage: 'Krijg een bericht wanneer er voorwerpen of geld beschikbaar zijn om op te halen',
-          FeatAchievHide: 'Verberg voltooide prestaties in prestatiescherm',
-          FeatRecipeMarket: 'Verbeter overzicht voor recepten kopen.',
-          FeatMoveJobs: 'Verschuif de werkzaamheden in de wachtrij een stukje naar links',
-          FeatBlinkEvents: 'Stop het knipperen van event of circus knop aan linkerkant',
-          FeatFortTracker: 'Schakel de fortgevecht herinnering uit',
-          FeatFriendsPop: 'Verberg “uw vriend logt in” pop-ups',
-          FeatInstantQuest: 'Voltooi de quest direct als aan alle vereisten is gedaan',
-          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
-          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
-          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
-          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
-          FeatQuestBookSearch: 'Search for solved quests in the quest book',
-          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
-          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
-          FeatShortPopups: 'Make the item pop-ups shorter',
-          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
-          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
-          FeatMapDistance: ' Show the number of miles next to the travel time',
-          FeatTraderSell: 'Sell multiple items at once to the trader',
-          FeatTouchControl: 'Enable touch control for map and scrollbar on your mobile',
+          Feat: {
+            DuellMap: 'Voeg een duelkaart toe aan de duel tab',
+            MarkDaily: 'Markeer de dagelijkse inlogbonus op de 5e dag zodat je hem niet mist',
+            MarketTown: 'Toon stadsnaam in marktscherm',
+            MarketMessage: 'Krijg een bericht wanneer er voorwerpen of geld beschikbaar zijn om op te halen',
+            AchievHide: 'Verberg voltooide prestaties in prestatiescherm',
+            RecipeMarket: 'Verbeter overzicht voor recepten kopen.',
+            MoveJobs: 'Verschuif de werkzaamheden in de wachtrij een stukje naar links',
+            InstantQuest: 'Voltooi de quest direct als aan alle vereisten is gedaan',
+            QuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+            CityTravel: 'Show the travel time to the towns in the blackboard',
+            BetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+            ChatProfessions: 'Show the crafting profession of the players in the chat list',
+            QuestBookSearch: 'Search for solved quests in the quest book',
+            MarketRights: 'Show if market offers are public or only for alliance/town members',
+            EquipManagerPlus: 'Improve the equipment manager in the inventory',
+            ShortPopups: 'Make the item pop-ups shorter',
+            HideNotis: 'Add a button to hide the job notifications on the left side',
+            JobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+            MapDistance: ' Show the number of miles next to the travel time',
+            TraderSell: 'Sell multiple items at once to the trader',
+            TouchControl: 'Enable touch control for map and scrollbar on your mobile',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Voeg een afmeldknop toe aan de rechterzijde van het scherm',
+            Statusbar: 'Verwijder het dagelijkse taken icoon',
+            ShowAP: 'Toon je vaardigheidspunten in werkzaamheidsscherm windows',
+            ChangeCity: 'Verwissel de titel en de spelersnaam in het  stadhuis',
+            BlinkEvents: 'Stop het knipperen van event of circus knop aan linkerkant',
+            FortTracker: 'Schakel de fortgevecht herinnering uit',
+            FriendsPop: 'Verberg “uw vriend logt in” pop-ups',
+          },
           settings1: 'Instellingen openen',
           settings2: 'Instellingen en informatiescherm openen',
           ghosttown1: 'Ga naar de Spookstad ',
@@ -1269,7 +1312,9 @@
           saveMessage: 'Sparen succes',
           saveMessage2: 'Instellingen toegevoegd. Sommige veranderingen hebben behoefte aan een refresh van het spel venster.',
           setbonus2: 'Informatie over de set bonusen',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Nuttige websites',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Klik op de hoed en kies',
           items: 'Voorwerpen',
           parts: 'parts',
@@ -1512,34 +1557,41 @@
           language: 'Hungarian (Magyar)',
           ApiGui1: 'Ez a szkript több olyan funkciót tartalmaz ami megkönnyíti a mindennapjaidat a vadnyugaton.<br>Több információ',
           ApiGui2: 'Szkript oldalának megnyitása',
-          FeatLogout: 'Kilépés gomb a jobb oldalra',
-          FeatStatusbar: 'Tálca eltüntetése',
-          FeatShowAP: 'Valódi képességpontok a munkaablakokban',
-          FeatChangeCity: 'Cím és játékosnév felcserélése a városházánál',
-          FeatDuellMap: 'Párbajtérkép a párbaj ablakban',
-          FeatMarkDaily: 'Az 5. napi belépés bónusz bekeretezése, hogy nehogy kihagyd',
-          FeatMarketTown: 'Városnév megjelenítése a piac ablakban',
-          FeatMarketMessage: 'Felugró ablak amikor tárgyak vagy pénz felvétele lehetséges az aktuális piacnál',
-          FeatAchievHide: 'Befejezett események elrejtése az esemény ablakban',
-          FeatRecipeMarket: 'Receptvásárlás megkönnyítése, rendezése a piacon',
-          FeatMoveJobs: 'Mozgassa el a munka várólistát kissé balra hogy elférjenek az ikonok',
-          FeatBlinkEvents: 'Események, eladás és piaci vásár gomb villogás kikapcsolása',
-          FeatFortTracker: 'Kapcsolja ki az erődharc emlékeztetőt',
-          FeatFriendsPop: 'Rejtse el a "barátod bejelentkezett" felugró ablakokat',
-          FeatInstantQuest: 'Befejezni a küldetést, azonnal, ha minden feltétel kész',
-          FeatQuestWiki: 'Link hozzáadása a kalandablakban, amin elérhető a kaland wikioldala',
-          FeatCityTravel: 'Távolság a várostól mutatása a hirdetőtáblán',
-          FeatBetterSheriff: 'Új lap hozzáadása a Seriff ablakban, láthatóvá téve az összes körözöttet',
-          FeatChatProfessions: 'Mesterségek mutatása a játékosoknál a chat partnerlistánál',
-          FeatQuestBookSearch: 'Keresés a befejezett kalandoknál a kalandkönyvben',
-          FeatMarketRights: 'Piaci ajánlatoknál mutatása, hogy bárki számára elérhető vagy csak szövetség/város tagok számára',
-          FeatEquipManagerPlus: 'Felszerelés kezelő ablak fejlesztése',
-          FeatShortPopups: 'Tárgy felugró menüjének rövidítése',
-          FeatHideNotis: 'Bal oldalon lévő munkaértesítéseket eltüntető gomb hozzáadása',
-          FeatJobProducts: 'Munkáknál felugró menüben mutassa, mennyi terméked van már a felszerelésedben, ami az adott munkánál található',
-          FeatMapDistance: ' Show the number of miles next to the travel time',
-          FeatTraderSell: 'Sell multiple items at once to the trader',
-          FeatTouchControl: 'Enable touch control for map and scrollbar on your mobile',
+          Feat: {
+            DuellMap: 'Párbajtérkép a párbaj ablakban',
+            MarkDaily: 'Az 5. napi belépés bónusz bekeretezése, hogy nehogy kihagyd',
+            MarketTown: 'Városnév megjelenítése a piac ablakban',
+            MarketMessage: 'Felugró ablak amikor tárgyak vagy pénz felvétele lehetséges az aktuális piacnál',
+            AchievHide: 'Befejezett események elrejtése az esemény ablakban',
+            RecipeMarket: 'Receptvásárlás megkönnyítése, rendezése a piacon',
+            MoveJobs: 'Mozgassa el a munka várólistát kissé balra hogy elférjenek az ikonok',
+            InstantQuest: 'Befejezni a küldetést, azonnal, ha minden feltétel kész',
+            QuestWiki: 'Link hozzáadása a kalandablakban, amin elérhető a kaland wikioldala',
+            CityTravel: 'Távolság a várostól mutatása a hirdetőtáblán',
+            BetterSheriff: 'Új lap hozzáadása a Seriff ablakban, láthatóvá téve az összes körözöttet',
+            ChatProfessions: 'Mesterségek mutatása a játékosoknál a chat partnerlistánál',
+            QuestBookSearch: 'Keresés a befejezett kalandoknál a kalandkönyvben',
+            MarketRights: 'Piaci ajánlatoknál mutatása, hogy bárki számára elérhető vagy csak szövetség/város tagok számára',
+            EquipManagerPlus: 'Felszerelés kezelő ablak fejlesztése',
+            ShortPopups: 'Tárgy felugró menüjének rövidítése',
+            HideNotis: 'Bal oldalon lévő munkaértesítéseket eltüntető gomb hozzáadása',
+            JobProducts: 'Munkáknál felugró menüben mutassa, mennyi terméked van már a felszerelésedben, ami az adott munkánál található',
+            MapDistance: ' Show the number of miles next to the travel time',
+            TraderSell: 'Sell multiple items at once to the trader',
+            TouchControl: 'Enable touch control for map and scrollbar on your mobile',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Kilépés gomb a jobb oldalra',
+            Statusbar: 'Tálca eltüntetése',
+            ShowAP: 'Valódi képességpontok a munkaablakokban',
+            ChangeCity: 'Cím és játékosnév felcserélése a városházánál',
+            BlinkEvents: 'Események, eladás és piaci vásár gomb villogás kikapcsolása',
+            FortTracker: 'Kapcsolja ki az erődharc emlékeztetőt',
+            FriendsPop: 'Rejtse el a "barátod bejelentkezett" felugró ablakokat',
+          },
           settings1: 'Beállítások megnyitása',
           settings2: 'Beállítások és információk',
           ghosttown1: 'Menj el a Szellemvárosba ',
@@ -1565,7 +1617,9 @@
           saveMessage: 'Sikeres mentés',
           saveMessage2: 'Beállítások elmentve. Néhány változás életbe lépéséhez frissítse a játék ablakát.',
           setbonus2: 'Információk a szettbónuszokról',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Hasznos weboldalak',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Kattints a kalapra a kezdéshez, választáshoz',
           items: 'tárgyak',
           parts: 'darabok',
@@ -1808,34 +1862,41 @@
           language: 'Greek (ελληνικά)',
           ApiGui1: 'Αυτό το script περιέχει πολλά χαρακτηριστικά για να απλοποιήσετε την ζωή σας στο The West.<br>Περισσότερες πληροφορίες',
           ApiGui2: 'Ρυθμίσεις του script',
-          FeatLogout: 'Προσθέστε ένα κουμπί αποσύνδεσης στη δεξιά πλευρά',
-          FeatStatusbar: 'Αφαιρέστε τη γραμμή εργασιών',
-          FeatShowAP: 'Εμφάνιση των συνολικών πόντων εργασίας στα παράθυρα εργασίας',
-          FeatChangeCity: 'Βάλτε τον τίτλο πριν από το όνομα του παίκτη στην καρτέλα του Δημαρχείου',
-          FeatDuellMap: 'Προσθήκη καρτέλας Duelmap στην καρτέλα μονομαχιών',
-          FeatMarkDaily: 'Επισημάνετε το καθημερινό μπόνους σύνδεσης την 5η ημέρα για να μην το χάσετε',
-          FeatMarketTown: 'Εμφάνιση ονόματος πόλης στο παράθυρο της αγοράς',
-          FeatMarketMessage: 'Εμφάνιση μηνύματος όταν υπάρχουν αντικείμενα ή χρήματα στην αγορά της πόλης που μόλις ταξιδέψατε',
-          FeatAchievHide: 'Απόκρυψη ολοκληρωμένων επιτευγμάτων στο παράθυρο επιτευγμάτων',
-          FeatRecipeMarket: 'Βελτιώστε την αγορά συνταγών στην αγορά',
-          FeatMoveJobs: 'Μετακινήστε την καρτέλα των τρέχουσων εργασιών λίγο προς τα αριστερά',
-          FeatBlinkEvents: 'Σταματήστε την αναλαμπή των Εκδηλώσεων και του Λούνα Παρκ στην αριστερή πλευρά',
-          FeatFortTracker: 'Απενεργοποιήστε την υπενθύμιση μάχης οχυρού',
-          FeatFriendsPop: 'Απόκρυψη αναδυόμενων παραθύρων "Συνδεδεμένοι φίλοι"',
-          FeatInstantQuest: 'Ολοκληρώστε μια αποστολή αμέσως αν πληρούνται όλες οι απαιτήσεις',
-          FeatQuestWiki: 'Προσθήκη ενός κουμπιού στις αποστολές για την εμφάνισή τους στην σελίδα "Βοήθειας"',
-          FeatCityTravel: 'Εμφάνιση του χρόνου ταξιδιού στις πόλεις του μαυροπίνακα',
-          FeatBetterSheriff: 'Προσθήκη μιας νέας καρτέλας στο παράθυρο του "Σερίφη" για να δείτε όλες τις πιθανές επικυρήξεις',
-          FeatChatProfessions: 'Προσθήκη του εικονιδίου επαγγέλματος των παικτών στη λίστα συνομιλίας (τσατ)',
-          FeatQuestBookSearch: 'Αναζήτηση για επιλυμένες αποστολές στο βιβλίο αποστολών',
-          FeatMarketRights: 'Προσθήκη εικονιδίου για το εάν οι προσφορές της αγοράς είναι δημόσιες ή μόνο για μέλη της συμμαχίας / πόλης',
-          FeatEquipManagerPlus: 'Βελτιώστε τον υπεύθυνο εξοπλισμού στα αποθέματα',
-          FeatShortPopups: 'Εμφάνιση μικρότερης περιγραφής αντικειμένων στα αποθέματα',
-          FeatHideNotis: 'Προσθήκη ενός κουμπιού για την απόκρυψη των ειδοποιήσεων εργασίας στην αριστερή πλευρά',
-          FeatJobProducts: 'Εμφανίστε στο αναδυόμενο παράθυρο εργασίας πόσα προϊόντα έχετε ήδη στα αποθέματά σας',
-          FeatMapDistance: 'Εμφάνιση της απόστασης του ταξιδιού σας σε Μίλια',
-          FeatTraderSell: 'Πώληση πολλαπλών αντικειμένων στον Έμπορο',
-          FeatTouchControl: 'Enable touch control for map and scrollbar on your mobile',
+          Feat: {
+            DuellMap: 'Προσθήκη καρτέλας Duelmap στην καρτέλα μονομαχιών',
+            MarkDaily: 'Επισημάνετε το καθημερινό μπόνους σύνδεσης την 5η ημέρα για να μην το χάσετε',
+            MarketTown: 'Εμφάνιση ονόματος πόλης στο παράθυρο της αγοράς',
+            MarketMessage: 'Εμφάνιση μηνύματος όταν υπάρχουν αντικείμενα ή χρήματα στην αγορά της πόλης που μόλις ταξιδέψατε',
+            AchievHide: 'Απόκρυψη ολοκληρωμένων επιτευγμάτων στο παράθυρο επιτευγμάτων',
+            RecipeMarket: 'Βελτιώστε την αγορά συνταγών στην αγορά',
+            MoveJobs: 'Μετακινήστε την καρτέλα των τρέχουσων εργασιών λίγο προς τα αριστερά',
+            InstantQuest: 'Ολοκληρώστε μια αποστολή αμέσως αν πληρούνται όλες οι απαιτήσεις',
+            QuestWiki: 'Προσθήκη ενός κουμπιού στις αποστολές για την εμφάνισή τους στην σελίδα "Βοήθειας"',
+            CityTravel: 'Εμφάνιση του χρόνου ταξιδιού στις πόλεις του μαυροπίνακα',
+            BetterSheriff: 'Προσθήκη μιας νέας καρτέλας στο παράθυρο του "Σερίφη" για να δείτε όλες τις πιθανές επικυρήξεις',
+            ChatProfessions: 'Προσθήκη του εικονιδίου επαγγέλματος των παικτών στη λίστα συνομιλίας (τσατ)',
+            QuestBookSearch: 'Αναζήτηση για επιλυμένες αποστολές στο βιβλίο αποστολών',
+            MarketRights: 'Προσθήκη εικονιδίου για το εάν οι προσφορές της αγοράς είναι δημόσιες ή μόνο για μέλη της συμμαχίας / πόλης',
+            EquipManagerPlus: 'Βελτιώστε τον υπεύθυνο εξοπλισμού στα αποθέματα',
+            ShortPopups: 'Εμφάνιση μικρότερης περιγραφής αντικειμένων στα αποθέματα',
+            HideNotis: 'Προσθήκη ενός κουμπιού για την απόκρυψη των ειδοποιήσεων εργασίας στην αριστερή πλευρά',
+            JobProducts: 'Εμφανίστε στο αναδυόμενο παράθυρο εργασίας πόσα προϊόντα έχετε ήδη στα αποθέματά σας',
+            MapDistance: 'Εμφάνιση της απόστασης του ταξιδιού σας σε Μίλια',
+            TraderSell: 'Πώληση πολλαπλών αντικειμένων στον Έμπορο',
+            TouchControl: 'Enable touch control for map and scrollbar on your mobile',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Προσθέστε ένα κουμπί αποσύνδεσης στη δεξιά πλευρά',
+            Statusbar: 'Αφαιρέστε τη γραμμή εργασιών',
+            ShowAP: 'Εμφάνιση των συνολικών πόντων εργασίας στα παράθυρα εργασίας',
+            ChangeCity: 'Βάλτε τον τίτλο πριν από το όνομα του παίκτη στην καρτέλα του Δημαρχείου',
+            BlinkEvents: 'Σταματήστε την αναλαμπή των Εκδηλώσεων και του Λούνα Παρκ στην αριστερή πλευρά',
+            FortTracker: 'Απενεργοποιήστε την υπενθύμιση μάχης οχυρού',
+            FriendsPop: 'Απόκρυψη αναδυόμενων παραθύρων "Συνδεδεμένοι φίλοι"',
+          },
           settings1: 'Ρυθμίσεις',
           settings2: 'Ανοίξτε τις ρυθμίσεις και το παράθυρο πληροφοριών',
           ghosttown1: 'Προς την Πόλη Φάντασμα ➔ ',
@@ -1861,7 +1922,9 @@
           saveMessage: 'Αποθηκεύτηκε με επιτυχία',
           saveMessage2: 'Οι ρυθμίσεις αποθηκεύτηκαν. Ορισμένες αλλαγές χρειάζονται μια ανανέωση του παραθύρου του παιχνιδιού.',
           setbonus2: 'Πληροφορίες σχετικά με τα μπόνους των Σετ',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Χρήσιμες ιστοσελίδες',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Κάντε κλικ στο καπέλο για να ξεκινήσετε',
           items: 'Αντικείμενα',
           parts: 'Τεμάχια',
@@ -2104,34 +2167,41 @@
           language: 'Portuguese (português)',
           ApiGui1: 'Esse script foi feito para facilitar sua vida no Velho Oeste',
           ApiGui2: 'Abrir página do Script',
-          FeatLogout: 'Adicionar botão de sair no fim dos scripts',
-          FeatStatusbar: 'Remover a barra de tarefas',
-          FeatShowAP: 'Mostrar seus pontos de habilidade na janela de trabalho.',
-          FeatChangeCity: 'Mude o título e nome do jogador na cidade.',
-          FeatDuellMap: 'Adicionar mapa de duelos na janela duelos.',
-          FeatMarkDaily: 'Destacar bônus de login diário.',
-          FeatMarketTown: 'Mostrar nome da cidade no mercado.',
-          FeatMarketMessage: 'Receber notificação de itens comprados ou vendidos no mercado atual.',
-          FeatAchievHide: 'Ocultar conquistas realizadas na janela de conquistas.',
-          FeatRecipeMarket: 'Melhorar a compra de receitas no mercado.',
-          FeatMoveJobs: 'Mover os trabalhos enfileirados a esquerda.',
-          FeatBlinkEvents: 'Não piscar botões de evento ao lado esquerdo.',
-          FeatFortTracker: 'Ocultar botão da batalha de forte.',
-          FeatFriendsPop: 'Ocultar janela de amigos online.',
-          FeatInstantQuest: 'Completar aventura instantâneamente quando tiver os requisitos.',
-          FeatQuestWiki: 'Adicionar link para abrir a aventura no wiki.',
-          FeatCityTravel: 'MOstrar o tempo de distância nas cidades do quadro.',
-          FeatBetterSheriff: 'Adicionar aba no Xerife para ver todas as recompensas possíveis.',
-          FeatChatProfessions: 'MOstrar a profissão dos jogadores na lista do chat.',
-          FeatQuestBookSearch: 'Pesquisar por aventuras resolvidas no livro de aventuras',
-          FeatMarketRights: 'Diferenciar itens no mercado entre cidade, aliança, e público.',
-          FeatEquipManagerPlus: 'Mostre o gerenciamento de equipamento no inventário.',
-          FeatShortPopups: 'Tornar janelas pop-up mais curtas.',
-          FeatHideNotis: 'Adicionar botão para ocultar as notificações do trabalho ao lado esquerdo.',
-          FeatJobProducts: 'Mostrar na janela de trabalho quantos produtos você já tem no inventário.',
-          FeatMapDistance: ' Mostrar o número de milhas ao lado do tempo de viagem.',
-          FeatTraderSell: 'Vender vários itens de uma só vez ao comerciante.',
-          FeatTouchControl: 'Enable touch control for map and scrollbar on your mobile',
+          Feat: {
+            DuellMap: 'Adicionar mapa de duelos na janela duelos.',
+            MarkDaily: 'Destacar bônus de login diário.',
+            MarketTown: 'Mostrar nome da cidade no mercado.',
+            MarketMessage: 'Receber notificação de itens comprados ou vendidos no mercado atual.',
+            AchievHide: 'Ocultar conquistas realizadas na janela de conquistas.',
+            RecipeMarket: 'Melhorar a compra de receitas no mercado.',
+            MoveJobs: 'Mover os trabalhos enfileirados a esquerda.',
+            InstantQuest: 'Completar aventura instantâneamente quando tiver os requisitos.',
+            QuestWiki: 'Adicionar link para abrir a aventura no wiki.',
+            CityTravel: 'MOstrar o tempo de distância nas cidades do quadro.',
+            BetterSheriff: 'Adicionar aba no Xerife para ver todas as recompensas possíveis.',
+            ChatProfessions: 'MOstrar a profissão dos jogadores na lista do chat.',
+            QuestBookSearch: 'Pesquisar por aventuras resolvidas no livro de aventuras',
+            MarketRights: 'Diferenciar itens no mercado entre cidade, aliança, e público.',
+            EquipManagerPlus: 'Mostre o gerenciamento de equipamento no inventário.',
+            ShortPopups: 'Tornar janelas pop-up mais curtas.',
+            HideNotis: 'Adicionar botão para ocultar as notificações do trabalho ao lado esquerdo.',
+            JobProducts: 'Mostrar na janela de trabalho quantos produtos você já tem no inventário.',
+            MapDistance: ' Mostrar o número de milhas ao lado do tempo de viagem.',
+            TraderSell: 'Vender vários itens de uma só vez ao comerciante.',
+            TouchControl: 'Enable touch control for map and scrollbar on your mobile',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Adicionar botão de sair no fim dos scripts',
+            Statusbar: 'Remover a barra de tarefas',
+            ShowAP: 'Mostrar seus pontos de habilidade na janela de trabalho.',
+            ChangeCity: 'Mude o título e nome do jogador na cidade.',
+            BlinkEvents: 'Não piscar botões de evento ao lado esquerdo.',
+            FortTracker: 'Ocultar botão da batalha de forte.',
+            FriendsPop: 'Ocultar janela de amigos online.',
+          },
           settings1: 'Configurações',
           settings2: 'Configurações e Janela de Informações',
           ghosttown1: 'Ir para Cidade Fantasma ',
@@ -2157,7 +2227,9 @@
           saveMessage: 'Salvo com sucesso!',
           saveMessage2: 'Configurações salvas. Algumas mudanças só apareceram quando atualizar a janela.',
           setbonus2: 'Informações sobre o bônus do set',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Páginas da Web Úteis',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Clique no Chapéu para começar.',
           items: 'Itens',
           parts: 'Partes',
@@ -2400,34 +2472,41 @@
           language: 'Italian (italiano)',
           ApiGui1: 'Questo script raccoglie molte funzionalità utili a semplificarti la vita in The West.<br>Ulteriori informazioni',
           ApiGui2: 'Apri la pagina dello script',
-          FeatLogout: 'Aggiungi sul lato destro dello schermo un pulsante disconnetti',
-          FeatStatusbar: 'Nascondi la barra degli incarichi',
-          FeatShowAP: 'Mostra i tuoi attuali punti abilità nelle finestre dei lavori',
-          FeatChangeCity: 'Nel municipio, inverti il titolo e il nome del giocatore',
-          FeatDuellMap: 'Aggiungi la scheda Mappa duelli nella finestra Duelli',
-          FeatMarkDaily: 'Evidenzia il bonus login del 5° giorno per non dimenticarlo',
-          FeatMarketTown: 'Mostra il nome della città nella finestra del mercato',
-          FeatMarketMessage: 'Ricevi una notifica quando ci sono oggetti o soldi da ritirare al mercato della città dove ti trovi in quel momento',
-          FeatAchievHide: 'Nascondi i Successi completati nella rispettiva finestra di gioco',
-          FeatRecipeMarket: 'Migliora l\'organizzazione delle ricette al mercato',
-          FeatMoveJobs: 'Sposta la coda dei lavori leggermente più a sinistra',
-          FeatBlinkEvents: 'Termina il lampeggiamento delle icone degli eventi e della fiera nella barra delle notifiche',
-          FeatFortTracker: 'Disattiva l\'icona di notifica della battaglia al forte',
-          FeatFriendsPop: 'Nascondi i pop-up "Amico online"',
-          FeatInstantQuest: 'Se tutti i requisiti sono soddisfatti, permetti di concludere le missioni istantaneamente',
-          FeatQuestWiki: 'Aggiungi un link alla wiki italiana (ove disponibile) nelle finestre delle missioni',
-          FeatCityTravel: 'Mostra la distanza verso le città nella lavagna',
-          FeatBetterSheriff: 'Aggiungi una nuova scheda nella finestra dello sceriffo per vedere tutte le possibili taglie',
-          FeatChatProfessions: 'Mostra la professione a fianco del nome dei giocatori nella lista della chat',
-          FeatQuestBookSearch: 'Aggiungi una casella di ricerca nella scheda "Completate" del libro missioni',
-          FeatMarketRights: 'Mostra se le offerte del mercato sono pubbliche oppure per alleati\concittadini',
-          FeatEquipManagerPlus: 'Migliora la finestra "Gestione equipaggiamento" nell\'inventario',
-          FeatShortPopups: 'Rendi i tooltip degli oggetti più corti',
-          FeatHideNotis: 'Aggiungi un pulsante per nascondere le notifiche dei lavori nella relativa barra',
-          FeatJobProducts: 'Nel tooltip dei prodotti mostra quanti se ne possiede in inventario',
-          FeatMapDistance: 'Mostra la distanza in miglia accanto al tempo di viaggio',
-          FeatTraderSell: 'Consenti di vendere oggetti in quantità multipla ai negozi\mercante ambulante',
-          FeatTouchControl: 'Abilità il controllo touch nel browser mobile',
+          Feat: {
+            DuellMap: 'Aggiungi la scheda Mappa duelli nella finestra Duelli',
+            MarkDaily: 'Evidenzia il bonus login del 5° giorno per non dimenticarlo',
+            MarketTown: 'Mostra il nome della città nella finestra del mercato',
+            MarketMessage: 'Ricevi una notifica quando ci sono oggetti o soldi da ritirare al mercato della città dove ti trovi in quel momento',
+            AchievHide: 'Nascondi i Successi completati nella rispettiva finestra di gioco',
+            RecipeMarket: 'Migliora l\'organizzazione delle ricette al mercato',
+            MoveJobs: 'Sposta la coda dei lavori leggermente più a sinistra',
+            InstantQuest: 'Se tutti i requisiti sono soddisfatti, permetti di concludere le missioni istantaneamente',
+            QuestWiki: 'Aggiungi un link alla wiki italiana (ove disponibile) nelle finestre delle missioni',
+            CityTravel: 'Mostra la distanza verso le città nella lavagna',
+            BetterSheriff: 'Aggiungi una nuova scheda nella finestra dello sceriffo per vedere tutte le possibili taglie',
+            ChatProfessions: 'Mostra la professione a fianco del nome dei giocatori nella lista della chat',
+            QuestBookSearch: 'Aggiungi una casella di ricerca nella scheda "Completate" del libro missioni',
+            MarketRights: 'Mostra se le offerte del mercato sono pubbliche oppure per alleati\concittadini',
+            EquipManagerPlus: 'Migliora la finestra "Gestione equipaggiamento" nell\'inventario',
+            ShortPopups: 'Rendi i tooltip degli oggetti più corti',
+            HideNotis: 'Aggiungi un pulsante per nascondere le notifiche dei lavori nella relativa barra',
+            JobProducts: 'Nel tooltip dei prodotti mostra quanti se ne possiede in inventario',
+            MapDistance: 'Mostra la distanza in miglia accanto al tempo di viaggio',
+            TraderSell: 'Consenti di vendere oggetti in quantità multipla ai negozi\mercante ambulante',
+            TouchControl: 'Abilità il controllo touch nel browser mobile',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Aggiungi sul lato destro dello schermo un pulsante disconnetti',
+            Statusbar: 'Nascondi la barra degli incarichi',
+            ShowAP: 'Mostra i tuoi attuali punti abilità nelle finestre dei lavori',
+            ChangeCity: 'Nel municipio, inverti il titolo e il nome del giocatore',
+            BlinkEvents: 'Termina il lampeggiamento delle icone degli eventi e della fiera nella barra delle notifiche',
+            FortTracker: 'Disattiva l\'icona di notifica della battaglia al forte',
+            FriendsPop: 'Nascondi i pop-up "Amico online"',
+          },
           settings1: 'Apri le impostazioni',
           settings2: 'Apri le impostazioni e la finestra di informazioni',
           ghosttown1: 'Vai alla Città fantasma',
@@ -2453,7 +2532,9 @@
           saveMessage: 'Salvato con successo',
           saveMessage2: 'Impostazioni salvate. Aggiorna la pagina per renderle effettive.',
           setbonus2: 'Informazioni sui bonus set',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Pagine internet di aiuto',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Clicca sul cappello per iniziare',
           items: 'oggetti',
           parts: 'parti',
@@ -2696,34 +2777,41 @@
           language: 'French (français)',
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
-          FeatLogout: 'Add a logout button on the right side',
-          FeatStatusbar: 'Remove the taskbar',
-          FeatShowAP: 'Show your actual skill points in job windows',
-          FeatChangeCity: 'Switch title and player name in the town hall',
-          FeatDuellMap: 'Add Duelmap tab in duel window',
-          FeatMarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-          FeatMarketTown: 'Show town name in market window',
-          FeatMarketMessage: 'Get a message when there are items or money to pick up on actual market',
-          FeatAchievHide: 'Hide completed achievements in achievements window',
-          FeatRecipeMarket: 'Improve the purchase of recipes on market',
-          FeatMoveJobs: 'Move the queued jobs a bit to the left',
-          FeatBlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
-          FeatFortTracker: 'Turn off fort battle reminder',
-          FeatFriendsPop: 'Hide "Friend online" pop-ups',
-          FeatInstantQuest: 'Complete the quest instantly if all requirements are done',
-          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
-          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
-          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
-          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
-          FeatQuestBookSearch: 'Search for solved quests in the quest book',
-          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
-          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
-          FeatShortPopups: 'Make the item pop-ups shorter',
-          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
-          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
-          FeatMapDistance: ' Show the number of miles next to the travel time',
-          FeatTraderSell: 'Sell multiple items at once to the trader',
-          FeatTouchControl: 'Enable touch control on your mobile browser',
+          Feat: {
+            DuellMap: 'Add Duelmap tab in duel window',
+            MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
+            MarketTown: 'Show town name in market window',
+            MarketMessage: 'Get a message when there are items or money to pick up on actual market',
+            AchievHide: 'Hide completed achievements in achievements window',
+            RecipeMarket: 'Improve the purchase of recipes on market',
+            MoveJobs: 'Move the queued jobs a bit to the left',
+            InstantQuest: 'Complete the quest instantly if all requirements are done',
+            QuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+            CityTravel: 'Show the travel time to the towns in the blackboard',
+            BetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+            ChatProfessions: 'Show the crafting profession of the players in the chat list',
+            QuestBookSearch: 'Search for solved quests in the quest book',
+            MarketRights: 'Show if market offers are public or only for alliance/town members',
+            EquipManagerPlus: 'Improve the equipment manager in the inventory',
+            ShortPopups: 'Make the item pop-ups shorter',
+            HideNotis: 'Add a button to hide the job notifications on the left side',
+            JobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+            MapDistance: ' Show the number of miles next to the travel time',
+            TraderSell: 'Sell multiple items at once to the trader',
+            TouchControl: 'Enable touch control on your mobile browser',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Add a logout button on the right side',
+            Statusbar: 'Remove the taskbar',
+            ShowAP: 'Show your actual skill points in job windows',
+            ChangeCity: 'Switch title and player name in the town hall',
+            BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
+            FortTracker: 'Turn off fort battle reminder',
+            FriendsPop: 'Hide "Friend online" pop-ups',
+          },
           settings1: 'Open settings',
           settings2: 'Open settings and information window',
           ghosttown1: 'Go to ghost town ',
@@ -2749,7 +2837,9 @@
           saveMessage: 'Enregistrer avec succès',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Helpful web pages',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Click on the hat to get started',
           items: 'items',
           parts: 'parts',
@@ -2992,34 +3082,41 @@
           language: 'Czech (čeština)',
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
-          FeatLogout: 'Add a logout button on the right side',
-          FeatStatusbar: 'Remove the taskbar',
-          FeatShowAP: 'Show your actual skill points in job windows',
-          FeatChangeCity: 'Switch title and player name in the town hall',
-          FeatDuellMap: 'Add Duelmap tab in duel window',
-          FeatMarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-          FeatMarketTown: 'Show town name in market window',
-          FeatMarketMessage: 'Get a message when there are items or money to pick up on actual market',
-          FeatAchievHide: 'Hide completed achievements in achievements window',
-          FeatRecipeMarket: 'Improve the purchase of recipes on market',
-          FeatMoveJobs: 'Move the queued jobs a bit to the left',
-          FeatBlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
-          FeatFortTracker: 'Turn off fort battle reminder',
-          FeatFriendsPop: 'Hide "Friend online" pop-ups',
-          FeatInstantQuest: 'Complete the quest instantly if all requirements are done',
-          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
-          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
-          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
-          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
-          FeatQuestBookSearch: 'Search for solved quests in the quest book',
-          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
-          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
-          FeatShortPopups: 'Make the item pop-ups shorter',
-          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
-          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
-          FeatMapDistance: ' Show the number of miles next to the travel time',
-          FeatTraderSell: 'Sell multiple items at once to the trader',
-          FeatTouchControl: 'Enable touch control on your mobile browser',
+          Feat: {
+            DuellMap: 'Add Duelmap tab in duel window',
+            MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
+            MarketTown: 'Show town name in market window',
+            MarketMessage: 'Get a message when there are items or money to pick up on actual market',
+            AchievHide: 'Hide completed achievements in achievements window',
+            RecipeMarket: 'Improve the purchase of recipes on market',
+            MoveJobs: 'Move the queued jobs a bit to the left',
+            InstantQuest: 'Complete the quest instantly if all requirements are done',
+            QuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+            CityTravel: 'Show the travel time to the towns in the blackboard',
+            BetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+            ChatProfessions: 'Show the crafting profession of the players in the chat list',
+            QuestBookSearch: 'Search for solved quests in the quest book',
+            MarketRights: 'Show if market offers are public or only for alliance/town members',
+            EquipManagerPlus: 'Improve the equipment manager in the inventory',
+            ShortPopups: 'Make the item pop-ups shorter',
+            HideNotis: 'Add a button to hide the job notifications on the left side',
+            JobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+            MapDistance: ' Show the number of miles next to the travel time',
+            TraderSell: 'Sell multiple items at once to the trader',
+            TouchControl: 'Enable touch control on your mobile browser',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Add a logout button on the right side',
+            Statusbar: 'Remove the taskbar',
+            ShowAP: 'Show your actual skill points in job windows',
+            ChangeCity: 'Switch title and player name in the town hall',
+            BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
+            FortTracker: 'Turn off fort battle reminder',
+            FriendsPop: 'Hide "Friend online" pop-ups',
+          },
           settings1: 'Open settings',
           settings2: 'Open settings and information window',
           ghosttown1: 'Go to ghost town ',
@@ -3045,7 +3142,9 @@
           saveMessage: 'Úspěšně uloženo',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Helpful web pages',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Click on the hat to get started',
           items: 'items',
           parts: 'parts',
@@ -3288,34 +3387,41 @@
           language: 'Slovak (slovenčina)',
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
-          FeatLogout: 'Add a logout button on the right side',
-          FeatStatusbar: 'Remove the taskbar',
-          FeatShowAP: 'Show your actual skill points in job windows',
-          FeatChangeCity: 'Switch title and player name in the town hall',
-          FeatDuellMap: 'Add Duelmap tab in duel window',
-          FeatMarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-          FeatMarketTown: 'Show town name in market window',
-          FeatMarketMessage: 'Get a message when there are items or money to pick up on actual market',
-          FeatAchievHide: 'Hide completed achievements in achievements window',
-          FeatRecipeMarket: 'Improve the purchase of recipes on market',
-          FeatMoveJobs: 'Move the queued jobs a bit to the left',
-          FeatBlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
-          FeatFortTracker: 'Turn off fort battle reminder',
-          FeatFriendsPop: 'Hide "Friend online" pop-ups',
-          FeatInstantQuest: 'Complete the quest instantly if all requirements are done',
-          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
-          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
-          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
-          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
-          FeatQuestBookSearch: 'Search for solved quests in the quest book',
-          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
-          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
-          FeatShortPopups: 'Make the item pop-ups shorter',
-          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
-          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
-          FeatMapDistance: ' Show the number of miles next to the travel time',
-          FeatTraderSell: 'Sell multiple items at once to the trader',
-          FeatTouchControl: 'Enable touch control on your mobile browser',
+          Feat: {
+            DuellMap: 'Add Duelmap tab in duel window',
+            MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
+            MarketTown: 'Show town name in market window',
+            MarketMessage: 'Get a message when there are items or money to pick up on actual market',
+            AchievHide: 'Hide completed achievements in achievements window',
+            RecipeMarket: 'Improve the purchase of recipes on market',
+            MoveJobs: 'Move the queued jobs a bit to the left',
+            InstantQuest: 'Complete the quest instantly if all requirements are done',
+            QuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+            CityTravel: 'Show the travel time to the towns in the blackboard',
+            BetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+            ChatProfessions: 'Show the crafting profession of the players in the chat list',
+            QuestBookSearch: 'Search for solved quests in the quest book',
+            MarketRights: 'Show if market offers are public or only for alliance/town members',
+            EquipManagerPlus: 'Improve the equipment manager in the inventory',
+            ShortPopups: 'Make the item pop-ups shorter',
+            HideNotis: 'Add a button to hide the job notifications on the left side',
+            JobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+            MapDistance: ' Show the number of miles next to the travel time',
+            TraderSell: 'Sell multiple items at once to the trader',
+            TouchControl: 'Enable touch control on your mobile browser',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Add a logout button on the right side',
+            Statusbar: 'Remove the taskbar',
+            ShowAP: 'Show your actual skill points in job windows',
+            ChangeCity: 'Switch title and player name in the town hall',
+            BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
+            FortTracker: 'Turn off fort battle reminder',
+            FriendsPop: 'Hide "Friend online" pop-ups',
+          },
           settings1: 'Open settings',
           settings2: 'Open settings and information window',
           ghosttown1: 'Go to ghost town ',
@@ -3341,7 +3447,9 @@
           saveMessage: 'Úspešne uložené',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Helpful web pages',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Click on the hat to get started',
           items: 'items',
           parts: 'parts',
@@ -3584,34 +3692,41 @@
           language: 'Russian (русский)',
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
-          FeatLogout: 'Add a logout button on the right side',
-          FeatStatusbar: 'Remove the taskbar',
-          FeatShowAP: 'Show your actual skill points in job windows',
-          FeatChangeCity: 'Switch title and player name in the town hall',
-          FeatDuellMap: 'Add Duelmap tab in duel window',
-          FeatMarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-          FeatMarketTown: 'Show town name in market window',
-          FeatMarketMessage: 'Get a message when there are items or money to pick up on actual market',
-          FeatAchievHide: 'Hide completed achievements in achievements window',
-          FeatRecipeMarket: 'Improve the purchase of recipes on market',
-          FeatMoveJobs: 'Move the queued jobs a bit to the left',
-          FeatBlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
-          FeatFortTracker: 'Turn off fort battle reminder',
-          FeatFriendsPop: 'Hide "Friend online" pop-ups',
-          FeatInstantQuest: 'Complete the quest instantly if all requirements are done',
-          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
-          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
-          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
-          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
-          FeatQuestBookSearch: 'Search for solved quests in the quest book',
-          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
-          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
-          FeatShortPopups: 'Make the item pop-ups shorter',
-          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
-          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
-          FeatMapDistance: ' Show the number of miles next to the travel time',
-          FeatTraderSell: 'Sell multiple items at once to the trader',
-          FeatTouchControl: 'Enable touch control on your mobile browser',
+          Feat: {
+            DuellMap: 'Add Duelmap tab in duel window',
+            MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
+            MarketTown: 'Show town name in market window',
+            MarketMessage: 'Get a message when there are items or money to pick up on actual market',
+            AchievHide: 'Hide completed achievements in achievements window',
+            RecipeMarket: 'Improve the purchase of recipes on market',
+            MoveJobs: 'Move the queued jobs a bit to the left',
+            InstantQuest: 'Complete the quest instantly if all requirements are done',
+            QuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+            CityTravel: 'Show the travel time to the towns in the blackboard',
+            BetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+            ChatProfessions: 'Show the crafting profession of the players in the chat list',
+            QuestBookSearch: 'Search for solved quests in the quest book',
+            MarketRights: 'Show if market offers are public or only for alliance/town members',
+            EquipManagerPlus: 'Improve the equipment manager in the inventory',
+            ShortPopups: 'Make the item pop-ups shorter',
+            HideNotis: 'Add a button to hide the job notifications on the left side',
+            JobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+            MapDistance: ' Show the number of miles next to the travel time',
+            TraderSell: 'Sell multiple items at once to the trader',
+            TouchControl: 'Enable touch control on your mobile browser',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Add a logout button on the right side',
+            Statusbar: 'Remove the taskbar',
+            ShowAP: 'Show your actual skill points in job windows',
+            ChangeCity: 'Switch title and player name in the town hall',
+            BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
+            FortTracker: 'Turn off fort battle reminder',
+            FriendsPop: 'Hide "Friend online" pop-ups',
+          },
           settings1: 'Open settings',
           settings2: 'Open settings and information window',
           ghosttown1: 'Go to ghost town ',
@@ -3637,7 +3752,9 @@
           saveMessage: 'Сохранить успешно',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Helpful web pages',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Click on the hat to get started',
           items: 'items',
           parts: 'parts',
@@ -3880,34 +3997,41 @@
           language: 'Turkish (Türkçe)',
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
-          FeatLogout: 'Add a logout button on the right side',
-          FeatStatusbar: 'Remove the taskbar',
-          FeatShowAP: 'Show your actual skill points in job windows',
-          FeatChangeCity: 'Switch title and player name in the town hall',
-          FeatDuellMap: 'Add Duelmap tab in duel window',
-          FeatMarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-          FeatMarketTown: 'Show town name in market window',
-          FeatMarketMessage: 'Get a message when there are items or money to pick up on actual market',
-          FeatAchievHide: 'Hide completed achievements in achievements window',
-          FeatRecipeMarket: 'Improve the purchase of recipes on market',
-          FeatMoveJobs: 'Move the queued jobs a bit to the left',
-          FeatBlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
-          FeatFortTracker: 'Turn off fort battle reminder',
-          FeatFriendsPop: 'Hide "Friend online" pop-ups',
-          FeatInstantQuest: 'Complete the quest instantly if all requirements are done',
-          FeatQuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
-          FeatCityTravel: 'Show the travel time to the towns in the blackboard',
-          FeatBetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
-          FeatChatProfessions: 'Show the crafting profession of the players in the chat list',
-          FeatQuestBookSearch: 'Search for solved quests in the quest book',
-          FeatMarketRights: 'Show if market offers are public or only for alliance/town members',
-          FeatEquipManagerPlus: 'Improve the equipment manager in the inventory',
-          FeatShortPopups: 'Make the item pop-ups shorter',
-          FeatHideNotis: 'Add a button to hide the job notifications on the left side',
-          FeatJobProducts: 'Show in the job pop-up how many products you already have in your inventory',
-          FeatMapDistance: ' Show the number of miles next to the travel time',
-          FeatTraderSell: 'Sell multiple items at once to the trader',
-          FeatTouchControl: 'Enable touch control on your mobile browser',
+          Feat: {
+            DuellMap: 'Add Duelmap tab in duel window',
+            MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
+            MarketTown: 'Show town name in market window',
+            MarketMessage: 'Get a message when there are items or money to pick up on actual market',
+            AchievHide: 'Hide completed achievements in achievements window',
+            RecipeMarket: 'Improve the purchase of recipes on market',
+            MoveJobs: 'Move the queued jobs a bit to the left',
+            InstantQuest: 'Complete the quest instantly if all requirements are done',
+            QuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
+            CityTravel: 'Show the travel time to the towns in the blackboard',
+            BetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
+            ChatProfessions: 'Show the crafting profession of the players in the chat list',
+            QuestBookSearch: 'Search for solved quests in the quest book',
+            MarketRights: 'Show if market offers are public or only for alliance/town members',
+            EquipManagerPlus: 'Improve the equipment manager in the inventory',
+            ShortPopups: 'Make the item pop-ups shorter',
+            HideNotis: 'Add a button to hide the job notifications on the left side',
+            JobProducts: 'Show in the job pop-up how many products you already have in your inventory',
+            MapDistance: ' Show the number of miles next to the travel time',
+            TraderSell: 'Sell multiple items at once to the trader',
+            TouchControl: 'Enable touch control on your mobile browser',
+            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
+            BattleStars: '$0 Additional stats in the fort battle report',
+            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            Logout: 'Add a logout button on the right side',
+            Statusbar: 'Remove the taskbar',
+            ShowAP: 'Show your actual skill points in job windows',
+            ChangeCity: 'Switch title and player name in the town hall',
+            BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
+            FortTracker: 'Turn off fort battle reminder',
+            FriendsPop: 'Hide "Friend online" pop-ups',
+          },
           settings1: 'Open settings',
           settings2: 'Open settings and information window',
           ghosttown1: 'Go to ghost town ',
@@ -3933,7 +4057,9 @@
           saveMessage: 'Başarıyla kaydet',
           saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
           setbonus2: 'Informations about the set bonuses',
+          bonussearch2: 'Find items by bonus',
           frame2: 'Helpful web pages',
+          npclocator2: 'Find quest givers on the map',
           choose: 'Click on the hat to get started',
           items: 'items',
           parts: 'parts',
@@ -4180,12 +4306,12 @@
       },
     };
     if (location.href.includes('game.php')) {
-      TWX = {
+      var addTWX = {
         name: 'TW Essentials',
-        author: 'Leotas (updated by Tom Robert)',
+        author: 'Tom Robert',
         minGame: '2.0',
         maxGame: Game.version.toString(),
-        updateUrl: TWXstart.url + 'sUp.js',
+        updateUrl: TWX.url + 'sUp.js',
         SPEC: [
           'speed', 'luck', 'dollar', 'experience', 'regen', 'drop',
         ],
@@ -4201,10 +4327,6 @@
         Data: {},
         loaded: [],
         Features: {
-          Logout: false,
-          Statusbar: false,
-          ShowAP: false,
-          ChangeCity: false,
           DuellMap: true,
           MarkDaily: true,
           MarketMessage: true,
@@ -4212,9 +4334,6 @@
           AchievHide: true,
           RecipeMarket: true,
           MoveJobs: true,
-          BlinkEvents: false,
-          FortTracker: false,
-          FriendsPop: false,
           InstantQuest: true,
           QuestWiki: true,
           CityTravel: true,
@@ -4231,15 +4350,20 @@
           TouchControl: true,
           ColorTchat: true,
           QuickItemsSearch: true,
-          NPClocator: true,
           MarketBestBids: true,
           BattleStars: true,
           KickoMatic: true,
+          Statusbar: false,
+          ShowAP: false,
+          ChangeCity: false,
+          Logout: false,
+          BlinkEvents: false,
+          FortTracker: false,
+          FriendsPop: false,
         },
         CT: {},
         QIS: {},
-        NPC: {},
-        MMB: {},
+        MBB: {},
         BS: {},
         KoM: {},
         cooldown: {
@@ -4283,12 +4407,18 @@
           style.innerHTML = css;
           document.body.appendChild(style);
         },
+        replaceGaps: function (txt, arr) {
+          return txt.replace(/\$(\d)/g, function (f, p) {
+            return arr[p];
+          });
+        },
         updateLang: function () {
-          var lg = TWXstart.langs;
+          let lg = TWX.langs;
           TWX.lang = lg[localStorage.getItem('scriptsLang')] ? localStorage.getItem('scriptsLang') : lg[Game.locale.substr(0, 2)] ? Game.locale.substr(0, 2) : 'en';
           TWXlang = lg[TWX.lang];
         },
       };
+      Object.assign(TWX, addTWX);
       TWX.updateLang();
       TWX.Skript = {
         fmfb: function () {
@@ -4299,13 +4429,13 @@
           return add + '/<br>I will get an e-mail when you sent me the message <img src="images/chat/emoticons/smile.png"></li></ul>';
         },
         init: function () {
-          TheWestApi.register('TWX', TWX.name, TWX.minGame, TWX.maxGame, TWX.author, TWX.website).setGui('<h1>' + TWXlang.info + '</h1><i>Language: </i>' + TWXlang.language + '<br><br>' + TWXlang.ApiGui1 + ': <a href="javascript:TWX.GUI.open(\'openFeatures\');TWX.GUI.makeList();">' + TWXlang.ApiGui2 + '</a><br><br><i>' + TWX.name + ' v' + TWXstart.version + '</i><br><br>' + this.fmfb());
-          var menuContainer = $('<div id="TWX-menu" class="menulink" onclick="TWX.GUI.openSelectbox();" title="' + TWX.name + '" />').css('background-image', 'url(' + TWXstart.Images('LT_settings') + ')').css('background-position', '0px 0px').mouseenter(function () {
+          TheWestApi.register('TWX', TWX.name, TWX.minGame, TWX.maxGame, TWX.author, TWX.website).setGui('<h1>' + TWXlang.info + '</h1><i>Language: </i>' + TWXlang.language + '<br><br>' + TWXlang.ApiGui1 + ': <a href="javascript:TWX.GUI.open(\'openFeatures\');TWX.GUI.makeList();">' + TWXlang.ApiGui2 + '</a><br><br><i>' + TWX.name + ' v' + TWX.version + '</i><br><br>' + this.fmfb());
+          var menuContainer = $('<div class="menulink" onclick="TWX.GUI.openSelectbox();" title="' + TWX.name + '">').css('background-image', 'url(' + TWX.Images('LT_settings') + ')').css('background-position', '0px 0px').mouseenter(function () {
               $(this).css('background-position', '-25px 0px');
             }).mouseleave(function () {
               $(this).css('background-position', '0px 0px');
             });
-          $('#ui_menubar').append($('<div class="ui_menucontainer" />').append(menuContainer).append('<div class="menucontainer_bottom" />'));
+          $('#ui_menubar').append($('<div id="TWX-menu" class="ui_menucontainer">').append(menuContainer).append('<div class="menucontainer_bottom">'));
           TWX.Skript.updateFeat();
           TWX.SkipOpen();
         },
@@ -4352,27 +4482,28 @@
         openSelectbox: function () {
           TWX.GUI.makeList();
           var selectbox = new west.gui.Selectbox();
-          $(selectbox.getMainDiv()).append('<div class="TWXselbox"/>');
+          $(selectbox.getMainDiv()).append('<div class="TWXselbox">');
           selectbox.setHeader(TWX.name);
           selectbox.setWidth(300);
           selectbox.addItem(0, TWXlang.settings1, TWXlang.settings2);
           selectbox.addItem(1, 'SetBonus', TWXlang.setbonus2);
-          selectbox.addItem(2, 'BonusSearch', TWXlang.setbonus2);
+          selectbox.addItem(2, 'BonusSearch', TWXlang.bonussearch2);
           selectbox.addItem(3, 'WebCenter', TWXlang.frame2);
-          selectbox.addItem(4, TWXlang.ghosttown1 + Map.calcWayTime(Map.getLastQueuePosition(), {
+          selectbox.addItem(4, 'NPC locator', TWXlang.npclocator2);
+          selectbox.addItem(5, TWXlang.ghosttown1 + Map.calcWayTime(Map.getLastQueuePosition(), {
               x: 1728,
               y: 2081
             }).formatDuration(), TWXlang.ghosttown1);
-          selectbox.addItem(5, TWXlang.ghosttown2, TWXlang.ghosttown3);
-          selectbox.addItem(6, TWXlang.indiantown1 + Map.calcWayTime(Map.getLastQueuePosition(), {
+          selectbox.addItem(6, TWXlang.ghosttown2, TWXlang.ghosttown3);
+          selectbox.addItem(7, TWXlang.indiantown1 + Map.calcWayTime(Map.getLastQueuePosition(), {
               x: 28002,
               y: 16658
             }).formatDuration(), TWXlang.indiantown1);
-          selectbox.addItem(7, TWXlang.indiantown2, TWXlang.indiantown3);
-          selectbox.addItem(8, TWXlang.openmarket, TWXlang.openmarket);
-          selectbox.addItem(9, TWXlang.forum, TWXlang.forum);
+          selectbox.addItem(8, TWXlang.indiantown2, TWXlang.indiantown3);
+          selectbox.addItem(9, TWXlang.openmarket, TWXlang.openmarket);
+          selectbox.addItem(10, TWXlang.forum, TWXlang.forum);
           if (EvName) {
-            selectbox.addItem(10, '<div style="text-overflow:ellipsis; white-space:nowrap; overflow:hidden;"><b>' + sendGift.label + '</b></div>', sendGift.label);
+            selectbox.addItem(11, '<div style="text-overflow:ellipsis; white-space:nowrap; overflow:hidden;"><b>' + sendGift.label + '</b></div>', sendGift.label);
           }
           selectbox.addListener(function (e) {
             switch (e) {
@@ -4389,34 +4520,37 @@
               TWX.GUI.open('openFrame');
               break;
             case 4:
+              TWX.GUI.open('openNpcLocator');
+              break;
+            case 5:
               QuestEmployerWindow.startWalk({
                 key: 'ghosttown',
                 x: '1728',
                 y: '2081'
               });
               break;
-            case 5:
+            case 6:
               Map.center(1728, 2081);
               QuestEmployerWindow.showEmployer('ghosttown', '1728', '2081');
               break;
-            case 6:
+            case 7:
               QuestEmployerWindow.startWalk({
                 key: 'indianvillage',
                 x: '28002',
                 y: '16658'
               });
               break;
-            case 7:
+            case 8:
               Map.center(28002, 16658);
               QuestEmployerWindow.showEmployer('indianvillage', '28002', '16658');
               break;
-            case 8:
+            case 9:
               MarketWindow.open(Character.homeTown.town_id);
               break;
-            case 9:
+            case 10:
               ForumWindow.open();
               break;
-            case 10:
+            case 11:
               TWX.GUI.open('openSender');
               break;
             }
@@ -4431,11 +4565,11 @@
         window: {},
         checkbox: {},
         open: function (tab, data, id) {
-          TWX.GUI.window = wman.open('TWX', TWX.name, 'noreload').setMiniTitle(TWX.name).setMaxSize(1268, 838).addTab(TWXlang.features, 'TWXFeatures', TWX.GUI.openFeatures).addTab('SetBonus', 'SetBonus', TWX.GUI.openSetsWindow).addTab('BonusSearch', 'BonusSearch', TWX.GUI.openSetsWindow).addTab('WebCenter', 'TWXFrame', TWX.GUI.openFrame);
+          TWX.GUI.window = wman.open('TWX', TWX.name, 'noreload').setMiniTitle(TWX.name).setMaxSize(1268, 838).addTab(TWXlang.features, 'TWXFeatures', TWX.GUI.openFeatures).addTab('SetBonus', 'SetBonus', TWX.GUI.openSetsWindow).addTab('BonusSearch', 'BonusSearch', TWX.GUI.openSetsWindow).addTab('WebCenter', 'TWXFrame', TWX.GUI.openFrame).addTab('NPC locator', 'TWXLocator', TWX.GUI.openNpcLocator);
           if (EvName)
             TWX.GUI.window.addTab('Event', 'TWXSender', TWX.GUI.openSender);
           TWX.GUI[tab](data, id);
-          $('.tw2gui_window_inset', TWX.GUI.window.getMainDiv()).css('background-image', 'url(' + TWXstart.Images('LT_backGr', 1) + ')');
+          $('.tw2gui_window_inset', TWX.GUI.window.getMainDiv()).css('background-image', 'url(' + TWX.Images('LT_backGr', 1) + ')');
         },
         getDefault: function (tab) {
           TWX.GUI.window.setResizeable(false).setSize(748, 471).clearContentPane().removeClass('nocloseall').setTitle('The West - Essentials');
@@ -4449,11 +4583,11 @@
           TWX.GUI.getDefault('TWXFeatures');
           var featScroll = new west.gui.Scrollpane().appendContent('<h2>' + TWXlang.chooseLang + '</h2>'),
           langBox = new west.gui.Combobox().appendTo(featScroll.getContentPane());
-          for (var j in TWXstart.langs)
-            langBox.addItem(j, TWXstart.langs[j].language);
+          for (var j in TWX.langs)
+            langBox.addItem(j, TWX.langs[j].language);
           langBox.select(TWX.lang);
           TWX.cdTemp = TWX.Data.cooldown ? $.extend({}, TWX.Data.cooldown) : $.extend({}, TWX.cooldown);
-          $('<span title="' + TWXlang.remindHover + '" style="background-image: url(images/items/yield/low_heart_container.png); cursor: pointer; position: absolute; height: 73px; width: 73px; right: 0px; top: 0px;"/>').appendTo(featScroll.getContentPane()).click(function () {
+          $('<span title="' + TWXlang.remindHover + '" style="background-image: url(images/items/yield/low_heart_container.png); cursor: pointer; position: absolute; height: 73px; width: 73px; right: 0px; top: 0px;">').appendTo(featScroll.getContentPane()).click(function () {
             var cont = $('<span>');
             for (var x in TWX.cooldown) {
               var productDiv = new tw2widget.JobItem(ItemManager.getByBaseId(x)).getMainDiv();
@@ -4480,7 +4614,7 @@
               $(productDiv2).css('opacity', TWX.skipTemp[x]).attr('onclick', 'TWX.skipTemp[' + x + ']=$(this).css("opacity")==1?0.5:1;$(this).css("opacity",TWX.skipTemp[' + x + ']);').append(productDel);
               cont2.append(productDiv2);
             }
-            var itemPrew = $('<div id="TWX_add_chest_prew" style="height:73px;width:73px;border:1px solid;border-radius:10px;float:left"/><br>');
+            var itemPrew = $('<div id="TWX_add_chest_prew" style="height:73px;width:73px;border:1px solid;border-radius:10px;float:left"><br>');
             var textFP = new west.gui.Textfield('add_skipOpen_chest').maxlength(6).setPlaceholder('item_base_id').addKeyUpListener(function (e) {
                 $('#TWX_add_chest_prew').empty();
                 iconP.disable();
@@ -4507,11 +4641,19 @@
             cont2.append(itemPrew, textFP.getMainDiv(), iconP.getMainDiv(), iconA);
             var skipList = new west.gui.Dialog(TWXlang.chooseItems, cont2).setBlockGame(false).setDraggable(true).addButton('ok').show();
           };
-          $('<span title="' + TWXlang.skipHover + '" style="background-image: url(images/items/yield/productchest_1.png); cursor: pointer; position: absolute; height: 73px; width: 73px; right: 0px; top: 73px;"/>').appendTo(featScroll.getContentPane()).click(openSkipList);
+          $('<span title="' + TWXlang.skipHover + '" style="background-image: url(images/items/yield/productchest_1.png); cursor: pointer; position: absolute; height: 73px; width: 73px; right: 0px; top: 73px;">').appendTo(featScroll.getContentPane()).click(openSkipList);
           featScroll.appendContent('<br><br><h2>' + TWXlang.features + '</h2>');
+          var textGap = {
+            ColorTchat: ['Color tchat:'],
+            QuickItemsSearch: ['Quick items search:'],
+            MarketBestBids: ['Market best bids:', '<img src="images/admin/admin_help.png" title="<span style=\'color:green;\'>Green</span> –', '<br>Black -', '<br><span style=\'color:blue;\'>Blue</span> –', '<br><span style=\'color:red;\'>Red</span> –'],
+            BattleStars: ['Battle Stars:'],
+            KickoMatic: ['Kick-o-Matic:'],
+          };
           for (var k in TWX.Features) {
-            TWX.GUI.checkbox[k] = new west.gui.Checkbox().setLabel(TWXlang['Feat' + k]).setSelected(TWX.Skript.getFeature(k)).appendTo(featScroll.getContentPane());
-            featScroll.appendContent('<br><div style="height:5px;" />');
+            var label = textGap[k] ? TWX.replaceGaps(TWXlang.Feat[k], textGap[k]) : TWXlang.Feat[k];
+            TWX.GUI.checkbox[k] = new west.gui.Checkbox().setLabel(label).setSelected(TWX.Skript.getFeature(k)).appendTo(featScroll.getContentPane());
+            featScroll.appendContent('<br><div style="height:5px;">');
           }
           featScroll.appendContent('<br>');
           $(featScroll.getMainDiv()).css({
@@ -4533,7 +4675,7 @@
         },
         makeList: function () {
           if (!TWX.list)
-            $.getScript(TWXstart.url2 + 'newSets.js', function () {
+            $.getScript(TWX.url2 + 'newSets.js', function () {
               TWX.list = west.storage.ItemSetManager._setArray.slice(0);
               TWX.setListAll = {};
               TWX.setListOwn = {};
@@ -4690,13 +4832,14 @@
                 var skill = CharacterSkills.allSkillKeys[ca];
                 TWX.searchObj[skill] = [CharacterSkills.keyNames[skill], 'window/skills/skillicon_' + skill];
               }
-              if (!localStorage.getItem('TWLTdate') || Date.parse(forbid.date) > Date.parse(localStorage.getItem('TWLTdate'))) {
+              if (!TWX.Data.fDate || Date.parse(forbid.date) > TWX.Data.fDate) {
                 var setNames = '',
                 nSets = forbid.unlock;
                 for (var h of nSets)
                   setNames += TWX.GUI.getSetOrItem(h, set1[h]) + '<br>';
                 new west.gui.Dialog(TWX.name, '<span><b>' + forbid.date.toDateString() + '</b><br>' + TWXlang.newsets + ':<br><br>' + setNames + '</span>', west.gui.Dialog.SYS_OK).setBlockGame(false).setDraggable(true).addButton('ok').show();
-                localStorage.setItem('TWLTdate', forbid.date);
+                TWX.Data.fDate = Date.parse(forbid.date);
+                localStorage.setItem('TWLT', JSON.stringify(TWX.Data));
               }
             });
         },
@@ -4719,7 +4862,7 @@
           if (!obj)
             return id;
           var isItem = !isNaN(id),
-          nNew = window.forbid && (isItem && id >= forbid.unlockID || !isItem && forbid.unlock.includes(id)) ? '<img src="' + TWXstart.Images('new') + '">' : '',
+          nNew = window.forbid && (isItem && id >= forbid.unlockID || !isItem && forbid.unlock.includes(id)) ? '<img src="' + TWX.Images('new') + '">' : '',
           nLvl = obj.item_level ? '<img src="images/items/item_level.png"><span style="font-size: 11px;color:#ffffff;text-shadow:black -1px 0 1px,black 0 1px 1px,black 1px 0 1px,black 0 -1px 1px;">' + obj.item_level + '</span>' : '',
           options = {
             show_alreadyown: true
@@ -4954,7 +5097,7 @@
                 selbox.addListener(showbonus.SetBonus);
                 var sbaI = function (j) {
                   var sj = TWX.currList[j];
-                  selbox.addItem(j, '<img src=' + (forbid.unlock.includes(j) ? TWXstart.Images('new') : ItemManager.getByBaseId(sj.items[0]).image) + ' height="20" width="20">' + '<div style="padding-right: 20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;">' + sj.name + '</div>', sj.name);
+                  selbox.addItem(j, '<img src=' + (forbid.unlock.includes(j) ? TWX.Images('new') : ItemManager.getByBaseId(sj.items[0]).image) + ' height="20" width="20">' + '<div style="padding-right: 20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;">' + sj.name + '</div>', sj.name);
                 };
                 if (TWX.setAbc) {
                   for (var h of TWX.list)
@@ -5037,7 +5180,7 @@
             $('div.chooseBonus .tw2gui_plusminus').width('auto');
             $('div.chooseBonus').css('margin-left', '2px');
           };
-          setbutton = $('<span title="' + TWXlang.choose + '" style="background-image:url(images/items/head/' + img[tab] + '.png); cursor:pointer;  position:absolute; height:73px; width:73px; margin:4px;" />');
+          setbutton = $('<span title="' + TWXlang.choose + '" style="background-image:url(images/items/head/' + img[tab] + '.png); cursor:pointer;  position:absolute; height:73px; width:73px; margin:4px;">');
           setbutton.click(function () {
             if (tab == 'SetBonus') {
               var pos = $(setbutton).offset();
@@ -5080,7 +5223,7 @@
           if (Array.isArray(size))
             TWX.GUI.window.setSize(size[0], size[1]);
           var wnd = TWX.GUI.window.getMainDiv();
-          $('.tw2gui_window_inset', wnd).css('background-image', 'url(' + TWXstart.Images('LT_backGr', 1) + ')');
+          //$('.tw2gui_window_inset', wnd).css('background-image', 'url(' + TWX.Images('LT_backGr', 1) + ')');
           $('.textart_title', wnd).css('display', 'none');
           var contPan = $(TWX.GUI.window.getContentPane());
           contPan.css('margin-top', '-30px');
@@ -5099,6 +5242,112 @@
           if (typeof iframe === 'string')
             contPan.append($('<iframe src="' + iframe + '" style="width:100%; height:94%; border:0; margin-bottom:1px; ">'));
         },
+        NPC: {
+          loading: false,
+          styles: null,
+          inner: '',
+          Images: {
+            reload: 'data:image/png;base64,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',
+          },
+          load: function () {
+            if (!this.loading) {
+              this.loading = true;
+              new UserMessage(TWXlang.NPC.loading, 'hint').show();
+              Ajax.get('map', 'get_minimap', {}, function (json) {
+                if (json.error)
+                  return new UserMessage(json.msg).show();
+                var locs = [
+                ];
+                var ql = json.quest_locations;
+                for (var loc in ql)
+                  if (ql.hasOwnProperty(loc))
+                    locs.push([parseInt(ql[loc][0][0] / Map.tileSize),
+                        parseInt(ql[loc][0][1] / Map.tileSize)]);
+                Ajax.get('map', 'get_complete_data', {
+                  tiles: JSON.stringify(locs)
+                }).done(function (res) {
+                  var ne = TWX.GUI.NPC.employers = {};
+                  var rq = res.quests;
+                  for (var g = 0; g < locs.length; g++) {
+                    var em = rq[locs[g][0]][locs[g][1]][0][1];
+                    for (var h = 0; h < em.employer.length; h++)
+                      if (!ne[em.employer[h].name])
+                        ne[em.employer[h].name] = em.x + ';' + em.y;
+                      else
+                        ne[em.employer[h].name] += '|' + em.x + ';' + em.y;
+                  }
+                  var ne2 = Object.keys(ne).sort(function (a, b) {
+                      a = a.toLowerCase().replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ł/g, 'l').replace(/ś/g, 's');
+                      b = b.toLowerCase().replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ł/g, 'l').replace(/ś/g, 's');
+                      return (a > b) ? 1 :  - 1;
+                    });
+                  for (var j = 0; j < ne2.length; j++)
+                    TWX.GUI.NPC.inner += '<option value="' + ne[ne2[j]] + '">' + ne2[j] + '</option>';
+                  TWX.GUI.NPC.open();
+                  TWX.GUI.NPC.loading = false;
+                });
+              });
+              if (!this.styles) {
+                TWX.addStyle('#njk_minimap_map {position:relative;width:500px;height:220px;background-repeat:no-repeat;background-image:url("images/map/minimap/worldmap_500.jpg");margin-left:4px;}' +
+                  '#njk_minimap_map span.adv_pointer {position:absolute;height:16px;width:16px;cursor:pointer;background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_quests.png");}' +
+                  '#njk_minimap_map span.char_pointer {position:absolute;height:16px;width:16px;cursor:pointer;background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_pos.png");}' +
+                  '#njk_minimap #NPC_helpers {float:left;padding-left:5px;text-align:left;color:black;}' +
+                  '#njk_minimap span.advHelper {display:block;text-indent:20px;line-height:16px; background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_quests.png");}' +
+                  '#njk_minimap span.charHelper {display:block;text-indent:20px;line-height:16px; background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_pos.png");}' +
+                  '#njk_minimap #NPC_reload {margin:-7px 3px 0 0;cursor:pointer;}');
+                this.styles = 1;
+              }
+            }
+          },
+          open: function () {
+            TWX.GUI.getDefault('TWXLocator');
+            var wnd = TWX.GUI.window;
+            wnd.setTitle(TWXlang.NPC.title).setSize(560, 377);
+            var mm_mapdiv = $('<div id="njk_minimap_map">'),
+            CharX = Character.position.x,
+            CharY = Character.position.y,
+            x = 685 * CharX / 182 / 256 - 6,
+            y = 302 * CharY / 80 / 256 - 6;
+            x *= 0.727;
+            y *= 0.727;
+            this.charPoint = '<span title="' + TWXlang.NPC.yourposition + '" class="char_pointer" onClick="Map.center(' + CharX + ',' + CharY + ')" style="left:' + x + 'px;top:' + y + 'px;">';
+            mm_mapdiv.append(this.charPoint);
+            wnd.appendToContentPane($('<div id="njk_minimap">').append(mm_mapdiv));
+            this.drawSelect();
+          },
+          drawSelect: function () {
+            var selectDiv = document.createElement('div');
+            selectDiv.style.cssText = 'font-size:11px;';
+            selectDiv.style.height = '38px';
+            selectDiv.style.marginTop = '10px';
+            selectDiv.style.textAlign = 'right';
+            selectDiv.innerHTML = '<img src="' + this.Images.reload + '" onclick="TWX.GUI.NPC.load()" id="NPC_reload" title="' + TWXlang.NPC.reload + '"><select style="background-color:#e8dab3;font-size:14px;width:200px;cursor:pointer;margin-right:5px;" onchange="TWX.GUI.NPC.questPoint(this);" id="NPC_dropdown" size="1">' +
+              '<option selected disabled>-' + TWXlang.NPC.chooseNpc + '</option>' + this.inner +
+              '</select><div id="NPC_helpers"><span class="charHelper">' + TWXlang.NPC.yourposition + '</span><span class="advHelper">' + TWXlang.NPC.questgiver + '</span></div>';
+            var mm2 = document.getElementById('njk_minimap');
+            mm2.insertBefore(selectDiv, mm2.firstChild);
+          },
+          questPoint: function (place) {
+            var dp = $('#njk_minimap_map');
+            dp.find('.adv_pointer').remove();
+            var positions = place.value;
+            var arrPos = positions.split('|');
+            for (var i = 0; i < arrPos.length; i++) {
+              var xy = arrPos[i].split(';'),
+              x = 685 * xy[0] / 182 / 256 - 6,
+              y = 302 * xy[1] / 80 / 256 - 6;
+              x = x * 0.727;
+              y = y * 0.727;
+              dp.append('<span class="adv_pointer" onClick="Map.center(' + xy[0] + ',' + xy[1] + ')" id="mapPos' + i + '" px="' + xy[0] + '" py="' + xy[1] + '" style="left:' + x + 'px; top:' + y + 'px;">');
+            }
+          },
+        },
+        openNpcLocator: function (iframe, size) {
+          if (!TWX.GUI.NPC.employers)
+            TWX.GUI.NPC.load();
+          else if (TWX.GUI.NPC.loading === false)
+            TWX.GUI.NPC.open();
+        },
         openSender: function () {
           TWX.GUI.getDefault('TWXSender');
           var EvImg = EvName == 'Octoberfest' ? 'window/events/octoberfest/pretzels_icon' : 'interface/friendsbar/events/' + EvName;
@@ -5109,13 +5358,13 @@
           setTimeout((function () {
               var e = [],
               t = Chat.Friendslist.getFriends(),
-              r = WestUi.FriendsBar.friendsBarUi.friendsBar.eventActivations,
+              wfea = WestUi.FriendsBar.friendsBarUi.friendsBar.eventActivations,
               i,
               s,
               u,
               a;
               for (s = 0; s < t.length; s++) {
-                i = typeof r[t[s].playerId] !== 'undefined' && r[t[s].playerId][EvName] !== 'undefined' ? r[t[s].playerId][EvName] : 0;
+                i = typeof wfea[t[s].playerId] != 'undefined' && wfea[t[s].playerId][EvName] != 'undefined' ? wfea[t[s].playerId][EvName] : 0;
                 e.push({
                   n: t[s].pname,
                   i: t[s].playerId,
@@ -5141,8 +5390,8 @@
                           return MessageError(t.msg).show();
                         MessageSuccess(t.msg).show();
                         var n = e.handleObj.data;
-                        r[n] = r[n] || {};
-                        r[n][EvName] = t.activationTime;
+                        wfea[n] = wfea[n] || {};
+                        wfea[n][EvName] = t.activationTime;
                       });
                     });
                 }
@@ -5156,7 +5405,7 @@
               });
               scrollpane.appendContent(i);
               if (t.length === 0)
-                scrollpane.appendContent('<h2 style="text-align: center; color: #a31919; margin-top: 50px;">' + TWXlang.noFriends + '</h2>');
+                scrollpane.appendContent('<h2 style="text-align:center;color:#a31919;margin-top:50px;">' + TWXlang.noFriends + '</h2>');
               var scrollP = new west.gui.Scrollpane();
               $(scrollP.getMainDiv()).css({
                 'margin-top': '10px',
@@ -5174,7 +5423,7 @@
                 //west.events.Manager.getRunningEvents()
                 var rew = Game.sesData[EvName].rewards;
                 for (var r in rew) {
-                  var div = $('<div />');
+                  var div = $('<div>');
                   div.append('<img src="images/' + EvImg + '.png">  <b>' + r + '</b><br>' + rew[r].desc + '<br>');
                   var id = rew[r].id;
                   if (isNaN(id)) {
@@ -5195,7 +5444,7 @@
           var inject = function (category, data) {
             $('.TWXFind').remove();
             var gLS4P = Game.InfoHandler.getLocalString4ProfessionId;
-            var buttons_recipe = $('<div class="TWXFind"><a href=\'javascript:TWX.RecipeMarket.filterRecipe(0);\'><img title="' + TWXlang.allprofessions + '" alt="allprofessions" src="' + TWXstart.Images('LT_recipes') + '" /></a><a href=\'javascript:TWX.RecipeMarket.filterRecipe(1);\'><img title="' + gLS4P(1) + '" alt="fieldcook" style="width: 30px;" src="images/items/recipe/recipe_cook.png" /></a><a href=\'javascript:TWX.RecipeMarket.filterRecipe(2);\'><img title="' + gLS4P(2) + '" alt="tonicpeddler" style="width: 30px;" src="images/items/recipe/recipe_quack.png" /></a><a href=\'javascript:TWX.RecipeMarket.filterRecipe(3);\'><img title="' + gLS4P(3) + '" alt="blacksmith" style="width: 30px;" src="images/items/recipe/recipe_smith.png" /></a><a href=\'javascript:TWX.RecipeMarket.filterRecipe(4);\'><img title="' + gLS4P(4) + '" alt="mastersaddler" style="width: 30px;" src="images/items/recipe/recipe_sattle.png" /></a></div>');
+            var buttons_recipe = $('<div class="TWXFind"><a href=\'javascript:TWX.RecipeMarket.filterRecipe(0);\'><img title="' + TWXlang.allprofessions + '" alt="allprofessions" src="' + TWX.Images('LT_recipes') + '" ></a><a href=\'javascript:TWX.RecipeMarket.filterRecipe(1);\'><img title="' + gLS4P(1) + '" alt="fieldcook" style="width: 30px;" src="images/items/recipe/recipe_cook.png"></a><a href=\'javascript:TWX.RecipeMarket.filterRecipe(2);\'><img title="' + gLS4P(2) + '" alt="tonicpeddler" style="width: 30px;" src="images/items/recipe/recipe_quack.png"></a><a href=\'javascript:TWX.RecipeMarket.filterRecipe(3);\'><img title="' + gLS4P(3) + '" alt="blacksmith" style="width: 30px;" src="images/items/recipe/recipe_smith.png"></a><a href=\'javascript:TWX.RecipeMarket.filterRecipe(4);\'><img title="' + gLS4P(4) + '" alt="mastersaddler" style="width: 30px;" src="images/items/recipe/recipe_sattle.png"></a></div>');
             if (category == 'recipe') {
               $('.searchbox').before(buttons_recipe);
               $('.searchbox').css('margin-bottom', '0');
@@ -5213,10 +5462,10 @@
             $('.searchbox').css('margin-bottom', '18px');
             return data;
           };
-          MarketWindow.Buy.twlt_updateCategory = MarketWindow.Buy.updateCategory;
+          MarketWindow.Buy.updateCategory_twx = MarketWindow.Buy.updateCategory;
           MarketWindow.Buy.updateCategory = function (category, data) {
             data = inject(category, data);
-            MarketWindow.Buy.twlt_updateCategory.call(this, category, data);
+            MarketWindow.Buy.updateCategory_twx.call(this, category, data);
           };
           MarketWindow.getClearName = function (obj) {
             if (obj.type == 'recipe') {
@@ -5242,9 +5491,10 @@
             $('.playerachievement-' + Character.playerId + ' .achievement').hide();
             $('.playerachievement-' + Character.playerId + ' .achievement .achievement_unachieved').parent().show();
           };
-          AchievementExplorer.prototype.twlt_updateContent = AchievementExplorer.prototype.updateContent;
-          AchievementExplorer.prototype.updateContent = function (data) {
-            var tmp = AchievementExplorer.prototype.twlt_updateContent.call(this, data);
+          var AEp = AchievementExplorer.prototype;
+          AEp.updateContent_twx = AEp.updateContent;
+          AEp.updateContent = function (data) {
+            var tmp = AEp.updateContent_twx.call(this, data);
             if (data.folder.id != 'overall' && data.folder.id != 'heroics')
               hideUnErfolge();
             return tmp;
@@ -5344,9 +5594,9 @@
                 return new UserMessage(json.msg).show();
               TWX.MarketMessage.Towns = json.towns;
             });
-          MarketWindow.twlt_showTab = MarketWindow.showTab;
+          MarketWindow.showTab_twx = MarketWindow.showTab;
           MarketWindow.showTab = function () {
-            MarketWindow.twlt_showTab.apply(this, arguments);
+            MarketWindow.showTab_twx.apply(this, arguments);
             if (MarketWindow.townId > -1)
               MarketWindow.window.setTitle(MarketWindow.window.titler.text + " - " + TWX.MarketMessage.Towns[MarketWindow.townId].name);
           };
@@ -5360,9 +5610,10 @@
             if (row.hasClass('today'))
               row.css('border', '20px solid red');
           };
-          west.player.LoginBonus.prototype.twlt_show = west.player.LoginBonus.prototype.show;
-          west.player.LoginBonus.prototype.show = function () {
-            var tmp = west.player.LoginBonus.prototype.twlt_show.call(this);
+          var wpLp = west.player.LoginBonus.prototype;
+          wpLp.show_twx = wpLp.show;
+          wpLp.show = function () {
+            var tmp = wpLp.show_twx.call(this);
             if (tmp !== undefined)
               return tmp;
             addBorder();
@@ -5375,7 +5626,7 @@
             var weapon = ItemManager.get(data.weaponId),
             damage = weapon.getDamage(data),
             npcData = data.bonus;
-            return '<table class="dln_npcskill_popup"><tr><td colspan="5" class="text_bold">' + TWXlang.popup + '<br>&nbsp;</td></tr><tr><td><img src="images/window/duels/npcskill_shot.jpg" /></td><td><img src="images/window/duels/npcskill_punch.jpg" /></td><td><img src="images/window/duels/npcskill_aim.jpg" /></td><td><img src="images/window/duels/npcskill_appearance.jpg" /></td><td></td></tr><tr><td class="text_bold">' + (npcData.shot || 0) + '</td><td class="text_bold">' + (npcData.punch || 0) + '</td>' + '<td class="text_bold">' + (npcData.aim || 0) + '</td><td class="text_bold">' + (npcData.appearance || 0) + '</td><td></td></tr>' + '<tr><td><img src="images/window/duels/npcskill_tactic.jpg" /></td><td><img src="images/window/duels/npcskill_reflex.jpg" /></td><td><img src="images/window/duels/npcskill_dodge.jpg" /></td><td><img src="images/window/duels/npcskill_tough.jpg" /></td><td><img src="images/window/duels/npcskill_health.jpg" /></td></tr><tr><td class="text_bold">' + (npcData.tactic || 0) + '</td><td class="text_bold">' + (npcData.reflex || 0) + '</td><td class="text_bold">' + (npcData.dodge || 0) + '</td><td class="text_bold">' + (npcData.tough || 0) + '</td><td class="text_bold">' + (npcData.health || 0) + '</td></tr><tr><td colspan="2" class="text_bold"><img src="' + weapon.image + '" /></td><td colspan="3" class="text_bold"><br>' + weapon.name + '<br>(' + TWXlang.damage + ': ' + damage.min + ' - ' + damage.max + ')</td></tr></table>';
+            return '<table class="dln_npcskill_popup"><tr><td colspan="5" class="text_bold">' + TWXlang.popup + '<br>&nbsp;</td></tr><tr><td><img src="images/window/duels/npcskill_shot.jpg"></td><td><img src="images/window/duels/npcskill_punch.jpg"></td><td><img src="images/window/duels/npcskill_aim.jpg"></td><td><img src="images/window/duels/npcskill_appearance.jpg"></td><td></td></tr><tr><td class="text_bold">' + (npcData.shot || 0) + '</td><td class="text_bold">' + (npcData.punch || 0) + '</td>' + '<td class="text_bold">' + (npcData.aim || 0) + '</td><td class="text_bold">' + (npcData.appearance || 0) + '</td><td></td></tr>' + '<tr><td><img src="images/window/duels/npcskill_tactic.jpg"></td><td><img src="images/window/duels/npcskill_reflex.jpg"></td><td><img src="images/window/duels/npcskill_dodge.jpg"></td><td><img src="images/window/duels/npcskill_tough.jpg"></td><td><img src="images/window/duels/npcskill_health.jpg"></td></tr><tr><td class="text_bold">' + (npcData.tactic || 0) + '</td><td class="text_bold">' + (npcData.reflex || 0) + '</td><td class="text_bold">' + (npcData.dodge || 0) + '</td><td class="text_bold">' + (npcData.tough || 0) + '</td><td class="text_bold">' + (npcData.health || 0) + '</td></tr><tr><td colspan="2" class="text_bold"><img src="' + weapon.image + '"></td><td colspan="3" class="text_bold"><br>' + weapon.name + '<br>(' + TWXlang.damage + ': ' + damage.min + ' - ' + damage.max + ')</td></tr></table>';
           };
           Ajax.remoteCallMode('character', 'get_info', {}, function (resp) {
             Character.setDuelLevel(resp.duelLevel);
@@ -5402,7 +5653,7 @@
                 '<td><a href="#" onclick="SaloonWindow.startDuel(' + data.player_id + ', ' + data.alliance_id + ', false, DuelsWindow);">' + TWXlang.startduel + '</a></td>',
                 '<td><a href="#" onclick="Map.center(' + data.character_x + ', ' + data.character_y + ');">' + TWXlang.centerMap + '</a></td>');
               $('#TWXDuellMapTable').append(content);
-              content = $('<div style="position:absolute;border:1px solid black;background:#FF0000;width:4px;height:4px;left:' + (data.character_x / 46592 * 770 - 2) + 'px;top:' + (data.character_y / 20480 * 338 - 2) + 'px;" />');
+              content = $('<div style="position:absolute;border:1px solid black;background:#FF0000;width:4px;height:4px;left:' + (data.character_x / 46592 * 770 - 2) + 'px;top:' + (data.character_y / 20480 * 338 - 2) + 'px;">');
               eval('content.click(function () { SaloonWindow.startDuel(' + data.player_id + ', ' + data.alliance_id + ', false, DuelsWindow); });');
               content.addMousePopup('<b>' + data.player_name + '</b> ' + window.Map.calcWayTime(Map.getLastQueuePosition(), {
                   x: data.character_x,
@@ -5410,7 +5661,7 @@
                 }).formatDuration());
               $('#TWXDuellMapPlayers').append(content);
             }
-            $('<div style="position:absolute;border:1px solid black;background:#00CCFF;width:4px;height:4px;left:' + (Character.position.x / 46592 * 770 - 2) + 'px;top:' + (Character.position.y / 20480 * 338 - 2) + 'px;" />').addMousePopup('Deine Position').appendTo('#TWXDuellMapPlayers');
+            $('<div style="position:absolute;border:1px solid black;background:#00CCFF;width:4px;height:4px;left:' + (Character.position.x / 46592 * 770 - 2) + 'px;top:' + (Character.position.y / 20480 * 338 - 2) + 'px;">').addMousePopup('Deine Position').appendTo('#TWXDuellMapPlayers');
           };
           var getPlayer = function (i, distance) {
             if (i == -1) {
@@ -5462,12 +5713,12 @@
           var initDuellmap = function () {
             DuelsWindow.window.addTab(TWXlang.duelmap, 'TWXDuellmap', showTab);
             TWX.DuellMap.Player = {};
-            var area = $('<div class="duels-TWXDuellmap" style="display:none;"></div>').appendTo(DuelsWindow.window.getContentPane()),
-            content = $('<div style="height:350px;top:10px;position:relative"></div>'),
+            var area = $('<div class="duels-TWXDuellmap" style="display:none;">').appendTo(DuelsWindow.window.getContentPane()),
+            content = $('<div style="height:350px;top:10px;position:relative">'),
             left = 0,
             top = 0;
             for (var i = 1; i <= 15; i++) {
-              var img = $('<img style="position:absolute;border:1px solid #000;width:110px;height:169px;left:' + left + 'px;top:' + top + 'px;" src="images/map/minimap/county_' + i + '.jpg" />');
+              var img = $('<img style="position:absolute;border:1px solid #000;width:110px;height:169px;left:' + left + 'px;top:' + top + 'px;" src="images/map/minimap/county_' + i + '.jpg">');
               left += 110;
               if (i === 7) {
                 left = 0;
@@ -5488,7 +5739,7 @@
               }
               content.append(img);
             }
-            content.append('<div id="TWXDuellMapPlayers"></div>');
+            content.append('<div id="TWXDuellMapPlayers">');
             content.appendTo(area);
             area.append(progB.getMainDiv());
             var scrollpane = new west.gui.Scrollpane().appendTo(area);
@@ -5500,85 +5751,21 @@
             });
             scrollpane.appendContent('<table border="1" id="TWXDuellMapTable"></table>');
           };
-          DuelsWindow.twlt_open = DuelsWindow.open;
+          DuelsWindow.open_twx = DuelsWindow.open;
           DuelsWindow.open = function () {
-            var tmp = DuelsWindow.twlt_open.call(this);
+            var tmp = DuelsWindow.open_twx.call(this);
             if (tmp !== undefined)
               return tmp;
             initDuellmap();
           };
-          DuelsWindow.twlt_showTab = DuelsWindow.showTab;
+          DuelsWindow.showTab_twx = DuelsWindow.showTab;
           DuelsWindow.showTab = function (id) {
-            var tmp = DuelsWindow.twlt_showTab.call(this, id);
+            var tmp = DuelsWindow.showTab_twx.call(this, id);
             if (tmp !== undefined)
               return tmp;
             DuelsWindow.window.removeClass('premium-buy').setSize(748, 472);
           };
         }
-      };
-      TWX.ChangeCity = {
-        init: function () {
-          var swap = function (that) {
-            var rows = $('.' + that.window.id + ' .row .cell.cell_2.name,.' + that.window.id + ' .row .cell.cell_2.name_foreign');
-            rows.empty();
-            for (var i = 0; i <= that.data.length; i++) {
-              var player = that.data[i];
-              $(rows[i]).append('<span>&nbsp;' + (player.title !== undefined ? player.title : '') + '</span><a href="#" onClick="PlayerProfileWindow.open(' + player.player_id + ')">' + player.name + '</a>');
-            }
-          };
-          CityhallWindow.Residents.twlt_fillContent = CityhallWindow.Residents.fillContent;
-          CityhallWindow.Residents.fillContent = function () {
-            var tmp = CityhallWindow.Residents.twlt_fillContent.call(this);
-            if (tmp !== undefined)
-              return tmp;
-            swap(this);
-          };
-        }
-      };
-      TWX.ShowAP = {
-        init: function () {
-          var addAP = function (that) {
-            var job = that.job;
-            var getJobFeaturedCls = function () {
-              if (LinearQuestHandler.hasTutorialQuest())
-                return '';
-              if (job.is_gold)
-                return 'gold';
-              if (job.is_silver)
-                return 'silver';
-              return '';
-            };
-            var aps = that.currSkillpoints - that.job.workpoints;
-            var jobicon = '<div class="job" title="' + job.get('description').escapeHTML().cutIt(150) + '"><div class="featured ' + getJobFeaturedCls() + '"></div>' + '<img src="images/jobs/' + job.get('shortname') + '.png" class="job_icon" /></div>';
-            that.window.setTitle(jobicon + '&nbsp;&nbsp;' + job.get('name').escapeHTML() + ' (' + aps + ' AP)');
-          };
-          JobWindow.twlt_initView = JobWindow.initView;
-          JobWindow.initView = function () {
-            var tmp = JobWindow.twlt_initView.call(this);
-            if (tmp !== undefined)
-              return tmp;
-            addAP(this);
-          };
-        }
-      };
-      TWX.Statusbar = {
-        init: function () {
-          $('div#ui_windowbar').hide();
-          $('div#ui_windowbar_state').hide();
-        }
-      };
-      TWX.Logout = {
-        init: function () {
-          var menu = $('<div class="menulink" onclick="TWX.Logout.logout();" title="' + TWXlang.logout + '" />').css('background-image', 'url(' + TWXstart.Images('logout') + ')').css('background-position', '0px 0px').mouseenter(function () {
-              $(this).css('background-position', '-25px 0px');
-            }).mouseleave(function () {
-              $(this).css('background-position', '0px 0px');
-            });
-          $('#TWX-menu').after(menu);
-        },
-        logout: function () {
-          location.href = 'game.php?window=logout&action=logout&h=' + Player.h;
-        },
       };
       TWX.MoveJobs = {
         init: function () {
@@ -5586,9 +5773,9 @@
           $('div#ui_bottomright').css('right', '35px');
           $('div.ui_menucontainer').css('margin-bottom', '7px');
           $('div#ui_scripts').remove();
-          EscapeWindow.twlt_open = EscapeWindow.twlt_open || EscapeWindow.open;
+          EscapeWindow.open_twx = EscapeWindow.open_twx || EscapeWindow.open;
           EscapeWindow.open = function () {
-            EscapeWindow.twlt_open.apply(this, arguments);
+            EscapeWindow.open_twx.apply(this, arguments);
             wman.getById('escape').setSize(240, 326);
             $('div.tw2gui_win2.escape div.content div.tw2gui_button')[3].after(new west.gui.Button(st, function () {
                 TheWestApi.open();
@@ -5597,35 +5784,14 @@
           };
         }
       };
-      TWX.BlinkEvents = {
-        init: function () {
-          var setVal7 = setInterval(function () {
-              if ($('.border.highlight').length) {
-                clearInterval(setVal7);
-                $('.border.highlight').remove();
-                TWX.addStyle('.border.highlight {display:none;}');
-              }
-            }, 3000);
-        }
-      };
-      TWX.FortTracker = {
-        init: function () {
-          TWX.addStyle('.fort_battle_notification {display:none!important;}');
-        }
-      };
-      TWX.FriendsPop = {
-        init: function () {
-          west.notification.ToastOnlineNotification.prototype.show = function () {};
-        }
-      };
       TWX.InstantQuest = {
         init: function () {
           var setVal1 = setInterval(function () {
               if (QuestEmployerView.showQuest) {
                 clearInterval(setVal1);
-                QuestEmployerView.twlt_showQuest = QuestEmployerView.showQuest;
+                QuestEmployerView.showQuest_twx = QuestEmployerView.showQuest;
                 QuestEmployerView.showQuest = function (e) {
-                  QuestEmployerView.twlt_showQuest(e);
+                  QuestEmployerView.showQuest_twx(e);
                   if (e.accepted === false) {
                     var req = e.requirements,
                     solvCnt = 0;
@@ -5650,14 +5816,14 @@
       };
       TWX.QuestWiki = {
         init: function () {
-          $.getScript(TWXstart.url2 + 'repGroups.js', function () {
+          $.getScript(TWX.url2 + 'repGroups.js', function () {
             QuestLog.solvedGroups = {};
             Ajax.remoteCallMode('building_quest', 'get_solved_groups', {}, function (json) {
               for (var sg in json.solved)
                 QuestLog.solvedGroups[sg] = json.solved[sg].title;
-              QuestLog.twlt_addSolvedQuestGroup = QuestLog.addSolvedQuestGroup;
+              QuestLog.addSolvedQuestGroup_twx = QuestLog.addSolvedQuestGroup;
               QuestLog.addSolvedQuestGroup = function (groupId, questGroup) {
-                QuestLog.twlt_addSolvedQuestGroup.apply(this, arguments);
+                QuestLog.addSolvedQuestGroup_twx.apply(this, arguments);
                 QuestLog.solvedGroups[groupId] = questGroup.title;
               };
               var lang = Game.locale.substr(0, 2),
@@ -5668,15 +5834,15 @@
                 pt: ' repetível',
                 ru: ' - Снова праздник',
               };
-              Quest.twlt_render = Quest.render;
+              Quest.render_twx = Quest.render;
               Quest.render = function () {
-                Quest.twlt_render.apply(this, arguments);
+                Quest.render_twx.apply(this, arguments);
                 var wiki = 'https://wiki.the' + Game.masterURL.match(/the(.*)/)[1] + '/wiki/',
                 gid = TWX.repGroups[this.id],
                 qGroup = QuestLog.solvedGroups[gid] || lang == 'de' && isNaN(gid) && gid,
                 groupName = [69, 34].includes(this.group) && qGroup ? qGroup + repText[lang] || '' : this.groupTitle,
                 questName = encodeURIComponent((lang == 'pl' ? 'Zadania: ' : '') + groupName + '#' + (lang == 'de' ? this.id : this.soloTitle));
-                this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + wiki + questName + '" target="_blank"><img src="' + TWXstart.Images('wiki') + '"/></a>');
+                this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + wiki + questName + '" target="_blank"><img src="' + TWX.Images('wiki') + '"></a>');
               };
             });
           });
@@ -5688,7 +5854,7 @@
               if (west.window.Blackboard.cities.show) {
                 clearInterval(setVal3);
                 var wwBc = west.window.Blackboard.cities;
-                wwBc.twlt_show = wwBc.show;
+                wwBc.show_twx = wwBc.show;
                 wwBc.show = function () {
                   for (var c = 0; c < this.cities_.length; c++)
                     this.cities_[c].member += '<br>' +
@@ -5696,7 +5862,7 @@
                       x: this.cities_[c].x,
                       y: this.cities_[c].y
                     }).formatDuration();
-                  wwBc.twlt_show.apply(this, arguments);
+                  wwBc.show_twx.apply(this, arguments);
                   $('.cities .city.inlineblock .popup-title').css('margin-top', '-10px');
                 };
               }
@@ -5894,7 +6060,7 @@
           },
           initBetterSheriff = function () {
             TWX.loadedSheriff = false;
-            SheriffWindow.window.addTab('BetterSheriff', 'TWXSheriff', tabclick).appendToContentPane($('<div class="sheriff-TWXSheriff" style="display:none;width:590px;position:relative;left:50px;"/>'));
+            SheriffWindow.window.addTab('BetterSheriff', 'TWXSheriff', tabclick).appendToContentPane($('<div class="sheriff-TWXSheriff" style="display:none;width:590px;position:relative;left:50px;">'));
             TWX.BetterSheriff.table = new west.gui.Table().removeFooter();
             for (var k = 0; k < columns.length; k++)
               TWX.BetterSheriff.table.addColumn(columns[k]).appendToThCell('head', columns[k], TWXlang.sortBy + ' ' + TWXlang[columns[k].split('"')[0]], TWXlang[columns[k].split('"')[0]]);
@@ -5919,9 +6085,9 @@
               SaloonWindow.self = data.self;
             });
           };
-          SheriffWindow.twlt_open = SheriffWindow.open;
+          SheriffWindow.open_twx = SheriffWindow.open;
           SheriffWindow.open = function (townId, tabId, wanted) {
-            SheriffWindow.twlt_open.call(this, townId, tabId, wanted);
+            SheriffWindow.open_twx.call(this, townId, tabId, wanted);
             if (townId === Character.homeTown.town_id) {
               initBetterSheriff();
             }
@@ -5930,9 +6096,9 @@
       };
       TWX.ChatProfessions = {
         init: function () {
-          Chat.Formatter.twlt_formatContactClient = Chat.Formatter.formatContactClient;
+          Chat.Formatter.formatContactClient_twx = Chat.Formatter.formatContactClient;
           Chat.Formatter.formatContactClient = function (client, room) {
-            var cClient = Chat.Formatter.twlt_formatContactClient.call(this, client, room);
+            var cClient = Chat.Formatter.formatContactClient_twx.call(this, client, room);
             if (client.professionId > -1)
               $(cClient[0].lastChild).prepend($(Chat.Formatter.getProfessionImage(client.professionId)).css('background-color', '#D5C6A2')[0]);
             return cClient;
@@ -5974,9 +6140,9 @@
             } else
               QuestWindowView.clearSearch();
           };
-          QuestWindowView.twlt_renderGroupSolved = QuestWindowView.renderGroupSolved;
+          QuestWindowView.renderGroupSolved_twx = QuestWindowView.renderGroupSolved;
           QuestWindowView.renderGroupSolved = function () {
-            QuestWindowView.twlt_renderGroupSolved.apply(this, arguments);
+            QuestWindowView.renderGroupSolved_twx.apply(this, arguments);
             var textF = new west.gui.Textfield('questbook_search').addListener(QuestWindowView.searchQuest),
             iconB = new west.gui.Iconbutton(new west.gui.Icon('search'), function () {
                 QuestWindowView.searchQuest(textF.getValue());
@@ -6002,9 +6168,9 @@
               t: TWXlang.worldwide
             }
           ];
-          MarketWindow.Sell.twlt_updateTable = MarketWindow.Sell.updateTable;
+          MarketWindow.Sell.updateTable_twx = MarketWindow.Sell.updateTable;
           MarketWindow.Sell.updateTable = function () {
-            MarketWindow.Sell.twlt_updateTable.apply(this, arguments);
+            MarketWindow.Sell.updateTable_twx.apply(this, arguments);
             if (Character.homeTown.town_id)
               Ajax.remoteCall('building_market', 'search', {
                 visibility: 0
@@ -6016,9 +6182,9 @@
                 }
               });
           };
-          MarketWindow.Buy.twlt_updateTable = MarketWindow.Buy.updateTable;
+          MarketWindow.Buy.updateTable_twx = MarketWindow.Buy.updateTable;
           MarketWindow.Buy.updateTable = function (data) {
-            MarketWindow.Buy.twlt_updateTable.call(this, data);
+            MarketWindow.Buy.updateTable_twx.call(this, data);
             if (Character.homeTown.town_id)
               for (var i = 0; i < data.length; i++)
                 $('#mpb_vendor_' + data[i].market_offer_id).before('<img src="images/icons/' + MarketWindow.sellRights[data[i].sell_rights].i + '.png" title="' + MarketWindow.sellRights[data[i].sell_rights].t + '">');
@@ -6081,14 +6247,14 @@
               rename(equipId, nr, $('#equip_rename').val());
             }).addButton('cancel').show();
           };
-          EquipManager.twlt_showPopup = EquipManager.showPopup;
+          EquipManager.showPopup_twx = EquipManager.showPopup;
           EquipManager.showPopup = function () {
-            EquipManager.twlt_showPopup.apply(this, arguments);
+            EquipManager.showPopup_twx.apply(this, arguments);
             setTimeout(function () {
               $('#max_equip_count').append(' | ' + TWXlang.used + ': <span id="equip_used">' + EquipManager.list.length);
             }, 100);
           };
-          EquipManager.twlt_buildEquipList = EquipManager.buildEquipList;
+          EquipManager.buildEquipList_twx = EquipManager.buildEquipList;
           EquipManager.buildEquipList = function () {
             if ($('#equip_used').length > 0)
               $('#equip_used')[0].innerHTML = EquipManager.list.length;
@@ -6097,7 +6263,7 @@
               b1 = b.name.toUpperCase();
               return (a1 == b1) ? 0 : (a1 > b1) ? 1 : -1;
             });
-            var html = EquipManager.twlt_buildEquipList().replace(/60%/g, '40%').replace(/20%/g, '15%');
+            var html = EquipManager.buildEquipList_twx().replace(/60%/g, '40%').replace(/20%/g, '15%');
             for (var i = 0; EquipManager.list.length > i; i++) {
               var id = EquipManager.list[i].equip_manager_id;
               html = html.replace('deleteEquip(' + id, 'renameEquip(' + id + ',' + i + ');\'>' + TWXlang.rename + '&emsp;</a></td><td width=\'15%\'><a href=\'javascript:EquipManager.deleteEquip(' + id);
@@ -6108,10 +6274,10 @@
       };
       TWX.ShortPopups = {
         init: function () {
-          ItemPopup.twlt_getXHTML = ItemPopup.twlt_getXHTML || ItemPopup.getXHTML;
+          ItemPopup.getXHTML_twx = ItemPopup.getXHTML_twx || ItemPopup.getXHTML;
           ItemPopup.getXHTML = function () {
             var end = '';
-            var html = ItemPopup.twlt_getXHTML.call(this).replace(/<br><span class="inventory_popup_requirement_text(.*?)>$/, function (str) {
+            var html = ItemPopup.getXHTML_twx.call(this).replace(/<br><span class="inventory_popup_requirement_text(.*?)>$/, function (str) {
                 end = str;
                 return '';
               }).replace('<div class="invPopup_body">', '').replace('inventory_popup"', 'invPopup_body $& style="max-width:385px;"><table><td').replace(/bonus_attr tw_green"/g, '$& style="white-space:nowrap;"').replace('<br><br><div class="item_set_bonus">', end + '</td><td style="padding-left:5px;">');
@@ -6128,7 +6294,7 @@
               if (WNw) {
                 clearInterval(setVal5);
                 WNw.setMaxSize(999);
-                $('<div class="tw2gui_window_buttons_close" style="position:absolute;left:40px;z-index:2;" title="' + TWXlang.removeWorkNotis + '" />').prependTo(WNw.element).click(function () {
+                $('<div class="tw2gui_window_buttons_close" style="position:absolute;left:40px;z-index:2;" title="' + TWXlang.removeWorkNotis + '">').prependTo(WNw.element).click(function () {
                   var l = WNw.list.length;
                   while (l--)
                     if (WNw.list[l].tooltip.includes('job/danger.png'))
@@ -6140,12 +6306,12 @@
       };
       TWX.JobProducts = {
         init: function () {
-          Map.PopupHandler.twlt_getJobPopup = Map.PopupHandler.twlt_getJobPopup || Map.PopupHandler.getJobPopup;
+          Map.PopupHandler.getJobPopup_twx = Map.PopupHandler.getJobPopup_twx || Map.PopupHandler.getJobPopup;
           Map.PopupHandler.getJobPopup = function (d) {
-            var html = Map.PopupHandler.twlt_getJobPopup.apply(this, arguments);
+            var html = Map.PopupHandler.getJobPopup_twx.apply(this, arguments);
             for (var i in d.yields) {
               var m = ItemManager.get(i);
-              html = html.replace('<img src="/images/items/yield/' + m['short'] + '.', '<div class="item"><span class="count" style="display:block;top:29px;left:0px">' + Bag.getItemCount(i) + '</span></div>$&');
+              html = html.replace('<img src="' + Game.cdnURL + '/images/items/yield/' + m.short + '.', '<div class="item"><span class="count" style="display:block;top:29px;left:0px">' + Bag.getItemCount(i) + '</span></div>$&');
             }
             return html;
           };
@@ -6154,19 +6320,19 @@
       TWX.MapDistance = {
         init: function () {
           TWX.addStyle('div.job_way {left:61px;width:170px;}\n .mpb_distance, .wih_distance, .mpo_distance, .mpw_distance, .mps_distance {width:45px;}\n div.tw2gui_window.marketplace div.fancytable .row > div {text-overflow:unset;}');
-          Map.twlt_calcWayTime = Map.twlt_calcWayTime || Map.calcWayTime;
+          Map.calcWayTime_twx = Map.calcWayTime_twx || Map.calcWayTime;
           Map.calcWayTime = function () {
-            var time = Map.twlt_calcWayTime.apply(this, arguments);
+            var time = Map.calcWayTime_twx.apply(this, arguments);
             this.newDist = time / Game.travelSpeed / Character.speed;
             return time;
           };
-          Number.prototype.twlt_formatDuration = Number.prototype.twlt_formatDuration || Number.prototype.formatDuration;
+          Number.prototype.formatDuration_twx = Number.prototype.formatDuration_twx || Number.prototype.formatDuration;
           Number.prototype.formatDuration = function () {
             var dist = '';
             if (Map.newDist)
               dist = ' <small>' + (Math.floor(Map.newDist) / 1000).toFixed(3) + 'mi</small>';
             Map.newDist = 0;
-            return Number.prototype.twlt_formatDuration.apply(this, arguments) + dist;
+            return Number.prototype.formatDuration_twx.apply(this, arguments) + dist;
           };
           String.prototype.replaceAll = function () {
             return this.replace(/\D/g, '');
@@ -6205,9 +6371,9 @@
                 },
                 exitSell = function (destroy) {
                   if (mt)
-                    MarketWindow.onInventoryClick = MarketWindow.twlt_onInventoryClick || MarketWindow.onInventoryClick;
+                    MarketWindow.onInventoryClick = MarketWindow.onInventoryClick_twx || MarketWindow.onInventoryClick;
                   else
-                    wws.handleInventoryClick = wws.twlt_handleInventoryClick || wws.handleInventoryClick;
+                    wws.handleInventoryClick = wws.handleInventoryClick_twx || wws.handleInventoryClick;
                   $.each(itemsToSell[mt], function (invId) {
                     var bgbi = Bag.getItemIdByInvId(invId);
                     if (!bgbi)
@@ -6226,7 +6392,7 @@
                 initSell = function () {
                   if (!itemsToSell[mt]) {
                     if (mt) {
-                      MarketWindow.twlt_onInventoryClick = MarketWindow.twlt_onInventoryClick || MarketWindow.onInventoryClick;
+                      MarketWindow.onInventoryClick_twx = MarketWindow.onInventoryClick_twx || MarketWindow.onInventoryClick;
                       MarketWindow.onInventoryClick = function (item) {
                         if (this.window.currentActiveTabId != 'sell')
                           return false;
@@ -6234,7 +6400,7 @@
                         return true;
                       };
                     } else {
-                      wws.twlt_handleInventoryClick = wws.twlt_handleInventoryClick || wws.handleInventoryClick;
+                      wws.handleInventoryClick_twx = wws.handleInventoryClick_twx || wws.handleInventoryClick;
                       wws.handleInventoryClick = function (item) {
                         sellItem(item);
                         return true;
@@ -6256,7 +6422,7 @@
                         cont += count + 'x ' + TWX.GUI.getSetOrItem(bi, bgo, true) + (repItems.includes(bi) ? ' (repeatable quest!)' : '') + '<br>';
                         money += bgo.sell_price * count;
                       });
-                      cont += '<br><span class="invPopup_sellicon"/> $' + money + '</span></div>';
+                      cont += '<br><span class="invPopup_sellicon"> $' + money + '</span></div>';
                       new west.gui.Dialog(TWXlang.sellItems, cont).setDraggable(true).addButton('yes', function () {
                         $.each(itemsToSell[mt], function (inv_id, amount) {
                           if (mt) {
@@ -6301,19 +6467,19 @@
                     Inventory.DOM.children('.actions').prepend(sellButton[mt]);
                   }
                 };
-                wws.twlt_openSellInventory = wws.twlt_openSellInventory || wws.openSellInventory;
+                wws.openSellInventory_twx = wws.openSellInventory_twx || wws.openSellInventory;
                 wws.openSellInventory = function () {
                   exitSell(true);
-                  wws.twlt_openSellInventory.apply(this, arguments);
+                  wws.openSellInventory_twx.apply(this, arguments);
                   addMtButton(0);
                 };
-                /*MarketWindow.twlt_open = MarketWindow.twlt_open || MarketWindow.open;
+                /*MarketWindow.open_twx = MarketWindow.open_twx || MarketWindow.open;
                 MarketWindow.open = function () {
                 exitSell(true);
-                MarketWindow.twlt_open.apply(this, arguments);
+                MarketWindow.open_twx.apply(this, arguments);
                 addMtButton(1);
                 };*/
-                Inventory.twlt_setClickHandler = Inventory.twlt_setClickHandler || Inventory.setClickHandler;
+                Inventory.setClickHandler_twx = Inventory.setClickHandler_twx || Inventory.setClickHandler;
                 Inventory.setClickHandler = function (h) {
                   if (sellButton[mt])
                     $(sellButton[mt]).hide();
@@ -6325,20 +6491,20 @@
                     if (sellButton[mt])
                       $(sellButton[mt]).show();
                   }
-                  Inventory.twlt_setClickHandler.apply(this, arguments);
+                  Inventory.setClickHandler_twx.apply(this, arguments);
                 };
-                Inventory.twlt_undock = Inventory.twlt_undock || Inventory.undock;
+                Inventory.undock_twx = Inventory.undock_twx || Inventory.undock;
                 Inventory.undock = function () {
                   if (itemsToSell[mt])
                     exitSell(true);
                   if (sellButton[mt])
                     sellButton[mt].remove();
-                  return Inventory.twlt_undock.apply(this, arguments);
+                  return Inventory.undock_twx.apply(this, arguments);
                 };
                 var tIp = tw2widget.InventoryItem.prototype;
-                tIp.twlt_initDisplay = tIp.twlt_initDisplay || tIp.initDisplay;
+                tIp.initDisplay_twx = tIp.initDisplay_twx || tIp.initDisplay;
                 tIp.initDisplay = function () {
-                  this.twlt_initDisplay.apply(this, arguments);
+                  this.initDisplay_twx.apply(this, arguments);
                   if (!this.obj.auctionable)
                     this.addClass('not_auctionable');
                 };
@@ -6351,9 +6517,9 @@
         init: function () {
           var fingers = 0,
           wgSbp = west.gui.Scrollbar.prototype;
-          wgSbp.twlt_init = wgSbp.twlt_init || wgSbp.init;
+          wgSbp.init_twx = wgSbp.init_twx || wgSbp.init;
           wgSbp.init = function () {
-            this.twlt_init.apply(this, arguments);
+            this.init_twx.apply(this, arguments);
             var start,
             that = this;
             $(this.divMain).on('touchstart', function (e) {
@@ -6367,9 +6533,9 @@
             });
           };
           var wgSpp = west.gui.Scrollpane.prototype;
-          wgSpp.twlt_init = wgSpp.twlt_init || wgSpp.init;
+          wgSpp.init_twx = wgSpp.init_twx || wgSpp.init;
           wgSpp.init = function () {
-            this.twlt_init.apply(this, arguments);
+            this.init_twx.apply(this, arguments);
             var start,
             coP = this.contentPane,
             clP = this.clipPane,
@@ -6409,19 +6575,19 @@
             currZoom = $('#map').css('zoom') * 1;
             Map.resize();
           });
-          Map.twlt_getCurrentMid = Map.twlt_getCurrentMid || Map.getCurrentMid;
+          Map.getCurrentMid_twx = Map.getCurrentMid_twx || Map.getCurrentMid;
           Map.getCurrentMid = function () {
-            var xy = this.twlt_getCurrentMid.apply(this, arguments);
+            var xy = this.getCurrentMid_twx.apply(this, arguments);
             return {
               x: xy.x / currZoom,
               y: xy.y / currZoom
             };
           };
-          Map.twlt_resize = Map.twlt_resize || Map.resize;
+          Map.resize_twx = Map.resize_twx || Map.resize;
           Map.resize = function () {
             if (!Map.initialized)
               return;
-            this.twlt_resize.apply(this, arguments);
+            this.resize_twx.apply(this, arguments);
             this.width /= currZoom;
             this.height /= currZoom;
           };
@@ -6442,9 +6608,9 @@
             fingers = 0;
           });
           var wgWp = west.gui.Window.prototype;
-          wgWp.twlt_init = wgWp.twlt_init || wgWp.init;
+          wgWp.init_twx = wgWp.init_twx || wgWp.init;
           wgWp.init = function () {
-            this.twlt_init.apply(this, arguments);
+            this.init_twx.apply(this, arguments);
             var start,
             that = this,
             tdM = that.divMain,
@@ -6519,7 +6685,7 @@
           };
           TWX.CT.Tools = new function () {
             this.colorTagInv = function (e) {
-              if (e == null || e == undefined)
+              if (e === null || e === undefined)
                 return '';
               if (e.length == 3)
                 return '';
@@ -6588,16 +6754,16 @@
               $('#colorTxtStyle').append('div.btnColorImg{width: 11px; height: 11px; margin: 8px 0px 0px 5px; position: absolute; border-radius: 5px; background-image: url(data:image/png;base64,' + color + ');}\n');
               $('#colorTxtStyle').append('div.btnColorSmiley{border-top-right-radius: 10px;border-top-left-radius: 10px;border: 1px solid #646464;box-shadow: 0px 0px 1px 1px black;background-image: url(images/interface/wood_texture_dark.jpg);width: 425px;bottom: 18px;left: -400px;height: 208px;\tmargin: 0px 0px 6px 0px; position: absolute;}\n');
               $('#colorTxtStyle').append('div.btnColorOneSmiley{display: inline-block; cursor: pointer; width: 17px; height: 13px; padding: 1px; text-align: center; vertical-align: middle;}\n');
-              this.btncolor = $('<div class="btnColor btnColorBG"/>').append($('<div class="btnColorImg btnColorImgTag"/>').click(function () {
+              this.btncolor = $('<div class="btnColor btnColorBG">').append($('<div class="btnColorImg btnColorImgTag">').click(function () {
                     TWX.CT.Window.show();
-                  })).append(e = $('<div class="btnColorSmiley"/>').hide()).mouseout(function () {
+                  })).append(e = $('<div class="btnColorSmiley">').hide()).mouseout(function () {
                   $('div.btnColorSmiley:last-child', this).hide();
                 }).mouseover(function () {
                   $('div.btnColorSmiley:last-child', this).show();
                 });
               for (var t in sm) {
                 if (sm[t] !== '') {
-                  e.append($('<div class="btnColorOneSmiley"/>').data('Tag', t).click(this.addSmToTxt).append(sm[t]));
+                  e.append($('<div class="btnColorOneSmiley">').data('Tag', t).click(this.addSmToTxt).append(sm[t]));
                 }
               }
             };
@@ -6617,25 +6783,25 @@
               inp.val(s);
             };
             this.appliquer_couleur = function (e, t) {
-              if (e == '')
+              if (e === '')
                 return '';
               if (t == '999' && !TWX.CT.DATA.Setting.Default.Format.startsWith('/111* '))
                 return e;
-              if (e.toLowerCase().indexOf('[player]') == 0 && e.toLowerCase().indexOf('[/player]') !== -1)
+              if (e.toLowerCase().indexOf('[player]') === 0 && e.toLowerCase().indexOf('[/player]') !== -1)
                 return e.substring(0, e.toLowerCase().indexOf('[/player]') + 10) + ' ' + this.appliquer_couleur(e.substring(e.toLowerCase().indexOf('[/player]') + 10), t);
-              if (e.toLowerCase().indexOf('[report=') == 0 && e.toLowerCase().indexOf('[/report]') !== -1)
+              if (e.toLowerCase().indexOf('[report=') === 0 && e.toLowerCase().indexOf('[/report]') !== -1)
                 return e.substring(0, e.toLowerCase().indexOf('[/report]') + 10) + ' ' + this.appliquer_couleur(e.substring(e.toLowerCase().indexOf('[/report]') + 10), t);
-              if (e.toLowerCase().indexOf('http') == 0)
+              if (e.toLowerCase().indexOf('http') === 0)
                 if (e.indexOf(' ') !== -1)
                   return e.substring(0, e.indexOf(' ') + 1) + ' ' + this.appliquer_couleur(e.substring(e.indexOf(' ') + 1), t);
                 else
                   return e;
-              if (e.toLowerCase().indexOf('[item=') == 0 && e.indexOf(']') !== -1)
+              if (e.toLowerCase().indexOf('[item=') === 0 && e.indexOf(']') !== -1)
                 return e.substring(0, e.indexOf(']') + 1) + ' ' + this.appliquer_couleur(e.substring(e.indexOf(']') + 1), t);
-              if (e.toLowerCase().indexOf('[marker') == 0 && e.indexOf(']') !== -1)
+              if (e.toLowerCase().indexOf('[marker') === 0 && e.indexOf(']') !== -1)
                 return e.substring(0, e.indexOf(']') + 1) + ' ' + this.appliquer_couleur(e.substring(e.indexOf(']') + 1), t);
               for (var n in sm) {
-                if (e.indexOf(n) == 0)
+                if (e.indexOf(n) === 0)
                   return e.substring(0, n.length) + ' ' + this.appliquer_couleur(e.substring(n.length), t);
               }
               if (t.length == 3)
@@ -6675,12 +6841,13 @@
               return this.flipString(e.substring(eO.length)) + eO;
             };
             this.OnPressKeyEnter = function (e) {
-              var obj = $.extend({}, $(e.target).data('ColorTchat'));
-              var n = $(e.target).val();
+              var obj = $.extend({}, $(e.target).data('ColorTchat')),
+              n = $(e.target).val(),
+              r;
               if (n.charAt(0) == '/') {
                 if (n.substring(0, 6) == '/tell ') {
                   if (n.indexOf(':') !== -1) {
-                    var r = n.substring(6, n.indexOf(':') + 1);
+                    r = n.substring(6, n.indexOf(':') + 1);
                     n = n.substring(n.indexOf(':') + 1);
                   }
                 } else {
@@ -6715,7 +6882,7 @@
               if (/\/[0-9]{3}/.test(n.substring(0, 5))) {
                 obj.Format = '%n';
               }
-              if (typeof r !== 'undefined')
+              if (typeof r != 'undefined')
                 obj.Format = '/tell %t:' + obj.Format;
               var cT = function () {
                 var te = '',
@@ -6949,27 +7116,27 @@
               var e,
               i,
               format = TWX.CT.DATA.Setting.Default.Format;
-              $((this.w = wman.open('Colorsettings').setTitle(TWXlang.CT.ColorWindowTitle).setMiniTitle(TWX.CT.name).setSize(350, 400)).getContentPane()).css('text-align', 'center').append(i = $('<input type=hidden class="color" id="colorinput" value="66ff00"/>'));
+              $((this.w = wman.open('Colorsettings').setTitle(TWXlang.CT.ColorWindowTitle).setMiniTitle(TWX.CT.name).setSize(350, 400)).getContentPane()).css('text-align', 'center').append(i = $('<input type=hidden class="color" id="colorinput" value="66ff00">'));
               (this.ColorPicker = new jscolor.color(i[0], {
                     pickerOnfocus: false
                   })).showPicker();
-              this.tab1 = $('<div style="display:inline-block;width:290px;height:275px;position:relative;padding:4px12px4px4px;text-align:left"/>').appendTo(this.w.getContentPane()).append($(jscolor.picker.boxB).css({
+              this.tab1 = $('<div style="display:inline-block;width:290px;height:275px;position:relative;padding:4px12px4px4px;text-align:left">').appendTo(this.w.getContentPane()).append($(jscolor.picker.boxB).css({
                     position: 'relative',
                     display: 'inline-block',
                     'background-color': ''
-                  })).append($('<div id="colorPanelDIV" style="display:inline-block;width:auto;height:123px;position:relative;margin-left:7px;border:' + this.ColorPicker.pickerBorder + 'px solid;border-color:' + this.ColorPicker.pickerBorderColor + '"/>').append($('<div id="colorWSetbtn" style="width:20px;height:20px;background-image:url(' + setB + ');margin:10px;cursor:pointer;"/>').click(function (e) {
+                  })).append($('<div id="colorPanelDIV" style="display:inline-block;width:auto;height:123px;position:relative;margin-left:7px;border:' + this.ColorPicker.pickerBorder + 'px solid;border-color:' + this.ColorPicker.pickerBorderColor + '">').append($('<div id="colorWSetbtn" style="width:20px;height:20px;background-image:url(' + setB + ');margin:10px;cursor:pointer;">').click(function (e) {
                       TWX.CT.Window.SetPreviewColor(0);
-                    })).append($('<div id="colorWLoadbtn" style="width:20px;height:20px;margin:10px;cursor:pointer;"/>').click(function (e) {
+                    })).append($('<div id="colorWLoadbtn" style="width:20px;height:20px;margin:10px;cursor:pointer;">').click(function (e) {
                       TWX.CT.Window.selectLoad.show(e);
-                    })).append($('<div id="colorWSavebtnBg" style="width:20px;height:20px;background-image:url(' + saveB + ');background-size:100%100%;margin:10px;cursor:pointer;"/>').click(function (e) {
+                    })).append($('<div id="colorWSavebtnBg" style="width:20px;height:20px;background-image:url(' + saveB + ');background-size:100%100%;margin:10px;cursor:pointer;">').click(function (e) {
                       TWX.CT.Window.selectSave.show(e);
-                    }))).append(e = $('<div id="PreviewDIV" class="chatwindow_background" style="display:inline-block;width:287px;height:60px;position:relative;zIndex:5;margin-top:5px;border:' + this.ColorPicker.pickerInset + 'px solid;border-color:' + this.ColorPicker.pickerInsetColor + ';color:white;background:#1D1C1C;opacity:' + $('.tw2gui_window_inset', '.chat').css('opacity') + '"/>')).append($('<div style="display:inline-block;position:relative;padding:4px;width:45%"/>').append((this.Bold = new TWX.CT.Tools.Guicheckbox(TWXlang.CT.ColorWindowBold).setSelected(/\*.*\*/.test(format))).getMainDiv().click(function () {
+                    }))).append(e = $('<div id="PreviewDIV" class="chatwindow_background" style="display:inline-block;width:287px;height:60px;position:relative;zIndex:5;margin-top:5px;border:' + this.ColorPicker.pickerInset + 'px solid;border-color:' + this.ColorPicker.pickerInsetColor + ';color:white;background:#1D1C1C;opacity:' + $('.tw2gui_window_inset', '.chat').css('opacity') + '">')).append($('<div style="display:inline-block;position:relative;padding:4px;width:45%">').append((this.Bold = new TWX.CT.Tools.Guicheckbox(TWXlang.CT.ColorWindowBold).setSelected(/\*.*\*/.test(format))).getMainDiv().click(function () {
                       TWX.CT.Window.updateFormat();
                       TWX.CT.Window.updatePreview();
-                    }))).append($('<div style="display:inline-block;position:relative;padding:4px;width:auto"/>').append((this.Caps = new TWX.CT.Tools.Guicheckbox(TWXlang.CT.ColorWindowCaps).setSelected(/%C|%F/.test(format))).getMainDiv().click(function () {
+                    }))).append($('<div style="display:inline-block;position:relative;padding:4px;width:auto">').append((this.Caps = new TWX.CT.Tools.Guicheckbox(TWXlang.CT.ColorWindowCaps).setSelected(/%C|%F/.test(format))).getMainDiv().click(function () {
                       TWX.CT.Window.updateFormat();
                       TWX.CT.Window.updatePreview();
-                    }))).append($('<div style="display:inline-block;position:relative;padding:4px;width:45%"/>').append((this.Flip = new TWX.CT.Tools.Guicheckbox(TWXlang.CT.ColorWindowFlip).setSelected(/%f|%F/.test(format))).getMainDiv().click(function () {
+                    }))).append($('<div style="display:inline-block;position:relative;padding:4px;width:45%">').append((this.Flip = new TWX.CT.Tools.Guicheckbox(TWXlang.CT.ColorWindowFlip).setSelected(/%f|%F/.test(format))).getMainDiv().click(function () {
                       TWX.CT.Window.updateFormat();
                       TWX.CT.Window.updatePreview();
                     }))).append((this.inputFormat = new TWX.CT.Tools.Guitextfield('bdfFormat').setValue(format).setSize(14).setReadonly(true)).getMainDiv());
@@ -6988,13 +7155,13 @@
                 }, 0);
               }).setWidth(200);
               for (var s = 0; s < cList.length; s++)
-                this.selectLoad.addItem(cList[s], $('<div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">').append($('<span style="display:inline-block;width:19px;height:19px;"/>').css('background', TWX.CT.Tools.Degrader(cList[s]))).append(TWXlang.CT.ColorLoadListName[s]), TWXlang.CT.ColorLoadListName[s]);
+                this.selectLoad.addItem(cList[s], $('<div style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">').append($('<span style="display:inline-block;width:19px;height:19px;">').css('background', TWX.CT.Tools.Degrader(cList[s]))).append(TWXlang.CT.ColorLoadListName[s]), TWXlang.CT.ColorLoadListName[s]);
               for (s in TWX.CT.DATA.Setting.saves)
-                this.selectLoad.addItem(s, $('<div>').append($('<span style="display:inline-block;width:19px;height:19px;"/>').css('background', TWX.CT.Tools.Degrader(TWX.CT.DATA.Setting.saves[s]))).append(s + (TWX.CT.DATA.Setting.saves[s] == cList[0] ? ' ' + TWXlang.CT.ColorSaveEmpty : '')));
+                this.selectLoad.addItem(s, $('<div>').append($('<span style="display:inline-block;width:19px;height:19px;">').css('background', TWX.CT.Tools.Degrader(TWX.CT.DATA.Setting.saves[s]))).append(s + (TWX.CT.DATA.Setting.saves[s] == cList[0] ? ' ' + TWXlang.CT.ColorSaveEmpty : '')));
               for (s in TWX.CT.DATA.Setting.saves)
-                this.selectSave.addItem(s, $('<div>').append($('<span style="display:inline-block;width:19px;height:19px;"/>').css('background', TWX.CT.Tools.Degrader(TWX.CT.DATA.Setting.saves[s]))).append(s + (TWX.CT.DATA.Setting.saves[s] == cList[0] ? ' ' + TWXlang.CT.ColorSaveEmpty : '')));
+                this.selectSave.addItem(s, $('<div>').append($('<span style="display:inline-block;width:19px;height:19px;">').css('background', TWX.CT.Tools.Degrader(TWX.CT.DATA.Setting.saves[s]))).append(s + (TWX.CT.DATA.Setting.saves[s] == cList[0] ? ' ' + TWXlang.CT.ColorSaveEmpty : '')));
               for (s = 1; s < TWXlang.CT.ColorWindowPreviewTxt.length; s++)
-                $('<div id="idColorPreview_' + s + '"style="display:inline-block;cursor:pointer" onclick="javascript:TWX.CT.Window.SetPreviewColor(\'' + s + '\');"/>').appendTo(e);
+                $('<div id="idColorPreview_' + s + '"style="display:inline-block;cursor:pointer" onclick="javascript:TWX.CT.Window.SetPreviewColor(\'' + s + '\');">').appendTo(e);
               this.customTF = (new TWX.CT.Tools.Guitextfield).setSize(30);
               this.test = function () {
                 TWX.CT.Window.customTest.html(TWXlang.CT.CustomNotReady).css('color', 'red');
@@ -7005,8 +7172,8 @@
                 }
               };
               this.customTF.getField()[0].addEventListener('keyup', this.test);
-              this.customPrev = $('<div style="float:left;margin-top:5px;width:19px;height:19px;"/>');
-              this.customTest = $('<div style="height:12px;width:120px;"/>');
+              this.customPrev = $('<div style="float:left;margin-top:5px;width:19px;height:19px;">');
+              this.customTest = $('<div style="height:12px;width:120px;">');
               this.customTF.divMain.append(this.customPrev, this.customTest);
               this.DefaultButton = (new TWX.CT.Tools.Guibutton(TWXlang.CT.ColorWindowToDefaultBtn, function () {
                   TWX.CT.Window.DefaultClick();
@@ -7019,7 +7186,7 @@
             this.show = function () {
               if (window.jscolor)
                 return TWX.CT.Window.showOn();
-              $.getScript(TWXstart.url2 + 'jscolor.js', function () {
+              $.getScript(TWX.url2 + 'jscolor.js', function () {
                 TWX.CT.Window.showOn();
               });
             };
@@ -7094,7 +7261,7 @@
                   $(this.selectLoad.items[i].node[0].firstChild).css('background', TWX.CT.Tools.Degrader(TWX.CT.DATA.Setting.saves[e]));
                   this.selectLoad.items[i].node[0].lastChild.textContent = e + (TWX.CT.DATA.Setting.saves[e] == cList[0] ? ' ' + TWXlang.CT.ColorSaveEmpty : '');
                 }
-                if (typeof this.selectSave.items[i] !== 'undefined')
+                if (typeof this.selectSave.items[i] != 'undefined')
                   if (this.selectSave.items[i].value == e) {
                     $(this.selectSave.items[i].node[0].firstChild).css('background', TWX.CT.Tools.Degrader(TWX.CT.DATA.Setting.saves[e]));
                     this.selectSave.items[i].node[0].lastChild.textContent = e + (TWX.CT.DATA.Setting.saves[e] == cList[0] ? ' ' + TWXlang.CT.ColorSaveEmpty : '');
@@ -7129,8 +7296,8 @@
               return Wr + Wg + Wb;
             };
           };
-          $('head').append($('<style id=\'colorTxtStyle\' />'));
-          $('head').append($('<style id=\'colorTxtStyleTmp\' />'));
+          $('head').append($('<style id=\'colorTxtStyle\'>'));
+          $('head').append($('<style id=\'colorTxtStyleTmp\'>'));
           $('#colorTxtStyle').append('div.tw2gui_window.chat div.chat_room div.chat_input div.cbg {right: 65px}\n');
           $('#colorTxtStyle').append('div.tw2gui_window.chat div.chat_room div.chat_input a.speak {right: 25px}\n');
           TWX.CT.initInterval = setInterval(function () {
@@ -7143,36 +7310,36 @@
           TWX.QIS = {
             equImg: 2188,
             MenuButton: function (image, title, onclick) {
-              var self = this;
+              var that = this;
               this.isHovered = false;
               this.onClick = onclick;
               var clicked = function (e) {
-                if (self.onClick) {
-                  self.onClick(self, e);
+                if (that.onClick) {
+                  that.onClick(that, e);
                 }
               };
               var repaint = function () {
-                var x = !self.isHovered ? 0 : -25;
-                self.obj.css('background-position', x + 'px 0px');
+                var x = !that.isHovered ? 0 : -25;
+                that.obj.css('background-position', x + 'px 0px');
               };
               var mouseIn = function () {
-                self.isHovered = true;
+                that.isHovered = true;
                 repaint();
               };
               var mouseOut = function () {
-                self.isHovered = false;
+                that.isHovered = false;
                 repaint();
               };
-              this.obj = $('<div class=\'menulink\' title=\'' + title + '\' />').css('background-image', 'url(' + image + ')');
+              this.obj = $('<div class="menulink" title="' + title + '">').css('background-image', 'url(' + image + ')');
               this.obj.hover(mouseIn, mouseOut);
               this.obj.click(clicked);
-              $('div#ui_menubar').append($('<div class=\'ui_menucontainer\' />').append(this.obj).append('<div class=\'menucontainer_bottom\' />'));
+              $('#TWX-menu').append(this.obj);
             },
             popup: function (button, e) {
               if (!TWX.QIS.popupMenu) {
                 TWX.QIS.popupMenu = new west.gui.Selectbox().setWidth(250);
                 TWX.QIS.popupMenu.addListener(TWX.QIS.findSet);
-                $.getScript(TWXstart.url2 + 'QIS_sets.js', function () {
+                $.getScript(TWX.url2 + 'QIS_sets.js', function () {
                   var qs = TWX.QIS.sets,
                   i = qs.length,
                   wSets = west.storage.ItemSetManager._setList;
@@ -7233,141 +7400,6 @@
           new TWX.QIS.MenuButton('data:image/png;base64,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', 'Quick items search', TWX.QIS.popup);
         },
       };
-      TWX.NPClocator = {
-        init: function () {
-          TWX.NPC = {
-            name: 'Minimap NPC locator',
-            loading: false,
-            inner: '',
-            Images: {
-              reload: 'data:image/png;base64,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',
-              menu: 'data:image/png;base64,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',
-            },
-            start: function () {
-              if (window.document.getElementById('ui_menubar')) {
-                try {
-                  this.addButton();
-                } catch (e) {}
-              } else {
-                setTimeout(function () {
-                  TWX.NPC.start();
-                }, 1000);
-              }
-            },
-            addButton: function () {
-              var t = $('<div title="' + TWX.NPC.name + '" class="menulink" />').css('background-image', 'url(' + TWX.NPC.Images.menu + ')').css('background-position', '0px 0px').mouseenter(function () {
-                  $(this).css('background-position', '-25px 0px');
-                }).mouseleave(function () {
-                  $(this).css('background-position', '0px 0px');
-                }).click(function () {
-                  if (!TWX.NPC.employers)
-                    TWX.NPC.load();
-                  else if (TWX.NPC.loading === false)
-                    TWX.NPC.open();
-                });
-              $('#ui_menubar').append($('<div class="ui_menucontainer" />').append(t).append('<div class="menucontainer_bottom" />'));
-            },
-            load: function () {
-              if (TWX.NPC.loading === false) {
-                TWX.NPC.loading = true;
-                new UserMessage(TWXlang.NPC.loading, 'hint').show();
-                Ajax.get('map', 'get_minimap', {}, function (json) {
-                  if (json.error)
-                    return new UserMessage(json.msg).show();
-                  var locs = [
-                  ];
-                  var ql = json.quest_locations;
-                  for (var loc in ql)
-                    if (ql.hasOwnProperty(loc))
-                      locs.push([parseInt(ql[loc][0][0] / Map.tileSize),
-                          parseInt(ql[loc][0][1] / Map.tileSize)]);
-                  Ajax.get('map', 'get_complete_data', {
-                    tiles: JSON.stringify(locs)
-                  }).done(function (res) {
-                    var ne = TWX.NPC.employers = {};
-                    var rq = res.quests;
-                    for (var g = 0; g < locs.length; g++) {
-                      var em = rq[locs[g][0]][locs[g][1]][0][1];
-                      for (var h = 0; h < em.employer.length; h++)
-                        if (!ne[em.employer[h].name])
-                          ne[em.employer[h].name] = em.x + ';' + em.y;
-                        else
-                          ne[em.employer[h].name] += '|' + em.x + ';' + em.y;
-                    }
-                    var ne2 = Object.keys(ne).sort(function (a, b) {
-                        a = a.toLowerCase().replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ł/g, 'l').replace(/ś/g, 's');
-                        b = b.toLowerCase().replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ł/g, 'l').replace(/ś/g, 's');
-                        return (a > b) ? 1 :  - 1;
-                      });
-                    for (var j = 0; j < ne2.length; j++)
-                      TWX.NPC.inner += '<option value="' + ne[ne2[j]] + '">' + ne2[j] + '</option>';
-                    TWX.NPC.open();
-                    TWX.NPC.loading = false;
-                  });
-                });
-              }
-            },
-            open: function () {
-              var mm = wman.open('npc_minimap', null).setMiniTitle(TWX.NPC.name).setTitle(TWXlang.NPC.title);
-              $('.npc_minimap').css('width', '560px').css('height', '352px');
-              var mm_mapdiv = $('<div id="njk_minimap_map" />'),
-              CharX = Character.position.x,
-              CharY = Character.position.y,
-              x = 685 * CharX / 182 / 256 - 6,
-              y = 302 * CharY / 80 / 256 - 6;
-              x = x * 0.727;
-              y = y * 0.727;
-              TWX.NPC.charPoint = '<span title="' + TWXlang.NPC.yourposition + '" class="char_pointer" onClick="Map.center(' + CharX + ',' + CharY + ')" style="left:' + x + 'px; top:' + y + 'px;">';
-              mm_mapdiv.append(TWX.NPC.charPoint);
-              mm.appendToContentPane($('<div id="njk_minimap"/>').append(mm_mapdiv));
-              TWX.NPC.drawSelect();
-            },
-            drawSelect: function () {
-              var selectDiv = window.document.createElement('div');
-              selectDiv.style.cssText = 'color: #fff; font-size: 11px;';
-              selectDiv.style.height = '38px';
-              selectDiv.style.marginTop = '0px';
-              selectDiv.style.marginRight = '5px';
-              selectDiv.style.textAlign = 'right';
-              selectDiv.innerHTML = '<img src="' + TWX.NPC.Images.reload + '" onclick="TWX.NPC.load()" id="NPC_reload" title="' + TWXlang.NPC.reload + '"><select style="background-color: #e8dab3; font-size: 14px; width: 200px; cursor:pointer;" onchange="TWX.NPC.questPoint(this);" id="NPC_dropdown" size="1">' +
-                '<option selected disabled>-' + TWXlang.NPC.chooseNpc + '</option>' + TWX.NPC.inner +
-                '</select><div id="NPC_helpers"><span class="charHelper">' + TWXlang.NPC.yourposition + '</span><span class="advHelper">' + TWXlang.NPC.questgiver + '</span></div>';
-              var mm2 = document.getElementById('njk_minimap');
-              mm2.insertBefore(selectDiv, mm2.firstChild);
-            },
-            questPoint: function (place) {
-              var dp = $('#njk_minimap_map');
-              dp.find('.adv_pointer').remove();
-              var positions = place.value;
-              var arrPos = positions.split('|');
-              for (var i = 0; i < arrPos.length; i++) {
-                var xy = arrPos[i].split(';'),
-                x = 685 * xy[0] / 182 / 256 - 6,
-                y = 302 * xy[1] / 80 / 256 - 6;
-                x = x * 0.727;
-                y = y * 0.727;
-                dp.append('<span class="adv_pointer" onClick="Map.center(' + xy[0] + ',' + xy[1] + ')" id="mapPos' + i + '" px="' + xy[0] + '" py="' + xy[1] + '" style="left:' + x + 'px; top:' + y + 'px;">');
-              }
-            },
-          };
-          var style = document.createElement('style');
-          var css = '#njk_minimap_map {position:relative;width:500px;height:220px;background-repeat:no-repeat;background-image:url("images/map/minimap/worldmap_500.jpg"); margin-left: 4px;}' +
-            '#njk_minimap_map span.adv_pointer {position:absolute;height:16px;width:16px;cursor:pointer;background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_quests.png");}' +
-            '#njk_minimap_map span.char_pointer {position:absolute;height:16px;width:16px;cursor:pointer;background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_pos.png");}' +
-            '#njk_minimap #NPC_helpers {float:left;height:20px;width:150px;padding-left:5px;text-align:left;color:black;}' +
-            '#njk_minimap span.advHelper {display:block;text-indent:20px;line-height:16px; background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_quests.png");}' +
-            '#njk_minimap span.charHelper {display:block;text-indent:20px;line-height:16px; background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_pos.png");}' +
-            '#njk_minimap #NPC_reload {margin:-7px 3px 0 0;cursor:pointer;}';
-          style.setAttribute('type', 'text/css');
-          if (style.styleSheet) {
-            style.styleSheet.cssText = css;
-          } else {
-            style.appendChild(document.createTextNode(css));
-          }
-          document.getElementsByTagName('head')[0].appendChild(style);
-          TWX.NPC.start();
-        },
-      };
       TWX.MarketBestBids = {
         init: function () {
           TWX.MBB = {
@@ -7391,9 +7423,9 @@
                 }
               }
             }, 1000);
-          MarketWindow.open_mbb = MarketWindow.open;
+          MarketWindow.open_twx = MarketWindow.open;
           MarketWindow.open = function () {
-            MarketWindow.open_mbb.apply(this, arguments);
+            MarketWindow.open_twx.apply(this, arguments);
             $('div.tw2gui_win2.marketplace').on('DOMNodeInserted', function (e) {
               var el = $(e.target);
               if (el.is('div[class*="marketOffersData_"]') || el.is('div[class*="marketWatchData_"]') || el.is('div[class*="marketSellsData_"]') || el.is('div[class*="marketWhatIsHotData_"]')) {
@@ -7543,7 +7575,7 @@
               $('#route', CemeteryWindow.DOM).text('details');
               var calc = this.getFormule(type);
               $('.info', CemeteryWindow.DOM).text('');
-              $('.info', CemeteryWindow.DOM).append('<span>' + TWXlang.BS.ranking + ' ' + calc.libelle + '</span><span style="font-size:12px;"><BR/><i>' + calc.help + '</i></span>');
+              $('.info', CemeteryWindow.DOM).append('<span>' + TWXlang.BS.ranking + ' ' + calc.libelle + '</span><span style="font-size:12px;"><br><i>' + calc.help + '</i></span>');
               this.stars = calc.sortArray(CemeteryWindow.currentStats);
               var header = calc.getHeader(),
               shunt = 0;
@@ -7836,7 +7868,7 @@
                     newfunction.bind(this)(battle_id, data);
                     $(this.window.getMainDiv()).children().find('.TWTStatButton').remove();
                     $(this.window.getMainDiv()).find('div.tw2gui_window_content_pane').append('<span title="Battle Stars" onclick=\'TWX.BS.vasy()\'  class="TWTStatButton"><img ' + 'style="position:absolute;top:15px;left:672px;width:15px;height:15px;padding:0px;border:0px;margin:0px;cursor:pointer;"' +
-                      ' src="/images/icons/achv_points.png" /></span>');
+                      ' src="/images/icons/achv_points.png"></span>');
                   } catch (e) {
                     console.log(e);
                   }
@@ -8129,18 +8161,18 @@
                 '4': 'general'
               };
               function rankLink(image, fortId, westId, rank) {
-                return $('<a/>').attr('onclick', 'TWX.KoM.updatePrivilege(' + fortId + ', ' + westId + ', ' + rank + ');').append(image, TWXlang.KoM['as' + rankList[rank]]);
+                return $('<a>').attr('onclick', 'TWX.KoM.updatePrivilege(' + fortId + ', ' + westId + ', ' + rank + ');').append(image, TWXlang.KoM['as' + rankList[rank]]);
               }
               function rankImage(rrank) {
-                return $('<img/>').attr('src', '/images/chat/servicegrade_' + rrank + '.png').attr('title', '<strong>' + Chat.rankTitles[rrank] + '</strong>');
+                return $('<img>').attr('src', '/images/chat/servicegrade_' + rrank + '.png').attr('title', '<strong>' + Chat.rankTitles[rrank] + '</strong>');
               }
               return rankLink(rankImage(rankList[rank]), fortId, westId, rank);
             },
             makeRankUpdateHtml: function (myRank, playerRank, westId, fortId) {
-              var span = $('<span/>');
-              var div = $('<div/>');
+              var span = $('<span>');
+              var div = $('<div>');
               function appendError(text) {
-                var d = $('<div/>').css({
+                var d = $('<div>').css({
                     //'width': '200px',
                     'padding': '4px',
                     'text-align': 'center'
@@ -8173,8 +8205,8 @@
               TWX.KoM.playersPosition[fortId][westId] = pos;
             },
             makeSmallTitle: function (playerName, westId, playerX, playerY) {
-              var span = $('<span/>').attr('onclick', 'PlayerProfileWindow.open(' + westId + ')').html(playerName).css('cursor', 'pointer');
-              var st = $('<a/>').attr('onclick', 'Map.center(' + playerX + ', ' + playerY + ')').attr('title', TWXlang.KoM.showPlayerOnMap).css({
+              var span = $('<span>').attr('onclick', 'PlayerProfileWindow.open(' + westId + ')').html(playerName).css('cursor', 'pointer');
+              var st = $('<a>').attr('onclick', 'Map.center(' + playerX + ', ' + playerY + ')').attr('title', TWXlang.KoM.showPlayerOnMap).css({
                   width: '15px',
                   height: '15px',
                   display: 'inline-block',
@@ -8260,7 +8292,7 @@
             makeDistanceImage: function (fortX, fortY, playerX, playerY) {
               var diffX = fortX - playerX,
               diffY = fortY - playerY,
-              image = $('<img/>');
+              image = $('<img>');
               if (!diffX && !diffY)
                 image.attr('src', '/images/town/cityhall/green.png').attr('title', TWXlang.KoM.atFort);
               else if (Math.abs(diffX) <= 500 && Math.abs(diffY) <= 500)
@@ -8277,9 +8309,8 @@
                 var x = e.clientX || 500,
                 y = e.clientY || 500,
                 westId = TWX.KoM.westId,
-                r,
                 rooms = Chat.Resource.Manager.getRooms();
-                for (r in rooms) {
+                for (var r in rooms) {
                   var room = Chat.Resource.Manager.getRoom(r);
                   if (!(room instanceof Chat.Resource.RoomFortBattle) || room.id != TWX.KoM.fortRoom) {
                     continue;
@@ -8466,7 +8497,7 @@
                   if (!TWX.KoM.fort.hasOwnProperty(fortId))
                     TWX.KoM.obtainFortSize(room);
                   if ($('.battleMessage' + fortId).length === 0)
-                    $('#tab_title_' + r + ' .chat_icons').css('background-image', 'url("https://tomrobert.safe-ws.de/cicons.png")').append('<div class="battleMessage' + fortId + '"/>').attr('title', TWXlang.KoM.remindAlly).click(function () {
+                    $('#tab_title_' + r + ' .chat_icons').css('background-image', 'url("https://tomrobert.safe-ws.de/cicons.png")').append('<div class="battleMessage' + fortId + '">').attr('title', TWXlang.KoM.remindAlly).click(function () {
                       TWX.KoM.openMessage(fortId);
                     });
                 }
@@ -8565,13 +8596,98 @@
             }
           };
           $.fn.outerHTML = function () {
-            return $('<div />').append(this.eq(0).clone()).html();
+            return $('<div>').append(this.eq(0).clone()).html();
           };
           setInterval(TWX.KoM.interval, 1000);
           TWX.KoM.dataInterval();
           setInterval(TWX.KoM.dataInterval, 10000);
           TWX.KoM.thatWouldntHappendIfZetWasStillWorkingOnTheWest();
         },
+      };
+      TWX.Logout = {
+        init: function () {
+          var menu = $('<div class="menulink" onclick="TWX.Logout.logout();" title="' + TWXlang.logout + '">').css('background-image', 'url(' + TWX.Images('logout') + ')').css('background-position', '0px 0px').mouseenter(function () {
+              $(this).css('background-position', '-25px 0px');
+            }).mouseleave(function () {
+              $(this).css('background-position', '0px 0px');
+            });
+          $('#TWX-menu').append(menu);
+        },
+        logout: function () {
+          location.href = 'game.php?window=logout&action=logout&h=' + Player.h;
+        },
+      };
+      TWX.ChangeCity = {
+        init: function () {
+          var swap = function (that) {
+            var rows = $('.' + that.window.id + ' .row .cell.cell_2.name,.' + that.window.id + ' .row .cell.cell_2.name_foreign');
+            rows.empty();
+            for (var i = 0; i <= that.data.length; i++) {
+              var player = that.data[i];
+              $(rows[i]).append('<span>&nbsp;' + (player.title !== undefined ? player.title : '') + '</span><a href="#" onClick="PlayerProfileWindow.open(' + player.player_id + ')">' + player.name + '</a>');
+            }
+          };
+          CityhallWindow.Residents.fillContent_twx = CityhallWindow.Residents.fillContent;
+          CityhallWindow.Residents.fillContent = function () {
+            var tmp = CityhallWindow.Residents.fillContent_twx.call(this);
+            if (tmp !== undefined)
+              return tmp;
+            swap(this);
+          };
+        }
+      };
+      TWX.ShowAP = {
+        init: function () {
+          var addAP = function (that) {
+            var job = that.job;
+            var getJobFeaturedCls = function () {
+              if (LinearQuestHandler.hasTutorialQuest())
+                return '';
+              if (job.is_gold)
+                return 'gold';
+              if (job.is_silver)
+                return 'silver';
+              return '';
+            };
+            var aps = that.currSkillpoints - that.job.workpoints;
+            var jobicon = '<div class="job" title="' + job.get('description').escapeHTML().cutIt(150) + '"><div class="featured ' + getJobFeaturedCls() + '"></div>' + '<img src="images/jobs/' + job.get('shortname') + '.png" class="job_icon"></div>';
+            that.window.setTitle(jobicon + '&nbsp;&nbsp;' + job.get('name').escapeHTML() + ' (' + aps + ' AP)');
+          };
+          JobWindow.initView_twx = JobWindow.initView;
+          JobWindow.initView = function () {
+            var tmp = JobWindow.initView_twx.call(this);
+            if (tmp !== undefined)
+              return tmp;
+            addAP(this);
+          };
+        }
+      };
+      TWX.Statusbar = {
+        init: function () {
+          $('div#ui_windowbar').hide();
+          $('div#ui_windowbar_state').hide();
+        }
+      };
+      TWX.BlinkEvents = {
+        init: function () {
+          var setVal7 = setInterval(function () {
+              if ($('.border.highlight').length) {
+                clearInterval(setVal7);
+                $('.border.highlight').remove();
+                TWX.addStyle('.border.highlight {display:none;}');
+              }
+            }, 3000);
+        }
+      };
+      TWX.FortTracker = {
+        init: function () {
+          TWX.addStyle('.fort_battle_notification {display:none!important;}');
+        }
+      };
+      TWX.FriendsPop = {
+        init: function () {
+          west.notification.ToastOnlineNotification.prototype.show = function () {};
+        }
       };
       TWX.CalcTwdb = {
         show: function (e) {
@@ -8640,7 +8756,7 @@
           }, 2000);
       };
       TWX.SkipOpen = function () {
-        ItemUse.twlt_use = ItemUse.use;
+        ItemUse.use_twx = ItemUse.use;
         ItemUse.use = function (itemId) {
           var baseId = itemId / 1000,
           skips = TWX.Data.skipOpen && TWX.Data.skipOpen[baseId] || TWX.skipOpen[baseId];
@@ -8670,7 +8786,7 @@
                   ItemUse.twdb(itemId, res);
                 break;
               case 'ses':
-                widget = ' <img src="images/icons/' + m.event + '.png" title="' + m.name.escapeHTML() + '" /> ' + m.amount;
+                widget = ' <img src="images/icons/' + m.event + '.png" title="' + m.name.escapeHTML() + '"> ' + m.amount;
                 break;
               }
               var mess = $('<div>' + TWXlang.skipDone + ':<br></div>').append(widget);
@@ -8679,7 +8795,7 @@
               EventHandler.signal('item_used', [itemId]);
             });
           else
-            ItemUse.twlt_use.apply(this, arguments);
+            ItemUse.use_twx.apply(this, arguments);
         };
       };
       (TWX.Updater = function () {
@@ -8689,14 +8805,14 @@
         }
         var intVal = setInterval(function () {
             if (window.scriptUp) {
-              scriptUp.c('TWX', TWXstart.version, TWX.name, TWX.lang);
+              scriptUp.c('TWX', TWX.version, TWX.name, TWX.lang);
               clearInterval(intVal);
             }
           }, 2000);
       })();
       TWX.Skript.init();
     } else if (location.href.includes('?strana=invent&x=')) {
-      let lg = TWXstart.langs,
+      let lg = TWX.langs,
       lang = /lang=([a-z]+)/.exec(document.cookie),
       TWXlang = lang && lg.hasOwnProperty(lang[1]) ? lg[lang[1]] : lg.en,
       done = false,
@@ -8726,7 +8842,7 @@
         }
         $('.inputV2')[0].style.display = 'none';
       };
-      TWXstart.compInv = function () {
+      TWX.compInv = function () {
         if (done) {
           done = false;
           for (var h of i) {
@@ -8766,15 +8882,15 @@
           }
         }
       };
-      $('.inputV2').after('<img src="https://westzz.innogamescdn.com/images/items/yield/pick.png" width="25" style="position:absolute;right:0px;cursor:pointer;" onclick="TWXstart.compInv();"/>');
+      $('.inputV2').after('<img src="https://westzz.innogamescdn.com/images/items/yield/pick.png" width="25" style="position:absolute;right:0px;cursor:pointer;" onclick="TWX.compInv();">');
     } else {
       window.onload = function () {
-        let lg = TWXstart.langs,
+        let lg = TWX.langs,
         TWXlang = lg.hasOwnProperty(location.href.substr(21, 2)) ? lg[location.href.substr(21, 2)] : lg.en;
         Worlds.show = (function () {
-          Worlds.twlt_show = Worlds.show;
+          Worlds.show_twx = Worlds.show;
           return function () {
-            Worlds.twlt_show.apply(this, arguments);
+            Worlds.show_twx.apply(this, arguments);
             var first = true;
             var plyWrl = Worlds.playerWorlds,
             state = (JSON.parse(localStorage.getItem('TWLTcustom1')) || {}),
@@ -8785,7 +8901,7 @@
                 t1.push(a);
                 if (!state[a])
                   state[a] = false;
-                else if (state[a] == true)
+                else if (state[a] === true)
                   t2.push(a);
               }
             }
@@ -8798,11 +8914,11 @@
                 first = false;
               }
             };
-            $('#worldsWrapper').append('<div id="loginMore" />');
-            $('#loginMore').append('<a id="loginAll" title="' + TWXlang.loginAll2 + '" href="#">' + TWXlang.loginAll1 + '</a>').append('<a id="custom" title="' + TWXlang.custom2 + '" href="#">' + TWXlang.custom1 + '</a>').append('<img id="cust1" title="' + TWXlang.edit + '" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAAFOSURBVDhPY6A6KKnL4j60a2Xf1jWz/6PjQ5unbIUqww3WLpr0Hx0/vXXq/9e39/5fPL4VzAdZAlVOGFw6s9t49sQGsAF/f30GGwLiQ6UJA5Dio7tW/X/z6AIYgwxaNKPr7/1rh6ShSnADkJ/banPB/r9z+QDYIBAfRE9oKf7f2Vz8BKoUE+ydEfj/5Orm/88vb/1fVxwHdjZI88p5zc0gevemRWBxqHJUANP86+Wu/9f3TPu/Y1Yh2NbCskQWkPyiOTmiIM0gw8AakAFI88FFVWCbQYasn5iBVeG0SWWeUCYCLKl1B9sG0gwyZFl73P+99d79UGn8AKQZZBtIM8iQ2XXh2J2IDYA0g2x7cGwZ2JDJpf7E2zwnwwxsG0gzyJCuXC/iNYMAsubGFDvSNIMAyEaQFxoiDf93Vgb3QIWJBwtb3NJANoNoqBAJgIEBAEbiFXTTZGcSAAAAAElFTkSuQmCC"/>');
+            $('#worldsWrapper').append('<div id="loginMore">');
+            $('#loginMore').append('<a id="loginAll" title="' + TWXlang.loginAll2 + '" href="#">' + TWXlang.loginAll1 + '</a>').append('<a id="custom" title="' + TWXlang.custom2 + '" href="#">' + TWXlang.custom1 + '</a>').append('<img id="cust1" title="' + TWXlang.edit + '" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAAFOSURBVDhPY6A6KKnL4j60a2Xf1jWz/6PjQ5unbIUqww3WLpr0Hx0/vXXq/9e39/5fPL4VzAdZAlVOGFw6s9t49sQGsAF/f30GGwLiQ6UJA5Dio7tW/X/z6AIYgwxaNKPr7/1rh6ShSnADkJ/banPB/r9z+QDYIBAfRE9oKf7f2Vz8BKoUE+ydEfj/5Orm/88vb/1fVxwHdjZI88p5zc0gevemRWBxqHJUANP86+Wu/9f3TPu/Y1Yh2NbCskQWkPyiOTmiIM0gw8AakAFI88FFVWCbQYasn5iBVeG0SWWeUCYCLKl1B9sG0gwyZFl73P+99d79UGn8AKQZZBtIM8iQ2XXh2J2IDYA0g2x7cGwZ2JDJpf7E2zwnwwxsG0gzyJCuXC/iNYMAsubGFDvSNIMAyEaQFxoiDf93Vgb3QIWJBwtb3NJANoNoqBAJgIEBAEbiFXTTZGcSAAAAAElFTkSuQmCC">');
             $('#selectWorldText').css('margin-bottom', '20px');
             $('#loginAll').css({
-              'background-image': 'url("' + TWXstart.Images('LT_login') + '")',
+              'background-image': 'url("' + TWX.Images('LT_login') + '")',
               'height': '45px',
               'width': '180px',
               'line-height': '40px',
@@ -8821,7 +8937,7 @@
               loginNow(t1);
             });
             $('#custom').css({
-              'background-image': 'url("' + TWXstart.Images('LT_loginC') + '")',
+              'background-image': 'url("' + TWX.Images('LT_loginC') + '")',
               'background-repeat': 'no-repeat',
               'height': '36px',
               'width': '144px',
@@ -8856,7 +8972,7 @@
               $('#allWorlds').css('text-align', 'left');
               for (var k = 0; k < t1.length; k++) {
                 checkB[t1[k]] = new west.gui.Checkbox().setLabel(Worlds.data[t1[k]].name).setSelected(state[t1[k]]).appendTo($('#allWorlds'));
-                $('#allWorlds').append('<br><div style="height:5px;" />');
+                $('#allWorlds').append('<br><div style="height:5px;">');
               }
               var butB = new west.gui.Button(TWXlang.save, function () {
                   for (var l in checkB) {
