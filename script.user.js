@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.46.7
+// @version 1.46.8
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,16 +27,15 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.46.7',
+      version: '1.46.8',
       langs: {
         en: {
           language: 'English',
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           Feat: {
-            DuellMap: 'Add Duelmap tab in duel window',
+            DuelMap: 'Add a duel map to the duel window',
             MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-            MarketTown: 'Show town name in market window',
             MarketMessage: 'Get a message when there are items or money to pick up on actual market',
             AchievHide: 'Hide completed achievements in achievements window',
             RecipeMarket: 'Improve the purchase of recipes on market',
@@ -62,7 +61,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
-            ShowAP: 'Show your actual skill points in job windows',
             ChangeCity: 'Switch title and player name in the town hall',
             BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
             FortTracker: 'Turn off fort battle reminder',
@@ -130,7 +128,7 @@
           centerMap: 'Center map',
           popup: 'The opponent\'s skill bonus',
           damage: 'Damage',
-          duelmap: 'Duelmap',
+          duelmap: 'Duel map',
           duelradius: 'Duel radius',
           minutes: 'minutes',
           hour: '1 hour',
@@ -139,7 +137,7 @@
           amount: 'Dead',
           not_dead_amount: 'Alive',
           duellevel: 'Lvl',
-          status: 'Status',
+          pStatus: 'Status',
           sortBy: 'Sort by',
           tooLow: 'Too low duelling level of opponent',
           tooHigh: 'Too high duelling level of opponent',
@@ -339,9 +337,8 @@
           ApiGui1: 'Das Script beinhaltet verschiedene Funktionen um den Alltag bei The West zu vereinfachen.<br>Weitere Informationen',
           ApiGui2: 'Skriptfenster öffnen',
           Feat: {
-            DuellMap: 'Füge im Duellfenster einen Tab hinzu, der eine Duellkarte zeigt',
+            DuelMap: 'Füge im Duellfenster einen Tab hinzu, der eine Duellkarte zeigt',
             MarkDaily: 'Markiere Täglicher Loginbonus am Tag 5 besonders, um ihn nicht zu übersehen',
-            MarketTown: 'Zeige im Marktfenster, zu welcher Stadt es gehört',
             MarketMessage: 'Wenn du an einem Markt stehst, wo etwas abgeholt werden kann, erscheint eine Meldung',
             AchievHide: 'Verstecke alle abgeschlossenen Erfolge im Erfolgsfenster für eine bessere Übersicht',
             RecipeMarket: 'Verbessert den Kauf von Rezepten im Markt',
@@ -367,7 +364,6 @@
             KickoMatic: '$0 Vereinfacht die Musterung vor einem Fortkampf',
             Logout: 'Erstellt einen Logout-Button rechts in der Menüleiste',
             Statusbar: 'Entfernt die Fensterleiste mit den verschiedenen Tabs im unteren Teil',
-            ShowAP: 'Zeige die Arbeitspunkte im Job-Fenster',
             ChangeCity: 'Tausche Titel und Spielername in der Stadthalle',
             BlinkEvents: 'Das Blinken der Event-, Wanderzirkus-Buttons usw. am linken Rand entfernen',
             FortTracker: 'Fortkampftracker abschalten',
@@ -444,7 +440,7 @@
           amount: 'Tot',
           not_dead_amount: 'Lebendig',
           duellevel: 'Lvl',
-          status: 'Status',
+          pStatus: 'Status',
           sortBy: 'Sortiere nach',
           tooLow: 'Zu tiefe Duellstufe des Gegners',
           tooHigh: 'Zu hohe Duellstufe des Gegners',
@@ -644,9 +640,8 @@
           ApiGui1: 'Skrypt ten zawiera wiele funkcji, aby uprościć codzienne życie na Zachodzie.<br>Więcej informacji',
           ApiGui2: 'Otwórz w nowej karcie',
           Feat: {
-            DuellMap: 'Dodaje dodatkową zakładkę pojedynków, w pojedynkach.',
+            DuelMap: 'Dodaje dodatkową zakładkę pojedynków, w pojedynkach.',
             MarkDaily: 'Oznacza dodatkową ramką 5 dzień logowania.',
-            MarketTown: 'Dodaje nazwę miasta w karcie targu.',
             MarketMessage: 'Jeżeli znajdujesz się w mieście gdzie coś jest do odebrania. Pojawia się komunikat.',
             AchievHide: 'Ukrywa zaliczone osiągnięcia.',
             RecipeMarket: 'Dodaje dodatkowe przyciski z receptami w karcie targ.',
@@ -672,7 +667,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Dodanie przycisku po prawej stronie, wyloguj się.',
             Statusbar: 'Usuwa pasek z oknami w dolnej części gry.',
-            ShowAP: 'Pokazuje Punkty Pracy (PP) w oknie danej pracy.',
             ChangeCity: 'Zamienia tytuł gracza na początku, w karcie graczy w ratuszu.',
             BlinkEvents: 'Zatrzymaj pulsowanie przycisków (zdarzenie, pomoce, ostrzeżenia itp) po lewej stronie',
             FortTracker: 'Wyłącz przypomnienie o bitwie',
@@ -749,7 +743,7 @@
           amount: 'Dead',
           not_dead_amount: 'Alive',
           duellevel: 'Lvl',
-          status: 'Status',
+          pStatus: 'Status',
           sortBy: 'Sort by',
           tooLow: 'Too low duelling level of opponent',
           tooHigh: 'Too high duelling level of opponent',
@@ -949,9 +943,8 @@
           ApiGui1: 'El script incluye varias funciones que simplifican la vida cotidiana en The West.<br>Más información',
           ApiGui2: 'Abrir ventana del script',
           Feat: {
-            DuellMap: 'Completar la ventana de duelos con una pestaña que muestra el mapa de duelos',
+            DuelMap: 'Completar la ventana de duelos con una pestaña que muestra el mapa de duelos',
             MarkDaily: 'Marcar el Bonus-Conexión-5 Días especialmente para que no te lo pierdas',
-            MarketTown: 'Mostrar en la ventana de mercado, la ciudad al que pertenece',
             MarketMessage: 'Si llegas a un mercado donde tienes algo que puede ser recogido, aparece un mensaj',
             AchievHide: 'Ocultar logros completados en la ventana de logros para una mejor visión',
             RecipeMarket: 'Mejorar la compra de recetas en el mercado',
@@ -977,7 +970,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Crea un botón de cierre de sesión a la derecha en la barra de menús',
             Statusbar: 'Oculta la barra inferior de las ventanas',
-            ShowAP: 'Ver los puntos de trabajo en la ventana de trabajo',
             ChangeCity: 'Cambiar título y nombre del jugador en el ayuntamiento',
             BlinkEvents: 'Detener el parpadeo de los botones de Evento y Feria de Condado en el lado izquierdo',
             FortTracker: 'Apagar el recordatorio de Batalla de fuerte',
@@ -1053,7 +1045,7 @@
           amount: 'Muerto',
           not_dead_amount: 'Vivo',
           duellevel: 'Niv',
-          status: 'Estado',
+          pStatus: 'Estado',
           sortBy: 'Ordenar por',
           tooLow: 'Nivel de duelo del oponente demasiado bajo',
           tooHigh: 'Nivel de duelo del oponente demasiado alto',
@@ -1253,9 +1245,8 @@
           ApiGui1: 'Dit script bevat veel mogelijkheden om het dagelijks leven in The West te vergemakkelijken.<br>Voor meer informatie',
           ApiGui2: 'Open script pagina',
           Feat: {
-            DuellMap: 'Voeg een duelkaart toe aan de duel tab',
+            DuelMap: 'Voeg een duelkaart toe aan de duel tab',
             MarkDaily: 'Markeer de dagelijkse inlogbonus op de 5e dag zodat je hem niet mist',
-            MarketTown: 'Toon stadsnaam in marktscherm',
             MarketMessage: 'Krijg een bericht wanneer er voorwerpen of geld beschikbaar zijn om op te halen',
             AchievHide: 'Verberg voltooide prestaties in prestatiescherm',
             RecipeMarket: 'Verbeter overzicht voor recepten kopen.',
@@ -1281,7 +1272,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Voeg een afmeldknop toe aan de rechterzijde van het scherm',
             Statusbar: 'Verwijder het dagelijkse taken icoon',
-            ShowAP: 'Toon je vaardigheidspunten in werkzaamheidsscherm windows',
             ChangeCity: 'Verwissel de titel en de spelersnaam in het  stadhuis',
             BlinkEvents: 'Stop het knipperen van event of circus knop aan linkerkant',
             FortTracker: 'Schakel de fortgevecht herinnering uit',
@@ -1358,7 +1348,7 @@
           amount: 'Dead',
           not_dead_amount: 'Alive',
           duellevel: 'Lvl',
-          status: 'Status',
+          pStatus: 'Status',
           sortBy: 'Sort by',
           tooLow: 'Too low duelling level of opponent',
           tooHigh: 'Too high duelling level of opponent',
@@ -1558,9 +1548,8 @@
           ApiGui1: 'Ez a szkript több olyan funkciót tartalmaz ami megkönnyíti a mindennapjaidat a vadnyugaton.<br>Több információ',
           ApiGui2: 'Szkript oldalának megnyitása',
           Feat: {
-            DuellMap: 'Párbajtérkép a párbaj ablakban',
+            DuelMap: 'Párbajtérkép a párbaj ablakban',
             MarkDaily: 'Az 5. napi belépés bónusz bekeretezése, hogy nehogy kihagyd',
-            MarketTown: 'Városnév megjelenítése a piac ablakban',
             MarketMessage: 'Felugró ablak amikor tárgyak vagy pénz felvétele lehetséges az aktuális piacnál',
             AchievHide: 'Befejezett események elrejtése az esemény ablakban',
             RecipeMarket: 'Receptvásárlás megkönnyítése, rendezése a piacon',
@@ -1586,7 +1575,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Kilépés gomb a jobb oldalra',
             Statusbar: 'Tálca eltüntetése',
-            ShowAP: 'Valódi képességpontok a munkaablakokban',
             ChangeCity: 'Cím és játékosnév felcserélése a városházánál',
             BlinkEvents: 'Események, eladás és piaci vásár gomb villogás kikapcsolása',
             FortTracker: 'Kapcsolja ki az erődharc emlékeztetőt',
@@ -1663,7 +1651,7 @@
           amount: 'Halva',
           not_dead_amount: 'Élve',
           duellevel: 'Szint',
-          status: 'Státusz',
+          pStatus: 'Státusz',
           sortBy: 'Rendezés',
           tooLow: 'Túl alacsony a párbajszintje az ellenfélnek',
           tooHigh: 'Túl magas a párbajszintje az ellenfélnek',
@@ -1863,9 +1851,8 @@
           ApiGui1: 'Αυτό το script περιέχει πολλά χαρακτηριστικά για να απλοποιήσετε την ζωή σας στο The West.<br>Περισσότερες πληροφορίες',
           ApiGui2: 'Ρυθμίσεις του script',
           Feat: {
-            DuellMap: 'Προσθήκη καρτέλας Duelmap στην καρτέλα μονομαχιών',
+            DuelMap: 'Προσθήκη καρτέλας Duelmap στην καρτέλα μονομαχιών',
             MarkDaily: 'Επισημάνετε το καθημερινό μπόνους σύνδεσης την 5η ημέρα για να μην το χάσετε',
-            MarketTown: 'Εμφάνιση ονόματος πόλης στο παράθυρο της αγοράς',
             MarketMessage: 'Εμφάνιση μηνύματος όταν υπάρχουν αντικείμενα ή χρήματα στην αγορά της πόλης που μόλις ταξιδέψατε',
             AchievHide: 'Απόκρυψη ολοκληρωμένων επιτευγμάτων στο παράθυρο επιτευγμάτων',
             RecipeMarket: 'Βελτιώστε την αγορά συνταγών στην αγορά',
@@ -1891,7 +1878,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Προσθέστε ένα κουμπί αποσύνδεσης στη δεξιά πλευρά',
             Statusbar: 'Αφαιρέστε τη γραμμή εργασιών',
-            ShowAP: 'Εμφάνιση των συνολικών πόντων εργασίας στα παράθυρα εργασίας',
             ChangeCity: 'Βάλτε τον τίτλο πριν από το όνομα του παίκτη στην καρτέλα του Δημαρχείου',
             BlinkEvents: 'Σταματήστε την αναλαμπή των Εκδηλώσεων και του Λούνα Παρκ στην αριστερή πλευρά',
             FortTracker: 'Απενεργοποιήστε την υπενθύμιση μάχης οχυρού',
@@ -1952,10 +1938,10 @@
           alliance: 'Συμμαχία',
           town: 'Πόλη',
           level: 'Επίπεδο',
-          duelLevel: ' Επίπεδο μονομαχίας ',
-          exp: ' Εμπειρία ',
-          distance: ' Απόσταση ',
-          startduel: ' Μονομαχήστε ',
+          duelLevel: 'Επίπεδο μονομαχίας ',
+          exp: 'Εμπειρία ',
+          distance: 'Απόσταση ',
+          startduel: 'Μονομαχήστε ',
           centerMap: 'Κεντράρισμα στον χάρτη',
           popup: 'Το μπόνους δεξιοτήτων των αντιπάλων',
           damage: 'Ζημιά',
@@ -1968,7 +1954,7 @@
           amount: 'Νεκρός/ή',
           not_dead_amount: 'Ζωντανός/ή',
           duellevel: 'Επίπεδο',
-          status: 'Κατάσταση',
+          pStatus: 'Κατάσταση',
           sortBy: 'Ταξινόμηση κατά',
           tooLow: 'Χαμηλό επίπεδο μονομαχίας του αντιπάλου',
           tooHigh: 'Υψηλό επίπεδο μονομαχίας του αντιπάλου',
@@ -2168,9 +2154,8 @@
           ApiGui1: 'Esse script foi feito para facilitar sua vida no Velho Oeste',
           ApiGui2: 'Abrir página do Script',
           Feat: {
-            DuellMap: 'Adicionar mapa de duelos na janela duelos.',
+            DuelMap: 'Adicionar mapa de duelos na janela duelos.',
             MarkDaily: 'Destacar bônus de login diário.',
-            MarketTown: 'Mostrar nome da cidade no mercado.',
             MarketMessage: 'Receber notificação de itens comprados ou vendidos no mercado atual.',
             AchievHide: 'Ocultar conquistas realizadas na janela de conquistas.',
             RecipeMarket: 'Melhorar a compra de receitas no mercado.',
@@ -2196,7 +2181,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Adicionar botão de sair no fim dos scripts',
             Statusbar: 'Remover a barra de tarefas',
-            ShowAP: 'Mostrar seus pontos de habilidade na janela de trabalho.',
             ChangeCity: 'Mude o título e nome do jogador na cidade.',
             BlinkEvents: 'Não piscar botões de evento ao lado esquerdo.',
             FortTracker: 'Ocultar botão da batalha de forte.',
@@ -2273,7 +2257,7 @@
           amount: 'Morto',
           not_dead_amount: 'Vivo',
           duellevel: 'Nível',
-          status: 'Status',
+          pStatus: 'Status',
           sortBy: 'Ordenar por:',
           tooLow: 'Nível de duelo muito baixo.',
           tooHigh: 'Nível de duelo muito alto',
@@ -2473,9 +2457,8 @@
           ApiGui1: 'Questo script raccoglie molte funzionalità utili a semplificarti la vita in The West.<br>Ulteriori informazioni',
           ApiGui2: 'Apri la pagina dello script',
           Feat: {
-            DuellMap: 'Aggiungi la scheda Mappa duelli nella finestra Duelli',
+            DuelMap: 'Aggiungi la scheda Mappa duelli nella finestra Duelli',
             MarkDaily: 'Evidenzia il bonus login del 5° giorno per non dimenticarlo',
-            MarketTown: 'Mostra il nome della città nella finestra del mercato',
             MarketMessage: 'Ricevi una notifica quando ci sono oggetti o soldi da ritirare al mercato della città dove ti trovi in quel momento',
             AchievHide: 'Nascondi i Successi completati nella rispettiva finestra di gioco',
             RecipeMarket: 'Migliora l\'organizzazione delle ricette al mercato',
@@ -2501,7 +2484,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Aggiungi sul lato destro dello schermo un pulsante disconnetti',
             Statusbar: 'Nascondi la barra degli incarichi',
-            ShowAP: 'Mostra i tuoi attuali punti abilità nelle finestre dei lavori',
             ChangeCity: 'Nel municipio, inverti il titolo e il nome del giocatore',
             BlinkEvents: 'Termina il lampeggiamento delle icone degli eventi e della fiera nella barra delle notifiche',
             FortTracker: 'Disattiva l\'icona di notifica della battaglia al forte',
@@ -2578,7 +2560,7 @@
           amount: 'Morto',
           not_dead_amount: 'Vivo',
           duellevel: 'Liv',
-          status: 'Stato',
+          pStatus: 'Stato',
           sortBy: 'Ordina per',
           tooLow: 'Livello duello avversario troppo basso',
           tooHigh: 'Livello duello avversario troppo alto',
@@ -2778,9 +2760,8 @@
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           Feat: {
-            DuellMap: 'Add Duelmap tab in duel window',
+            DuelMap: 'Add a duel map to the duel window',
             MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-            MarketTown: 'Show town name in market window',
             MarketMessage: 'Get a message when there are items or money to pick up on actual market',
             AchievHide: 'Hide completed achievements in achievements window',
             RecipeMarket: 'Improve the purchase of recipes on market',
@@ -2806,7 +2787,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
-            ShowAP: 'Show your actual skill points in job windows',
             ChangeCity: 'Switch title and player name in the town hall',
             BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
             FortTracker: 'Turn off fort battle reminder',
@@ -2874,7 +2854,7 @@
           centerMap: 'Center map',
           popup: 'The opponent\'s skill bonus',
           damage: 'Damage',
-          duelmap: 'Duelmap',
+          duelmap: 'Duel map',
           duelradius: 'Duel radius',
           minutes: 'minutes',
           hour: '1 hour',
@@ -2883,7 +2863,7 @@
           amount: 'Dead',
           not_dead_amount: 'Alive',
           duellevel: 'Lvl',
-          status: 'Status',
+          pStatus: 'Status',
           sortBy: 'Sort by',
           tooLow: 'Too low duelling level of opponent',
           tooHigh: 'Too high duelling level of opponent',
@@ -3083,9 +3063,8 @@
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           Feat: {
-            DuellMap: 'Add Duelmap tab in duel window',
+            DuelMap: 'Add a duel map to the duel window',
             MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-            MarketTown: 'Show town name in market window',
             MarketMessage: 'Get a message when there are items or money to pick up on actual market',
             AchievHide: 'Hide completed achievements in achievements window',
             RecipeMarket: 'Improve the purchase of recipes on market',
@@ -3111,7 +3090,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
-            ShowAP: 'Show your actual skill points in job windows',
             ChangeCity: 'Switch title and player name in the town hall',
             BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
             FortTracker: 'Turn off fort battle reminder',
@@ -3179,7 +3157,7 @@
           centerMap: 'Center map',
           popup: 'The opponent\'s skill bonus',
           damage: 'Damage',
-          duelmap: 'Duelmap',
+          duelmap: 'Duel map',
           duelradius: 'Duel radius',
           minutes: 'minutes',
           hour: '1 hour',
@@ -3188,7 +3166,7 @@
           amount: 'Dead',
           not_dead_amount: 'Alive',
           duellevel: 'Lvl',
-          status: 'Status',
+          pStatus: 'Status',
           sortBy: 'Sort by',
           tooLow: 'Too low duelling level of opponent',
           tooHigh: 'Too high duelling level of opponent',
@@ -3388,9 +3366,8 @@
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           Feat: {
-            DuellMap: 'Add Duelmap tab in duel window',
+            DuelMap: 'Add a duel map to the duel window',
             MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-            MarketTown: 'Show town name in market window',
             MarketMessage: 'Get a message when there are items or money to pick up on actual market',
             AchievHide: 'Hide completed achievements in achievements window',
             RecipeMarket: 'Improve the purchase of recipes on market',
@@ -3416,7 +3393,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
-            ShowAP: 'Show your actual skill points in job windows',
             ChangeCity: 'Switch title and player name in the town hall',
             BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
             FortTracker: 'Turn off fort battle reminder',
@@ -3484,7 +3460,7 @@
           centerMap: 'Center map',
           popup: 'The opponent\'s skill bonus',
           damage: 'Damage',
-          duelmap: 'Duelmap',
+          duelmap: 'Duel map',
           duelradius: 'Duel radius',
           minutes: 'minutes',
           hour: '1 hour',
@@ -3493,7 +3469,7 @@
           amount: 'Dead',
           not_dead_amount: 'Alive',
           duellevel: 'Lvl',
-          status: 'Status',
+          pStatus: 'Status',
           sortBy: 'Sort by',
           tooLow: 'Too low duelling level of opponent',
           tooHigh: 'Too high duelling level of opponent',
@@ -3693,9 +3669,8 @@
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           Feat: {
-            DuellMap: 'Add Duelmap tab in duel window',
+            DuelMap: 'Add a duel map to the duel window',
             MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-            MarketTown: 'Show town name in market window',
             MarketMessage: 'Get a message when there are items or money to pick up on actual market',
             AchievHide: 'Hide completed achievements in achievements window',
             RecipeMarket: 'Improve the purchase of recipes on market',
@@ -3721,7 +3696,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
-            ShowAP: 'Show your actual skill points in job windows',
             ChangeCity: 'Switch title and player name in the town hall',
             BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
             FortTracker: 'Turn off fort battle reminder',
@@ -3789,7 +3763,7 @@
           centerMap: 'Center map',
           popup: 'The opponent\'s skill bonus',
           damage: 'Damage',
-          duelmap: 'Duelmap',
+          duelmap: 'Duel map',
           duelradius: 'Duel radius',
           minutes: 'minutes',
           hour: '1 hour',
@@ -3798,7 +3772,7 @@
           amount: 'Dead',
           not_dead_amount: 'Alive',
           duellevel: 'Lvl',
-          status: 'Status',
+          pStatus: 'Status',
           sortBy: 'Sort by',
           tooLow: 'Too low duelling level of opponent',
           tooHigh: 'Too high duelling level of opponent',
@@ -3998,9 +3972,8 @@
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           Feat: {
-            DuellMap: 'Add Duelmap tab in duel window',
+            DuelMap: 'Add a duel map to the duel window',
             MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-            MarketTown: 'Show town name in market window',
             MarketMessage: 'Get a message when there are items or money to pick up on actual market',
             AchievHide: 'Hide completed achievements in achievements window',
             RecipeMarket: 'Improve the purchase of recipes on market',
@@ -4026,7 +3999,6 @@
             KickoMatic: '$0 Helpful to rank players before a fort battle',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
-            ShowAP: 'Show your actual skill points in job windows',
             ChangeCity: 'Switch title and player name in the town hall',
             BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
             FortTracker: 'Turn off fort battle reminder',
@@ -4094,7 +4066,7 @@
           centerMap: 'Center map',
           popup: 'The opponent\'s skill bonus',
           damage: 'Damage',
-          duelmap: 'Duelmap',
+          duelmap: 'Duel map',
           duelradius: 'Duel radius',
           minutes: 'minutes',
           hour: '1 hour',
@@ -4103,7 +4075,7 @@
           amount: 'Dead',
           not_dead_amount: 'Alive',
           duellevel: 'Lvl',
-          status: 'Status',
+          pStatus: 'Status',
           sortBy: 'Sort by',
           tooLow: 'Too low duelling level of opponent',
           tooHigh: 'Too high duelling level of opponent',
@@ -4327,10 +4299,9 @@
         Data: {},
         loaded: [],
         Features: {
-          DuellMap: true,
+          DuelMap: true,
           MarkDaily: true,
           MarketMessage: true,
-          MarketTown: true,
           AchievHide: true,
           RecipeMarket: true,
           MoveJobs: true,
@@ -4352,9 +4323,8 @@
           QuickItemsSearch: true,
           MarketBestBids: true,
           BattleStars: true,
-          KickoMatic: true,
+          KickoMatic: false,
           Statusbar: false,
-          ShowAP: false,
           ChangeCity: false,
           Logout: false,
           BlinkEvents: false,
@@ -5288,13 +5258,9 @@
                 });
               });
               if (!this.styles) {
-                TWX.addStyle('#njk_minimap_map {position:relative;width:500px;height:220px;background-repeat:no-repeat;background-image:url("images/map/minimap/worldmap_500.jpg");margin-left:4px;}' +
-                  '#njk_minimap_map span.adv_pointer {position:absolute;height:16px;width:16px;cursor:pointer;background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_quests.png");}' +
-                  '#njk_minimap_map span.char_pointer {position:absolute;height:16px;width:16px;cursor:pointer;background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_pos.png");}' +
-                  '#njk_minimap #NPC_helpers {float:left;padding-left:5px;text-align:left;color:black;}' +
-                  '#njk_minimap span.advHelper {display:block;text-indent:20px;line-height:16px; background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_quests.png");}' +
-                  '#njk_minimap span.charHelper {display:block;text-indent:20px;line-height:16px; background: 0 0 no-repeat transparent url("images/map/minimap/icons/miniicon_pos.png");}' +
-                  '#njk_minimap #NPC_reload {margin:-7px 3px 0 0;cursor:pointer;}');
+                TWX.addStyle('#njk_minimap span.adv_pointer, #njk_minimap #char_pointer {position:absolute;height:16px;width:16px;cursor:pointer;}\n' +
+                  '#njk_minimap span.npcHelper {display:block;text-indent:20px;line-height:16px;}\n' +
+                  '.tw2gui_win2.active_tab_id_TWXLocator .tw2gui_window_inset {background-image:url(images/crafting/background.jpg)!important;}');
                 this.styles = 1;
               }
             }
@@ -5302,43 +5268,42 @@
           open: function () {
             TWX.GUI.getDefault('TWXLocator');
             var wnd = TWX.GUI.window;
-            wnd.setTitle(TWXlang.NPC.title).setSize(560, 377);
-            var mm_mapdiv = $('<div id="njk_minimap_map">'),
+            wnd.setTitle(TWXlang.NPC.title);
+            var mm_mapdiv = $('<div id="njk_minimap_map" style="position:relative;height:220px;background:no-repeat url(images/map/minimap/worldmap_500.jpg);">'),
             CharX = Character.position.x,
             CharY = Character.position.y,
             x = 685 * CharX / 182 / 256 - 6,
             y = 302 * CharY / 80 / 256 - 6;
             x *= 0.727;
             y *= 0.727;
-            this.charPoint = '<span title="' + TWXlang.NPC.yourposition + '" class="char_pointer" onClick="Map.center(' + CharX + ',' + CharY + ')" style="left:' + x + 'px;top:' + y + 'px;">';
+            this.charPoint = '<span title="' + TWXlang.NPC.yourposition + '" id="char_pointer" onClick="Map.center(' + CharX + ',' + CharY + ')" style="left:' + x + 'px;top:' + y + 'px;background-image:url(images/map/minimap/icons/miniicon_pos.png);">';
             mm_mapdiv.append(this.charPoint);
-            wnd.appendToContentPane($('<div id="njk_minimap">').append(mm_mapdiv));
+            wnd.appendToContentPane($('<div id="njk_minimap" style="margin:20px 93px;width:500px">').append(mm_mapdiv));
             this.drawSelect();
           },
           drawSelect: function () {
             var selectDiv = document.createElement('div');
             selectDiv.style.cssText = 'font-size:11px;';
-            selectDiv.style.height = '38px';
-            selectDiv.style.marginTop = '10px';
+            selectDiv.style.height = '40px';
             selectDiv.style.textAlign = 'right';
-            selectDiv.innerHTML = '<img src="' + this.Images.reload + '" onclick="TWX.GUI.NPC.load()" id="NPC_reload" title="' + TWXlang.NPC.reload + '"><select style="background-color:#e8dab3;font-size:14px;width:200px;cursor:pointer;margin-right:5px;" onchange="TWX.GUI.NPC.questPoint(this);" id="NPC_dropdown" size="1">' +
+            selectDiv.innerHTML = '<img src="' + this.Images.reload + '" onclick="TWX.GUI.NPC.load()" style="margin:-6px 4px 0;cursor:pointer;" title="' + TWXlang.NPC.reload + '"><select style="background-color:#e8dab3;font-size:14px;width:200px;cursor:pointer" onchange="TWX.GUI.NPC.questPoint(this);" size="1">' +
               '<option selected disabled>-' + TWXlang.NPC.chooseNpc + '</option>' + this.inner +
-              '</select><div id="NPC_helpers"><span class="charHelper">' + TWXlang.NPC.yourposition + '</span><span class="advHelper">' + TWXlang.NPC.questgiver + '</span></div>';
+              '</select><div style="float:left;text-align:left;color:black;"><span class="npcHelper" style="background:no-repeat url(images/map/minimap/icons/miniicon_pos.png);">' + TWXlang.NPC.yourposition + '</span><span class="npcHelper" style="background:no-repeat url(images/map/minimap/icons/miniicon_quests.png);">' + TWXlang.NPC.questgiver + '</span></div>';
             var mm2 = document.getElementById('njk_minimap');
             mm2.insertBefore(selectDiv, mm2.firstChild);
           },
           questPoint: function (place) {
-            var dp = $('#njk_minimap_map');
+            var dp = $('#njk_minimap_map'),
+            positions = place.value,
+            arrPos = positions.split('|');
             dp.find('.adv_pointer').remove();
-            var positions = place.value;
-            var arrPos = positions.split('|');
             for (var i = 0; i < arrPos.length; i++) {
               var xy = arrPos[i].split(';'),
               x = 685 * xy[0] / 182 / 256 - 6,
               y = 302 * xy[1] / 80 / 256 - 6;
               x = x * 0.727;
               y = y * 0.727;
-              dp.append('<span class="adv_pointer" onClick="Map.center(' + xy[0] + ',' + xy[1] + ')" id="mapPos' + i + '" px="' + xy[0] + '" py="' + xy[1] + '" style="left:' + x + 'px; top:' + y + 'px;">');
+              dp.append('<span class="adv_pointer" onClick="Map.center(' + xy[0] + ',' + xy[1] + ')" id="mapPos' + i + '" px="' + xy[0] + '" py="' + xy[1] + '" style="left:' + x + 'px; top:' + y + 'px;background-image:url(images/map/minimap/icons/miniicon_quests.png);">');
             }
           },
         },
@@ -5352,19 +5317,18 @@
           TWX.GUI.getDefault('TWXSender');
           var EvImg = EvName == 'Octoberfest' ? 'window/events/octoberfest/pretzels_icon' : 'interface/friendsbar/events/' + EvName;
           TWX.GUI.window.setTitle(sendGift.label + '    <img src="images/' + EvImg + '.png">');
-          if (!isDefined(WestUi.FriendsBar.friendsBarUi)) {
+          if (!isDefined(WestUi.FriendsBar.friendsBarUi))
             WestUi.FriendsBar.toggle();
-          }
           setTimeout((function () {
               var e = [],
               t = Chat.Friendslist.getFriends(),
-              wfea = WestUi.FriendsBar.friendsBarUi.friendsBar.eventActivations,
+              WFfe = WestUi.FriendsBar.friendsBarUi.friendsBar.eventActivations,
               i,
               s,
               u,
               a;
               for (s = 0; s < t.length; s++) {
-                i = typeof wfea[t[s].playerId] != 'undefined' && wfea[t[s].playerId][EvName] != 'undefined' ? wfea[t[s].playerId][EvName] : 0;
+                i = typeof WFfe[t[s].playerId] != 'undefined' && WFfe[t[s].playerId][EvName] != 'undefined' ? WFfe[t[s].playerId][EvName] : 0;
                 e.push({
                   n: t[s].pname,
                   i: t[s].playerId,
@@ -5390,8 +5354,8 @@
                           return MessageError(t.msg).show();
                         MessageSuccess(t.msg).show();
                         var n = e.handleObj.data;
-                        wfea[n] = wfea[n] || {};
-                        wfea[n][EvName] = t.activationTime;
+                        WFfe[n] = WFfe[n] || {};
+                        WFfe[n][EvName] = t.activationTime;
                       });
                     });
                 }
@@ -5426,9 +5390,9 @@
                   var div = $('<div>');
                   div.append('<img src="images/' + EvImg + '.png">  <b>' + r + '</b><br>' + rew[r].desc + '<br>');
                   var id = rew[r].id;
-                  if (isNaN(id)) {
+                  if (isNaN(id))
                     div.append('<i>' + TWXlang.reward + ': ' + id + '</i><br><br>');
-                  } else {
+                  else {
                     var invItem = new tw2widget.JobItem(ItemManager.get(id));
                     div.append(invItem.getMainDiv()).append('<br><br><br><br><br>');
                   }
@@ -5586,22 +5550,6 @@
             }
         }
       };
-      TWX.MarketTown = {
-        init: function () {
-          if (!TWX.Skript.getFeature('MarketMessage'))
-            Ajax.get('map', 'get_minimap', {}, function (json) {
-              if (json.error)
-                return new UserMessage(json.msg).show();
-              TWX.MarketMessage.Towns = json.towns;
-            });
-          MarketWindow.showTab_twx = MarketWindow.showTab;
-          MarketWindow.showTab = function () {
-            MarketWindow.showTab_twx.apply(this, arguments);
-            if (MarketWindow.townId > -1)
-              MarketWindow.window.setTitle(MarketWindow.window.titler.text + " - " + TWX.MarketMessage.Towns[MarketWindow.townId].name);
-          };
-        }
-      };
       TWX.MarkDaily = {
         init: function () {
           var addBorder = function () {
@@ -5620,7 +5568,7 @@
           };
         }
       };
-      TWX.DuellMap = {
+      TWX.DuelMap = {
         init: function () {
           var generateNpcPopup = function (data) {
             var weapon = ItemManager.get(data.weaponId),
@@ -5635,38 +5583,38 @@
           progB.setTextOnly(true);
           $(progB.getMainDiv()).css('width', '772px');
           var fillPage = function () {
-            $('#TWXDuellMapTable').empty();
-            $('#TWXDuellMapPlayers').empty();
-            $('#TWXDuellMapTable').append('<tr><th>' + TWXlang.name + '</th><th>' + TWXlang.town + '</th><th>' + TWXlang.level + '</th><th>' + TWXlang.duelLevel + '</th><th>' + TWXlang.exp + '</th><th>' + TWXlang.distance + '</th><th>' + TWXlang.startduel + '</th><th>' + TWXlang.centerMap + '</th></tr>');
-            for (var k in TWX.DuellMap.Player) {
-              var data = TWX.DuellMap.Player[k];
+            $('#TWXDuelMapTable').empty();
+            $('#TWXDuelMapPlayers').empty();
+            $('#TWXDuelMapTable').append('<tr><th>' + TWXlang.name + '</th><th>' + TWXlang.town + '</th><th>' + TWXlang.level + '</th><th>' + TWXlang.duelLevel + '</th><th>' + TWXlang.exp + '</th><th>' + TWXlang.distance + '</th><th>' + TWXlang.startduel + '</th><th>' + TWXlang.centerMap + '</th></tr>');
+            for (var k in TWX.DuelMap.Player) {
+              var data = TWX.DuelMap.Player[k];
               var content = $('<tr></tr>');
               content.append('<td><a href="javascript:void(PlayerProfileWindow.open(' + data.player_id + '));" title="' + (Character.charClass == 'duelist' ? generateNpcPopup(data).escapeHTML() : '') + '">' + data.player_name + '</a></td>',
                 '<td><a href="javascript:void(TownWindow.open(' + data.town_x + ',' + data.town_y + '));">' + data.town_name + '</a></td>',
                 '<td>' + data.level + '</td>',
                 '<td>' + data.duellevel + '</td>',
-                '<td>' + Math.round((7 * data.duellevel - 5 * Character.duelLevel + 5) * Character.duelMotivation * 3) + '</td>',
+                '<td>' + Math.round((7 * data.duellevel - 5 * Character.duelLevel + 5) * Character.duelMotivation) + '</td>',
                 '<td>' + window.Map.calcWayTime(Map.getLastQueuePosition(), {
                   x: data.character_x,
                   y: data.character_y
                 }).formatDuration() + '</td>',
                 '<td><a href="#" onclick="SaloonWindow.startDuel(' + data.player_id + ', ' + data.alliance_id + ', false, DuelsWindow);">' + TWXlang.startduel + '</a></td>',
                 '<td><a href="#" onclick="Map.center(' + data.character_x + ', ' + data.character_y + ');">' + TWXlang.centerMap + '</a></td>');
-              $('#TWXDuellMapTable').append(content);
+              $('#TWXDuelMapTable').append(content);
               content = $('<div style="position:absolute;border:1px solid black;background:#FF0000;width:4px;height:4px;left:' + (data.character_x / 46592 * 770 - 2) + 'px;top:' + (data.character_y / 20480 * 338 - 2) + 'px;">');
               eval('content.click(function () { SaloonWindow.startDuel(' + data.player_id + ', ' + data.alliance_id + ', false, DuelsWindow); });');
               content.addMousePopup('<b>' + data.player_name + '</b> ' + window.Map.calcWayTime(Map.getLastQueuePosition(), {
                   x: data.character_x,
                   y: data.character_y
                 }).formatDuration());
-              $('#TWXDuellMapPlayers').append(content);
+              $('#TWXDuelMapPlayers').append(content);
             }
-            $('<div style="position:absolute;border:1px solid black;background:#00CCFF;width:4px;height:4px;left:' + (Character.position.x / 46592 * 770 - 2) + 'px;top:' + (Character.position.y / 20480 * 338 - 2) + 'px;">').addMousePopup('Deine Position').appendTo('#TWXDuellMapPlayers');
+            $('<div style="position:absolute;border:1px solid black;background:#00CCFF;width:4px;height:4px;left:' + (Character.position.x / 46592 * 770 - 2) + 'px;top:' + (Character.position.y / 20480 * 338 - 2) + 'px;">').addMousePopup('Deine Position').appendTo('#TWXDuelMapPlayers');
           };
           var getPlayer = function (i, distance) {
             if (i == -1) {
               progB.setValue(0);
-              TWX.DuellMap.Player = {};
+              TWX.DuelMap.Player = {};
               i++;
             }
             Ajax.remoteCall('duel', 'search_op', {
@@ -5679,8 +5627,8 @@
               var l = json.oplist.pclist.length;
               for (var j = 0; j < l; j++) {
                 var plyr = json.oplist.pclist[j].player_name;
-                if (!TWX.DuellMap.Player[plyr]) {
-                  TWX.DuellMap.Player[plyr] = json.oplist.pclist[j];
+                if (!TWX.DuelMap.Player[plyr]) {
+                  TWX.DuelMap.Player[plyr] = json.oplist.pclist[j];
                   progB.increase(1);
                 }
               }
@@ -5688,13 +5636,16 @@
                 getPlayer(++i, distance);
                 return;
               }
-              TWX.DuellMap.progBVal = progB.getValue();
+              TWX.DuelMap.progBVal = progB.getValue();
               fillPage();
             });
           };
+          TWX.addStyle('.tw2gui_win2.active_tab_id_TWXDuelMap .tw2gui_window_inset {background-image:url(' + TWX.Images('LT_backGr', 1) + ');}');
           var showTab = function (win, id) {
-            DuelsWindow.window.setSize(840, 655).addClass('premium-buy');
-            DuelsWindow.window.activateTab(id).$('div.tw2gui_window_content_pane > *').each(function (i, e) {
+            var wnd = DuelsWindow.window;
+            wnd.setSize(815, 655).addClass('nocloseall noreload');
+            wnd.dontCloseAll = true;
+            wnd.activateTab(id).$('div.tw2gui_window_content_pane > *').each(function (i, e) {
               if ($(e).hasClass('duels-' + id)) {
                 $(e).children().fadeIn();
                 $(e).show();
@@ -5703,17 +5654,17 @@
                 $(e).hide();
               }
             });
-            DuelsWindow.window.setTitle(TWXlang.duelmap);
-            if (Object.keys(TWX.DuellMap.Player).length === 0) {
-              TWX.DuellMap.progBVal = 0;
+            wnd.setTitle(TWXlang.duelmap);
+            if (Object.keys(TWX.DuelMap.Player).length === 0) {
+              TWX.DuelMap.progBVal = 0;
               getPlayer(-1, 15);
             } else
-              progB.setValue(TWX.DuellMap.progBVal);
+              progB.setValue(TWX.DuelMap.progBVal);
           };
-          var initDuellmap = function () {
-            DuelsWindow.window.addTab(TWXlang.duelmap, 'TWXDuellmap', showTab);
-            TWX.DuellMap.Player = {};
-            var area = $('<div class="duels-TWXDuellmap" style="display:none;">').appendTo(DuelsWindow.window.getContentPane()),
+          var initDuelMap = function () {
+            DuelsWindow.window.addTab(TWXlang.duelmap, 'TWXDuelMap', showTab);
+            TWX.DuelMap.Player = {};
+            var area = $('<div class="duels-TWXDuelMap" style="display:none;">').appendTo(DuelsWindow.window.getContentPane()),
             content = $('<div style="height:350px;top:10px;position:relative">'),
             left = 0,
             top = 0;
@@ -5739,7 +5690,7 @@
               }
               content.append(img);
             }
-            content.append('<div id="TWXDuellMapPlayers">');
+            content.append('<div id="TWXDuelMapPlayers">');
             content.appendTo(area);
             area.append(progB.getMainDiv());
             var scrollpane = new west.gui.Scrollpane().appendTo(area);
@@ -5749,21 +5700,21 @@
             new west.gui.Button(TWXlang.searchOpp).appendTo(scrollpane.getContentPane()).click(function () {
               getPlayer(-1, combobox.getValue());
             });
-            scrollpane.appendContent('<table border="1" id="TWXDuellMapTable"></table>');
+            scrollpane.appendContent('<table border="1" id="TWXDuelMapTable"></table>');
           };
           DuelsWindow.open_twx = DuelsWindow.open;
           DuelsWindow.open = function () {
             var tmp = DuelsWindow.open_twx.call(this);
-            if (tmp !== undefined)
+            if (tmp)
               return tmp;
-            initDuellmap();
+            initDuelMap();
           };
           DuelsWindow.showTab_twx = DuelsWindow.showTab;
           DuelsWindow.showTab = function (id) {
             var tmp = DuelsWindow.showTab_twx.call(this, id);
-            if (tmp !== undefined)
+            if (tmp)
               return tmp;
-            DuelsWindow.window.removeClass('premium-buy').setSize(748, 472);
+            DuelsWindow.window.removeClass('noreload').setSize(748, 472);
           };
         }
       };
@@ -5871,14 +5822,16 @@
       };
       TWX.BetterSheriff = {
         onlyAttackable: false,
+        loadedIDs: {},
         init: function () {
-          var columns = [
+          var that = this,
+          columns = [
             'name" style="width:100px;',
             'distance" style="width:70px;',
             'amount" style="width:70px;',
             'not_dead_amount" style="width:70px;',
             'duellevel" style="width:50px;',
-            'status" style="width:192px;'
+            'pStatus" style="width:192px;'
           ], //max 552px
           wanted = [
             'Gesucht', 'Wanted', 'Poszukiwany', 'Gezocht', 'Efterlyst', 'Căutat', 'Procurado', 'Hledán', 'Buscado', 'В розыске', 'Aranıyor', 'Körözött', 'Καταζητείται', 'Eftersøgt', 'Odmena za ulovenie', 'Recherché', 'Ricercato',
@@ -5887,23 +5840,22 @@
           myPos,
           lvl,
           players,
-          loadedIDs,
           counter,
           maxCount,
           updateTable = function (data) {
-            TWX.BetterSheriff.table.clearBody();
+            that.table.clearBody();
             var tmpCells = {};
             for (var i = 0; i < data.length; i++) {
               var rd = data[i];
-              if (TWX.BetterSheriff.onlyAttackable && !rd.status.includes('.startDuel'))
+              if (that.onlyAttackable && !rd.pStatus.includes('.startDuel'))
                 continue;
               tmpCells[columns[0]] = '<a title="' + SheriffWindow.createWantedTooltip(rd).escapeHTML() + '" href="javascript:void(PlayerProfileWindow.open(' + rd.player_id + '));"> ' + rd.name + '</a>';
               tmpCells[columns[1]] = rd.distance.formatDuration();
               tmpCells[columns[2]] = format_number(rd.amount);
               tmpCells[columns[3]] = format_number(rd.not_dead_amount);
               tmpCells[columns[4]] = rd.duellevel;
-              tmpCells[columns[5]] = '<span title=\'' + rd.status + '\'>' + rd.status + '</span>';
-              TWX.BetterSheriff.table.buildRow('" style="padding-left:5px;', tmpCells);
+              tmpCells[columns[5]] = '<span title=\'' + rd.pStatus + '\'>' + rd.pStatus + '</span>';
+              that.table.buildRow('" style="padding-left:5px;', tmpCells);
             }
           },
           startSortDispatcher = function (ev) {
@@ -5914,7 +5866,7 @@
               sortByObj = sortBy;
               switch (sortBy) {
               case 'name':
-              case 'status':
+              case 'pStatus':
                 players.sort(function (a, b) {
                   return a[sortBy].toUpperCase().replace(/^Ä/, 'A').replace(/^Ö/, 'O').replace(/^Ü/, 'U').replace(/^É/, 'E').replace(/\(.*?\)/, '') > b[sortBy].toUpperCase().replace(/^Ä/, 'A').replace(/^Ö/, 'O').replace(/^Ü/, 'U').replace(/^É/, 'E').replace(/\(.*?\)/, '') ? 1 : -1;
                 });
@@ -5933,22 +5885,29 @@
             }
             updateTable(players);
           },
-          setStatus = function (player, string) {
+          setStatus = function (player, string, dontSave) {
             if (player) {
-              player.status = string;
+              player.pStatus = string;
               players.push(player);
+              if (!dontSave)
+                that.loadedIDs[player.player_id] = string;
             }
             counter++;
-            TWX.BetterSheriff.progB.increase(1);
+            that.progB.increase(1);
             if (counter == maxCount) {
               startSortDispatcher();
               $('div.sheriff-TWXSheriff .fancytable .row_head').css('cursor', 'pointer').click(startSortDispatcher);
-              $('div.sheriff-TWXSheriff', SheriffWindow.DOM).append(TWX.BetterSheriff.checkB.getMainDiv());
+              $('div.sheriff-TWXSheriff', SheriffWindow.DOM).append(that.checkB.getMainDiv());
             }
           },
+          windowOpened = function () {
+            return $('.tw2gui_window.sheriff').length;
+          },
           loadPlayer = function (arr) {
-            if (loadedIDs[arr.player_id])
-              setStatus(arr, SaloonWindow.playerStat(loadedIDs[arr.player_id]));
+            if (!windowOpened())
+              return;
+            if (that.loadedIDs[arr.player_id])
+              setStatus(arr, that.loadedIDs[arr.player_id], 1);
             else
               Ajax.remoteCallMode('profile', 'init', {
                 playerId: arr.player_id
@@ -5967,8 +5926,8 @@
                       if (data.error)
                         return new UserMessage(data.msg).show();
                       for (var l = 0; l < data.players.length; l++)
-                        loadedIDs[data.players[l].player_id] = data.players[l];
-                      setStatus(arr, SaloonWindow.playerStat(loadedIDs[arr.player_id]));
+                        that.loadedIDs[data.players[l].player_id] = SaloonWindow.playerStat(data.players[l]);
+                      setStatus(arr, that.loadedIDs[arr.player_id], 1);
                     });
                 } else
                   Ajax.remoteCall('task', 'add', {
@@ -5999,6 +5958,8 @@
               });
           },
           initData = function (pg) {
+            if (!windowOpened())
+              return;
             Ajax.remoteCall('building_sheriff', 'load_page', {
               page: pg,
             }, function (json) {
@@ -6008,7 +5969,7 @@
               }
               if (pg === 0) {
                 maxCount = json.count * 10;
-                TWX.BetterSheriff.progB.setMaxValue(maxCount);
+                that.progB.setMaxValue(maxCount);
               }
               for (var j = 0; j < 10; j++) {
                 if (json.result[j]) {
@@ -6019,9 +5980,9 @@
                     });
                   res.not_dead_amount = res.not_dead_amount || 0;
                   if (lvl.min > res.duellevel)
-                    setStatus(res, TWXlang.tooLow);
+                    setStatus(res, TWXlang.tooLow, 1);
                   else if (lvl.max < res.duellevel)
-                    setStatus(res, TWXlang.tooHigh);
+                    setStatus(res, TWXlang.tooHigh, 1);
                   else
                     loadPlayer(res);
                 } else {
@@ -6035,7 +5996,7 @@
           tabclick = function (win, id) {
             if (!SheriffWindow.window)
               return;
-            SheriffWindow.window.activateTab(id).setTitle('BetterSheriff').$('div.tw2gui_window_content_pane > *', SheriffWindow.DOM).each(function (i, e) {
+            SheriffWindow.window.activateTab(id).addClass('nocloseall noreload').setTitle('BetterSheriff').$('div.tw2gui_window_content_pane > *', SheriffWindow.DOM).each(function (i, e) {
               if ($(e).hasClass('sheriff-' + id)) {
                 $(e).children().fadeIn();
                 $(e).show();
@@ -6047,13 +6008,13 @@
             if (TWX.loadedSheriff)
               return;
             TWX.loadedSheriff = true;
+            SheriffWindow.window.dontCloseAll = true;
             myPos = Map.getLastQueuePosition();
             lvl = {
               min: Math.ceil(Character.duelLevel / 1.4),
               max: Math.floor(Character.duelLevel * 1.4 - 0.01)
             };
             players = [];
-            loadedIDs = {};
             counter = 0;
             sortByObj = '';
             initData(0);
@@ -6061,21 +6022,21 @@
           initBetterSheriff = function () {
             TWX.loadedSheriff = false;
             SheriffWindow.window.addTab('BetterSheriff', 'TWXSheriff', tabclick).appendToContentPane($('<div class="sheriff-TWXSheriff" style="display:none;width:590px;position:relative;left:50px;">'));
-            TWX.BetterSheriff.table = new west.gui.Table().removeFooter();
+            that.table = new west.gui.Table().removeFooter();
             for (var k = 0; k < columns.length; k++)
-              TWX.BetterSheriff.table.addColumn(columns[k]).appendToThCell('head', columns[k], TWXlang.sortBy + ' ' + TWXlang[columns[k].split('"')[0]], TWXlang[columns[k].split('"')[0]]);
-            TWX.BetterSheriff.progB = new west.gui.Progressbar(0, null);
-            $(TWX.BetterSheriff.progB.getMainDiv()).css('width', '587px');
-            TWX.BetterSheriff.checkB = new west.gui.Checkbox().setLabel('<img src="images/window/dailyactivity/tasks_icon.png">').setTooltip(TWXlang.attackable).setCallback(function (state) {
-                TWX.BetterSheriff.onlyAttackable = state;
+              that.table.addColumn(columns[k]).appendToThCell('head', columns[k], TWXlang.sortBy + ' ' + TWXlang[columns[k].split('"')[0]], TWXlang[columns[k].split('"')[0]]);
+            that.progB = new west.gui.Progressbar(0, null);
+            $(that.progB.getMainDiv()).css('width', '587px');
+            that.checkB = new west.gui.Checkbox().setLabel('<img src="images/window/dailyactivity/tasks_icon.png">').setTooltip(TWXlang.attackable).setCallback(function (state) {
+                that.onlyAttackable = state;
                 updateTable(players);
-              }).setSelected(TWX.BetterSheriff.onlyAttackable, true);
-            $(TWX.BetterSheriff.checkB.getMainDiv()).css({
+              }).setSelected(that.onlyAttackable, true);
+            $(that.checkB.getMainDiv()).css({
               'position': 'absolute',
               'top': '35px',
               'right': '-65px'
             });
-            $('div.sheriff-TWXSheriff', SheriffWindow.DOM).empty().append(TWX.BetterSheriff.table.getMainDiv()).append(TWX.BetterSheriff.progB.getMainDiv());
+            $('div.sheriff-TWXSheriff', SheriffWindow.DOM).empty().append(that.table.getMainDiv()).append(that.progB.getMainDiv());
             $('div.sheriff-TWXSheriff .fancytable .tw2gui_scrollpane').css('height', '293px');
             Ajax.remoteCallMode('building_saloon', 'get_data', {
               town_id: Character.homeTown.town_id
@@ -6345,7 +6306,7 @@
               var wws = west.window.shop;
               if (wws) {
                 clearInterval(setVal8);
-                TWX.addStyle('.focused_new_item_shop .sellIt, .focused_marketplace .auctIt {filter: grayscale(90%)}\n .focused_tailor .not_sellable::after, .focused_gunsmith .not_sellable::after, .focused_general .not_sellable::after, .focused_marketplace .not_auctionable::after {content:"";position:absolute;width:28px;height:28px;right:0;background:url("images/window/shop/shop_icons_sprite.png")no-repeat -167px 0;} .focused_tailor .not_sellable, .focused_gunsmith .not_sellable, .focused_general .not_sellable, .focused_marketplace .not_auctionable {opacity:0.5}');
+                TWX.addStyle('.focused_new_item_shop .sellIt, .focused_marketplace .auctIt {filter: grayscale(90%)}\n .focused_tailor .not_sellable::after, .focused_gunsmith .not_sellable::after, .focused_general .not_sellable::after, .focused_marketplace .not_auctionable::after {content:"";position:absolute;width:28px;height:28px;right:0;background:url(images/window/shop/shop_icons_sprite.png)no-repeat -167px 0;} .focused_tailor .not_sellable, .focused_gunsmith .not_sellable, .focused_general .not_sellable, .focused_marketplace .not_auctionable {opacity:0.5}');
                 var mt = -1,
                 itemsToSell = [null, null],
                 attr = ['sellable', 'auctionable'],
@@ -7868,7 +7829,7 @@
                     newfunction.bind(this)(battle_id, data);
                     $(this.window.getMainDiv()).children().find('.TWTStatButton').remove();
                     $(this.window.getMainDiv()).find('div.tw2gui_window_content_pane').append('<span title="Battle Stars" onclick=\'TWX.BS.vasy()\'  class="TWTStatButton"><img ' + 'style="position:absolute;top:15px;left:672px;width:15px;height:15px;padding:0px;border:0px;margin:0px;cursor:pointer;"' +
-                      ' src="/images/icons/achv_points.png"></span>');
+                      ' src="images/icons/achv_points.png"></span>');
                   } catch (e) {
                     console.log(e);
                   }
@@ -8033,7 +7994,7 @@
                   return ((x > y) ?  - 1 : ((x < y) ? 1 : 0));
                 }
               } else {
-                throw ('Tri impossible sur du non numerique');
+                throw ('not numeric');
               }
             });
             return arr;
@@ -8164,7 +8125,7 @@
                 return $('<a>').attr('onclick', 'TWX.KoM.updatePrivilege(' + fortId + ', ' + westId + ', ' + rank + ');').append(image, TWXlang.KoM['as' + rankList[rank]]);
               }
               function rankImage(rrank) {
-                return $('<img>').attr('src', '/images/chat/servicegrade_' + rrank + '.png').attr('title', '<strong>' + Chat.rankTitles[rrank] + '</strong>');
+                return $('<img>').attr('src', 'images/chat/servicegrade_' + rrank + '.png').attr('title', '<strong>' + Chat.rankTitles[rrank] + '</strong>');
               }
               return rankLink(rankImage(rankList[rank]), fortId, westId, rank);
             },
@@ -8210,7 +8171,7 @@
                   width: '15px',
                   height: '15px',
                   display: 'inline-block',
-                  background: 'url(/images/tw2gui/window/window2_title_divider.jpg) no-repeat'
+                  background: 'url(images/tw2gui/window/window2_title_divider.jpg) no-repeat'
                 });
               span.append('&nbsp;', st);
               return span;
@@ -8255,24 +8216,24 @@
                   break;
                 }
                 TWX.KoM.loading = false;
-              } catch (e) {
+              } catch (err) {
                 TWX.KoM.loading = false;
-                new UserMessage('<span>' + e + '</spawn>', 'error').show();
-                console.log(e);
+                new UserMessage('<span>' + err + '</spawn>', 'error').show();
+                console.log(err);
               }
             },
             makePopupHtml: function (fortId, fortX, fortY, distanceImage, playerPositionName, rankHtml, weaponName, weaponMinDamage, weaponMaxDamage, currentHp, maxHp, townName, townId, townRights, playerClass) {
               var capacityDiv = TWX.KoM.makeCapacityDiv(fortId);
               var fillPx = Math.floor(currentHp / maxHp * 194);
-              return '<div class="txcenter"><div style="background:url(https://tomrobert.safe-ws.de/healthbar.png) right top;width:210px;height:14px;display:inline-block;padding:2px;margin:0;font-size:8pt; text-align:left;"><div style="background: url(&quot;images/character_bars/filler.png&quot;) repeat scroll 0% 0% transparent; width:' +
+              return '<div class="txcenter"><div style="background:url(' + TWX.url + 'healthbar.png) right top;width:210px;height:14px;display:inline-block;padding:2px;margin:0;font-size:8pt; text-align:left;"><div style="background: url(&quot;images/character_bars/filler.png&quot;) repeat scroll 0% 0% transparent; width:' +
               fillPx + 'px; height: 14px; padding: 0pt; margin: 0pt; position: absolute;" id="recruit_healthbar"></div><div id="recruit_health" style="position:absolute;color:white;width:194px;text-align:center">' + currentHp + '/' + maxHp + '</div></div><br><div>' +
-              weaponName + ' (' + weaponMinDamage + '-' + weaponMaxDamage + ' ' + TWXlang.KoM.damage + ')</div><span style="font-size:16px;text-align:center;"><div style="display:inline-block;"><img src="../images/class_choose/class_' + playerClass +
+              weaponName + ' (' + weaponMinDamage + '-' + weaponMaxDamage + ' ' + TWXlang.KoM.damage + ')</div><span style="font-size:16px;text-align:center;"><div style="display:inline-block;"><img src="images/class_choose/class_' + playerClass +
               '"><a style="display:inline;padding:0;" class="profile_link_town_overview" title="' + TWXlang.KoM.showTown + '" href="javascript:TownWindow.open(' + townId + ')"> ' + townName +
               '</a>' + /*<br><a style="display:inline;padding:0;" class="open_alliance" title="' + TWXlang.KoM.showAlly + '" href="javascript:parent.AllianceWindow.open(' + ally[0] + ')"> ' + ally[1] +
               '</a>*/
-              '</span><br><img src="../images/fort/battle/divider.png"></div><br>' + distanceImage.outerHTML() + '&nbsp;<a title="' + TWXlang.KoM.showFort + '" href="javascript:FortWindow.open(' + fortId + ')">' + TWX.KoM.fort[fortId].name +
+              '</span><br><img src="images/fort/battle/divider.png"></div><br>' + distanceImage.outerHTML() + '&nbsp;<a title="' + TWXlang.KoM.showFort + '" href="javascript:FortWindow.open(' + fortId + ')">' + TWX.KoM.fort[fortId].name +
               '</a><p>' + capacityDiv + '</p><p><a title="' + TWXlang.KoM.showBattle + '" href="javascript:TWX.KoM.showPosition()">' +
-              TWXlang.KoM.position + ': ' + playerPositionName + '</a></p><img src="../images/fort/battle/divider.png"><br>' +
+              TWXlang.KoM.position + ': ' + playerPositionName + '</a></p><img src="images/fort/battle/divider.png"><br>' +
               rankHtml.outerHTML() + '</div>';
             },
             getPosName: function () {
@@ -8294,11 +8255,11 @@
               diffY = fortY - playerY,
               image = $('<img>');
               if (!diffX && !diffY)
-                image.attr('src', '/images/town/cityhall/green.png').attr('title', TWXlang.KoM.atFort);
+                image.attr('src', 'images/town/cityhall/green.png').attr('title', TWXlang.KoM.atFort);
               else if (Math.abs(diffX) <= 500 && Math.abs(diffY) <= 500)
-                image.attr('src', '/images/town/cityhall/yellow.png').attr('title', TWXlang.KoM.nearFort);
+                image.attr('src', 'images/town/cityhall/yellow.png').attr('title', TWXlang.KoM.nearFort);
               else
-                image.attr('src', '/images/town/cityhall/red.png').attr('title', TWXlang.KoM.notFort);
+                image.attr('src', 'images/town/cityhall/red.png').attr('title', TWXlang.KoM.notFort);
               return image;
             },
             popUp: function (e) {
@@ -8364,10 +8325,10 @@
                   break;
                 }
                 TWX.KoM.loading = false;
-              } catch (e) {
-                console.log(e.stack);
+              } catch (err) {
+                console.log(err.stack);
                 TWX.KoM.loading = false;
-                new UserMessage('<span>' + e + '</spawn>', 'error').show();
+                new UserMessage('<span>' + err + '</spawn>', 'error').show();
               }
             },
             getWeapons: function () {
@@ -8497,7 +8458,7 @@
                   if (!TWX.KoM.fort.hasOwnProperty(fortId))
                     TWX.KoM.obtainFortSize(room);
                   if ($('.battleMessage' + fortId).length === 0)
-                    $('#tab_title_' + r + ' .chat_icons').css('background-image', 'url("https://tomrobert.safe-ws.de/cicons.png")').append('<div class="battleMessage' + fortId + '">').attr('title', TWXlang.KoM.remindAlly).click(function () {
+                    $('#tab_title_' + r + ' .chat_icons').css('background-image', 'url(' + TWX.url + 'cicons.png)').append('<div class="battleMessage' + fortId + '">').attr('title', TWXlang.KoM.remindAlly).click(function () {
                       TWX.KoM.openMessage(fortId);
                     });
                 }
@@ -8633,32 +8594,6 @@
             if (tmp !== undefined)
               return tmp;
             swap(this);
-          };
-        }
-      };
-      TWX.ShowAP = {
-        init: function () {
-          var addAP = function (that) {
-            var job = that.job;
-            var getJobFeaturedCls = function () {
-              if (LinearQuestHandler.hasTutorialQuest())
-                return '';
-              if (job.is_gold)
-                return 'gold';
-              if (job.is_silver)
-                return 'silver';
-              return '';
-            };
-            var aps = that.currSkillpoints - that.job.workpoints;
-            var jobicon = '<div class="job" title="' + job.get('description').escapeHTML().cutIt(150) + '"><div class="featured ' + getJobFeaturedCls() + '"></div>' + '<img src="images/jobs/' + job.get('shortname') + '.png" class="job_icon"></div>';
-            that.window.setTitle(jobicon + '&nbsp;&nbsp;' + job.get('name').escapeHTML() + ' (' + aps + ' AP)');
-          };
-          JobWindow.initView_twx = JobWindow.initView;
-          JobWindow.initView = function () {
-            var tmp = JobWindow.initView_twx.call(this);
-            if (tmp !== undefined)
-              return tmp;
-            addAP(this);
           };
         }
       };
@@ -8918,7 +8853,7 @@
             $('#loginMore').append('<a id="loginAll" title="' + TWXlang.loginAll2 + '" href="#">' + TWXlang.loginAll1 + '</a>').append('<a id="custom" title="' + TWXlang.custom2 + '" href="#">' + TWXlang.custom1 + '</a>').append('<img id="cust1" title="' + TWXlang.edit + '" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAAFOSURBVDhPY6A6KKnL4j60a2Xf1jWz/6PjQ5unbIUqww3WLpr0Hx0/vXXq/9e39/5fPL4VzAdZAlVOGFw6s9t49sQGsAF/f30GGwLiQ6UJA5Dio7tW/X/z6AIYgwxaNKPr7/1rh6ShSnADkJ/banPB/r9z+QDYIBAfRE9oKf7f2Vz8BKoUE+ydEfj/5Orm/88vb/1fVxwHdjZI88p5zc0gevemRWBxqHJUANP86+Wu/9f3TPu/Y1Yh2NbCskQWkPyiOTmiIM0gw8AakAFI88FFVWCbQYasn5iBVeG0SWWeUCYCLKl1B9sG0gwyZFl73P+99d79UGn8AKQZZBtIM8iQ2XXh2J2IDYA0g2x7cGwZ2JDJpf7E2zwnwwxsG0gzyJCuXC/iNYMAsubGFDvSNIMAyEaQFxoiDf93Vgb3QIWJBwtb3NJANoNoqBAJgIEBAEbiFXTTZGcSAAAAAElFTkSuQmCC">');
             $('#selectWorldText').css('margin-bottom', '20px');
             $('#loginAll').css({
-              'background-image': 'url("' + TWX.Images('LT_login') + '")',
+              'background-image': 'url(' + TWX.Images('LT_login') + ')',
               'height': '45px',
               'width': '180px',
               'line-height': '40px',
@@ -8937,7 +8872,7 @@
               loginNow(t1);
             });
             $('#custom').css({
-              'background-image': 'url("' + TWX.Images('LT_loginC') + '")',
+              'background-image': 'url(' + TWX.Images('LT_loginC') + ')',
               'background-repeat': 'no-repeat',
               'height': '36px',
               'width': '144px',
