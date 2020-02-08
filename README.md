@@ -8,6 +8,14 @@ Coming soon
 This is an updated version of this script: [TWLeoTools](https://userscripts-mirror.org/scripts/show/169774) made by [Leotas](https://forum.the-west.de/index.php?members/25046).  
 But I added many new features and made improvements to the code.
 
+**Including**  
+[TW Color tchat](https://greasyfork.org/scripts/7355)  
+[TW Quick items search](https://greasyfork.org/scripts/7434)  
+[TW Minimap NPC locator](https://greasyfork.org/scripts/7233)  
+[TW Market best bids](https://greasyfork.org/scripts/7391)  
+[TW Battle Stars](https://greasyfork.org/scripts/16299)  
+[TW Kick-o-Matic](https://greasyfork.org/scripts/7486)
+
 **Supported languages:**  
 *English  
 German (Deutsch)  
@@ -48,23 +56,6 @@ Compare your inventory on tw-db.info with the one from your trading partner.
 Or just hide all non-auctionable items.  
 ![](https://imgur.com/1i4XJfl.png)
 
-**Logout button** (Disabled by default)  
-When clicking on the logout button you will be redirected to the main page of The West.  
-![](https://imgur.com/jbpaKHq.png)
-
-**Remove taskbar** (Disabled by default)  
-You can hide the taskbar completely.  
-![](https://imgur.com/T17pZIu.png)
-
-**Skill points in job windows** (Disabled by default)  
-Show your actual skill points in the job window.  
-The [twdb clothcalc](https://tw-db.info/?strana=userscript) has this feature, too.  
-<img src="https://imgur.com/TugrJml.png" width="600">
-
-**Switch title and name** (Disabled by default)  
-Switch the title and player name in the town hall like it was long time ago.  
-<img src="https://imgur.com/nJh1MxG.png" width="600">
-
 **Duelmap**  
 A new tab in the duel window adds a duelmap with many features.  
 <img src="https://imgur.com/0KsMdt1.png" width="600">
@@ -73,12 +64,8 @@ A new tab in the duel window adds a duelmap with many features.
 To not miss the daily login bonus at day 5 it will be highlighted.  
 <img src="https://imgur.com/30yisKv.png" width="600">
 
-**Town name in market window**  
-You can see now the town name in the market window.  
-<img src="https://imgur.com/zNYrYJq.png" width="600">
-
 **Reminder at market**  
-You get a message when you stand on a market where are items or money to pick up.  
+You get a message when you stand at a market where are items or money to pick up.  
 ![](https://imgur.com/V5uBBcJ.png)
 
 **Hide completed achievements**  
@@ -100,18 +87,6 @@ CTRL key will open the item at the [TW-Calc](https://tw-calc.net) website.
 **Move queued jobs and script button**  
 This is practical when you have many scripts installed and there are already many buttons on the right side.  
 ![](https://imgur.com/iktfW7O.png) ![](https://imgur.com/mPR6LtC.png)
-
-**Stop button blinking** (Disabled by default)  
-You can remove the blinking animation on all the buttons on the left side. This is useful when your Computer has a weak CPU or only few RAM.  
-![](https://imgur.com/LP6H4LD.png)
-
-**Remove fort battle reminder** (Disabled by default)  
-If you think the reminder for next fort battle on the left side is annoying, you can just hide it.  
-![](https://imgur.com/x9fu6Xd.png)
-
-**Hide "Friend online" pop-ups** (Disabled by default)  
-You always get a little notification when a friend comes online. Now you can deactivate that.  
-![](https://imgur.com/F0VMXMf.png)
 
 **Send event gifts & EventRewards** (Only active at Events)  
 There's a link in the menu where you can see all you friends at once. But don't click to fast ;)  
@@ -189,6 +164,30 @@ Use the script on your mobile browser to activate touch controls:
 - Middle touch on items: show pop up / Long touch on items: show on [TW-Calc](https://tw-calc.net)
 
 ![](https://imgur.com/53O2eze.png)
+
+**Logout button** (Disabled by default)  
+When clicking on the logout button you will be redirected to the main page of The West.  
+![](https://imgur.com/jbpaKHq.png)
+
+**Remove taskbar** (Disabled by default)  
+You can hide the taskbar completely.  
+![](https://imgur.com/T17pZIu.png)
+
+**Switch title and name** (Disabled by default)  
+Switch the title and player name in the town hall like it was long time ago.  
+<img src="https://imgur.com/nJh1MxG.png" width="600">
+
+**Stop button blinking** (Disabled by default)  
+You can remove the blinking animation on all the buttons on the left side. This is useful when your Computer has a weak CPU or only few RAM.  
+![](https://imgur.com/LP6H4LD.png)
+
+**Remove fort battle reminder** (Disabled by default)  
+If you think the reminder for next fort battle on the left side is annoying, you can just hide it.  
+![](https://imgur.com/x9fu6Xd.png)
+
+**Hide "Friend online" pop-ups** (Disabled by default)  
+You always get a little notification when a friend comes online. Now you can deactivate that.  
+![](https://imgur.com/F0VMXMf.png)
 
 **Settings**  
 You can disable and enable most features manually and choose your language.  
