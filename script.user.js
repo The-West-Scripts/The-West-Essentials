@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.46.8
+// @version 1.46.9
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.46.8',
+      version: '1.46.9',
       langs: {
         en: {
           language: 'English',
@@ -54,11 +54,11 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control on your mobile browser',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -68,13 +68,12 @@
           },
           settings1: 'Open settings',
           settings2: 'Open settings and information window',
-          ghosttown1: 'Go to ghost town ',
           ghosttown2: 'Open ghost town',
           ghosttown3: 'Open ghost town and center it on map',
-          indiantown1: 'Go to Indian village ',
           indiantown2: 'Open Indian village',
           indiantown3: 'Open Indian village and center it on map',
           openmarket: 'Open market',
+          opentrader: 'Open mobile trader',
           forum: 'Open town forum',
           newsets: 'New sets are added to the script',
           chooseItems: 'Choose the items',
@@ -357,11 +356,11 @@
             MapDistance: 'Zeige die Entfernung in Meilen neben der Reisezeit',
             TraderSell: 'Ermöglicht dem Fahrenden Händler mehrere Gegenstände auf einmal zu verkaufen',
             TouchControl: 'Aktiviere Touchsteuerung im mobilen Browser',
-            ColorTchat: '$0 Neue Funktionen für den Chat. Farbiger Text, Emojis 🐧🎉 usw.',
-            QuickItemsSearch: '$0 Suche nach Buff-Kategorien und Sets in deinem Inventar',
-            MarketBestBids: '$0 Färbt die Auktionen dem Preis entsprechend $1 Gebot ist tiefer als der VK (Verkaufspreis) $2 Gebot entspricht dem VK $3 Gebot ist zwischen 100% and 200% des VK $4 Gebot ist höher als 200% des VK">',
-            BattleStars: '$0 Zusätzliche Statistiken im Fortkampfbericht',
-            KickoMatic: '$0 Vereinfacht die Musterung vor einem Fortkampf',
+            ColorTchat: '%0 Neue Funktionen für den Chat. Farbiger Text, Emojis 🐧🎉 usw.',
+            QuickItemsSearch: '%0 Suche nach Buff-Kategorien und Sets in deinem Inventar',
+            MarketBestBids: '%0 Färbt die Auktionen dem Preis entsprechend %1 Grün %2 Gebot ist tiefer als der VK (Verkaufspreis) %3 Schwarz %4 Gebot entspricht dem VK %5 Blau %6 Gebot ist zwischen 100% and 200% des VK %7 Rot %8 Gebot ist höher als 200% des VK">',
+            BattleStars: '%0 Zusätzliche Statistiken im Fortkampfbericht',
+            KickoMatic: '%0 Vereinfacht die Musterung vor einem Fortkampf',
             Logout: 'Erstellt einen Logout-Button rechts in der Menüleiste',
             Statusbar: 'Entfernt die Fensterleiste mit den verschiedenen Tabs im unteren Teil',
             ChangeCity: 'Tausche Titel und Spielername in der Stadthalle',
@@ -371,13 +370,12 @@
           },
           settings1: 'Einstellungen öffnen',
           settings2: 'Öffnet das Informations- und Einstellungsfenster',
-          ghosttown1: 'Gehe zur Geisterstadt ',
           ghosttown2: 'Öffne Geisterstadt',
           ghosttown3: 'Öffnet das Fenster der Geisterstadt und zentriert es auf der Map',
-          indiantown1: 'Gehe zum Indianerdorf ',
           indiantown2: 'Öffne Indianerdorf',
           indiantown3: 'Öffnet das Fenster des Indianerdorfes und zentriert es auf der Map',
           openmarket: 'Öffne Marktfenster',
+          opentrader: 'Öffne den Fahrenden Händler',
           forum: 'Öffne Stadtforum',
           newsets: 'Dem Script wurden neue Sets hinzugefügt',
           chooseItems: 'Wähle die Gegenstände aus',
@@ -660,11 +658,11 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control for map and scrollbar on your mobile',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Dodanie przycisku po prawej stronie, wyloguj się.',
             Statusbar: 'Usuwa pasek z oknami w dolnej części gry.',
             ChangeCity: 'Zamienia tytuł gracza na początku, w karcie graczy w ratuszu.',
@@ -674,13 +672,12 @@
           },
           settings1: 'Otwórz ustawienia',
           settings2: 'Otwiera okno ustawień oraz informacji o skrypcie.',
-          ghosttown1: 'Idź do Miasta Widmo, dojście ',
           ghosttown2: 'Otwórz zadania w Mieście Widmo',
           ghosttown3: 'Otwiera okno z zadaniami w Mieście Widmo',
-          indiantown1: 'Idź do Wioski Indiańskiej, dojście ',
           indiantown2: 'Otwórz zadania w Wiosce Indiańskiej',
           indiantown3: 'Otwiera okno z zadaniami w Wiosce Indiańskiej.',
           openmarket: 'Otwórz targ',
+          opentrader: 'Otwórz handlarza',
           forum: 'Otwórz forum',
           newsets: 'Nowe zestawy są dodawane do skryptu',
           chooseItems: 'Choose the items',
@@ -963,11 +960,11 @@
             MapDistance: 'Mostrar la cantidad de millas al lado del tiempo de viaje',
             TraderSell: 'Vender varios artículos a la vez al comerciante',
             TouchControl: 'Habilitar el control táctil para el mapa y la barra de desplazamiento en su dispositivo móvil',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Crea un botón de cierre de sesión a la derecha en la barra de menús',
             Statusbar: 'Oculta la barra inferior de las ventanas',
             ChangeCity: 'Cambiar título y nombre del jugador en el ayuntamiento',
@@ -977,13 +974,12 @@
           },
           settings1: 'Abrir preferencias',
           settings2: 'Abrir la ventana de información y ajustes',
-          ghosttown1: 'Ir a la Ciudad Fantasma ',
           ghosttown2: 'Abrir Ciudad Fantasma',
           ghosttown3: 'Abrir la ventana de la Ciudad Fantasma y centrarla en el mapa',
-          indiantown1: 'Ir al Pueblo Indio Waupee ',
           indiantown2: 'Abrir Pueblo Indio Waupee',
           indiantown3: 'Abrir la ventana del Pueblo Indio Waupee y centrarla en el mapa',
           openmarket: 'Abrir Mercado',
+          opentrader: 'Abrir Comerciante Ambulante',
           forum: 'Abrir el foro de la ciudad',
           newsets: 'Nuevos conjuntos añadidos al script',
           chooseItems: 'Elegir los artículos',
@@ -1265,11 +1261,11 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control for map and scrollbar on your mobile',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Voeg een afmeldknop toe aan de rechterzijde van het scherm',
             Statusbar: 'Verwijder het dagelijkse taken icoon',
             ChangeCity: 'Verwissel de titel en de spelersnaam in het  stadhuis',
@@ -1279,13 +1275,12 @@
           },
           settings1: 'Instellingen openen',
           settings2: 'Instellingen en informatiescherm openen',
-          ghosttown1: 'Ga naar de Spookstad ',
           ghosttown2: 'Open Spookstad',
           ghosttown3: 'Open Spookstad en centreer het op de kaart',
-          indiantown1: 'Ga naar Waupees indianendorp ',
           indiantown2: 'Open Waupees indianendorp',
           indiantown3: 'Open Waupees indianendorp en centreer het op de kaart',
           openmarket: 'Open markt',
+          opentrader: 'Open mobile trader',
           forum: 'Open stadsforum',
           newsets: 'Nieuwe sets worden toegevoegd aan het script',
           chooseItems: 'Choose the items',
@@ -1568,11 +1563,11 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control for map and scrollbar on your mobile',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Kilépés gomb a jobb oldalra',
             Statusbar: 'Tálca eltüntetése',
             ChangeCity: 'Cím és játékosnév felcserélése a városházánál',
@@ -1582,13 +1577,12 @@
           },
           settings1: 'Beállítások megnyitása',
           settings2: 'Beállítások és információk',
-          ghosttown1: 'Menj el a Szellemvárosba ',
           ghosttown2: 'Szellemváros megnyitása',
           ghosttown3: 'Szellemváros megnyitása és ráközelítés térképen',
-          indiantown1: 'Menj Waupee Indián falujába ',
           indiantown2: 'Indián falu megnyitása',
           indiantown3: 'Indián falu megnyitása és ráközelítés térképen',
           openmarket: 'Piac megnyitása',
+          opentrader: 'Utazó kereskedő megnyitása',
           forum: 'Városfórum megnyitása',
           newsets: 'Új szett(ek) lettek hozzáadva a szkripthez',
           chooseItems: 'Válasz tárgyat',
@@ -1871,11 +1865,11 @@
             MapDistance: 'Εμφάνιση της απόστασης του ταξιδιού σας σε Μίλια',
             TraderSell: 'Πώληση πολλαπλών αντικειμένων στον Έμπορο',
             TouchControl: 'Enable touch control for map and scrollbar on your mobile',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Προσθέστε ένα κουμπί αποσύνδεσης στη δεξιά πλευρά',
             Statusbar: 'Αφαιρέστε τη γραμμή εργασιών',
             ChangeCity: 'Βάλτε τον τίτλο πριν από το όνομα του παίκτη στην καρτέλα του Δημαρχείου',
@@ -1885,13 +1879,12 @@
           },
           settings1: 'Ρυθμίσεις',
           settings2: 'Ανοίξτε τις ρυθμίσεις και το παράθυρο πληροφοριών',
-          ghosttown1: 'Προς την Πόλη Φάντασμα ➔ ',
           ghosttown2: 'Άνοιγμα της Πόλης Φάντασμα',
           ghosttown3: 'Άνοιγμα και κεντράρισμα του χάρτη στην Πόλη Φάντασμα',
-          indiantown1: 'Προς το Ινδιάνικο χωριό ➔ ',
           indiantown2: 'Άνοιγμα του Ινδιάνικου χωριού',
           indiantown3: 'Άνοιγμα και κεντράρισμα του χάρτη στο Ινδιάνικο χωριό',
           openmarket: 'Άνοιγμα της Αγοράς',
+          opentrader: 'Άνοιξε τον Πλανόδιο Πωλητή',
           forum: 'Άνοιγμα του Φόρουμ Πόλης',
           newsets: 'Νέα Σετ προσθέθηκαν στο script',
           chooseItems: 'Επιλέξτε τα αντικείμενα',
@@ -2174,11 +2167,11 @@
             MapDistance: ' Mostrar o número de milhas ao lado do tempo de viagem.',
             TraderSell: 'Vender vários itens de uma só vez ao comerciante.',
             TouchControl: 'Enable touch control for map and scrollbar on your mobile',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Adicionar botão de sair no fim dos scripts',
             Statusbar: 'Remover a barra de tarefas',
             ChangeCity: 'Mude o título e nome do jogador na cidade.',
@@ -2188,13 +2181,12 @@
           },
           settings1: 'Configurações',
           settings2: 'Configurações e Janela de Informações',
-          ghosttown1: 'Ir para Cidade Fantasma ',
           ghosttown2: 'Abrir Cidade Fantasma',
           ghosttown3: 'Abrir Cidade Fantasma e Centralizar no Mapa',
-          indiantown1: 'Ir para Vila Indígena ',
           indiantown2: 'Abrir Vila Ingígena',
           indiantown3: 'Abrir Vila Indígena e Centralizar no Mapa',
           openmarket: 'Mercado',
+          opentrader: 'Abrir Mercador Ambulante',
           forum: 'Fórum da Cidade',
           newsets: 'Novos Sets Adicionados ao Script',
           chooseItems: 'Escolha os Itens',
@@ -2477,11 +2469,11 @@
             MapDistance: 'Mostra la distanza in miglia accanto al tempo di viaggio',
             TraderSell: 'Consenti di vendere oggetti in quantità multipla ai negozi\mercante ambulante',
             TouchControl: 'Abilità il controllo touch nel browser mobile',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Aggiungi sul lato destro dello schermo un pulsante disconnetti',
             Statusbar: 'Nascondi la barra degli incarichi',
             ChangeCity: 'Nel municipio, inverti il titolo e il nome del giocatore',
@@ -2491,13 +2483,12 @@
           },
           settings1: 'Apri le impostazioni',
           settings2: 'Apri le impostazioni e la finestra di informazioni',
-          ghosttown1: 'Vai alla Città fantasma',
           ghosttown2: 'Apri la Città Fantasma',
           ghosttown3: 'Apri la Città Fantasma e centra la mappa',
-          indiantown1: 'Vai al Villaggio Indiano',
           indiantown2: 'Apri il Villaggio Indiano',
           indiantown3: 'Apri il Villaggio Indiano e centra la mappa',
           openmarket: 'Apri il mercato',
+          opentrader: 'Abrir Mercante',
           forum: 'Apri il forum città',
           newsets: 'Nuovi set sono stati aggiunti allo script',
           chooseItems: 'Scegli gli oggetti',
@@ -2780,11 +2771,11 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control on your mobile browser',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -2794,14 +2785,13 @@
           },
           settings1: 'Open settings',
           settings2: 'Open settings and information window',
-          ghosttown1: 'Go to ghost town ',
-          ghosttown2: 'Open ghost town',
+          ghosttown2: 'Aller à la ville abandonné',
           ghosttown3: 'Open ghost town and center it on map',
-          indiantown1: 'Go to Indian village ',
-          indiantown2: 'Open Indian village',
+          indiantown2: 'Aller au village de Waupee',
           indiantown3: 'Open Indian village and center it on map',
-          openmarket: 'Open market',
-          forum: 'Open town forum',
+          openmarket: 'Ouvrir le marché',
+          opentrader: 'Ouvrir le marchand ambulant',
+          forum: 'Ouvrir le forum',
           newsets: 'New sets are added to the script',
           chooseItems: 'Choose the items',
           remindHover: 'You get a notification when an item can be used again. Here you can choose these items.',
@@ -3083,11 +3073,11 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control on your mobile browser',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -3097,14 +3087,13 @@
           },
           settings1: 'Open settings',
           settings2: 'Open settings and information window',
-          ghosttown1: 'Go to ghost town ',
-          ghosttown2: 'Open ghost town',
+          ghosttown2: 'Město Duchů',
           ghosttown3: 'Open ghost town and center it on map',
-          indiantown1: 'Go to Indian village ',
-          indiantown2: 'Open Indian village',
+          indiantown2: 'Indiánská rezervace',
           indiantown3: 'Open Indian village and center it on map',
-          openmarket: 'Open market',
-          forum: 'Open town forum',
+          openmarket: 'Otevřít trh',
+          opentrader: 'Otevřít podomního obchodníka',
+          forum: 'Otevřít fórum',
           newsets: 'New sets are added to the script',
           chooseItems: 'Choose the items',
           remindHover: 'You get a notification when an item can be used again. Here you can choose these items.',
@@ -3386,11 +3375,11 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control on your mobile browser',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -3400,14 +3389,13 @@
           },
           settings1: 'Open settings',
           settings2: 'Open settings and information window',
-          ghosttown1: 'Go to ghost town ',
-          ghosttown2: 'Open ghost town',
+          ghosttown2: 'Mesto duchov',
           ghosttown3: 'Open ghost town and center it on map',
-          indiantown1: 'Go to Indian village ',
-          indiantown2: 'Open Indian village',
+          indiantown2: 'Waupeeho indiánska dedina',
           indiantown3: 'Open Indian village and center it on map',
-          openmarket: 'Open market',
-          forum: 'Open town forum',
+          openmarket: 'Otvoriť Trh',
+          opentrader: 'Otvoriť Obchodníka',
+          forum: 'Otvoriť fórum',
           newsets: 'New sets are added to the script',
           chooseItems: 'Choose the items',
           remindHover: 'You get a notification when an item can be used again. Here you can choose these items.',
@@ -3689,11 +3677,11 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control on your mobile browser',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -3703,14 +3691,13 @@
           },
           settings1: 'Open settings',
           settings2: 'Open settings and information window',
-          ghosttown1: 'Go to ghost town ',
-          ghosttown2: 'Open ghost town',
+          ghosttown2: 'Город Призрак',
           ghosttown3: 'Open ghost town and center it on map',
-          indiantown1: 'Go to Indian village ',
-          indiantown2: 'Open Indian village',
+          indiantown2: 'Деревня Вупи',
           indiantown3: 'Open Indian village and center it on map',
-          openmarket: 'Open market',
-          forum: 'Open town forum',
+          openmarket: 'Рынок',
+          opentrader: 'Коммивояжёр',
+          forum: 'Сплетни',
           newsets: 'New sets are added to the script',
           chooseItems: 'Choose the items',
           remindHover: 'You get a notification when an item can be used again. Here you can choose these items.',
@@ -3992,11 +3979,11 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control on your mobile browser',
-            ColorTchat: '$0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '$0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '$0 Colors the auctions based on the price $1 Bid is lower than the purchase price $2 Bid is equal to the purchase price $3 Bid is between 100% and 200% of the purchase price $4 Bid is more than 200%">',
-            BattleStars: '$0 Additional stats in the fort battle report',
-            KickoMatic: '$0 Helpful to rank players before a fort battle',
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -4006,14 +3993,13 @@
           },
           settings1: 'Open settings',
           settings2: 'Open settings and information window',
-          ghosttown1: 'Go to ghost town ',
-          ghosttown2: 'Open ghost town',
+          ghosttown2: 'Hayalet Kasaba',
           ghosttown3: 'Open ghost town and center it on map',
-          indiantown1: 'Go to Indian village ',
-          indiantown2: 'Open Indian village',
+          indiantown2: 'Waupee\'nin Kızılderili Köyüne Git',
           indiantown3: 'Open Indian village and center it on map',
-          openmarket: 'Open market',
-          forum: 'Open town forum',
+          openmarket: 'Pazarı Aç',
+          opentrader: 'Gezici Tüccarı Aç',
+          forum: 'Forumu Aç',
           newsets: 'New sets are added to the script',
           chooseItems: 'Choose the items',
           remindHover: 'You get a notification when an item can be used again. Here you can choose these items.',
@@ -4272,7 +4258,7 @@
         },
       },
       url: 'https://tomrobert.safe-ws.de/',
-      url2: 'https://the-west-scripts.github.io/The-West-Essentials/files/',
+      website: 'https://the-west-scripts.github.io/The-West-Essentials/',
       Images: function (img, file) {
         return this.url + img + (file ? '.jpg' : '.png');
       },
@@ -4283,7 +4269,6 @@
         author: 'Tom Robert',
         minGame: '2.0',
         maxGame: Game.version.toString(),
-        updateUrl: TWX.url + 'sUp.js',
         SPEC: [
           'speed', 'luck', 'dollar', 'experience', 'regen', 'drop',
         ],
@@ -4367,6 +4352,7 @@
         },
         skipOpen: {
           1975: 1,
+          2200: 1,
           2561: 0.5,
           2562: 0.5,
           2675: 0.5,
@@ -4378,14 +4364,15 @@
           document.body.appendChild(style);
         },
         replaceGaps: function (txt, arr) {
-          return txt.replace(/\$(\d)/g, function (f, p) {
+          return txt.replace(/%(\d)/g, function (f, p) {
             return arr[p];
           });
         },
         updateLang: function () {
-          let lg = TWX.langs;
-          TWX.lang = lg[localStorage.getItem('scriptsLang')] ? localStorage.getItem('scriptsLang') : lg[Game.locale.substr(0, 2)] ? Game.locale.substr(0, 2) : 'en';
-          TWXlang = lg[TWX.lang];
+          let lgs = TWX.langs,
+          lg = [localStorage.getItem('scriptsLang'), Game.locale.substr(0, 2)];
+          TWX.lang = lgs[lg[0]] ? lg[0] : lgs[lg[1]] ? lg[1] : 'en';
+          TWXlang = lgs[TWX.lang];
         },
       };
       Object.assign(TWX, addTWX);
@@ -4405,7 +4392,7 @@
             }).mouseleave(function () {
               $(this).css('background-position', '0px 0px');
             });
-          $('#ui_menubar').append($('<div id="TWX-menu" class="ui_menucontainer">').append(menuContainer).append('<div class="menucontainer_bottom">'));
+          $('#ui_menubar').append($('<div id="TWX_menu" class="ui_menucontainer">').append(menuContainer).append('<div class="menucontainer_bottom">'));
           TWX.Skript.updateFeat();
           TWX.SkipOpen();
         },
@@ -4460,16 +4447,10 @@
           selectbox.addItem(2, 'BonusSearch', TWXlang.bonussearch2);
           selectbox.addItem(3, 'WebCenter', TWXlang.frame2);
           selectbox.addItem(4, 'NPC locator', TWXlang.npclocator2);
-          selectbox.addItem(5, TWXlang.ghosttown1 + Map.calcWayTime(Map.getLastQueuePosition(), {
-              x: 1728,
-              y: 2081
-            }).formatDuration(), TWXlang.ghosttown1);
+          selectbox.addItem(5, 'Collections', '');
           selectbox.addItem(6, TWXlang.ghosttown2, TWXlang.ghosttown3);
-          selectbox.addItem(7, TWXlang.indiantown1 + Map.calcWayTime(Map.getLastQueuePosition(), {
-              x: 28002,
-              y: 16658
-            }).formatDuration(), TWXlang.indiantown1);
-          selectbox.addItem(8, TWXlang.indiantown2, TWXlang.indiantown3);
+          selectbox.addItem(7, TWXlang.indiantown2, TWXlang.indiantown3);
+          selectbox.addItem(8, TWXlang.opentrader, TWXlang.opentrader);
           selectbox.addItem(9, TWXlang.openmarket, TWXlang.openmarket);
           selectbox.addItem(10, TWXlang.forum, TWXlang.forum);
           if (EvName) {
@@ -4481,38 +4462,30 @@
               TWX.GUI.open('openFeatures');
               break;
             case 1:
-              TWX.GUI.open('openSetsWindow', 0, 'SetBonus');
+              TWX.GUI.open('openBonusWindow', 0, 'SetBonus');
               break;
             case 2:
-              TWX.GUI.open('openSetsWindow', 0, 'BonusSearch');
+              TWX.GUI.open('openBonusWindow', 0, 'BonusSearch');
               break;
             case 3:
-              TWX.GUI.open('openFrame');
+              TWX.GUI.open('openWebCenter');
               break;
             case 4:
               TWX.GUI.open('openNpcLocator');
               break;
             case 5:
-              QuestEmployerWindow.startWalk({
-                key: 'ghosttown',
-                x: '1728',
-                y: '2081'
-              });
+              TWX.GUI.open('openCollections');
               break;
             case 6:
               Map.center(1728, 2081);
               QuestEmployerWindow.showEmployer('ghosttown', '1728', '2081');
               break;
             case 7:
-              QuestEmployerWindow.startWalk({
-                key: 'indianvillage',
-                x: '28002',
-                y: '16658'
-              });
-              break;
-            case 8:
               Map.center(28002, 16658);
               QuestEmployerWindow.showEmployer('indianvillage', '28002', '16658');
+              break;
+            case 8:
+              west.window.shop.open().showCategory('trader');
               break;
             case 9:
               MarketWindow.open(Character.homeTown.town_id);
@@ -4525,7 +4498,7 @@
               break;
             }
           });
-          var pos = $('div#TWX-menu').offset();
+          var pos = $('div#TWX_menu').offset();
           pos = {
             clientX: pos.left,
             clientY: pos.top
@@ -4535,22 +4508,32 @@
         window: {},
         checkbox: {},
         open: function (tab, data, id) {
-          TWX.GUI.window = wman.open('TWX', TWX.name, 'noreload').setMiniTitle(TWX.name).setMaxSize(1268, 838).addTab(TWXlang.features, 'TWXFeatures', TWX.GUI.openFeatures).addTab('SetBonus', 'SetBonus', TWX.GUI.openSetsWindow).addTab('BonusSearch', 'BonusSearch', TWX.GUI.openSetsWindow).addTab('WebCenter', 'TWXFrame', TWX.GUI.openFrame).addTab('NPC locator', 'TWXLocator', TWX.GUI.openNpcLocator);
+          TWX.GUI.window = wman.open('TWX', TWX.name, 'noreload').setMiniTitle(TWX.name).setMaxSize(1268, 838).addTab(TWXlang.features, 'TWXFeatures', TWX.GUI.openFeatures).addTab('Bonus/Sets', 'TWXBonusWindow', TWX.GUI.openBonusWindow).addTab('WebCenter', 'TWXWebCenter', TWX.GUI.openWebCenter).addTab('NPC locator', 'TWXLocator', TWX.GUI.openNpcLocator);
           if (EvName)
             TWX.GUI.window.addTab('Event', 'TWXSender', TWX.GUI.openSender);
           TWX.GUI[tab](data, id);
           $('.tw2gui_window_inset', TWX.GUI.window.getMainDiv()).css('background-image', 'url(' + TWX.Images('LT_backGr', 1) + ')');
         },
-        getDefault: function (tab) {
-          TWX.GUI.window.setResizeable(false).setSize(748, 471).clearContentPane().removeClass('nocloseall').setTitle('The West - Essentials');
-          TWX.GUI.window.dontCloseAll = false;
-          $(TWX.GUI.window.getContentPane()).css('margin-top', '0px');
-          var wnd = TWX.GUI.window.getMainDiv();
-          $('.textart_title', wnd).css('display', '');
-          TWX.GUI.window.activateTab(tab);
+        getDefault: function (tab, bT, size, nClose, res) {
+          bT = bT ? ['none', '-30px'] : ['', '0px'];
+          res = res ? true : false;
+          var TGw = TWX.GUI.window,
+          wnd = TGw.getMainDiv();
+          TGw.setResizeable(res).clearContentPane().activateTab(tab);
+          if (!Array.isArray(size) && !['TWXWebCenter'].includes(tab))
+            size = [748, 471];
+          if (Array.isArray(size))
+            TGw.setSize(size[0], size[1]);
+          if (nClose)
+            TGw.addClass('nocloseall').dontCloseAll = true;
+          else
+            TGw.removeClass('nocloseall').dontCloseAll = false;
+          $('.textart_title', wnd).css('display', bT[0]);
+          $(TGw.getContentPane()).css('margin-top', bT[1]);
         },
         openFeatures: function () {
           TWX.GUI.getDefault('TWXFeatures');
+          TWX.GUI.window.setTitle(TWX.name + ' v' + TWX.version);
           var featScroll = new west.gui.Scrollpane().appendContent('<h2>' + TWXlang.chooseLang + '</h2>'),
           langBox = new west.gui.Combobox().appendTo(featScroll.getContentPane());
           for (var j in TWX.langs)
@@ -4616,7 +4599,7 @@
           var textGap = {
             ColorTchat: ['Color tchat:'],
             QuickItemsSearch: ['Quick items search:'],
-            MarketBestBids: ['Market best bids:', '<img src="images/admin/admin_help.png" title="<span style=\'color:green;\'>Green</span> –', '<br>Black -', '<br><span style=\'color:blue;\'>Blue</span> –', '<br><span style=\'color:red;\'>Red</span> –'],
+            MarketBestBids: ['Market best bids:', '<img src="images/admin/admin_help.png" title="<span style=\'color:green;\'>', '</span>–', '<br>', '–', '<br><span style=\'color:blue;\'>', '</span>–', '<br><span style=\'color:red;\'>', '</span>–'],
             BattleStars: ['Battle Stars:'],
             KickoMatic: ['Kick-o-Matic:'],
           };
@@ -4645,7 +4628,7 @@
         },
         makeList: function () {
           if (!TWX.list)
-            $.getScript(TWX.url2 + 'newSets.js', function () {
+            $.getScript(TWX.website + 'files/newSets.js', function () {
               TWX.list = west.storage.ItemSetManager._setArray.slice(0);
               TWX.setListAll = {};
               TWX.setListOwn = {};
@@ -4849,29 +4832,34 @@
             item = ItemManager.get(itemId);
             nPopup = 'data-itemid="' + itemId + '" title="' + (new ItemPopup(item, options).getXHTML().escapeHTML()) + '"';
             img = '<img src="' + item.image + '" width="25">';
-          } else if (TWX.GUI.window.currentActiveTabId == 'SetBonus')
+          } else if ($('.TWXabcSets').length)
             nPopup += 'title="' + TWXlang.showItems + '" style="color:#FFE7B1;"';
           else
-            click = 'onclick="TWX.GUI.open(\'openSetsWindow\',\'' + id + '\',\'SetBonus\')"';
+            click = 'onclick="TWX.GUI.open(\'openBonusWindow\',\'' + id + '\',\'SetBonus\')"';
           if (nolink)
             click = '';
           return '<b><span class="linklike" ' + nPopup + click + '>' + nNew + img + nLvl + obj.name + '</span></b>';
         },
         newState: '',
         html: {},
-        openSetsWindow: function (st, tab) {
-          TWX.GUI.getDefault(tab);
+        openBonusWindow: function (st, tab) {
+          var size = 0,
+          btns = ['SetBonus', 'BonusSearch'],
+          newSet = false;
+          tab = TWX.currTab = btns.includes(tab) && tab || TWX.currTab || btns[0];
+          if (tab == btns[1])
+            size = [1060, 471];
+          TWX.GUI.getDefault('TWXBonusWindow', 0, size);
           TWX.GUI.window.setTitle(tab);
-          var newSet = false;
           if (typeof st === 'string') {
             newSet = true;
             TWX['curr' + tab] = st;
           }
-          var scrollpane = new west.gui.Scrollpane('TWXSetsWindow');
+          var scrollpane = new west.gui.Scrollpane('TWXBonusScroll');
           $(scrollpane.getMainDiv()).css({
-            'margin-left': '120px',
+            'margin-left': '105px',
             'margin-top': '10px',
-            'width': '578px'
+            'width': '593px'
           });
           var lvlUp = function (level, value) {
             var ret = !level ? 0 : value < 1 ? Math.round(Math.max(1, value * 1000 * level)) / 10000 : Math.round(Math.max(1, value * 0.1 * level));
@@ -4889,8 +4877,8 @@
               var si = sets[i];
               for (var k in si.bonus)
                 for (var ID of si.bonus[k]) {
-                  var ib = ID.bonus || ID;
-                  var NAM = (ib.name || ib.type) + (ib.job || ib.isSector || '');
+                  var ib = ID.bonus || ID,
+                  NAM = (ib.name || ib.type) + (ib.job || ib.isSector || '');
                   if (id[NAM]) {
                     if (!types[i]) {
                       types[i] = {
@@ -4909,10 +4897,10 @@
                     if (!types[i].value[NAM])
                       types[i].value[NAM] = 0;
                     types[i].value[NAM] += ib.value;
-                    var NUM = types[i].value[NAM] * (TWX.SPEC.includes(NAM) && types[i].slots != 'buff' ? 100 : 1);
-                    var VAL = TWX.lvlToggle && ID.key ? Math.ceil(NUM * TWX.lvlToggle) : NUM;
-                    var lvl = ib.leveled ? 0 : si.item_level;
-                    var LVL = lvlUp(lvl, VAL) * id[NAM];
+                    var NUM = types[i].value[NAM] * (TWX.SPEC.includes(NAM) && types[i].slots != 'buff' ? 100 : 1),
+                    VAL = TWX.lvlToggle && ID.key ? Math.ceil(NUM * TWX.lvlToggle) : NUM,
+                    lvl = ib.leveled ? 0 : si.item_level,
+                    LVL = lvlUp(lvl, VAL) * id[NAM];
                     if (!types[i].values[k])
                       types[i].values[k] = $.extend({
                           sum: 0
@@ -4974,7 +4962,7 @@
                 spCont += TWX.GUI.getSetOrItem(o, TWX['itemList' + TWX.currState][o]) + '<br>';
               scrollpane.appendContent(spCont);
               setTimeout(function () {
-                var cont = $('div.TWXSetsWindow div.tw2gui_scrollpane_clipper_contentpane > span');
+                var cont = $('div.TWXBonusScroll div.tw2gui_scrollpane_clipper_contentpane > span');
                 cont.parent().height(cont.height() + 10);
               }, 100);
             },
@@ -5014,16 +5002,15 @@
                   buff: '',
                 };
                 for (var type of types2) {
-                  var n = types[type],
-                  nsi = n.slots == 'item';
-                  if (nsi && ic++ > 200)
+                  var n = types[type];
+                  if (n.slots == 'item' && ic++ > 200)
                     continue;
                   var setval = 0;
                   TWX.GUI.html[n.slots] += '<br>' + TWX.GUI.getSetOrItem(type, n) + '<br>';
                   for (var o in n.values) {
                     if (o == 'sum')
                       continue;
-                    var pre = (nsi ? '' : o + ' ' + TWXlang.parts + ':');
+                    var pre = (['item', 'buff'].includes(n.slots) ? '' : o + ' ' + TWXlang.parts + ':');
                     TWX.GUI.html[n.slots] += pre + ' +' + n.values[o].sum + n.desc + '<br>';
                     setval = n.values[o].sum;
                   }
@@ -5041,10 +5028,10 @@
                 $('.TWXBonusS.' + hs).append(TWX.GUI.html[hs]);
               setTimeout(function () {
                 var maxHeight = 0;
-                for (var h of $('div.TWXSetsWindow span.TWXBonusS'))
+                for (var h of $('div.TWXBonusScroll span.TWXBonusS'))
                   if (h.clientHeight > maxHeight)
                     maxHeight = h.clientHeight;
-                $('div.TWXSetsWindow div.tw2gui_scrollpane_clipper_contentpane').height(maxHeight + 10);
+                $('div.TWXBonusScroll div.tw2gui_scrollpane_clipper_contentpane').height(maxHeight + 10);
               }, 200);
             },
           },
@@ -5150,7 +5137,17 @@
             $('div.chooseBonus .tw2gui_plusminus').width('auto');
             $('div.chooseBonus').css('margin-left', '2px');
           };
-          setbutton = $('<span title="' + TWXlang.choose + '" style="background-image:url(images/items/head/' + img[tab] + '.png); cursor:pointer;  position:absolute; height:73px; width:73px; margin:4px;">');
+          var btn = tab == btns[0] ? 1 : 0,
+          switchTab = new west.gui.Button('⮎ ' + btns[btn], function (e) {
+              if (tab != e.data)
+                TWX.GUI.openBonusWindow(0, e.data);
+            }, '', btns[btn]);
+          switchTab = switchTab.getMainDiv();
+          $(switchTab).css({
+            'margin-top': '-32px',
+            'position': 'absolute',
+          });
+          setbutton = $('<div title="' + TWXlang.choose + '" style="background-image:url(images/items/head/' + img[tab] + '.png);cursor:pointer;height:73px;width:73px;margin:9px;">');
           setbutton.click(function () {
             if (tab == 'SetBonus') {
               var pos = $(setbutton).offset();
@@ -5161,54 +5158,43 @@
           });
           var content = $('<div>');
           content.css({
-            'margin-top': '90px',
-            'width': '110px',
+            'width': '95px',
             'position': 'absolute',
           });
-          $(TWX.GUI.window.getContentPane()).append(setbutton, content, scrollpane.getMainDiv());
+          $(TWX.GUI.window.getContentPane()).append(switchTab, content, scrollpane.getMainDiv());
           var maxLvl = 150,
-          setsSort = tab == 'SetBonus' ? new west.gui.Checkbox('ABC', null, function (state) {
+          setsSort = tab == 'SetBonus' ? new west.gui.Checkbox('ABC', 'TWXabcSets', function (state) {
               TWX.setAbc = state;
               loadSelbox();
-            }).setSelected(TWX.setAbc, true).getMainDiv() : '',
-          lvlBox = new west.gui.Combobox().setWidth(77).addItem(0, '0').addItem(charLvl, '' + charLvl),
-          onlyOwn = new west.gui.Checkbox(TWXlang.ownSets, null, function (state) {
-              TWX.onlyOwnSets = state;
-              loadSelbox();
-              loadResult();
-            }).setSelected(TWX.onlyOwnSets);
+            }).setSelected(TWX.setAbc, 1).getMainDiv() : '',
+          lvlBox = new west.gui.Combobox().setWidth(60).addItem(0, '0').addItem(charLvl, '' + charLvl);
           if (charLvl != maxLvl)
             lvlBox.addItem(maxLvl, '' + maxLvl);
           lvlBox.select(TWX.lvlToggle).addListener(function (lvl) {
             TWX.lvlToggle = lvl;
             loadResult();
           });
-          content.append(setsSort, '<br><br><b>' + TWXlang.level + ':</b>', lvlBox.getMainDiv(), onlyOwn.getMainDiv());
-          $('div.tw2gui_window.TWX.active_tab_id_BonusSearch').width(1060);
-          $('div.tw2gui_window.TWX.active_tab_id_BonusSearch div.tw2gui_scrollpane.TWXSetsWindow').width(900);
+          content.append(setbutton, setsSort, '<br><br><b>' + TWXlang.level + ':</b>', lvlBox.getMainDiv());
+          new west.gui.Checkbox(TWXlang.ownSets, null, function (state) {
+            TWX.onlyOwnSets = state;
+            loadSelbox();
+            loadResult();
+          }).setSelected(TWX.onlyOwnSets).appendTo(content);
+          if (tab == 'BonusSearch')
+            $('div.tw2gui_window.TWX.active_tab_id_TWXBonusWindow div.tw2gui_scrollpane.TWXBonusScroll').width(915);
         },
-        openFrame: function (iframe, size) {
-          TWX.GUI.window.setResizeable(true).addClass('nocloseall').clearContentPane().activateTab('TWXFrame');
-          TWX.GUI.window.dontCloseAll = true;
-          if (Array.isArray(size))
-            TWX.GUI.window.setSize(size[0], size[1]);
-          var wnd = TWX.GUI.window.getMainDiv();
-          //$('.tw2gui_window_inset', wnd).css('background-image', 'url(' + TWX.Images('LT_backGr', 1) + ')');
-          $('.textart_title', wnd).css('display', 'none');
-          var contPan = $(TWX.GUI.window.getContentPane());
-          contPan.css('margin-top', '-30px');
-          new west.gui.Button('QuakeNet Webchat').appendTo(contPan).click(function () {
-            var iframe = 'https://webchat.quakenet.org';
-            TWX.GUI.openFrame(iframe);
-          });
-          new west.gui.Button('Wiki The-West').appendTo(contPan).click(function () {
-            var iframe = Game.helpURL.replace('http:', 'https:');
-            TWX.GUI.openFrame(iframe);
-          });
-          new west.gui.Button('TW-DB.info').appendTo(contPan).click(function () {
-            var iframe = 'https://tw-db.info';
-            TWX.GUI.openFrame(iframe);
-          });
+        openWebCenter: function (iframe, size) {
+          TWX.GUI.getDefault('TWXWebCenter', 1, size, 1, 1);
+          var contPan = $(TWX.GUI.window.getContentPane()),
+          buttons = {
+            'QuakeNet Webchat': 'https://webchat.quakenet.org',
+            'Wiki The-West': Game.helpURL.replace('http:', 'https:'),
+            'TW-DB.info': 'https://tw-db.info'
+          };
+          for (var b in buttons)
+            new west.gui.Button(b, function (e) {
+              TWX.GUI.openWebCenter(e.data);
+            }, '', buttons[b]).appendTo(contPan);
           if (typeof iframe === 'string')
             contPan.append($('<iframe src="' + iframe + '" style="width:100%; height:94%; border:0; margin-bottom:1px; ">'));
         },
@@ -5752,11 +5738,13 @@
                     if (req.length == solvCnt)
                       $('div.quest_button_area_' + e.id + '').empty().append(new west.gui.Button(TWXlang.accNfin, function () {
                           QuestWindow.acceptQuest(e.id);
-                          var siVal = setInterval(function () {
+                          var stop = 0,
+                          siVal = setInterval(function () {
                               if (QuestLog.quests[e.id]) {
                                 clearInterval(siVal);
                                 QuestWindow.finishQuest(e.id);
-                              }
+                              } else if (++stop == 20)
+                                clearInterval(siVal);
                             }, 200);
                         }).getMainDiv());
                   }
@@ -5767,7 +5755,7 @@
       };
       TWX.QuestWiki = {
         init: function () {
-          $.getScript(TWX.url2 + 'repGroups.js', function () {
+          $.getScript(TWX.website + 'files/repGroups.js', function () {
             QuestLog.solvedGroups = {};
             Ajax.remoteCallMode('building_quest', 'get_solved_groups', {}, function (json) {
               for (var sg in json.solved)
@@ -6030,7 +6018,7 @@
             that.checkB = new west.gui.Checkbox().setLabel('<img src="images/window/dailyactivity/tasks_icon.png">').setTooltip(TWXlang.attackable).setCallback(function (state) {
                 that.onlyAttackable = state;
                 updateTable(players);
-              }).setSelected(that.onlyAttackable, true);
+              }).setSelected(that.onlyAttackable, 1);
             $(that.checkB.getMainDiv()).css({
               'position': 'absolute',
               'top': '35px',
@@ -7147,7 +7135,7 @@
             this.show = function () {
               if (window.jscolor)
                 return TWX.CT.Window.showOn();
-              $.getScript(TWX.url2 + 'jscolor.js', function () {
+              $.getScript(TWX.website + 'files/jscolor.js', function () {
                 TWX.CT.Window.showOn();
               });
             };
@@ -7294,13 +7282,13 @@
               this.obj = $('<div class="menulink" title="' + title + '">').css('background-image', 'url(' + image + ')');
               this.obj.hover(mouseIn, mouseOut);
               this.obj.click(clicked);
-              $('#TWX-menu').append(this.obj);
+              $('#TWX_menu').append(this.obj);
             },
             popup: function (button, e) {
               if (!TWX.QIS.popupMenu) {
                 TWX.QIS.popupMenu = new west.gui.Selectbox().setWidth(250);
                 TWX.QIS.popupMenu.addListener(TWX.QIS.findSet);
-                $.getScript(TWX.url2 + 'QIS_sets.js', function () {
+                $.getScript(TWX.website + 'files/QIS_sets.js', function () {
                   var qs = TWX.QIS.sets,
                   i = qs.length,
                   wSets = west.storage.ItemSetManager._setList;
@@ -8572,7 +8560,7 @@
             }).mouseleave(function () {
               $(this).css('background-position', '0px 0px');
             });
-          $('#TWX-menu').append(menu);
+          $('#TWX_menu').append(menu);
         },
         logout: function () {
           location.href = 'game.php?window=logout&action=logout&h=' + Player.h;
@@ -8635,7 +8623,7 @@
           var add;
           if (e.altKey) {
             add = isNaN(tdi) ? 'supravy&set=' : 'item&id=';
-            TWX.GUI.open('openFrame', 'https://tw-db.info/?strana=' + add + tdi, [1000, 630]);
+            TWX.GUI.open('openWebCenter', 'https://tw-db.info/?strana=' + add + tdi, [1000, 630]);
             TWX.GUI.makeList();
           } else {
             add = isNaN(tdi) ? 'sets/' : 'item/';
@@ -8703,8 +8691,11 @@
               if (res.error)
                 return new UserMessage(res.msg).show();
               var m = res.msg.effects[0],
-              widget;
+              widget = JSON.stringify(m);
               switch (m.type) {
+              case 'experience':
+                widget = new tw2widget.reward.ExpReward(Math.ceil(m.experience)).toString();
+                break;
               case 'lottery':
               case 'content':
                 var mi = m.items[0],
@@ -8736,7 +8727,7 @@
       (TWX.Updater = function () {
         if (!window.scriptRequest) {
           scriptRequest = true;
-          $.getScript(TWX.updateUrl);
+          $.getScript(TWX.url + 'sUp.js');
         }
         var intVal = setInterval(function () {
             if (window.scriptUp) {
