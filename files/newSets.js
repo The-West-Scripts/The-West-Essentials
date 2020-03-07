@@ -3,6 +3,8 @@ sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
 '2018_achievement_set',
+'community_event_2020_march',
+'community_event_2020_march_2',
 ],max: 347,
 unlock: [
 'valentine_2020_set_1',
