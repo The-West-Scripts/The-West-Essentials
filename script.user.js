@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.46.9
+// @version 1.47
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.46.9',
+      version: '1.47',
       langs: {
         en: {
           language: 'English',
@@ -59,6 +59,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -361,6 +362,7 @@
             MarketBestBids: '%0 Färbt die Auktionen dem Preis entsprechend %1 Grün %2 Gebot ist tiefer als der VK (Verkaufspreis) %3 Schwarz %4 Gebot entspricht dem VK %5 Blau %6 Gebot ist zwischen 100% and 200% des VK %7 Rot %8 Gebot ist höher als 200% des VK">',
             BattleStars: '%0 Zusätzliche Statistiken im Fortkampfbericht',
             KickoMatic: '%0 Vereinfacht die Musterung vor einem Fortkampf',
+            FbRankingChar: 'Zeige die Charakterklasse in der Fortkampf-Weltrangliste',
             Logout: 'Erstellt einen Logout-Button rechts in der Menüleiste',
             Statusbar: 'Entfernt die Fensterleiste mit den verschiedenen Tabs im unteren Teil',
             ChangeCity: 'Tausche Titel und Spielername in der Stadthalle',
@@ -663,6 +665,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Dodanie przycisku po prawej stronie, wyloguj się.',
             Statusbar: 'Usuwa pasek z oknami w dolnej części gry.',
             ChangeCity: 'Zamienia tytuł gracza na początku, w karcie graczy w ratuszu.',
@@ -965,6 +968,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Crea un botón de cierre de sesión a la derecha en la barra de menús',
             Statusbar: 'Oculta la barra inferior de las ventanas',
             ChangeCity: 'Cambiar título y nombre del jugador en el ayuntamiento',
@@ -1266,6 +1270,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Voeg een afmeldknop toe aan de rechterzijde van het scherm',
             Statusbar: 'Verwijder het dagelijkse taken icoon',
             ChangeCity: 'Verwissel de titel en de spelersnaam in het  stadhuis',
@@ -1568,6 +1573,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Kilépés gomb a jobb oldalra',
             Statusbar: 'Tálca eltüntetése',
             ChangeCity: 'Cím és játékosnév felcserélése a városházánál',
@@ -1870,6 +1876,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Προσθέστε ένα κουμπί αποσύνδεσης στη δεξιά πλευρά',
             Statusbar: 'Αφαιρέστε τη γραμμή εργασιών',
             ChangeCity: 'Βάλτε τον τίτλο πριν από το όνομα του παίκτη στην καρτέλα του Δημαρχείου',
@@ -2172,6 +2179,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Adicionar botão de sair no fim dos scripts',
             Statusbar: 'Remover a barra de tarefas',
             ChangeCity: 'Mude o título e nome do jogador na cidade.',
@@ -2474,6 +2482,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Aggiungi sul lato destro dello schermo un pulsante disconnetti',
             Statusbar: 'Nascondi la barra degli incarichi',
             ChangeCity: 'Nel municipio, inverti il titolo e il nome del giocatore',
@@ -2776,6 +2785,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -3078,6 +3088,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -3380,6 +3391,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -3682,6 +3694,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -3984,6 +3997,7 @@
             MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
             BattleStars: '%0 Additional stats in the fort battle report',
             KickoMatic: '%0 Helpful to rank players before a fort battle',
+            FbRankingChar: 'Show the character class in the fortbattle world ranking',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -4309,6 +4323,7 @@
           MarketBestBids: true,
           BattleStars: true,
           KickoMatic: false,
+          FbRankingChar: true,
           Statusbar: false,
           ChangeCity: false,
           Logout: false,
@@ -4535,7 +4550,8 @@
           TWX.GUI.getDefault('TWXFeatures');
           TWX.GUI.window.setTitle(TWX.name + ' v' + TWX.version);
           var featScroll = new west.gui.Scrollpane().appendContent('<h2>' + TWXlang.chooseLang + '</h2>'),
-          langBox = new west.gui.Combobox().appendTo(featScroll.getContentPane());
+          langBox = new west.gui.Combobox().appendTo(featScroll.getContentPane()),
+          closeTxt = west.player.PremiumPurchase.prototype._l10n.buttons.close;
           for (var j in TWX.langs)
             langBox.addItem(j, TWX.langs[j].language);
           langBox.select(TWX.lang);
@@ -4547,7 +4563,7 @@
               $(productDiv).css('opacity', TWX.cdTemp[x] || TWX.cooldown[x]).attr('onclick', 'TWX.cdTemp[' + x + ']=$(this).css("opacity")==1?0.5:1;$(this).css("opacity",TWX.cdTemp[' + x + ']);');
               cont.append(productDiv);
             }
-            new west.gui.Dialog(TWXlang.chooseItems, cont).addButton('ok').show();
+            new west.gui.Dialog(TWXlang.chooseItems, cont).addButton(closeTxt).show();
           });
           TWX.skipTemp = TWX.Data.skipOpen ? $.extend({}, TWX.Data.skipOpen) : $.extend({}, TWX.skipOpen);
           var openSkipList = function () {
@@ -4592,7 +4608,7 @@
                 iconP.disable();
               });
             cont2.append(itemPrew, textFP.getMainDiv(), iconP.getMainDiv(), iconA);
-            var skipList = new west.gui.Dialog(TWXlang.chooseItems, cont2).setBlockGame(false).setDraggable(true).addButton('ok').show();
+            var skipList = new west.gui.Dialog(TWXlang.chooseItems, cont2).setBlockGame(false).setDraggable(true).addButton(closeTxt).show();
           };
           $('<span title="' + TWXlang.skipHover + '" style="background-image: url(images/items/yield/productchest_1.png); cursor: pointer; position: absolute; height: 73px; width: 73px; right: 0px; top: 73px;">').appendTo(featScroll.getContentPane()).click(openSkipList);
           featScroll.appendContent('<br><br><h2>' + TWXlang.features + '</h2>');
@@ -8531,6 +8547,7 @@
                     break;
                   default:
                     room = new Chat.Resource.Room();
+                    break;
                   }
                 }
                 room.init();
@@ -8552,6 +8569,55 @@
           setInterval(TWX.KoM.dataInterval, 10000);
           TWX.KoM.thatWouldntHappendIfZetWasStillWorkingOnTheWest();
         },
+      };
+      TWX.FbRankingChar = {
+        init: function () {
+          if (!TWX.Data.playerChars)
+            TWX.Data.playerChars = {};
+          var loading,
+          cell,
+          data,
+          cellH,
+          pId,
+          charClass = [null, 'greenhorn', 'duelist', 'adventurer', 'worker', 'soldier'],
+          addCharClass = function () {
+            var charC = charClass[TWX.Data.playerChars[pId]];
+            $(cellH).prepend('<img src="images/class_choose/class_' + charC + '.png" title="' + Game.InfoHandler.getLocalString4Charclass(charC) + '"> ');
+            if (++cell < data.length)
+              nextCell();
+            else
+              loading = 0;
+          },
+          getCharClass = function () {
+            Ajax.remoteCallMode('ranking', 'get_data', {
+              tab: 'experience',
+              entries_per_page: 9999
+            }, function (json) {
+              for (var jr of json.ranking)
+                TWX.Data.playerChars[jr.player_id] = charClass.indexOf(jr.class);
+              localStorage.setItem('TWLT', JSON.stringify(TWX.Data));
+              addCharClass();
+            });
+          },
+          nextCell = function () {
+            cellH = RankingWindow.FortBattles.Table.getCell(cell, 'forts_playername')[0];
+            pId = cellH.innerHTML.match(/open\((\d+)/)[1];
+            if (!TWX.Data.playerChars[pId])
+              getCharClass();
+            else
+              addCharClass();
+          };
+          RankingWindow.FortBattles.updateTable_twx = RankingWindow.FortBattles.updateTable_twx || RankingWindow.FortBattles.updateTable;
+          RankingWindow.FortBattles.updateTable = function (be_data) {
+            RankingWindow.FortBattles.updateTable_twx.call(this, be_data);
+            if (!loading) {
+              loading = 1;
+              data = be_data.ranking;
+              cell = 0;
+              nextCell();
+            }
+          };
+        }
       };
       TWX.Logout = {
         init: function () {
@@ -8690,35 +8756,40 @@
             }, function (res) {
               if (res.error)
                 return new UserMessage(res.msg).show();
-              var m = res.msg.effects[0],
-              widget = JSON.stringify(m);
-              switch (m.type) {
-              case 'experience':
-                widget = new tw2widget.reward.ExpReward(Math.ceil(m.experience)).toString();
-                break;
-              case 'lottery':
-              case 'content':
-                var mi = m.items[0],
-                cont = {};
-                cont[mi.item_id] = mi.count;
-                widget = new tw2widget.Item(ItemManager.get(mi.item_id)).setCount(mi.count).getMainDiv();
-                $.get('https://tw-calc.net/service/chest-export', {
-                  chest: itemId,
-                  count: 1,
-                  content: cont,
-                  version: Game.version
-                }, function () {}, 'jsonp');
-                if (ItemUse.twdb)
-                  ItemUse.twdb(itemId, res);
-                break;
-              case 'ses':
-                widget = ' <img src="images/icons/' + m.event + '.png" title="' + m.name.escapeHTML() + '"> ' + m.amount;
-                break;
+              var widget = $('<div>');
+              for (var m of res.msg.effects) {
+                switch (m.type) {
+                case 'experience':
+                  widget.append(new tw2widget.reward.ExpReward(Math.ceil(m.experience)).toString());
+                  break;
+                case 'lottery':
+                case 'content':
+                  var cont = {};
+                  m.items.each(function (mi) {
+                    cont[mi.item_id] = mi.count;
+                    widget.append(new tw2widget.Item(ItemManager.get(mi.item_id)).setCount(mi.count).getMainDiv());
+                  });
+                  $.get('https://tw-calc.net/service/chest-export', {
+                    chest: itemId,
+                    count: 1,
+                    content: cont,
+                    version: Game.version
+                  }, function () {}, 'jsonp');
+                  if (ItemUse.twdb)
+                    ItemUse.twdb(itemId, res);
+                  break;
+                case 'ses':
+                  widget.append(' <img src="images/icons/' + m.event + '.png" title="' + m.name.escapeHTML() + '"> ' + m.amount);
+                  break;
+                default:
+                  widget.append(JSON.stringify(m));
+                  break;
+                }
+                var mess = $('<div>' + TWXlang.skipDone + ':<br></div>').append(widget);
+                new UserMessage(mess, 'success').show();
+                Bag.updateChanges(res.msg.changes);
+                EventHandler.signal('item_used', [itemId]);
               }
-              var mess = $('<div>' + TWXlang.skipDone + ':<br></div>').append(widget);
-              new UserMessage(mess, 'success').show();
-              Bag.updateChanges(res.msg.changes);
-              EventHandler.signal('item_used', [itemId]);
             });
           else
             ItemUse.use_twx.apply(this, arguments);
