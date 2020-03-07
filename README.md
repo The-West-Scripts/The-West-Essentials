@@ -1,12 +1,11 @@
 # The-West-Essentials
 
 ## Install URL
-Coming soon
-<!-- [Click here to install](https://the-west-scripts.github.io/The-West-Essentials/script.user.js) -->
+[Click here to install](https://the-west-scripts.github.io/The-West-Essentials/script.user.js)
 
 ## Description & Screenshots
-This is an updated version of this script: [TWLeoTools](https://userscripts-mirror.org/scripts/show/169774) made by [Leotas](https://forum.the-west.de/index.php?members/25046).  
-But I added many new features and made improvements to the code.
+This is an updated and extremly enhanced version of [TWLeoTools](https://userscripts-mirror.org/scripts/show/169774) once made by [Leotas](https://forum.the-west.de/index.php?members/25046).  
+But I added many new features and other scripts and made improvements.
 
 **Including**  
 [TW Color tchat](https://greasyfork.org/scripts/7355)  
@@ -14,7 +13,7 @@ But I added many new features and made improvements to the code.
 [TW Minimap NPC locator](https://greasyfork.org/scripts/7233)  
 [TW Market best bids](https://greasyfork.org/scripts/7391)  
 [TW Battle Stars](https://greasyfork.org/scripts/16299)  
-[TW Kick-o-Matic](https://greasyfork.org/scripts/7486)
+[TW Kick-o-Matic](https://greasyfork.org/scripts/7486) (Disabled by default)
 
 **Supported languages:**  
 *English  
@@ -25,7 +24,14 @@ Dutch (Nederlands)
 Hungarian (Magyar)  
 Greek (ελληνικά)  
 Portuguese (português)  
-Italian (italiano)*  
+Italian (italiano)
+French (français) 
+Czech (čeština) 
+Slovak (slovenčina) 
+Russian (русский) 
+Turkish (Türkçe) 
+
+Many lines are still in English*  
 
 **Menu: useful shortcuts**  
 The ghost town, Indian village, market and town forum are linked on the right side.  
@@ -164,6 +170,10 @@ Use the script on your mobile browser to activate touch controls:
 - Middle touch on items: show pop up / Long touch on items: show on [TW-Calc](https://tw-calc.net)
 
 ![](https://imgur.com/53O2eze.png)
+
+**FbRankingChar** 
+See the character classes in the fortbattle world ranking.  
+![](https://imgur.com/0a9AwvO.png)
 
 **Logout button** (Disabled by default)  
 When clicking on the logout button you will be redirected to the main page of The West.  
