@@ -13,7 +13,7 @@ But I added many new features and other scripts and made improvements.
 [TW Minimap NPC locator](https://greasyfork.org/scripts/7233)  
 [TW Market best bids](https://greasyfork.org/scripts/7391)  
 [TW Battle Stars](https://greasyfork.org/scripts/16299)  
-[TW Kick-o-Matic](https://greasyfork.org/scripts/7486) (Disabled by default)
+[TW Kick-o-Matic](https://greasyfork.org/scripts/7486) *(Disabled by default)*
 
 **Supported languages:**  
 *English  
@@ -24,11 +24,11 @@ Dutch (Nederlands)
 Hungarian (Magyar)  
 Greek (ελληνικά)  
 Portuguese (português)  
-Italian (italiano)
-French (français) 
-Czech (čeština) 
-Slovak (slovenčina) 
-Russian (русский) 
+Italian (italiano)  
+French (français)  
+Czech (čeština)  
+Slovak (slovenčina)  
+Russian (русский)  
 Turkish (Türkçe)*
 
 Many lines are still in English 
