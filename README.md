@@ -29,9 +29,9 @@ French (français)
 Czech (čeština) 
 Slovak (slovenčina) 
 Russian (русский) 
-Turkish (Türkçe) 
+Turkish (Türkçe)*
 
-Many lines are still in English*  
+Many lines are still in English 
 
 **Menu: useful shortcuts**  
 The ghost town, Indian village, market and town forum are linked on the right side.  
