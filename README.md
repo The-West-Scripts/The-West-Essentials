@@ -175,6 +175,10 @@ Use the script on your mobile browser to activate touch controls:
 See the character classes in the fortbattle world ranking.  
 ![](https://imgur.com/0a9AwvO.png)
 
+**DuelXpCalc** 
+See the duel experience in player profiles.  
+![](https://imgur.com/5q7Lhb4.png)
+
 **Logout button** (Disabled by default)  
 When clicking on the logout button you will be redirected to the main page of The West.  
 ![](https://imgur.com/jbpaKHq.png)
