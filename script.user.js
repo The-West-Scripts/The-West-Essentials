@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.47
+// @version 1.47.1
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,13 +27,18 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.47',
+      version: '1.47.1',
       langs: {
         en: {
           language: 'English',
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Add a duel map to the duel window',
             MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
             MarketMessage: 'Get a message when there are items or money to pick up on actual market',
@@ -54,12 +59,8 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control on your mobile browser',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -143,6 +144,7 @@
           tooHigh: 'Too high duelling level of opponent',
           ownTown: 'Member of your town',
           attackable: 'Show only attackable players',
+          duelxp: 'Current duel experience',
           logout: 'Logout',
           accNfin: 'Accept & complete quest',
           onWiki: 'Show the quest on the wiki',
@@ -337,6 +339,11 @@
           ApiGui1: 'Das Script beinhaltet verschiedene Funktionen um den Alltag bei The West zu vereinfachen.<br>Weitere Informationen',
           ApiGui2: 'Skriptfenster öffnen',
           Feat: {
+            ColorTchat: '%0 Neue Funktionen für den Chat. Farbiger Text, Emojis 🐧🎉 usw.',
+            QuickItemsSearch: '%0 Suche nach Buff-Kategorien und Sets in deinem Inventar',
+            MarketBestBids: '%0 Färbt die Auktionen dem Preis entsprechend %1 Grün %2 Gebot ist tiefer als der VK (Verkaufspreis) %3 Schwarz %4 Gebot entspricht dem VK %5 Blau %6 Gebot ist zwischen 100% and 200% des VK %7 Rot %8 Gebot ist höher als 200% des VK">',
+            BattleStars: '%0 Zusätzliche Statistiken im Fortkampfbericht',
+            KickoMatic: '%0 Vereinfacht die Musterung vor einem Fortkampf',
             DuelMap: 'Füge im Duellfenster einen Tab hinzu, der eine Duellkarte zeigt',
             MarkDaily: 'Markiere Täglicher Loginbonus am Tag 5 besonders, um ihn nicht zu übersehen',
             MarketMessage: 'Wenn du an einem Markt stehst, wo etwas abgeholt werden kann, erscheint eine Meldung',
@@ -357,12 +364,8 @@
             MapDistance: 'Zeige die Entfernung in Meilen neben der Reisezeit',
             TraderSell: 'Ermöglicht dem Fahrenden Händler mehrere Gegenstände auf einmal zu verkaufen',
             TouchControl: 'Aktiviere Touchsteuerung im mobilen Browser',
-            ColorTchat: '%0 Neue Funktionen für den Chat. Farbiger Text, Emojis 🐧🎉 usw.',
-            QuickItemsSearch: '%0 Suche nach Buff-Kategorien und Sets in deinem Inventar',
-            MarketBestBids: '%0 Färbt die Auktionen dem Preis entsprechend %1 Grün %2 Gebot ist tiefer als der VK (Verkaufspreis) %3 Schwarz %4 Gebot entspricht dem VK %5 Blau %6 Gebot ist zwischen 100% and 200% des VK %7 Rot %8 Gebot ist höher als 200% des VK">',
-            BattleStars: '%0 Zusätzliche Statistiken im Fortkampfbericht',
-            KickoMatic: '%0 Vereinfacht die Musterung vor einem Fortkampf',
             FbRankingChar: 'Zeige die Charakterklasse in der Fortkampf-Weltrangliste',
+            DuelXpCalc: 'Zeige die Duellerfahrung in Spielerprofilen',
             Logout: 'Erstellt einen Logout-Button rechts in der Menüleiste',
             Statusbar: 'Entfernt die Fensterleiste mit den verschiedenen Tabs im unteren Teil',
             ChangeCity: 'Tausche Titel und Spielername in der Stadthalle',
@@ -446,6 +449,7 @@
           tooHigh: 'Zu hohe Duellstufe des Gegners',
           ownTown: 'Mitbürger deiner Stadt',
           attackable: 'Zeige nur duellierbare Spieler',
+          duelxp: 'Aktuelle Duellerfahrung',
           logout: 'Logout',
           accNfin: 'Quest annehmen & abschließen',
           onWiki: 'Zeige die Quest im Wiki',
@@ -640,6 +644,11 @@
           ApiGui1: 'Skrypt ten zawiera wiele funkcji, aby uprościć codzienne życie na Zachodzie.<br>Więcej informacji',
           ApiGui2: 'Otwórz w nowej karcie',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Dodaje dodatkową zakładkę pojedynków, w pojedynkach.',
             MarkDaily: 'Oznacza dodatkową ramką 5 dzień logowania.',
             MarketMessage: 'Jeżeli znajdujesz się w mieście gdzie coś jest do odebrania. Pojawia się komunikat.',
@@ -660,12 +669,8 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control for map and scrollbar on your mobile',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Dodanie przycisku po prawej stronie, wyloguj się.',
             Statusbar: 'Usuwa pasek z oknami w dolnej części gry.',
             ChangeCity: 'Zamienia tytuł gracza na początku, w karcie graczy w ratuszu.',
@@ -749,6 +754,7 @@
           tooHigh: 'Too high duelling level of opponent',
           ownTown: 'Member of your town',
           attackable: 'Show only attackable players',
+          duelxp: 'Current duel experience',
           logout: 'Logout',
           accNfin: 'Przyjmij & zakończ zadanie',
           onWiki: 'Show the quest on the wiki',
@@ -943,6 +949,11 @@
           ApiGui1: 'El script incluye varias funciones que simplifican la vida cotidiana en The West.<br>Más información',
           ApiGui2: 'Abrir ventana del script',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Completar la ventana de duelos con una pestaña que muestra el mapa de duelos',
             MarkDaily: 'Marcar el Bonus-Conexión-5 Días especialmente para que no te lo pierdas',
             MarketMessage: 'Si llegas a un mercado donde tienes algo que puede ser recogido, aparece un mensaj',
@@ -963,12 +974,8 @@
             MapDistance: 'Mostrar la cantidad de millas al lado del tiempo de viaje',
             TraderSell: 'Vender varios artículos a la vez al comerciante',
             TouchControl: 'Habilitar el control táctil para el mapa y la barra de desplazamiento en su dispositivo móvil',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Crea un botón de cierre de sesión a la derecha en la barra de menús',
             Statusbar: 'Oculta la barra inferior de las ventanas',
             ChangeCity: 'Cambiar título y nombre del jugador en el ayuntamiento',
@@ -1051,6 +1058,7 @@
           tooHigh: 'Nivel de duelo del oponente demasiado alto',
           ownTown: 'Miembro de tu ciudad',
           attackable: 'Mostrar solo jugadores atacables',
+          duelxp: 'Current duel experience',
           logout: 'Cerrar sesión',
           accNfin: 'Aceptar & concluir búsqueda',
           onWiki: 'Mostrar la búsqueda en la Wiki',
@@ -1245,6 +1253,11 @@
           ApiGui1: 'Dit script bevat veel mogelijkheden om het dagelijks leven in The West te vergemakkelijken.<br>Voor meer informatie',
           ApiGui2: 'Open script pagina',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Voeg een duelkaart toe aan de duel tab',
             MarkDaily: 'Markeer de dagelijkse inlogbonus op de 5e dag zodat je hem niet mist',
             MarketMessage: 'Krijg een bericht wanneer er voorwerpen of geld beschikbaar zijn om op te halen',
@@ -1265,12 +1278,8 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control for map and scrollbar on your mobile',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Voeg een afmeldknop toe aan de rechterzijde van het scherm',
             Statusbar: 'Verwijder het dagelijkse taken icoon',
             ChangeCity: 'Verwissel de titel en de spelersnaam in het  stadhuis',
@@ -1354,6 +1363,7 @@
           tooHigh: 'Too high duelling level of opponent',
           ownTown: 'Member of your town',
           attackable: 'Show only attackable players',
+          duelxp: 'Current duel experience',
           logout: 'Afmelden',
           accNfin: 'Opdracht aannemen & afsluiten',
           onWiki: 'Show the quest on the wiki',
@@ -1548,6 +1558,11 @@
           ApiGui1: 'Ez a szkript több olyan funkciót tartalmaz ami megkönnyíti a mindennapjaidat a vadnyugaton.<br>Több információ',
           ApiGui2: 'Szkript oldalának megnyitása',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Párbajtérkép a párbaj ablakban',
             MarkDaily: 'Az 5. napi belépés bónusz bekeretezése, hogy nehogy kihagyd',
             MarketMessage: 'Felugró ablak amikor tárgyak vagy pénz felvétele lehetséges az aktuális piacnál',
@@ -1568,12 +1583,8 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control for map and scrollbar on your mobile',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Kilépés gomb a jobb oldalra',
             Statusbar: 'Tálca eltüntetése',
             ChangeCity: 'Cím és játékosnév felcserélése a városházánál',
@@ -1657,6 +1668,7 @@
           tooHigh: 'Túl magas a párbajszintje az ellenfélnek',
           ownTown: 'Városod tagja',
           attackable: 'Csak a kihívható ellenfeleket mutassa',
+          duelxp: 'Current duel experience',
           logout: 'Kijelentkezés',
           accNfin: 'Kaland elfogadása & lezárása',
           onWiki: 'Kaland mutatása a wikin',
@@ -1851,6 +1863,11 @@
           ApiGui1: 'Αυτό το script περιέχει πολλά χαρακτηριστικά για να απλοποιήσετε την ζωή σας στο The West.<br>Περισσότερες πληροφορίες',
           ApiGui2: 'Ρυθμίσεις του script',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Προσθήκη καρτέλας Duelmap στην καρτέλα μονομαχιών',
             MarkDaily: 'Επισημάνετε το καθημερινό μπόνους σύνδεσης την 5η ημέρα για να μην το χάσετε',
             MarketMessage: 'Εμφάνιση μηνύματος όταν υπάρχουν αντικείμενα ή χρήματα στην αγορά της πόλης που μόλις ταξιδέψατε',
@@ -1871,12 +1888,8 @@
             MapDistance: 'Εμφάνιση της απόστασης του ταξιδιού σας σε Μίλια',
             TraderSell: 'Πώληση πολλαπλών αντικειμένων στον Έμπορο',
             TouchControl: 'Enable touch control for map and scrollbar on your mobile',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Προσθέστε ένα κουμπί αποσύνδεσης στη δεξιά πλευρά',
             Statusbar: 'Αφαιρέστε τη γραμμή εργασιών',
             ChangeCity: 'Βάλτε τον τίτλο πριν από το όνομα του παίκτη στην καρτέλα του Δημαρχείου',
@@ -1960,6 +1973,7 @@
           tooHigh: 'Υψηλό επίπεδο μονομαχίας του αντιπάλου',
           ownTown: 'Μέλος της πόλης σου',
           attackable: 'Εμφάνιση μόνο παίκτες που μπορείτε να μονομαχήσετε',
+          duelxp: 'Current duel experience',
           logout: 'Αποσύνδεση',
           accNfin: 'Αποδοχή & Ολοκλήρωση αποστολής',
           onWiki: 'Εμφάνισε την αποστολή στο Wiki',
@@ -2154,6 +2168,11 @@
           ApiGui1: 'Esse script foi feito para facilitar sua vida no Velho Oeste',
           ApiGui2: 'Abrir página do Script',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Adicionar mapa de duelos na janela duelos.',
             MarkDaily: 'Destacar bônus de login diário.',
             MarketMessage: 'Receber notificação de itens comprados ou vendidos no mercado atual.',
@@ -2174,12 +2193,8 @@
             MapDistance: ' Mostrar o número de milhas ao lado do tempo de viagem.',
             TraderSell: 'Vender vários itens de uma só vez ao comerciante.',
             TouchControl: 'Enable touch control for map and scrollbar on your mobile',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Adicionar botão de sair no fim dos scripts',
             Statusbar: 'Remover a barra de tarefas',
             ChangeCity: 'Mude o título e nome do jogador na cidade.',
@@ -2263,6 +2278,7 @@
           tooHigh: 'Nível de duelo muito alto',
           ownTown: 'Membro da sua Cidade',
           attackable: 'Mostrar apenas jogadores atacáveis',
+          duelxp: 'Current duel experience',
           logout: 'Sair',
           accNfin: 'Aceitar e completar quest.',
           onWiki: 'Abrir quest na janela wi-ki',
@@ -2457,6 +2473,11 @@
           ApiGui1: 'Questo script raccoglie molte funzionalità utili a semplificarti la vita in The West.<br>Ulteriori informazioni',
           ApiGui2: 'Apri la pagina dello script',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Aggiungi la scheda Mappa duelli nella finestra Duelli',
             MarkDaily: 'Evidenzia il bonus login del 5° giorno per non dimenticarlo',
             MarketMessage: 'Ricevi una notifica quando ci sono oggetti o soldi da ritirare al mercato della città dove ti trovi in quel momento',
@@ -2477,12 +2498,8 @@
             MapDistance: 'Mostra la distanza in miglia accanto al tempo di viaggio',
             TraderSell: 'Consenti di vendere oggetti in quantità multipla ai negozi\mercante ambulante',
             TouchControl: 'Abilità il controllo touch nel browser mobile',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Aggiungi sul lato destro dello schermo un pulsante disconnetti',
             Statusbar: 'Nascondi la barra degli incarichi',
             ChangeCity: 'Nel municipio, inverti il titolo e il nome del giocatore',
@@ -2566,6 +2583,7 @@
           tooHigh: 'Livello duello avversario troppo alto',
           ownTown: 'Membro della tua città',
           attackable: 'Mostra solo i giocatori duellabili',
+          duelxp: 'Current duel experience',
           logout: 'Disconneti',
           accNfin: 'Accetta e completa missione',
           onWiki: 'Mostra la missione nella Wiki',
@@ -2760,6 +2778,11 @@
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Add a duel map to the duel window',
             MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
             MarketMessage: 'Get a message when there are items or money to pick up on actual market',
@@ -2780,12 +2803,8 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control on your mobile browser',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -2869,6 +2888,7 @@
           tooHigh: 'Too high duelling level of opponent',
           ownTown: 'Member of your town',
           attackable: 'Show only attackable players',
+          duelxp: 'Current duel experience',
           logout: 'Logout',
           accNfin: 'Accept & complete quest',
           onWiki: 'Show the quest on the wiki',
@@ -3063,6 +3083,11 @@
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Add a duel map to the duel window',
             MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
             MarketMessage: 'Get a message when there are items or money to pick up on actual market',
@@ -3083,12 +3108,8 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control on your mobile browser',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -3172,6 +3193,7 @@
           tooHigh: 'Too high duelling level of opponent',
           ownTown: 'Member of your town',
           attackable: 'Show only attackable players',
+          duelxp: 'Current duel experience',
           logout: 'Logout',
           accNfin: 'Accept & complete quest',
           onWiki: 'Show the quest on the wiki',
@@ -3366,6 +3388,11 @@
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Add a duel map to the duel window',
             MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
             MarketMessage: 'Get a message when there are items or money to pick up on actual market',
@@ -3386,12 +3413,8 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control on your mobile browser',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -3475,6 +3498,7 @@
           tooHigh: 'Too high duelling level of opponent',
           ownTown: 'Member of your town',
           attackable: 'Show only attackable players',
+          duelxp: 'Current duel experience',
           logout: 'Logout',
           accNfin: 'Accept & complete quest',
           onWiki: 'Show the quest on the wiki',
@@ -3669,6 +3693,11 @@
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Add a duel map to the duel window',
             MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
             MarketMessage: 'Get a message when there are items or money to pick up on actual market',
@@ -3689,12 +3718,8 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control on your mobile browser',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -3778,6 +3803,7 @@
           tooHigh: 'Too high duelling level of opponent',
           ownTown: 'Member of your town',
           attackable: 'Show only attackable players',
+          duelxp: 'Current duel experience',
           logout: 'Logout',
           accNfin: 'Accept & complete quest',
           onWiki: 'Show the quest on the wiki',
@@ -3972,6 +3998,11 @@
           ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
           ApiGui2: 'Open script page',
           Feat: {
+            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
+            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
+            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
+            BattleStars: '%0 Additional stats in the fort battle report',
+            KickoMatic: '%0 Helpful to rank players before a fort battle',
             DuelMap: 'Add a duel map to the duel window',
             MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
             MarketMessage: 'Get a message when there are items or money to pick up on actual market',
@@ -3992,12 +4023,8 @@
             MapDistance: ' Show the number of miles next to the travel time',
             TraderSell: 'Sell multiple items at once to the trader',
             TouchControl: 'Enable touch control on your mobile browser',
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
             FbRankingChar: 'Show the character class in the fortbattle world ranking',
+            DuelXpCalc: 'Show the duel experience in player profiles',
             Logout: 'Add a logout button on the right side',
             Statusbar: 'Remove the taskbar',
             ChangeCity: 'Switch title and player name in the town hall',
@@ -4081,6 +4108,7 @@
           tooHigh: 'Too high duelling level of opponent',
           ownTown: 'Member of your town',
           attackable: 'Show only attackable players',
+          duelxp: 'Current duel experience',
           logout: 'Logout',
           accNfin: 'Accept & complete quest',
           onWiki: 'Show the quest on the wiki',
@@ -4298,6 +4326,11 @@
         Data: {},
         loaded: [],
         Features: {
+          ColorTchat: true,
+          QuickItemsSearch: true,
+          MarketBestBids: true,
+          BattleStars: true,
+          KickoMatic: false,
           DuelMap: true,
           MarkDaily: true,
           MarketMessage: true,
@@ -4318,12 +4351,8 @@
           MapDistance: true,
           TraderSell: true,
           TouchControl: true,
-          ColorTchat: true,
-          QuickItemsSearch: true,
-          MarketBestBids: true,
-          BattleStars: true,
-          KickoMatic: false,
           FbRankingChar: true,
+          DuelXpCalc: true,
           Statusbar: false,
           ChangeCity: false,
           Logout: false,
@@ -4446,7 +4475,7 @@
       var EvName = Object.keys(Game.sesData)[0],
       set1 = west.storage.ItemSetManager._setList,
       replUml = function (str) {
-        return str.toUpperCase().replace(/"/g, '').replace(/Á/g, 'A').replace(/É/g, 'E').replace(/Ő/g, 'O').replace(/Ú|Ü|Ű/g, 'U').replace(/Ś/g, 'S');
+        return str.toUpperCase().replace(/"/g, '').replace(/[À-Ä]/g, 'A').replace(/[È-Ë]/g, 'E').replace(/[Ì-Ï]/g, 'I').replace(/[Ò-Ö]/g, 'O').replace(/[Ù-Ü]/g, 'U').replace(/Ś/g, 'S');
       };
       if (EvName)
         var sendGift = Game.sesData[EvName].friendsbar;
@@ -5872,7 +5901,7 @@
               case 'name':
               case 'pStatus':
                 players.sort(function (a, b) {
-                  return a[sortBy].toUpperCase().replace(/^Ä/, 'A').replace(/^Ö/, 'O').replace(/^Ü/, 'U').replace(/^É/, 'E').replace(/\(.*?\)/, '') > b[sortBy].toUpperCase().replace(/^Ä/, 'A').replace(/^Ö/, 'O').replace(/^Ü/, 'U').replace(/^É/, 'E').replace(/\(.*?\)/, '') ? 1 : -1;
+                  return replUml(a[sortBy]).replace(/\(.*?\)/, '') > replUml(b[sortBy]).replace(/\(.*?\)/, '') ? 1 : -1;
                 });
                 break;
               case 'distance':
@@ -6717,7 +6746,7 @@
               $('#colorTxtStyle').append('div.btnColor{cursor: pointer;position: absolute;right: 0px; width: 25px;height: 25px;}\n');
               $('#colorTxtStyle').append('div.btnColorBG{background-image: url(data:image/png;base64,' + border + ');background-position: 0px 3px;background-repeat: no-repeat;}\n.btnColorBG:hover{background-position: -25px 3px;}\n');
               $('#colorTxtStyle').append('div.btnColorImg{width: 11px; height: 11px; margin: 8px 0px 0px 5px; position: absolute; border-radius: 5px; background-image: url(data:image/png;base64,' + color + ');}\n');
-              $('#colorTxtStyle').append('div.btnColorSmiley{border-top-right-radius: 10px;border-top-left-radius: 10px;border: 1px solid #646464;box-shadow: 0px 0px 1px 1px black;background-image: url(images/interface/wood_texture_dark.jpg);width: 425px;bottom: 18px;left: -400px;height: 208px;\tmargin: 0px 0px 6px 0px; position: absolute;}\n');
+              $('#colorTxtStyle').append('div.btnColorSmiley{border-top-right-radius: 10px;border-top-left-radius: 10px;border: 1px solid #646464;box-shadow: 0px 0px 1px 1px black;background-image: url(images/interface/wood_texture_dark.jpg);width: 425px;bottom: 18px;left: -400px;height: 208px;\t margin: 0px 0px 6px 0px; position: absolute;}\n');
               $('#colorTxtStyle').append('div.btnColorOneSmiley{display: inline-block; cursor: pointer; width: 17px; height: 13px; padding: 1px; text-align: center; vertical-align: middle;}\n');
               this.btncolor = $('<div class="btnColor btnColorBG">').append($('<div class="btnColorImg btnColorImgTag">').click(function () {
                     TWX.CT.Window.show();
@@ -7461,10 +7490,13 @@
             },
             modifStarsRow: function (val) {
               return function (row) {
-                $('.battle_tow', row).css('cursor', 'pointer').attr('title', TWX.BS.getFormule(val.type).help);
+                $('.stat_til', row).attr('title', TWX.BS.getFormule(val.type).help).css({
+                  'width': '90px',
+                  'text-align': 'left'
+                });
                 $('.battle_nam', row).attr('title', val.obj.townname + ' - ' + val.obj.weaponname + ' (' + val.obj.weaponmindmg + '-' + val.obj.weaponmaxdmg + ')');
                 $('.stat_dtl', row).attr('title', cellules.stat_dtl).css({
-                  'width': '62%',
+                  'width': '346px',
                   'text-align': 'left'
                 });
                 return row;
@@ -7573,7 +7605,7 @@
                 css = 'tw_red';
               }
               cellules = {};
-              cellules.battle_tow = '<span onclick="javascript:TWX.BS.getAll(\'' + type + '\')">' + calc.libelle + '</span>';
+              cellules.stat_til = '<span onclick="javascript:TWX.BS.getAll(\'' + type + '\')" style="cursor:pointer;">' + calc.libelle + '</span>';
               cellules.battle_nam = nom;
               cellules.stat_dtl = calc.getShortLigne(val);
               this.table.buildRow('battlestat ' + css, cellules, this.modifStarsRow(stat));
@@ -7610,29 +7642,23 @@
               var affButton = new west.gui.Button(TWXlang.BS.code, function () {
                   var cur = $('.window_inside').html();
                   if (cur.indexOf('[code]') >  - 1) {
-                    this.openWindow();
+                    TWX.BS.openWindow();
                   } else {
                     $('.window_inside').html(verif);
-                    this.current = cur;
                     affButton.setCaption(TWXlang.BS.goBack);
                   }
                 });
               $('<div class="window_footer"></div>').appendTo(statWindow.getContentPane()).append(affButton.getMainDiv());
-              //$('.window_footer').css('text-align:right;')
-              //statWindow.getContentPane().append(table_window.getMainDiv());
             },
             createStarsTable: function () {
               $('.info', CemeteryWindow.DOM).text(TWXlang.BS.starsTitle);
-              this.table = new west.gui.Table(false).setId('battle_stat');
-              this.table.createEmptyMessage('BattleStars').addColumn('battle_tow', {
-                sortBy: 'name'
-              }).addColumn('battle_nam', {
-                sortBy: 'name'
-              }).addColumn('stat_dtl', {
-                sortBy: 'starthp'
-              }).appendToThCell('head', 'battle_tow', TWXlang.BS.title, TWXlang.BS.title).appendToThCell('head', 'battle_nam', TWXlang.BS.name, TWXlang.BS.name).appendToThCell('head', 'stat_dtl', TWXlang.BS.details, TWXlang.BS.details);
+              this.table = new west.gui.Table(false).setId('battle_stat').createEmptyMessage('BattleStars').addColumn('stat_til').addColumn('battle_nam').addColumn('stat_dtl').appendToThCell('head', 'stat_til', TWXlang.BS.title, TWXlang.BS.title).appendToThCell('head', 'battle_nam', TWXlang.BS.name, TWXlang.BS.name).appendToThCell('head', 'stat_dtl', TWXlang.BS.details, TWXlang.BS.details);
+              this.table.getCell('head', 'stat_til').css({
+                'width': '90px',
+                'text-align': 'left'
+              });
               this.table.getCell('head', 'stat_dtl').css({
-                'width': '62%',
+                'width': '346px',
                 'text-align': 'left'
               });
               $('#route', CemeteryWindow.DOM).remove();
@@ -7826,20 +7852,12 @@
             },
             inject: function () {
               this.initFormule();
-              CemeteryWindow.showStatInit = function (battle_id, data) {
-                var newfunction = CemeteryWindow.showStatInit;
-                return function (battle_id, data) {
-                  try {
-                    newfunction.bind(this)(battle_id, data);
-                    $(this.window.getMainDiv()).children().find('.TWTStatButton').remove();
-                    $(this.window.getMainDiv()).find('div.tw2gui_window_content_pane').append('<span title="Battle Stars" onclick=\'TWX.BS.vasy()\'  class="TWTStatButton"><img ' + 'style="position:absolute;top:15px;left:672px;width:15px;height:15px;padding:0px;border:0px;margin:0px;cursor:pointer;"' +
-                      ' src="images/icons/achv_points.png"></span>');
-                  } catch (e) {
-                    console.log(e);
-                  }
-                };
-              }
-              ();
+              CemeteryWindow.showStatInitData_twx = CemeteryWindow.showStatInitData;
+              CemeteryWindow.showStatInitData = function () {
+                CemeteryWindow.showStatInitData_twx.apply(this, arguments);
+                $('#BSButton').remove();
+                $(this.window.getMainDiv()).find('div.tw2gui_window_content_pane').append('<span title="Battle Stars" onclick="TWX.BS.vasy()" id="BSButton"><img style="position:absolute;top:15px;right:11px;cursor:pointer;" src="images/icons/achv_points.png">');
+              };
             },
             vasy: function () {
               var route = $('#route', CemeteryWindow.DOM);
@@ -7970,16 +7988,9 @@
             $('#battle_stat', CemeteryWindow.DOM).attr('id', 'battle_statStar');
             $('#battle_statStar', CemeteryWindow.DOM).remove();
             $('#battle_stat', CemeteryWindow.DOM).text('details');
-            TWX.BS.tableClassement = new west.gui.Table(false).setId('battle_stat');
-            TWX.BS.tableClassement.createEmptyMessage('Battle Stars').addColumn('battle_num', {
-              sortBy: 'name'
-            }).addColumn('battle_nam', {
-              sortBy: 'name'
-            }).appendToThCell('head', 'battle_num', header[0], header[0]).appendToThCell('head', 'battle_nam', header[1], header[1]);
+            TWX.BS.tableClassement = new west.gui.Table(false).setId('battle_stat').createEmptyMessage('Battle Stars').addColumn('battle_num').addColumn('battle_nam').appendToThCell('head', 'battle_num', header[0], header[0]).appendToThCell('head', 'battle_nam', header[1], header[1]);
             $.each(this.header, function (ind, th) {
-              TWX.BS.tableClassement.addColumn('battle_cls' + ind, {
-                sortBy: th
-              }).appendToThCell('head', 'battle_cls' + ind, th, th);
+              TWX.BS.tableClassement.addColumn('battle_cls' + ind).appendToThCell('head', 'battle_cls' + ind, th, th);
               TWX.BS.tableClassement.getCell('head', 'battle_cls' + ind).css('width', wdth + '%');
             });
             $('div.cemetery-content', CemeteryWindow.DOM).append(TWX.BS.tableClassement.getMainDiv());
@@ -8014,18 +8025,16 @@
             }
             return taux; //.toFixed(2);
           };
-          TWX.addStyle('.window_Stats .window_inside { width:630px;height:380 position:absolute; left:5px; top:2px;-webkit-user-select: text !important; -khtml-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important;height:270px; }' +
+          TWX.addStyle('.window_Stats .window_inside { width:630px;height:380 position:absolute;left:5px;top:2px;-webkit-user-select:text!important;-khtml-user-select:text!important;-moz-user-select:text!important; -ms-user-select:text!important;user-select:text!important;height:270px; }' +
             '.window_Stats .window_footer { text-align:right;} ' +
             '.window_Stats .cell_stat { width:200px;font-weight:800;text-shadow:1px 0 0 white; } ' +
-            '.window_Stats .cell_att { width:120px; text-align:center;} ' +
-            '.window_Stats .cell_def { width:120px;text-align:center; } ' +
-            '.window_Stats .cell_dif { width:120px; text-align:center;} ' +
-            '.window_Stats .tbody .cell_stat { padding-left:6px; text-align:left;width:200px;font-weight:800;text-shadow:1px 0 0 white; } .window_Stats .tbody .row { left:0px; }' +
-            '.window_Stats .tbody .cell_att { text-align:center; color:#8A0000;width:120px;font-weight:800;text-shadow:1px 0 0 white; }' +
-            '.window_Stats .tbody .cell_def { text-align:center; color:#00008A;width:120px;font-weight:800;text-shadow:1px 0 0 white; }' +
+            '.window_Stats .cell_att, .window_Stats .cell_def, .window_Stats .cell_dif { width:120px;text-align:center; } ' +
+            '.window_Stats .tbody .cell_stat { padding-left:6px;text-align:left;width:200px;font-weight:800;text-shadow:1px 0 0 white; } .window_Stats .tbody .row { left:0px; }' +
+            '.window_Stats .tbody .cell_att { text-align:center;color:#8A0000;width:120px;font-weight:800;text-shadow:1px 0 0 white; }' +
+            '.window_Stats .tbody .cell_def { text-align:center;color:#00008A;width:120px;font-weight:800;text-shadow:1px 0 0 white; }' +
             '.window_Stats .tbody .cell_dif { text-align:center;width:120px;font-weight:800;text-shadow:1px 0 0 white; }' +
-            '.zone {-webkit-user-select: text !important; -khtml-user-select: text !important; -moz-user-select: text !important; -ms-user-select: text !important; user-select: text !important;height:270px; }');
-          TWX.BS.inject();
+            '.zone {-webkit-user-select:text!important;-khtml-user-select:text!important;-moz-user-select:text!important;-ms-user-select:text!important;user-select:text!important;height:270px; }');
+          setTimeout(TWX.BS.inject.bind(TWX.BS), 5e3);
         },
       };
       TWX.KickoMatic = {
@@ -8564,9 +8573,9 @@
           $.fn.outerHTML = function () {
             return $('<div>').append(this.eq(0).clone()).html();
           };
-          setInterval(TWX.KoM.interval, 1000);
+          setInterval(TWX.KoM.interval, 1e3);
           TWX.KoM.dataInterval();
-          setInterval(TWX.KoM.dataInterval, 10000);
+          setInterval(TWX.KoM.dataInterval, 1e4);
           TWX.KoM.thatWouldntHappendIfZetWasStillWorkingOnTheWest();
         },
       };
@@ -8616,6 +8625,28 @@
               cell = 0;
               nextCell();
             }
+          };
+        }
+      };
+      TWX.DuelXpCalc = {
+        init: function () {
+          PlayerProfileMain.setProfileInfo_twx = PlayerProfileMain.setProfileInfo_twx || PlayerProfileMain.setProfileInfo;
+          PlayerProfileMain.setProfileInfo = function () {
+            PlayerProfileMain.setProfileInfo_twx.apply(this, arguments);
+            var clvl = this.resp.level,
+            dlvl = this.resp.duelLevel,
+            target = $('.playerprofile-' + this.playerid + ' .profileinfo-duellevel .profileinfo-value'),
+            getXp = function (lvl) {
+              return Math.ceil(Math.pow((lvl) / 0.1, 1 / 0.6));
+            },
+            getLvl = function (xp, perc) {
+              return clvl + Math.floor(Math.pow(xp * (perc || 1), 0.6) * 0.1);
+            },
+            minXp = getXp(dlvl - clvl),
+            maxXp = dlvl == '450' ? '<b>∞</b>' : getXp(dlvl + 1 - clvl),
+            minLvl = getLvl(minXp, 0.9),
+            maxLvl = dlvl == '450' ? '450' : getLvl(maxXp, 0.9);
+            $(target).append(' <div class="tw2gui-iconset tw2gui-icon-question-priority-4" title="<span>' + TWXlang.duelxp + ': ' + minXp + ' - ' + maxXp + '<br><br>-10% ⇒ ' + TWXlang.duelLevel + ' ' + minLvl + (maxLvl > minLvl ? ' - ' + maxLvl : '') + '</span>" style="display:inline-block;vertical-align:top;cursor:pointer;"></div>');
           };
         }
       };
@@ -8879,7 +8910,7 @@
           }
         }
       };
-      $('.inputV2').after('<img src="https://westzz.innogamescdn.com/images/items/yield/pick.png" width="25" style="position:absolute;right:0px;cursor:pointer;" onclick="TWX.compInv();">');
+      $('.inputV2').after('<img src="https://westzz.innogamescdn.com/images/items/yield/pick.png" width="25" style="position:absolute;right:2px;cursor:pointer;border:2px solid #90601c;border-radius:5px;background:#e0ddd9;	box-shadow:0 0 4px inset;}" onclick="TWX.compInv();">');
     } else {
       window.onload = function () {
         let lg = TWX.langs,
