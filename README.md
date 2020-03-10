@@ -171,11 +171,11 @@ Use the script on your mobile browser to activate touch controls:
 
 ![](https://imgur.com/53O2eze.png)
 
-**FbRankingChar** 
+**FbRankingChar**  
 See the character classes in the fortbattle world ranking.  
 ![](https://imgur.com/0a9AwvO.png)
 
-**DuelXpCalc** 
+**DuelXpCalc**  
 See the duel experience in player profiles.  
 ![](https://imgur.com/5q7Lhb4.png)
 
