@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.47.1
+// @version 1.47.2
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.47.1',
+      version: '1.47.2',
       langs: {
         en: {
           language: 'English',
@@ -3080,172 +3080,172 @@
         },
         cs: {
           language: 'Czech (čeština)',
-          ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
-          ApiGui2: 'Open script page',
+          ApiGui1: 'Tento skript obsahuje mnoho funkcí pro zjednodušení vašeho každodenního života na The West. <br> Další informace',
+          ApiGui2: 'Otevřít stránku skriptu',
           Feat: {
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
-            DuelMap: 'Add a duel map to the duel window',
-            MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-            MarketMessage: 'Get a message when there are items or money to pick up on actual market',
-            AchievHide: 'Hide completed achievements in achievements window',
-            RecipeMarket: 'Improve the purchase of recipes on market',
-            MoveJobs: 'Move the queued jobs a bit to the left',
-            InstantQuest: 'Complete the quest instantly if all requirements are done',
-            QuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
-            CityTravel: 'Show the travel time to the towns in the blackboard',
-            BetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
-            ChatProfessions: 'Show the crafting profession of the players in the chat list',
-            QuestBookSearch: 'Search for solved quests in the quest book',
-            MarketRights: 'Show if market offers are public or only for alliance/town members',
-            EquipManagerPlus: 'Improve the equipment manager in the inventory',
-            ShortPopups: 'Make the item pop-ups shorter',
-            HideNotis: 'Add a button to hide the job notifications on the left side',
-            JobProducts: 'Show in the job pop-up how many products you already have in your inventory',
-            MapDistance: ' Show the number of miles next to the travel time',
-            TraderSell: 'Sell multiple items at once to the trader',
-            TouchControl: 'Enable touch control on your mobile browser',
-            FbRankingChar: 'Show the character class in the fortbattle world ranking',
-            DuelXpCalc: 'Show the duel experience in player profiles',
-            Logout: 'Add a logout button on the right side',
-            Statusbar: 'Remove the taskbar',
-            ChangeCity: 'Switch title and player name in the town hall',
-            BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
-            FortTracker: 'Turn off fort battle reminder',
-            FriendsPop: 'Hide "Friend online" pop-ups',
+            ColorTchat: '%0 Přidá do chatu nové funkce. Barevný text, Emotikony 🐧🎉 a další.',
+            QuickItemsSearch: '%0 Vyhledá doplňováky v inventáři',
+            MarketBestBids: '%0 Vybarví aukce na základě ceny %1 Zelená %2 Nabídka je nižší než kupní cena %3 Černá %4 Nabídka se rovná kupní ceně %5 Modrá %6 Nabídka je medzi 100% a 200% kupní ceny %7 Červená %8 Nabídka je vyšší než 200%">',
+            BattleStars: '%0 Ďalší statistiky v oznámení z bitvy o pevnost',
+            KickoMatic: '%0 Užitečné pro rekrut hráčů v bitvě o pevnost',
+            DuelMap: 'Přidá duelovou mapu do okna duelů',
+            MarkDaily: 'Zvýraznit denní bonus za přihlásení, v pátý den, abyste ho nevynechali',
+            MarketMessage: 'Zobrazit zprávu, když jsou věci nebo peníze, které lze vyzvednout na trhu ve měste, kde jse právě nácházíte',
+            AchievHide: 'Skrýt dokončené úspěchy v okně úspěchů',
+            RecipeMarket: 'Zlepšit nákup receptů na trhu',
+            MoveJobs: 'Přesunout úlohy (práce) ve frontě o kousek doleva',
+            InstantQuest: 'Pokud jsou splněny všechny požadavky, okamžitě dokončit úkol',
+            QuestWiki: 'Přidat odkaz do okna úkolů pro zobrazení úkolu wiki',
+            CityTravel: 'Na tabuli zobrazit čas cesty do měst',
+            BetterSheriff: 'Přidat do okna šerifa novou kartu pro zobrazení všech dostupních zatykačů',
+            ChatProfessions: 'Zobrazit řemeslo hráčů v seznamu chatu',
+            QuestBookSearch: 'Přidat vyhledávaní v knize úkolů',
+            MarketRights: 'Zobrazit zda jsou tržní nabídky veřejné nebo pouze pro členy aliance / města',
+            EquipManagerPlus: 'Vylepšit "Sklad pro vybavení" v inventáři',
+            ShortPopups: 'Kratší pop-upy předmětů',
+            HideNotis: 'Přidat tlačítko pro skrytí oznámení z prací na levé straně',
+            JobProducts: 'Zobrazit v pop-upe práce kolik produktů z dané práce vlastníte',
+            MapDistance: 'Zobrazit počet mil vedle času cesty',
+            TraderSell: 'Prodat obchodníkovi více položek najednou',
+            TouchControl: 'V mobilním prohlížeči povolit dotykové ovládání',
+            FbRankingChar: 'Zobrazit třídu postavy v žebříčku bitev o pevnost',
+            DuelXpCalc: 'Zobrazit duelové zkušenosti v profile hráče',
+            Logout: 'Přidat tlačítko pro odhlášení na pravé straně',
+            Statusbar: 'Odstranit taskbar',
+            ChangeCity: 'Přehodit titul a jméno hráče v okně radnice',
+            BlinkEvents: 'Zastavit blikání tlačítka cirkusu na levé straně',
+            FortTracker: 'Vypnout připomínáni bitvy o pevnost',
+            FriendsPop: 'Nezobrazovat "Přítel online" pop-up',
           },
-          settings1: 'Open settings',
-          settings2: 'Open settings and information window',
+          settings1: 'Otevřít nastavení',
+          settings2: 'Otevřít nastavení a okno s informacemi',
           ghosttown2: 'Město Duchů',
-          ghosttown3: 'Open ghost town and center it on map',
+          ghosttown3: 'Otevřít Město Duchů a zobrazit ho na mapě',
           indiantown2: 'Indiánská rezervace',
-          indiantown3: 'Open Indian village and center it on map',
+          indiantown3: 'Otevřít indiánskou rezervaci a zobrazit ji na mapě',
           openmarket: 'Otevřít trh',
           opentrader: 'Otevřít podomního obchodníka',
           forum: 'Otevřít fórum',
-          newsets: 'New sets are added to the script',
-          chooseItems: 'Choose the items',
-          remindHover: 'You get a notification when an item can be used again. Here you can choose these items.',
-          remindReady: 'Ready to collect',
-          skipHover: 'Skip the confirmation and result messages when you open some bags. Here you can choose these bags',
-          skipDone: 'You get',
+          newsets: 'Nově přidané sety',
+          chooseItems: 'Vyberte itemy',
+          remindHover: 'Obdržíte upozornění, když lze itemy znovu použít. Zde si můžete vybrat tyto itemy.',
+          remindReady: 'Připravené na použití',
+          skipHover: 'Při otevírání tašky přeskočit potvrzovací a výsledné zprávy. Zde si můžete vybrat tyto tašky.',
+          skipDone: 'Dostali jste',
           info: 'Info',
           contact: 'Kontakt',
-          chooseLang: 'Vyber jazyk',
-          features: 'Features',
-          name: 'Name',
+          chooseLang: 'Vyberte jazyk',
+          features: 'Funkce',
+          name: 'Jméno',
           save: 'Uložit',
           saveMessage: 'Úspěšně uloženo',
-          saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
-          setbonus2: 'Informations about the set bonuses',
-          bonussearch2: 'Find items by bonus',
-          frame2: 'Helpful web pages',
-          npclocator2: 'Find quest givers on the map',
-          choose: 'Click on the hat to get started',
-          items: 'items',
-          parts: 'parts',
-          showItems: 'Show the set items in your Bag',
-          noItems: 'No items in your inventory found. Click again with CTRL to show it on TW-Calc.',
-          ownSets: 'Only own sets',
-          switchWeapon: 'Switch between firearm and melee weapon',
-          selectBonus: 'Select bonuses',
+          saveMessage2: 'Nastavení uloženo. Některé změny vyžadují reload hry.',
+          setbonus2: 'Informace o bonusech',
+          bonussearch2: 'Vyhledat itemy podle bonusu',
+          frame2: 'Užitečné stránky',
+          npclocator2: 'Najít zadavate úkolů na mapě',
+          choose: 'Začněte kliknutím na klobouk',
+          items: 'předměty',
+          parts: 'části',
+          showItems: 'Zobrazit předměty ze setu v inventáři',
+          noItems: 'Ve vašem inventáři nebyly nalezeny žádné předměty. Klikněte znovu s CTRL pro zobrazení na TW-Calc.',
+          ownSets: 'Jenom vlastněné sety',
+          switchWeapon: 'Přepínání mezi střelnou zbraní a zbraní na blízko',
+          selectBonus: 'Vybrat bonusy',
           resetB: 'Reset',
-          body: 'Clothing',
-          right_arm: 'Weapons',
-          animal: 'Horse & Yield',
-          rest: 'Other',
-          buff: 'Buffs',
-          refresh: 'Refresh',
-          noFriends: 'No Friends',
-          reward: 'Reward',
-          allprofessions: 'All Professions',
-          market1: 'Items on market',
-          market2: 'There are items/money on this market. What do you want to pick up?',
-          all: 'All',
-          onlyBids: 'Only bids',
-          nothing: 'Nothing',
-          worldwide: 'Worldwide',
-          alliance: 'Alliance',
-          town: 'Town',
+          body: 'Oblečení',
+          right_arm: 'Zbraně',
+          animal: 'Kůň & Produkt',
+          rest: 'Ostatní',
+          buff: 'Doplňováky',
+          refresh: 'Obnovit',
+          noFriends: 'Žádní přátelé',
+          reward: 'Odměna',
+          allprofessions: 'Všechny řemeslá',
+          market1: 'Předměty na trhu',
+          market2: 'Na tomto trhu jsou předměty / peníze. Co chcete vyzvednout?',
+          all: 'Všechno',
+          onlyBids: 'Jenom nabídky',
+          nothing: 'Nic',
+          worldwide: 'Světové',
+          alliance: 'Aliance',
+          town: 'Město',
           level: 'Level',
-          duelLevel: 'Duelling level',
-          exp: 'Exp',
-          distance: 'Distance',
-          startduel: 'Start Duel',
-          centerMap: 'Center map',
-          popup: 'The opponent\'s skill bonus',
-          damage: 'Damage',
-          duelmap: 'Duel map',
-          duelradius: 'Duel radius',
-          minutes: 'minutes',
-          hour: '1 hour',
-          hours: 'hours',
-          searchOpp: 'Search for opponents',
-          amount: 'Dead',
-          not_dead_amount: 'Alive',
+          duelLevel: 'Duelový level',
+          exp: 'Xp',
+          distance: 'Vzálenost',
+          startduel: 'Začít Duel',
+          centerMap: 'Centrovat pozici',
+          popup: 'Bonusy soupeře',
+          damage: 'Poškození',
+          duelmap: 'Duelová mapa',
+          duelradius: 'Okruh duelu',
+          minutes: 'minuty',
+          hour: '1 hodina',
+          hours: 'hodiny',
+          searchOpp: 'Hledat soupeře',
+          amount: 'Mrtvý',
+          not_dead_amount: 'Živý',
           duellevel: 'Lvl',
           pStatus: 'Status',
-          sortBy: 'Sort by',
-          tooLow: 'Too low duelling level of opponent',
-          tooHigh: 'Too high duelling level of opponent',
-          ownTown: 'Member of your town',
-          attackable: 'Show only attackable players',
-          duelxp: 'Current duel experience',
-          logout: 'Logout',
-          accNfin: 'Accept & complete quest',
-          onWiki: 'Show the quest on the wiki',
-          longerName: 'Name must be longer than 2 characters',
-          loading: 'Loading...',
-          rename: 'Rename',
-          newName: 'Choose a new set name',
-          used: 'Used',
-          renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
-          sellItems: 'Sell items to the trader?',
-          removeWorkNotis: 'Hide all job notifications',
-          compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
-          loginAll1: 'Login all worlds',
-          loginAll2: 'Load all your active worlds with one click',
-          custom1: 'Custom',
-          custom2: 'Your custom login list',
-          edit: 'Edit',
+          sortBy: 'Seřadit podle',
+          tooLow: 'Příliš nízká duelová úroveň soupeře',
+          tooHigh: 'Příliš vysoká duelová úroveň soupeře',
+          ownTown: 'Člen tvého města',
+          attackable: 'Pouze dostupní soupeři',
+          duelxp: 'Aktuální duelové zkušenosti',
+          logout: 'Odhlásit',
+          accNfin: 'Přijmout a dokončit úkol',
+          onWiki: 'Zobrazit úkol na wiki',
+          longerName: 'Název musí být delší než 2 znaky',
+          loading: 'Načítám...',
+          rename: 'Přejmenovat',
+          newName: 'Nové jméno setu',
+          used: 'Použito',
+          renameWarning: 'Když přejmenujete sadu, budete ji muset svléknout a obléci znovu. <br> Během procesu můžete ztratit body zdraví!',
+          sellItems: 'Prodat předměty obchodníkovi?',
+          removeWorkNotis: 'Skrýt všechna oznámení z prací',
+          compInv: 'Kliknutím na tlačítko "zrušit" zobrazíte pouze dražitelné předměty\n nebo\nZadejte jinou adresu URL inventáře, který chcete porovnat',
+          loginAll1: 'Přihlásit se do všech světů',
+          loginAll2: 'Načíst všechny aktivní světy jedním kliknutím',
+          custom1: 'Vlastní',
+          custom2: 'Váš vlastní přihlašovací seznam',
+          edit: 'Upravit',
           CT: {
-            ColorWindowTitle: 'Color tchat setting',
-            ColorWindowPreviewTxt: '*Click on the letters to change color',
-            ColorWindowOkBtn: 'Apply',
-            ColorWindowToDefaultBtn: 'Set to default',
-            ColorWindowThisTchatBtn: 'Set to this',
-            ColorWindowDefaultText: 'Select the tchat for reset to default: ',
-            ColorWindowBold: 'Bold',
-            ColorWindowCaps: 'Capitalized',
-            ColorWindowFlip: 'Flip',
+            ColorWindowTitle: 'Color tchat nastavení',
+            ColorWindowPreviewTxt: '*Kliknutím na písmena změníte barvu',
+            ColorWindowOkBtn: 'Aplikovat',
+            ColorWindowToDefaultBtn: 'Nastavit jako výchozí',
+            ColorWindowThisTchatBtn: 'Nastavit tohle',
+            ColorWindowDefaultText: 'Vyberte tchat pro reset na výchozí nastavení: ',
+            ColorWindowBold: 'Tučné',
+            ColorWindowCaps: 'Velká písmena',
+            ColorWindowFlip: 'Překlopené',
             ColorBtnTitle: '',
             ColorLoadListName: [
-              'No color',
-              'Enter a color code',
-              'red',
-              'brown',
-              'purple',
-              'blue',
-              'green',
-              'pink',
-              'magenta',
-              'violet gradient',
-              'degraded dark blue',
-              'green gradient',
-              'degraded red',
-              'blue gradient light',
-              'degraded pink',
-              'light green gradient',
-              'degraded pink',
-              'red gradient light'
+              'Žádná barva',
+              'Zadajte kód barvy',
+              'červená',
+              'hnědá',
+              'fialová',
+              'modrá',
+              'zelená',
+              'růžová',
+              'purpurová',
+              'fialový přechod',
+              'degradovaná tmavě modrá',
+              'zelený přechod',
+              'degradovaná červená',
+              'světle modrý přechod',
+              'degradovaná růžová',
+              'světle zelený přechod',
+              'degradovaná růžová',
+              'světle červený přechod'
             ],
-            ColorLoadTitle: 'Click to load another color code<br>The current color code is: ',
-            ColorSaveEmpty: '[empty]',
-            CustomReady: 'Valid Code',
-            CustomNotReady: 'Invalid Code',
+            ColorLoadTitle: 'Klepnutím načtete jiný barevný kód<br>Aktuální barevný kód je: ',
+            ColorSaveEmpty: '[prázdný]',
+            CustomReady: 'Platný kód',
+            CustomNotReady: 'Neplatný kód',
           },
           QIS: {
             adventure: '*Dobrodružství',
@@ -3270,17 +3270,17 @@
             nothingFound: 'Nebyly nalezeny žádné položky tohoto typu!',
           },
           NPC: {
-            loading: 'Loading current quest givers',
-            title: 'Quest giver locator',
-            chooseNpc: 'Select employer',
-            yourposition: 'Your position',
-            questgiver: 'Quest giver',
-            reload: 'Reload all quest givers',
+            loading: 'Načítání aktuálních zadávatelů',
+            title: 'Vyhledávač zadávatelů',
+            chooseNpc: 'vybrat zadavatele',
+            yourposition: 'Vaše pozice',
+            questgiver: 'Zadavatel ůkolů',
+            reload: 'Znovu načíst všechny zadavatele',
           },
           BS: {
             hero: 'HRDINA',
             heroT: 'Počet zásahů (obdržené & vyhnuté) na každých 1000 HP',
-            rate: 'Rate',
+            rate: 'Podíl',
             hitsTaken: 'Obdržené zásahy',
             dodgedShots: 'Vyhnuto zásahům',
             startHP: 'Zdraví na začátku',
@@ -3289,7 +3289,7 @@
             endHP: 'Zdraví na konci',
             sniper: 'SNIPER',
             sniperT: 'Počet úspěšných zásahů (v procentách) v porovnání ke všem výstřelům',
-            rateP: 'Rate(%)',
+            rateP: 'Podíl(%)',
             hitCount: 'Úspěšné zásahy',
             missedShots: 'Neúspěšné zásahy',
             matrix: 'MATRIX',
@@ -3305,7 +3305,7 @@
             difference: 'Rozdíl',
             statistics: 'Štatistiky',
             code: 'Kód',
-            goBack: 'Jdi spět',
+            goBack: 'Zpět',
             starsTitle: 'Hvězdy téhle bitvy',
             title: 'Název',
             name: 'Jméno',
@@ -3324,237 +3324,237 @@
             avgWeaponDamageMax: 'Max poškození zbraně',
           },
           KoM: {
-            success: 'Rank is given!',
-            error: 'An error has occured',
-            showPlayerOnMap: 'Show player on map',
-            showTown: 'Show town overview',
-            showAlly: 'Show alliance overview',
-            showFort: 'Show fort overview',
-            showBattle: 'Show battlefield',
-            atFort: 'At the fort',
-            nearFort: 'Nearby the fort',
-            notFort: 'Not at the fort',
-            evaluated: 'Number of evaluated players',
-            started: 'The battle is taking place right now',
-            remindAlly: 'Remind ally members, who haven\'t participated yet',
-            where: 'Where',
-            when: 'When',
-            att: 'Attackers',
-            def: 'Defenders',
-            nodata: 'Couldn\'t load rank information for the fort',
-            getData: 'Loading rank information',
-            errorTimeout: 'The loading took too much time',
-            ascaptain: 'Promote to captain',
-            assergeant: 'Appoint as sergeant',
-            asprivate: 'Appoint as private',
-            asrecruit: 'Appoint as recruit',
-            asreservist: 'Appoint as reservist',
-            astraitor: 'Mark as traitor',
-            youcant: 'You can\'t demote fighters of<br>the same or higher rank.',
-            position: 'Position',
-            pos_undefined: 'No starting position',
-            notown: 'No town',
-            noally: 'No alliance',
-            damage: 'Damage',
-            flag: 'Flag',
-            inside: 'Inside the fort',
+            success: 'Již má rekrut!',
+            error: 'Došlo k chybě',
+            showPlayerOnMap: 'Zobrazit polohu hráče',
+            showTown: 'Zobrazit přehled města',
+            showAlly: 'Zobrazit přehled aliance',
+            showFort: 'Zobrazit přehled pevnosti',
+            showBattle: 'Zobrazit bojiště',
+            atFort: 'V pevnosti',
+            nearFort: 'V blízkosti pevnosti',
+            notFort: 'Mimo pevnosti',
+            evaluated: 'Počet rekrutovaných hráčů',
+            started: 'Bitva právě probíhá',
+            remindAlly: 'Připomenout spojencům, kteří se ještě nepřidali',
+            where: 'Kde',
+            when: 'Kdy',
+            att: 'Útočníci',
+            def: 'Obránci',
+            nodata: 'Nelze načíst informace pro tuto pevnost',
+            getData: 'Načítaní informací o rekrutu',
+            errorTimeout: 'Načítání trvalo příliš dlouho',
+            ascaptain: 'Povýšit na kapitána',
+            assergeant: 'Jmenovat za seržanta',
+            asprivate: 'Jmenovat za vojína',
+            asrecruit: 'Jmenovat za rekruta',
+            asreservist: 'Označit za záložníka',
+            astraitor: 'Označit za zrádce',
+            youcant: 'Nemůžete degradovat bojovníky<br>stejné nebo vyšší hodnoti.',
+            position: 'Počáteční pozice',
+            pos_undefined: 'Žádná počáteční pozice',
+            notown: 'Bez města',
+            noally: 'Bez aliance',
+            damage: 'Poškození',
+            flag: 'Vlajka',
+            inside: 'V pevnosti',
             sectors: {
-              undef: 'No starting position',
-              0: 'The upper-left sector',
-              1: 'The lower-left sector',
-              2: 'The central left sector',
-              3: 'The lower central sector',
-              4: 'The central right sector',
-              5: 'The lower-right sector',
-              6: 'The upper-right sector',
-              7: 'Adventurer\'s tower',
-              8: 'Dueller\'s tower',
-              9: 'Soldier\'s tower',
-              10: 'Worker\'s tower',
-              11: 'Barracks',
-              12: 'Resource stock',
-              13: 'Headquarters',
-              14: 'North wall',
-              15: 'South wall',
-              16: 'West wall',
-              17: 'East wall',
-              18: 'Gate',
-              19: 'Flag',
+              undef: 'Bez počáteční pozice',
+              0: 'Levý horní sektor',
+              1: 'Levý dolní sektor',
+              2: 'Střední levý sektor',
+              3: 'Střední dolní sektor',
+              4: 'Střední pravý sektor',
+              5: 'Pravý dolní sektor',
+              6: 'Pravý horní sektor',
+              7: 'Věž dobrodruhů',
+              8: 'Věž duelantů',
+              9: 'Věž vojáků',
+              10: 'Věž dělníků',
+              11: 'Kasárny',
+              12: 'Sklad',
+              13: 'Hlavní budova',
+              14: 'Severní hradba',
+              15: 'Jižní hradba',
+              16: 'Západní hradba',
+              17: 'Východní hradba',
+              18: 'Brána',
+              19: 'Vlajka',
             },
           },
         },
         sk: {
           language: 'Slovak (slovenčina)',
-          ApiGui1: 'This script contains many features to simplify your everyday life in The West.<br>More Informations',
-          ApiGui2: 'Open script page',
+          ApiGui1: 'Tento skript obsahuje mnoho funkcií pre zjednodušenie vášho každodenného života na The West. <br> Ďalšie informácie',
+          ApiGui2: 'Otvoriť stránku skriptu',
           Feat: {
-            ColorTchat: '%0 Adds new features to the chat. Colored text, Emojis 🐧🎉 etc.',
-            QuickItemsSearch: '%0 Search for buff categories and sets in your inventory',
-            MarketBestBids: '%0 Colors the auctions based on the price %1 Green %2 Bid is lower than the purchase price %3 Black %4 Bid is equal to the purchase price %5 Blue %6 Bid is between 100% and 200% of the purchase price %7 Red %8 Bid is more than 200%">',
-            BattleStars: '%0 Additional stats in the fort battle report',
-            KickoMatic: '%0 Helpful to rank players before a fort battle',
-            DuelMap: 'Add a duel map to the duel window',
-            MarkDaily: 'Highlight daily login bonus on day 5 to not miss it',
-            MarketMessage: 'Get a message when there are items or money to pick up on actual market',
-            AchievHide: 'Hide completed achievements in achievements window',
-            RecipeMarket: 'Improve the purchase of recipes on market',
-            MoveJobs: 'Move the queued jobs a bit to the left',
-            InstantQuest: 'Complete the quest instantly if all requirements are done',
-            QuestWiki: 'Add a link in the quest window to show the quest on the wiki page',
-            CityTravel: 'Show the travel time to the towns in the blackboard',
-            BetterSheriff: 'Add a new tab in the sheriff window to see all possible bounties',
-            ChatProfessions: 'Show the crafting profession of the players in the chat list',
-            QuestBookSearch: 'Search for solved quests in the quest book',
-            MarketRights: 'Show if market offers are public or only for alliance/town members',
-            EquipManagerPlus: 'Improve the equipment manager in the inventory',
-            ShortPopups: 'Make the item pop-ups shorter',
-            HideNotis: 'Add a button to hide the job notifications on the left side',
-            JobProducts: 'Show in the job pop-up how many products you already have in your inventory',
-            MapDistance: ' Show the number of miles next to the travel time',
-            TraderSell: 'Sell multiple items at once to the trader',
-            TouchControl: 'Enable touch control on your mobile browser',
-            FbRankingChar: 'Show the character class in the fortbattle world ranking',
-            DuelXpCalc: 'Show the duel experience in player profiles',
-            Logout: 'Add a logout button on the right side',
-            Statusbar: 'Remove the taskbar',
-            ChangeCity: 'Switch title and player name in the town hall',
-            BlinkEvents: 'Stop the blinking of the event, County Fair buttons on the left side',
-            FortTracker: 'Turn off fort battle reminder',
-            FriendsPop: 'Hide "Friend online" pop-ups',
+            ColorTchat: '%0 Pridá do chatu nové funkcie. Farebný text, Emotikony 🐧🎉 a ďalšie.',
+            QuickItemsSearch: '%0 Vyhľadá doplňováky v inventári',
+            MarketBestBids: '%0 Zafarbí aukcie na základe ceny %1 Zelená %2 Ponuka je nižšia než nákupná cena %3 Čierna %4 Pobuka je rovná nákupnej cene %5 Modrá %6 Ponuka je medzi 100% a 200% nákupnej ceny %7 Červená %8 Ponuka je väčšia o viac ako 200%">',
+            BattleStars: '%0 Ďalšie štatistiky v oznámení z boja o pevnosť',
+            KickoMatic: '%0 Užitočné pre rekrut hráčov v boji o pevnosť',
+            DuelMap: 'Pridá duelovú mapu do okna duelov',
+            MarkDaily: 'Zvýrazniť denný bonus za prihlásenie, v piaty deň, aby ste ho nevynechali',
+            MarketMessage: 'Zobraziť správu, keď sú na trhu veci alebo peniaze, ktoré môžete vyzdvihnúť na trhu v meste, kde sa práve nachádzate',
+            AchievHide: 'Schovať dokončené úspechy v okne úspechov',
+            RecipeMarket: 'Vylepšiť nákup receptov na trhu',
+            MoveJobs: 'Presunúť úlohy (práce) v poradí o kúsok doľava',
+            InstantQuest: 'Ak sú splnené všetky požiadavky, okamžite dokončiť úlohu',
+            QuestWiki: 'Pridať odkaz do okna úloh pre zobrazenie úlohy na wiki',
+            CityTravel: 'Na tabuli zobraziť čas cesty do miest',
+            BetterSheriff: 'Pridať do okna šerifa novú kartu pre zobrazenie všetkých dostupných zatykačov',
+            ChatProfessions: 'Zobraziť remeslo hráčov v zozname chatu',
+            QuestBookSearch: 'Pridať vyhľadávanie v knihe úloh',
+            MarketRights: 'Zobraziť či sú ponuky na trhu verejné alebo iba pre členov aliancie / mesta',
+            EquipManagerPlus: 'Vylepšiť "Sklad pre vybavenie" v inventári',
+            ShortPopups: 'Kratšie pop-upy predmetov',
+            HideNotis: 'Pridať tlačítko pre skrytie oznámenia z prác na ľavej strane',
+            JobProducts: 'Zobraziť v pop-upe prác koľko produktov z danej práce vlastníte',
+            MapDistance: 'Zobraziť počet míl vedľa času cesty',
+            TraderSell: 'Predať obchodníkovi viac položiek naraz',
+            TouchControl: 'V mobilnom prehliadači povoliť dotykové ovládanie',
+            FbRankingChar: 'Zobraziť triedu postavy v rebríčku bojov o pevnosť',
+            DuelXpCalc: 'Zobraziť duelové skúsenosti v profile hráča',
+            Logout: 'Pridať tlačítko pre odhlásenie na pravej strane',
+            Statusbar: 'Odstrániť taskbar',
+            ChangeCity: 'Prehodiť titul a meno hráča v okne radnice',
+            BlinkEvents: 'Zastaviť blikanie tlačítka cirkusu na ľavej strane',
+            FortTracker: 'Vypnúť pripomínanie boja o pevnosť',
+            FriendsPop: 'Nezobrazovať "Priateľ online" pop-up',
           },
-          settings1: 'Open settings',
-          settings2: 'Open settings and information window',
-          ghosttown2: 'Mesto duchov',
-          ghosttown3: 'Open ghost town and center it on map',
+          settings1: 'Otvoriť nastavenie',
+          settings2: 'Otvoriť nastavenie a okno s informáciami',
+          ghosttown2: 'Mesto Duchov',
+          ghosttown3: 'Otvoriť Mesto Duchov a centrovať ho na mape',
           indiantown2: 'Waupeeho indiánska dedina',
-          indiantown3: 'Open Indian village and center it on map',
+          indiantown3: 'Otvoriť Waupeeho indiánsku dedinu a centrovať ju na mape',
           openmarket: 'Otvoriť Trh',
           opentrader: 'Otvoriť Obchodníka',
           forum: 'Otvoriť fórum',
-          newsets: 'New sets are added to the script',
-          chooseItems: 'Choose the items',
-          remindHover: 'You get a notification when an item can be used again. Here you can choose these items.',
-          remindReady: 'Ready to collect',
-          skipHover: 'Skip the confirmation and result messages when you open some bags. Here you can choose these bags',
-          skipDone: 'You get',
+          newsets: 'Novo pridané sety',
+          chooseItems: 'Vyberte itemy',
+          remindHover: 'Dostanete upozornenie, keď je možné item znovu použiť. Tu si môžete vybrať tieto itemy.',
+          remindReady: 'Pripravené na použitie',
+          skipHover: 'Pri otváraní tašky preskočiť potvrdzovacie a výsledné správy. Tu si môžete vybrať tieto tašky.',
+          skipDone: 'Dostanete',
           info: 'Info',
           contact: 'Kontakt',
-          chooseLang: 'Vyber jazyk',
-          features: 'Features',
-          name: 'Name',
+          chooseLang: 'Vyberte jazyk',
+          features: 'Funkcie',
+          name: 'Meno',
           save: 'Uložiť',
           saveMessage: 'Úspešne uložené',
-          saveMessage2: 'Settings saved. Some changes need a refresh of the game window.',
-          setbonus2: 'Informations about the set bonuses',
-          bonussearch2: 'Find items by bonus',
-          frame2: 'Helpful web pages',
-          npclocator2: 'Find quest givers on the map',
-          choose: 'Click on the hat to get started',
-          items: 'items',
-          parts: 'parts',
-          showItems: 'Show the set items in your Bag',
-          noItems: 'No items in your inventory found. Click again with CTRL to show it on TW-Calc.',
-          ownSets: 'Only own sets',
-          switchWeapon: 'Switch between firearm and melee weapon',
-          selectBonus: 'Select bonuses',
+          saveMessage2: 'Nastavenie uložené. Niektoré zmeny vyžadajú reload hry.',
+          setbonus2: 'Informácie o bonusoch',
+          bonussearch2: 'Hľadať predmety podľa bonusu',
+          frame2: 'Užitočné stránky',
+          npclocator2: 'Nájsť zadávateľov úloh na mape',
+          choose: 'Začnete kliknutím na klobúk',
+          items: 'predmety',
+          parts: 'časti',
+          showItems: 'Zobraziť predmety zo setu v inventári',
+          noItems: 'Vo vašom inventári neboli nájdené žiadne predmety. Kliknite znovu s CTRL pre zobrazenie na TW-Calc.',
+          ownSets: 'Len vlastnené sety',
+          switchWeapon: 'Prepínanie medzi strelnou zbraňou a zbraňou na blízko',
+          selectBonus: 'Vybrat bonusy',
           resetB: 'Reset',
-          body: 'Clothing',
-          right_arm: 'Weapons',
-          animal: 'Horse & Yield',
-          rest: 'Other',
-          buff: 'Buffs',
-          refresh: 'Refresh',
-          noFriends: 'No Friends',
-          reward: 'Reward',
-          allprofessions: 'All Professions',
-          market1: 'Items on market',
-          market2: 'There are items/money on this market. What do you want to pick up?',
-          all: 'All',
-          onlyBids: 'Only bids',
-          nothing: 'Nothing',
-          worldwide: 'Worldwide',
-          alliance: 'Alliance',
-          town: 'Town',
+          body: 'Oblečení',
+          right_arm: 'Zbrane',
+          animal: 'Kôň & Produkt',
+          rest: 'Ostatné',
+          buff: 'Doplňováky',
+          refresh: 'Obnoviť',
+          noFriends: 'Žiadny priatelia',
+          reward: 'Odmena',
+          allprofessions: 'Všetky remeslá',
+          market1: 'Predmety na trhu',
+          market2: 'Na tomtu trhu sú predmety / peniaze. Čo chcete vyzdvihnúť?',
+          all: 'Všetko',
+          onlyBids: 'Len ponuky',
+          nothing: 'Nič',
+          worldwide: 'Svetové',
+          alliance: 'Aliancia',
+          town: 'Mesto',
           level: 'Level',
-          duelLevel: 'Duelling level',
-          exp: 'Exp',
-          distance: 'Distance',
-          startduel: 'Start Duel',
-          centerMap: 'Center map',
-          popup: 'The opponent\'s skill bonus',
-          damage: 'Damage',
-          duelmap: 'Duel map',
-          duelradius: 'Duel radius',
-          minutes: 'minutes',
-          hour: '1 hour',
-          hours: 'hours',
-          searchOpp: 'Search for opponents',
-          amount: 'Dead',
-          not_dead_amount: 'Alive',
+          duelLevel: 'Duelový level',
+          exp: 'Xp',
+          distance: 'Vzdialenosť',
+          startduel: 'Začať Duel',
+          centerMap: 'Centrovať pozíciu',
+          popup: 'Bonusy súpera',
+          damage: 'Poškodenie',
+          duelmap: 'Duelová mapa',
+          duelradius: 'Okruh duelu',
+          minutes: 'minúty',
+          hour: '1 hodina',
+          hours: 'hodiny',
+          searchOpp: 'Hľadať súpera',
+          amount: 'Mrtvý',
+          not_dead_amount: 'Živý',
           duellevel: 'Lvl',
           pStatus: 'Status',
-          sortBy: 'Sort by',
-          tooLow: 'Too low duelling level of opponent',
-          tooHigh: 'Too high duelling level of opponent',
-          ownTown: 'Member of your town',
-          attackable: 'Show only attackable players',
-          duelxp: 'Current duel experience',
-          logout: 'Logout',
-          accNfin: 'Accept & complete quest',
-          onWiki: 'Show the quest on the wiki',
-          longerName: 'Name must be longer than 2 characters',
-          loading: 'Loading...',
-          rename: 'Rename',
-          newName: 'Choose a new set name',
-          used: 'Used',
-          renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
-          sellItems: 'Sell items to the trader?',
-          removeWorkNotis: 'Hide all job notifications',
-          compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
-          loginAll1: 'Login all worlds',
-          loginAll2: 'Load all your active worlds with one click',
-          custom1: 'Custom',
-          custom2: 'Your custom login list',
-          edit: 'Edit',
+          sortBy: 'Zoradiť podľa',
+          tooLow: 'Príliž nízka duelová úroveň súpera',
+          tooHigh: 'Príliž vysoká duelová úroveň súpera',
+          ownTown: 'Člen mesta',
+          attackable: 'Len dostupní súperi',
+          duelxp: 'Aktuálne duelové skúsenosti',
+          logout: 'Odhlásiť',
+          accNfin: 'Prijať a dokončiť úlohu',
+          onWiki: 'Zobraziť úlohu na wiki',
+          longerName: 'Názov musí byť dlhší ako 2 znaky',
+          loading: 'Načítam...',
+          rename: 'Premenovať',
+          newName: 'Nové meno setu',
+          used: 'Použité',
+          renameWarning: 'Keď premenujete set, budete ho musieť vyzliecť a znovu obliecť. <br> Počas procesu môžete stratiť body zdravia!',
+          sellItems: 'Predať predmety obchodníkovi?',
+          removeWorkNotis: 'Schovať všetky oznámenia z prác',
+          compInv: 'Kliknutím na tlačítko "zrušiť" zobrazíte len dražiteľné predmety\n alebo\Zadajte inú adresu URL inventára, ktorý chcete porovnať',
+          loginAll1: 'Prihlásiť sa do všetkých svetov',
+          loginAll2: 'Načítať všetky svety jedným klikom',
+          custom1: 'Vlastné',
+          custom2: 'Váš vlastný prihlasovací zoznam',
+          edit: 'Upraviť',
           CT: {
-            ColorWindowTitle: 'Color tchat setting',
-            ColorWindowPreviewTxt: '*Click on the letters to change color',
-            ColorWindowOkBtn: 'Apply',
-            ColorWindowToDefaultBtn: 'Set to default',
-            ColorWindowThisTchatBtn: 'Set to this',
-            ColorWindowDefaultText: 'Select the tchat for reset to default: ',
-            ColorWindowBold: 'Bold',
-            ColorWindowCaps: 'Capitalized',
-            ColorWindowFlip: 'Flip',
+            ColorWindowTitle: 'Color tchat nastavenie',
+            ColorWindowPreviewTxt: '*Kliknutím na písmená zmeníte farbu',
+            ColorWindowOkBtn: 'Aplikovať',
+            ColorWindowToDefaultBtn: 'Nastaviť ako predvolené',
+            ColorWindowThisTchatBtn: 'Nastaviť toto',
+            ColorWindowDefaultText: 'Vyberte tchat pre reset na predvolené nastavenie: ',
+            ColorWindowBold: 'Tučné',
+            ColorWindowCaps: 'Veľké písmená',
+            ColorWindowFlip: 'Preklopené',
             ColorBtnTitle: '',
             ColorLoadListName: [
-              'No color',
-              'Enter a color code',
-              'red',
-              'brown',
-              'purple',
-              'blue',
-              'green',
-              'pink',
-              'magenta',
-              'violet gradient',
-              'degraded dark blue',
-              'green gradient',
-              'degraded red',
-              'blue gradient light',
-              'degraded pink',
-              'light green gradient',
-              'degraded pink',
-              'red gradient light'
+              'Žiadna farba',
+              'Zadajte kód farby',
+              'červená',
+              'hnedá',
+              'fialová',
+              'modrá',
+              'zelená',
+              'ružová',
+              'purpurová',
+              'fialový prechod',
+              'degradovaná tmavomodrá',
+              'zelený prechod',
+              'degradovaná červená',
+              'svetlo modrý prechod',
+              'degradovaná ružová',
+              'svetlo zelený prechod',
+              'degradovaná ružová',
+              'svetlo červený prechod'
             ],
-            ColorLoadTitle: 'Click to load another color code<br>The current color code is: ',
-            ColorSaveEmpty: '[empty]',
-            CustomReady: 'Valid Code',
-            CustomNotReady: 'Invalid Code',
+            ColorLoadTitle: 'Kliknutím načítate iný kód farby<br>Aktuálny kód farby je: ',
+            ColorSaveEmpty: '[prázdny]',
+            CustomReady: 'Platný kód',
+            CustomNotReady: 'Neplatný kód',
           },
           QIS: {
             adventure: '*Dobrodružstvá',
-            work: '*Práca',
+            work: '*Práce',
             duel: '*Duely',
             energy: '*Energia',
             skill: '*Schopnosti',
@@ -3575,17 +3575,17 @@
             nothingFound: 'Neboli nájdené žiadne položky tohto typu!',
           },
           NPC: {
-            loading: 'Loading current quest givers',
-            title: 'Quest giver locator',
-            chooseNpc: 'Select employer',
-            yourposition: 'Your position',
-            questgiver: 'Quest giver',
-            reload: 'Reload all quest givers',
+            loading: 'Načítanie aktuálnych zadávateľov',
+            title: 'Vyhľadávač zadávateľov',
+            chooseNpc: 'Vybrať zadávateľa',
+            yourposition: 'Vaša pozícia',
+            questgiver: 'Zadávateľ úloh',
+            reload: 'Znovu načítať všetkých zadávateľov',
           },
           BS: {
             hero: 'HRDINA',
             heroT: 'Počet zásahov (obdržané a vyhnuté) na každých 1000 HP',
-            rate: 'Rate',
+            rate: 'Podiel',
             hitsTaken: 'Obdržané zásahy',
             dodgedShots: 'Vyhnuté zásahy',
             startHP: 'Zdravie na začiatku',
@@ -3594,7 +3594,7 @@
             endHP: 'Zdravie na konci',
             sniper: 'SNIPER',
             sniperT: 'Počet úspešných zásahov (v percentách) v porovnaní ku všetkým výstrelom',
-            rateP: 'Rate(%)',
+            rateP: 'Podiel(%)',
             hitCount: 'Úspešné zásahy',
             missedShots: 'Neúspešné zásahy',
             matrix: 'MATRIX',
@@ -3610,7 +3610,7 @@
             difference: 'Rozdiel',
             statistics: 'Štatistiky',
             code: 'Kód',
-            goBack: 'Choď späť',
+            goBack: 'Naspäť',
             starsTitle: 'Hviezdy tohto boja',
             title: 'Názov',
             name: 'Meno',
@@ -3632,16 +3632,16 @@
             success: 'Hodnosti boli udelené!',
             error: 'Vyskytol sa problém',
             showPlayerOnMap: 'Ukázať hráča na mape',
-            showTown: 'Ukázať náhl\'ad mesta',
-            showAlly: 'Ukázať náhl\'ad aliancia',
-            showFort: 'Ukázať náhl\'ad pevnosti',
+            showTown: 'Zobraziť náhľad mesta',
+            showAlly: 'Zobraziť náhľad aliancie',
+            showFort: 'Zobraziť náhľad pevnosti',
             showBattle: 'Zobraziť bojisko',
             atFort: 'V pevnosti',
             nearFort: 'V blízkosti pevnosti',
             notFort: 'Mimo pevnosti',
             evaluated: 'Posúdenie hráča',
             started: 'Boj je v plnom prúde',
-            remindAlly: 'Pripomeňte členmi aliancie, ktorí sa doteraz podieľal',
+            remindAlly: 'Pripomenúť spojencom, ktorí sa ešte nepridali',
             where: 'Kde',
             when: 'Kedy',
             att: 'Útočníci',
@@ -3652,25 +3652,25 @@
             ascaptain: 'Povýšiť na kapitána',
             assergeant: 'Vymenovať za seržanta',
             asprivate: 'Vymenovať za slobodníka',
-            asrecruit: 'Vymenovať za nováčika',
-            asreservist: 'Vymenovať za záložnika',
+            asrecruit: 'Označiť za nováčika',
+            asreservist: 'Označiť za záložníka',
             astraitor: 'Označiť ako zradcu',
-            youcant: 'Nemôžeš degradovať bojovníkov s rovnakou<br>alebo vyššou hodnosťou.',
-            position: 'Pozícia',
-            pos_undefined: 'nemá zadanú pozíciu',
-            notown: 'No town',
+            youcant: 'Nemôžete degradovať bojovníkov s rovnakou<br>alebo vyššou hodnosťou.',
+            position: 'Počiatočná pozícia',
+            pos_undefined: 'Žiadna počiatočná pozícia',
+            notown: 'Bez mesta',
             noally: 'Bez aliancie',
             damage: 'Poškodenie',
             flag: 'Vlajka',
             inside: 'V pevnosti',
             sectors: {
-              undef: 'Nemá zadanú pozíciu',
+              undef: 'Bez počiatočnej pozície',
               0: 'Horný ľavý sektor',
-              1: 'Stredný ľavý sektor',
-              2: 'Spodný ľavý sektor',
-              3: 'Spodný stredný sektor',
+              1: 'Spodný ľavý sektor',
+              2: 'Stredný ľavý sektor',
+              3: 'Stredný spodný sektor',
               4: 'Spodný pravý sektor',
-              5: 'Stredný pravý sektor',
+              5: 'Dolný pravý sektor',
               6: 'Horný pravý sektor',
               7: 'Veža dobrodruhov',
               8: 'Veža duelantov',
@@ -4491,14 +4491,22 @@
           selectbox.addItem(2, 'BonusSearch', TWXlang.bonussearch2);
           selectbox.addItem(3, 'WebCenter', TWXlang.frame2);
           selectbox.addItem(4, 'NPC locator', TWXlang.npclocator2);
-          selectbox.addItem(5, 'Collections', '');
-          selectbox.addItem(6, TWXlang.ghosttown2, TWXlang.ghosttown3);
-          selectbox.addItem(7, TWXlang.indiantown2, TWXlang.indiantown3);
-          selectbox.addItem(8, TWXlang.opentrader, TWXlang.opentrader);
-          selectbox.addItem(9, TWXlang.openmarket, TWXlang.openmarket);
-          selectbox.addItem(10, TWXlang.forum, TWXlang.forum);
+          //selectbox.addItem(5, 'Collections', '');
+          selectbox.addItem(6, '<span src="images/quest/employer/ghosttown.png" style="display:inline-block;width:19px;height:19px;background:url(images/quest/employer/ghosttown.png) 0/19px;margin:-5px 0;"/> ' + TWXlang.ghosttown2, TWXlang.ghosttown3);
+          selectbox.addItem(7, '↪ ' + Map.calcWayTime(Map.getLastQueuePosition(), {
+              x: 1728,
+              y: 2081
+            }).formatDuration());
+          selectbox.addItem(8, '<span src="images/quest/employer/ghosttown.png" style="display:inline-block;width:19px;height:19px;background:url(images/quest/employer/indianvillage.png) 0/19px;margin:-5px 0;"/> ' + TWXlang.indiantown2, TWXlang.indiantown3);
+          selectbox.addItem(9, '↪ ' + Map.calcWayTime(Map.getLastQueuePosition(), {
+              x: 28002,
+              y: 16658
+            }).formatDuration());
+          selectbox.addItem(10, TWXlang.opentrader, TWXlang.opentrader);
+          selectbox.addItem(11, TWXlang.openmarket, TWXlang.openmarket);
+          selectbox.addItem(12, TWXlang.forum, TWXlang.forum);
           if (EvName) {
-            selectbox.addItem(11, '<div style="text-overflow:ellipsis; white-space:nowrap; overflow:hidden;"><b>' + sendGift.label + '</b></div>', sendGift.label);
+            selectbox.addItem(13, '<div style="text-overflow:ellipsis; white-space:nowrap; overflow:hidden;"><b>' + sendGift.label + '</b></div>', sendGift.label);
           }
           selectbox.addListener(function (e) {
             switch (e) {
@@ -4518,26 +4526,40 @@
               TWX.GUI.open('openNpcLocator');
               break;
             case 5:
-              TWX.GUI.open('openCollections');
+              //TWX.GUI.open('openCollections');
               break;
             case 6:
               Map.center(1728, 2081);
               QuestEmployerWindow.showEmployer('ghosttown', '1728', '2081');
               break;
             case 7:
+              QuestEmployerWindow.startWalk({
+                key: 'ghosttown',
+                x: 1728,
+                y: 2081
+              });
+              break;
+            case 8:
               Map.center(28002, 16658);
               QuestEmployerWindow.showEmployer('indianvillage', '28002', '16658');
               break;
-            case 8:
-              west.window.shop.open().showCategory('trader');
-              break;
             case 9:
-              MarketWindow.open(Character.homeTown.town_id);
+              QuestEmployerWindow.startWalk({
+                key: 'indianvillage',
+                x: 28002,
+                y: 16658
+              });
               break;
             case 10:
-              ForumWindow.open();
+              west.window.shop.open().showCategory('trader');
               break;
             case 11:
+              MarketWindow.open(Character.homeTown.town_id);
+              break;
+            case 12:
+              ForumWindow.open();
+              break;
+            case 13:
               TWX.GUI.open('openSender');
               break;
             }
@@ -4802,7 +4824,7 @@
               lee = set1.set_oktoberfest_2016_1.bonus[6], //offenstrue
               hero = set1.independance_event_set7.bonus[2], //drop
               delChar = function (list) {
-                return list.desc.replace(/[0-9]|\+|\.|\%/g, '').substring(1);
+                return list.desc.replace(/[0-9]|\+|\.|\%/g, '').substr(1);
               };
               TWX.searchObj = {
                 offense: [delChar(collect[5]), 'fort/battle/button_attack'],
@@ -5099,7 +5121,7 @@
                 selbox.addListener(showbonus.SetBonus);
                 var sbaI = function (j) {
                   var sj = TWX.currList[j];
-                  selbox.addItem(j, '<img src=' + (forbid.unlock.includes(j) ? TWX.Images('new') : ItemManager.getByBaseId(sj.items[0]).image) + ' height="20" width="20">' + '<div style="padding-right: 20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;">' + sj.name + '</div>', sj.name);
+                  selbox.addItem(j, '<img src=' + (forbid.unlock.includes(j) ? TWX.Images('new') : ItemManager.getByBaseId(sj.items[0]).image) + ' height="20" width="20"><div style="padding-right:20px;text-overflow:ellipsis; white-space:nowrap;overflow:hidden;">' + sj.name + '</div>', sj.name);
                 };
                 if (TWX.setAbc) {
                   for (var h of TWX.list)
@@ -5774,7 +5796,7 @@
                 QuestEmployerView.showQuest_twx = QuestEmployerView.showQuest;
                 QuestEmployerView.showQuest = function (e) {
                   QuestEmployerView.showQuest_twx(e);
-                  if (e.accepted === false) {
+                  if (e.accepted === false && !e.questRewardsOptions) {
                     var req = e.requirements,
                     solvCnt = 0;
                     for (var f = 0; f < req.length; f++)
@@ -7356,7 +7378,7 @@
                   for (var j = 0; j < qs.length; j++) {
                     var itemimg = qs[j].img || qs[j].itemsk[0],
                     NAME = qs[j].name;
-                    TWX.QIS.popupMenu.addItem(j, '<img src="' + ItemManager.getByBaseId(itemimg).image + '" height="20" width="20">' + '<div style="padding-right: 20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;">' + NAME + '</div>', NAME);
+                    TWX.QIS.popupMenu.addItem(j, '<img src="' + ItemManager.getByBaseId(itemimg).image + '" height="20" width="20"><div style="padding-right:20px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;">' + NAME + '</div>', NAME);
                   }
                   TWX.QIS.popupMenu.show(e);
                 });
@@ -8912,109 +8934,7 @@
       };
       $('.inputV2').after('<img src="https://westzz.innogamescdn.com/images/items/yield/pick.png" width="25" style="position:absolute;right:2px;cursor:pointer;border:2px solid #90601c;border-radius:5px;background:#e0ddd9;	box-shadow:0 0 4px inset;}" onclick="TWX.compInv();">');
     } else {
-      window.onload = function () {
-        let lg = TWX.langs,
-        TWXlang = lg.hasOwnProperty(location.href.substr(21, 2)) ? lg[location.href.substr(21, 2)] : lg.en;
-        Worlds.show = (function () {
-          Worlds.show_twx = Worlds.show;
-          return function () {
-            Worlds.show_twx.apply(this, arguments);
-            var first = true;
-            var plyWrl = Worlds.playerWorlds,
-            state = (JSON.parse(localStorage.getItem('TWLTcustom1')) || {}),
-            t1 = [],
-            t2 = [];
-            for (var a in plyWrl) {
-              if (plyWrl[a][1] !== null) {
-                t1.push(a);
-                if (!state[a])
-                  state[a] = false;
-                else if (state[a] === true)
-                  t2.push(a);
-              }
-            }
-            var loginNow = function (t) {
-              for (var x = 0; x < t.length; x++) {
-                if (first)
-                  Auth.login(plyWrl[t[x]]);
-                else
-                  window.open(location.origin + '#loginWorld' + t[x], '_blank');
-                first = false;
-              }
-            };
-            $('#worldsWrapper').append('<div id="loginMore">');
-            $('#loginMore').append('<a id="loginAll" title="' + TWXlang.loginAll2 + '" href="#">' + TWXlang.loginAll1 + '</a>').append('<a id="custom" title="' + TWXlang.custom2 + '" href="#">' + TWXlang.custom1 + '</a>').append('<img id="cust1" title="' + TWXlang.edit + '" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAAFOSURBVDhPY6A6KKnL4j60a2Xf1jWz/6PjQ5unbIUqww3WLpr0Hx0/vXXq/9e39/5fPL4VzAdZAlVOGFw6s9t49sQGsAF/f30GGwLiQ6UJA5Dio7tW/X/z6AIYgwxaNKPr7/1rh6ShSnADkJ/banPB/r9z+QDYIBAfRE9oKf7f2Vz8BKoUE+ydEfj/5Orm/88vb/1fVxwHdjZI88p5zc0gevemRWBxqHJUANP86+Wu/9f3TPu/Y1Yh2NbCskQWkPyiOTmiIM0gw8AakAFI88FFVWCbQYasn5iBVeG0SWWeUCYCLKl1B9sG0gwyZFl73P+99d79UGn8AKQZZBtIM8iQ2XXh2J2IDYA0g2x7cGwZ2JDJpf7E2zwnwwxsG0gzyJCuXC/iNYMAsubGFDvSNIMAyEaQFxoiDf93Vgb3QIWJBwtb3NJANoNoqBAJgIEBAEbiFXTTZGcSAAAAAElFTkSuQmCC">');
-            $('#selectWorldText').css('margin-bottom', '20px');
-            $('#loginAll').css({
-              'background-image': 'url(' + TWX.Images('LT_login') + ')',
-              'height': '45px',
-              'width': '180px',
-              'line-height': '40px',
-              'font-weight': 'bold',
-              'font-size': '12px',
-              'margin-left': '10px',
-              'top': '35px',
-              'z-index': '1',
-              'position': 'absolute',
-              'cursor': 'pointer',
-            }).mouseenter(function () {
-              $(this).css('background-position', '0px -45px');
-            }).mouseleave(function () {
-              $(this).css('background-position', '0px 0px');
-            }).click(function () {
-              loginNow(t1);
-            });
-            $('#custom').css({
-              'background-image': 'url(' + TWX.Images('LT_loginC') + ')',
-              'background-repeat': 'no-repeat',
-              'height': '36px',
-              'width': '144px',
-              'text-align': 'left',
-              'padding-left': '15px',
-              'line-height': '32px',
-              'font-weight': 'bold',
-              'font-size': '11px',
-              'margin-left': '45px',
-              'top': '70px',
-              'z-index': '1',
-              'position': 'absolute',
-              'cursor': 'pointer',
-            }).mouseenter(function () {
-              $(this).css('background-position', '0px -36px');
-            }).mouseleave(function () {
-              $(this).css('background-position', '0px 0px');
-            }).click(function () {
-              loginNow(t2);
-            });
-            $('#cust1').css({
-              'margin-left': '160px',
-              'top': '78px',
-              'z-index': '2',
-              'position': 'absolute',
-              'cursor': 'pointer',
-            }).click(function () {
-              var checkB = {},
-              checkD = {};
-              $('#loginMore').hide();
-              $('#allWorlds').empty();
-              $('#allWorlds').css('text-align', 'left');
-              for (var k = 0; k < t1.length; k++) {
-                checkB[t1[k]] = new west.gui.Checkbox().setLabel(Worlds.data[t1[k]].name).setSelected(state[t1[k]]).appendTo($('#allWorlds'));
-                $('#allWorlds').append('<br><div style="height:5px;">');
-              }
-              var butB = new west.gui.Button(TWXlang.save, function () {
-                  for (var l in checkB) {
-                    checkD[l] = checkB[l].isSelected();
-                    localStorage.setItem('TWLTcustom1', JSON.stringify(checkD));
-                  }
-                  new UserMessage(TWXlang.saveMessage, 'success').show();
-                });
-              butB.appendTo($('#allWorlds'));
-            });
-          };
-        })();
-      };
-      if (location.hash.includes('loginWorld')) {
+      if (location.hash.includes('loginWorld'))
         setTimeout(function () {
           $('#loginButton').click();
           var val = setInterval(function () {
@@ -9025,6 +8945,112 @@
               }
             }, 500);
         }, 1000);
+      else {
+        var setVal = setInterval(function () {
+            if (window.Worlds && Worlds.show) {
+              clearInterval(setVal);
+              let lg = TWX.langs,
+              TWXlang = lg.hasOwnProperty(location.href.substr(21, 2)) ? lg[location.href.substr(21, 2)] : lg.en;
+              Worlds.show = (function () {
+                Worlds.show_twx = Worlds.show;
+                return function () {
+                  Worlds.show_twx.apply(this, arguments);
+                  var first = true;
+                  var plyWrl = Worlds.playerWorlds,
+                  state = (JSON.parse(localStorage.getItem('TWLTcustom1')) || {}),
+                  t1 = [],
+                  t2 = [];
+                  for (var a in plyWrl) {
+                    if (plyWrl[a][1] !== null) {
+                      t1.push(a);
+                      if (!state[a])
+                        state[a] = false;
+                      else if (state[a] === true)
+                        t2.push(a);
+                    }
+                  }
+                  var loginNow = function (t) {
+                    for (var x = 0; x < t.length; x++) {
+                      if (first)
+                        Auth.login(plyWrl[t[x]]);
+                      else
+                        window.open(location.origin + '#loginWorld' + t[x], '_blank');
+                      first = false;
+                    }
+                  };
+                  $('#worldsWrapper').append('<div id="loginMore">');
+                  $('#loginMore').append('<a id="loginAll" title="' + TWXlang.loginAll2 + '" href="#">' + TWXlang.loginAll1 + '</a>').append('<a id="custom" title="' + TWXlang.custom2 + '" href="#">' + TWXlang.custom1 + '</a>').append('<img id="cust1" title="' + TWXlang.edit + '" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAAFOSURBVDhPY6A6KKnL4j60a2Xf1jWz/6PjQ5unbIUqww3WLpr0Hx0/vXXq/9e39/5fPL4VzAdZAlVOGFw6s9t49sQGsAF/f30GGwLiQ6UJA5Dio7tW/X/z6AIYgwxaNKPr7/1rh6ShSnADkJ/banPB/r9z+QDYIBAfRE9oKf7f2Vz8BKoUE+ydEfj/5Orm/88vb/1fVxwHdjZI88p5zc0gevemRWBxqHJUANP86+Wu/9f3TPu/Y1Yh2NbCskQWkPyiOTmiIM0gw8AakAFI88FFVWCbQYasn5iBVeG0SWWeUCYCLKl1B9sG0gwyZFl73P+99d79UGn8AKQZZBtIM8iQ2XXh2J2IDYA0g2x7cGwZ2JDJpf7E2zwnwwxsG0gzyJCuXC/iNYMAsubGFDvSNIMAyEaQFxoiDf93Vgb3QIWJBwtb3NJANoNoqBAJgIEBAEbiFXTTZGcSAAAAAElFTkSuQmCC">');
+                  $('#selectWorldText').css('margin-bottom', '20px');
+                  $('#loginAll').css({
+                    'background-image': 'url(' + TWX.Images('LT_login') + ')',
+                    'height': '45px',
+                    'width': '180px',
+                    'line-height': '40px',
+                    'font-weight': 'bold',
+                    'font-size': '12px',
+                    'margin-left': '10px',
+                    'top': '35px',
+                    'z-index': '1',
+                    'position': 'absolute',
+                    'cursor': 'pointer',
+                  }).mouseenter(function () {
+                    $(this).css('background-position', '0px -45px');
+                  }).mouseleave(function () {
+                    $(this).css('background-position', '0px 0px');
+                  }).click(function () {
+                    loginNow(t1);
+                  });
+                  $('#custom').css({
+                    'background-image': 'url(' + TWX.Images('LT_loginC') + ')',
+                    'background-repeat': 'no-repeat',
+                    'height': '36px',
+                    'width': '144px',
+                    'text-align': 'left',
+                    'padding-left': '15px',
+                    'line-height': '32px',
+                    'font-weight': 'bold',
+                    'font-size': '11px',
+                    'margin-left': '45px',
+                    'top': '70px',
+                    'z-index': '1',
+                    'position': 'absolute',
+                    'cursor': 'pointer',
+                  }).mouseenter(function () {
+                    $(this).css('background-position', '0px -36px');
+                  }).mouseleave(function () {
+                    $(this).css('background-position', '0px 0px');
+                  }).click(function () {
+                    loginNow(t2);
+                  });
+                  $('#cust1').css({
+                    'margin-left': '160px',
+                    'top': '78px',
+                    'z-index': '2',
+                    'position': 'absolute',
+                    'cursor': 'pointer',
+                  }).click(function () {
+                    var checkB = {},
+                    checkD = {};
+                    $('#loginMore').hide();
+                    $('#allWorlds').empty();
+                    $('#allWorlds').css('text-align', 'left');
+                    for (var k = 0; k < t1.length; k++) {
+                      checkB[t1[k]] = new west.gui.Checkbox().setLabel(Worlds.data[t1[k]].name).setSelected(state[t1[k]]).appendTo($('#allWorlds'));
+                      $('#allWorlds').append('<br><div style="height:5px;">');
+                    }
+                    var butB = new west.gui.Button(TWXlang.save, function () {
+                        for (var l in checkB) {
+                          checkD[l] = checkB[l].isSelected();
+                          localStorage.setItem('TWLTcustom1', JSON.stringify(checkD));
+                        }
+                        new UserMessage(TWXlang.saveMessage, 'success').show();
+                      });
+                    butB.appendTo($('#allWorlds'));
+                  });
+                };
+              })();
+            }
+          }, 100);
       }
     }
   }
