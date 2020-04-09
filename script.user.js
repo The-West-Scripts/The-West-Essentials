@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.47.2
+// @version 1.47.3
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.47.2',
+      version: '1.47.3',
       langs: {
         en: {
           language: 'English',
@@ -6403,7 +6403,7 @@
                   $(sellButton[mt]).css('filter', 'grayscale(90%)');
                 },
                 repItems = [
-                  3, 201, 302, 325, 603, 802, 10003, 11003,
+                  3, 201, 235, 302, 325, 342, 432, 507, 525, 603, 802, 10003, 10075, 11003, 11014, 41171
                 ],
                 initSell = function () {
                   if (!itemsToSell[mt]) {
@@ -7388,24 +7388,33 @@
             findSet: function (id) {
               var items = [],
               seti = TWX.QIS.sets[id],
-              base = seti.items,
-              upgrade = seti.itemsk,
-              custom = false;
-              if (base)
-                for (var f = 0; f < base.length; f++)
-                  items.push(base[f] * 1000);
-              else {
-                for (var g = 0; g < upgrade.length; g++)
-                  for (var h = 0; h <= 5; h++)
-                    items.push(upgrade[g] * 1000 + h);
-                custom = true;
+              upgrade = seti.items ? 0 : 1,
+              lasti,
+              ipush = function () {
+                items.push(lasti * 1000);
+                if (upgrade)
+                  for (var h = 1; h <= 5; h++)
+                    items.push(lasti * 1000 + h);
+              },
+              itemids = seti.items || seti.itemsk;
+              for (var g = 0; g < itemids.length; g++) {
+                var ig = itemids[g];
+                if (ig < 47)
+                  for (var f = 1; f < ig; f++) {
+                    lasti++;
+                    ipush();
+                  }
+                else {
+                  lasti = ig;
+                  ipush();
+                }
               }
               var invItems = Bag.getItemsByItemIds(items);
               if (invItems.length > 0) {
                 if (!wman.getById(Inventory.uid))
                   Inventory.open();
                 Wear.open();
-                if (custom && seti.img != TWX.QIS.equImg)
+                if (upgrade && seti.img != TWX.QIS.equImg)
                   Inventory.showCustomItems(invItems);
                 else
                   Inventory.showSearchResult(invItems);
