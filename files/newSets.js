@@ -3,6 +3,8 @@ sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
 '2018_achievement_set',
+'firefighter_set_1',
+'firefighter_set_2',
 ],max: 357,
 unlock: [
 'easter_2020_set_1',
