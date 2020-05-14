@@ -5,6 +5,9 @@ sets:[
 '2018_achievement_set',
 'firefighter_set_1',
 'firefighter_set_2',
+'ifbc2020_set-1',
+'ifbc2020_set_2',
+'ifbc2020_set_3',
 ],max: 357,
 unlock: [
 'easter_2020_set_1',
