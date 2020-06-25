@@ -3,6 +3,10 @@ sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
 '2018_achievement_set',
+'independence_day_2020_set_1',
+'independence_day_2020_set_2',
+'independence_day_2020_set_3',
+'independence_day_2020_set_4',
 ],max: 362,
 unlock: [
 'firefighter_set_1',
