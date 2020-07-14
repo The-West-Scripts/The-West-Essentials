@@ -3,8 +3,9 @@ sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
 '2018_achievement_set',
-],max: 372,
+],max: 373,
 unlock: [
+'creative_set',
 'independence_day_2020_set_1',
 'independence_day_2020_set_2',
 'independence_day_2020_set_3',
