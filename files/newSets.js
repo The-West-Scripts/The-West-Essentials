@@ -3,6 +3,9 @@ sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
 '2018_achievement_set',
+'harvester_set_clothing',
+'harvester_set_animal',
+'harvester_set_weapon',
 ],max: 373,
 unlock: [
 'creative_set',
