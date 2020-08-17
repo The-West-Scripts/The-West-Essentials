@@ -3,7 +3,7 @@ sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
 '2018_achievement_set',
-],max: 373,
+],max: 376,
 unlock: [
 'harvester_set_clothing',
 'harvester_set_animal',
