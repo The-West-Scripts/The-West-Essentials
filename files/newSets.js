@@ -2,6 +2,15 @@ forbid={
 sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
+'dod_2020_set_1',
+'dod_2020_set_2',
+'dod_2020_set_3',
+'dod_2020_set_4',
+'dod_2020_set_5',
+'dod_2020_set_6',
+'dod_2020_set_7',
+'dod_2020_set_8',
+'dod_2020_set_9',
 ],max: 388,
 unlock: [
 '2018_achievement_set',
