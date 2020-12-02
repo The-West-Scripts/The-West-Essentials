@@ -2,6 +2,10 @@ forbid={
 sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
+'fan_collector_set',
+'christmas_set_1_2020',
+'christmas_set_2_2020',
+'christmas_set_3_2020',
 ],max: 398,
 unlock: [
 'dod_2020_set_1',
