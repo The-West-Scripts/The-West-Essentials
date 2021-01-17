@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.47.4
+// @version 1.47.5
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.47.4',
+      version: '1.47.5',
       langs: {
         en: {
           language: 'English',
@@ -4358,6 +4358,7 @@
           QuickItemsSearch: true,
           MarketBestBids: true,
           BattleStars: true,
+          //Collections: true,
           KickoMatic: false,
           DuelMap: true,
           MarkDaily: true,
@@ -4437,7 +4438,7 @@
         },
         replaceGaps: function (txt, arr) {
           return txt.replace(/%(\d)/g, function (f, p) {
-            return arr[p];
+            return arr[p] || p;
           });
         },
         updateLang: function () {
@@ -4642,7 +4643,7 @@
             langBox.addItem(j, TWX.langs[j].language);
           langBox.select(TWX.lang);
           TWX.cdTemp = TWX.Data.cooldown ? $.extend({}, TWX.Data.cooldown) : {};
-          $('<span title="' + TWXlang.remindHover + '" style="background-image: url(images/items/yield/low_heart_container.png); cursor: pointer; position: absolute; height: 73px; width: 73px; right: 0px; top: 0px;">').appendTo(featScroll.getContentPane()).click(function () {
+          $('<span title="' + TWXlang.remindHover + '" style="background-image: url(images/items/yield/low_heart_container.png);cursor:pointer;position:absolute;height:73px;width:73px;right:0px;top:0px;">').appendTo(featScroll.getContentPane()).click(function () {
             var cont = $('<span>');
             for (var x in TWX.cdown) {
               var igc = ItemManager.getByBaseId(x);
@@ -4681,7 +4682,7 @@
                 var item = ItemManager.getByBaseId(val);
                 if (item) {
                   $('#TWX_add_chest_prew').append(new tw2widget.JobItem(item).getMainDiv());
-                  if (item.usebonus && item.usebonus.length == 1 && item.action.split(',')[2] == "'yield');" && !TWX.skipTemp[val])
+                  if (item.action.endsWith(",'yield');") && !TWX.skipTemp[val])
                     iconP.enable();
                 }
               }
@@ -4699,7 +4700,7 @@
             cont2.append(itemPrew, textFP.getMainDiv(), iconP.getMainDiv(), iconA);
             var skipList = new west.gui.Dialog(TWXlang.chooseItems, cont2).setBlockGame(false).setDraggable(true).addButton(closeTxt).show();
           };
-          $('<span title="' + TWXlang.skipHover + '" style="background-image: url(images/items/yield/productchest_1.png); cursor: pointer; position: absolute; height: 73px; width: 73px; right: 0px; top: 73px;">').appendTo(featScroll.getContentPane()).click(openSkipList);
+          $('<span title="' + TWXlang.skipHover + '" style="background-image:url(images/items/yield/productchest_1.png);cursor:pointer;position:absolute;height:73px;width:73px;right:0px;top:73px;">').appendTo(featScroll.getContentPane()).click(openSkipList);
           featScroll.appendContent('<br><br><h2>' + TWXlang.features + '</h2>');
           var textGap = {
             ColorTchat: ['Color tchat:'],
@@ -4858,7 +4859,7 @@
                 if (k > 9 && k < forbid.maxID && !forbid.IDs.includes(k) && !(allItems[k].set && !TWX.setListAll[allItems[k].set]))
                   addItems(allItems[k], 'All');
               for (var l in Bag.items_by_id)
-                if (!forbid.IDs.includes(k))
+                if (!['50106000'].includes(l))
                   addItems(Bag.items_by_id[l].obj, 'Own');
               for (var m in Wear.wear)
                 addItems(Wear.wear[m].obj, 'Own');
@@ -4885,7 +4886,7 @@
                 speed: [delChar(collect[1]), 'jobs/walk'],
                 regen: [delChar(collect[3]), 'jobs/sleep'],
                 pray: [delChar(collect[4]), 'jobs/pray'],
-                job1000: [delChar(pilg[0]), 'jobs/build'],
+                job1000: [delChar(pilg[4]), 'jobs/build'],
               };
               for (var ca = 0; ca < CharacterSkills.allSkillKeys.length; ca++) {
                 if (ca % 5 === 0) {
@@ -4915,7 +4916,7 @@
             }
           }
           var invItems = Bag.getItemsByItemIds(items);
-          if (invItems.length > 0) {
+          if (invItems.length > 0 || Wear.item_ids.includes(items[0])) {
             Wear.open();
             Inventory.showCustomItems(invItems);
           } else
@@ -5079,10 +5080,7 @@
             'BonusSearch': function (idString) {
               var id = JSON.parse(idString);
               if (Object.keys(id).length > 2 && !TWX.lvlToggle) {
-                if (!TWX.currBonusSearch) {
                   TWX.currBonusSearch = idString;
-                  reloadLvl = 1;
-                }
                 return lvlBox.select(charLvl);
               }
               scrollpane.contentPane.empty();
@@ -5129,7 +5127,10 @@
                     for (var ib of n.items)
                       if (ItemManager.getByBaseId(ib).sub_type != id.subWeapon)
                         ibs += types[ib] ? types[ib].values[1].sum : 0;
-                    TWX.GUI.html[n.slots] += '& ' + TWXlang.items + ': +' + (ibs + setval) + '<br>';
+                    var pi = ibs + setval;
+                    if (`${pi}`.length > 15)
+                      pi = Math.round(pi * 100) / 100;
+                    TWX.GUI.html[n.slots] += `& ${TWXlang.items}: ${pi}<br>`;
                   }
                 }
               }
@@ -5345,7 +5346,7 @@
                   var ne2 = Object.keys(ne).sort(function (a, b) {
                     a = a.toLowerCase().replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ł/g, 'l').replace(/ś/g, 's');
                     b = b.toLowerCase().replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ł/g, 'l').replace(/ś/g, 's');
-                    return (a > b) ? 1 :  - 1;
+                    return (a > b) ? 1 : -1;
                   });
                   for (var j = 0; j < ne2.length; j++)
                     TWX.GUI.NPC.inner += '<option value="' + ne[ne2[j]] + '">' + ne2[j] + '</option>';
@@ -5403,7 +5404,7 @@
             }
           },
         },
-        openNpcLocator: function (iframe, size) {
+        openNpcLocator: function () {
           if (!TWX.GUI.NPC.employers)
             TWX.GUI.NPC.load();
           else if (TWX.GUI.NPC.loading === false)
@@ -5495,7 +5496,7 @@
                   scrollP.appendContent(div);
                 }
               }
-              $(TWX.GUI.window.getContentPane()).append(scrollpane.getMainDiv()).append(scrollP.getMainDiv());
+              $(TWX.GUI.window.getContentPane()).append(scrollpane.getMainDiv(),scrollP.getMainDiv());
             }), 500);
         },
       };
@@ -5544,17 +5545,43 @@
       };
       TWX.AchievHide = {
         init: function () {
-          var hideUnErfolge = function () {
-            $('.playerachievement-' + Character.playerId + ' .achievement').hide();
-            $('.playerachievement-' + Character.playerId + ' .achievement .achievement_unachieved').parent().show();
-          };
-          var AEp = AchievementExplorer.prototype;
-          AEp.updateContent_twx = AEp.updateContent;
-          AEp.updateContent = function (data) {
-            var tmp = AEp.updateContent_twx.call(this, data);
-            if (data.folder.id != 'overall' && data.folder.id != 'heroics')
-              hideUnErfolge();
-            return tmp;
+          var pCp = '.playerachievement-' + Character.playerId,
+          hideAchv = function () {
+            $(pCp + ' .achievement > div:first-child:not(.achievement_unachieved)').parent().hide();
+          },
+          folder,
+          ready = function () {
+            return $(pCp + ' .tw2gui_window_pane .loader')[0].style.display == 'none';
+          },
+          checkFolder = function (e) {
+            var cTc = e.currentTarget.parentElement.classList[0],
+            cTft = e.currentTarget.textContent;
+            if (cTc + cTft == folder || ['overall', 'heroics'].includes(cTc))
+              folder = 1;
+            else {
+              folder = cTc + cTft;
+              var wait2 = setInterval(function () {
+                if (ready()) {
+                  clearInterval(wait2);
+                  hideAchv();
+                }
+              }, 100);
+            }
+          },
+          AW = AchievementWindow;
+          AW.showTab_twx = AW.showTab_twx || AW.showTab;
+          AW.showTab = function (id) {
+            AW.showTab_twx.apply(this, arguments);
+            if (id == 'explorer')
+              var wait1 = setInterval(function () {
+                if (ready()) {
+                  clearInterval(wait1);
+                  var atb = $(pCp + ' .achievement-menu li > .tw2gui_button');
+                  atb.click(checkFolder);
+                  folder = 'general' + atb[1].textContent;
+                  hideAchv();
+                }
+              }, 100);
           };
         }
       };
@@ -6306,8 +6333,7 @@
             load = 1;
             current = $.extend({}, Wear.wear);
             change = EquipManager.list[nr];
-            var same = 0;
-            diff = Wear.slots.slice(),
+            var diff = Wear.slots.slice(),
             i = diff.length;
             while (i--) {
               var di = diff[i];
@@ -7177,24 +7203,7 @@
             var saveB = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAANCAIAAAAv2XlzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAH6SURBVHjaVM89a1RRFIXhtffZ9zOYTBKJYaKOiumiqdKKgmBhqUL+hI2VIFjYCZaChb9ABAtJIQbFIoJoQNSMEKLkC+IEZhLnzuTM3DP3nm2hhLjq9RYPRceOn5qeDUWcyw0jjUNjDBsTiEnikADbd13rbF7sbKwetLZkdPLs5Ru34cvv9ZXauNy6OlOrnZ6aOmmC+FN9KxQzd+HMs8Wv71caG6ufl54/EvW+28nyfr/V2hvh4KCb9W2XfP5rN3vwZCGJ5en9+Z7tZu3faZKaIBIiEKlhiqMgikMjwswKAJAgEBEAhskwoCVUBQBUiSGBRGEYCweGhPnE2PD8tdk4DCrDQ1nH2l6/KEsQBABB1StIfu5kr5c3zzcHE9udykhl5txEIPxicfnd8mpeStFzBAgBWcfud2xBYUH8diV7862tWldVKBQgIE3jsdGKVw9AitLvtTvMdGVuulYdJyLVvwQAIBAzrW3ufllrDJxT9VKW5X67e/3SxYd3bjKKvu2B6DCAahSFecn3Hi+8fLWuqjIoCmt7IsxMe812s9li5sO/934oTSar1TQJDqxVVfFenXO+LAGEYZikydFAVeM4BtHADVzuVFWIWFkUVBYuTZMwjvD/xLBqCZCyAZHkWUMa9Q9L7m573Xs9Kv7nJmLmj/XtQeuHd70/AwDj7v01yw6ZhAAAAABJRU5ErkJggg==',
             setB = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTM0A1t6AAACoUlEQVQ4T42Uy2sTURTGk1Zbq+ILUdyKG5uZSerQkPbeyYAYCZhlggurFUJN5xGUgiBushdBsQguFMGFC7EqLiyiCwWh0IL/QH3tFJcu1CKlft+duTqJieTA4Z7cOfeX755zZlLaarXaYBx2i9OMW63WQDI2ZDBniOCrKcMHo66/nfvKXNfdgkUlMo4Ppsrl8rCGYx2ybXtzZsIbN47W91vCuwLQhimDDQuekeFl5rUpKBQKIxpAMHwTY8IIN4QfmtL/Dv+WhKnY8S/qfGVJGA8nYXTDCU+YIvhhykbVFCHWBEwGz+1jtZ3MV0Y1vZTRGY8V64eh7BGgP+GPTeG/UjARvCkcr+5hjjKCkjXrBssVZ8YB+wJl96BmwZL+EtY1NOWZJb0VpLBkaX1WWS9lCib8j1knzANyC824b4jwIbr7EvFrQ/rXkJauVqsjXHnmv8rQiPem9GzsDVYqla2A3oayu1C8AOgTvY/0CMYNehz/C3P8IoC7jzinDtju3F7Aliw5exqTONABS2uOInfCTOF9yIjwBlT8QrzOeqEJKxFMWToJ45TEcReY9FbNyWAe11vnaKBmi+jmsiUaZ5CiAEkY66cbq14hvgGMc7Ixqq4JZX9hwSKV5SIYrSes7cqEYhyuA3S1TZkMlk1nZjrO6wnjlGCJVLLDrju9C4ffWSK4iQ6ucTQi2CxhtJ6w5FtGY7eGALgEwLw1ee4krngHvpp1GmfjnL5gek9d2RK+BPATavbWEmF9ojS1L37WF4yzrPdVMUulqW3o7sFD5eYwD6kHfcKSbxktnZUNAWUv8vnmjhjWt7IOmHrOL+9T1AxfDu+82o4BXOkEaBgByWtqGKdE76cwtBfgn61ic4y/4yTC9GwlYwXmH/ypWdRYPEulfgMLajrH8hIjewAAAABJRU5ErkJggg==',
             cList = [
-              '999',
-              'custom',
-              '700',
-              '321',
-              '409',
-              '007',
-              '031',
-              '704',
-              '608',
-              '308318328338348',
-              '106117128139',
-              '120130140150',
-              '400500600700800',
-              '199299399499599699',
-              '505606607709809',
-              '696595494393292',
-              '959949839829819',
-              '900911922933944'
+              '999', 'custom', '700', '321', '409', '007', '031', '704', '608', '308318328338348', '106117128139', '120130140150', '400500600700800', '199299399499599699', '505606607709809', '696595494393292', '959949839829819', '900911922933944'
             ];
             this.showOn = function () {
               var e,
@@ -7441,7 +7450,7 @@
                   qs.sort(function (a, b) {
                     var a1 = replUml(a.name),
                     b1 = replUml(b.name);
-                    return (a1 == b1) ? 0 : (a1 > b1) ? 1 :  - 1;
+                    return (a1 == b1) ? 0 : (a1 > b1) ? 1 : -1;
                   });
                   for (var j = 0; j < qs.length; j++) {
                     var itemimg = qs[j].img || qs[j].itemsk[0],
@@ -7583,7 +7592,7 @@
             withMod: function (calc, val) {
               return function (row) {
                 var wdth = Math.round((74) / (calc.header.length));
-                $.each(calc.header, function (ind, td) {
+                $.each(calc.header, function (ind) {
                   $('.battle_cls' + ind, row).css('width', wdth + '%');
                 });
                 row.attr('title', val.townname + ' - ' + val.weaponname + ' (' + val.weaponmindmg + '-' + val.weaponmaxdmg + ')');
@@ -7607,55 +7616,12 @@
             initFormule: function () {
               try {
                 this.formules = [];
-                this.formules.push(new calcul('heros', TWXlang.BS.hero, TWXlang.BS.heroT, '(((val.takenhits + val.dodgecount) *1000) / (val.starthp))', [
-                      TWXlang.BS.rate,
-                      TWXlang.BS.hitsTaken,
-                      TWXlang.BS.dodgedShots,
-                      TWXlang.BS.startHP
-                    ], [
-                      'heros',
-                      'takenhits',
-                      'dodgecount',
-                      'starthp'
-                    ], '$.isNumeric( val.starthp) && ( val.starthp) > 0', '0', '>', false, false, false, true));
-                /*this.formules.push(new calcul('roger', 'Roger
-                Rabbit', 'val.takenhits + val.dodgecount', [ 'Tirs',
-                'Tirs reçus', 'Tir évité' ], [
-                'roger','takenhits','dodgecount' ], ' val.takenhits +
-                val.dodgecount > 0', '0', '>', false, false, false,
-                true));*/
-                this.formules.push(new calcul('survivant', TWXlang.BS.survivor, TWXlang.BS.survivorT, 'val.finishedhp', [
-                      TWXlang.BS.endHP
-                    ], [
-                      'finishedhp'
-                    ], '  val.finishedhp  > 0', '0', '<', true, true, false, false));
-                this.formules.push(new calcul('sniper', TWXlang.BS.sniper, TWXlang.BS.sniperT, '(val.hitcount / (val.hitcount + val.misscount))*100', [
-                      TWXlang.BS.rateP,
-                      TWXlang.BS.hitCount,
-                      TWXlang.BS.missedShots
-                    ], [
-                      'sniper',
-                      'hitcount',
-                      'misscount'
-                    ], '$.isNumeric(val.hitcount + val.misscount) && (val.hitcount + val.misscount) > 0', '0', '>', false, false, false, true));
-                this.formules.push(new calcul('matrix', TWXlang.BS.matrix, TWXlang.BS.matrixT, 'parseFloat((( val.dodgecount / (val.takenhits + val.dodgecount))*100))', [
-                      TWXlang.BS.rateP,
-                      TWXlang.BS.dodgedShots,
-                      TWXlang.BS.hitsTaken
-                    ], [
-                      'matrix',
-                      'dodgecount',
-                      'takenhits'
-                    ], '$.isNumeric(val.dodgecount + val.takenhits) &&  (val.takenhits + val.dodgecount) > 0 &&   val.dodgecount  > 0', '0', '>', false, false, false, true));
-                this.formules.push(new calcul('headshot', TWXlang.BS.terminator, TWXlang.BS.terminatorT, '(val.ko_shots.length / val.hitcount)*100', [
-                      TWXlang.BS.rateP,
-                      TWXlang.BS.KOs,
-                      TWXlang.BS.hitCount
-                    ], [
-                      'headshot',
-                      'ko_shots.length',
-                      'hitcount'
-                    ], '$.isNumeric(val.hitcount) && val.hitcount > 0', '0', '>', false, false, false, true));
+                this.formules.push(new calcul('heros', TWXlang.BS.hero, TWXlang.BS.heroT, '(((val.takenhits + val.dodgecount) * 1000) / (val.starthp))', [TWXlang.BS.rate, TWXlang.BS.hitsTaken, TWXlang.BS.dodgedShots, TWXlang.BS.startHP], ['heros', 'takenhits', 'dodgecount', 'starthp'], 'val.starthp > 0', '0', '>', 0, false, false, true));
+                /*this.formules.push(new calcul('roger', 'Roger Rabbit', 'val.takenhits + val.dodgecount', ['Tirs', 'Tirs reçus', 'Tir évité'], ['roger', 'takenhits', 'dodgecount'], ' val.takenhits + val.dodgecount > 0', '0', '>', 0, false, false, true));*/
+                this.formules.push(new calcul('survivant', TWXlang.BS.survivor, TWXlang.BS.survivorT, 'val.finishedhp', [TWXlang.BS.endHP], ['finishedhp'], 'val.finishedhp > 0', '0', '<', 1, true, false, false));
+                this.formules.push(new calcul('sniper', TWXlang.BS.sniper, TWXlang.BS.sniperT, '(val.hitcount / (val.hitcount + val.misscount))*100', [TWXlang.BS.rateP, TWXlang.BS.hitCount, TWXlang.BS.missedShots], ['sniper', 'hitcount', 'misscount'], '(val.hitcount + val.misscount) > 0', '0', '>', 0, false, false, true));
+                this.formules.push(new calcul('matrix', TWXlang.BS.matrix, TWXlang.BS.matrixT, 'parseFloat((( val.dodgecount / (val.takenhits + val.dodgecount))*100))', [TWXlang.BS.rateP, TWXlang.BS.dodgedShots, TWXlang.BS.hitsTaken], ['matrix', 'dodgecount', 'takenhits'], '(val.takenhits + val.dodgecount) > 0 && val.dodgecount > 0', '0', '>', 0, false, false, true));
+                this.formules.push(new calcul('headshot', TWXlang.BS.terminator, TWXlang.BS.terminatorT, '(val.ko_shots.length / val.hitcount)*100', [TWXlang.BS.rateP, TWXlang.BS.KOs, TWXlang.BS.hitCount], ['headshot', 'ko_shots.length', 'hitcount'], 'val.hitcount > 0', '0', '>', 0, false, false, true));
               } catch (e) {
                 console.log(e);
               }
@@ -7663,25 +7629,22 @@
             getFormule: function (type) {
               for (var s = 0; s < this.formules.length; s++) {
                 calc = this.formules[s];
-                if (type == calc.type) {
+                if (type == calc.type)
                   return calc;
-                }
               }
-              throw ('Aucune formule correspondante à ' + type);
+              throw ('No formula for ' + type);
             },
             getAll: function (type) {
-              var ligTot = '';
               $('#route', CemeteryWindow.DOM).text('details');
               var calc = this.getFormule(type);
               $('.info', CemeteryWindow.DOM).text('');
               $('.info', CemeteryWindow.DOM).append('<span>' + TWXlang.BS.ranking + ' ' + calc.libelle + '</span><span style="font-size:12px;"><br><i>' + calc.help + '</i></span>');
               this.stars = calc.sortArray(CemeteryWindow.currentStats);
-              var header = calc.getHeader(),
-              shunt = 0;
+              calc.getHeader();
+              var shunt = 0;
               $.each(this.stars, function (ind, stat) {
-                if (calc.shouldBePos && stat[type] <= 0) {
+                if (calc.shouldBePos && stat[type] <= 0)
                   shunt++;
-                }
                 stat.ind = (ind + 1) - shunt;
                 calc.getLigne(stat);
               });
@@ -7689,30 +7652,27 @@
             getStatByPerso: function (name) {
               for (var s = 0; s < this.stars.length; s++) {
                 val = this.stars[s];
-                if (name == val.name) {
+                if (name == val.name)
                   return val;
-                }
               }
             },
             getLigne: function (stat, index) {
-              if (!isDefined(stat)) {
+              if (!isDefined(stat))
                 return '';
-              }
               var type = stat.type,
               nom = stat.name,
               val = stat.obj,
               calc = this.getFormule(type),
               css = 'tw_blue';
-              if (val.battle_type == 'attacker') {
+              if (val.battle_type == 'attacker')
                 css = 'tw_red';
-              }
               cellules = {};
               cellules.stat_til = '<span onclick="javascript:TWX.BS.getAll(\'' + type + '\')" style="cursor:pointer;">' + calc.libelle + '</span>';
               cellules.battle_nam = nom;
               cellules.stat_dtl = calc.getShortLigne(val);
               this.table.buildRow('battlestat ' + css, cellules, this.modifStarsRow(stat));
             },
-            openWindow: function (original) {
+            openWindow: function () {
               var statWindow = wman.open('window_Stats', TWXlang.BS.statsTitle).setSize(700, 400);
               $('.window_Stats').css('left', '10px').css('top', '25px');
               var table_window = new west.gui.Table();
@@ -7720,7 +7680,7 @@
                   'cell_att',
                   'cell_def',
                   'cell_dif']).appendToCell('head', 'cell_stat', TWXlang.BS.designation).appendToCell('head', 'cell_att', TWXlang.BS.attack).appendToCell('head', 'cell_def', TWXlang.BS.defense).appendToCell('head', 'cell_dif', TWXlang.BS.difference).appendRow();
-              var verif = '<form><textarea style=\'height: 250px;width: 650px;\'>[code]' + TWXlang.BS.statistics + '\t\t\t' + TWXlang.BS.attack + '\t\t' + TWXlang.BS.defense + '\t\t' + TWXlang.BS.difference + '\n--------------------------------------------------------------------------\n';
+              var verif = '<form><textarea style=\'height:250px;width:650px;\'>[code]' + TWXlang.BS.statistics + '\t\t\t' + TWXlang.BS.attack + '\t\t' + TWXlang.BS.defense + '\t\t' + TWXlang.BS.difference + '\n--------------------------------------------------------------------------\n';
               $.each(this.results, function (ind, val) {
                 try {
                   var cssStr = '',
@@ -7743,9 +7703,9 @@
               verif += '[/code]</textarea></form>';
               var affButton = new west.gui.Button(TWXlang.BS.code, function () {
                 var cur = $('.window_inside').html();
-                if (cur.indexOf('[code]') >  - 1) {
+                if (cur.indexOf('[code]') > -1)
                   TWX.BS.openWindow();
-                } else {
+                else {
                   $('.window_inside').html(verif);
                   affButton.setCaption(TWXlang.BS.goBack);
                 }
@@ -7854,9 +7814,8 @@
                   val[calc.type] = calc.getTaux(val);
                   if (!calc.shouldBePos || (calc.shouldBePos && val[calc.type] > 0)) {
                     if (val.battle_type == 'attacker') {
-                      if (!isDefined(attaquer[calc.type])) {
+                      if (!isDefined(attaquer[calc.type]))
                         attaquer[calc.type] = calc.limite;
-                      }
                       if (eval(val[calc.type] + calc.compare + attaquer[calc.type])) {
                         attaquer[calc.type] = val[calc.type];
                         TWX.BS.attaquants[calc.type] = {
@@ -7866,9 +7825,8 @@
                         };
                       }
                     } else {
-                      if (!isDefined(defenseurs[calc.type])) {
+                      if (!isDefined(defenseurs[calc.type]))
                         defenseurs[calc.type] = calc.limite;
-                      }
                       if (eval(val[calc.type] + calc.compare + defenseurs[calc.type])) {
                         defenseurs[calc.type] = val[calc.type];
                         TWX.BS.defenseurs[calc.type] = {
@@ -7885,7 +7843,6 @@
               bo.moydef = bo.startDefPV / bo.countDef;
               bo.degAtt = bo.degAtt / bo.countAtt;
               bo.degDef = bo.degDef / bo.countDef;
-              var fort = CemeteryWindow.fortId;
               this.results.push({
                 titre: TWXlang.BS.total + TWXlang.BS.startHP + '\t\t\t',
                 attack: bo.startAttPV,
@@ -8002,7 +7959,7 @@
             },
           };
           function calcul(pType, pLibelle, pTexte, pForm, pHead, pVariables, pConstr, pTError, pCompare, pSort, pPos, pNull, pFloat) {
-            this.globalHeader = new Array('#', TWXlang.BS.name);
+            this.globalHeader = ['#', TWXlang.BS.name];
             this.help = pTexte;
             this.type = pType;
             this.formule = pForm;
@@ -8016,11 +7973,10 @@
             this.contrainte = pConstr;
             this.isFloating = pFloat;
             this.testError = pTError;
-            if (this.compare.indexOf('>') >  - 1) {
+            if (this.compare == '>')
               this.limite = '0';
-            } else {
+            else
               this.limite = '9999999999';
-            }
           }
           calcul.prototype.init = function () {
             this.type = '';
@@ -8029,7 +7985,7 @@
             this.header = '';
             this.libelle = '';
             this.variables = {};
-            this.sort = true;
+            this.sort = 1;
             this.shouldBePos = false;
             this.shouldBeNull = true;
             this.contrainte = '';
@@ -8037,9 +7993,8 @@
           calcul.prototype.getLigne = function (val) {
             var cellules = {};
             var css = 'tw_blue';
-            if (val.battle_type == 'attacker') {
+            if (val.battle_type == 'attacker')
               css = 'tw_red';
-            }
             if ((!this.shouldBePos) || (this.shouldBePos && val[this.type] > 0)) {
               cellules.battle_num = val.ind;
               cellules.battle_nam = val.name;
@@ -8061,8 +8016,8 @@
           };
           calcul.prototype.getShortLigne = function (val) {
             try {
-              var header = this.header;
-              var lig = '';
+              var header = this.header,
+              lig = '';
               $.each(this.variables, function (ind, td) {
                 var det;
                 if (td.indexOf('.') > 0) {
@@ -8084,9 +8039,8 @@
             }
           };
           calcul.prototype.getHeader = function () {
-            var title = '',
-            header = this.globalHeader.concat(this.header),
-            wdth = Math.round((74) / (this.header.length));
+            var header = this.globalHeader.concat(this.header),
+            wdth = Math.round(74 / this.header.length);
             $('#battle_stat', CemeteryWindow.DOM).attr('id', 'battle_statStar');
             $('#battle_statStar', CemeteryWindow.DOM).remove();
             $('#battle_stat', CemeteryWindow.DOM).text('details');
@@ -8096,7 +8050,6 @@
               TWX.BS.tableClassement.getCell('head', 'battle_cls' + ind).css('width', wdth + '%');
             });
             $('div.cemetery-content', CemeteryWindow.DOM).append(TWX.BS.tableClassement.getMainDiv());
-            return title;
           };
           calcul.prototype.sortArray = function (arr) {
             var type = this.type;
@@ -8104,27 +8057,19 @@
             arr.sort(function (a, b) {
               var x = a[type];
               var y = b[type];
-              if ($.isNumeric(x) && $.isNumeric(y)) {
-                if (sortable) {
-                  return ((x < y) ?  - 1 : ((x > y) ? 1 : 0));
-                } else {
-                  return ((x > y) ?  - 1 : ((x < y) ? 1 : 0));
-                }
-              } else {
-                throw ('not numeric');
-              }
+              if (sortable)
+                return x - y;
+              return y - x;
             });
             return arr;
           };
           calcul.prototype.getTaux = function (val) {
-            if (eval(this.contrainte)) {
+            if (eval(this.contrainte))
               taux = eval(this.formule);
-            } else {
+            else
               taux = eval(this.testError);
-            }
-            if (this.isFloating) {
+            if (this.isFloating)
               taux = parseFloat(taux.toFixed(2));
-            }
             return taux; //.toFixed(2);
           };
           TWX.addStyle('.window_Stats .window_inside { width:630px;height:380 position:absolute;left:5px;top:2px;-webkit-user-select:text!important;-khtml-user-select:text!important;-moz-user-select:text!important; -ms-user-select:text!important;user-select:text!important;height:270px; }' +
@@ -8137,6 +8082,11 @@
             '.window_Stats .tbody .cell_dif { text-align:center;width:120px;font-weight:800;text-shadow:1px 0 0 white; }' +
             '.zone {-webkit-user-select:text!important;-khtml-user-select:text!important;-moz-user-select:text!important;-ms-user-select:text!important;user-select:text!important;height:270px; }');
           setTimeout(TWX.BS.inject.bind(TWX.BS), 5e3);
+        },
+      };
+      TWX.Collections = {
+        init: function () {
+          TWX.Col = {}
         },
       };
       TWX.KickoMatic = {
@@ -8258,7 +8208,7 @@
               if (myRank > 2)
                 if (playerRank < myRank) {
                   var fromRank = myRank == 4 ? 3 : 2;
-                  for (var rank = fromRank; rank >=  - 2; rank--) {
+                  for (var rank = fromRank; rank >= -2; rank--) {
                     if (rank == playerRank)
                       continue;
                     var row = TWX.KoM.makeRankRow(rank, westId, fortId);
@@ -8337,7 +8287,7 @@
                 console.log(err);
               }
             },
-            makePopupHtml: function (fortId, fortX, fortY, distanceImage, playerPositionName, rankHtml, weaponName, weaponMinDamage, weaponMaxDamage, currentHp, maxHp, townName, townId, townRights, playerClass) {
+            makePopupHtml: function (fortId, distanceImage, playerPositionName, rankHtml, weaponName, weaponMinDamage, weaponMaxDamage, currentHp, maxHp, townName, townId, playerClass) {
               var capacityDiv = TWX.KoM.makeCapacityDiv(fortId);
               var fillPx = Math.floor(currentHp / maxHp * 194);
               return '<div class="txcenter"><div style="background:url(' + TWX.url + 'healthbar.png) right top;width:210px;height:14px;display:inline-block;padding:2px;margin:0;font-size:8pt; text-align:left;"><div style="background: url(&quot;images/character_bars/filler.png&quot;) repeat scroll 0% 0% transparent; width:' +
@@ -8401,21 +8351,21 @@
                   myRank = TWX.KoM.getPlayerRank(fortId, myId),
                   playerInfo = TWX.KoM.playersData[westId],
                   playerName = playerInfo.name,
-                  playerLevel = playerInfo.level,
+                  //playerLevel = playerInfo.level,
                   playerXY = playerInfo.coords,
                   playerClass = TWX.KoM.getPlayerClass(playerInfo.class),
                   currentHp = playerInfo.currhealth,
                   maxHp = playerInfo.maxhealth;
                   //var alliance = TWX.KoM.allies[westId];
                   TWX.KoM.highlightFortCell();
-                  var positionName = TWX.KoM.getPosName();
-                  var weaponMinDamage = playerInfo.weapon_damage.min,
+                  var positionName = TWX.KoM.getPosName(),
+                  weaponMinDamage = playerInfo.weapon_damage.min,
                   weaponMaxDamage = playerInfo.weapon_damage.max,
                   weaponName = playerInfo.weapon,
                   //weaponImage = TWX.KoM.getWeaponImage(weaponName),
                   townId = playerInfo.town_id,
-                  townRights,
                   town = playerInfo.townname || TWXlang.KoM.notown;
+                  /*townRights;
                   switch (playerInfo.town_rights) {
                   case 1:
                     townRights = 'norights';
@@ -8429,11 +8379,11 @@
                   default:
                     townRights = 'norights';
                     break;
-                  }
-                  var distanceImage = TWX.KoM.makeDistanceImage(fortCoords.x, fortCoords.y, playerXY.x, playerXY.y);
-                  var rankHtml = TWX.KoM.makeRankUpdateHtml(myRank, playerRank, westId, fortId);
-                  var text = TWX.KoM.makePopupHtml(fortId, fortCoords.x, fortCoords.y, distanceImage, positionName, rankHtml, weaponName, weaponMinDamage, weaponMaxDamage, currentHp, maxHp, town, townId, townRights, playerClass);
-                  var title = TWX.KoM.makeSmallTitle(playerName, westId, playerXY.x, playerXY.y);
+                  }*/
+                  var distanceImage = TWX.KoM.makeDistanceImage(fortCoords.x, fortCoords.y, playerXY.x, playerXY.y),
+                  rankHtml = TWX.KoM.makeRankUpdateHtml(myRank, playerRank, westId, fortId),
+                  text = TWX.KoM.makePopupHtml(fortId, distanceImage, positionName, rankHtml, weaponName, weaponMinDamage, weaponMaxDamage, currentHp, maxHp, town, townId, playerClass),
+                  title = TWX.KoM.makeSmallTitle(playerName, westId, playerXY.x, playerXY.y);
                   TWX.KoM.mb = new west.gui.Dialog(title.outerHTML(), text).addButton('cancel').setId('KickoMaticPopUp').setModal(true, true).setX(x).setY(y - 50).show();
                   $('#KickoMaticPopUp').css('min-width', '0');
                   $('#KickoMaticPopUp .messagedialog_content').css('padding-bottom', '5px');
@@ -8863,8 +8813,8 @@
               cdwn = TWX.Data.cooldown && TWX.Data.cooldown[y] || tcy[0],
               item = Bag.getItemsByBaseItemId(y)[0];
               if (cdwn == 1 && item && (tcy.length == 1 || sesEvs[tcy[1]] == EvName)) {
-                var coold = BuffList.cooldowns[item.obj.item_id] && BuffList.cooldowns[item.obj.item_id].time || item.cooldown;
-                var sec = coold * 1000 - new ServerDate().getTime();
+                var coold = BuffList.cooldowns[item.obj.item_id] && BuffList.cooldowns[item.obj.item_id].time || item.cooldown * 1000;
+                var sec = coold - new ServerDate().getTime();
                 if (!(sec > 0))
                   nulls.push(item);
                 else if (!TWX.cdownTimer[y])
