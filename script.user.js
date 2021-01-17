@@ -5080,7 +5080,7 @@
             'BonusSearch': function (idString) {
               var id = JSON.parse(idString);
               if (Object.keys(id).length > 2 && !TWX.lvlToggle) {
-                  TWX.currBonusSearch = idString;
+                TWX.currBonusSearch = idString;
                 return lvlBox.select(charLvl);
               }
               scrollpane.contentPane.empty();
@@ -5496,7 +5496,7 @@
                   scrollP.appendContent(div);
                 }
               }
-              $(TWX.GUI.window.getContentPane()).append(scrollpane.getMainDiv(),scrollP.getMainDiv());
+              $(TWX.GUI.window.getContentPane()).append(scrollpane.getMainDiv(), scrollP.getMainDiv());
             }), 500);
         },
       };
@@ -5545,44 +5545,49 @@
       };
       TWX.AchievHide = {
         init: function () {
-          var pCp = '.playerachievement-' + Character.playerId,
-          hideAchv = function () {
-            $(pCp + ' .achievement > div:first-child:not(.achievement_unachieved)').parent().hide();
-          },
-          folder,
-          ready = function () {
-            return $(pCp + ' .tw2gui_window_pane .loader')[0].style.display == 'none';
-          },
-          checkFolder = function (e) {
-            var cTc = e.currentTarget.parentElement.classList[0],
-            cTft = e.currentTarget.textContent;
-            if (cTc + cTft == folder || ['overall', 'heroics'].includes(cTc))
-              folder = 1;
-            else {
-              folder = cTc + cTft;
-              var wait2 = setInterval(function () {
-                if (ready()) {
-                  clearInterval(wait2);
-                  hideAchv();
-                }
-              }, 100);
-            }
-          },
-          AW = AchievementWindow;
-          AW.showTab_twx = AW.showTab_twx || AW.showTab;
-          AW.showTab = function (id) {
-            AW.showTab_twx.apply(this, arguments);
-            if (id == 'explorer')
-              var wait1 = setInterval(function () {
-                if (ready()) {
-                  clearInterval(wait1);
-                  var atb = $(pCp + ' .achievement-menu li > .tw2gui_button');
-                  atb.click(checkFolder);
-                  folder = 'general' + atb[1].textContent;
-                  hideAchv();
-                }
-              }, 100);
-          };
+          var setVal10 = setInterval(function () {
+            if (!window.Character)
+              return;
+            clearInterval(setVal10);
+            var pCp = '.playerachievement-' + Character.playerId,
+            hideAchv = function () {
+              $(pCp + ' .achievement > div:first-child:not(.achievement_unachieved)').parent().hide();
+            },
+            folder,
+            ready = function () {
+              return $(pCp + ' .tw2gui_window_pane .loader')[0].style.display == 'none';
+            },
+            checkFolder = function (e) {
+              var cTc = e.currentTarget.parentElement.classList[0],
+              cTft = e.currentTarget.textContent;
+              if (cTc + cTft == folder || ['overall', 'heroics'].includes(cTc))
+                folder = 1;
+              else {
+                folder = cTc + cTft;
+                var wait2 = setInterval(function () {
+                  if (ready()) {
+                    clearInterval(wait2);
+                    hideAchv();
+                  }
+                }, 100);
+              }
+            },
+            AW = AchievementWindow;
+            AW.showTab_twx = AW.showTab_twx || AW.showTab;
+            AW.showTab = function (id) {
+              AW.showTab_twx.apply(this, arguments);
+              if (id == 'explorer')
+                var wait1 = setInterval(function () {
+                  if (ready()) {
+                    clearInterval(wait1);
+                    var atb = $(pCp + ' .achievement-menu li > .tw2gui_button');
+                    atb.click(checkFolder);
+                    folder = 'general' + atb[1].textContent;
+                    hideAchv();
+                  }
+                }, 100);
+            };
+          }, 2000);
         }
       };
       TWX.MarketMessage = {
@@ -8368,17 +8373,17 @@
                   /*townRights;
                   switch (playerInfo.town_rights) {
                   case 1:
-                    townRights = 'norights';
-                    break;
+                  townRights = 'norights';
+                  break;
                   case 2:
-                    townRights = 'councillor';
-                    break;
+                  townRights = 'councillor';
+                  break;
                   case 3:
-                    townRights = 'founder';
-                    break;
+                  townRights = 'founder';
+                  break;
                   default:
-                    townRights = 'norights';
-                    break;
+                  townRights = 'norights';
+                  break;
                   }*/
                   var distanceImage = TWX.KoM.makeDistanceImage(fortCoords.x, fortCoords.y, playerXY.x, playerXY.y),
                   rankHtml = TWX.KoM.makeRankUpdateHtml(myRank, playerRank, westId, fortId),
