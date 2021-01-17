@@ -75,7 +75,7 @@ You get a message when you stand at a market where are items or money to pick up
 ![](https://imgur.com/V5uBBcJ.png)
 
 **Hide completed achievements**  
-For better overview you can hide your completed achievements.  
+For better overview, your completed achievements will be hidden. Click again on the current category, to unhide them.  
 All achievements are hidden except them in the 'Most recent' and 'Heroic deeds' sections.  
 <img src="https://imgur.com/7xUwhHT.png" width="600">
 
