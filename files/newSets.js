@@ -2,6 +2,10 @@ forbid={
 sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
+'valentine_2021_set_1',
+'valentine_2021_set_2',
+'valentine_2021_set_3',
+'valentine_2021_set_4',
 ],max: 404,
 unlock: [
 'curling_set_1',
