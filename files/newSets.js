@@ -2,6 +2,9 @@ forbid={
 sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
+'2021_sale_set_june_1',
+'2021_sale_set_june_2',
+'2021_sale_set_june_3',
 ],max: 432,
 unlock: [
 'birthay_set_2021',
