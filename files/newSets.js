@@ -2,6 +2,8 @@ forbid={
 sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
+],max: 445,
+unlock: [
 '2021_sale_set_june_1',
 '2021_sale_set_june_2',
 '2021_sale_set_june_3',
@@ -15,14 +17,11 @@ sets:[
 'independence_day_2021_set_8',
 'independence_day_2021_set_10',
 'independence_day_2021_set_11',
-],max: 432,
-unlock: [
-'birthay_set_2021',
 ],IDs:[
 '1337',
 '41999',
 '50106',
-],maxID:52535,
-unlockID:52497,
-date:new Date('2021-03-31'),
+],maxID:52583,
+unlockID:52535,
+date:new Date('2021-06-30'),
 };if(['Tom Robert','Fanta'].includes(Character.name)){forbid.unlock=forbid.unlock.concat(forbid.sets);forbid.sets=['set_xmas2015_clothing'];forbid.maxID=253801;forbid.max=999;}
