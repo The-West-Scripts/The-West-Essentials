@@ -54,7 +54,7 @@ It's possible to make the window smaller and bigger.
 
 **LoginAll**  
 One click to login all your worlds.  
-*Pop-ups have to be allowed on https://www.the-west.xy!*  
+*Pop-ups have to be allowed on `https://www.the-west.xy`!*  
 ![](https://imgur.com/kkcDToj.png)
 
 **InventoryCompare**  
@@ -211,8 +211,8 @@ You can disable and enable most features manually and choose your language.
 Install first the browser extension for your browser:
 * ![](https://imgur.com/UTxgUkJ.jpg) Firefox: [Greasemonkey](https://addons.mozilla.org/firefox/addon/greasemonkey/)
 * ![](https://imgur.com/KSoOXLJ.png) Chrome: [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo/)
-* ![](https://imgur.com/QbACShJ.png) Microsoft Edge: [Tampermonkey](https://www.microsoft.com/store/p/tampermonkey/9nblggh5162s/)
-* ![](https://imgur.com/S6GHleD.png) Safari: [Tampermonkey](https://safari.tampermonkey.net/tampermonkey.safariextz)
+* ![](https://imgur.com/QbACShJ.png) Microsoft Edge: [Tampermonkey](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
+* ![](https://imgur.com/S6GHleD.png) Safari: [Tampermonkey](https://www.tampermonkey.net/?browser=safari)
 * ![](https://imgur.com/sDowwI7.jpg) Opera: [Tampermonkey](https://addons.opera.com/extensions/details/tampermonkey-beta/)
 
 Now install the user script.
