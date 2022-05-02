@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.47.5
+// @version 1.47.6
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.47.5',
+      version: '1.47.6',
       langs: {
         en: {
           language: 'English',
@@ -4789,7 +4789,7 @@
                 return (a1 == b1) ? 0 : (a1 > b1) ? 1 : -1;
               });
               var buffDesc = function (umt) {
-                return umt.match(/[^%-:]+/)[0].trim();
+                return umt.replace(/[%-:]/g).trim();
               },
               useboni = {},
               ammobelt = 2741,
@@ -5299,7 +5299,7 @@
           var contPan = $(TWX.GUI.window.getContentPane()),
           buttons = {
             'QuakeNet Webchat': '//webchat.quakenet.org',
-            'Wiki The-West': Game.helpURL.replace('http:', 'https:'),
+            'Wiki The-West': Game.helpURL,
             'TW-DB.info': '//tw-db.info'
           };
           for (var b in buttons)
@@ -5918,7 +5918,7 @@
                 var wiki = '//wiki.the' + Game.masterURL.match(/the(.*)/)[1] + '/wiki/',
                 gid = TWX.repGroups[this.id],
                 qGroup = QuestLog.solvedGroups[gid] || lang == 'de' && isNaN(gid) && gid,
-                groupName = [69, 34].includes(this.group) && qGroup ? qGroup + repText[lang] || '' : this.groupTitle,
+                groupName = [69, 34].includes(this.group) && qGroup ? qGroup + (repText[lang] || '') : 62 == this.group && qGroup ? qGroup + ' (Wiederholbare Quests)' : this.groupTitle,
                 questName = encodeURIComponent((lang == 'pl' ? 'Zadania: ' : '') + groupName + '#' + (lang == 'de' ? this.id : this.soloTitle));
                 this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + wiki + questName + '" target="_blank"><img src="' + TWX.Images('wiki') + '"></a>');
               };
@@ -6873,10 +6873,10 @@
               this.btncolor = $('<div class="btnColor btnColorBG">').append($('<div class="btnColorImg btnColorImgTag">').click(function () {
                     TWX.CT.Window.show();
                   })).append(e = $('<div class="btnColorSmiley">').hide()).mouseout(function () {
-                $('div.btnColorSmiley:last-child', this).hide();
-              }).mouseover(function () {
-                $('div.btnColorSmiley:last-child', this).show();
-              });
+                  $('div.btnColorSmiley:last-child', this).hide();
+                }).mouseover(function () {
+                  $('div.btnColorSmiley:last-child', this).show();
+                });
               for (var t in sm) {
                 if (sm[t] !== '') {
                   e.append($('<div class="btnColorOneSmiley">').data('Tag', t).click(this.addSmToTxt).append(sm[t]));
