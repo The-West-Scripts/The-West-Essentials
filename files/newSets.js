@@ -2,6 +2,9 @@ forbid={
 sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
+'easter_2022_set10',
+'easter_2022_set11',
+'easter_2022_set12',
 ],max: 487,
 unlock: [
 'easter_2022_set1',
@@ -13,7 +16,7 @@ unlock: [
 'easter_2022_set7',
 'easter_2022_set8',
 'easter_2022_set9',
-'easter_2022_set10',
+'easter_2022_set13',
 ],IDs:[
 '1337',
 '41999',
