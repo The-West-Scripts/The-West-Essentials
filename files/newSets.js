@@ -2,6 +2,16 @@ forbid={
 sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
+'oktoberfest_2022_set_1',
+'oktoberfest_2022_set_2',
+'oktoberfest_2022_set_3',
+'oktoberfest_2022_set_4',
+'oktoberfest_2022_set_5',
+'oktoberfest_2022_set_6',
+'oktoberfest_2022_set_7',
+'oktoberfest_2022_set_8',
+'oktoberfest_2022_set_9',
+'oktoberfest_2022_set_10',
 ],max: 503,
 unlock: [
 'independence_day_2022_set_1',
