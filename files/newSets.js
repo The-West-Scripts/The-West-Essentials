@@ -2,6 +2,9 @@ forbid={
 sets:[
 'set_free_to_use_dummy',
 'set_xmas2015_clothing',
+'oktoberfest_2022_premium_set_1',
+'oktoberfest_2022_premium_set_2',
+'oktoberfest_2022_premium_set_3',
 ],max: 525,
 unlock: [
 'holiday_set_2022_1',
