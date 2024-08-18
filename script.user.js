@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.47.6
+// @version 1.48
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.47.6',
+      version: '1.48',
       langs: {
         en: {
           language: 'English',
@@ -210,7 +210,8 @@
             speed: '*Speed',
             lp: '*Health points',
             luckNmoney: '*Luck & money',
-            motivation: '*Motivation',
+            workmoti: '*Work motivation',
+            duelmoti: '*Duel motivation',
             experience: '*Experience',
             special: '*Premium/special',
             events: '*Events',
@@ -220,6 +221,7 @@
             questitems: '-Quest items',
             craftitems: '-Craft items',
             recipes: '-Recipes',
+            NAMED: 'NAMED',
             nothingFound: 'No items of this type found!',
           },
           NPC: {
@@ -517,7 +519,8 @@
             speed: '*Geschwindigkeit',
             lp: '*Lebenspunkte (LP)',
             luckNmoney: '*Glück & Geld',
-            motivation: '*Motivation',
+            workmoti: '*Arbeitsmotivation',
+            duelmoti: '*Duellmotivation',
             experience: '*Erfahrung (XP)',
             special: '*Premium/Special',
             events: '*Events',
@@ -527,6 +530,7 @@
             questitems: '-Questprodukte',
             craftitems: '-Handwerk',
             recipes: '-Rezepte',
+            NAMED: 'NAMED',
             nothingFound: 'Keine Gegenstände dieser Art gefunden!',
           },
           NPC: {
@@ -824,7 +828,8 @@
             speed: '*Prędkość',
             lp: '*HP',
             luckNmoney: '*Luck & money',
-            motivation: '*Motivation',
+            workmoti: '*Motywacja pracy',
+            duelmoti: '*Motywacja pojedynków',
             experience: '*Experience',
             special: '*Premia/specjalny',
             events: '*Eventy',
@@ -834,6 +839,7 @@
             questitems: '-Przedmiot zlecenia',
             craftitems: '-Rzemiosło',
             recipes: '-Przepisy',
+            NAMED: 'NAMED',
             nothingFound: 'Nie posiadasz żadnych przedmiotów tego typu!',
           },
           NPC: {
@@ -1130,7 +1136,8 @@
             speed: '*Buffs de Velocidad',
             lp: '*Buffs de Salud',
             luckNmoney: '*Suerte y Dinero',
-            motivation: '*Motivación',
+            workmoti: '*Motivación trabajo ',
+            duelmoti: '*Motivación duelo',
             experience: '*Experiencia',
             special: '*Premio/especial',
             events: '*Eventos',
@@ -1140,6 +1147,7 @@
             questitems: '-Objetos de búsqueda',
             craftitems: '-Artesano',
             recipes: '-Recetas',
+            NAMED: 'NAMED',
             nothingFound: 'No tienes de este tipo!',
           },
           NPC: {
@@ -1437,7 +1445,8 @@
             speed: '*Snelheid',
             lp: '*Levenspunten',
             luckNmoney: '*Luck & money',
-            motivation: '*Motivation',
+            workmoti: '*Arbeidsmotivatie',
+            duelmoti: '*Duel motivatie',
             experience: '*Experience',
             special: '*Premium/speciaal',
             events: '*Events',
@@ -1447,6 +1456,7 @@
             questitems: '-Opdracht gerelateerde voowerpen',
             craftitems: '-Handwerk',
             recipes: '-Recepten',
+            NAMED: 'NAMED',
             nothingFound: 'Er kon geen voorwerp van dit type worden!',
           },
           NPC: {
@@ -1744,7 +1754,8 @@
             speed: '*Speed',
             lp: '*Health points',
             luckNmoney: '*Luck & money',
-            motivation: '*Motivation',
+            workmoti: '*Work motivation',
+            duelmoti: '*Duel motivation',
             experience: '*Experience',
             special: '*Premium/special',
             events: '*Events',
@@ -1754,6 +1765,7 @@
             questitems: '-Quest items',
             craftitems: '-Craft items',
             recipes: '-Recipes',
+            NAMED: 'NAMED',
             nothingFound: 'No items of this type found!',
           },
           NPC: {
@@ -2051,7 +2063,8 @@
             speed: '*Ταχύτητα',
             lp: '*Πόντοι υγείας',
             luckNmoney: '*Τύχη & Χρήματα',
-            motivation: '*Κίνητρο',
+            workmoti: '*Κίνητρο δουλειάς',
+            duelmoti: '*Κίνητρο μονομαχίας',
             experience: '*Εμπειρία',
             special: '*Premium/special',
             events: '*Εκδηλώσεις',
@@ -2061,6 +2074,7 @@
             questitems: '-Αντικείμενα αποστολών',
             craftitems: '-Αντικείμενα επαγγελμάτων',
             recipes: '-Συνταγές',
+            NAMED: 'NAMED',
             nothingFound: 'Δεν βρέθηκαν αντικείμενα αυτού του τύπου!',
           },
           NPC: {
@@ -2358,7 +2372,8 @@
             speed: '*Buffs Velocidade',
             lp: '*Buffs Saúde',
             luckNmoney: '*Sorte & Dinheiro',
-            motivation: '*Motivação',
+            workmoti: '*Motivação trabalho',
+            duelmoti: '*Motivação duelo',
             experience: '*Experiência',
             special: '*Prêmio/especial',
             events: '*Eventos',
@@ -2368,6 +2383,7 @@
             questitems: '-Items de aventura',
             craftitems: '-Ofício',
             recipes: '-Receitas',
+            NAMED: 'NAMED',
             nothingFound: 'Nenhum item deste tipo encontrado!',
           },
           NPC: {
@@ -2665,7 +2681,8 @@
             speed: '*Bonus Velocità',
             lp: '*Bonus Punti Vita',
             luckNmoney: '*Luck & money',
-            motivation: '*Motivation',
+            workmoti: '*Motivazione lavoro',
+            duelmoti: '*Motivazione duello',
             experience: '*Experience',
             special: '*Premio/speciale',
             events: '*Eventi',
@@ -2675,6 +2692,7 @@
             questitems: '-Oggetti missione',
             craftitems: '-Produci',
             recipes: '-Ricette',
+            NAMED: 'NAMED',
             nothingFound: 'Non è stato trovato nulla!',
           },
           NPC: {
@@ -2972,7 +2990,8 @@
             speed: '*Vitesse',
             lp: '*Points de vie bonus',
             luckNmoney: '*Luck & money',
-            motivation: '*Motivation',
+            workmoti: '*Motivation travail',
+            duelmoti: '*Motivation duel',
             experience: '*Experience',
             special: '*Prime/spéciale',
             events: '*Événements',
@@ -2982,6 +3001,7 @@
             questitems: '-Objets de quête',
             craftitems: '-Artisanat',
             recipes: '-Recettes',
+            NAMED: 'NAMED',
             nothingFound: 'Pas d\'objets de cette sorte trouvé!',
           },
           NPC: {
@@ -3279,7 +3299,8 @@
             speed: '*Rychlost',
             lp: '*Body zdraví',
             luckNmoney: '*Štěstí & zárobek',
-            motivation: '*Motivace',
+            workmoti: '*Pracovní motivace',
+            duelmoti: '*Duelové motivace',
             experience: '*Zkušenosti',
             special: '*Prémium/špeciální',
             events: '*Eventy',
@@ -3289,6 +3310,7 @@
             questitems: '-Předměty k úkolu',
             craftitems: '-Předměty z remesel',
             recipes: '-Recepty',
+            NAMED: 'NAMED',
             nothingFound: 'Nebyly nalezeny žádné položky tohoto typu!',
           },
           NPC: {
@@ -3586,7 +3608,8 @@
             speed: '*Rýchlosť',
             lp: '*Zdravie',
             luckNmoney: '*Šťastie & zárobok',
-            motivation: '*Motivácia',
+            workmoti: '*Pracovnej motivácia',
+            duelmoti: '*Duelovej motivácia',
             experience: '*Skúsenosti',
             special: '*Prémium/špeciálne',
             events: '*Eventy',
@@ -3596,6 +3619,7 @@
             questitems: '-Predmety na úlohy',
             craftitems: '-Predmety z remesiel',
             recipes: '-Recepty',
+            NAMED: 'NAMED',
             nothingFound: 'Neboli nájdené žiadne položky tohto typu!',
           },
           NPC: {
@@ -3893,7 +3917,8 @@
             speed: '*Speed',
             lp: '*Health points',
             luckNmoney: '*Luck & money',
-            motivation: '*Motivation',
+            workmoti: '*Work motivation',
+            duelmoti: '*Duel motivation',
             experience: '*Experience',
             special: '*Premium/special',
             events: '*Events',
@@ -3903,6 +3928,7 @@
             questitems: '-Quest items',
             craftitems: '-Craft items',
             recipes: '-Recipes',
+            NAMED: 'NAMED',
             nothingFound: 'No items of this type found!',
           },
           NPC: {
@@ -4200,7 +4226,8 @@
             speed: '*Speed',
             lp: '*Health points',
             luckNmoney: '*Luck & money',
-            motivation: '*Motivation',
+            workmoti: '*Work motivation',
+            duelmoti: '*Duel motivation',
             experience: '*Experience',
             special: '*Premium/special',
             events: '*Events',
@@ -4210,6 +4237,7 @@
             questitems: '-Quest items',
             craftitems: '-Craft items',
             recipes: '-Recipes',
+            NAMED: 'NAMED',
             nothingFound: 'No items of this type found!',
           },
           NPC: {
@@ -4406,6 +4434,8 @@
           50691: [1, 3],
           51482: [1, 2],
           51483: [1, 2],
+          53042: [1, 3],
+          53912: [1, 1],
         },
         cdownTimer: {},
         cdownSetTime: function (y, res, sec) {
@@ -4512,6 +4542,19 @@
           min: Math.ceil(dl / 1.4 + 0.01),
           max: Math.min(450, Math.floor(dl * 1.4 - 0.01))
         };
+      },
+      emptyBoni = '{"attributes":[],"skills":[],"fortbattle":{"offense":0,"defense":0,"resistance":0},"fortbattlesector":{"defense":0,"offense":0,"damage":0},"item":[]}',
+      forbid = {
+        sets: [
+          'set_free_to_use_dummy',
+          'set_xmas2015_clothing',
+        ],
+        max: 968,
+        unlock: [],
+        IDs: ['1337', '41999', '50106', ],
+        maxID: 94265,
+        unlockID: 94245,
+        date: new Date('2023-03-28'),
       };
       if (EvName)
         var sendGift = Game.sesData[EvName].friendsbar;
@@ -4733,119 +4776,134 @@
           $(TWX.GUI.window.getContentPane()).append(featScroll.getMainDiv()).append(button.getMainDiv());
         },
         makeList: function () {
-          if (!TWX.list)
-            $.getScript(TWX.website + 'files/newSets.js', function () {
-              TWX.list = west.storage.ItemSetManager._setArray.slice(0);
-              TWX.setListAll = {};
-              TWX.setListOwn = {};
-              TWX.itemListAll = {};
-              TWX.itemListOwn = {};
-              var slot = {
-                2: ['animal', 'yield'],
-                3: ['right_arm', 'left_arm'],
-                6: ['body', 'pants', 'neck', 'head', 'foot', 'belt']
-              };
-              var i = TWX.list.length;
-              while (i--) {
-                var si = TWX.list[i];
-                if (!forbid.sets.includes(si.key) && si.items[0] && !ItemManager.getByBaseId(si.items[0]).short.includes('friendset_') && !si.key.includes('friendship_set_'))
-                  TWX.setListAll[si.key] = si;
-                else
-                  TWX.list.splice(i, 1);
-              }
-              TWX.setLength = Object.keys(TWX.setListAll).length;
-              for (var j in TWX.setListAll) {
-                var sa = TWX.setListAll[j];
-                //sa.items.sort((a, b) => a - b);
-                var sil = sa.items.length;
-                sa.slots = slot[sil] && slot[sil].includes(ItemManager.getByBaseId(sa.items[1]).type) ? slot[sil][0] : 'rest';
-                var items = sa.getAvailableItems();
-                if (items.length) {
-                  var bon = {},
-                  oneType = [],
-                  c = 1;
-                  for (var o = 0; o < items.length; o++) {
-                    var igt = ItemManager.get(items[o]);
-                    items[o] = igt.item_base_id;
-                    if (oneType.includes(igt.type)) {
-                      --c;
-                      continue;
-                    }
-                    if (sa.bonus[o + c])
-                      bon[o + c] = sa.bonus[o + c];
-                    oneType.push(igt.type);
+          if (!TWX.list) {
+            //$.getScript(TWX.website + 'files/newSets.js', function () {
+            TWX.list = west.storage.ItemSetManager._setArray.slice(0);
+            TWX.setListAll = {};
+            TWX.setListOwn = {};
+            TWX.itemListAll = {};
+            TWX.itemListOwn = {};
+            var slot = {
+              2: ['animal', 'yield'],
+              3: ['right_arm', 'left_arm'],
+              6: ['body', 'pants', 'neck', 'head', 'foot', 'belt']
+            };
+            var i = TWX.list.length;
+            while (i--) {
+              var si = TWX.list[i];
+              if (!forbid.sets.includes(si.key) && si.items[0] && !ItemManager.getByBaseId(si.items[0]).short.includes('friendset_') && !si.key.includes('friendship_set_'))
+                TWX.setListAll[si.key] = si;
+              else
+                TWX.list.splice(i, 1);
+            }
+            TWX.setLength = Object.keys(TWX.setListAll).length;
+            for (var j in TWX.setListAll) {
+              var sa = TWX.setListAll[j];
+              //sa.items.sort((a, b) => a - b);
+              var sil = sa.items.length;
+              sa.slots = slot[sil] && slot[sil].includes(ItemManager.getByBaseId(sa.items[1]).type) ? slot[sil][0] : 'rest';
+              var items = sa.getAvailableItems();
+              if (items.length) {
+                var bon = {},
+                oneType = [],
+                c = 1;
+                for (var o = 0; o < items.length; o++) {
+                  var igt = ItemManager.get(items[o]);
+                  items[o] = igt.item_base_id;
+                  if (oneType.includes(igt.type)) {
+                    --c;
+                    continue;
                   }
-                  TWX.setListOwn[j] = {
-                    items: items.reverse(),
-                    bonus: bon,
-                    name: sa.name,
-                    slots: sa.slots,
-                  };
+                  if (sa.bonus[o + c])
+                    bon[o + c] = sa.bonus[o + c];
+                  oneType.push(igt.type);
+                }
+                TWX.setListOwn[j] = {
+                  items: items.reverse(),
+                  bonus: bon,
+                  name: sa.name,
+                  slots: sa.slots,
+                };
+              }
+            }
+            TWX.list.sort(function (a, b) {
+              var a1 = replUml(a.name),
+              b1 = replUml(b.name);
+              return (a1 == b1) ? 0 : (a1 > b1) ? 1 : -1;
+            });
+            var collect = set1.collector_set.bonus[9], //pray
+            pilg = set1.set_pilgrim_male.bonus[2], //build
+            lee = set1.set_oktoberfest_2016_1.bonus[6], //offenstrue
+            hero = set1.independance_event_set7.bonus[2], //drop
+            delChar = function (list) {
+              return list.desc.replace(/[0-9]|\+|\.|\%/g, '').substr(1);
+            };
+            TWX.searchObj = {
+              offense: [delChar(collect[5]), 'fort/battle/button_attack'],
+              offensetrue: [delChar(lee[4]), 'fort/battle/help01'],
+              defense: [delChar(hero[13]), 'fort/battle/button_defend'],
+              defensetrue: [delChar(collect[6]), 'fort/battle/help02'],
+              resistance: [delChar(hero[15]), 'fort/battle/resistance'],
+              //damage: ['weapon damage', 'items/left_arm/golden_rifle'],
+              damagetrue: [delChar(collect[7]), 'items/left_arm/golden_rifle'],
+              experience: [delChar(hero[10]), 'items/yield/xp_boost', '<br>'],
+              dollar: [delChar(hero[11]), 'items/yield/dollar_boost'],
+              luck: [delChar(collect[2]), 'items/yield/luck_boost'],
+              drop: [delChar(hero[9]), 'items/yield/product_boost'],
+              joball: [delChar(collect[0]), 'window/job/jobstar_small_gold'],
+              speed: [delChar(collect[1]), 'jobs/walk'],
+              regen: [delChar(collect[3]), 'jobs/sleep'],
+              pray: [delChar(collect[4]), 'jobs/pray'],
+              job1000: [delChar(pilg[4]), 'jobs/build'],
+            };
+            for (var ca = 0; ca < CharacterSkills.allSkillKeys.length; ca++) {
+              if (ca % 5 === 0) {
+                var attr = CharacterSkills.allAttrKeys[ca / 5];
+                TWX.searchObj[attr] = [CharacterSkills.keyNames[attr], 'window/skills/circle_' + attr, ca % 10 === 0 ? '<br>' : ''];
+              }
+              var skill = CharacterSkills.allSkillKeys[ca];
+              TWX.searchObj[skill] = [CharacterSkills.keyNames[skill], 'window/skills/skillicon_' + skill];
+            }
+            var addItems = function (obj, state) {
+              var ob = obj.bonus,
+              boni = {
+                1: []
+              },
+              slot = 'item';
+              if (JSON.stringify(ob) != emptyBoni) {
+                for (var cat in ob) {
+                  var obc = ob[cat];
+                  if (cat == 'item') {
+                    boni[1] = obc.slice();
+                    continue;
+                  }
+                  for (var type in obc) {
+                    var ct = obc[type];
+                    if (ct > 0) {
+                      boni[1].push({
+                        name: type,
+                        value: ct,
+                        isSector: cat == 'fortbattlesector',
+                        leveled: obj.item_level > 0
+                      });
+                    }
+                  }
+                }
+              } else if (obj.usebonus) {
+                slot = 'buff';
+                for (var oub of obj.usebonus) {
+                  if (!oub)
+                    continue;
+                  var desc = TWX.QIS.buffDesc(oub),
+                  useb = TWX.QIS.useboni[desc];
+                  if (TWX.searchObj[useb])
+                    boni[1].push({
+                      name: useb,
+                      value: oub.match(/\d+/)[0],
+                    });
                 }
               }
-              TWX.list.sort(function (a, b) {
-                var a1 = replUml(a.name),
-                b1 = replUml(b.name);
-                return (a1 == b1) ? 0 : (a1 > b1) ? 1 : -1;
-              });
-              var buffDesc = function (umt) {
-                return umt.replace(/[%-:]/g).trim();
-              },
-              useboni = {},
-              ammobelt = 2741,
-              ghostmusic = 2732,
-              lantern = 2734,
-              moneyboost = 2468,
-              ratatou = 51127,
-              cocktail = 51579,
-              getBuff = function (itm, num) {
-                return buffDesc(ItemManager.getByBaseId(itm).usebonus[num]);
-              };
-              useboni[getBuff(ammobelt, 2)] = 'offense';
-              useboni[getBuff(ammobelt, 1)] = 'defense';
-              useboni[getBuff(ghostmusic, 0)] = 'experience';
-              useboni[getBuff(moneyboost, 0)] = 'dollar';
-              useboni[getBuff(ratatou, 0)] = 'luck';
-              useboni[getBuff(ratatou, 1)] = 'drop';
-              useboni[getBuff(ghostmusic, 1)] = 'joball';
-              useboni[getBuff(lantern, 0)] = 'speed';
-              useboni[getBuff(cocktail, 0)] = 'regen';
-              for (var kn in CharacterSkills.keyNames)
-                useboni[CharacterSkills.keyNames[kn]] = kn;
-              var addItems = function (obj, state) {
-                var ob = obj.bonus,
-                boni = {
-                  1: ob.item.slice()
-                },
-                slot = 'item';
-                if (obj.usebonus) {
-                  slot = 'buff';
-                  for (var oub of obj.usebonus) {
-                    if (!oub)
-                      continue;
-                    var desc = buffDesc(oub);
-                    if (useboni[desc])
-                      boni[1].push({
-                        name: useboni[desc],
-                        value: oub.match(/\d+/)[0],
-                      });
-                  }
-                } else
-                  for (var cat in ob) {
-                    if (cat == 'item')
-                      continue;
-                    for (var type in ob[cat]) {
-                      var ct = ob[cat][type];
-                      if (ct > 0) {
-                        boni[1].push({
-                          name: type,
-                          value: ct,
-                          isSector: cat == 'fortbattlesector',
-                          leveled: obj.item_level > 0
-                        });
-                      }
-                    }
-                  }
+              if (boni[1].length)
                 TWX['itemList' + state][obj.item_base_id] = {
                   bonus: boni,
                   name: obj.name,
@@ -4853,59 +4911,27 @@
                   pos: obj.type,
                   item_level: obj.item_level,
                 };
-              };
-              var allItems = ItemManager.getAll();
-              for (var k in allItems)
-                if (k > 9 && k < forbid.maxID && !forbid.IDs.includes(k) && !(allItems[k].set && !TWX.setListAll[allItems[k].set]))
-                  addItems(allItems[k], 'All');
-              for (var l in Bag.items_by_id)
-                if (!['50106000'].includes(l))
-                  addItems(Bag.items_by_id[l].obj, 'Own');
-              for (var m in Wear.wear)
-                addItems(Wear.wear[m].obj, 'Own');
-              var collect = set1.collector_set.bonus[9], //pray
-              pilg = set1.set_pilgrim_male.bonus[2], //build
-              lee = set1.set_oktoberfest_2016_1.bonus[6], //offenstrue
-              hero = set1.independance_event_set7.bonus[2], //drop
-              delChar = function (list) {
-                return list.desc.replace(/[0-9]|\+|\.|\%/g, '').substr(1);
-              };
-              TWX.searchObj = {
-                offense: [delChar(collect[5]), 'fort/battle/button_attack'],
-                offensetrue: [delChar(lee[4]), 'fort/battle/help01'],
-                defense: [delChar(hero[13]), 'fort/battle/button_defend'],
-                defensetrue: [delChar(collect[6]), 'fort/battle/help02'],
-                resistance: [delChar(hero[15]), 'fort/battle/resistance'],
-                //damage: ['weapon damage', 'items/left_arm/golden_rifle'],
-                damagetrue: [delChar(collect[7]), 'items/left_arm/golden_rifle'],
-                experience: [delChar(hero[10]), 'items/yield/xp_boost', '<br>'],
-                dollar: [delChar(hero[11]), 'items/yield/dollar_boost'],
-                luck: [delChar(collect[2]), 'items/yield/luck_boost'],
-                drop: [delChar(hero[9]), 'items/yield/product_boost'],
-                joball: [delChar(collect[0]), 'window/job/jobstar_small_gold'],
-                speed: [delChar(collect[1]), 'jobs/walk'],
-                regen: [delChar(collect[3]), 'jobs/sleep'],
-                pray: [delChar(collect[4]), 'jobs/pray'],
-                job1000: [delChar(pilg[4]), 'jobs/build'],
-              };
-              for (var ca = 0; ca < CharacterSkills.allSkillKeys.length; ca++) {
-                if (ca % 5 === 0) {
-                  var attr = CharacterSkills.allAttrKeys[ca / 5];
-                  TWX.searchObj[attr] = [CharacterSkills.keyNames[attr], 'window/skills/circle_' + attr, ca % 10 === 0 ? '<br>' : ''];
-                }
-                var skill = CharacterSkills.allSkillKeys[ca];
-                TWX.searchObj[skill] = [CharacterSkills.keyNames[skill], 'window/skills/skillicon_' + skill];
-              }
-              if (!TWX.Data.fDate || Date.parse(forbid.date) > TWX.Data.fDate) {
-                var setNames = '',
-                nSets = forbid.unlock;
-                for (var h of nSets)
-                  setNames += TWX.GUI.getSetOrItem(h, set1[h]) + '<br>';
-                new west.gui.Dialog(TWX.name, '<span><b>' + forbid.date.toDateString() + '</b><br>' + TWXlang.newsets + ':<br><br>' + setNames + '</span>', west.gui.Dialog.SYS_OK).setBlockGame(false).setDraggable(true).addButton('ok').show();
-                TWX.Data.fDate = Date.parse(forbid.date);
-                localStorage.setItem('TWLT', JSON.stringify(TWX.Data));
-              }
-            });
+            };
+            var allItems = ItemManager.getAll();
+            for (var k in allItems)
+              if (k > 9 && k < forbid.maxID && !forbid.IDs.includes(k) && !(allItems[k].set && !TWX.setListAll[allItems[k].set]))
+                addItems(allItems[k], 'All');
+            for (var l in Bag.items_by_id)
+              if (!['50106000'].includes(l))
+                addItems(Bag.items_by_id[l].obj, 'Own');
+            for (var m in Wear.wear)
+              addItems(Wear.wear[m].obj, 'Own');
+            if (!TWX.Data.fDate || Date.parse(forbid.date) > TWX.Data.fDate) {
+              var setNames = '',
+              nSets = forbid.unlock;
+              for (var h of nSets)
+                setNames += TWX.GUI.getSetOrItem(h, set1[h]) + '<br>';
+              new west.gui.Dialog(TWX.name, '<span><b>' + forbid.date.toDateString() + '</b><br>' + TWXlang.newsets + ':<br><br>' + setNames + '</span>', west.gui.Dialog.SYS_OK).setBlockGame(false).setDraggable(true).addButton('ok').show();
+              TWX.Data.fDate = Date.parse(forbid.date);
+              localStorage.setItem('TWLT', JSON.stringify(TWX.Data));
+            }
+            //});
+          }
         },
         itemsInInv: function (id) {
           var upgrade = isNaN(id) ? TWX.currList[id].items : [id],
@@ -5221,14 +5247,15 @@
             var div = $('<div class="chooseBonus" style="display:inline-block;">' + getBonImg(id, 45)).appendTo(cont);
             new west.gui.Plusminusfield(id, TWX.chooseBonus[id] || 0, -100, 100, 0, buttonLogic, buttonLogic, buttonLogic).setWidth(45).appendTo(div);
           },
+          bonSrcTable,
           chooseWindow = function () {
+            bonSrcTable && bonSrcTable.hide();
             cont = $('<span>').append('<div style="width:92px;display:inline-block;vertical-align:top;background-color:#A47F5B;border-radius:5px;">' +
                 '<img id="switchWeapon" style="cursor:pointer;" src="//wiki.the-west.de/images/1/1a/Switch_weapons_icon.png" title="' + TWXlang.switchWeapon + '" width="45">' +
                 '<img id="subWeapon" src="images/items/right_arm/' + img[TWX.chooseBonus.subWeapon] + '.png" width="45"></div>');
-            for (var so in TWX.searchObj) {
+            for (var so in TWX.searchObj)
               getCB(so);
-            }
-            new west.gui.Dialog(TWXlang.selectBonus, cont).setBlockGame(false).setDraggable(true).addButton('ok', function () {
+            bonSrcTable = new west.gui.Dialog(TWXlang.selectBonus, cont).setId('TWX_BonSrc').setBlockGame(false).setDraggable(true).addButton('ok', function () {
               if (Object.keys(TWX.chooseBonus).length > 1)
                 showbonus.BonusSearch(JSON.stringify(TWX.chooseBonus));
               else {
@@ -5273,7 +5300,7 @@
             'position': 'absolute',
           });
           $(TWX.GUI.window.getContentPane()).append(switchTab, content, scrollpane.getMainDiv());
-          var maxLvl = 150,
+          var maxLvl = 250,
           setsSort = tab == 'SetBonus' ? new west.gui.Checkbox('ABC', 'TWXabcSets', function (state) {
             TWX.setAbc = state;
             loadSelbox();
@@ -5918,7 +5945,7 @@
                 var wiki = '//wiki.the' + Game.masterURL.match(/the(.*)/)[1] + '/wiki/',
                 gid = TWX.repGroups[this.id],
                 qGroup = QuestLog.solvedGroups[gid] || lang == 'de' && isNaN(gid) && gid,
-                groupName = [69, 34].includes(this.group) && qGroup ? qGroup + (repText[lang] || '') : 62 == this.group && qGroup ? qGroup + ' (Wiederholbare Quests)' : this.groupTitle,
+                groupName = [69, 34, 243].includes(this.group) && qGroup ? qGroup + (repText[lang] || '') : 62 == this.group && qGroup ? qGroup + ' (Wiederholbare Quests)' : this.groupTitle,
                 questName = encodeURIComponent((lang == 'pl' ? 'Zadania: ' : '') + groupName + '#' + (lang == 'de' ? this.id : this.soloTitle));
                 this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + wiki + questName + '" target="_blank"><img src="' + TWX.Images('wiki') + '"></a>');
               };
@@ -7405,8 +7432,103 @@
       };
       TWX.QuickItemsSearch = {
         init: function () {
+          var skillsL = [];
           TWX.QIS = {
-            equImg: 2188,
+            buffDesc: function (umt) {
+              return umt.replace(/\+|\d/g, '').replace(/:.+/, ':').trim();
+            },
+            useboni: {},
+            sets: [{
+                name: 'adventure',
+                img: 44053,
+                bons: ['offense', 'defense']
+              }, {
+                name: 'work',
+                img: 1879,
+                bons: ['joball', 'drop', 'premiumAu', '-premiumSp']
+              }, {
+                name: 'duel',
+                img: 842,
+                bons: ['dueldam', 'dueldams', 'duellp', 'aim', 'dodge', 'punch', 'shot', 'reflex', 'tough', 'appearance'],
+                itemsk: [2695, 51871, 53454]
+              }, {
+                name: 'energy',
+                img: 1890,
+                bons: ['energy', 'regen', 'premiumEP', '-premiumSp'],
+                itemsk: [2483, 2486]
+              }, {
+                name: 'skill',
+                img: 1977,
+                bons: skillsL,
+                itemsk: [1977, 1978, 1979]
+              }, {
+                name: 'fk',
+                img: 758,
+                bons: ['offense', 'defense', 'fbdam', 'health', 'hide', 'pitfall', 'leadership', '-joball', '-workmoti', 'premiumCh', '-premiumAu']
+              }, {
+                name: 'speed',
+                img: 605,
+                bons: ['speed', 'shortway', 'premiumSp', '-premiumEP']
+              }, {
+                name: 'lp',
+                img: 2117,
+                bons: ['lp', 'health', 'regen'],
+                itemsk: [2483, 2486]
+              }, {
+                name: 'luckNmoney',
+                img: 2290,
+                bons: ['luck', 'money', 'dollar', 'premiumIn', 'premiumSf', '-premiumSp']
+              }, {
+                name: 'duelmoti',
+                img: 1939,
+                bons: ['duelmoti']
+              }, {
+                name: 'workmoti',
+                img: 1891,
+                bons: ['workmoti']
+              }, {
+                name: 'experience',
+                img: 2467,
+                bons: ['experience', 'exp', 'levelUp']
+              }, {
+                name: 'special',
+                img: 2482,
+                bons: ['premiumCh', 'premiumEP', 'premiumAu', 'premiumIn', 'premiumSp', 'premiumSf', 'regen', 'avatar', 'exp', 'levelUp'],
+                itemsk: [2483, 2484, 2485]
+              }, {
+                name: 'events',
+                img: 2564,
+                bons: ['events'],
+                itemsk: [55, 12700, 50090]
+              }, {
+                name: 'chests',
+                img: 17002,
+                bons: ['bag', 'box', 'collection', 'bonds', 'avatar', 'exp', 'levelUp', 'money', 'events'],
+                itemsk: [2482, 2484, 2485]
+              }, {
+                name: 'equipment',
+                img: 2188
+              }, {
+                name: 'products',
+                img: 702,
+                itemsk: [1975, 2000, 2003, 2006, 2009]
+              }, {
+                name: 'questitems',
+                img: 17026,
+                itemsk: [774, 2001, 2004, 2007, 2010, 51578, 51584, 51590, 51596]
+              }, {
+                name: 'craftitems',
+                img: 1899,
+                itemsk: [2000, 2003, 2006, 2009]
+              }, {
+                name: 'recipes',
+                img: 20115
+              }, {
+                name: 'NAMED',
+                img: 842,
+                itemsk: [10, 14, 18, 22, 26, 30, 34, 38, 42, 133, 237, 314, 322, 530, 541, 551, 806, 810, 814, 818, 822, 826, 830, 834, 838, 842, 10007, 10017, 10027, 10037, 10047, 10057, 10067, 10077, 10087, 10097, 10107, 10117, 10127, 10137, 10147, 11007, 11017, 11027, 11037, 11047, 11057, 11067, 11077, 11109, 11117, 42035, 42039, 42040, 42044, 42052, 42056, 42060, 42068, 42076, 42085, 42089, 42093, 42101, 42109, 42117, 42125, 42133, 42141, 42149, 53235, 41047, 41056, 41059, 41070, 41079, 41080, 41089, 41104, 41105, 41113, 41128, 41137, 41146, 41155, 41164, 41173, 53178, 40076, 40079, 40080, 40090, 40091, 40099, 40107, 40111, 40115, 40123, 40127, 40135, 40143, 40151, 40159, 40167, 40175, 40183, 53204, 10227, 10235, 10243, 10251, 10259, 53213, 11215, 11223, 11231, 11239, 11247, 11255, 11263, 11271, 53187, 43011, 43015, 43023, 43027, 43031, 43039, 43047, 43055, 43063, 43071, 43075, 43083, 43087, 43095, 43103, 43111, 43119, 43127, 43135, 43143, 53222, 909, 913, 917, 921, 925, 45001, 45005, 45009, 45013, 45017, 53226, 53230, 195, 199, 44003, 44007, 44011, 44015, 44019, 53234],
+              }
+            ],
             MenuButton: function (image, title, onclick) {
               var that = this;
               this.isHovered = false;
@@ -7437,73 +7559,231 @@
               if (!TWX.QIS.popupMenu) {
                 TWX.QIS.popupMenu = new west.gui.Selectbox().setWidth(250);
                 TWX.QIS.popupMenu.addListener(TWX.QIS.findSet);
-                $.getScript(TWX.website + 'files/QIS_sets.js', function () {
-                  var qs = TWX.QIS.sets,
-                  i = qs.length,
-                  wSets = west.storage.ItemSetManager._setList;
-                  while (i--) {
-                    var si = qs[i],
-                    sn = wSets[si.name],
-                    ln = TWXlang.QIS[si.name];
-                    if (ln)
-                      si.name = ln;
-                    else if (!sn)
-                      qs.splice(i, 1);
-                    else if (sn.name)
-                      si.name = sn.name;
-                  }
-                  qs.sort(function (a, b) {
-                    var a1 = replUml(a.name),
-                    b1 = replUml(b.name);
-                    return (a1 == b1) ? 0 : (a1 > b1) ? 1 : -1;
-                  });
-                  for (var j = 0; j < qs.length; j++) {
-                    var itemimg = qs[j].img || qs[j].itemsk[0],
-                    NAME = qs[j].name;
-                    TWX.QIS.popupMenu.addItem(j, '<img src="' + ItemManager.getByBaseId(itemimg).image + '" height="20" width="20"><div style="padding-right:20px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;">' + NAME + '</div>', NAME);
-                  }
-                  TWX.QIS.popupMenu.show(e);
+                var qs = TWX.QIS.sets,
+                i = qs.length;
+                while (i--) {
+                  var si = qs[i];
+                  si.name2 = TWXlang.QIS[si.name] || si.name;
+                }
+                qs.sort(function (a, b) {
+                  var a1 = replUml(a.name2),
+                  b1 = replUml(b.name2);
+                  return (a1 == b1) ? 0 : (a1 > b1) ? 1 : -1;
                 });
-              } else
-                TWX.QIS.popupMenu.show(e);
-            },
-            findSet: function (id) {
-              var items = [],
-              seti = TWX.QIS.sets[id],
-              upgrade = seti.items ? 0 : 1,
-              lasti,
-              ipush = function () {
-                items.push(lasti * 1000);
-                if (upgrade)
-                  for (var h = 1; h <= 5; h++)
-                    items.push(lasti * 1000 + h);
-              },
-              itemids = seti.items || seti.itemsk;
-              for (var g = 0; g < itemids.length; g++) {
-                var ig = itemids[g];
-                if (ig < 47)
-                  for (var f = 1; f < ig; f++) {
-                    lasti++;
-                    ipush();
-                  }
-                else {
-                  lasti = ig;
-                  ipush();
+                for (var j = 0; j < qs.length; j++) {
+                  var NAME = qs[j].name2;
+                  TWX.QIS.popupMenu.addItem(j, '<img src="' + ItemManager.getByBaseId(qs[j].img).image + '" height="20" width="20"><div style="padding-right:20px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;">' + NAME + '</div>', NAME);
                 }
               }
-              var invItems = Bag.getItemsByItemIds(items);
+              TWX.QIS.popupMenu.show(e);
+            },
+            findSet: function (id) {
+              var invItems = [],
+              kItems = [],
+              seti = TWX.QIS.sets[id];
+              if (seti.name == 'recipes')
+                invItems = Bag.getItemsByItemIds(Bag.items_by_type.recipe);
+              else if (!['NAMED'].includes(seti.name)) {
+                for (var biy of Bag.items_by_type.yield) {
+                  biy = Bag.getItemByItemId(biy);
+                  var obj = biy.obj,
+                  condition = 0;
+                  if (obj.usebonus) {
+                    if (seti.bons) {
+                      for (var oub of obj.usebonus) {
+                        var desc = TWX.QIS.buffDesc(oub);
+                        if (!desc)
+                          continue;
+                        var qud = TWX.QIS.useboni[desc];
+                        if (seti.name == 'special' && !qud && !desc.includes(TWX.QIS.useboni.joball))
+                          condition = 1;
+                        else if (seti.bons.includes('-' + qud)) {
+                          condition = 0;
+                          break;
+                        } else if (seti.bons.includes(qud) || seti.name == 'work' && desc.includes(TWX.QIS.useboni.joball))
+                          condition = 1;
+                        if (['bag', 'collection'].includes(qud))
+                          break;
+                      }
+                    } else if (seti.name == 'questitems')
+                      condition = 1;
+                  }
+                  if (seti.name == 'products' && !obj.usebonus || seti.name == 'questitems' && !condition)
+                    condition = obj.spec_type == 'mapdrop';
+                  if (seti.name == 'equipment' || seti.name == 'questitems' && !condition)
+                    condition = (obj.set || JSON.stringify(obj.bonus) != emptyBoni);
+                  if (seti.name == 'craftitems' || seti.name == 'questitems' && !condition)
+                    condition = obj.spec_type == 'crafting';
+                  if (seti.name == 'questitems') {
+                    if (!condition)
+                      invItems.push(biy);
+                  } else if (condition)
+                    invItems.push(biy);
+                }
+              }
+              if (seti.itemsk) {
+                for (var ig of seti.itemsk) {
+                  kItems.push(ig * 1000);
+                  if (['NAMED'].includes(seti.name))
+                    for (var h = 1; h <= 5; h++)
+                      kItems.push(ig * 1000 + h);
+                }
+                invItems = invItems.concat(Bag.getItemsByItemIds(kItems));
+              }
               if (invItems.length > 0) {
                 if (!wman.getById(Inventory.uid))
                   Inventory.open();
                 Wear.open();
-                if (upgrade && seti.img != TWX.QIS.equImg)
-                  Inventory.showCustomItems(invItems);
-                else
-                  Inventory.showSearchResult(invItems);
+                if (seti.name == 'products')
+                  invItems.sort((a, b) => a.count - b.count);
+                else if (seti.name == 'recipes') {
+                  invItems.sort((a, b) => a.obj.min_level - b.obj.min_level);
+                  invItems.sort((a, b) => a.obj.profession == b.obj.profession ? 0 : a.obj.profession > b.obj.profession ? 1 : -1);
+                } else if (seti.itemsk)
+                  invItems.sort((a, b) => a.obj.item_id - b.obj.item_id);
+                Inventory.showSearchResult(invItems);
               } else
                 new UserMessage(TWXlang.QIS.nothingFound, 'hint').show();
             },
           };
+          var descsL = {
+            ammobelt: [2741, {
+                'fbdam': 0,
+                'defense': 1,
+                'offense': 2
+              }
+            ],
+            smokedfish: [53503, {
+                'joball': 1,
+                'dollar': 2 /*'luck': 0*/
+              }
+            ],
+            beanstew: [53504, {
+                'luck': 0,
+                'drop': 1,
+                'speed': 2
+              }
+            ],
+            leaderbag: [52502, {
+                'shortway': 3 /*'defense': 0,'offense': 1*/
+              }
+            ],
+            stagecoach: [51582, {
+                'regen': 0 /*'drop': 1*/
+              }
+            ],
+            beansoup: [50113, {
+                'lp': 0,
+                'energy': 1,
+                'duelmoti': 2,
+                'workmoti': 3,
+                'experience': 4,
+                'duration': 5
+              }
+            ],
+            wisdompotion: [2196, {
+                'exp': 0
+              }
+            ],
+            levelUp: [53842, {
+                'levelUp': 0
+              }
+            ],
+            tax: [2201, {
+                'money': 0
+              }
+            ],
+            dollar: [2559, {
+                'money': 0
+              }
+            ],
+            steak: [53508, {
+                'dueldam': 0
+              }
+            ],
+            testament: [50136, {
+                'dueldams': 1,
+                'duellp': 2,
+                'uses': 3 /*'duelmoti':0*/
+              }
+            ],
+            longtimer: [53598, {
+                'premiumCh': 0,
+                'premiumEP': 2,
+                'premiumAu': 4,
+                'premiumIn': 6,
+                'premiumSp': 8
+              }
+            ],
+            insurance: [2472, {
+                'premiumSf': 0,
+              }
+            ],
+            commonbag: [1975, {
+                'bag': 0
+              }
+            ],
+            energybox: [50301, {
+                'box': 0
+              }
+            ],
+            liquor: [1868, {
+                'collection': 0
+              }
+            ],
+            bonds: [2136, {
+                'bonds': 0
+              }
+            ],
+            hearts: [2561, {
+                'events': 0
+              }
+            ],
+            eggs: [2590, {
+                'events': 0
+              }
+            ],
+            fireworks: [2619, {
+                'events': 0
+              }
+            ],
+            pretzel: [371, {
+                'events': 0
+              }
+            ],
+            cempasuchil: [2675, {
+                'events': 0
+              }
+            ],
+            avatar: [50086, {
+                'avatar': 0
+              }
+            ],
+          },
+          getBuff = function (itm, num) {
+            return TWX.QIS.buffDesc(ItemManager.getByBaseId(itm).usebonus[num]);
+          },
+          misSpecs = {
+            mapdrop: [1828, 1829, 1830, 1975],
+            crafting: [52027, 52028, 52029, 52030, 52497, 52500, 52501, 52502, 52503, 52504, 52505, 52506, 52518, 52868, 52869, 52870, 52871, 53938, 53939, 53940, 53941],
+            none: [738],
+            jobdrop: [2000, 2009],
+          };
+          for (var deL in descsL) {
+            deL = descsL[deL];
+            for (var boDe in deL[1]) {
+              var boDev = deL[1][boDe];
+              TWX.QIS.useboni[getBuff(deL[0], boDev)] = boDe;
+            }
+          }
+          TWX.QIS.useboni.joball = getBuff(descsL.smokedfish[0], 1);
+          for (var kn in CharacterSkills.keyNames) {
+            TWX.QIS.useboni[CharacterSkills.keyNames[kn]] = kn;
+            skillsL.push(kn);
+          }
+          for (var msp in misSpecs)
+            for (var imsp of misSpecs[msp])
+              ItemManager.get(imsp * 1000).spec_type = msp;
           new TWX.QIS.MenuButton('data:image/png;base64,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', 'Quick items search', TWX.QIS.popup);
         },
       };
@@ -8091,7 +8371,7 @@
       };
       TWX.Collections = {
         init: function () {
-          TWX.Col = {}
+          TWX.Col = {};
         },
       };
       TWX.KickoMatic = {
