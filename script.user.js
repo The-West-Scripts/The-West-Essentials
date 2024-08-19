@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.48.1
+// @version 1.48.2
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.48.1',
+      version: '1.48.2',
       langs: {
         en: {
           language: 'English',
@@ -4544,6 +4544,10 @@
         };
       },
       emptyBoni = '{"attributes":[],"skills":[],"fortbattle":{"offense":0,"defense":0,"resistance":0},"fortbattlesector":{"defense":0,"offense":0,"damage":0},"item":[]}',
+      getAvg = function (bvl) {
+        bvl = bvl.match(/(\d+)-?(\d*)/);
+        return bvl[2] ? (bvl[1] * 1 + bvl[2] * 1) / 2 : bvl[1];
+      },
       forbid = {
         sets: [
           'set_free_to_use_dummy',
@@ -4551,7 +4555,7 @@
         ],
         max: 968,
         unlock: [],
-        IDs: ['1337', '41999', '50106', ],
+        IDs: ['138', '860', '1337', '41999', '50106', '50260'],
         maxID: 94265,
         unlockID: 94245,
         date: new Date('2023-03-28'),
@@ -4833,19 +4837,27 @@
             });
             var collect = set1.collector_set.bonus[9], //pray
             pilg = set1.set_pilgrim_male.bonus[2], //build
-            lee = set1.set_oktoberfest_2016_1.bonus[6], //offenstrue
             hero = set1.independance_event_set7.bonus[2], //drop
-            delChar = function (list) {
-              return list.desc.replace(/[0-9]|\+|\.|\%/g, '').substr(1);
+            delChar = function (typ, nam, brk) {
+              var descr = nam ? west.item.BonusExtractor.prototype.getDesc({
+                type: typ,
+                name: nam,
+                isSector: brk,
+                value: ''
+              }) : typ.desc;
+              if (brk == -1)
+                descr = descr.replace(/\(.+?\)/, '');
+              return descr.replace(/[0-9]|\+|\.|\%/g, '').trim();
             };
             TWX.searchObj = {
-              offense: [delChar(collect[5]), 'fort/battle/button_attack'],
-              offensetrue: [delChar(lee[4]), 'fort/battle/help01'],
-              defense: [delChar(hero[13]), 'fort/battle/button_defend'],
-              defensetrue: [delChar(collect[6]), 'fort/battle/help02'],
-              resistance: [delChar(hero[15]), 'fort/battle/resistance'],
-              //damage: ['weapon damage', 'items/left_arm/golden_rifle'],
-              damagetrue: [delChar(collect[7]), 'items/left_arm/golden_rifle'],
+              offense: [delChar(collect[5], 0, -1), 'fort/battle/button_attack'],
+              offensetrue: [delChar('fortbattle', 'offense', 1), 'fort/battle/help01'], //collection/item_51474
+              defense: [delChar(hero[13], 0, -1), 'fort/battle/button_defend'],
+              defensetrue: [delChar('fortbattle', 'defense', 1), 'fort/battle/help02'],
+              resistance: [delChar('fortbattle', 'resistance'), 'fort/battle/resistance'],
+              damagetrue: [delChar('fortbattle', 'damage', 1), 'items/collection/item_52801'],
+              dmgfb: [delChar('fortbattle', 'damage', -1) + ' ' + Inventory.categoryDesc.left_arm, 'items/left_arm/item_53232'],
+              dmgduel: [delChar('fortbattle', 'damage', -1) + ' ' + Inventory.categoryDesc.right_arm, 'items/right_arm/item_53228'],
               experience: [delChar(hero[10]), 'items/yield/xp_boost', '<br>'],
               dollar: [delChar(hero[11]), 'items/yield/dollar_boost'],
               luck: [delChar(collect[2]), 'items/yield/luck_boost'],
@@ -4871,20 +4883,18 @@
               },
               slot = 'item';
               if (JSON.stringify(ob) != emptyBoni) {
+                boni[1] = ob.item.slice();
                 for (var cat in ob) {
                   var obc = ob[cat];
-                  if (cat == 'item') {
-                    boni[1] = obc.slice();
+                  if (cat == 'item')
                     continue;
-                  }
                   for (var type in obc) {
                     var ct = obc[type];
                     if (ct > 0) {
                       boni[1].push({
                         name: type,
                         value: ct,
-                        isSector: cat == 'fortbattlesector',
-                        leveled: obj.item_level > 0
+                        isSector: cat == 'fortbattlesector'
                       });
                     }
                   }
@@ -4899,7 +4909,7 @@
                   if (TWX.searchObj[useb])
                     boni[1].push({
                       name: useb,
-                      value: oub.match(/\d+/)[0],
+                      value: getAvg(oub),
                     });
                 }
               }
@@ -4908,7 +4918,6 @@
                   bonus: boni,
                   name: obj.name,
                   slots: slot,
-                  pos: obj.type,
                   item_level: obj.item_level,
                 };
             };
@@ -5009,9 +5018,20 @@
           },
           types = {},
           perL = set1.instance_set_1.bonus[2][0].desc.match(/\(.*?\)/)[0],
-          compare = function (sets, id) {
+          cdmg = '',
+          wpntyp = {
+            dmgfb: 'right_arm',
+            dmgduel: 'left_arm'
+          },
+          compare = function (sets, id, list) {
+            cdmg = list == 'items' && cdmg;
             for (var i in sets) {
               var si = sets[i];
+              if (cdmg) {
+                var itm = ItemManager.getByBaseId(i);
+                if (itm.type == wpntyp[cdmg] || itm.sub_type == id.subWeapon)
+                  continue;
+              }
               for (var k in si.bonus)
                 for (var ID of si.bonus[k]) {
                   var ib = ID.bonus || ID,
@@ -5035,8 +5055,9 @@
                       types[i].value[NAM] = 0;
                     types[i].value[NAM] += ib.value;
                     var NUM = types[i].value[NAM] * (TWX.SPEC.includes(NAM) && types[i].slots != 'buff' ? 100 : 1),
-                    VAL = TWX.lvlToggle && ID.key ? Math.ceil(NUM * TWX.lvlToggle) : NUM,
-                    lvl = ib.leveled ? 0 : si.item_level,
+                    VAL = NUM * (ID.key && TWX.lvlToggle || 1);
+                    VAL = NAM == 'damage' ? VAL + getAvg(Object.values(itm.damage).join('-')) : Math.ceil(VAL);
+                    var lvl = si.item_level,
                     LVL = lvlUp(lvl, VAL) * id[NAM];
                     if (!types[i].values[k])
                       types[i].values[k] = $.extend({
@@ -5055,8 +5076,8 @@
                 }
                 if (si.items) {
                   for (var is of si.items)
-                    if (ItemManager.getByBaseId(is).sub_type != id.subWeapon)
-                      types[i].compVal.sum += types[is] ? types[is].compVal.sum : 0;
+                    //if (ItemManager.getByBaseId(is).sub_type != id.subWeapon)
+                    types[i].compVal.sum += types[is] ? types[is].compVal.sum : 0;
                 }
               }
             }
@@ -5066,8 +5087,8 @@
             'SetBonus': function (id) {
               TWX.currSetBonus = id;
               scrollpane.contentPane.empty();
-              var types = {},
-              sets = TWX.currList[id];
+              types = {};
+              var sets = TWX.currList[id];
               if (!sets)
                 return;
               TWX.GUI.window.setTitle(TWX.GUI.getSetOrItem(id, sets));
@@ -5105,6 +5126,9 @@
             },
             'BonusSearch': function (idString) {
               var id = JSON.parse(idString);
+              cdmg = (id.dmgfb ? 'dmgfb' : id.dmgduel ? 'dmgduel' : '');
+              if (cdmg)
+                id.damage = id[cdmg];
               if (Object.keys(id).length > 2 && !TWX.lvlToggle) {
                 TWX.currBonusSearch = idString;
                 return lvlBox.select(charLvl);
@@ -5121,8 +5145,8 @@
                 TWX.currBonusSearch = idString;
                 TWX.GUI.newState = ns;
                 reloadLvl = 0;
-                compare(TWX['itemList' + TWX.currState], id);
-                compare(TWX.currList, id);
+                compare(TWX['itemList' + TWX.currState], id, 'items');
+                compare(TWX.currList, id, 'sets');
                 var types2 = Object.keys(types).sort(function (a, b) {
                   return types[b].compVal.sum / types[b].parts - types[a].compVal.sum / types[a].parts;
                 }),
@@ -5151,8 +5175,8 @@
                   if (n.items) {
                     var ibs = 0;
                     for (var ib of n.items)
-                      if (ItemManager.getByBaseId(ib).sub_type != id.subWeapon)
-                        ibs += types[ib] ? types[ib].values[1].sum : 0;
+                      //if (ItemManager.getByBaseId(ib).sub_type != id.subWeapon)
+                      ibs += types[ib] ? types[ib].values[1].sum : 0;
                     var pi = ibs + setval;
                     if (`${pi}`.length > 15)
                       pi = Math.round(pi * 100) / 100;
@@ -5232,6 +5256,10 @@
               $('.chooseBonus #' + attr + ' span.displayValue').text(TWX.chooseBonus[attr]);
               if (TWX.chooseBonus[attr] === 0)
                 delete TWX.chooseBonus[attr];
+            } else if (id.startsWith('dmg')) {
+              var othDmg = 'dmgfb' == id ? 'dmgduel' : 'dmgfb';
+              $('.chooseBonus #' + othDmg + ' span.displayValue').text(0);
+              delete TWX.chooseBonus[othDmg];
             }
             if (butObj.current_value === 0)
               delete TWX.chooseBonus[id];
@@ -6734,22 +6762,22 @@
             this.width /= currZoom;
             this.height /= currZoom;
           };
-          var start2;
+          /*var start2;
           $('#map').on('touchstart', function (e) {
-            fingers++;
-            var eoEt = e.originalEvent.touches[0];
-            start2 = [eoEt.clientX, eoEt.clientY];
+          fingers++;
+          var eoEt = e.originalEvent.touches[0];
+          start2 = [eoEt.clientX, eoEt.clientY];
           }).on('touchmove', function (e) {
-            if (fingers != 1)
-              return;
-            e.preventDefault();
-            var eoEcT = e.originalEvent.changedTouches[0],
-            move = [eoEcT.clientX, eoEcT.clientY];
-            Map.Drag.scrollby((start2[0] - move[0]) / currZoom, (start2[1] - move[1]) / currZoom);
-            start2 = move;
+          if (fingers != 1)
+          return;
+          e.preventDefault();
+          var eoEcT = e.originalEvent.changedTouches[0],
+          move = [eoEcT.clientX, eoEcT.clientY];
+          Map.Drag.scrollby((start2[0] - move[0]) / currZoom, (start2[1] - move[1]) / currZoom);
+          start2 = move;
           }).on('touchend', function (e) {
-            fingers = 0;
-          });
+          fingers = 0;
+          });*/
           var wgWp = west.gui.Window.prototype;
           wgWp.init_twx = wgWp.init_twx || wgWp.init;
           wgWp.init = function () {
@@ -7449,7 +7477,7 @@
               }, {
                 name: 'duel',
                 img: 842,
-                bons: ['dueldam', 'dueldams', 'duellp', 'aim', 'dodge', 'punch', 'shot', 'reflex', 'tough', 'appearance'],
+                bons: ['dmgduel', 'lpduelS', 'aim', 'dodge', 'punch', 'shot', 'reflex', 'tough', 'appearance'],
                 itemsk: [2695, 51871, 53454]
               }, {
                 name: 'energy',
@@ -7464,7 +7492,7 @@
               }, {
                 name: 'fk',
                 img: 758,
-                bons: ['offense', 'defense', 'fbdam', 'health', 'hide', 'pitfall', 'leadership', '-joball', '-workmoti', 'premiumCh', '-premiumAu']
+                bons: ['offense', 'defense', 'dmgfb', 'health', 'hide', 'pitfall', 'leadership', '-joball', '-workmoti', 'premiumCh', '-premiumAu']
               }, {
                 name: 'speed',
                 img: 605,
@@ -7511,7 +7539,7 @@
               }, {
                 name: 'products',
                 img: 702,
-                itemsk: [1975, 2000, 2003, 2006, 2009]
+                itemsk: [1828, 1829, 1830, 1975, 2000, 2003, 2006, 2009]
               }, {
                 name: 'questitems',
                 img: 17026,
@@ -7648,7 +7676,7 @@
           };
           var descsL = {
             ammobelt: [2741, {
-                'fbdam': 0,
+                'dmgfb': 0,
                 'defense': 1,
                 'offense': 2
               }
@@ -7698,12 +7726,12 @@
               }
             ],
             steak: [53508, {
-                'dueldam': 0
+                'dmgduel': 0
               }
             ],
             testament: [50136, {
-                'dueldams': 1,
-                'duellp': 2,
+                'dmgduel': 1, //(per level)
+                'lpduelS': 2,
                 'uses': 3 /*'duelmoti':0*/
               }
             ],
@@ -7764,7 +7792,7 @@
             return TWX.QIS.buffDesc(ItemManager.getByBaseId(itm).usebonus[num]);
           },
           misSpecs = {
-            mapdrop: [1828, 1829, 1830, 1975],
+            mapdrop: [1975],
             crafting: [52027, 52028, 52029, 52030, 52497, 52500, 52501, 52502, 52503, 52504, 52505, 52506, 52518, 52868, 52869, 52870, 52871, 53938, 53939, 53940, 53941],
             none: [738],
             jobdrop: [2000, 2009],
