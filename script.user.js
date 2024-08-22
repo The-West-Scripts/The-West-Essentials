@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.48.4
+// @version 1.48.5
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.48.4',
+      version: '1.48.5',
       langs: {
         en: {
           language: 'English',
@@ -4482,7 +4482,7 @@
       TWX.updateLang();
       TWX.Skript = {
         fmfb: function () {
-          var fms = [['de', 'deutsches Forum'], ['net', 'English forum'], ['pl', 'forum polski'], ['es', 'foro español'], ['ru', 'Русский форум'], ['fr', 'forum français'], ['it', 'forum italiano'], ['net', 'beta forum', 'beta.']],
+          var fms = [['de', 'deutsches Forum'], ['net', 'English forum'], ['pl', 'forum polski'], ['es', 'foro español'], ['ru.com', 'Русский форум'], ['fr', 'forum français'], ['it', 'forum italiano'], ['net', 'beta forum', 'beta.']],
           add = '<h1>' + TWXlang.contact + '</h1><ul style="margin-left:15px;line-height:18px;"><li>Send a message to <a target=\'_blank\' href="//www.the-west.de/?ref=west_invite_linkrl&player_id=647936&world_id=13&hash=7dda">Tom Robert on German world Arizona</a></li><li>Message me on one of these The West Forum:<br>';
           for (var l of fms)
             add += '/ <a target=\'_blank\' href="//forum.' + (l[2] || '') + 'the-west.' + l[0] + '/index.php?conversations/add&to=Tom Robert">' + l[1] + '</a> ' + (l[0] == 'es' ? '<br>' : '');
@@ -4545,22 +4545,19 @@
         };
       },
       emptyBoni = '{"attributes":[],"skills":[],"fortbattle":{"offense":0,"defense":0,"resistance":0},"fortbattlesector":{"defense":0,"offense":0,"damage":0},"item":[]}',
-      getAvg = function (bvl) {
-        bvl = bvl.match(/(\d+\.?\d*)-?(\d*)/);
-        return bvl[2] ? (bvl[1] * 1 + bvl[2] * 1) / 2 : bvl[1];
-      },
       forbid = {
-        sets: [
-          'set_free_to_use_dummy',
-          'set_xmas2015_clothing',
-        ],
+        sets: ['set_xmas2015_clothing'],
         max: 968,
-        unlock: [],
+        //unlock: [],
         IDs: ['138', '860', '1337', '41999', '50106', '50260'],
         maxID: 94265,
-        unlockID: 94245,
-        date: new Date('2023-03-28'),
+        //unlockID: 94245,
+        //date: new Date('2023-03-28'),
       };
+      if (Game.environment == 'alpha') {
+        forbid.sets = [];
+        forbid.IDs = ['50106'];
+      }
       if (EvName)
         var sendGift = Game.sesData[EvName].friendsbar;
       TWX.GUI = {
@@ -4877,7 +4874,11 @@
               var skill = CharacterSkills.allSkillKeys[ca];
               TWX.searchObj[skill] = [CharacterSkills.keyNames[skill], 'window/skills/skillicon_' + skill];
             }
-            var addItems = function (obj, state) {
+            var getAvg = function (bvl) {
+              bvl = bvl.match(/(\d+\.?\d*)-?(\d*)/);
+              return bvl[2] ? (bvl[1] * 1 + bvl[2] * 1) / 2 : bvl[1];
+            },
+            addItems = function (obj, state) {
               var ob = obj.bonus,
               boni = {
                 1: []
@@ -4915,6 +4916,12 @@
                     });
                 }
               }
+              if (obj.damage) {
+                boni[1].push({
+                  name: obj.type == 'left_arm' ? 'dmgfb' : 'dmgduel',
+                  value: getAvg(Object.values(obj.damage).join('-'))
+                });
+              }
               if (boni[1].length)
                 TWX['itemList' + state][obj.item_base_id] = {
                   bonus: boni,
@@ -4928,19 +4935,18 @@
               if (k > 9 && k < forbid.maxID && !forbid.IDs.includes(k) && !(allItems[k].set && !TWX.setListAll[allItems[k].set]))
                 addItems(allItems[k], 'All');
             for (var l in Bag.items_by_id)
-              if (!['50106000'].includes(l))
-                addItems(Bag.items_by_id[l].obj, 'Own');
+              addItems(Bag.items_by_id[l].obj, 'Own');
             for (var m in Wear.wear)
               addItems(Wear.wear[m].obj, 'Own');
-            if (!TWX.Data.fDate || Date.parse(forbid.date) > TWX.Data.fDate) {
-              var setNames = '',
-              nSets = forbid.unlock;
-              for (var h of nSets)
-                setNames += TWX.GUI.getSetOrItem(h, set1[h]) + '<br>';
-              new west.gui.Dialog(TWX.name, '<span><b>' + forbid.date.toDateString() + '</b><br>' + TWXlang.newsets + ':<br><br>' + setNames + '</span>', west.gui.Dialog.SYS_OK).setBlockGame(false).setDraggable(true).addButton('ok').show();
-              TWX.Data.fDate = Date.parse(forbid.date);
-              localStorage.setItem('TWLT', JSON.stringify(TWX.Data));
-            }
+            /*if (!TWX.Data.fDate || Date.parse(forbid.date) > TWX.Data.fDate) {
+            var setNames = '',
+            nSets = forbid.unlock;
+            for (var h of nSets)
+            setNames += TWX.GUI.getSetOrItem(h, set1[h]) + '<br>';
+            new west.gui.Dialog(TWX.name, '<span><b>' + forbid.date.toDateString() + '</b><br>' + TWXlang.newsets + ':<br><br>' + setNames + '</span>', west.gui.Dialog.SYS_OK).setBlockGame(false).setDraggable(true).addButton('ok').show();
+            TWX.Data.fDate = Date.parse(forbid.date);
+            localStorage.setItem('TWLT', JSON.stringify(TWX.Data));
+            }*/
             //});
           }
         },
@@ -4963,7 +4969,7 @@
           if (!obj)
             return id;
           var isItem = !isNaN(id),
-          nNew = window.forbid && (isItem && id >= forbid.unlockID || !isItem && forbid.unlock.includes(id)) ? '<img src="' + TWX.Images('new') + '">' : '',
+          nNew = /*window.forbid && (isItem && id >= forbid.unlockID || !isItem && forbid.unlock.includes(id)) ? '<img src="' + TWX.Images('new') + '">' :*/ '',
           nLvl = obj.itmLvl ? '<img src="images/items/item_level.png"><span style="font-size: 11px;color:#ffffff;text-shadow:black -1px 0 1px,black 0 1px 1px,black 1px 0 1px,black 0 -1px 1px;">' + obj.itmLvl + '</span>' : '',
           options = {
             show_alreadyown: true
@@ -5009,7 +5015,8 @@
             'margin-top': '10px',
             'width': '593px'
           });
-          var lvlUp = function (level, value, ned) {
+          var types = {},
+          lvlUp = function (level, value, ned) {
             var mupl = (value < 1 || ned) ? 10000 : 1,
             ret = !level ? 0 : Math.round(Math.max(1, value * level * 0.1 * mupl)) / mupl;
             return value + ret;
@@ -5019,7 +5026,6 @@
             var son = TWX.searchObj[n] || JobList.getJobById(n.slice(3));
             return '<img src="images/' + (son[1] || 'jobs/' + son.shortname) + '.png" width="' + w + '" title="' + (son[0] || son.name) + '">';
           },
-          types = {},
           cdmg = '',
           wpntyp = {
             dmgfb: 'right_arm',
@@ -5039,10 +5045,11 @@
                   var ib = ID.bonus || ID,
                   NAM = (ib.name || ib.type) + (ib.job || ib.isSector || '');
                   if (id[NAM]) {
-                    var spnm = TWX.SPEC.includes(NAM);
+                    var spnm = TWX.SPEC.includes(NAM),
+                    plbn = ID.key && !TWX.lvlToggle;
                     if (!types[i]) {
                       types[i] = {
-                        desc: (spnm ? '% ' : ' ') + (ID.key && !TWX.lvlToggle ? perL() : ''),
+                        desc: (spnm ? '% ' : ' ') + (plbn ? perL() : ''),
                         value: {},
                         values: {},
                         compVal: {
@@ -5054,29 +5061,26 @@
                         items: si.items,
                       };
                     }
-                    var tiv = types[i].value,
-                    mtpl = 1000;
+                    var tiv = types[i].value;
                     if (!tiv[NAM])
                       tiv[NAM] = 0;
                     tiv[NAM] += ib.value;
                     var NUM = tiv[NAM] * (spnm && types[i].slots != 'buff' ? 100 : 1),
                     lvl = TWX.lvlToggle || Character.level,
-                    ned = NAM == 'damage';
-                    if (ned) {
-                      NUM += getAvg(Object.values(itm.damage).join('-')) / lvl;
-                      mtpl = 100;
-                    }
+                    ned = wpntyp[NAM] && tiv.damage && !TWX.lvlToggle;
                     var VAL = NUM;
                     if (ID.key)
                       VAL = Math.ceil(lvl * VAL);
+                    else if (ned)
+                      NUM /= lvl;
                     VAL = lvlUp(si.itmLvl, VAL);
-                    NUM = TWX.lvlToggle ? VAL : lvlUp(si.itmLvl, NUM, ned);
+                    NUM = TWX.lvlToggle ? VAL : lvlUp(si.itmLvl, NUM, (plbn || ned));
 
                     if (!types[i].values[k])
                       types[i].values[k] = $.extend({
                         sum: 0
                       }, types[i].values[k - 1]);
-                    types[i].values[k][NAM] = Math.round(NUM * id[NAM] * mtpl) / mtpl;
+                    types[i].values[k][NAM] = NUM * id[NAM];
                     types[i].compVal[NAM] = VAL * id[NAM];
                     types[i].parts = k;
                   }
@@ -5182,7 +5186,7 @@
                     if (o == 'sum')
                       continue;
                     var pre = (['item', 'buff'].includes(n.slots) ? '' : o + ' ' + TWXlang.parts + ':');
-                    TWX.GUI.html[n.slots] += pre + ' +' + n.values[o].sum + n.desc + '<br>';
+                    TWX.GUI.html[n.slots] += pre + ' +' + (Math.round(n.values[o].sum * 1000) / 1000) + n.desc + '<br>';
                     setval = n.values[o].sum;
                   }
                   if (n.items) {
@@ -5228,7 +5232,7 @@
                 selbox.addListener(showbonus.SetBonus);
                 var sbaI = function (j) {
                   var sj = TWX.currList[j];
-                  selbox.addItem(j, '<img src=' + (forbid.unlock.includes(j) ? TWX.Images('new') : ItemManager.getByBaseId(sj.items[0]).image) + ' height="20" width="20"><div style="padding-right:20px;text-overflow:ellipsis; white-space:nowrap;overflow:hidden;">' + sj.name + '</div>', sj.name);
+                  selbox.addItem(j, '<img src=' + (/*forbid.unlock.includes(j) ? TWX.Images('new') :*/ ItemManager.getByBaseId(sj.items[0]).image) + ' height="20" width="20"><div style="padding-right:20px;text-overflow:ellipsis; white-space:nowrap;overflow:hidden;">' + sj.name + '</div>', sj.name);
                 };
                 if (TWX.setAbc) {
                   for (var h of TWX.list)
