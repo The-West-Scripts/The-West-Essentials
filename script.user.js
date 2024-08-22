@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.48.2
+// @version 1.48.3
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.48.2',
+      version: '1.48.3',
       langs: {
         en: {
           language: 'English',
@@ -4490,9 +4490,9 @@
         },
         init: function () {
           TheWestApi.register('TWX', TWX.name, TWX.minGame, TWX.maxGame, TWX.author, TWX.website).setGui('<h1>' + TWXlang.info + '</h1><i>Language: </i>' + TWXlang.language + '<br><br>' + TWXlang.ApiGui1 + ': <a href="javascript:TWX.GUI.open(\'openFeatures\');TWX.GUI.makeList();">' + TWXlang.ApiGui2 + '</a><br><br><i>' + TWX.name + ' v' + TWX.version + '</i><br><br>' + this.fmfb());
-          var menuContainer = $('<div class="menulink" onclick="TWX.GUI.openSelectbox();" title="' + TWX.name + '">').css('background-image', 'url(' + TWX.Images('LT_settings') + ')').css('background-position', '0px 0px').mouseenter(function () {
+          var menuContainer = $('<div class="menulink" onclick="TWX.GUI.openSelectbox();" title="' + TWX.name + '">').css('background-image', 'url(' + TWX.Images('LT_settings') + ')').css('background-position', '0px 0px').on('mouseenter', function () {
             $(this).css('background-position', '-25px 0px');
-          }).mouseleave(function () {
+          }).on('mouseleave', function () {
             $(this).css('background-position', '0px 0px');
           });
           $('#ui_menubar').append($('<div id="TWX_menu" class="ui_menucontainer">').append(menuContainer).append('<div class="menucontainer_bottom">'));
@@ -4534,6 +4534,7 @@
       var EvName = Object.keys(Game.sesData)[0],
       sesEvs = ['Hearts', 'Easter', 'Independence', 'Octoberfest', 'DayOfDead'],
       set1 = west.storage.ItemSetManager._setList,
+      perL = set1.instance_set_1.bonus[2][0].desc.match(/\(.*?\)/)[0],
       replUml = function (str) {
         return str.toUpperCase().replace(/"/g, '').replace(/[À-Ä]/g, 'A').replace(/[È-Ë]/g, 'E').replace(/[Ì-Ï]/g, 'I').replace(/[Ò-Ö]/g, 'O').replace(/[Ù-Ü]/g, 'U').replace(/Ś/g, 'S');
       },
@@ -4545,7 +4546,7 @@
       },
       emptyBoni = '{"attributes":[],"skills":[],"fortbattle":{"offense":0,"defense":0,"resistance":0},"fortbattlesector":{"defense":0,"offense":0,"damage":0},"item":[]}',
       getAvg = function (bvl) {
-        bvl = bvl.match(/(\d+)-?(\d*)/);
+        bvl = bvl.match(/(\d+\.?\d*)-?(\d*)/);
         return bvl[2] ? (bvl[1] * 1 + bvl[2] * 1) / 2 : bvl[1];
       },
       forbid = {
@@ -4910,6 +4911,7 @@
                     boni[1].push({
                       name: useb,
                       value: getAvg(oub),
+                      key: oub.includes(perL)
                     });
                 }
               }
@@ -4918,7 +4920,7 @@
                   bonus: boni,
                   name: obj.name,
                   slots: slot,
-                  item_level: obj.item_level,
+                  itmLvl: obj.item_level,
                 };
             };
             var allItems = ItemManager.getAll();
@@ -4962,7 +4964,7 @@
             return id;
           var isItem = !isNaN(id),
           nNew = window.forbid && (isItem && id >= forbid.unlockID || !isItem && forbid.unlock.includes(id)) ? '<img src="' + TWX.Images('new') + '">' : '',
-          nLvl = obj.item_level ? '<img src="images/items/item_level.png"><span style="font-size: 11px;color:#ffffff;text-shadow:black -1px 0 1px,black 0 1px 1px,black 1px 0 1px,black 0 -1px 1px;">' + obj.item_level + '</span>' : '',
+          nLvl = obj.itmLvl ? '<img src="images/items/item_level.png"><span style="font-size: 11px;color:#ffffff;text-shadow:black -1px 0 1px,black 0 1px 1px,black 1px 0 1px,black 0 -1px 1px;">' + obj.itmLvl + '</span>' : '',
           options = {
             show_alreadyown: true
           };
@@ -4974,7 +4976,7 @@
           click = 'onclick="TWX.GUI.itemsInInv(\'' + id + '\')"',
           img = '';
           if (isItem) {
-            var itemId = id + '00' + obj.item_level,
+            var itemId = id + '00' + obj.itmLvl,
             item = ItemManager.get(itemId);
             nPopup = 'data-itemid="' + itemId + '" title="' + (new ItemPopup(item, options).getXHTML().escapeHTML()) + '"';
             img = '<img src="' + item.image + '" width="25">';
@@ -5007,8 +5009,9 @@
             'margin-top': '10px',
             'width': '593px'
           });
-          var lvlUp = function (level, value) {
-            var ret = !level ? 0 : value < 1 ? Math.round(Math.max(1, value * 1000 * level)) / 10000 : Math.round(Math.max(1, value * 0.1 * level));
+          var lvlUp = function (level, value, ned) {
+            var mupl = (value < 1 || ned) ? 10000 : 1,
+            ret = !level ? 0 : Math.round(Math.max(1, value * level * 0.1 * mupl)) / mupl;
             return value + ret;
           },
           charLvl = Character.level,
@@ -5017,7 +5020,6 @@
             return '<img src="images/' + (son[1] || 'jobs/' + son.shortname) + '.png" width="' + w + '" title="' + (son[0] || son.name) + '">';
           },
           types = {},
-          perL = set1.instance_set_1.bonus[2][0].desc.match(/\(.*?\)/)[0],
           cdmg = '',
           wpntyp = {
             dmgfb: 'right_arm',
@@ -5037,9 +5039,10 @@
                   var ib = ID.bonus || ID,
                   NAM = (ib.name || ib.type) + (ib.job || ib.isSector || '');
                   if (id[NAM]) {
+                    var spnm = TWX.SPEC.includes(NAM);
                     if (!types[i]) {
                       types[i] = {
-                        desc: (TWX.SPEC.includes(NAM) ? '% ' : ' ') + (ID.key && !TWX.lvlToggle ? perL : ''),
+                        desc: (spnm ? '% ' : ' ') + (ID.key && !TWX.lvlToggle ? perL : ''),
                         value: {},
                         values: {},
                         compVal: {
@@ -5047,24 +5050,34 @@
                         },
                         slots: si.slots,
                         name: si.name,
-                        item_level: si.item_level,
+                        itmLvl: si.itmLvl,
                         items: si.items,
                       };
                     }
-                    if (!types[i].value[NAM])
-                      types[i].value[NAM] = 0;
-                    types[i].value[NAM] += ib.value;
-                    var NUM = types[i].value[NAM] * (TWX.SPEC.includes(NAM) && types[i].slots != 'buff' ? 100 : 1),
-                    VAL = NUM * (ID.key && TWX.lvlToggle || 1);
-                    VAL = NAM == 'damage' ? VAL + getAvg(Object.values(itm.damage).join('-')) : Math.ceil(VAL);
-                    var lvl = si.item_level,
-                    LVL = lvlUp(lvl, VAL) * id[NAM];
+                    var tiv = types[i].value,
+                    mtpl = 1000;
+                    if (!tiv[NAM])
+                      tiv[NAM] = 0;
+                    tiv[NAM] += ib.value;
+                    var NUM = tiv[NAM] * (spnm && types[i].slots != 'buff' ? 100 : 1),
+                    lvl = TWX.lvlToggle || Character.level,
+                    ned = NAM == 'damage';
+                    if (ned) {
+                      NUM += getAvg(Object.values(itm.damage).join('-')) / lvl;
+                      mtpl = 100;
+                    }
+                    var VAL = NUM;
+                    if (ID.key)
+                      VAL = Math.ceil(lvl * VAL);
+                    VAL = lvlUp(si.itmLvl, VAL);
+                    NUM = TWX.lvlToggle ? VAL : lvlUp(si.itmLvl, NUM, ned);
+
                     if (!types[i].values[k])
                       types[i].values[k] = $.extend({
                         sum: 0
                       }, types[i].values[k - 1]);
-                    types[i].values[k][NAM] = Math.round(LVL * 1000) / 1000;
-                    types[i].compVal[NAM] = !TWX.lvlToggle && ID.key ? lvlUp(lvl, Math.ceil(NUM * Character.level)) * id[NAM] : LVL;
+                    types[i].values[k][NAM] = Math.round(NUM * id[NAM] * mtpl) / mtpl;
+                    types[i].compVal[NAM] = VAL * id[NAM];
                     types[i].parts = k;
                   }
                 }
@@ -5076,8 +5089,8 @@
                 }
                 if (si.items) {
                   for (var is of si.items)
-                    //if (ItemManager.getByBaseId(is).sub_type != id.subWeapon)
-                    types[i].compVal.sum += types[is] ? types[is].compVal.sum : 0;
+                    if (ItemManager.getByBaseId(is).sub_type != id.subWeapon)
+                      types[i].compVal.sum += types[is] ? types[is].compVal.sum : 0;
                 }
               }
             }
@@ -5111,7 +5124,7 @@
                 for (var m in types) {
                   var n = types[m];
                   var NUM = n.value * (TWX.SPEC.includes(m) ? 100 : 1);
-                  var VAL = TWX.lvlToggle && n.key ? Math.ceil(NUM * TWX.lvlToggle) : Math.round(NUM * 100) / 100;
+                  var VAL = TWX.lvlToggle && n.key ? Math.ceil(NUM * TWX.lvlToggle) : Math.round(NUM * 1000) / 1000;
                   spCont += getBonImg(m, 23) + ' + ' + VAL + ' ' + n.desc + '<br>';
                 }
               }
@@ -5126,9 +5139,6 @@
             },
             'BonusSearch': function (idString) {
               var id = JSON.parse(idString);
-              cdmg = (id.dmgfb ? 'dmgfb' : id.dmgduel ? 'dmgduel' : '');
-              if (cdmg)
-                id.damage = id[cdmg];
               if (Object.keys(id).length > 2 && !TWX.lvlToggle) {
                 TWX.currBonusSearch = idString;
                 return lvlBox.select(charLvl);
@@ -5145,6 +5155,9 @@
                 TWX.currBonusSearch = idString;
                 TWX.GUI.newState = ns;
                 reloadLvl = 0;
+                cdmg = (id.dmgfb ? 'dmgfb' : id.dmgduel ? 'dmgduel' : '');
+                if (cdmg)
+                  id.damage = id[cdmg];
                 compare(TWX['itemList' + TWX.currState], id, 'items');
                 compare(TWX.currList, id, 'sets');
                 var types2 = Object.keys(types).sort(function (a, b) {
@@ -5175,8 +5188,8 @@
                   if (n.items) {
                     var ibs = 0;
                     for (var ib of n.items)
-                      //if (ItemManager.getByBaseId(ib).sub_type != id.subWeapon)
-                      ibs += types[ib] ? types[ib].values[1].sum : 0;
+                      if (ItemManager.getByBaseId(ib).sub_type != id.subWeapon)
+                        ibs += types[ib] ? types[ib].values[1].sum : 0;
                     var pi = ibs + setval;
                     if (`${pi}`.length > 15)
                       pi = Math.round(pi * 100) / 100;
@@ -5699,7 +5712,7 @@
             }
             for (var f = 0; f < offers.length; f++) {
               var ofs = offers[f];
-              if (ofs.market_town_id == town_id && (ofs.auction_ends_in < 0 || ofs.current_bid == ofs.max_price)) {
+              if (ofs.market_town_id == town_id && (ofs.auction_ends_in < 0 || ofs.max_price && ofs.current_bid == ofs.max_price)) {
                 showDialog();
                 return;
               }
@@ -6927,9 +6940,9 @@
               $('#colorTxtStyle').append('div.btnColorOneSmiley{display: inline-block; cursor: pointer; width: 17px; height: 13px; padding: 1px; text-align: center; vertical-align: middle;}\n');
               this.btncolor = $('<div class="btnColor btnColorBG">').append($('<div class="btnColorImg btnColorImgTag">').click(function () {
                     TWX.CT.Window.show();
-                  })).append(e = $('<div class="btnColorSmiley">').hide()).mouseout(function () {
+                  })).append(e = $('<div class="btnColorSmiley">').hide()).on('mouseleave', function () {
                   $('div.btnColorSmiley:last-child', this).hide();
-                }).mouseover(function () {
+                }).on('mouseenter', function () {
                   $('div.btnColorSmiley:last-child', this).show();
                 });
               for (var t in sm) {
@@ -7098,7 +7111,7 @@
               $('div.chat_room').find('.chat_input').each(function (e) {
                 if (!$(this).children().is('.btnColor')) {
                   $(this).append(TWX.CT.Chat.btncolor.clone(true));
-                  $(this).find('input.message').keypress(function (e) {
+                  $(this).find('input.message').on('keypress', function (e) {
                     if (e.keyCode == 13) {
                       TWX.CT.Chat.OnPressKeyEnter(e);
                       document.focusing = undefined;
@@ -7521,7 +7534,7 @@
               }, {
                 name: 'special',
                 img: 2482,
-                bons: ['premiumCh', 'premiumEP', 'premiumAu', 'premiumIn', 'premiumSp', 'premiumSf', 'regen', 'avatar', 'exp', 'levelUp'],
+                bons: ['premiumCh', 'premiumEP', 'premiumAu', 'premiumIn', 'premiumSp', 'premiumSf', 'regen', 'avatar', 'levelUp'],
                 itemsk: [2483, 2484, 2485]
               }, {
                 name: 'events',
@@ -7553,33 +7566,25 @@
                 img: 20115
               }, {
                 name: 'NAMED',
-                img: 842,
-                itemsk: [10, 14, 18, 22, 26, 30, 34, 38, 42, 133, 237, 314, 322, 530, 541, 551, 806, 810, 814, 818, 822, 826, 830, 834, 838, 842, 10007, 10017, 10027, 10037, 10047, 10057, 10067, 10077, 10087, 10097, 10107, 10117, 10127, 10137, 10147, 11007, 11017, 11027, 11037, 11047, 11057, 11067, 11077, 11109, 11117, 42035, 42039, 42040, 42044, 42052, 42056, 42060, 42068, 42076, 42085, 42089, 42093, 42101, 42109, 42117, 42125, 42133, 42141, 42149, 53235, 41047, 41056, 41059, 41070, 41079, 41080, 41089, 41104, 41105, 41113, 41128, 41137, 41146, 41155, 41164, 41173, 53178, 40076, 40079, 40080, 40090, 40091, 40099, 40107, 40111, 40115, 40123, 40127, 40135, 40143, 40151, 40159, 40167, 40175, 40183, 53204, 10227, 10235, 10243, 10251, 10259, 53213, 11215, 11223, 11231, 11239, 11247, 11255, 11263, 11271, 53187, 43011, 43015, 43023, 43027, 43031, 43039, 43047, 43055, 43063, 43071, 43075, 43083, 43087, 43095, 43103, 43111, 43119, 43127, 43135, 43143, 53222, 909, 913, 917, 921, 925, 45001, 45005, 45009, 45013, 45017, 53226, 53230, 195, 199, 44003, 44007, 44011, 44015, 44019, 53234],
+                img: 842
               }
             ],
             MenuButton: function (image, title, onclick) {
               var that = this;
-              this.isHovered = false;
               this.onClick = onclick;
               var clicked = function (e) {
                 if (that.onClick) {
                   that.onClick(that, e);
                 }
-              };
-              var repaint = function () {
-                var x = !that.isHovered ? 0 : -25;
-                that.obj.css('background-position', x + 'px 0px');
-              };
-              var mouseIn = function () {
-                that.isHovered = true;
-                repaint();
-              };
-              var mouseOut = function () {
-                that.isHovered = false;
-                repaint();
+              },
+              mouseIn = function () {
+                that.obj.css('background-position', '-25px 0px');
+              },
+              mouseOut = function () {
+                that.obj.css('background-position', '0px 0px');
               };
               this.obj = $('<div class="menulink" title="' + title + '">').css('background-image', 'url(' + image + ')');
-              this.obj.hover(mouseIn, mouseOut);
+              this.obj.on('mouseenter', mouseIn).on('mouseleave', mouseOut);
               this.obj.click(clicked);
               $('#TWX_menu').append(this.obj);
             },
@@ -7609,9 +7614,15 @@
               var invItems = [],
               kItems = [],
               seti = TWX.QIS.sets[id];
-              if (seti.name == 'recipes')
+              if (seti.name == 'NAMED') {
+                for (var biu in Bag.items_by_id) {
+                  biu = Bag.items_by_id[biu];
+                  if (biu.obj.named)
+                    invItems.push(biu);
+                }
+              } else if (seti.name == 'recipes')
                 invItems = Bag.getItemsByItemIds(Bag.items_by_type.recipe);
-              else if (!['NAMED'].includes(seti.name)) {
+              else {
                 for (var biy of Bag.items_by_type.yield) {
                   biy = Bag.getItemByItemId(biy);
                   var obj = biy.obj,
@@ -7650,12 +7661,8 @@
                 }
               }
               if (seti.itemsk) {
-                for (var ig of seti.itemsk) {
+                for (var ig of seti.itemsk)
                   kItems.push(ig * 1000);
-                  if (['NAMED'].includes(seti.name))
-                    for (var h = 1; h <= 5; h++)
-                      kItems.push(ig * 1000 + h);
-                }
                 invItems = invItems.concat(Bag.getItemsByItemIds(kItems));
               }
               if (invItems.length > 0) {
@@ -7796,6 +7803,7 @@
             crafting: [52027, 52028, 52029, 52030, 52497, 52500, 52501, 52502, 52503, 52504, 52505, 52506, 52518, 52868, 52869, 52870, 52871, 53938, 53939, 53940, 53941],
             none: [738],
             jobdrop: [2000, 2009],
+            named: [10, 14, 18, 237, 314, 322, 530, 541, 551, 810, 42035, 42039, 42040, 42044, 42052, 42056, 42060, 42068, 42076, 42085, 42089, 42093, 42101, 42109, 42117, 42125, 42133, 42141, 42149, 53235, 41047, 41056, 41059, 41070, 41079, 41080, 41089, 41104, 41105, 41113, 41128, 41137, 41146, 41155, 41164, 41173, 53178, 40076, 40079, 40080, 40090, 40091, 40099, 40107, 40111, 40115, 40123, 40127, 40135, 40143, 40151, 40159, 40167, 40175, 40183, 53204, 10227, 10235, 10243, 10251, 10259, 53213, 11215, 11223, 11231, 11239, 11247, 11255, 11263, 11271, 53187, 43011, 43015, 43023, 43027, 43031, 43039, 43047, 43055, 43063, 43071, 43075, 43083, 43087, 43095, 43103, 43111, 43119, 43127, 43135, 43143, 53222, 909, 913, 917, 921, 925, 45001, 45005, 45009, 45013, 45017, 53226, 53230, 195, 199, 44003, 44007, 44011, 44015, 44019, 53234]
           };
           var intvQIS = setInterval(function () {
             if (ItemManager.get(0)) {
@@ -7813,8 +7821,13 @@
                 skillsL.push(kn);
               }
               for (var msp in misSpecs)
-                for (var imsp of misSpecs[msp])
-                  ItemManager.get(imsp * 1000).spec_type = msp;
+                for (var imsp of misSpecs[msp]) {
+                  if (msp == 'named')
+                    for (var h = 0; h <= 5; h++)
+                      ItemManager.get(imsp * 1000 + h).named = true;
+                  else
+                    ItemManager.get(imsp * 1000).spec_type = msp;
+                }
             }
           }, 500);
           new TWX.QIS.MenuButton('data:image/png;base64,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', 'Quick items search', TWX.QIS.popup);
@@ -7846,57 +7859,66 @@
           MarketWindow.open_twx = MarketWindow.open_twx || MarketWindow.open;
           MarketWindow.open = function () {
             MarketWindow.open_twx.apply(this, arguments);
-            $('div.tw2gui_win2.marketplace').on('DOMNodeInserted', function (e) {
-              var el = $(e.target);
-              if (el.is('div[class*="marketOffersData_"]') || el.is('div[class*="marketWatchData_"]') || el.is('div[class*="marketSellsData_"]') || el.is('div[class*="marketWhatIsHotData_"]')) {
-                var child = el.children(),
-                name = child[1],
-                nameT = name.firstChild.getAttribute('title'),
-                qty = child[2].textContent,
-                purchase = child[3],
-                bid = child[4];
-                if ($('#mpb_recipe.accordion_opened').length) {
-                  var n = nameT.split(':');
-                  if (n.length == 2)
-                    nameT = n[1];
+            var mwl = new MutationObserver(mts => {
+              mts.every(e => {
+                var el = $(e.target);
+                if (el.hasClass('tw2gui_scrollpane_clipper_contentpane')) {
+                  el.children().each((ix, row) => {
+                    var child = row.children,
+                    name = child[1],
+                    nameT = name.firstChild.getAttribute('title'),
+                    qty = child[2].textContent,
+                    purchase = child[3],
+                    bid = child[4];
+                    if ($('#mpb_recipe.accordion_opened').length) {
+                      var n = nameT.split(':');
+                      if (n.length == 2)
+                        nameT = n[1];
+                    }
+                    var price_o = TWX.MBB.items[nameT];
+                    if (purchase.textContent) {
+                      var p = purchase.textContent.replace(/\$|\.|\,/g, ''),
+                      price_p = p / qty;
+                      if (price_p < price_o) {
+                        purchase.style.color = 'green';
+                        if (!bid.textContent)
+                          name.style.color = 'green';
+                      }
+                      if ((price_p > price_o) && (price_p <= price_o * 2)) {
+                        purchase.style.color = 'blue';
+                        if (!bid.textContent)
+                          name.style.color = 'blue';
+                      }
+                      if (price_p > price_o * 2) {
+                        purchase.style.color = 'red';
+                        if (!bid.textContent)
+                          name.style.color = 'red';
+                      }
+                    }
+                    if (bid.textContent) {
+                      var b = bid.textContent.replace(/\$|\.|\,/g, ''),
+                      price_b = b / qty;
+                      if (price_b < price_o) {
+                        bid.style.color = 'green';
+                        name.style.color = 'green';
+                      }
+                      if ((price_b > price_o) && (price_b <= price_o * 2)) {
+                        bid.style.color = 'blue';
+                        name.style.color = 'blue';
+                      }
+                      if (price_b > price_o * 2) {
+                        name.style.color = 'red';
+                        bid.style.color = 'red';
+                      }
+                    }
+                  });
+                  return;
                 }
-                var price_o = TWX.MBB.items[nameT];
-                if (purchase.textContent) {
-                  var p = purchase.textContent.replace(/\$|\.|\,/g, ''),
-                  price_p = p / qty;
-                  if (price_p < price_o) {
-                    purchase.style.color = 'green';
-                    if (!bid.textContent)
-                      name.style.color = 'green';
-                  }
-                  if ((price_p > price_o) && (price_p <= price_o * 2)) {
-                    purchase.style.color = 'blue';
-                    if (!bid.textContent)
-                      name.style.color = 'blue';
-                  }
-                  if (price_p > price_o * 2) {
-                    purchase.style.color = 'red';
-                    if (!bid.textContent)
-                      name.style.color = 'red';
-                  }
-                }
-                if (bid.textContent) {
-                  var b = bid.textContent.replace(/\$|\.|\,/g, ''),
-                  price_b = b / qty;
-                  if (price_b < price_o) {
-                    bid.style.color = 'green';
-                    name.style.color = 'green';
-                  }
-                  if ((price_b > price_o) && (price_b <= price_o * 2)) {
-                    bid.style.color = 'blue';
-                    name.style.color = 'blue';
-                  }
-                  if (price_b > price_o * 2) {
-                    name.style.color = 'red';
-                    bid.style.color = 'red';
-                  }
-                }
-              }
+              });
+            });
+            mwl.observe(document.querySelector('.marketplace .tw2gui_window_content_pane'), {
+              subtree: true,
+              childList: true,
             });
           };
         },
@@ -9023,9 +9045,9 @@
       };
       TWX.Logout = {
         init: function () {
-          var menu = $('<div class="menulink" onclick="TWX.Logout.logout();" title="' + TWXlang.logout + '">').css('background-image', 'url(' + TWX.Images('logout') + ')').css('background-position', '0px 0px').mouseenter(function () {
+          var menu = $('<div class="menulink" onclick="TWX.Logout.logout();" title="' + TWXlang.logout + '">').css('background-image', 'url(' + TWX.Images('logout') + ')').css('background-position', '0px 0px').on('mouseenter', function () {
             $(this).css('background-position', '-25px 0px');
-          }).mouseleave(function () {
+          }).on('mouseleave', function () {
             $(this).css('background-position', '0px 0px');
           });
           $('#TWX_menu').append(menu);
@@ -9343,9 +9365,9 @@
                   'z-index': '1',
                   'position': 'absolute',
                   'cursor': 'pointer',
-                }).mouseenter(function () {
+                }).on('mouseenter', function () {
                   $(this).css('background-position', '0px -45px');
-                }).mouseleave(function () {
+                }).on('mouseleave', function () {
                   $(this).css('background-position', '0px 0px');
                 }).click(function () {
                   loginNow(t1);
@@ -9365,9 +9387,9 @@
                   'z-index': '1',
                   'position': 'absolute',
                   'cursor': 'pointer',
-                }).mouseenter(function () {
+                }).on('mouseenter', function () {
                   $(this).css('background-position', '0px -36px');
-                }).mouseleave(function () {
+                }).on('mouseleave', function () {
                   $(this).css('background-position', '0px 0px');
                 }).click(function () {
                   loginNow(t2);
