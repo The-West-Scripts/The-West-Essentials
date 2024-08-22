@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.48.3
+// @version 1.48.4
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.48.3',
+      version: '1.48.4',
       langs: {
         en: {
           language: 'English',
@@ -4534,7 +4534,7 @@
       var EvName = Object.keys(Game.sesData)[0],
       sesEvs = ['Hearts', 'Easter', 'Independence', 'Octoberfest', 'DayOfDead'],
       set1 = west.storage.ItemSetManager._setList,
-      perL = set1.instance_set_1.bonus[2][0].desc.match(/\(.*?\)/)[0],
+      perL = () => set1.instance_set_1.bonus[2][0].desc.match(/\(.*?\)/)[0],
       replUml = function (str) {
         return str.toUpperCase().replace(/"/g, '').replace(/[À-Ä]/g, 'A').replace(/[È-Ë]/g, 'E').replace(/[Ì-Ï]/g, 'I').replace(/[Ò-Ö]/g, 'O').replace(/[Ù-Ü]/g, 'U').replace(/Ś/g, 'S');
       },
@@ -4911,7 +4911,7 @@
                     boni[1].push({
                       name: useb,
                       value: getAvg(oub),
-                      key: oub.includes(perL)
+                      key: oub.includes(perL())
                     });
                 }
               }
@@ -5042,7 +5042,7 @@
                     var spnm = TWX.SPEC.includes(NAM);
                     if (!types[i]) {
                       types[i] = {
-                        desc: (spnm ? '% ' : ' ') + (ID.key && !TWX.lvlToggle ? perL : ''),
+                        desc: (spnm ? '% ' : ' ') + (ID.key && !TWX.lvlToggle ? perL() : ''),
                         value: {},
                         values: {},
                         compVal: {
