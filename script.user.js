@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.48.5
+// @version 1.48.6
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.48.5',
+      version: '1.48.6',
       langs: {
         en: {
           language: 'English',
@@ -7480,7 +7480,7 @@
           var skillsL = [];
           TWX.QIS = {
             buffDesc: function (umt) {
-              return umt.replace(/\+|\d/g, '').replace(/:.+/, ':').trim();
+              return umt.replace(/\+|\d/g, '').replace(/:.+/, ':').trim().toLowerCase();
             },
             useboni: {},
             sets: [{
@@ -7821,7 +7821,7 @@
               }
               TWX.QIS.useboni.joball = getBuff(descsL.smokedfish[0], 1);
               for (var kn in CharacterSkills.keyNames) {
-                TWX.QIS.useboni[CharacterSkills.keyNames[kn]] = kn;
+                TWX.QIS.useboni[CharacterSkills.keyNames[kn].toLowerCase()] = kn;
                 skillsL.push(kn);
               }
               for (var msp in misSpecs)
