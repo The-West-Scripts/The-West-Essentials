@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.48.6
+// @version 1.48.7
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.48.6',
+      version: '1.48.7',
       langs: {
         en: {
           language: 'English',
@@ -340,7 +340,7 @@
         },
         de: {
           language: 'German (Deutsch)',
-          ApiGui1: 'Das Script beinhaltet verschiedene Funktionen um den Alltag bei The West zu vereinfachen.<br>Weitere Informationen',
+          ApiGui1: 'Das Script beinhaltet verschiedene Funktionen, um den Alltag bei The West zu vereinfachen.<br>Weitere Informationen',
           ApiGui2: 'Skriptfenster öffnen',
           Feat: {
             ColorTchat: '%0 Neue Funktionen für den Chat. Farbiger Text, Emojis 🐧🎉 usw.',
@@ -408,7 +408,7 @@
           items: 'Gegenstände',
           parts: 'Teile',
           showItems: 'Zeige die Setgegenstände in deinem Inventar',
-          noItems: 'Keine Gegenstände im Inventar gefunden. Klicke erneut mit CTRL um sie auf TW-Calc anzuzeigen.',
+          noItems: 'Keine Gegenstände im Inventar gefunden. Klicke erneut mit CTRL, um sie auf TW-Calc anzuzeigen.',
           ownSets: 'Nur eigene Sets',
           switchWeapon: 'Wähle Schuss- oder Schlagwaffe',
           selectBonus: 'Boni auswählen',
@@ -475,7 +475,7 @@
           edit: 'Bearbeiten',
           CT: {
             ColorWindowTitle: 'Color tchat Einstellung',
-            ColorWindowPreviewTxt: '*Klicke auf diese Buchstaben um die aktuell im oberen Feld gewählte Farbe reinzumischen',
+            ColorWindowPreviewTxt: '*Klicke auf diese Buchstaben, um die aktuell im oberen Feld gewählte Farbe reinzumischen',
             ColorWindowOkBtn: 'Übernehmen',
             ColorWindowToDefaultBtn: 'Zurücksetzen',
             ColorWindowThisTchatBtn: 'Einstellung speichern',
@@ -504,7 +504,7 @@
               'pink wechselnd',
               'hellrot wechselnd'
             ],
-            ColorLoadTitle: 'Klicke um weitere Farben auszuwählen<br>Aktueller Farbcode: ',
+            ColorLoadTitle: 'Klicke, um weitere Farben auszuwählen.<br>Aktueller Farbcode: ',
             ColorSaveEmpty: '[leer]',
             CustomReady: 'Code ok',
             CustomNotReady: 'Ungültig',
@@ -5032,12 +5032,12 @@
             dmgduel: 'left_arm'
           },
           compare = function (sets, id, list) {
-            cdmg = list == 'items' && cdmg;
             for (var i in sets) {
-              var si = sets[i];
-              if (cdmg) {
-                var itm = ItemManager.getByBaseId(i);
-                if (itm.type == wpntyp[cdmg] || itm.sub_type == id.subWeapon)
+              var si = sets[i],
+              itm;
+              if (list) {
+                itm = ItemManager.getByBaseId(i);
+                if (itm.sub_type == id.subWeapon)
                   continue;
               }
               for (var k in si.bonus)
@@ -5045,6 +5045,8 @@
                   var ib = ID.bonus || ID,
                   NAM = (ib.name || ib.type) + (ib.job || ib.isSector || '');
                   if (id[NAM]) {
+                    if (cdmg && list && NAM == 'damage' && itm.type == wpntyp[cdmg])
+                      continue;
                     var spnm = TWX.SPEC.includes(NAM),
                     plbn = ID.key && !TWX.lvlToggle;
                     if (!types[i]) {
@@ -5059,6 +5061,7 @@
                         name: si.name,
                         itmLvl: si.itmLvl,
                         items: si.items,
+                        itmVal: 0,
                       };
                     }
                     var tiv = types[i].value;
@@ -5093,8 +5096,10 @@
                 }
                 if (si.items) {
                   for (var is of si.items)
-                    if (ItemManager.getByBaseId(is).sub_type != id.subWeapon)
-                      types[i].compVal.sum += types[is] ? types[is].compVal.sum : 0;
+                    if (types[is]) {
+                      types[i].compVal.sum += types[is].compVal.sum;
+                      types[i].itmVal += types[is].values[1].sum;
+                    }
                 }
               }
             }
@@ -5162,12 +5167,13 @@
                 cdmg = (id.dmgfb ? 'dmgfb' : id.dmgduel ? 'dmgduel' : '');
                 if (cdmg)
                   id.damage = id[cdmg];
-                compare(TWX['itemList' + TWX.currState], id, 'items');
-                compare(TWX.currList, id, 'sets');
+                compare(TWX['itemList' + TWX.currState], id, 1);
+                compare(TWX.currList, id);
                 var types2 = Object.keys(types).sort(function (a, b) {
                   return types[b].compVal.sum / types[b].parts - types[a].compVal.sum / types[a].parts;
                 }),
-                ic = 0;
+                icb = 0;
+                ici = 0;
                 TWX.GUI.html = {
                   body: '',
                   right_arm: '',
@@ -5178,7 +5184,7 @@
                 };
                 for (var type of types2) {
                   var n = types[type];
-                  if (n.slots == 'item' && ic++ > 200)
+                  if (n.slots == 'item' && ici++ > 200 || n.slots == 'body' && icb++ > 100)
                     continue;
                   var setval = 0;
                   TWX.GUI.html[n.slots] += '<br>' + TWX.GUI.getSetOrItem(type, n) + '<br>';
@@ -5190,14 +5196,10 @@
                     setval = n.values[o].sum;
                   }
                   if (n.items) {
-                    var ibs = 0;
-                    for (var ib of n.items)
-                      if (ItemManager.getByBaseId(ib).sub_type != id.subWeapon)
-                        ibs += types[ib] ? types[ib].values[1].sum : 0;
-                    var pi = ibs + setval;
-                    if (`${pi}`.length > 15)
-                      pi = Math.round(pi * 100) / 100;
-                    TWX.GUI.html[n.slots] += `& ${TWXlang.items}: ${pi}<br>`;
+                    var vi = n.itmVal + setval;
+                    if (`${vi}`.length > 15)
+                      vi = Math.round(vi * 100) / 100;
+                    TWX.GUI.html[n.slots] += `& ${TWXlang.items}: ${vi}<br>`;
                   }
                 }
               }
@@ -5990,7 +5992,7 @@
                 var wiki = '//wiki.the' + Game.masterURL.match(/the(.*)/)[1] + '/wiki/',
                 gid = TWX.repGroups[this.id],
                 qGroup = QuestLog.solvedGroups[gid] || lang == 'de' && isNaN(gid) && gid,
-                groupName = [69, 34, 243].includes(this.group) && qGroup ? qGroup + (repText[lang] || '') : 62 == this.group && qGroup ? qGroup + ' (Wiederholbare Quests)' : this.groupTitle,
+                groupName = [69, 34].includes(this.group) && qGroup ? qGroup + (repText[lang] || '') : 62 == this.group && qGroup ? qGroup + ' (Wiederholbare Quests)' : this.groupTitle,
                 questName = encodeURIComponent((lang == 'pl' ? 'Zadania: ' : '') + groupName + '#' + (lang == 'de' ? this.id : this.soloTitle));
                 this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + wiki + questName + '" target="_blank"><img src="' + TWX.Images('wiki') + '"></a>');
               };
