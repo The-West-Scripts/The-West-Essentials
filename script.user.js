@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.48.7
+// @version 1.48.8
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.48.7',
+      version: '1.48.8',
       langs: {
         en: {
           language: 'English',
@@ -5672,82 +5672,72 @@
               return new UserMessage(json.msg).show();
             TWX.MarketMessage.Towns = json.towns;
             EventHandler.listen('position_change', function () {
-              TWX.MarketMessage.check();
+              check();
             });
             var setVal2 = setInterval(function () {
               if (Character.position.x) {
                 clearInterval(setVal2);
-                TWX.MarketMessage.check();
+                check();
               }
-            }, 1000);
+            }, 300);
           });
-        },
-        check: function () {
           var town_id,
-          offers,
-          bids,
+          aucts,
           fetch = function (action) {
             Ajax.remoteCall('building_market', action, {}, function (resp) {
               if (resp.error)
                 return new UserMessage(resp.msg).show();
               Character.setDeposit(resp.deposit);
               Character.setMoney(resp.cash);
+              EventHandler.signal('inventory_changed');
               return new MessageSuccess(resp.msg).show();
             });
-          };
-          var fetchAll = function (what) {
-            if (what == 1)
+          },
+          fetchAll = function (all1) {
+            if (all1 && aucts.offers)
               fetch('fetch_town_offers');
-            fetch('fetch_town_bids');
-            EventHandler.signal('inventory_changed');
-          };
-          var showDialog = function () {
+            if (!all1 || aucts.bids)
+              fetch('fetch_town_bids');
+          },
+          showDialog = function () {
             new west.gui.Dialog(TWXlang.market1, TWXlang.market2, west.gui.Dialog.SYS_QUESTION).addButton(TWXlang.all, function () {
               fetchAll(1);
             }).addButton(TWXlang.onlyBids, function () {
-              fetchAll(0);
+              fetchAll();
             }).addButton(TWXlang.nothing).show();
-          };
-          var checkItems = function () {
-            for (var g = 0; g < bids.length; g++) {
-              var bgs = bids[g];
-              if (bgs.market_town_id == town_id && (bgs.auction_ends_in < 0 || bgs.current_bid == bgs.max_price)) {
-                showDialog();
-                return;
+          },
+          checkItems = function (resl, auct) {
+            for (var bgs of resl)
+              if (bgs.market_town_id == town_id && (bgs.auction_ends_in < 0 || bgs.max_price && bgs.current_bid == bgs.max_price)) {
+                aucts[auct] = 1;
+                break;
               }
-            }
-            for (var f = 0; f < offers.length; f++) {
-              var ofs = offers[f];
-              if (ofs.market_town_id == town_id && (ofs.auction_ends_in < 0 || ofs.max_price && ofs.current_bid == ofs.max_price)) {
-                showDialog();
-                return;
-              }
-            }
-          };
-          var get_offers = function () {
-            Ajax.remoteCall('building_market', 'fetch_offers', {
+          },
+          get_aucts = function (auct) {
+            Ajax.remoteCall('building_market', 'fetch_' + auct, {
               page: 0
             }, function (json) {
-              offers = json.msg.search_result;
-              checkItems();
+              checkItems(json.msg.search_result, auct);
+              if (auct == 'offers')
+                get_aucts('bids');
+              else if (aucts.bids || aucts.offers)
+                showDialog();
             });
+          },
+          check = function () {
+            var towns = TWX.MarketMessage.Towns;
+            for (var k in towns)
+              if (towns[k].x == Character.position.x && towns[k].y == Character.position.y) {
+                town_id = towns[k].town_id;
+                aucts = {};
+                var wait = Character.health < 6 ? Character.playerId.toString().substr(-4) : 1;
+                setTimeout(function () {
+                  get_aucts('offers');
+                }, wait);
+                break;
+              }
           };
-          var get_bids = function () {
-            Ajax.remoteCall('building_market', 'fetch_bids', {}, function (json) {
-              bids = json.msg.search_result;
-              get_offers();
-            });
-          };
-          var towns = TWX.MarketMessage.Towns;
-          for (var k in towns)
-            if (towns[k].x == Character.position.x && towns[k].y == Character.position.y) {
-              town_id = towns[k].town_id;
-              var wait = Character.health < 6 ? Character.playerId.toString().substr(-4) : 1;
-              setTimeout(function () {
-                get_bids();
-              }, wait);
-            }
-        }
+        },
       };
       TWX.MarkDaily = {
         init: function () {
@@ -5775,9 +5765,6 @@
             npcData = data.bonus;
             return '<table class="dln_npcskill_popup"><tr><td colspan="5" class="text_bold">' + TWXlang.popup + '<br>&nbsp;</td></tr><tr><td><img src="images/window/duels/npcskill_shot.jpg"></td><td><img src="images/window/duels/npcskill_punch.jpg"></td><td><img src="images/window/duels/npcskill_aim.jpg"></td><td><img src="images/window/duels/npcskill_appearance.jpg"></td><td></td></tr><tr><td class="text_bold">' + (npcData.shot || 0) + '</td><td class="text_bold">' + (npcData.punch || 0) + '</td>' + '<td class="text_bold">' + (npcData.aim || 0) + '</td><td class="text_bold">' + (npcData.appearance || 0) + '</td><td></td></tr>' + '<tr><td><img src="images/window/duels/npcskill_tactic.jpg"></td><td><img src="images/window/duels/npcskill_reflex.jpg"></td><td><img src="images/window/duels/npcskill_dodge.jpg"></td><td><img src="images/window/duels/npcskill_tough.jpg"></td><td><img src="images/window/duels/npcskill_health.jpg"></td></tr><tr><td class="text_bold">' + (npcData.tactic || 0) + '</td><td class="text_bold">' + (npcData.reflex || 0) + '</td><td class="text_bold">' + (npcData.dodge || 0) + '</td><td class="text_bold">' + (npcData.tough || 0) + '</td><td class="text_bold">' + (npcData.health || 0) + '</td></tr><tr><td colspan="2" class="text_bold"><img src="' + weapon.image + '"></td><td colspan="3" class="text_bold"><br>' + weapon.name + '<br>(' + TWXlang.damage + ': ' + damage.min + ' - ' + damage.max + ')</td></tr></table>';
           };
-          Ajax.remoteCallMode('character', 'get_info', {}, function (resp) {
-            Character.setDuelLevel(resp.duelLevel);
-          });
           var progB = new west.gui.Progressbar(0, 100);
           progB.setTextOnly(true);
           $(progB.getMainDiv()).css('width', '772px');
@@ -5968,35 +5955,51 @@
       };
       TWX.QuestWiki = {
         init: function () {
-          $.getScript(TWX.website + 'files/repGroups.js', function () {
+          var doGroups = function (json) {
             QuestLog.solvedGroups = {};
-            Ajax.remoteCallMode('building_quest', 'get_solved_groups', {}, function (json) {
-              for (var sg in json.solved)
-                QuestLog.solvedGroups[sg] = json.solved[sg].title;
-              QuestLog.addSolvedQuestGroup_twx = QuestLog.addSolvedQuestGroup;
-              QuestLog.addSolvedQuestGroup = function (groupId, questGroup) {
-                QuestLog.addSolvedQuestGroup_twx.apply(this, arguments);
-                QuestLog.solvedGroups[groupId] = questGroup.title;
-              };
-              var lang = Game.locale.substr(0, 2),
-              repText = {
-                de: ' (Wiederholbare Feiertagsquestreihe)',
-                hu: ' (Ismételhető)',
-                it: ' (Ripetibile)',
-                pt: ' repetível',
-                ru: ' - Снова праздник',
-              };
-              Quest.render_twx = Quest.render;
-              Quest.render = function () {
-                Quest.render_twx.apply(this, arguments);
-                var wiki = '//wiki.the' + Game.masterURL.match(/the(.*)/)[1] + '/wiki/',
-                gid = TWX.repGroups[this.id],
-                qGroup = QuestLog.solvedGroups[gid] || lang == 'de' && isNaN(gid) && gid,
-                groupName = [69, 34].includes(this.group) && qGroup ? qGroup + (repText[lang] || '') : 62 == this.group && qGroup ? qGroup + ' (Wiederholbare Quests)' : this.groupTitle,
-                questName = encodeURIComponent((lang == 'pl' ? 'Zadania: ' : '') + groupName + '#' + (lang == 'de' ? this.id : this.soloTitle));
-                this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + wiki + questName + '" target="_blank"><img src="' + TWX.Images('wiki') + '"></a>');
-              };
-            });
+            for (var sg in json.solved)
+              QuestLog.solvedGroups[sg] = json.solved[sg].title;
+            QuestLog.addSolvedQuestGroup_twx = QuestLog.addSolvedQuestGroup;
+            QuestLog.addSolvedQuestGroup = function (groupId, questGroup) {
+              QuestLog.addSolvedQuestGroup_twx.apply(this, arguments);
+              QuestLog.solvedGroups[groupId] = questGroup.title;
+            };
+            var lang = Game.locale.substr(0, 2),
+            repText = {
+              de: ' (Wiederholbare Feiertagsquestreihe)',
+              hu: ' (Ismételhető)',
+              it: ' (Ripetibile)',
+              pt: ' repetível',
+              ru: ' - Снова праздник',
+            };
+            Quest.render_twx = Quest.render;
+            Quest.render = function () {
+              Quest.render_twx.apply(this, arguments);
+              var wiki = '//wiki.the' + Game.masterURL.match(/the(.*)/)[1] + '/wiki/',
+              gid = TWX.repGroups[this.id],
+              qGroup = QuestLog.solvedGroups[gid] || lang == 'de' && isNaN(gid) && gid,
+              groupName = [69, 34].includes(this.group) && qGroup ? qGroup + (repText[lang] || '') : 62 == this.group && qGroup ? qGroup + ' (Wiederholbare Quests)' : this.groupTitle,
+              questName = encodeURIComponent((lang == 'pl' ? 'Zadania: ' : '') + groupName + '#' + (lang == 'de' ? this.id : this.soloTitle));
+              this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + wiki + questName + '" target="_blank"><img src="' + TWX.Images('wiki') + '"></a>');
+            };
+          },
+          getSolved = function () {
+            setTimeout(function () {
+              $.ajax({
+                url: 'game.php?window=building_quest&mode=get_solved_groups',
+                type: 'POST',
+                dataType: 'json',
+                success: function (jn) {
+                  doGroups(jn);
+                },
+                error: function () {
+                  getSolved();
+                },
+              });
+            }, 1500);
+          };
+          $.getScript(TWX.website + 'files/repGroups.js', function () {
+            getSolved();
           });
         }
       };
