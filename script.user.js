@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.48.8
+// @version 1.48.9
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.48.8',
+      version: '1.48.9',
       langs: {
         en: {
           language: 'English',
@@ -6463,6 +6463,7 @@
             }
             return html;
           };
+          TWX.addStyle('#equip_manager_list tr:nth-of-type(2n+1) {background: #c2b492;}\n #equip_manager_list tr:hover {background: #c19f56;}\n #equip_manager_list > table {border-spacing: 0 2px;}');
         }
       };
       TWX.ShortPopups = {
