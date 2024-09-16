@@ -40,7 +40,7 @@ The ghost town, Indian village, market and town forum are linked on the right si
 **SetBonus**  
 See the values of all sets.  
 <img src="https://imgur.com/z84mxfo.png" width="600">
-![](https://imgur.com/celokzL.png)
+<!-- ![](https://imgur.com/celokzL.png) -->
 
 **BonusSearch**  
 New hat for new possibilities:  
