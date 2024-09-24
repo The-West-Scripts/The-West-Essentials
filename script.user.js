@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.48.9
+// @version 1.49
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.48.9',
+      version: '1.49',
       langs: {
         en: {
           language: 'English',
@@ -4970,7 +4970,7 @@
             return id;
           var isItem = !isNaN(id),
           nNew = /*window.forbid && (isItem && id >= forbid.unlockID || !isItem && forbid.unlock.includes(id)) ? '<img src="' + TWX.Images('new') + '">' :*/ '',
-          nLvl = obj.itmLvl ? '<img src="images/items/item_level.png"><span style="font-size: 11px;color:#ffffff;text-shadow:black -1px 0 1px,black 0 1px 1px,black 1px 0 1px,black 0 -1px 1px;">' + obj.itmLvl + '</span>' : '',
+          nLvl = obj.item_level ? '<img src="images/items/item_level.png"><span style="font-size: 11px;color:#ffffff;text-shadow:black -1px 0 1px,black 0 1px 1px,black 1px 0 1px,black 0 -1px 1px;">' + obj.item_level + '</span>' : '',
           options = {
             show_alreadyown: true
           };
@@ -4982,7 +4982,7 @@
           click = 'onclick="TWX.GUI.itemsInInv(\'' + id + '\')"',
           img = '';
           if (isItem) {
-            var itemId = id + '00' + obj.itmLvl,
+            var itemId = id + '00' + obj.item_level,
             item = ItemManager.get(itemId);
             nPopup = 'data-itemid="' + itemId + '" title="' + (new ItemPopup(item, options).getXHTML().escapeHTML()) + '"';
             img = '<img src="' + item.image + '" width="25">';
@@ -5059,7 +5059,7 @@
                         },
                         slots: si.slots,
                         name: si.name,
-                        itmLvl: si.itmLvl,
+                        item_level: si.itmLvl,
                         items: si.items,
                         itmVal: 0,
                       };
@@ -5373,7 +5373,7 @@
           var contPan = $(TWX.GUI.window.getContentPane()),
           buttons = {
             'QuakeNet Webchat': '//webchat.quakenet.org',
-            'Wiki The-West': Game.helpURL,
+            'Wiki The-West': Game.helpURL.replace(/^http:/, ''),
             'TW-DB.info': '//tw-db.info'
           };
           for (var b in buttons)
@@ -6463,7 +6463,7 @@
             }
             return html;
           };
-          TWX.addStyle('#equip_manager_list tr:nth-of-type(2n+1) {background: #c2b492;}\n #equip_manager_list tr:hover {background: #c19f56;}\n #equip_manager_list > table {border-spacing: 0 2px;}');
+          TWX.addStyle('#equip_manager_list tr:nth-of-type(2n+1) {background: #8f8f8f80;}\n #equip_manager_list tr:hover {background: #00000080;}\n #equip_manager_list > table {border-spacing: 0 2px;}');
         }
       };
       TWX.ShortPopups = {
@@ -6616,7 +6616,7 @@
                       cont += count + 'x ' + TWX.GUI.getSetOrItem(bi, bgo, true) + (repItems.includes(bi) ? ' (repeatable quest!)' : '') + '<br>';
                       money += bgo.sell_price * count;
                     });
-                    cont += '<br><span class="invPopup_sellicon"> $' + money + '</span></div>';
+                    cont += '<br><span class="invPopup_sellicon"></span>&nbsp;$' + money + '</div>';
                     new west.gui.Dialog(TWXlang.sellItems, cont).setDraggable(true).addButton('yes', function () {
                       $.each(itemsToSell[mt], function (inv_id, amount) {
                         if (mt) {
@@ -8534,7 +8534,8 @@
                 '1': 'private',
                 '2': 'sergeant',
                 '3': 'captain',
-                '4': 'general'
+                '4': 'major_general',
+                '5': 'general'
               };
               function rankLink(image, fortId, westId, rank) {
                 return $('<a>').attr('onclick', 'TWX.KoM.updatePrivilege(' + fortId + ', ' + westId + ', ' + rank + ');').append(image, TWXlang.KoM['as' + rankList[rank]]);
@@ -8916,7 +8917,7 @@
                 else
                   TWX.KoM.popUp(e);
               };
-              var ranks = ['general', 'captain', 'sergeant', 'private', 'recruit', 'reservist', 'traitor'];
+              var ranks = ['general', 'major_general', 'captain', 'sergeant', 'private', 'recruit', 'reservist', 'traitor'];
               $.each(ranks, function (k, v) {
                 $('.chat_contacts .chat_servicegrade_' + v).off('click').on('click', fContacts);
                 $('.chat_messages .chat_servicegrade_' + v).off('click').on('click', fMessages);
