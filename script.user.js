@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.49
+// @version 1.49.1
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.49',
+      version: '1.49.1',
       langs: {
         en: {
           language: 'English',
@@ -4516,7 +4516,7 @@
           return (TWX.Data[name] !== undefined) ? TWX.Data[name] : TWX.Features[name];
         },
       };
-      Map.getLastQueuePosition = function () {
+      GameMap.getLastQueuePosition = function () {
         var posx = Character.position.x;
         var posy = Character.position.y;
         if (TaskQueue.queue.length >= 1) {
@@ -4574,12 +4574,12 @@
           selectbox.addItem(4, 'NPC locator', TWXlang.npclocator2);
           //selectbox.addItem(5, 'Collections', '');
           selectbox.addItem(6, '<span src="images/quest/employer/ghosttown.png" style="display:inline-block;width:19px;height:19px;background:url(images/quest/employer/ghosttown.png) 0/19px;margin:-5px 0;"></span> ' + TWXlang.ghosttown2, TWXlang.ghosttown3);
-          selectbox.addItem(7, '↪ ' + Map.calcWayTime(Map.getLastQueuePosition(), {
+          selectbox.addItem(7, '↪ ' + GameMap.calcWayTime(GameMap.getLastQueuePosition(), {
               x: 1728,
               y: 2081
             }).formatDuration());
           selectbox.addItem(8, '<span src="images/quest/employer/ghosttown.png" style="display:inline-block;width:19px;height:19px;background:url(images/quest/employer/indianvillage.png) 0/19px;margin:-5px 0;"></span> ' + TWXlang.indiantown2, TWXlang.indiantown3);
-          selectbox.addItem(9, '↪ ' + Map.calcWayTime(Map.getLastQueuePosition(), {
+          selectbox.addItem(9, '↪ ' + GameMap.calcWayTime(GameMap.getLastQueuePosition(), {
               x: 28002,
               y: 16658
             }).formatDuration());
@@ -4610,7 +4610,7 @@
               //TWX.GUI.open('openCollections');
               break;
             case 6:
-              Map.center(1728, 2081);
+              GameMap.center(1728, 2081);
               QuestEmployerWindow.showEmployer('ghosttown', '1728', '2081');
               break;
             case 7:
@@ -4621,7 +4621,7 @@
               });
               break;
             case 8:
-              Map.center(28002, 16658);
+              GameMap.center(28002, 16658);
               QuestEmployerWindow.showEmployer('indianvillage', '28002', '16658');
               break;
             case 9:
@@ -5402,8 +5402,8 @@
                 var ql = json.quest_locations;
                 for (var loc in ql)
                   if (ql.hasOwnProperty(loc))
-                    locs.push([parseInt(ql[loc][0][0] / Map.tileSize),
-                        parseInt(ql[loc][0][1] / Map.tileSize)]);
+                    locs.push([parseInt(ql[loc][0][0] / GameMap.tileSize),
+                        parseInt(ql[loc][0][1] / GameMap.tileSize)]);
                 Ajax.get('map', 'get_complete_data', {
                   tiles: JSON.stringify(locs)
                 }).done(function (res) {
@@ -5447,7 +5447,7 @@
             y = 302 * CharY / 80 / 256 - 6;
             x *= 0.727;
             y *= 0.727;
-            this.charPoint = '<span title="' + TWXlang.NPC.yourposition + '" id="char_pointer" onClick="Map.center(' + CharX + ',' + CharY + ')" style="left:' + x + 'px;top:' + y + 'px;background-image:url(images/map/minimap/icons/miniicon_pos.png);">';
+            this.charPoint = '<span title="' + TWXlang.NPC.yourposition + '" id="char_pointer" onClick="GameMap.center(' + CharX + ',' + CharY + ')" style="left:' + x + 'px;top:' + y + 'px;background-image:url(images/map/minimap/icons/miniicon_pos.png);">';
             mm_mapdiv.append(this.charPoint);
             wnd.appendToContentPane($('<div id="njk_minimap" style="margin:20px 93px;width:500px">').append(mm_mapdiv));
             this.drawSelect();
@@ -5474,7 +5474,7 @@
               y = 302 * xy[1] / 80 / 256 - 6;
               x = x * 0.727;
               y = y * 0.727;
-              dp.append('<span class="adv_pointer" onClick="Map.center(' + xy[0] + ',' + xy[1] + ')" id="mapPos' + i + '" px="' + xy[0] + '" py="' + xy[1] + '" style="left:' + x + 'px; top:' + y + 'px;background-image:url(images/map/minimap/icons/miniicon_quests.png);">');
+              dp.append('<span class="adv_pointer" onClick="GameMap.center(' + xy[0] + ',' + xy[1] + ')" id="mapPos' + i + '" px="' + xy[0] + '" py="' + xy[1] + '" style="left:' + x + 'px; top:' + y + 'px;background-image:url(images/map/minimap/icons/miniicon_quests.png);">');
             }
           },
         },
@@ -5780,16 +5780,16 @@
                 '<td>' + data.level + '</td>',
                 '<td>' + data.duellevel + '</td>',
                 '<td>' + Math.round((7 * data.duellevel - 5 * Character.duelLevel + 5) * Character.duelMotivation) + '</td>',
-                '<td>' + window.Map.calcWayTime(Map.getLastQueuePosition(), {
+                '<td>' + window.GameMap.calcWayTime(GameMap.getLastQueuePosition(), {
                   x: data.character_x,
                   y: data.character_y
                 }).formatDuration() + '</td>',
                 '<td><a href="#" onclick="SaloonWindow.startDuel(' + data.player_id + ', ' + data.alliance_id + ', false, DuelsWindow);">' + TWXlang.startduel + '</a></td>',
-                '<td><a href="#" onclick="Map.center(' + data.character_x + ', ' + data.character_y + ');">' + TWXlang.centerMap + '</a></td>');
+                '<td><a href="#" onclick="GameMap.center(' + data.character_x + ', ' + data.character_y + ');">' + TWXlang.centerMap + '</a></td>');
               $('#TWXDuelMapTable').append(content);
               content = $('<div style="position:absolute;border:1px solid black;background:#FF0000;width:4px;height:4px;left:' + (data.character_x / 46592 * 770 - 2) + 'px;top:' + (data.character_y / 20480 * 338 - 2) + 'px;">');
               eval('content.click(function () { SaloonWindow.startDuel(' + data.player_id + ', ' + data.alliance_id + ', false, DuelsWindow); });');
-              content.addMousePopup('<b>' + data.player_name + '</b> ' + window.Map.calcWayTime(Map.getLastQueuePosition(), {
+              content.addMousePopup('<b>' + data.player_name + '</b> ' + window.GameMap.calcWayTime(GameMap.getLastQueuePosition(), {
                   x: data.character_x,
                   y: data.character_y
                 }).formatDuration());
@@ -6013,7 +6013,7 @@
               wwBc.show = function () {
                 for (var c = 0; c < this.cities_.length; c++)
                   this.cities_[c].member += '<br>' +
-                  Map.calcWayTime(Map.getLastQueuePosition(), {
+                  GameMap.calcWayTime(GameMap.getLastQueuePosition(), {
                     x: this.cities_[c].x,
                     y: this.cities_[c].y
                   }).formatDuration();
@@ -6180,7 +6180,7 @@
               for (var j = 0; j < 10; j++) {
                 if (json.result[j]) {
                   var res = json.result[j];
-                  res.distance = Map.calcWayTime(myPos, {
+                  res.distance = GameMap.calcWayTime(myPos, {
                     x: res.x,
                     y: res.y
                   });
@@ -6215,7 +6215,7 @@
               return;
             TWX.loadedSheriff = true;
             SheriffWindow.window.dontCloseAll = true;
-            myPos = Map.getLastQueuePosition();
+            myPos = GameMap.getLastQueuePosition();
             lvl = dLvlRange(Character.duelLevel);
             players = [];
             counter = 0;
@@ -6463,7 +6463,7 @@
             }
             return html;
           };
-          TWX.addStyle('#equip_manager_list tr:nth-of-type(2n+1) {background: #8f8f8f80;}\n #equip_manager_list tr:hover {background: #00000080;}\n #equip_manager_list > table {border-spacing: 0 2px;}');
+          TWX.addStyle('#equip_manager_list tr:nth-of-type(2n+1) {background: #8f8f8f80;}\n #equip_manager_list tr:hover {background: #00000080; color: white}\n #equip_manager_list > table {border-spacing: 0 2px;}');
         }
       };
       TWX.ShortPopups = {
@@ -6500,9 +6500,9 @@
       };
       TWX.JobProducts = {
         init: function () {
-          Map.PopupHandler.getJobPopup_twx = Map.PopupHandler.getJobPopup_twx || Map.PopupHandler.getJobPopup;
-          Map.PopupHandler.getJobPopup = function (d) {
-            var html = Map.PopupHandler.getJobPopup_twx.apply(this, arguments);
+          GameMap.PopupHandler.getJobPopup_twx = GameMap.PopupHandler.getJobPopup_twx || GameMap.PopupHandler.getJobPopup;
+          GameMap.PopupHandler.getJobPopup = function (d) {
+            var html = GameMap.PopupHandler.getJobPopup_twx.apply(this, arguments);
             for (var i in d.yields) {
               var m = ItemManager.get(i);
               html = html.replace('<img src="' + Game.cdnURL + '/images/items/yield/' + m.short + '.', '<div class="item"><span class="count" style="display:block;top:29px;left:0px">' + Bag.getItemCount(i) + '</span></div>$&');
@@ -6514,18 +6514,18 @@
       TWX.MapDistance = {
         init: function () {
           TWX.addStyle('div.job_way {left:61px;width:170px;}\n .mpb_distance, .wih_distance, .mpo_distance, .mpw_distance, .mps_distance {width:45px;}\n div.tw2gui_window.marketplace div.fancytable .row > div {text-overflow:unset;}');
-          Map.calcWayTime_twx = Map.calcWayTime_twx || Map.calcWayTime;
-          Map.calcWayTime = function () {
-            var time = Map.calcWayTime_twx.apply(this, arguments);
+          GameMap.calcWayTime_twx = GameMap.calcWayTime_twx || GameMap.calcWayTime;
+          GameMap.calcWayTime = function () {
+            var time = GameMap.calcWayTime_twx.apply(this, arguments);
             this.newDist = time / Game.travelSpeed / Character.speed;
             return time;
           };
           Number.prototype.formatDuration_twx = Number.prototype.formatDuration_twx || Number.prototype.formatDuration;
           Number.prototype.formatDuration = function () {
             var dist = '';
-            if (Map.newDist)
-              dist = ' <small>' + (Math.floor(Map.newDist) / 1000).toFixed(3) + 'mi</small>';
-            Map.newDist = 0;
+            if (GameMap.newDist)
+              dist = ' <small>' + (Math.floor(GameMap.newDist) / 1000).toFixed(3) + 'mi</small>';
+            GameMap.newDist = 0;
             return Number.prototype.formatDuration_twx.apply(this, arguments) + dist;
           };
           String.prototype.replaceAll = function () {
@@ -6767,19 +6767,19 @@
           }).on('touchend', function (e) {
             fingers = 0;
             currZoom = $('#map').css('zoom') * 1;
-            Map.resize();
+            GameMap.resize();
           });
-          Map.getCurrentMid_twx = Map.getCurrentMid_twx || Map.getCurrentMid;
-          Map.getCurrentMid = function () {
+          GameMap.getCurrentMid_twx = GameMap.getCurrentMid_twx || GameMap.getCurrentMid;
+          GameMap.getCurrentMid = function () {
             var xy = this.getCurrentMid_twx.apply(this, arguments);
             return {
               x: xy.x / currZoom,
               y: xy.y / currZoom
             };
           };
-          Map.resize_twx = Map.resize_twx || Map.resize;
-          Map.resize = function () {
-            if (!Map.initialized)
+          GameMap.resize_twx = GameMap.resize_twx || GameMap.resize;
+          GameMap.resize = function () {
+            if (!GameMap.initialized)
               return;
             this.resize_twx.apply(this, arguments);
             this.width /= currZoom;
@@ -6796,7 +6796,7 @@
           e.preventDefault();
           var eoEcT = e.originalEvent.changedTouches[0],
           move = [eoEcT.clientX, eoEcT.clientY];
-          Map.Drag.scrollby((start2[0] - move[0]) / currZoom, (start2[1] - move[1]) / currZoom);
+          GameMap.Drag.scrollby((start2[0] - move[0]) / currZoom, (start2[1] - move[1]) / currZoom);
           start2 = move;
           }).on('touchend', function (e) {
           fingers = 0;
@@ -8583,7 +8583,7 @@
             },
             makeSmallTitle: function (playerName, westId, playerX, playerY) {
               var span = $('<span>').attr('onclick', 'PlayerProfileWindow.open(' + westId + ')').html(playerName).css('cursor', 'pointer');
-              var st = $('<a>').attr('onclick', 'Map.center(' + playerX + ', ' + playerY + ')').attr('title', TWXlang.KoM.showPlayerOnMap).css({
+              var st = $('<a>').attr('onclick', 'GameMap.center(' + playerX + ', ' + playerY + ')').attr('title', TWXlang.KoM.showPlayerOnMap).css({
                 width: '15px',
                 height: '15px',
                 display: 'inline-block',
