@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.49.1
+// @version 1.49.2
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.49.1',
+      version: '1.49.2',
       langs: {
         en: {
           language: 'English',
@@ -4927,7 +4927,7 @@
                   bonus: boni,
                   name: obj.name,
                   slots: slot,
-                  itmLvl: obj.item_level,
+                  item_level: obj.item_level,
                 };
             };
             var allItems = ItemManager.getAll();
@@ -5059,7 +5059,7 @@
                         },
                         slots: si.slots,
                         name: si.name,
-                        item_level: si.itmLvl,
+                        item_level: si.item_level,
                         items: si.items,
                         itmVal: 0,
                       };
@@ -5076,8 +5076,8 @@
                       VAL = Math.ceil(lvl * VAL);
                     else if (ned)
                       NUM /= lvl;
-                    VAL = lvlUp(si.itmLvl, VAL);
-                    NUM = TWX.lvlToggle ? VAL : lvlUp(si.itmLvl, NUM, (plbn || ned));
+                    VAL = lvlUp(si.item_level, VAL);
+                    NUM = TWX.lvlToggle ? VAL : lvlUp(si.item_level, NUM, (plbn || ned));
 
                     if (!types[i].values[k])
                       types[i].values[k] = $.extend({
