@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.49.2
+// @version 1.49.3
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.49.2',
+      version: '1.49.3',
       langs: {
         en: {
           language: 'English',
@@ -8558,8 +8558,7 @@
               }
               if (myRank > 2)
                 if (playerRank < myRank) {
-                  var fromRank = myRank == 4 ? 3 : 2;
-                  for (var rank = fromRank; rank >= -2; rank--) {
+                  for (var rank = myRank - 1; rank >= -2; rank--) {
                     if (rank == playerRank)
                       continue;
                     var row = TWX.KoM.makeRankRow(rank, westId, fortId);
