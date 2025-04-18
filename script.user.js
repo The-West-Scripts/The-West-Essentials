@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.49.4
+// @version 1.49.5
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.49.4',
+      version: '1.49.5',
       langs: {
         en: {
           language: 'English',
@@ -4772,7 +4772,7 @@
               damagetrue: [delChar('fortbattle', 'damage', 1), 'items/collection/item_52801'],
               dmgfb: [delChar('fortbattle', 'damage', -1) + ' ' + Inventory.categoryDesc.left_arm, 'items/left_arm/item_53232'],
               dmgduel: [delChar('fortbattle', 'damage', -1) + ' ' + Inventory.categoryDesc.right_arm, 'items/right_arm/item_53228'],
-              experience: [delChar(hero[10]), 'items/yield/xp_boost', '<br>'],
+              experience: [delChar(hero[10]), 'items/yield/xp_boost'],
               dollar: [delChar(hero[11]), 'items/yield/dollar_boost'],
               luck: [delChar(collect[2]), 'items/yield/luck_boost'],
               drop: [delChar(hero[9]), 'items/yield/product_boost'],
@@ -4785,7 +4785,7 @@
             for (var ca = 0; ca < CharacterSkills.allSkillKeys.length; ca++) {
               if (ca % 5 === 0) {
                 var attr = CharacterSkills.allAttrKeys[ca / 5];
-                TWX.searchObj[attr] = [CharacterSkills.keyNames[attr], 'window/skills/circle_' + attr, ca % 10 === 0 ? '<br>' : ''];
+                TWX.searchObj[attr] = [CharacterSkills.keyNames[attr], 'window/skills/circle_' + attr, 'attr'];
               }
               var skill = CharacterSkills.allSkillKeys[ca];
               TWX.searchObj[skill] = [CharacterSkills.keyNames[skill], 'window/skills/skillicon_' + skill];
@@ -5170,11 +5170,10 @@
             shot: 'goldensable',
             hand: 'golden_gun',
           },
-          buttonLogic = function (ev, d, b) {
-            var butObj = b || ev.data.obj,
-            id = butObj.id,
-            val = 1;
-            if ($(ev.currentTarget).hasClass('butPlus') || d > 0) {
+          buttonLogic = function (ev, delta, butObj) {
+            butObj = butObj || ev.data.obj;
+            var val = 1;
+            if ($(ev.currentTarget).hasClass('butPlus') || delta > 0) {
               if (butObj.current_value + 1 > butObj.max_value)
                 return false;
             } else {
@@ -5182,33 +5181,42 @@
                 return false;
               val = -1;
             }
+            procVal(butObj, val);
+          },
+          inputLogic = function (ev, butObj) {
+            var val = ev.currentTarget.value;
+            procVal(butObj, ev.currentTarget.value - butObj.current_value);
+          },
+          procVal = function (butObj, val) {
+            var id = butObj.id;
             butObj.current_value += val;
             if (CharacterSkills.skills[id]) {
               var attr = CharacterSkills.skills[id].attr_key;
               if (!TWX.chooseBonus[attr])
                 TWX.chooseBonus[attr] = 0;
               TWX.chooseBonus[attr] += val;
-              $('.chooseBonus #' + attr + ' span.displayValue').text(TWX.chooseBonus[attr]);
+              $('.chooseBonus #' + attr + ' input.displayValue').val(TWX.chooseBonus[attr]);
               if (TWX.chooseBonus[attr] === 0)
                 delete TWX.chooseBonus[attr];
             } else if (id.startsWith('dmg')) {
               var othDmg = 'dmgfb' == id ? 'dmgduel' : 'dmgfb';
-              $('.chooseBonus #' + othDmg + ' span.displayValue').text(0);
+              $('.chooseBonus #' + othDmg + ' input.displayValue').val(0);
               delete TWX.chooseBonus[othDmg];
             }
             if (butObj.current_value === 0)
               delete TWX.chooseBonus[id];
             else
               TWX.chooseBonus[id] = butObj.current_value;
-            $('.chooseBonus #' + id + ' span.displayValue').text(butObj.current_value);
+            $('.chooseBonus #' + id + ' input.displayValue').val(butObj.current_value);
             return true;
           },
           cont,
           getCB = function (id) {
-            if (TWX.searchObj[id][2])
-              cont.append(TWX.searchObj[id][2]);
-            var div = $('<div class="chooseBonus" style="display:inline-block;">' + getBonImg(id, 45)).appendTo(cont);
-            new west.gui.Plusminusfield(id, TWX.chooseBonus[id] || 0, -100, 100, 0, buttonLogic, buttonLogic, buttonLogic).setWidth(45).appendTo(div);
+            if (['experience', 'strength', 'dexterity'].includes(id))
+              cont.append('<br>');
+            var div = $('<div class="chooseBonus" style="display:inline-block;">' + getBonImg(id, 45)).appendTo(cont),
+            maxMltplr = TWX.searchObj[id][2] == 'attr' ? 5 : 1;
+            new west.gui.Plusminusfield(id, TWX.chooseBonus[id] || 0, -100 * maxMltplr, 100 * maxMltplr, 0, buttonLogic, buttonLogic, buttonLogic, inputLogic).setWidth(45).appendTo(div);
           },
           bonSrcTable,
           chooseWindow = function () {
