@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.49.5
+// @version 1.49.6
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.49.5',
+      version: '1.49.6',
       langs: {
         en: {
           language: 'English',
@@ -4460,20 +4460,7 @@
           max: Math.min(450, Math.floor(dl * 1.4 - 0.01))
         };
       },
-      emptyBoni = '{"attributes":[],"skills":[],"fortbattle":{"offense":0,"defense":0,"resistance":0},"fortbattlesector":{"defense":0,"offense":0,"damage":0},"item":[]}',
-      forbid = {
-        sets: ['set_xmas2015_clothing'],
-        max: 968,
-        //unlock: [],
-        IDs: ['138', '860', '1337', '41999', '50106', '50260'],
-        maxID: 94265,
-        //unlockID: 94245,
-        //date: new Date('2023-03-28'),
-      };
-      if (Game.environment == 'alpha') {
-        forbid.sets = [];
-        forbid.IDs = ['50106'];
-      }
+      emptyBoni = '{"attributes":[],"skills":[],"fortbattle":{"offense":0,"defense":0,"resistance":0},"fortbattlesector":{"defense":0,"offense":0,"damage":0},"item":[]}';
       if (EvName)
         var sendGift = Game.sesData[EvName].friendsbar;
       TWX.GUI = {
@@ -4695,175 +4682,175 @@
         },
         makeList: function () {
           if (!TWX.list) {
-            //$.getScript(TWX.website + 'files/newSets.js', function () {
-            TWX.list = west.storage.ItemSetManager._setArray.slice(0);
-            TWX.setListAll = {};
-            TWX.setListOwn = {};
-            TWX.itemListAll = {};
-            TWX.itemListOwn = {};
-            var slot = {
-              2: ['animal', 'yield'],
-              3: ['right_arm', 'left_arm'],
-              6: ['body', 'pants', 'neck', 'head', 'foot', 'belt']
-            };
-            var i = TWX.list.length;
-            while (i--) {
-              var si = TWX.list[i];
-              if (!forbid.sets.includes(si.key) && si.items[0] && !ItemManager.getByBaseId(si.items[0]).short.includes('friendset_') && !si.key.includes('friendship_set_'))
-                TWX.setListAll[si.key] = si;
-              else
-                TWX.list.splice(i, 1);
-            }
-            TWX.setLength = Object.keys(TWX.setListAll).length;
-            for (var j in TWX.setListAll) {
-              var sa = TWX.setListAll[j];
-              //sa.items.sort((a, b) => a - b);
-              var sil = sa.items.length;
-              sa.slots = slot[sil] && slot[sil].includes(ItemManager.getByBaseId(sa.items[1]).type) ? slot[sil][0] : 'rest';
-              var items = sa.getAvailableItems();
-              if (items.length) {
-                var bon = {},
-                oneType = [],
-                c = 1;
-                for (var o = 0; o < items.length; o++) {
-                  var igt = ItemManager.get(items[o]);
-                  items[o] = igt.item_base_id;
-                  if (oneType.includes(igt.type)) {
-                    --c;
-                    continue;
+            $.getScript(TWX.website + 'files/newSets.js', function () {
+              TWX.list = west.storage.ItemSetManager._setArray.slice(0);
+              TWX.setListAll = {};
+              TWX.setListOwn = {};
+              TWX.itemListAll = {};
+              TWX.itemListOwn = {};
+              var slot = {
+                2: ['animal', 'yield'],
+                3: ['right_arm', 'left_arm'],
+                6: ['body', 'pants', 'neck', 'head', 'foot', 'belt']
+              };
+              var i = TWX.list.length;
+              while (i--) {
+                var si = TWX.list[i];
+                if (!forbid.sets.includes(si.key) && si.items[0] && !ItemManager.getByBaseId(si.items[0]).short.includes('friendset_') && !si.key.includes('friendship_set_'))
+                  TWX.setListAll[si.key] = si;
+                else
+                  TWX.list.splice(i, 1);
+              }
+              TWX.setLength = Object.keys(TWX.setListAll).length;
+              for (var j in TWX.setListAll) {
+                var sa = TWX.setListAll[j];
+                //sa.items.sort((a, b) => a - b);
+                var sil = sa.items.length;
+                sa.slots = slot[sil] && slot[sil].includes(ItemManager.getByBaseId(sa.items[1]).type) ? slot[sil][0] : 'rest';
+                var items = sa.getAvailableItems();
+                if (items.length) {
+                  var bon = {},
+                  oneType = [],
+                  c = 1;
+                  for (var o = 0; o < items.length; o++) {
+                    var igt = ItemManager.get(items[o]);
+                    items[o] = igt.item_base_id;
+                    if (oneType.includes(igt.type)) {
+                      --c;
+                      continue;
+                    }
+                    if (sa.bonus[o + c])
+                      bon[o + c] = sa.bonus[o + c];
+                    oneType.push(igt.type);
                   }
-                  if (sa.bonus[o + c])
-                    bon[o + c] = sa.bonus[o + c];
-                  oneType.push(igt.type);
+                  TWX.setListOwn[j] = {
+                    items: items.reverse(),
+                    bonus: bon,
+                    name: sa.name,
+                    slots: sa.slots,
+                  };
                 }
-                TWX.setListOwn[j] = {
-                  items: items.reverse(),
-                  bonus: bon,
-                  name: sa.name,
-                  slots: sa.slots,
-                };
               }
-            }
-            TWX.list.sort(function (a, b) {
-              var a1 = replUml(a.name),
-              b1 = replUml(b.name);
-              return (a1 == b1) ? 0 : (a1 > b1) ? 1 : -1;
-            });
-            var collect = set1.collector_set.bonus[9], //pray
-            pilg = set1.set_pilgrim_male.bonus[2], //build
-            hero = set1.independance_event_set7.bonus[2], //drop
-            delChar = function (typ, nam, brk) {
-              var descr = nam ? west.item.BonusExtractor.prototype.getDesc({
-                type: typ,
-                name: nam,
-                isSector: brk,
-                value: ''
-              }) : typ.desc;
-              if (brk == -1)
-                descr = descr.replace(/\(.+?\)/, '');
-              return descr.replace(/[0-9]|\+|\.|\%/g, '').trim();
-            };
-            TWX.searchObj = {
-              offense: [delChar(collect[5], 0, -1), 'fort/battle/button_attack'],
-              offensetrue: [delChar('fortbattle', 'offense', 1), 'fort/battle/help01'], //collection/item_51474
-              defense: [delChar(hero[13], 0, -1), 'fort/battle/button_defend'],
-              defensetrue: [delChar('fortbattle', 'defense', 1), 'fort/battle/help02'],
-              resistance: [delChar('fortbattle', 'resistance'), 'fort/battle/resistance'],
-              damagetrue: [delChar('fortbattle', 'damage', 1), 'items/collection/item_52801'],
-              dmgfb: [delChar('fortbattle', 'damage', -1) + ' ' + Inventory.categoryDesc.left_arm, 'items/left_arm/item_53232'],
-              dmgduel: [delChar('fortbattle', 'damage', -1) + ' ' + Inventory.categoryDesc.right_arm, 'items/right_arm/item_53228'],
-              experience: [delChar(hero[10]), 'items/yield/xp_boost'],
-              dollar: [delChar(hero[11]), 'items/yield/dollar_boost'],
-              luck: [delChar(collect[2]), 'items/yield/luck_boost'],
-              drop: [delChar(hero[9]), 'items/yield/product_boost'],
-              joball: [delChar(collect[0]), 'window/job/jobstar_small_gold'],
-              speed: [delChar(collect[1]), 'jobs/walk'],
-              regen: [delChar(collect[3]), 'jobs/sleep'],
-              pray: [delChar(collect[4]), 'jobs/pray'],
-              job1000: [delChar(pilg[4]), 'jobs/build'],
-            };
-            for (var ca = 0; ca < CharacterSkills.allSkillKeys.length; ca++) {
-              if (ca % 5 === 0) {
-                var attr = CharacterSkills.allAttrKeys[ca / 5];
-                TWX.searchObj[attr] = [CharacterSkills.keyNames[attr], 'window/skills/circle_' + attr, 'attr'];
+              TWX.list.sort(function (a, b) {
+                var a1 = replUml(a.name),
+                b1 = replUml(b.name);
+                return (a1 == b1) ? 0 : (a1 > b1) ? 1 : -1;
+              });
+              var collect = set1.collector_set.bonus[9], //pray
+              pilg = set1.set_pilgrim_male.bonus[2], //build
+              hero = set1.independance_event_set7.bonus[2], //drop
+              delChar = function (typ, nam, brk) {
+                var descr = nam ? west.item.BonusExtractor.prototype.getDesc({
+                  type: typ,
+                  name: nam,
+                  isSector: brk,
+                  value: ''
+                }) : typ.desc;
+                if (brk == -1)
+                  descr = descr.replace(/\(.+?\)/, '');
+                return descr.replace(/[0-9]|\+|\.|\%/g, '').trim();
+              };
+              TWX.searchObj = {
+                offense: [delChar(collect[5], 0, -1), 'fort/battle/button_attack'],
+                offensetrue: [delChar('fortbattle', 'offense', 1), 'fort/battle/help01'], //collection/item_51474
+                defense: [delChar(hero[13], 0, -1), 'fort/battle/button_defend'],
+                defensetrue: [delChar('fortbattle', 'defense', 1), 'fort/battle/help02'],
+                resistance: [delChar('fortbattle', 'resistance'), 'fort/battle/resistance'],
+                damagetrue: [delChar('fortbattle', 'damage', 1), 'items/collection/item_52801'],
+                dmgfb: [delChar('fortbattle', 'damage', -1) + ' ' + Inventory.categoryDesc.left_arm, 'items/left_arm/item_53232'],
+                dmgduel: [delChar('fortbattle', 'damage', -1) + ' ' + Inventory.categoryDesc.right_arm, 'items/right_arm/item_53228'],
+                experience: [delChar(hero[10]), 'items/yield/xp_boost'],
+                dollar: [delChar(hero[11]), 'items/yield/dollar_boost'],
+                luck: [delChar(collect[2]), 'items/yield/luck_boost'],
+                drop: [delChar(hero[9]), 'items/yield/product_boost'],
+                joball: [delChar(collect[0]), 'window/job/jobstar_small_gold'],
+                speed: [delChar(collect[1]), 'jobs/walk'],
+                regen: [delChar(collect[3]), 'jobs/sleep'],
+                pray: [delChar(collect[4]), 'jobs/pray'],
+                job1000: [delChar(pilg[4]), 'jobs/build'],
+              };
+              for (var ca = 0; ca < CharacterSkills.allSkillKeys.length; ca++) {
+                if (ca % 5 === 0) {
+                  var attr = CharacterSkills.allAttrKeys[ca / 5];
+                  TWX.searchObj[attr] = [CharacterSkills.keyNames[attr], 'window/skills/circle_' + attr, 'attr'];
+                }
+                var skill = CharacterSkills.allSkillKeys[ca];
+                TWX.searchObj[skill] = [CharacterSkills.keyNames[skill], 'window/skills/skillicon_' + skill];
               }
-              var skill = CharacterSkills.allSkillKeys[ca];
-              TWX.searchObj[skill] = [CharacterSkills.keyNames[skill], 'window/skills/skillicon_' + skill];
-            }
-            var getAvg = function (bvl) {
-              bvl = bvl.match(/(\d+\.?\d*)-?(\d*)/);
-              return bvl[2] ? (bvl[1] * 1 + bvl[2] * 1) / 2 : bvl[1];
-            },
-            addItems = function (obj, state) {
-              var ob = obj.bonus,
-              boni = {
-                1: []
+              var getAvg = function (bvl) {
+                bvl = bvl.match(/(\d+\.?\d*)-?(\d*)/);
+                return bvl[2] ? (bvl[1] * 1 + bvl[2] * 1) / 2 : bvl[1];
               },
-              slot = 'item';
-              if (JSON.stringify(ob) != emptyBoni) {
-                boni[1] = ob.item.slice();
-                for (var cat in ob) {
-                  var obc = ob[cat];
-                  if (cat == 'item')
-                    continue;
-                  for (var type in obc) {
-                    var ct = obc[type];
-                    if (ct > 0) {
-                      boni[1].push({
-                        name: type,
-                        value: ct,
-                        isSector: cat == 'fortbattlesector'
-                      });
+              addItems = function (obj, state) {
+                var ob = obj.bonus,
+                boni = {
+                  1: []
+                },
+                slot = 'item';
+                if (JSON.stringify(ob) != emptyBoni) {
+                  boni[1] = ob.item.slice();
+                  for (var cat in ob) {
+                    var obc = ob[cat];
+                    if (cat == 'item')
+                      continue;
+                    for (var type in obc) {
+                      var ct = obc[type];
+                      if (ct > 0) {
+                        boni[1].push({
+                          name: type,
+                          value: ct,
+                          isSector: cat == 'fortbattlesector'
+                        });
+                      }
                     }
                   }
+                } else if (obj.usebonus) {
+                  slot = 'buff';
+                  for (var oub of obj.usebonus) {
+                    if (!oub)
+                      continue;
+                    var desc = TWX.QIS.buffDesc(oub),
+                    useb = TWX.QIS.useboni[desc];
+                    if (TWX.searchObj[useb])
+                      boni[1].push({
+                        name: useb,
+                        value: getAvg(oub),
+                        key: oub.includes(perL())
+                      });
+                  }
                 }
-              } else if (obj.usebonus) {
-                slot = 'buff';
-                for (var oub of obj.usebonus) {
-                  if (!oub)
-                    continue;
-                  var desc = TWX.QIS.buffDesc(oub),
-                  useb = TWX.QIS.useboni[desc];
-                  if (TWX.searchObj[useb])
-                    boni[1].push({
-                      name: useb,
-                      value: getAvg(oub),
-                      key: oub.includes(perL())
-                    });
+                if (obj.damage) {
+                  boni[1].push({
+                    name: obj.type == 'left_arm' ? 'dmgfb' : 'dmgduel',
+                    value: getAvg(Object.values(obj.damage).join('-'))
+                  });
                 }
-              }
-              if (obj.damage) {
-                boni[1].push({
-                  name: obj.type == 'left_arm' ? 'dmgfb' : 'dmgduel',
-                  value: getAvg(Object.values(obj.damage).join('-'))
-                });
-              }
-              if (boni[1].length)
-                TWX['itemList' + state][obj.item_base_id] = {
-                  bonus: boni,
-                  name: obj.name,
-                  slots: slot,
-                  item_level: obj.item_level,
-                };
-            };
-            var allItems = ItemManager.getAll();
-            for (var k in allItems)
-              if (k > 9 && k < forbid.maxID && !forbid.IDs.includes(k) && !(allItems[k].set && !TWX.setListAll[allItems[k].set]))
-                addItems(allItems[k], 'All');
-            for (var l in Bag.items_by_id)
-              addItems(Bag.items_by_id[l].obj, 'Own');
-            for (var m in Wear.wear)
-              addItems(Wear.wear[m].obj, 'Own');
-            /*if (!TWX.Data.fDate || Date.parse(forbid.date) > TWX.Data.fDate) {
-            var setNames = '',
-            nSets = forbid.unlock;
-            for (var h of nSets)
-            setNames += TWX.GUI.getSetOrItem(h, set1[h]) + '<br>';
-            new west.gui.Dialog(TWX.name, '<span><b>' + forbid.date.toDateString() + '</b><br>' + TWXlang.newsets + ':<br><br>' + setNames + '</span>', west.gui.Dialog.SYS_OK).setBlockGame(false).setDraggable(true).addButton('ok').show();
-            TWX.Data.fDate = Date.parse(forbid.date);
-            localStorage.setItem('TWLT', JSON.stringify(TWX.Data));
-            }*/
-            //});
+                if (boni[1].length)
+                  TWX['itemList' + state][obj.item_base_id] = {
+                    bonus: boni,
+                    name: obj.name,
+                    slots: slot,
+                    item_level: obj.item_level,
+                  };
+              };
+              var allItems = ItemManager.getAll();
+              for (var k in allItems)
+                if (k > 9 && k < forbid.maxID && !forbid.IDs.includes(k * 1) && !(allItems[k].set && !TWX.setListAll[allItems[k].set]))
+                  addItems(allItems[k], 'All');
+              for (var l in Bag.items_by_id)
+                addItems(Bag.items_by_id[l].obj, 'Own');
+              for (var m in Wear.wear)
+                addItems(Wear.wear[m].obj, 'Own');
+              /*if (!TWX.Data.fDate || Date.parse(forbid.date) > TWX.Data.fDate) {
+              var setNames = '',
+              nSets = forbid.unlock;
+              for (var h of nSets)
+              setNames += TWX.GUI.getSetOrItem(h, set1[h]) + '<br>';
+              new west.gui.Dialog(TWX.name, '<span><b>' + forbid.date.toDateString() + '</b><br>' + TWXlang.newsets + ':<br><br>' + setNames + '</span>', west.gui.Dialog.SYS_OK).setBlockGame(false).setDraggable(true).addButton('ok').show();
+              TWX.Data.fDate = Date.parse(forbid.date);
+              localStorage.setItem('TWLT', JSON.stringify(TWX.Data));
+              }*/
+            });
           }
         },
         itemsInInv: function (id) {
