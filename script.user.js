@@ -5890,7 +5890,7 @@
               gid = TWX.repGroups[this.id],
               qGroup = QuestLog.solvedGroups[gid] || lang == 'de' && isNaN(gid) && gid,
               groupName = [69, 34].includes(this.group) && qGroup ? qGroup + (repText[lang] || '') : 62 == this.group && qGroup ? qGroup + ' (Wiederholbare Quests)' : this.groupTitle,
-              questName = ((lang == 'pl' ? 'Zadania: ' : '') + groupName),
+              questName = encodeURIComponent((lang == 'pl' ? 'Zadania: ' : '') + groupName),
               qHash = '#' + (lang == 'de' ? this.id : this.soloTitle);
               this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + wiki + questName + qHash + '" target="_blank"><img src="' + TWX.Images('wiki') + '"></a>');
             };
