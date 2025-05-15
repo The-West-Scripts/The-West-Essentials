@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.49.6
+// @version 1.49.7
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.49.6',
+      version: '1.49.7',
       langs: {
         en: {
           language: 'English',
@@ -5890,8 +5890,9 @@
               gid = TWX.repGroups[this.id],
               qGroup = QuestLog.solvedGroups[gid] || lang == 'de' && isNaN(gid) && gid,
               groupName = [69, 34].includes(this.group) && qGroup ? qGroup + (repText[lang] || '') : 62 == this.group && qGroup ? qGroup + ' (Wiederholbare Quests)' : this.groupTitle,
-              questName = encodeURIComponent((lang == 'pl' ? 'Zadania: ' : '') + groupName + '#' + (lang == 'de' ? this.id : this.soloTitle));
-              this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + wiki + questName + '" target="_blank"><img src="' + TWX.Images('wiki') + '"></a>');
+              questName = ((lang == 'pl' ? 'Zadania: ' : '') + groupName),
+              qHash = '#' + (lang == 'de' ? this.id : this.soloTitle);
+              this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + wiki + questName + qHash + '" target="_blank"><img src="' + TWX.Images('wiki') + '"></a>');
             };
           },
           getSolved = function () {
