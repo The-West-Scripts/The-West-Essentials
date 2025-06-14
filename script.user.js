@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.49.7
+// @version 1.49.8
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.49.7',
+      version: '1.49.8',
       langs: {
         en: {
           language: 'English',
@@ -5875,24 +5875,45 @@
               QuestLog.addSolvedQuestGroup_twx.apply(this, arguments);
               QuestLog.solvedGroups[groupId] = questGroup.title;
             };
-            var lang = Game.locale.substr(0, 2),
+            var lng = Game.locale,
+            lang = lng.substr(0, 2),
+            lastQl = {
+              de_DE: 323,
+              fr_FR: 323,
+              hu_HU: 293,
+              it_IT: 293,
+              pt_PT: 302,
+              ru_RU: 199,
+              en_DK: 303,
+              tr_TR: 294,
+              es_ES: 293,
+              cs_CZ: 293,
+              ro_RO: 264,
+            }, //none:br,el,nl,se,da,sk,pl(not anymore)
             repText = {
               de: ' (Wiederholbare Feiertagsquestreihe)',
               hu: ' (Ismételhető)',
               it: ' (Ripetibile)',
               pt: ' repetível',
               ru: ' - Снова праздник',
+              ro: ' (repeatable)',
             };
             Quest.render_twx = Quest.render;
             Quest.render = function () {
               Quest.render_twx.apply(this, arguments);
-              var wiki = '//wiki.the' + Game.masterURL.match(/the(.*)/)[1] + '/wiki/',
-              gid = TWX.repGroups[this.id],
-              qGroup = QuestLog.solvedGroups[gid] || lang == 'de' && isNaN(gid) && gid,
-              groupName = [69, 34].includes(this.group) && qGroup ? qGroup + (repText[lang] || '') : 62 == this.group && qGroup ? qGroup + ' (Wiederholbare Quests)' : this.groupTitle,
-              questName = encodeURIComponent((lang == 'pl' ? 'Zadania: ' : '') + groupName),
-              qHash = '#' + (lang == 'de' ? this.id : this.soloTitle);
-              this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + wiki + questName + qHash + '" target="_blank"><img src="' + TWX.Images('wiki') + '"></a>');
+              var qurl = '//';
+              if (!lastQl[lng] || this.group > lastQl[lng]) {
+                qurl += 'support.innogames.com/kb/TheWest/' + lng + '?query=' + this.groupTitle;
+              } else {
+                var wiki = 'wiki.the' + Game.masterURL.match(/the(.*)/)[1] + '/wiki/',
+                gid = TWX.repGroups[this.id],
+                qGroup = QuestLog.solvedGroups[gid] || lang == 'de' && isNaN(gid) && gid,
+                groupName = [69, 34].includes(this.group) && qGroup ? qGroup + (repText[lang] || '') : 62 == this.group && qGroup ? qGroup + ' (Wiederholbare Quests)' : this.groupTitle,
+                questName = encodeURIComponent((lang == 'pl' ? 'Zadania: ' : '') + groupName),
+                qHash = '#' + (lang == 'de' ? this.id : this.soloTitle);
+                qurl += wiki + questName + qHash;
+              }
+              this.el.find('.quest_description_container .strong').append('<a class="questWiki" style="float:right;" title="' + TWXlang.onWiki + '" href="' + qurl + '" target="_blank"><img src="' + TWX.Images('wiki') + '"></a>');
             };
           },
           getSolved = function () {
@@ -6613,6 +6634,8 @@
                 this.initDisplay_twx.apply(this, arguments);
                 if (!this.obj.auctionable)
                   this.addClass('not_auctionable');
+                if (this.obj.set || this.obj.named || repItems.includes(this.obj.item_base_id) || !this.obj.auctionable)
+                  this.addClass('not_sellable');
               };
               west.window.shop.trackBuyItem = function () {};
             }
@@ -7725,7 +7748,7 @@
             crafting: [52027, 52028, 52029, 52030, 52497, 52500, 52501, 52502, 52503, 52504, 52505, 52506, 52518, 52868, 52869, 52870, 52871, 53938, 53939, 53940, 53941],
             none: [738],
             jobdrop: [2000, 2009],
-            named: [10, 14, 18, 237, 314, 322, 530, 541, 551, 810, 42035, 42039, 42040, 42044, 42052, 42056, 42060, 42068, 42076, 42085, 42089, 42093, 42101, 42109, 42117, 42125, 42133, 42141, 42149, 53235, 41047, 41056, 41059, 41070, 41079, 41080, 41089, 41104, 41105, 41113, 41128, 41137, 41146, 41155, 41164, 41173, 53178, 40076, 40079, 40080, 40090, 40091, 40099, 40107, 40111, 40115, 40123, 40127, 40135, 40143, 40151, 40159, 40167, 40175, 40183, 53204, 10227, 10235, 10243, 10251, 10259, 53213, 11215, 11223, 11231, 11239, 11247, 11255, 11263, 11271, 53187, 43011, 43015, 43023, 43027, 43031, 43039, 43047, 43055, 43063, 43071, 43075, 43083, 43087, 43095, 43103, 43111, 43119, 43127, 43135, 43143, 53222, 909, 913, 917, 921, 925, 45001, 45005, 45009, 45013, 45017, 53226, 53230, 195, 199, 44003, 44007, 44011, 44015, 44019, 53234]
+            named: [10, 14, 18, 237, 314, 322, 530, 541, 551, 810, 42035, 42039, 42040, 42044, 42052, 42056, 42060, 42068, 42076, 42085, 42089, 42093, 42101, 42109, 42117, 42125, 42133, 42141, 42149, 53235, 41047, 41056, 41059, 41070, 41079, 41080, 41089, 41104, 41105, 41113, 41128, 41137, 41146, 41155, 41164, 41173, 53178, 40076, 40079, 40080, 40090, 40091, 40099, 40107, 40111, 40115, 40123, 40127, 40135, 40143, 40151, 40159, 40167, 40175, 40183, 53204, 10227, 10235, 10243, 10251, 10259, 53213, 11087, 11101, 11215, 11223, 11231, 11239, 11247, 11255, 11263, 11271, 53187, 43011, 43015, 43023, 43027, 43031, 43039, 43047, 43055, 43063, 43071, 43075, 43083, 43087, 43095, 43103, 43111, 43119, 43127, 43135, 43143, 53222, 909, 913, 917, 921, 925, 45001, 45005, 45009, 45013, 45017, 53226, 53230, 195, 199, 44003, 44007, 44011, 44015, 44019, 53234, 608]
           };
           var intvQIS = setInterval(function () {
             if (ItemManager.get(0)) {
