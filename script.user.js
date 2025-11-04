@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.49.8
+// @version 1.49.9
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.49.8',
+      version: '1.49.9',
       langs: {
         en: {
           language: 'English',
@@ -4413,6 +4413,7 @@
           });
           $('#ui_menubar').append($('<div id="TWX_menu" class="ui_menucontainer">').append(menuContainer).append('<div class="menucontainer_bottom">'));
           TWX.Skript.updateFeat();
+          TWX.MinChat();
           TWX.SkipOpen();
         },
         updateFeat: function () {
@@ -6472,7 +6473,7 @@
             var wws = west.window.shop;
             if (wws) {
               clearInterval(setVal8);
-              TWX.addStyle('.focused_new_item_shop .sellIt, .focused_marketplace .auctIt {filter: grayscale(90%)}\n .focused_tailor .not_sellable::after, .focused_gunsmith .not_sellable::after, .focused_general .not_sellable::after, .focused_marketplace .not_auctionable::after {content:"";position:absolute;width:28px;height:28px;right:0;background:url(images/window/shop/shop_icons_sprite.png)no-repeat -167px 0;} .focused_tailor .not_sellable, .focused_gunsmith .not_sellable, .focused_general .not_sellable, .focused_marketplace .not_auctionable {opacity:0.5}');
+              TWX.addStyle('.focused_new_item_shop .sellIt, .focused_marketplace .auctIt {filter: grayscale(90%)}\n .focused_tailor .not_sellable::after, .focused_gunsmith .not_sellable::after, .focused_general .not_sellable::after, .focused_marketplace .not_auctionable::after {content:"";position:absolute;width:28px;height:28px;right:0;background:url(images/window/shop/shop_icons_sprite.png)no-repeat -167px 0;} .focused_tailor .not_sellable, .focused_gunsmith .not_sellable, .focused_general .not_sellable, .focused_marketplace .not_auctionable {opacity:0.5}\n');
               var mt = -1,
               itemsToSell = [null, null],
               attr = ['sellable', 'auctionable'],
@@ -6587,7 +6588,7 @@
                   sellButton[mt] = new west.gui.Iconbutton(new west.gui.Icon(icon[mt]), initSell).addClass('TWX_' + attr[mt] + '_button').getMainDiv();
                   $(sellButton[mt]).css({
                     'position': 'absolute',
-                    'left': 0,
+                    'left': '23px',
                     'z-index': 1,
                     'filter': 'grayscale(90%)'
                   });
@@ -7748,7 +7749,7 @@
             crafting: [52027, 52028, 52029, 52030, 52497, 52500, 52501, 52502, 52503, 52504, 52505, 52506, 52518, 52868, 52869, 52870, 52871, 53938, 53939, 53940, 53941],
             none: [738],
             jobdrop: [2000, 2009],
-            named: [10, 14, 18, 237, 314, 322, 530, 541, 551, 810, 42035, 42039, 42040, 42044, 42052, 42056, 42060, 42068, 42076, 42085, 42089, 42093, 42101, 42109, 42117, 42125, 42133, 42141, 42149, 53235, 41047, 41056, 41059, 41070, 41079, 41080, 41089, 41104, 41105, 41113, 41128, 41137, 41146, 41155, 41164, 41173, 53178, 40076, 40079, 40080, 40090, 40091, 40099, 40107, 40111, 40115, 40123, 40127, 40135, 40143, 40151, 40159, 40167, 40175, 40183, 53204, 10227, 10235, 10243, 10251, 10259, 53213, 11087, 11101, 11215, 11223, 11231, 11239, 11247, 11255, 11263, 11271, 53187, 43011, 43015, 43023, 43027, 43031, 43039, 43047, 43055, 43063, 43071, 43075, 43083, 43087, 43095, 43103, 43111, 43119, 43127, 43135, 43143, 53222, 909, 913, 917, 921, 925, 45001, 45005, 45009, 45013, 45017, 53226, 53230, 195, 199, 44003, 44007, 44011, 44015, 44019, 53234, 608]
+            named: [10, 14, 18, 237, 314, 322, 530, 541, 551, 571, 810, 42035, 42039, 42040, 42044, 42052, 42056, 42060, 42068, 42076, 42085, 42089, 42093, 42101, 42109, 42117, 42125, 42133, 42141, 42149, 53235, 41047, 41056, 41059, 41070, 41079, 41080, 41089, 41104, 41105, 41113, 41128, 41137, 41146, 41155, 41164, 41173, 53178, 40076, 40079, 40080, 40090, 40091, 40099, 40107, 40111, 40115, 40123, 40127, 40135, 40143, 40151, 40159, 40167, 40175, 40183, 53204, 10227, 10235, 10243, 10251, 10259, 53213, 11087, 11101, 11215, 11223, 11231, 11239, 11247, 11255, 11263, 11271, 53187, 43011, 43015, 43023, 43027, 43031, 43039, 43047, 43055, 43063, 43071, 43075, 43083, 43087, 43095, 43103, 43111, 43119, 43127, 43135, 43143, 53222, 56, 862, 909, 913, 917, 921, 925, 45001, 45005, 45009, 45013, 45017, 53226, 53230, 135, 139, 195, 199, 44003, 44007, 44011, 44015, 44019, 53234, 608]
           };
           var intvQIS = setInterval(function () {
             if (ItemManager.get(0)) {
@@ -9043,6 +9044,14 @@
         init: function () {
           west.notification.ToastOnlineNotification.prototype.show = function () {};
         }
+      };
+      TWX.MinChat = function () {
+        TWX.addStyle('div#ui_bottomleft {width:auto; overflow:hidden;}\n div#ui_chat {margin-top:12px;}\n div#ui_chat div#TWX_toggleMinChat {position:absolute; top:-14px; left:5px; width:27px; display:block; background-size:108px 42px; border:0px solid rgba(0, 0, 0, 0); background-clip:content-box;}\n div#ui_chat.TWX_mchat div#TWX_toggleMinChat {background-position:0px 0px; border-width:0px 8px 34px 0px;}\n div#ui_chat.TWX_mchat div#servertime {display:none;}\n div#ui_chat.TWX_mchat > div.tabs div {display:none;}\n div#ui_chat.TWX_mchat div.container div.friend {display:none!important;}\n div#ui_chat.TWX_mchat div.container div.general {display:block!important;}\n div#ui_chat.TWX_mchat div.container div.vertical_divider {display:none;}\n div#ui_chat.TWX_mchat img.leave_channel {display:none!important;}\n div#ui_chat div.TWX_mchat_tabr {display:none;}\n div#ui_chat.TWX_mchat div.TWX_mchat_tabr {display:block; position:absolute; left:32px; top:0px; width:8px; height:34px; background:url("' + to_cdn("images/interface/chat/chat-top.png?1") + '") top right;}\n div#ui_chat.TWX_mchat {position:relative; left:-10px; top:4px; width:39px;}\n div#ui_chat.TWX_mchat > div.tabs {width:32px; background:url("' + to_cdn("images/interface/chat/chat-top.png?1") + '");}\n div#ui_chat.TWX_mchat div.chat_channel {width:24px;}\n div#ui_chat.TWX_mchat div.chat_channel .new_message {left:2px; top:0px;}\n div#ui_chat.TWX_mchat div.chat_channel div.online_count {background:none; position:absolute; right:0px; top:-1px; width:auto; height:auto; line-height:normal; padding:0px; font-size:8pt; font-weight:bold; text-align:right; text-shadow:-1px 1px 1px #FFF, 0px 0px 2px #FFF; cursor:default;}\n div#ui_chat.TWX_mchat div.container {width:40px; background-position-x:right;}\n div#ui_chat.TWX_mchat div.row_title {left:5px; width:32px; opacity:0;}\n div#ui_chat.TWX_mchat div.tw2gui_scrollpane {width:50px;}');
+        $("div#ui_chat").append('<div class="TWX_mchat_tabr">').toggleClass("TWX_mchat", (TWX.Data.MinChat || false)).children(".tabs").first().append($('<div id="TWX_toggleMinChat" class="tw2gui_arrow_up_top">').on("click", function (e) {
+            e.stopPropagation();
+            TWX.Data.MinChat = $("div#ui_chat").toggleClass("TWX_mchat").hasClass("TWX_mchat");
+            localStorage.setItem('TWLT', JSON.stringify(TWX.Data));
+        }));
       };
       TWX.CalcTwdb = {
         show: function (e) {
