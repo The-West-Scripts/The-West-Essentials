@@ -477,7 +477,7 @@
             reps: 'Kleidung für wiederholbare Quests',
             auct: 'nicht-auktionierbare Items',
           },
-          sellOptInfo: 'Zusätzliche markiert TW Clothcache beste Arbeitskleidung als unverkaufbar. Siehe Skripteinstellungen:',
+          sellOptInfo: 'Zudem markiert TW Clothcache beste Arbeitskleidung als unverkaufbar. Siehe Skripteinstellungen:',
           removeWorkNotis: 'Entferne die Arbeits-Benachrichtigungen',
           compInv: 'Klicke auf "Abbrechen, um nur auktionierbare Items anzuzeigen\n oder\nFüge andere Inventar-URL ein, um zu vergleichen',
           loginAll1: 'Alle einloggen',
