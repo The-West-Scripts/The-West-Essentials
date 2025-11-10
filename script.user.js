@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.50
+// @version 1.50.1
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.50',
+      version: '1.50.1',
       langs: {
         en: {
           language: 'English',
@@ -158,6 +158,14 @@
           used: 'Used',
           renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
           sellItems: 'Sell items to the trader?',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Hide all job notifications',
           compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
           loginAll1: 'Login all worlds',
@@ -462,6 +470,14 @@
           used: 'Benutzt',
           renameWarning: 'Du ziehst das Set beim Umbenennen an und wieder aus.<br>Möglicherweise verlierst du deswegen Lebenspunkte!',
           sellItems: 'Items dem Händler verkaufen?',
+          sellOpt: 'Markiere diese als unverkaufbar',
+          sellOpts: {
+            sets: 'Setitems',
+            named: 'NAMED-Items',
+            reps: 'Kleidung für wiederholbare Quests',
+            auct: 'nicht-auktionierbare Items',
+          },
+          sellOptInfo: 'Zusätzliche markiert TW Clothcache beste Arbeitskleidung als unverkaufbar. Siehe Skripteinstellungen:',
           removeWorkNotis: 'Entferne die Arbeits-Benachrichtigungen',
           compInv: 'Klicke auf "Abbrechen, um nur auktionierbare Items anzuzeigen\n oder\nFüge andere Inventar-URL ein, um zu vergleichen',
           loginAll1: 'Alle einloggen',
@@ -766,6 +782,14 @@
           used: 'Used',
           renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
           sellItems: 'Sell items to the trader?',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Hide all job notifications',
           compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
           loginAll1: 'Login all worlds',
@@ -1069,6 +1093,14 @@
           used: 'Usado',
           renameWarning: 'Cuando renombre un conjunto, se lo pondrá y se lo quitará de nuevo.<br>¡Puede perder puntos de vida durante el proceso!',
           sellItems: '¿Vender artículos al comerciante?',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Ocultar todas las notificaciones de trabajo',
           compInv: 'Haga clic en "cancelar" para mostrar solo los artículos subastables \n o \n Ingrese otra URL de inventario para comparar',
           loginAll1: 'Conectarse a todos los mundos',
@@ -1373,6 +1405,14 @@
           used: 'Used',
           renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
           sellItems: 'Sell items to the trader?',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Hide all job notifications',
           compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
           loginAll1: 'Login all worlds',
@@ -1677,6 +1717,14 @@
           used: 'Használt',
           renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
           sellItems: 'Sell items to the trader?',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Összes munkaértesítés elrejtése',
           compInv: 'Kattints a "mégse" gombra hogy csak az árverezhető tárgyakat mutassa\n vagy\nHozzáadd egy másik táska URL címét összehasonlításként',
           loginAll1: 'Összes világba bejelentkezés',
@@ -1981,6 +2029,14 @@
           used: 'Χρησιμοποιείται',
           renameWarning: 'Όταν μετονομάζετε ένα Σετ, θα το φορέσετε και θα το ξαναβγάλετε.<br>Μπορεί να χάσετε κάποιους πόντους υγείας κατά τη διάρκεια της διαδικασίας!',
           sellItems: 'Πώληση αντικειμένων στον Έμπορο;',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Απόκρυψη όλων των ειδοποιήσεων εργασιών',
           compInv: 'Κάντε κλικ στην επιλογή "ακύρωση" για να προβάλλετε μόνο αντικείμενα που μπορούν να πουληθούν με πλειστηριασμό\n ή\nΠροσθέστε άλλη διεύθυνση URL αποθέματος για σύγκριση',
           loginAll1: 'Είσοδος σε όλους',
@@ -2285,6 +2341,14 @@
           used: 'Usado',
           renameWarning: 'Quando você renomeia um conjunto, você vai usá-lo e despir-lo novamente.<br>Você pode perder pontos de saúde durante o processo!',
           sellItems: 'Vender itens para o comerciante?',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Ocultar todas as notificações de Jobs',
           compInv: 'Clique em "cancelar" para mostrar apenas itens leiloáveis\n ou\nIntroduza outro URL de inventário para comparar',
           loginAll1: 'Login em todos os mundos',
@@ -2589,6 +2653,14 @@
           used: 'Usato',
           renameWarning: 'Quando rinomini un set lo indosserai e svestirai di nuovo.<br>In questo processo potresti perdere dei punti vita!',
           sellItems: 'Vuoi vendere questi oggetti?',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Nascondi tutte le notifiche dei lavori',
           compInv: 'Clicca su "cancella" per mostrare solo gli oggetti vendibili all\'asta\n oppure\nInserisci altro URL di inventari per confrontare',
           loginAll1: 'Fai login in tutti i mondi',
@@ -2893,6 +2965,14 @@
           used: 'Used',
           renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
           sellItems: 'Sell items to the trader?',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Hide all job notifications',
           compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
           loginAll1: 'Login all worlds',
@@ -3197,6 +3277,14 @@
           used: 'Použito',
           renameWarning: 'Když přejmenujete sadu, budete ji muset svléknout a obléci znovu. <br> Během procesu můžete ztratit body zdraví!',
           sellItems: 'Prodat předměty obchodníkovi?',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Skrýt všechna oznámení z prací',
           compInv: 'Kliknutím na tlačítko "zrušit" zobrazíte pouze dražitelné předměty\n nebo\nZadejte jinou adresu URL inventáře, který chcete porovnat',
           loginAll1: 'Přihlásit se do všech světů',
@@ -3501,6 +3589,14 @@
           used: 'Použité',
           renameWarning: 'Keď premenujete set, budete ho musieť vyzliecť a znovu obliecť. <br> Počas procesu môžete stratiť body zdravia!',
           sellItems: 'Predať predmety obchodníkovi?',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Schovať všetky oznámenia z prác',
           compInv: 'Kliknutím na tlačítko "zrušiť" zobrazíte len dražiteľné predmety\n alebo\Zadajte inú adresu URL inventára, ktorý chcete porovnať',
           loginAll1: 'Prihlásiť sa do všetkých svetov',
@@ -3805,6 +3901,14 @@
           used: 'Used',
           renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
           sellItems: 'Sell items to the trader?',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Hide all job notifications',
           compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
           loginAll1: 'Login all worlds',
@@ -4109,6 +4213,14 @@
           used: 'Used',
           renameWarning: 'When you rename a set, you will wear it and undress it again.<br>You may loose health points during the process!',
           sellItems: 'Sell items to the trader?',
+          sellOpt: 'Mark these as unsellable',
+          sellOpts: {
+            sets: 'set items',
+            named: 'NAMED items',
+            reps: 'clothing for repeatable quests',
+            auct: 'non-auctionable items',
+          },
+          sellOptInfo: 'Additionally TW Clothcache marks best work items as unsellable. See script settings:',
           removeWorkNotis: 'Hide all job notifications',
           compInv: 'Click on "cancel" to just show only auctionable items\n or\nEnter other inventory URL to compare',
           loginAll1: 'Login all worlds',
@@ -6488,7 +6600,15 @@
             var wws = west.window.shop;
             if (wws) {
               clearInterval(setVal8);
-              TWX.addStyle('.focused_new_item_shop .sellIt, .focused_marketplace .auctIt {filter: grayscale(90%)}\n .focused_tailor .not_sellable::after, .focused_gunsmith .not_sellable::after, .focused_general .not_sellable::after, .focused_marketplace .not_auctionable::after {content:"";position:absolute;width:28px;height:28px;right:0;background:url(images/window/shop/shop_icons_sprite.png)no-repeat -167px 0;} .focused_tailor .not_sellable, .focused_gunsmith .not_sellable, .focused_general .not_sellable, .focused_marketplace .not_auctionable {opacity:0.5}\n');
+              var sellOptions = {
+                sets: true,
+                named: true,
+                reps: true,
+                auct: true
+              };
+              if (!TWX.Data.sellOpts)
+                TWX.Data.sellOpts = sellOptions;
+              TWX.addStyle('.focused_new_item_shop .sellIt, .focused_marketplace .auctIt {filter: grayscale(0.9)}\n .focused_tailor .not_sellable::after, .focused_gunsmith .not_sellable::after, .focused_general .not_sellable::after, .focused_marketplace .not_auctionable::after {content:"";position:absolute;width:28px;height:28px;right:0;background:url(images/window/shop/shop_icons_sprite.png)no-repeat -167px 0;} .focused_tailor .not_sellable, .focused_gunsmith .not_sellable, .focused_general .not_sellable, .focused_marketplace .not_auctionable {opacity:0.5}\n');
               var mt = -1,
               itemsToSell = [null, null],
               attr = ['sellable', 'auctionable'],
@@ -6527,11 +6647,23 @@
                 if (destroy)
                   return;
                 setClickH();
-                $(sellButton[mt]).css('filter', 'grayscale(90%)');
+                $(sellButton[mt]).css('filter', 'grayscale(0.9)');
               },
               repItems = [
                 3, 17, 201, 202, 208, 235, 302, 303, 325, 329, 334, 342, 355, 405, 420, 432, 503, 506, 507, 525, 603, 802, 10003, 10005, 10012, 10015, 10075, 10149, 11003, 11014, 41171
               ],
+              dontSellTxt = function (bgo) {
+                var atxt = [];
+                if (bgo.set)
+                  atxt.push(TWXlang.sellOpts.sets);
+                if (bgo.named)
+                  atxt.push(TWXlang.sellOpts.named);
+                if (repItems.includes(bgo))
+                  atxt.push(TWXlang.sellOpts.reps);
+                if (!bgo.auctionable)
+                  atxt.push(TWXlang.sellOpts.auct);
+                return atxt.length ? ' (' + atxt.join(', ') + '!)' : '';
+              },
               initSell = function () {
                 if (!itemsToSell[mt]) {
                   if (mt) {
@@ -6550,7 +6682,7 @@
                     };
                   }
                   setClickH();
-                  $(sellButton[mt]).css('filter', 'grayscale(0%)');
+                  $(sellButton[mt]).css('filter', 'grayscale(0)');
                   itemsToSell[mt] = {};
                 } else {
                   if (Object.keys(itemsToSell[mt]).length) {
@@ -6560,13 +6692,17 @@
                       var bgbi = Bag.getItemIdByInvId(invId);
                       if (!bgbi)
                         return delete itemsToSell[mt][invId];
-                      var bgo = Bag.getItemByItemId(bgbi).obj,
-                      bi = bgo.item_base_id;
-                      cont += count + 'x ' + TWX.GUI.getSetOrItem(bi, bgo, true) + (repItems.includes(bi) ? ' (repeatable quest!)' : '') + '<br>';
+                      var bgo = Bag.getItemByItemId(bgbi).obj;
+                      cont += count + 'x ' + TWX.GUI.getSetOrItem(bgo.item_base_id, bgo, true) + dontSellTxt(bgo) + '<br>';
                       money += bgo.sell_price * count;
                     });
                     cont += '<br><span class="invPopup_sellicon"></span>&nbsp;$' + money + '</div>';
-                    new west.gui.Dialog(TWXlang.sellItems, cont).setDraggable(true).addButton('yes', function () {
+                    var sellScroll = new west.gui.Scrollpane().appendContent(cont).getMainDiv();
+                    $(sellScroll).css({
+                      'height': '320px',
+                      'width': '520px'
+                    });
+                    new west.gui.Dialog(TWXlang.sellItems, sellScroll).setDraggable(true).addButton('yes', function () {
                       $.each(itemsToSell[mt], function (inv_id, amount) {
                         if (mt) {
                           var item = Bag.getItemByInvId(inv_id).obj;
@@ -6595,19 +6731,41 @@
                     exitSell();
                 }
               },
+              openSellOptions = function () {
+                var sOptCB = {},
+                sOptCont = $('<span><div style="background:url(/images/window/shop/shop_icons_sprite.png) no-repeat -167px 0; width:28px; height:28px; position:absolute; right:0; opacity:0.7"></span>');
+                for (var k in sellOptions) {
+                  sOptCB[k] = new west.gui.Checkbox(TWXlang.sellOpts[k]).setSelected(TWX.Data.sellOpts[k]).appendTo(sOptCont);
+                  sOptCont.append('<br><div style="height:5px;">');
+                }
+                if (window.TWDS)
+                  sOptCont.append('<div style="margin-top:10px; font-size:12px">(' + TWXlang.sellOptInfo + ' "saleProtection")</div>');
+                new west.gui.Dialog('&emsp;' + TWXlang.sellOpt + ':&emsp;', sOptCont).setDraggable(true).addButton(TWXlang.save, function () {
+                  for (var k in sellOptions)
+                    TWX.Data.sellOpts[k] = sOptCB[k].isSelected();
+                  localStorage.setItem('TWLT', JSON.stringify(TWX.Data));
+                  new UserMessage(TWXlang.saveMessage2, 'success').show();
+                }).addButton('cancel').show();
+              },
               sellButton = [null, null],
+              sellOptionsButton = null,
               icon = ['dollar', 'box'],
               addMtButton = function (winmt) {
                 mt = winmt;
                 if (!$('.TWX_' + attr[mt] + '_button').length) {
                   sellButton[mt] = new west.gui.Iconbutton(new west.gui.Icon(icon[mt]), initSell).addClass('TWX_' + attr[mt] + '_button').getMainDiv();
                   $(sellButton[mt]).css({
-                    'position': 'absolute',
-                    'left': '23px',
+                    'left': '1px',
                     'z-index': 1,
-                    'filter': 'grayscale(90%)'
+                    'filter': 'grayscale(0.9)'
                   });
-                  Inventory.DOM.children('.actions').prepend(sellButton[mt]);
+                  if (mt == 0) {
+                    sellOptionsButton = new west.gui.Iconbutton(new west.gui.Icon('gear'), openSellOptions).addClass('TWX_sellOptions').getMainDiv();
+                    $(sellOptionsButton).css({
+                      'z-index': 1
+                    });
+                  }
+                  Inventory.DOM.children('.actions').prepend(sellOptionsButton).prepend(sellButton[mt]);
                 }
               };
               wws.openSellInventory_twx = wws.openSellInventory_twx || wws.openSellInventory;
@@ -6626,6 +6784,8 @@
               Inventory.setClickHandler = function (h) {
                 if (sellButton[mt])
                   $(sellButton[mt]).hide();
+                if (sellOptionsButton)
+                  $(sellOptionsButton).hide();
                 var win = h && h.window.id,
                 winmt = ['new_item_shop', 'marketplace'].indexOf(win);
                 if (winmt > -1) {
@@ -6633,6 +6793,8 @@
                   h.callback = mt ? MarketWindow.onInventoryClick : wws.handleInventoryClick;
                   if (sellButton[mt])
                     $(sellButton[mt]).show();
+                  if (sellOptionsButton)
+                    $(sellOptionsButton).show();
                 }
                 Inventory.setClickHandler_twx.apply(this, arguments);
               };
@@ -6642,6 +6804,8 @@
                   exitSell(true);
                 if (sellButton[mt])
                   sellButton[mt].remove();
+                if (sellOptionsButton)
+                  sellOptionsButton.remove();
                 return Inventory.undock_twx.apply(this, arguments);
               };
               var tIp = tw2widget.InventoryItem.prototype;
@@ -6650,7 +6814,7 @@
                 this.initDisplay_twx.apply(this, arguments);
                 if (!this.obj.auctionable)
                   this.addClass('not_auctionable');
-                if (this.obj.set || this.obj.named || repItems.includes(this.obj.item_base_id) || !this.obj.auctionable)
+                if (TWX.Data.sellOpts.sets && this.obj.set || TWX.Data.sellOpts.named && this.obj.named || TWX.Data.sellOpts.reps && repItems.includes(this.obj.item_base_id) || TWX.Data.sellOpts.auct && !this.obj.auctionable)
                   this.addClass('not_sellable');
               };
               west.window.shop.trackBuyItem = function () {};
@@ -7924,7 +8088,7 @@
                 this.formules.push(new calcul('matrix', TWXlang.BS.matrix, TWXlang.BS.matrixT, 'parseFloat((( val.dodgecount / (val.takenhits + val.dodgecount))*100))', [TWXlang.BS.rateP, TWXlang.BS.dodgedShots, TWXlang.BS.hitsTaken], ['matrix', 'dodgecount', 'takenhits'], '(val.takenhits + val.dodgecount) > 0 && val.dodgecount > 0', '0', '>', 0, false, false, true));
                 this.formules.push(new calcul('headshot', TWXlang.BS.terminator, TWXlang.BS.terminatorT, '(val.ko_shots.length / val.hitcount)*100', [TWXlang.BS.rateP, TWXlang.BS.KOs, TWXlang.BS.hitCount], ['headshot', 'ko_shots.length', 'hitcount'], 'val.hitcount > 0', '0', '>', 0, false, false, true));
               } catch (e) {
-                console.log(e);
+                console.log('TWX', e);
               }
             },
             getFormule: function (type) {
@@ -7998,7 +8162,7 @@
                   verif += val.titre + att + '\t\t' + def + '\t\t' + dif + '\n';
                   table_window.appendToCell( - 1, 'cell_stat', val.titre.trim()).appendToCell( - 1, 'cell_att', '<div>' + att + '</div>').appendToCell( - 1, 'cell_def', '<div>' + def + '</div>').appendToCell( - 1, 'cell_dif', '<div style="color:' + cssStr + ';">' + dif + '</div>').appendRow();
                 } catch (e) {
-                  console.log(val, e);
+                  console.log('TWX', val, e);
                 }
               });
               verif += '[/code]</textarea></form>';
@@ -8335,7 +8499,7 @@
               });
               return lig;
             } catch (execption) {
-              console.log(execption);
+              console.log('TWX', execption);
               return '';
             }
           };
@@ -8582,7 +8746,7 @@
               } catch (err) {
                 TWX.KoM.loading = false;
                 new UserMessage('<span>' + err + '</spawn>', 'error').show();
-                console.log(err);
+                console.log('TWX', err);
               }
             },
             makePopupHtml: function (fortId, distanceImage, playerPositionName, rankHtml, weaponName, weaponMinDamage, weaponMaxDamage, currentHp, maxHp, townName, townId, playerClass) {
@@ -8689,7 +8853,7 @@
                 }
                 TWX.KoM.loading = false;
               } catch (err) {
-                console.log(err.stack);
+                console.log('TWX', err.stack);
                 TWX.KoM.loading = false;
                 new UserMessage('<span>' + err + '</spawn>', 'error').show();
               }
@@ -8731,7 +8895,7 @@
               y = room.battleData.y,
               xy = x + '-' + y;
               if (!x || !y)
-                return console.log('x or y is undefined');
+                return console.log('TWX, x or y is undefined');
               if (TWX.KoM.fortSizeLoading[xy] === true)
                 return;
               TWX.KoM.fortSizeLoading[xy] = true;
@@ -8739,7 +8903,7 @@
                 Ajax.remoteCallMode('serverinfo', 'get_worldsettings', {}, function (result) {
                   var reg = result.worldsettings.replace(/\s|\n/g, '').match(/:(\d+)\/(\d+).+?:(\d+)\/(\d+).+?:(\d+)\/(\d+)/);
                   if (!reg)
-                    return console.log('fortsCapacity is undefined');
+                    return console.log('TWX, fortsCapacity is undefined');
                   TWX.KoM.fortsCapacity = [[reg[1], reg[2]], [reg[3], reg[4]], [reg[5], reg[6]]];
                   TWX.KoM.getFortSize(room, xy);
                 });
@@ -8826,7 +8990,7 @@
                     });
                 }
               } catch (e) {
-                console.log(e.stack);
+                console.log('TWX', e.stack);
               }
             },
             dataInterval: function () {
