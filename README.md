@@ -179,6 +179,11 @@ See the character classes in the fortbattle world ranking.
 See the duel experience in player profiles.  
 ![](https://imgur.com/5q7Lhb4.png)
 
+**Trader/market new items**  
+Mark items you do not own as new on the traders and market (from tw-db clothalc).  
+Recipes for your profession on the market are only marked, if you haven't learned them yet.  
+![](https://i.imgur.com/kaeyNHU.png)
+
 **Logout button** (Disabled by default)  
 When clicking on the logout button you will be redirected to the main page of The West.  
 ![](https://imgur.com/jbpaKHq.png)
