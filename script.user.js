@@ -9,7 +9,7 @@
 // @include https://beta.the-west.net*
 // @include http*://tw-db.info/*?strana=invent&x=*
 // @exclude https://classic.the-west.net*
-// @version 1.50.4
+// @version 1.50.5
 // @supportURL https://github.com/The-West-Scripts/The-West-Essentials/issues
 // @icon https://the-west.net/favicon.ico
 // @grant none
@@ -27,7 +27,7 @@
     location.href = '/';
   } else {
     TWX = {
-      version: '1.50.4',
+      version: '1.50.5',
       langs: {
         en: {
           language: 'English',
@@ -108,7 +108,7 @@
           body: 'Clothing',
           right_arm: 'Weapons',
           animal: 'Horse & Yield',
-          rest: 'Other',
+          other: 'Other',
           buff: 'Buffs',
           refresh: 'Refresh',
           noFriends: 'No Friends',
@@ -420,7 +420,7 @@
           body: 'Kleidung',
           right_arm: 'Waffen',
           animal: 'Pferd & Produkt',
-          rest: 'Andere',
+          other: 'Andere',
           buff: 'Buffs',
           refresh: 'Aktualisieren',
           noFriends: 'Keine Freunde',
@@ -732,7 +732,7 @@
           body: 'Clothing',
           right_arm: 'Weapons',
           animal: 'Horse & Yield',
-          rest: 'Other',
+          other: 'Other',
           buff: 'Buffs',
           refresh: 'Odświeżać',
           noFriends: 'Brak przyjaciół',
@@ -1044,7 +1044,7 @@
           body: 'Ropa',
           right_arm: 'Armas',
           animal: 'Montura y Producto',
-          rest: 'Otros',
+          other: 'Otros',
           refresh: 'Actualizar',
           noFriends: 'Sin Amigos',
           reward: 'Recompensa',
@@ -1355,7 +1355,7 @@
           body: 'Clothing',
           right_arm: 'Weapons',
           animal: 'Horse & Yield',
-          rest: 'Other',
+          other: 'Other',
           buff: 'Buffs',
           refresh: 'Verversen',
           noFriends: 'Geen vrienden',
@@ -1667,7 +1667,7 @@
           body: 'Ruházat',
           right_arm: 'Párbajfegyver',
           animal: 'Állat',
-          rest: 'Egyéb',
+          other: 'Egyéb',
           buff: 'Buffs',
           refresh: 'Újratöltés',
           noFriends: 'Nincsenek barátok',
@@ -1979,7 +1979,7 @@
           body: 'Ένδυση',
           right_arm: 'Όπλο μονομαχίας',
           animal: 'Άλογο & σέλα',
-          rest: 'Άλλο',
+          other: 'Άλλο',
           buff: 'Buffs',
           refresh: 'Ανανέωση',
           noFriends: 'Δεν υπάρχουν φίλοι',
@@ -2291,7 +2291,7 @@
           body: 'Roupas',
           right_arm: 'Armas',
           animal: 'Cavalo & Sela',
-          rest: 'Outros',
+          other: 'Outros',
           buff: 'Buffs',
           refresh: 'Atualizar',
           noFriends: 'Sem Amigos',
@@ -2603,7 +2603,7 @@
           body: 'Abiti',
           right_arm: 'Armi',
           animal: 'Cavallo e oggetto',
-          rest: 'Altro',
+          other: 'Altro',
           buff: 'Buffs',
           refresh: 'Aggiorna',
           noFriends: 'Nessun amico',
@@ -2915,7 +2915,7 @@
           body: 'Clothing',
           right_arm: 'Weapons',
           animal: 'Horse & Yield',
-          rest: 'Other',
+          other: 'Other',
           buff: 'Buffs',
           refresh: 'Refresh',
           noFriends: 'No Friends',
@@ -3227,7 +3227,7 @@
           body: 'Oblečení',
           right_arm: 'Zbraně',
           animal: 'Kůň & Produkt',
-          rest: 'Ostatní',
+          other: 'Ostatní',
           buff: 'Doplňováky',
           refresh: 'Obnovit',
           noFriends: 'Žádní přátelé',
@@ -3539,7 +3539,7 @@
           body: 'Oblečení',
           right_arm: 'Zbrane',
           animal: 'Kôň & Produkt',
-          rest: 'Ostatné',
+          other: 'Ostatné',
           buff: 'Doplňováky',
           refresh: 'Obnoviť',
           noFriends: 'Žiadny priatelia',
@@ -3851,7 +3851,7 @@
           body: 'Clothing',
           right_arm: 'Weapons',
           animal: 'Horse & Yield',
-          rest: 'Other',
+          other: 'Other',
           buff: 'Buffs',
           refresh: 'Refresh',
           noFriends: 'No Friends',
@@ -4163,7 +4163,7 @@
           body: 'Giyim',
           right_arm: 'Silahlar',
           animal: 'At ve Verim',
-          rest: 'Diğer',
+          other: 'Diğer',
           buff: 'Güçlendirmeler',
           refresh: 'Yenile',
           noFriends: 'Arkadaş yok',
@@ -4808,6 +4808,43 @@
           });
           $(TWX.GUI.window.getContentPane()).append(featScroll.getMainDiv()).append(button.getMainDiv());
         },
+        getSlotsItems: function (sla) {
+          var sa = TWX.setListAll[sla];
+          slot = {
+            2: ['animal', 'yield'],
+            3: ['right_arm', 'left_arm'],
+            6: ['body', 'pants', 'neck', 'head', 'foot', 'belt']
+          },
+          ims = sa.items,
+          sil = ims.length,
+          nims = [];
+          sa.slots = slot[sil] && slot[sil].includes(ItemManager.getByBaseId(sa.items[0]).type) ? slot[sil][0] : 'other';
+          var bon = {},
+          oneType = [],
+          c = 1;
+          for (var o = 0; o < ims.length; o++) {
+            var igt = Bag.getItemsByBaseItemId(ims[o])[0] || Wear.getByBaseId(ims[o]);
+            if (igt) {
+              nims.push(ims[o]);
+              if (oneType.includes(igt.obj.type)) { //range-melee or irish set..
+                --c;
+                continue;
+              }
+              if (sa.bonus[o + c])
+                bon[o + c] = sa.bonus[o + c];
+              oneType.push(igt.obj.type);
+            } else
+              --c;
+          }
+          if (nims.length) {
+            TWX.setListOwn[sla] = {
+              items: nims,
+              bonus: bon,
+              name: sa.name,
+              slots: sa.slots,
+            };
+          }
+        },
         makeList: function () {
           if (!TWX.list) {
             $.getScript(TWX.website + 'files/newSets.js', function () {
@@ -4816,11 +4853,6 @@
               TWX.setListOwn = {};
               TWX.itemListAll = {};
               TWX.itemListOwn = {};
-              var slot = {
-                2: ['animal', 'yield'],
-                3: ['right_arm', 'left_arm'],
-                6: ['body', 'pants', 'neck', 'head', 'foot', 'belt']
-              };
               var i = TWX.list.length;
               while (i--) {
                 var si = TWX.list[i];
@@ -4830,34 +4862,36 @@
                   TWX.list.splice(i, 1);
               }
               TWX.setLength = Object.keys(TWX.setListAll).length;
-              for (var j in TWX.setListAll) {
-                var sa = TWX.setListAll[j];
-                //sa.items.sort((a, b) => a - b);
-                var sil = sa.items.length;
-                sa.slots = slot[sil] && slot[sil].includes(ItemManager.getByBaseId(sa.items[1]).type) ? slot[sil][0] : 'rest';
-                var items = sa.getAvailableItems();
-                if (items.length) {
-                  var bon = {},
-                  oneType = [],
-                  c = 1;
-                  for (var o = 0; o < items.length; o++) {
-                    var igt = ItemManager.get(items[o]);
-                    items[o] = igt.item_base_id;
-                    if (oneType.includes(igt.type)) {
-                      --c;
-                      continue;
-                    }
-                    if (sa.bonus[o + c])
-                      bon[o + c] = sa.bonus[o + c];
-                    oneType.push(igt.type);
-                  }
-                  TWX.setListOwn[j] = {
-                    items: items.reverse(),
-                    bonus: bon,
-                    name: sa.name,
-                    slots: sa.slots,
+              var aycount;
+              for (var sla in TWX.setListAll) {
+                var sa = TWX.setListAll[sla],
+                ims = sa.items,
+                sil = ims.length;
+                //special case: 1 animal, 2 yield:
+                if (sil == 3) {
+                  aycount = {
+                    animal: [],
+                    yield: []
                   };
+                  for (var sit = 0; sit < sil; sit++) {
+                    var sis = ItemManager.getByBaseId(ims[sit]).type;
+                    if (aycount[sis])
+                      aycount[sis].push(sit);
+                  }
+                  var ay = aycount.yield;
+                  if (aycount.animal.length == 1 && ay.length == 2) {
+                    var sla2 = sla + '_twx2';
+                    TWX.setListAll[sla2] = structuredClone(sa);
+                    TWX.setListAll[sla2].twx_2_sets = ItemManager.getByBaseId(ims[ay[1]]).name;
+                    TWX.setListAll[sla2].items.splice(ay[0], 1);
+                    sa.twx_2_sets = ItemManager.getByBaseId(ims[ay[0]]).name;
+                    ims.splice(ay[1], 1);
+                    TWX.GUI.getSlotsItems(sla2);
+                  }
                 }
+                //special case: gender animal set:
+                else if (sil == 4) {}
+                TWX.GUI.getSlotsItems(sla);
               }
               TWX.list.sort(function (a, b) {
                 var a1 = replUml(a.name),
@@ -5093,6 +5127,7 @@
                         item_level: si.item_level,
                         items: si.items,
                         itmVal: 0,
+                        twx_2_sets: si.twx_2_sets,
                       };
                     }
                     var tiv = types[i].value;
@@ -5126,11 +5161,15 @@
                     types[i].values[nv].sum += types[i].values[nv][cv] || 0;
                 }
                 if (si.items) {
-                  for (var is of si.items)
-                    if (types[is]) {
+                  var oneType = []; //irish set (gender)..
+                  for (var is of si.items) {
+                    var imt = ItemManager.getByBaseId(is).type;
+                    if (types[is] && !oneType.includes(imt)) {
                       types[i].compVal.sum += types[is].compVal.sum;
                       types[i].itmVal += types[is].values[1].sum;
+                      oneType.push(imt);
                     }
+                  }
                 }
               }
             }
@@ -5209,7 +5248,7 @@
                   body: '',
                   right_arm: '',
                   animal: '',
-                  rest: '',
+                  other: '',
                   item: '',
                   buff: '',
                 };
@@ -5218,7 +5257,7 @@
                   if (n.slots == 'item' && ici++ > 200 || n.slots == 'body' && icb++ > 100)
                     continue;
                   var setval = 0;
-                  TWX.GUI.html[n.slots] += '<br>' + TWX.GUI.getSetOrItem(type, n) + '<br>';
+                  TWX.GUI.html[n.slots] += '<br>' + TWX.GUI.getSetOrItem(type, n) + (n.twx_2_sets ? ' <i>(' + n.twx_2_sets + ')</i>' : '') + '<br>';
                   for (var o in n.values) {
                     if (o == 'sum')
                       continue;
@@ -5234,7 +5273,7 @@
                   }
                 }
               }
-              scrollpane.appendContent('<span class="TWXBonusS body" style="width:16%;position:absolute;"><h4>' + TWXlang.body + '</h4></span><span class="TWXBonusS right_arm" style="width:16%;left:17%;position:absolute;"><h4>' + TWXlang.right_arm + '</h4></span><span class="TWXBonusS animal" style="width:16%;left:34%;position:absolute;"><h4>' + TWXlang.animal + '</h4></span><span class="TWXBonusS rest" style="width:16%;left:51%;position:absolute;"><h4>' + TWXlang.rest + '</h4></span><span class="TWXBonusS item" style="width:16%;left:68%;position:absolute;"><h4>' + TWXlang.items + '</h4></span><span class="TWXBonusS buff" style="width:16%;right:0;position:absolute;"><h4>' + TWXlang.buff + '</h4></span>');
+              scrollpane.appendContent('<span class="TWXBonusS body" style="width:16%;position:absolute;"><h4>' + TWXlang.body + '</h4></span><span class="TWXBonusS right_arm" style="width:16%;left:17%;position:absolute;"><h4>' + TWXlang.right_arm + '</h4></span><span class="TWXBonusS animal" style="width:16%;left:34%;position:absolute;"><h4>' + TWXlang.animal + '</h4></span><span class="TWXBonusS other" style="width:16%;left:51%;position:absolute;"><h4>' + TWXlang.other + '</h4></span><span class="TWXBonusS item" style="width:16%;left:68%;position:absolute;"><h4>' + TWXlang.items + '</h4></span><span class="TWXBonusS buff" style="width:16%;right:0;position:absolute;"><h4>' + TWXlang.buff + '</h4></span>');
               for (var hs in TWX.GUI.html)
                 $('.TWXBonusS.' + hs).append(TWX.GUI.html[hs]);
               setTimeout(function () {
