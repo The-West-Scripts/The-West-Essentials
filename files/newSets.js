@@ -1,5 +1,5 @@
 forbid={
-sets:['set_xmas2015_clothing', 'Rowtag_set'],
+sets:['set_xmas2015_clothing', 'Rowtag_set', 'misulvs_set'],
 max: 968,
 //unlock: [],
 IDs:[138, 860, 1337, 41999, 50106, 50260],
