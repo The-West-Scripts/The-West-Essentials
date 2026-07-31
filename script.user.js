@@ -5652,49 +5652,70 @@
             }), 500);
         },
       };
-      TWX.RecipeMarket = {
-        init: function () {
-          var inject = function (category, data) {
-            $('#TWXRecipeMarket').remove();
-            if (category == 'recipe') {
-              var gLS4P = Game.InfoHandler.getLocalString4ProfessionId,
-              prof = ['cook', 'quack', 'smith', 'sattle'],
-              buttons_recipe = '<div id="TWXRecipeMarket"><a href="javascript:TWX.RecipeMarket.filterRecipe(0);"><img title="' + TWXlang.allprofessions + '" src="' + TWX.Images('LT_recipes') + '" ></a>';
-              for (var b = 1; b < 5; b++)
-                buttons_recipe += '<a href="javascript:TWX.RecipeMarket.filterRecipe(' + b + ');"><img title="' + gLS4P(b) + '" style="width:30px;" src="images/items/recipe/recipe_' + prof[b - 1] + '.png"></a>';
-              $('.searchbox').before($(buttons_recipe + '</div>'));
-              $('.searchbox').css('margin-bottom', '0');
-              data.sort(function (a, b) {
-                return ItemManager.get(a).min_level - ItemManager.get(b).min_level;
-              });
-              TWX.RecipeMarket.Recipe = data;
-            } else
-              $('.searchbox').css('margin-bottom', '18px');
-            return data;
-          };
-          MarketWindow.Buy.updateCategory_twx = MarketWindow.Buy.updateCategory_twx || MarketWindow.Buy.updateCategory;
-          MarketWindow.Buy.updateCategory = function (category, data) {
-            data = inject(category, data);
-            MarketWindow.Buy.updateCategory_twx.call(this, category, data);
-          };
-          /*MarketWindow.getClearName_twx = MarketWindow.getClearName;
-          MarketWindow.getClearName = function (obj) {
-          var name = obj.name;
-          if (obj.type == 'recipe')
-          name = ItemManager.get(obj.craftitem).name;
-          return name;
-          };*/
-        },
-        filterRecipe: function (pid) {
-          var data = $('#mpb_recipe_content p');
-          data.show();
-          if (pid === 0)
-            return;
-          for (var i = 0; i < TWX.RecipeMarket.Recipe.length; i++)
-            if (pid != ItemManager.get(TWX.RecipeMarket.Recipe[i]).profession_id)
-              $(data[i]).hide();
+TWX.RecipeMarket = {
+    originalData: [],
+    currentFilter: 0,
+    init: function () {
+        MarketWindow.Buy.updateCategory_twx = MarketWindow.Buy.updateCategory_twx || MarketWindow.Buy.updateCategory;
+
+        MarketWindow.Buy.updateCategory = function (category, data) {
+            $('.TWXRecipeMarket_container').remove();
+
+            if (category === 'recipe') {
+                if (data !== TWX.RecipeMarket.originalData) {
+                    TWX.RecipeMarket.originalData = data.slice();
+                }
+
+                var gLS4P = Game.InfoHandler.getLocalString4ProfessionId;
+
+                var prof = ['cook', 'quack', 'smith', 'sattle'];
+
+                var buttons_recipe = '<div class="TWXRecipeMarket_container" id="TWXRecipeMarket">' +
+                    '<a href="javascript:TWX.RecipeMarket.filterRecipe(0);"><img title="' + (typeof TWXlang !== 'undefined' && TWXlang.allprofessions ? TWXlang.allprofessions : 'Tümü') + '" src="' + (typeof TWX !== 'undefined' && TWX.Images ? TWX.Images('LT_recipes') : '') + '" ></a>';
+
+                for (var b = 1; b < 5; b++) {
+                    buttons_recipe += '<a href="javascript:TWX.RecipeMarket.filterRecipe(' + b + ');">' +
+                        '<img title="' + (gLS4P ? gLS4P(b) : '') + '" style="width:30px;" src="images/items/recipe/recipe_' + prof[b - 1] + '.png"></a>';
+                }
+                buttons_recipe += '</div>';
+
+                var targetSearchBox = $('.searchbox:visible');
+                if (targetSearchBox.length === 0) targetSearchBox = $('.searchbox');
+
+                targetSearchBox.first().before(buttons_recipe);
+                targetSearchBox.first().css('margin-bottom', '0');
+
+                var filteredData = TWX.RecipeMarket.originalData.slice();
+
+                if (TWX.RecipeMarket.currentFilter !== 0) {
+                    filteredData = filteredData.filter(function(itemId) {
+                        var item = ItemManager.get(itemId);
+                        return item && item.profession_id === TWX.RecipeMarket.currentFilter;
+                    });
+                }
+
+                filteredData.sort(function (a, b) {
+                    var itemA = ItemManager.get(a);
+                    var itemB = ItemManager.get(b);
+                    var lvlA = itemA ? itemA.min_level : 0;
+                    var lvlB = itemB ? itemB.min_level : 0;
+                    return lvlA - lvlB;
+                });
+
+                MarketWindow.Buy.updateCategory_twx.call(this, category, filteredData);
+            } else {
+                $('.searchbox').css('margin-bottom', '18px');
+                MarketWindow.Buy.updateCategory_twx.call(this, category, data);
+            }
+        };
+    },
+    filterRecipe: function (pid) {
+        TWX.RecipeMarket.currentFilter = pid;
+        if (MarketWindow.Buy && typeof MarketWindow.Buy.updateCategory === 'function') {
+            MarketWindow.Buy.updateCategory('recipe', TWX.RecipeMarket.originalData);
         }
-      };
+    }
+};
       TWX.AchievHide = {
         init: function () {
           var setVal10 = setInterval(function () {
